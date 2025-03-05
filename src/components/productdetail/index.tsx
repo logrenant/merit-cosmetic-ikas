@@ -153,6 +153,8 @@ const ProductDetail = ({
       )}
 
       <div className="lg:col-span-2">
+
+        {/* Breadcrumbs */}
         <ul className="flex flex-wrap gap-x-2 gap-y-0.5 text-[13px]">
           <li className="flex items-center gap-x-2">
             <Link href="/">
@@ -218,9 +220,12 @@ const ProductDetail = ({
             </span>
           </li>
         </ul>
+
       </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.95fr),minmax(0,1.05fr)] gap-8">
+
+          {/* Image Gallery */}
           <div className="md:block xhidden">
             <div
               onClick={() => setModalImage(true)}
@@ -253,34 +258,39 @@ const ProductDetail = ({
                 <Image
                   id="xx-selectedImage"
                   image={selectedImage}
-                  useBlur
                   alt={selectedImage?.altText || ""}
-                  layout="fill"
-                  objectFit="contain"
+                  layout="responsive"
+                  objectFit="cover"
+                  height={372}
+                  width={293}
+                  useBlur
                 />
               )}
             </div>
-            <div className="flex gap-4 mt-2 md:mt-8 items-center">
+            <div className="flex gap-3 mt-2 md:mt-6 items-center">
               {allImages.map((image) => (
                 <div
                   key={image.id + "image2"}
                   onClick={() => setSelectedImage(image!)}
-                  className={`aspect-[293/372] cursor-pointer border max-w-[65px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
+                  className={`aspect-[293/372] cursor-pointer border max-w-[65px] lg:max-w-[80px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
                     ? "border-[color:var(--color-three)]"
                     : "border-transparent hover:border-[color:var(--gray-three)]"
                     }`}
                 >
                   <Image
-                    alt={image?.altText || ""}
-                    useBlur
                     image={image!}
-                    layout="fill"
-                    objectFit="contain"
+                    alt={image?.altText || ""}
+                    layout="responsive"
+                    objectFit="cover"
+                    height={372}
+                    width={293}
+                    useBlur
                   />
                 </div>
               ))}
             </div>
           </div>
+
           {show && (
             <div dir="ltr" className="md:hidden hidden">
               <Simpleslider
