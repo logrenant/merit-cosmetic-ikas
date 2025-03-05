@@ -68,7 +68,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
     <div dir={direction} className="my-10 layout">
       <div className="grid grid-cols-[100%] lg:grid-cols-[260px,calc(100%-284px)] gap-6">
         <div className="lg:block hidden">
-          <div className="text-2xl font-medium mb-4">
+          <div className="text-2xl text-[color:var(--color-two)] font-medium mb-4">
             {pageSpecificData?.name}
           </div>
           {products.count > 0 &&
@@ -79,11 +79,11 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
                 )}
                 {filter.displayType ===
                   IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
-                  <NumberList
-                    filter={filter}
-                    items={filter.numberRangeListOptions}
-                  />
-                )}
+                    <NumberList
+                      filter={filter}
+                      items={filter.numberRangeListOptions}
+                    />
+                  )}
               </div>
             ))}
           {products.isFiltered && (
@@ -103,7 +103,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
         </div>
         <div>
           <div className="mb-8 flex items-center justify-between">
-            <div className="text-[12px] lg:block hidden">
+            <div className="text-[14px] text-[color:var(--color-two)] lg:block hidden">
               {products.count} {t("categoryPage.product")}
             </div>
 

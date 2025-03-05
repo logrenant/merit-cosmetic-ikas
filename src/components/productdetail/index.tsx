@@ -769,7 +769,7 @@ const ProductDetail = ({
         </div>
         {show && similar.count > 0 && (
           <>
-            <div className="text-xl font-medium my-14 text-center tracking-widest">
+            <div className="text-xl text-[color:var(--color-two)] font-medium my-14 text-center tracking-widest">
               {t("productDetail.relatedProducts")}
             </div>
             <div dir="ltr" className="w-full">
@@ -806,7 +806,7 @@ const ProductDetail = ({
         )}
         {show && lastvisited.count > 0 && (
           <>
-            <div className="text-xl font-medium my-14 text-center tracking-widest">
+            <div className="text-xl text-[color:var(--color-two)] font-medium my-14 text-center tracking-widest">
               {t("productDetail.insterestedProducts")}
             </div>
             <div dir="ltr" className="w-full">
@@ -843,7 +843,7 @@ const ProductDetail = ({
         )}
         {reviews && (
           <div id="reviewsection">
-            <div className="text-xl font-medium mt-14 mb-6 text-left tracking-widest">
+            <div className="text-xl text-[color:var(--color-two)] font-medium mt-14 mb-6 text-left tracking-widest">
               {t("productDetail.comments")}
             </div>
             <div className="flex flex-col w-full">

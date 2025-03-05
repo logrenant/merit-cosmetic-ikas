@@ -37,9 +37,8 @@ export const NumberList = observer(
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={`w-[18px] transition-transform h-[18px] text-white ${
-                open ? "transform rotate-90" : "transform -rotate-90"
-              }`}
+              className={`w-[18px] transition-transform h-[18px] text-white ${open ? "transform rotate-90" : "transform -rotate-90"
+                }`}
             >
               <path
                 strokeLinecap="round"
@@ -71,11 +70,10 @@ export const NumberList = observer(
                   />
                   <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-sm after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
                   <span
-                    className={`text-base ${
-                      item.isSelected
-                        ? "text-[color:var(--gray-three)] font-normal"
-                        : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
-                    }`}
+                    className={`text-base ${item.isSelected
+                      ? "text-[color:var(--gray-three)] font-normal"
+                      : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
+                      }`}
                   >
                     {item.from} - {item.to}
                   </span>
@@ -116,9 +114,8 @@ export const List = observer(
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={`w-[18px] transition-transform h-[18px] text-white ${
-                open ? "transform rotate-90" : "transform -rotate-90"
-              }`}
+              className={`w-[18px] transition-transform h-[18px] text-white ${open ? "transform rotate-90" : "transform -rotate-90"
+                }`}
             >
               <path
                 strokeLinecap="round"
@@ -128,7 +125,7 @@ export const List = observer(
             </svg>
           </div>
           {open && (
-            <div className="flex overflow-y-auto max-h-[165px] border-b border-[color:var(--gray-two)] items-start text-left w-full flex-col">
+            <div className="flex overflow-y-auto max-h-[165px] border-b border-[color:var(--gray-two)]  items-start text-left w-full flex-col">
               {items?.map((item) => (
                 <button
                   onClick={() => {
@@ -150,11 +147,10 @@ export const List = observer(
                   />
                   <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-sm after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
                   <span
-                    className={`text-base ${
-                      item.isSelected
-                        ? "text-[color:var(--gray-three)] font-normal"
-                        : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
-                    }`}
+                    className={`text-base ${item.isSelected
+                      ? "text-[color:var(--gray-three)] font-normal"
+                      : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
+                      }`}
                   >
                     {item.name === "in-stock" || item.name === "out-of-stock"
                       ? t(item.name)
@@ -188,7 +184,7 @@ export const CategoryList = observer(
         filter.childrens?.some((e) => e.href === store.router?.asPath) ||
         filter.href === store.router?.asPath ||
         allCategories?.find((item) => item.id === filter.parentId)?.href ===
-          store.router?.asPath;
+        store.router?.asPath;
       if (includesData) {
         setOpenedCategories(true);
       } else {
@@ -207,11 +203,10 @@ export const CategoryList = observer(
             >
               <Link href={filter.href}>
                 <a
-                  className={`text-base text-white ${
-                    store.router?.asPath === filter.href
-                      ? "font-normal"
-                      : "font-light"
-                  }`}
+                  className={`text-base text-white ${store.router?.asPath === filter.href
+                    ? "font-normal"
+                    : "font-light"
+                    }`}
                 >
                   {filter.name}
                 </a>
@@ -222,11 +217,10 @@ export const CategoryList = observer(
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`w-[18px] transition-transform h-[18px] text-white ${
-                  !openedCategories
-                    ? "transform rotate-90"
-                    : "transform -rotate-90"
-                }`}
+                className={`w-[18px] transition-transform h-[18px] text-white ${!openedCategories
+                  ? "transform rotate-90"
+                  : "transform -rotate-90"
+                  }`}
               >
                 <path
                   strokeLinecap="round"
@@ -237,18 +231,16 @@ export const CategoryList = observer(
             </div>
             {openedCategories && (
               <div
-                className={`flex items-start text-left w-full flex-col ${
-                  last ? "border-b border-[color:var(--gray-two)]" : ""
-                }`}
+                className={`flex items-start text-left w-full flex-col ${last ? "border-b border-[color:var(--gray-two)]" : ""
+                  }`}
               >
                 {filter?.childrens?.map((child) => (
                   <Link key={child.href} href={child.href}>
                     <a
-                      className={`${
-                        store.router?.asPath === child.href
-                          ? "text-[color:var(--gray-three)] font-normal"
-                          : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
-                      } text-base last:border-b-0 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start`}
+                      className={`${store.router?.asPath === child.href
+                        ? "text-[color:var(--gray-three)] font-normal"
+                        : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
+                        } text-base last:border-b-0 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start`}
                     >
                       {child.name}
                     </a>
@@ -263,11 +255,10 @@ export const CategoryList = observer(
               className={`mb-[1px] bg-[color:var(--color-two)] py-1.5 px-2 w-full justify-between flex items-center gap-2`}
             >
               <span
-                className={`text-base text-white ${
-                  store.router?.asPath === filter.href
-                    ? "font-normal"
-                    : "font-light"
-                }`}
+                className={`text-base text-white ${store.router?.asPath === filter.href
+                  ? "font-normal"
+                  : "font-light"
+                  }`}
               >
                 {filter.name}
               </span>
@@ -380,11 +371,11 @@ const FilterMobile: React.FC<{
                   )}
                   {filter.displayType ===
                     IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
-                    <NumberList
-                      filter={filter}
-                      items={filter.numberRangeListOptions}
-                    />
-                  )}
+                      <NumberList
+                        filter={filter}
+                        items={filter.numberRangeListOptions}
+                      />
+                    )}
                 </div>
               ))}
             {products.isFiltered && (
