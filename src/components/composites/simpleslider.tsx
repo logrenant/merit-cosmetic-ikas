@@ -1,17 +1,24 @@
 import React, { ReactNode, useState } from "react";
 import {
-  KeenSliderHooks,
   KeenSliderOptions,
   KeenSliderInstance,
   useKeenSlider,
 } from "keen-slider/react";
 import { observer } from "mobx-react-lite";
+
 import "keen-slider/keen-slider.min.css";
 
+interface SimpleSliderProps {
+  keenOptions: KeenSliderOptions;
+  items: ReactNode[];
+}
+
 const MutationPlugin = (slider: KeenSliderInstance) => {
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      slider.update();
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(() => {
+      window.requestAnimationFrame(() => {
+        slider.update();
+      });
     });
   });
   const config = { childList: true };
@@ -24,56 +31,53 @@ const MutationPlugin = (slider: KeenSliderInstance) => {
   });
 };
 
-const SimpleSlider = ({
-  items,
-  keenOptions,
-}: {
-  items: ReactNode;
-  keenOptions: KeenSliderOptions<{}, {}, KeenSliderHooks> | undefined;
-}) => {
+
+const SimpleSlider: React.FC<SimpleSliderProps> = ({ keenOptions, items }) => {
   const [created, setCreated] = useState(false);
-  const [sliderRef] = useKeenSlider<HTMLDivElement>(
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       ...keenOptions,
       created: () => {
         setCreated(true);
       },
+      slideChanged(s) {
+        setCurrentSlide(s.track.details.rel);
+      },
     },
     [MutationPlugin]
   );
+
+  let perView = 1;
+  const totalSlides =
+    instanceRef.current && typeof perView === "number"
+      ? Math.ceil(instanceRef.current.track.details.slides.length / perView) - 1
+      : instanceRef.current?.track.details.slides.length || 0;
+
 
   return (
     <section className="relative">
       <div
         ref={sliderRef}
-        style={{
-          opacity: created ? 1 : 0,
-        }}
-        className="keen-slider w-full"
+        style={{ opacity: created ? 1 : 0 }}
+        className="keen-slider w-full overflow-hidden"
       >
         {items}
       </div>
-      {/* {loaded && instanceRef.current && (
-        <>
-          <button
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.prev()
-            }
-            className="bg-[color:var(--bg-color)] shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 left-4 rounded w-9 h-9 text-gray-700 flex items-center justify-center"
-          >
-            <ArrowLeftIcon className="w-5 h-5" />
-          </button>
 
-          <button
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.next()
-            }
-            className="bg-[color:var(--bg-color)] shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-4 rounded w-9 h-9 text-gray-700 flex items-center justify-center"
-          >
-            <ArrowRightIcon className="w-5 h-5" />
-          </button>
-        </>
-      )} */}
+      {/* Pagination Dots */}
+      {created && instanceRef.current && (
+        <div className="dots flex justify-center mt-4">
+          {Array.from({ length: totalSlides }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => instanceRef.current?.moveToIdx(idx)}
+              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx ? "bg-[color:var(--color-one)]" : "bg-gray-300"
+                }`}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

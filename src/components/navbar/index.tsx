@@ -1,20 +1,17 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState } from "react";
 import { observer } from "mobx-react-lite";
-import { NavbarProps } from "../__generated__/types";
-import { Image, Link, IkasProductFilter } from "@ikas/storefront";
-import MobileMenu, { CategoryWithChildrenType } from "../composites/mobilemenu";
+import { Image, Link } from "@ikas/storefront";
+
 import BagButton from "../composites/bagbutton";
-import BellButton from "../composites/bellbutton";
 import LocaleBar from "../composites/localebar";
-import NavbarCategories from "../composites/navbarcategories";
 import SearchBar from "../composites/searchbar";
+import BellButton from "../composites/bellbutton";
+import { NavbarProps } from "../__generated__/types";
 import AccountButton from "../composites/accountbutton";
 import { useDirection } from "../../utils/useDirection";
+import NavbarCategories from "../composites/navbarcategories";
+import MobileMenu, { CategoryWithChildrenType } from "../composites/mobilemenu";
 
-/*
-filter: CategoryWithChildrenType;
-    allCategories: CategoryWithChildrenType[];
-*/
 
 const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[], filter: CategoryWithChildrenType }> = ({
   categories,
@@ -26,8 +23,6 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   bannerSlogan,
   slogans,
   popularProducts,
-  allCategories,
-  filter,
 }) => {
   const [open, setOpen] = useState(false);
   const categoriesWithChildrens: CategoryWithChildrenType[] = [];
@@ -87,7 +82,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
         <span className="line-clamp-1 whis ">{bannerSlogan}</span>
       </div>
 
-      <div className="bg-[color:var(--logobgcolor)]">
+      <div className="bg-[color:var(--bg-color)]">
 
         <LocaleBar />
         <div className="grid layout gap-3 items-center lg:gap-8  lg:pb-1 pt-1 grid-cols-[180px,1fr] lg:grid-cols-[1fr,minmax(200px,700px),1fr]">

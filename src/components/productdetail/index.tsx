@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import { observer } from "mobx-react-lite";
-import { ProductdetailProps } from "../__generated__/types";
 import {
   IkasCustomerReviewList,
   IkasImage,
@@ -11,16 +8,20 @@ import {
   useStore,
   useTranslation,
 } from "@ikas/storefront";
+import { observer } from "mobx-react-lite";
+import { useState, useEffect } from "react";
 import { Rating } from "react-simple-star-rating";
+
+import useFavorite from "src/utils/useFavorite";
+import Imagemodal from "../composites/imagemodal";
+import { Variants } from "../composites/variants";
 import ProductCard from "../composites/productcard";
 import Simpleslider from "../composites/simpleslider";
-import { useAddToCart } from "../../utils/useAddToCart";
-import Imagemodal from "../composites/imagemodal";
+import Pricedisplay from "../composites/pricedisplay";
 import CommentModal from "../composites/commentModal";
 import { useDirection } from "../../utils/useDirection";
-import useFavorite from "src/utils/useFavorite";
-import { Variants } from "../composites/variants";
-import Pricedisplay from "../composites/pricedisplay";
+import { useAddToCart } from "../../utils/useAddToCart";
+import { ProductdetailProps } from "../__generated__/types";
 
 const Accordion = observer(
   ({ title, children }: { title: string; children: React.ReactNode }) => {
@@ -96,15 +97,16 @@ const ProductDetail = ({
   const [reviews, setReviews] = useState<IkasCustomerReviewList>();
   const [combineProducts, setCombineProducts] = useState<IkasProduct[]>();
   const { addToCart, loading } = useAddToCart();
-  useEffect(() => {
-    product.attributes
-      .find((e) => e.productAttribute?.name === "Kombin Ürünler")
-      ?.getProducts();
-      .then((e) => {
-        setCombineProducts(e);
-      });
 
+  useEffect(() => {
+    const kombinUrun = product?.attributes?.find(
+      (e) => e.productAttribute?.name === "Kombin Ürünler"
+    );
+    if (kombinUrun && kombinUrun.products) {
+      setCombineProducts(kombinUrun.products);
+    }
   }, [product]);
+
   useEffect(() => {
     if (product) {
       product.getCustomerReviews().then((e) => {
@@ -237,9 +239,8 @@ const ProductDetail = ({
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className={`w-7 h-7 stroke-[color:var(--color-three)] ${
-                    isProductFavorite ? "fill-[color:var(--color-three)]" : ""
-                  }`}
+                  className={`w-7 h-7 stroke-[color:var(--color-three)] ${isProductFavorite ? "fill-[color:var(--color-three)]" : ""
+                    }`}
                 >
                   <path
                     strokeLinecap="round"
@@ -250,7 +251,7 @@ const ProductDetail = ({
               </button>
               {selectedImage && (
                 <Image
-                id="xx-selectedImage"
+                  id="xx-selectedImage"
                   image={selectedImage}
                   useBlur
                   alt={selectedImage?.altText || ""}
@@ -264,11 +265,10 @@ const ProductDetail = ({
                 <div
                   key={image.id + "image2"}
                   onClick={() => setSelectedImage(image!)}
-                  className={`aspect-[293/372] cursor-pointer border max-w-[65px] relative w-full overflow-hidden ${
-                    selectedImage?.id === image?.id
-                      ? "border-[color:var(--color-three)]"
-                      : "border-transparent hover:border-[color:var(--gray-three)]"
-                  }`}
+                  className={`aspect-[293/372] cursor-pointer border max-w-[65px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
+                    ? "border-[color:var(--color-three)]"
+                    : "border-transparent hover:border-[color:var(--gray-three)]"
+                    }`}
                 >
                   <Image
                     alt={image?.altText || ""}
@@ -377,15 +377,15 @@ const ProductDetail = ({
               {product.attributes.find(
                 (e) => e.productAttribute?.name === "Detay"
               ) && (
-                <span
-                  className="prose-sm prose prose-ul:pl-0 prose-ul:list-inside marker:text-black/40"
-                  dangerouslySetInnerHTML={{
-                    __html: product.attributes.find(
-                      (e) => e.productAttribute?.name === "Detay"
-                    )!.value!,
-                  }}
-                />
-              )}
+                  <span
+                    className="prose-sm prose prose-ul:pl-0 prose-ul:list-inside marker:text-black/40"
+                    dangerouslySetInnerHTML={{
+                      __html: product.attributes.find(
+                        (e) => e.productAttribute?.name === "Detay"
+                      )!.value!,
+                    }}
+                  />
+                )}
               {product.variants.length > 0 && (
                 <div>
                   <Variants
@@ -660,31 +660,28 @@ const ProductDetail = ({
           <div className="grid grid-cols-3">
             <button
               onClick={() => setTab("D")}
-              className={`py-3 border rtl:rounded-r ltr:rounded-l border-[color:var(--color-three)] px-4 transition ${
-                tab === "D"
-                  ? "bg-[color:var(--color-three)] text-white"
-                  : "hover:bg-[color:var(--color-three)] hover:text-white"
-              }`}
+              className={`py-3 border rtl:rounded-r ltr:rounded-l border-[color:var(--color-three)] px-4 transition ${tab === "D"
+                ? "bg-[color:var(--color-three)] text-white"
+                : "hover:bg-[color:var(--color-three)] hover:text-white"
+                }`}
             >
               {t("productDetail.description")}
             </button>
             <button
               onClick={() => setTab("R")}
-              className={`py-3 px-4 border-y border-r border-[color:var(--color-three)] transition ${
-                tab === "R"
-                  ? "bg-[color:var(--color-three)] text-white"
-                  : "hover:bg-[color:var(--color-three)] hover:text-white"
-              }`}
+              className={`py-3 px-4 border-y border-r border-[color:var(--color-three)] transition ${tab === "R"
+                ? "bg-[color:var(--color-three)] text-white"
+                : "hover:bg-[color:var(--color-three)] hover:text-white"
+                }`}
             >
               {t("productDetail.returnPolicy")}
             </button>
             <button
               onClick={() => setTab("P")}
-              className={`py-3 px-4 border-y rtl:border-l border-r border-[color:var(--color-three)] rtl:rounded-l ltr:rounded-r transition ${
-                tab === "P"
-                  ? "bg-[color:var(--color-three)] text-white"
-                  : "hover:bg-[color:var(--color-three)] hover:text-white"
-              }`}
+              className={`py-3 px-4 border-y rtl:border-l border-r border-[color:var(--color-three)] rtl:rounded-l ltr:rounded-r transition ${tab === "P"
+                ? "bg-[color:var(--color-three)] text-white"
+                : "hover:bg-[color:var(--color-three)] hover:text-white"
+                }`}
             >
               {t("productDetail.paymentPolicy")}
             </button>
@@ -703,8 +700,8 @@ const ProductDetail = ({
                   (e) => e.productAttribute?.name === "P"
                 )?.value
                   ? product.attributes.find(
-                      (e) => e.productAttribute?.name === "P"
-                    )!.value!
+                    (e) => e.productAttribute?.name === "P"
+                  )!.value!
                   : paymentText,
               }}
             />
@@ -717,8 +714,8 @@ const ProductDetail = ({
                   (e) => e.productAttribute?.name === "R"
                 )?.value
                   ? product.attributes.find(
-                      (e) => e.productAttribute?.name === "R"
-                    )!.value!
+                    (e) => e.productAttribute?.name === "R"
+                  )!.value!
                   : returnText,
               }}
             />
@@ -739,8 +736,8 @@ const ProductDetail = ({
                   (e) => e.productAttribute?.name === "R"
                 )
                   ? product.attributes.find(
-                      (e) => e.productAttribute?.name === "R"
-                    )!.value!
+                    (e) => e.productAttribute?.name === "R"
+                  )!.value!
                   : returnText,
               }}
             />
@@ -753,8 +750,8 @@ const ProductDetail = ({
                   (e) => e.productAttribute?.name === "P"
                 )
                   ? product.attributes.find(
-                      (e) => e.productAttribute?.name === "P"
-                    )!.value!
+                    (e) => e.productAttribute?.name === "P"
+                  )!.value!
                   : paymentText,
               }}
             />

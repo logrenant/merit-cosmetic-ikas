@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { observer } from "mobx-react-lite";
-import ProductCard from "../composites/productcard";
-import { HomeproductsProps } from "../__generated__/types";
-import SimpleSlider from "../composites/simpleslider";
 import { Image } from "@ikas/storefront";
+import { observer } from "mobx-react-lite";
+import React, { useState, useRef, useEffect } from "react";
+
+import ProductCard from "../composites/productcard";
+import SimpleSlider from "../composites/simpleslider";
+import { HomeproductsProps } from "../__generated__/types";
 
 const HomeProducts: React.FC<HomeproductsProps> = ({
   products,
@@ -16,11 +17,10 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
   const [isVisible, setIsVisible] = useState(true);
   const [pxValue, setPxValue] = useState('150px');
 
-
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("categories", categories);  
+    console.log("categories", categories);
   }, [categories]);
 
   useEffect(() => {
@@ -51,36 +51,15 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
     };
   }, []);
 
-
-
   return (
     <div dir="ltr" className="TEST-PARENT my-10 layout relative" ref={ref} >
-
-      {isVisible && (<div className="relative w-full">
-
-        <div className={`absolute translate-y-[${pxValue}] translate-x-[-10px] left-0 w-12 h-12 rounded-full bg-slate-500 text-white opacity-30 z-50 flex items-center justify-center`}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-          </svg>
-        </div>
-
-        <div className="absolute translate-y-[150px] right-0 w-12 h-12 rounded-full bg-slate-500 text-white opacity-30 z-50 flex items-center justify-center">
-
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-          </svg>
-
-        </div>
-
-      </div>)}
-    
 
       {categories && (
         <div className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-6">
           <SimpleSlider
             keenOptions={{
               initial: 0,
-              loop: true,
+              loop: false,
               slides: {
                 perView: 2,
                 spacing: 10,
@@ -100,14 +79,12 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
                 },
               },
             }}
+
             items={products!.map((e) => (
               <div key={e.image.id} className="TEST-ITEMS-MAPPING-1 keen-slider__slide">
-                <p className="text-red-500 ">{e.image.id.slice(-5)} </p>
-
                 <div
                   onClick={() => {
                     console.log("e.image.id", e.image.id);
-
                     setSelectedProducts(e.image.id);
                   }}
                   className={`aspect-[216/91] cursor-pointer w-full relative ${selectedProducts === e.image.id
@@ -129,6 +106,7 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
           />
         </div>
       )}
+
       <div className="TEST-SECOND-SLIDER w-full">
         <SimpleSlider
           keenOptions={{
@@ -151,33 +129,24 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
           }}
           items={products
             ?.find((e) => {
-
               console.log("e.image.id", e.image.id, selectedProducts === e.image.id);
-
               e.products.data.forEach((prod) => {
                 console.log("prod.name", prod.name);
               })
-
               return e.image.id === selectedProducts
             })
             ?.products.data?.map((product) => {
-
               console.log("product.name", product.name);
-
-
-
               return (
                 <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
-                  <p className="text-blue-500 font-bold text-sm">{product.name.slice(0, 10)}</p>
+                  {/* <p className="text-blue-500 font-bold text-sm">{product.name.slice(0, 10)}</p> */}
                   <ProductCard product={product} />
                 </div>
               )
-            })
-
+            }) ?? []
           }
         />
       </div>
-
 
     </div>
   );
