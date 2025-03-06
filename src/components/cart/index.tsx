@@ -150,19 +150,21 @@ const BagItem: React.FC<{
             <span className="text-lg w-min whitespace-nowrap leading-none opacity-80 relative">
               <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
               <Pricedisplay
-                center={false}
                 amount={product.overridenPriceWithQuantity}
                 currencyCode={product.currencyCode || "USD"}
                 currencySymbol={product.currencySymbol || "$"}
+                center={false}
+                left={false}
               />
             </span>
           )}
           <span className="text-xl leading-none text-[color:var(--color-four)] font-medium">
             <Pricedisplay
-              center={false}
               amount={product.finalPriceWithQuantity}
               currencyCode={product.currencyCode || "USD"}
               currencySymbol={product.currencySymbol || "$"}
+              center={false}
+              left={false}
             />
           </span>
         </div>
@@ -170,6 +172,8 @@ const BagItem: React.FC<{
     </div>
   );
 };
+
+
 const Cart = observer(({ relatedProducts }: CartProps) => {
   const store = useStore();
   const shippingRulesCountryIds: string[] = [];
@@ -270,7 +274,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
           )}
         <div className="grid lg:grid-cols-[calc(100%-432px),400px] gap-8">
           {store?.cartStore?.cart?.itemCount &&
-          store?.cartStore?.cart?.itemCount > 0 ? (
+            store?.cartStore?.cart?.itemCount > 0 ? (
             <div className="grid h-min divide-y divide-[color:var(--gray-one)] grid-cols-1">
               {store.cartStore.cart?.items.map((product) => (
                 <BagItem
@@ -344,22 +348,18 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                         </span>
                       </button>
                       <span className="text-[color:var(--black-two)] text-lg font-light">
+
+                        {/* Shipping Cost */}
                         {currentShippingCost === 0 ? (
                           t("freeShipping")
                         ) : (
-                          <>
-                            <Pricedisplay
-                              left
-                              center={false}
-                              amount={currentShippingCost}
-                              currencyCode={
-                                store.cartStore.cart.currencyCode || "USD"
-                              }
-                              currencySymbol={
-                                store.cartStore.cart.currencySymbol || "$"
-                              }
-                            />
-                          </>
+                          <Pricedisplay
+                            amount={currentShippingCost}
+                            currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                            currencySymbol={store.cartStore.cart.currencySymbol || "$"}
+                            center={false}
+                            left
+                          />
                         )}
                       </span>
                     </div>
@@ -391,16 +391,13 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       {t("orderDetail.tax")}
                     </span>
                     <span className="text-[color:var(--black-two)] text-lg font-light">
+                      {/* Tax */}
                       <Pricedisplay
-                        left
-                        center={false}
                         amount={store.cartStore.cart.totalTax}
-                        currencyCode={
-                          store.cartStore.cart.currencyCode || "USD"
-                        }
-                        currencySymbol={
-                          store.cartStore.cart.currencySymbol || "$"
-                        }
+                        currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                        currencySymbol={store.cartStore.cart.currencySymbol || "$"}
+                        center={false}
+                        left
                       />
                     </span>
                   </div>
@@ -409,19 +406,17 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       {t("orderDetail.subtotal")}
                     </span>
                     <span className="text-[color:var(--black-two)] text-lg font-light">
+                      {/* Subtotal */}
                       <Pricedisplay
+                        amount={store.cartStore.cart.totalPrice}
+                        currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                        currencySymbol={store.cartStore.cart.currencySymbol || "$"}
                         center={false}
                         left
-                        amount={store.cartStore.cart.totalPrice}
-                        currencyCode={
-                          store.cartStore.cart.currencyCode || "USD"
-                        }
-                        currencySymbol={
-                          store.cartStore.cart.currencySymbol || "$"
-                        }
                       />
                     </span>
                   </div>
+                  {/* Discount */}
                   {!!store.cartStore.cart?.couponCode && (
                     <div className="flex items-center justify-between w-full">
                       <span className="text-[color:var(--black-two)] text-lg font-light">
@@ -429,18 +424,11 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       </span>
                       <span className="text-[color:var(--black-two)] text-lg font-light">
                         <Pricedisplay
+                          amount={store.cartStore.cart.totalPrice - store.cartStore.cart.totalFinalPrice}
+                          currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                          currencySymbol={store.cartStore.cart.currencySymbol || "$"}
                           center={false}
                           left
-                          amount={
-                            store.cartStore.cart.totalPrice -
-                            store.cartStore.cart.totalFinalPrice
-                          }
-                          currencyCode={
-                            store.cartStore.cart.currencyCode || "USD"
-                          }
-                          currencySymbol={
-                            store.cartStore.cart.currencySymbol || "$"
-                          }
                         />
                       </span>
                     </div>
@@ -450,34 +438,25 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       {t("total")}
                     </span>
                     <span className="text-[color:var(--black-two)] text-lg font-normal">
+
+                      {/* Total Cost */}
                       {currentShippingCost ? (
                         <>
                           <Pricedisplay
-                            left
+                            amount={store.cartStore.cart.totalFinalPrice + currentShippingCost}
+                            currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                            currencySymbol={store.cartStore.cart.currencySymbol || "$"}
                             center={false}
-                            amount={
-                              store.cartStore.cart.totalFinalPrice +
-                              currentShippingCost
-                            }
-                            currencyCode={
-                              store.cartStore.cart.currencyCode || "USD"
-                            }
-                            currencySymbol={
-                              store.cartStore.cart.currencySymbol || "$"
-                            }
+                            left
                           />
                         </>
                       ) : (
                         <Pricedisplay
-                          left
                           amount={store.cartStore.cart.totalFinalPrice}
+                          currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                          currencySymbol={store.cartStore.cart.currencySymbol || "$"}
                           center={false}
-                          currencyCode={
-                            store.cartStore.cart.currencyCode || "USD"
-                          }
-                          currencySymbol={
-                            store.cartStore.cart.currencySymbol || "$"
-                          }
+                          left
                         />
                       )}
                     </span>
