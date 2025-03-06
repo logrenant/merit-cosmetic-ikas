@@ -1,25 +1,36 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, action } from "mobx";
 
 export default class UIStore {
   private static _instance: UIStore;
   searchKeyword = "";
   direction = "ltr";
   currency = "USD";
-  maxQuantityPerCartProductErrorModal: {
-    visible: boolean;
-    productName: string;
-  } = {
+  maxQuantityPerCartProductErrorModal = {
     visible: false,
     productName: "",
   };
 
-  private constructor() {
-    makeAutoObservable(this);
+  constructor() {
+    makeAutoObservable(this, {
+      setCurrency: action,
+      setDirection: action,
+    });
   }
 
   static getInstance() {
-    if (this._instance) return this._instance;
-    this._instance = new UIStore();
+    if (!this._instance) {
+      this._instance = new UIStore();
+    }
     return this._instance;
   }
+
+  // Yeni para birimi ayarlama methodu
+  setCurrency = (newCurrency: string) => {
+    this.currency = newCurrency;
+  };
+
+  // Dil yönü ayarlama methodu
+  setDirection = (newDirection: "ltr" | "rtl") => {
+    this.direction = newDirection;
+  };
 }

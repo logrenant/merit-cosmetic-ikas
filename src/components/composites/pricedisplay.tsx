@@ -19,9 +19,8 @@ const Pricedisplay = ({
   const uiStore = UIStore.getInstance();
   return (
     <span
-      className={`flex items-center gap-x-1.5 whitespace-nowrap flex-wrap ${
-        center ? "justify-center" : ""
-      } ${left ? "flex-row-reverse justify-end" : ""}`}
+      className={`flex items-center gap-x-1.5 whitespace-nowrap flex-wrap ${center ? "justify-center" : ""
+        } ${left ? "flex-row-reverse justify-end" : ""}`}
     >
       {formatCurrency(amount, currencyCode, currencySymbol)}
       {uiStore.currency !== "USD" && (
