@@ -11,6 +11,7 @@ import "keen-slider/keen-slider.min.css";
 interface SimpleSliderProps {
   keenOptions: KeenSliderOptions;
   items: ReactNode[];
+  showPagination?: boolean;
 }
 
 const MutationPlugin = (slider: KeenSliderInstance) => {
@@ -31,8 +32,11 @@ const MutationPlugin = (slider: KeenSliderInstance) => {
   });
 };
 
-
-const SimpleSlider: React.FC<SimpleSliderProps> = ({ keenOptions, items }) => {
+const SimpleSlider: React.FC<SimpleSliderProps> = ({
+  keenOptions,
+  items,
+  showPagination = true
+}) => {
   const [created, setCreated] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
@@ -54,7 +58,6 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({ keenOptions, items }) => {
       ? Math.ceil(instanceRef.current.track.details.slides.length / perView) - 1
       : instanceRef.current?.track.details.slides.length || 0;
 
-
   return (
     <section className="relative">
       <div
@@ -66,13 +69,15 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({ keenOptions, items }) => {
       </div>
 
       {/* Pagination Dots */}
-      {created && instanceRef.current && (
+      {showPagination && created && instanceRef.current && (
         <div className="dots flex justify-center mt-4">
           {Array.from({ length: totalSlides }).map((_, idx) => (
             <button
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
-              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx ? "bg-[color:var(--color-one)]" : "bg-gray-300"
+              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx
+                ? "bg-[color:var(--color-one)]"
+                : "bg-gray-300"
                 }`}
             />
           ))}
