@@ -1,5 +1,6 @@
 import { Image } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
+import { useKeenSlider } from "keen-slider/react";
 import React, { useState, useRef, useEffect } from "react";
 
 import ProductCard from "../composites/productcard";
@@ -13,6 +14,41 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
   const [selectedProducts, setSelectedProducts] = useState(
     products![0].image.id
   );
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [maxSlide, setMaxSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
+      setMaxSlide(s.track.details.maxIdx);
+    },
+    created(s) {
+      setLoaded(true);
+      setMaxSlide(s.track.details.maxIdx);
+    },
+    slides: {
+      perView: 2,
+      spacing: 10,
+    }, renderMode: "precision",
+
+    breakpoints: {
+      "(min-width: 568px)": {
+        slides: { perView: 3, spacing: 16 },
+      },
+      "(min-width: 768px)": {
+        slides: { perView: 4, spacing: 16 },
+      },
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 5,
+          spacing: 16,
+        },
+      },
+    },
+  });
 
   const [isVisible, setIsVisible] = useState(true);
   const [pxValue, setPxValue] = useState('150px');
@@ -55,15 +91,17 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
     <div dir="ltr" className="TEST-PARENT my-10 layout relative" ref={ref} >
 
       {categories && (
-        <div className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-6">
+        <div ref={sliderRef} className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-6">
           <SimpleSlider
+            showPagination={false}
             keenOptions={{
               initial: 0,
               loop: false,
               slides: {
                 perView: 2,
                 spacing: 10,
-              },
+              }, renderMode: "precision",
+
               breakpoints: {
                 "(min-width: 568px)": {
                   slides: { perView: 3, spacing: 16 },
@@ -104,6 +142,49 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
               </div>
             ))}
           />
+          {loaded && slider.current && (
+            <div className="flex flex-row w-full gap-2">
+              <button
+                onClick={() => slider.current?.prev()}
+                className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
+                  }`}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={() => slider.current?.next()}
+                className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === maxSlide ? "opacity-0 cursor-not-allowed" : ""
+                  }`}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       )}
 

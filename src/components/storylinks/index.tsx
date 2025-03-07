@@ -7,19 +7,14 @@ import "keen-slider/keen-slider.min.css";
 import { StorylinksProps } from "../__generated__/types";
 
 const StoryLinks = ({ items }: StorylinksProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [maxSlide, setMaxSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(s) {
-      setCurrentSlide(s.track.details.rel);
-      setMaxSlide(s.track.details.maxIdx);
     },
     created(s) {
       setLoaded(true);
-      setMaxSlide(s.track.details.maxIdx);
     },
     slides: {
       perView: "auto",
@@ -28,31 +23,7 @@ const StoryLinks = ({ items }: StorylinksProps) => {
   });
 
   return (
-    <div className="relative mt-6 layout flex flex-row items-center justify-between gap-2 lg:gap-6">
-      {/* Left Navigation Arrow */}
-      {loaded && slider.current && (
-        <>
-          <button
-            onClick={() => slider.current?.prev()}
-            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--color-one)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
-              }`}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-        </>
-      )}
+    <div className="relative mt-6 layout flex flex-col items-center justify-between gap-2 lg:gap-6">
 
       {/* Slider Container */}
       <div ref={sliderRef} className="keen-slider">
@@ -82,11 +53,29 @@ const StoryLinks = ({ items }: StorylinksProps) => {
 
       {/* Navigation Arrows */}
       {loaded && slider.current && (
-        <>
+        <div className="flex flex-row w-full gap-2">
+          <button
+            onClick={() => slider.current?.prev()}
+            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200`}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
           <button
             onClick={() => slider.current?.next()}
-            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--color-one)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === maxSlide ? "opacity-0 cursor-not-allowed" : ""
-              }`}
+            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200`}
           >
             <svg
               className="w-6 h-6"
@@ -102,7 +91,8 @@ const StoryLinks = ({ items }: StorylinksProps) => {
               />
             </svg>
           </button>
-        </>
+
+        </div>
       )}
     </div>
   );
