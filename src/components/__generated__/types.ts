@@ -8,8 +8,9 @@ import {
 } from "@ikas/storefront"
 
 export type BannerLink = { 
-	link: IkasNavigationLink;
 	image: IkasImage;
+	mobile_image: IkasImage;
+	link: IkasNavigationLink;
 };
 
 export type Banner = { 
