@@ -1,38 +1,29 @@
-import { observer } from "mobx-react-lite";
-import { useState } from "react";
-import { ContactForm, useStore, useTranslation } from "@ikas/storefront";
-import { useDirection } from "../../utils/useDirection";
+import { useEffect } from "react";
 import { toast } from "react-hot-toast";
+import { observer } from "mobx-react-lite";
+import { useTranslation } from "@ikas/storefront";
+
+import useContact from "./useContact";
+import { useDirection } from "../../utils/useDirection";
 
 const ContactPage = () => {
-  const store = useStore();
-  const [pending, setPending] = useState(false);
   const { direction } = useDirection();
   const { t } = useTranslation();
-  const [contactForm] = useState(
-    new ContactForm({
-      message: {
-        requiredRule: t("requiredError"),
-        emailRule: t("validEmailError"),
-        minRule: t("passwordLength"),
-      },
-    })
-  );
+  const {
+    isPending,
+    status,
+    form,
+    onFormSubmit,
+    formAlert,
+    onFormAlertClose,
+  } = useContact();
 
-  const onSubmit = async () => {
-    try {
-      setPending(true);
-      const result = await contactForm.saveContactForm();
-      if (result.isFormError) return;
-      if (!result.isSuccess) return;
-      toast.success(t("contactFormSuccess"));
-      store.router?.push("/");
-    } catch (error) {
-      toast.error(t("errorActionMessage"));
-    } finally {
-      setPending(false);
+  useEffect(() => {
+    if (formAlert) {
+      toast[formAlert.status](formAlert.text);
+      onFormAlertClose();
     }
-  };
+  }, [formAlert, onFormAlertClose]);
 
   return (
     <div className="layout my-10" dir={direction}>
@@ -42,6 +33,7 @@ const ContactPage = () => {
         </h1>
       </div>
       <div className="lg:grid-cols-[280px,1fr] mx-auto max-w-4xl mt-8 grid gap-4 w-full grid-cols-1">
+        {/* İletişim Bilgileri */}
         <div className="flex flex-col gap-2">
           <div className="grid grid-cols-[20px,1fr] items-center gap-2">
             <svg
@@ -77,7 +69,6 @@ const ContactPage = () => {
                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
               />
             </svg>
-
             <div className="text-[color:var(--black-one)] text-base font-light">
               contact@meletiorient.com
             </div>
@@ -102,16 +93,17 @@ const ContactPage = () => {
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
               />
             </svg>
-
             <div className="text-[color:var(--black-one)] text-base font-light">
               Besiki Business Center, Besiki 4, 0108, Tbilisi / GEORGIA
             </div>
           </div>
         </div>
+
+        {/* İletişim Formu */}
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            await onSubmit();
+            await onFormSubmit();
           }}
           className="flex w-full flex-col gap-3"
         >
@@ -121,105 +113,95 @@ const ContactPage = () => {
             </label>
             <input
               type="text"
-              value={contactForm.firstName}
-              onChange={(e) => {
-                contactForm.onFirstNameChange(e.target.value);
-              }}
+              value={form.firstName}
+              onChange={(e) => form.onFirstNameChange(e.target.value)}
               placeholder={t("firstName")}
               className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
             />
-
-            {contactForm.firstNameErrorMessage && (
+            {status.firstname && (
               <span className="text-red-500 mt-0.5 text-xs">
-                {contactForm.firstNameErrorMessage}
+                {form.firstNameErrorMessage}
               </span>
             )}
           </div>
+
           <div className="flex flex-col w-full">
             <label className="text-base text-[color:var(--black-one)] mb-0.5">
               {t("lastName")}
             </label>
             <input
               type="text"
-              value={contactForm.lastName}
-              onChange={(e) => {
-                contactForm.onLastNameChange(e.target.value);
-              }}
+              value={form.lastName}
+              onChange={(e) => form.onLastNameChange(e.target.value)}
               placeholder={t("lastName")}
               className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
             />
-
-            {contactForm.lastNameErrorMessage && (
+            {status.lastname && (
               <span className="text-red-500 mt-0.5 text-xs">
-                {contactForm.lastNameErrorMessage}
+                {form.lastNameErrorMessage}
               </span>
             )}
           </div>
+
           <div className="flex flex-col w-full">
             <label className="text-base text-[color:var(--black-one)] mb-0.5">
               {t("email")}
             </label>
             <input
               type="text"
-              value={contactForm.email}
-              onChange={(e) => {
-                contactForm.onEmailChange(e.target.value);
-              }}
+              value={form.email}
+              onChange={(e) => form.onEmailChange(e.target.value)}
               placeholder={t("email")}
               className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
             />
-
-            {contactForm.emailErrorMessage && (
+            {status.email && (
               <span className="text-red-500 mt-0.5 text-xs">
-                {contactForm.emailErrorMessage}
+                {form.emailErrorMessage}
               </span>
             )}
           </div>
+
           <div className="flex flex-col w-full">
             <label className="text-base text-[color:var(--black-one)] mb-0.5">
               {t("phoneNumber")}
             </label>
             <input
               type="text"
-              value={contactForm.phone || ""}
-              onChange={(e) => {
-                contactForm.onPhoneChange(e.target.value);
-              }}
+              value={form.phone || ""}
+              onChange={(e) => form.onPhoneChange(e.target.value)}
               placeholder={t("phoneNumber")}
               className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
             />
-
-            {contactForm.phoneErrorMessage && (
+            {status.phone && (
               <span className="text-red-500 mt-0.5 text-xs">
-                {contactForm.phoneErrorMessage}
+                {form.phoneErrorMessage}
               </span>
             )}
           </div>
+
           <div className="flex flex-col w-full">
             <label className="text-base text-[color:var(--black-one)] mb-0.5">
               {t("message")}
             </label>
             <textarea
-              value={contactForm.message}
-              onChange={(e) => {
-                contactForm.onMessageChange(e.target.value);
-              }}
+              value={form.message}
+              onChange={(e) => form.onMessageChange(e.target.value)}
               placeholder={t("message")}
               className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
             />
-
-            {contactForm.messageErrorMessage && (
+            {status.message && (
               <span className="text-red-500 mt-0.5 text-xs">
-                {contactForm.messageErrorMessage}
+                {form.messageErrorMessage}
               </span>
             )}
           </div>
+
           <button
-            disabled={pending}
+            disabled={isPending}
             className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
             type="submit"
           >
-            {pending ? t("loading") : t("Submit")}
+            {isPending ? t("loading") : t("Submit")}
           </button>
         </form>
       </div>
