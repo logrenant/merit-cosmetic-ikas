@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Image, Link } from "@ikas/storefront";
-import { BannerProps } from "../__generated__/types";
-import { useKeenSlider } from "keen-slider/react";
 import { KeenSliderInstance } from "keen-slider";
-import { useState } from "react";
+import { useKeenSlider } from "keen-slider/react";
+
+import breakpoints from "src/styles/breakpoints";
+import { BannerProps } from "../__generated__/types";
+import { useScreen } from "src/utils/hooks/useScreen";
 
 const AutoPlay = (slider: KeenSliderInstance) => {
   let timeout: ReturnType<typeof setTimeout>;
@@ -33,7 +36,12 @@ const AutoPlay = (slider: KeenSliderInstance) => {
   slider.on("animationEnded", nextTimeout);
   slider.on("updated", nextTimeout);
 };
+
+export const imageSizes = `(max-width: ${breakpoints.xxl}) 100vw, ${breakpoints.xxl}`;
+
 const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
+  const { isMobile } = useScreen();
+
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
