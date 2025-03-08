@@ -94,11 +94,11 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
         <div ref={sliderRef} className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-6">
           <SimpleSlider
             showPagination={false}
+            showNavigation={true}
             keenOptions={{
               initial: 0,
               loop: false,
               slides: {
-                perView: 2,
                 spacing: 10,
               }, renderMode: "precision",
 
