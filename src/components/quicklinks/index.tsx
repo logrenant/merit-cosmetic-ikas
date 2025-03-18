@@ -34,7 +34,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`text-[color:var(--color-one)] ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
+            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -83,7 +83,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
         <>
           <button
             onClick={() => slider.current?.next()}
-            className={`text-[color:var(--color-one)] ${currentSlide === maxSlide ? "opacity-0 cursor-not-allowed" : ""
+            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === maxSlide ? "opacity-0 cursor-not-allowed" : ""
               }`}
           >
             <svg
