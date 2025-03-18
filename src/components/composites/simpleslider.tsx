@@ -88,41 +88,18 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
   const totalSlides = instanceRef.current?.track.details.slides.length || 0;
 
   return (
-    <section className="relative">
-      <div
-        ref={sliderRef}
-        style={{ opacity: created ? 1 : 0 }}
-        className="keen-slider w-full overflow-hidden"
-      >
-        {items}
-      </div>
+    <section className="relative ">
+      <div className=" flex flex-row">
 
-      {/* Pagination Dots */}
-      {showPagination && created && instanceRef.current && showDots && (
-        <div className="dots flex justify-center mt-4">
-          {Array.from({ length: totalSlides }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => instanceRef.current?.moveToIdx(idx)}
-              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx
-                ? "bg-[color:var(--color-one)]"
-                : "bg-gray-300"
-                }`}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Navigation Arrows */}
-      {showNavigation && created && instanceRef.current && (
-        <div className="flex flex-row w-full gap-2">
+        {/* Left Button */}
+        {showNavigation && created && instanceRef.current && (
           <button
             onClick={() => instanceRef.current?.prev()}
-            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
+            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
               }`}
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -135,14 +112,25 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
               />
             </svg>
           </button>
+        )}
 
+        <div
+          ref={sliderRef}
+          style={{ opacity: created ? 1 : 0 }}
+          className="keen-slider w-full overflow-hidden"
+        >
+          {items}
+        </div>
+
+        {/* Right Button */}
+        {showNavigation && created && instanceRef.current && (
           <button
             onClick={() => instanceRef.current?.next()}
-            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === arrowMaxSlide ? "opacity-0 cursor-not-allowed" : ""
+            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === arrowMaxSlide ? "opacity-0 cursor-not-allowed" : ""
               }`}
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -155,6 +143,23 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
               />
             </svg>
           </button>
+        )}
+      </div>
+
+
+      {/* Pagination Dots */}
+      {showPagination && created && instanceRef.current && showDots && (
+        <div className="dots flex justify-center mt-4">
+          {Array.from({ length: totalSlides }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => instanceRef.current?.moveToIdx(idx)}
+              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx
+                ? "bg-[color:var(--color-four)]"
+                : "bg-[color:var(--color-one)]"
+                }`}
+            />
+          ))}
         </div>
       )}
     </section>

@@ -23,7 +23,29 @@ const StoryLinks = ({ items }: StorylinksProps) => {
   });
 
   return (
-    <div className="relative mt-6 layout flex flex-col items-center justify-between gap-2 lg:gap-6">
+    <div className="relative mt-6 layout flex flex-row items-center w-full">
+
+      {/* Left Arrow */}
+      {loaded && slider.current && (
+        <button
+          onClick={() => slider.current?.prev()}
+          className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+      )}
 
       {/* Slider Container */}
       <div ref={sliderRef} className="keen-slider">
@@ -51,48 +73,26 @@ const StoryLinks = ({ items }: StorylinksProps) => {
         ))}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Right Arrow */}
       {loaded && slider.current && (
-        <div className="flex flex-row w-full gap-2">
-          <button
-            onClick={() => slider.current?.prev()}
-            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200`}
+        <button
+          onClick={() => slider.current?.next()}
+          className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <button
-            onClick={() => slider.current?.next()}
-            className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200`}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       )}
     </div>
   );
