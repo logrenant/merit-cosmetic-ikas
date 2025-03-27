@@ -142,7 +142,7 @@ const ProductDetail = ({
   return (
     <div
       dir={direction}
-      className="mb-10 mt-6 text-[color:var(--black-two)] layout grid grid-cols-[100%] lg:grid-cols-[calc(100%-292px),260px] gap-8"
+      className="mb-10 mt-6 text-[color:var(--black-two)] layout grid grid-cols-[100%] lg:grid-cols-[calc(100%-292px)_260px] gap-8"
     >
       {allImages && modalImage && allImages.length > 0 && (
         <Imagemodal
@@ -223,13 +223,13 @@ const ProductDetail = ({
 
       </div>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.95fr),minmax(0,1.05fr)] gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-8">
 
           {/* Image Gallery */}
           <div className="md:block xhidden">
             <div
               onClick={() => setModalImage(true)}
-              className="aspect-[293/372] cursor-zoom-in relative w-full overflow-hidden"
+              className="aspect-293/372 cursor-zoom-in relative w-full overflow-hidden"
             >
               <button
                 disabled={pending}
@@ -272,7 +272,7 @@ const ProductDetail = ({
                 <div
                   key={image.id + "image2"}
                   onClick={() => setSelectedImage(image!)}
-                  className={`aspect-[293/372] cursor-pointer border max-w-[65px] lg:max-w-[80px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
+                  className={`aspect-293/372 cursor-pointer border max-w-[65px] lg:max-w-[80px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
                     ? "border-[color:var(--color-three)]"
                     : "border-transparent hover:border-[color:var(--gray-three)]"
                     }`}
@@ -303,7 +303,7 @@ const ProductDetail = ({
                 }}
                 items={allImages?.map((image) => (
                   <div key={image.id + "image3"} className="keen-slider__slide">
-                    <div className="aspect-[293/372] relative w-full overflow-hidden">
+                    <div className="aspect-293/372 relative w-full overflow-hidden">
                       <Image
                         id="xx-slider-image"
                         image={image!}
@@ -323,7 +323,7 @@ const ProductDetail = ({
             <div className="flex flex-col gap-4 mt-4">
               <div className="flex items-center gap-2">
                 {!!product.selectedVariant?.price?.discountPercentage && (
-                  <div className="w-14 h-14 rounded text-xl flex items-center justify-center leading-none bg-[color:var(--color-two)] text-white">
+                  <div className="w-14 h-14 rounded-sm text-xl flex items-center justify-center leading-none bg-[color:var(--color-two)] text-white">
                     %{product.selectedVariant?.price?.discountPercentage}
                   </div>
                 )}
@@ -424,7 +424,7 @@ const ProductDetail = ({
                     onClick={() => {
                       setQuantity((prev) => (prev - 1 > 1 ? prev - 1 : 1));
                     }}
-                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded h-11 bg-[color:var(--color-three)] text-white items-center justify-center"
+                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -448,7 +448,7 @@ const ProductDetail = ({
                     onClick={() => {
                       setQuantity((prev) => (prev + 1 < 11 ? prev + 1 : 10));
                     }}
-                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded h-11 bg-[color:var(--color-three)] text-white items-center justify-center"
+                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -468,7 +468,7 @@ const ProductDetail = ({
                 <button
                   disabled={loading || !product.isAddToCartEnabled}
                   onClick={() => addToCart(product, quantity)}
-                  className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded py-2.5 px-5"
+                  className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
                 >
                   {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
                 </button>
@@ -490,9 +490,9 @@ const ProductDetail = ({
                     key={e.id + "combine"}
                     className="flex md:flex-row flex-col border border-[color:var(--gray-six)]"
                   >
-                    <div className="grid gap-4 w-full max-w-[550px] md:gap-8 p-6 grid-cols-[1fr,60px,1fr]">
+                    <div className="grid gap-4 w-full max-w-[550px] md:gap-8 p-6 grid-cols-[1fr_60px_1fr]">
                       <div className="flex border border-transparent w-full flex-col">
-                        <div className="relative rounded aspect-[293/372] w-full overflow-hidden">
+                        <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
                           <Image
                             image={allImages[0]}
                             alt={allImages[0]?.altText || ""}
@@ -547,7 +547,7 @@ const ProductDetail = ({
                         <a
                           href={e.href}
                           target="_blank"
-                          className="relative rounded aspect-[293/372] w-full overflow-hidden"
+                          className="relative rounded-sm aspect-293/372 w-full overflow-hidden"
                         >
                           <Image
                             image={e.selectedVariant.mainImage?.image!}
@@ -616,7 +616,7 @@ const ProductDetail = ({
                           e.isAddToCartEnabled ||
                           product.isAddToCartEnabled
                         }
-                        className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 whitespace-nowrap w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded py-2.5 px-5"
+                        className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 whitespace-nowrap w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
                       >
                         {product.isAddToCartEnabled
                           ? t("productDetail.addBasketTogether")
@@ -630,17 +630,17 @@ const ProductDetail = ({
         )}
       </div>
       <div>
-        <div className="flex border border-[color:var(--gray-two)] rounded px-5 py-6 flex-col items-center">
+        <div className="flex border border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col items-center">
           <h2 className="text-xl  text-[color:var(--color-three)] font-light">
             {product.brand?.name}
           </h2>
           <Link href={product.brand?.href || ""}>
-            <a className="text-sm px-4 py-2.5 mt-2 text-[color:var(--color-three)] border border-[color:var(--color-three)] rounded">
+            <a className="text-sm px-4 py-2.5 mt-2 text-[color:var(--color-three)] border border-[color:var(--color-three)] rounded-sm">
               {t("productDetail.allProductsInBrand")}
             </a>
           </Link>
         </div>
-        <div className="flex border gap-3 mt-6 border-[color:var(--gray-two)] rounded px-5 py-6 flex-col">
+        <div className="flex border gap-3 mt-6 border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col">
           {boxdata.items.map((e) => (
             <div key={e.header + "head"}>
               <h2 className="font-medium">{e.header}</h2>
@@ -698,13 +698,13 @@ const ProductDetail = ({
           </div>
           {tab === "D" && (
             <div
-              className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
+              className="prose marker:text-[color:var(--rich-color)] prose-ul:rtl:pr-3 prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:#374151] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
           )}
           {tab === "P" && (
             <div
-              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:var(--black-two)] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
+              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
               dangerouslySetInnerHTML={{
                 __html: product.attributes.find(
                   (e) => e.productAttribute?.name === "P"
@@ -718,7 +718,7 @@ const ProductDetail = ({
           )}
           {tab === "R" && (
             <div
-              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:var(--black-two)] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
+              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
               dangerouslySetInnerHTML={{
                 __html: product.attributes.find(
                   (e) => e.productAttribute?.name === "R"
@@ -734,13 +734,13 @@ const ProductDetail = ({
         <div className="mt-8 border-t border-[color:var(--gray-six)] md:hidden block">
           <Accordion title={t("productDetail.description")}>
             <div
-              className="prose prose-table:overflow-hidden rtl:prose-ul:pr-3 prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:var(--black-two)] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
+              className="prose prose-table:overflow-hidden prose-ul:rtl:pr-3 prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
           </Accordion>
           <Accordion title={t("productDetail.returnPolicy")}>
             <div
-              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:var(--black-two)] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
+              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
               dangerouslySetInnerHTML={{
                 __html: product.attributes.find(
                   (e) => e.productAttribute?.name === "R"
@@ -754,7 +754,7 @@ const ProductDetail = ({
           </Accordion>
           <Accordion title={t("productDetail.paymentPolicy")}>
             <div
-              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:var(--black-two)] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
+              className="prose prose-table:overflow-hidden prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
               dangerouslySetInnerHTML={{
                 __html: product.attributes.find(
                   (e) => e.productAttribute?.name === "P"
@@ -847,9 +847,9 @@ const ProductDetail = ({
               {t("productDetail.comments")}
             </div>
             <div className="flex flex-col w-full">
-              <div className="grid md:grid-cols-[calc(100%-224px),200px] gap-6">
+              <div className="grid md:grid-cols-[calc(100%-224px)_200px] gap-6">
                 <div className="flex">
-                  <div className="flex min-w-[120px] w-[120px] rounded h-min items-center justify-center flex-col p-[3px] bg-[color:var(--color-one)] text-white">
+                  <div className="flex min-w-[120px] w-[120px] rounded-sm h-min items-center justify-center flex-col p-[3px] bg-[color:var(--color-one)] text-white">
                     <div className="flex w-full py-5 bg-[color:var(--bg-color)] text-[color:var(--color-one)] items-center text-5xl justify-center">
                       {product.averageRating
                         ? product.averageRating?.toFixed(1)
@@ -914,7 +914,7 @@ const ProductDetail = ({
                             onClick={() => {
                               e();
                             }}
-                            className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded py-2 px-5"
+                            className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5"
                             type="button"
                           >
                             {t("productDetail.writeComment")}
@@ -936,7 +936,7 @@ const ProductDetail = ({
                 {reviews.data.map((comment) => (
                   <div
                     key={comment.id + "comment"}
-                    className="w-full border-b border-[color:var(--gray-one)] pb-6 mb-6 grid md:grid-cols-[115px,1fr,130px] gap-2 md:gap-8"
+                    className="w-full border-b border-[color:var(--gray-one)] pb-6 mb-6 grid md:grid-cols-[115px_1fr_130px] gap-2 md:gap-8"
                   >
                     <div className="flex flex-col items-start md:items-center text-center text-base">
                       <Rating
@@ -965,7 +965,7 @@ const ProductDetail = ({
                   onClick={() => {
                     reviews.getNext();
                   }}
-                  className="disabled:opacity-60 w-min whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded py-2 px-5"
+                  className="disabled:opacity-60 w-min whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5"
                 >
                   {t("productDetail.moreComments")}
                 </button>

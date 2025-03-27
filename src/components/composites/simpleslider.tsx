@@ -154,7 +154,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
             <button
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
-              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx
+              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-hidden ${currentSlide === idx
                 ? "bg-[color:var(--color-four)]"
                 : "bg-[color:var(--color-one)]"
                 }`}

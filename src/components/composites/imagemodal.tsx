@@ -68,7 +68,7 @@ const ImageModal = ({
       <div className="flex w-full items-center justify-center h-full p-10">
         <div
           ref={ref}
-          className="relative max-w-4xl bg-[color:var(--bg-color)] rounded overflow-hidden h-full w-full flex items-center justify-center"
+          className="relative max-w-4xl bg-[color:var(--bg-color)] rounded-sm overflow-hidden h-full w-full flex items-center justify-center"
         >
           {images.length > 1 && (
             <button

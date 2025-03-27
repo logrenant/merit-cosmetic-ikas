@@ -46,7 +46,7 @@ const AccountButton = () => {
           </span>
         </button>
         {open && (
-          <div className="absolute z-50 right-0 top-[28px] rounded overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
+          <div className="absolute z-50 right-0 top-[28px] rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
             <div className="flex flex-col divide-y divide-[color:var(--gray-one)]">
               <button
                 onClick={() => {

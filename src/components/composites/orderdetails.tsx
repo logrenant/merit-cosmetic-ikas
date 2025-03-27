@@ -70,7 +70,7 @@ const RefundProcessButton = ({
   const { t } = useTranslation();
   return (
     <button
-      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
       disabled={disabled}
       onClick={onClick}
     >
@@ -131,7 +131,7 @@ const OrderPackage = observer(
         <div className="grid divide-y divide-[color:var(--gray-six)] grid-cols-1 mt-3">
           {orderLineItems.map((item) => (
             <div key={item.id} className="flex py-4">
-              <div className="relative rounded aspect-[293/372] w-full overflow-hidden min-w-[130px] max-w-[130px]">
+              <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden min-w-[130px] max-w-[130px]">
                 <Image
                   image={item.variant.mainImage!}
                   alt={item.variant.mainImage?.altText || ""}
@@ -235,7 +235,7 @@ const OrderDetail = () => {
       {isRefundProcess && <Orderrefund order={order} />}
       {!isRefundProcess && (
         <>
-          <div className="grid gap-8 lg:grid-cols-[calc(100%-342px),310px]">
+          <div className="grid gap-8 lg:grid-cols-[calc(100%-342px)_310px]">
             <div className="flex flex-col gap-4">
               {order.displayedPackages?.map((orderPackage) => {
                 const orderLineItems = orderPackage.getOrderLineItems(order);

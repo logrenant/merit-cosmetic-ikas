@@ -73,11 +73,11 @@ function CommentModal({
       {trigger(() => setShowModal(true))}
       {showModal ? (
         <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-hidden focus:outline-hidden">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               <div
                 ref={ref}
-                className="border-0 p-6 gap-3 rounded shadow-lg relative flex md:min-w-[560px] flex-col w-full bg-[color:var(--bg-color)] outline-none focus:outline-none"
+                className="border-0 p-6 gap-3 rounded-sm shadow-lg relative flex md:min-w-[560px] flex-col w-full bg-[color:var(--bg-color)] outline-hidden focus:outline-hidden"
               >
                 <div className="flex flex-col w-full">
                   <label className="text-base text-[color:var(--black-one)] mb-0.5">
@@ -93,7 +93,7 @@ function CommentModal({
                       });
                     }}
                     placeholder={t("title")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {commentFormErrors.title && (
@@ -138,7 +138,7 @@ function CommentModal({
                       });
                     }}
                     placeholder={t("commentPlaceholder")}
-                    className="w-full resize-none h-[220px] border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full resize-none h-[220px] border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {commentFormErrors.comment && (
@@ -169,7 +169,7 @@ function CommentModal({
                       });
                     }
                   }}
-                  className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded py-2.5 px-5"
+                  className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
                 >
                   {t("send")}
                 </button>

@@ -83,7 +83,7 @@ const MobileMenu = ({
   };
   return (
     <Transition
-      className="fixed overflow-hidden z-[99] inset-0"
+      className="fixed overflow-hidden z-99 inset-0"
       as="div"
       show={open}
     >
@@ -97,7 +97,7 @@ const MobileMenu = ({
         as="div"
         className="w-full flex p-5 flex-col min-h-screen left-0 absolute overflow-y-auto bg-[color:var(--bg-color)] h-full"
       >
-        <div className="grid gap-3 lg:gap-8 pb-3.5 grid-cols-[180px,1fr]">
+        <div className="grid gap-3 lg:gap-8 pb-3.5 grid-cols-[180px_1fr]">
           <div className="flex items-center">
             <button
               onClick={(e) => setOpen(false)}
@@ -151,7 +151,7 @@ const MobileMenu = ({
         </div>
         <div className="w-full text-[color:var(--black-two)] flex flex-col items-start">
           {previousStack?.length ? (
-            <div className="w-full border-y px-1 py-1.5 border-[color:var(--black-two)] grid grid-cols-[100px,1fr] items-center">
+            <div className="w-full border-y px-1 py-1.5 border-[color:var(--black-two)] grid grid-cols-[100px_1fr] items-center">
               <button
                 className="flex rtl:border-l ltr:border-r border-[color:var(--black-two)] items-center w-full"
                 onClick={(e) => {

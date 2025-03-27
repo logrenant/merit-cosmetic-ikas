@@ -79,7 +79,7 @@ const BellButton = ({
         </svg>
       </button>
       {openBell && (
-        <div ref={ref} className="absolute w-[250px] z-[51] rtl:left-0 ltr:-right-8 top-[37px] rounded overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
+        <div ref={ref} className="absolute w-[250px] z-51 rtl:left-0 ltr:-right-8 top-[37px] rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
           <h3 className="text-sm  text-center bg-[color:var(--color-one)] px-4 py-1.5 text-white">
             {t("monthlyFavorite")}
           </h3>
@@ -105,8 +105,8 @@ const BellButton = ({
                       : product?.selectedVariant?.mainImage?.image!;
                   return (
                     <Link key={product.id} href={product.href}>
-                      <a className="grid gap-1 px-2 py-3 grid-cols-[70px,1fr] w-full">
-                        <div className="relative rounded aspect-[293/372] max-w-[60px] w-full overflow-hidden">
+                      <a className="grid gap-1 px-2 py-3 grid-cols-[70px_1fr] w-full">
+                        <div className="relative rounded-sm aspect-293/372 max-w-[60px] w-full overflow-hidden">
                           <Image
                             alt={product.name}
                             useBlur

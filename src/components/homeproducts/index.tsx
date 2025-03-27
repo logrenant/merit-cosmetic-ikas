@@ -125,9 +125,9 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
                     console.log("e.image.id", e.image.id);
                     setSelectedProducts(e.image.id);
                   }}
-                  className={`aspect-[216/91] cursor-pointer w-full relative ${selectedProducts === e.image.id
-                    ? "EQUAL-TEST-HERE border-4 border-[color:var(--quick-color)] rounded"
-                    : "NOT-EQUAL-TEST-HERE hover:border-4 border-[color:var(--quick-color)] hover:rounded"
+                  className={`aspect-216/91 cursor-pointer w-full relative ${selectedProducts === e.image.id
+                    ? "EQUAL-TEST-HERE border-4 border-[color:var(--quick-color)] rounded-sm"
+                    : "NOT-EQUAL-TEST-HERE hover:border-4 border-[color:var(--quick-color)] hover:rounded-sm"
                     }`}
                 >
                   <Image

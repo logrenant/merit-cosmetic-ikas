@@ -40,7 +40,7 @@ const Address = () => {
                 (address, index) => (
                   <div
                     key={address.id}
-                    className="grid text-[color:var(--black-two)] grid-cols-[calc(100%-40px),24px] gap-4 border p-4 border-[color:var(--black-one)] rounded"
+                    className="grid text-[color:var(--black-two)] grid-cols-[calc(100%-40px)_24px] gap-4 border p-4 border-[color:var(--black-one)] rounded-sm"
                   >
                     <div className="flex flex-col gap-1">
                       <div className="text-lg">{address.title}</div>
@@ -105,7 +105,7 @@ const Address = () => {
 
             <button
               onClick={onAddNewAddressClick}
-              className="mt-4 flex items-center justify-center w-min whitespace-nowrap lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded"
+              className="mt-4 flex items-center justify-center w-min whitespace-nowrap lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm"
             >
               {t("createNewAddress")}
             </button>
@@ -138,7 +138,7 @@ const Address = () => {
                       addressForm.onTitleChange(e.target.value);
                     }}
                     placeholder={t("title")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.title.hasError && (
@@ -161,7 +161,7 @@ const Address = () => {
                       addressForm.onAddressLine1Change(e.target.value);
                     }}
                     placeholder={t("addressLine1")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.addressLine1.hasError && (
@@ -184,7 +184,7 @@ const Address = () => {
                       addressForm.onAddressLine2Change(e.target.value);
                     }}
                     placeholder={t("addressLine2")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.addressLine2.hasError && (
@@ -205,7 +205,7 @@ const Address = () => {
                       addressForm.onCountryChange(e.target.value);
                     }}
                     placeholder={t("country")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   >
                     {addressForm.countryOptions.map((e) => (
                       <option key={e.value} value={e.value}>
@@ -234,7 +234,7 @@ const Address = () => {
                         addressForm.onStateChange(e.target.value);
                       }}
                       placeholder={t("state")}
-                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                     >
                       <option selected>{t("selectAnOption")}</option>
                       {addressForm.stateOptions.map((e) => (
@@ -265,7 +265,7 @@ const Address = () => {
                         addressForm.onCityInputChange(e.target.value);
                       }}
                       placeholder={t("city")}
-                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                     />
                   )}{" "}
                   {!addressForm.isFreeTextCity && (
@@ -277,7 +277,7 @@ const Address = () => {
                         addressForm.onCityChange(e.target.value);
                       }}
                       placeholder={t("city")}
-                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                     >
                       <option selected>{t("selectAnOption")}</option>
                       {addressForm.cityOptions.map((e) => (
@@ -308,7 +308,7 @@ const Address = () => {
                         addressForm.onDistrictInputChange(e.target.value);
                       }}
                       placeholder={t("district")}
-                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                     />
                   )}{" "}
                   {!addressForm.isFreeTextDistrict &&
@@ -323,7 +323,7 @@ const Address = () => {
                           addressForm.onDistrictChange(e.target.value);
                         }}
                         placeholder={t("district")}
-                        className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                        className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                       >
                         {addressForm.districtOptions.map((e) => (
                           <option key={e.value} value={e.value}>
@@ -351,7 +351,7 @@ const Address = () => {
                       addressForm.onAddressPostalCodeChange(e.target.value);
                     }}
                     placeholder={t("zipCode")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.postalCode.hasError && (
@@ -372,7 +372,7 @@ const Address = () => {
                       addressForm.onFirstNameChange(e.target.value);
                     }}
                     placeholder={t("firstName")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.firstName.hasError && (
@@ -393,7 +393,7 @@ const Address = () => {
                       addressForm.onLastNameChange(e.target.value);
                     }}
                     placeholder={t("lastName")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.lastName.hasError && (
@@ -414,7 +414,7 @@ const Address = () => {
                       addressForm.onPhoneChange(e.target.value);
                     }}
                     placeholder={t("phoneNumber")}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                   />
 
                   {addressForm.validationResult?.phone.hasError && (
@@ -427,7 +427,7 @@ const Address = () => {
                   {hasAddress && (
                     <button
                       disabled={pending}
-                      className="disabled:opacity-60 tracking-wide w-full border border-[color:var(--color-three)] text-[color:var(--color-three)] text-sm font-medium rounded py-2.5 px-5"
+                      className="disabled:opacity-60 tracking-wide w-full border border-[color:var(--color-three)] text-[color:var(--color-three)] text-sm font-medium rounded-sm py-2.5 px-5"
                       type="button"
                       onClick={() => {
                         onAddressFormClose();
@@ -438,7 +438,7 @@ const Address = () => {
                   )}
                   <button
                     disabled={pending}
-                    className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+                    className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
                     type="submit"
                   >
                     {pending ? t("loading") : t("Submit")}

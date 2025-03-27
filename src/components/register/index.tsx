@@ -46,7 +46,7 @@ const Register = ({ details }: RegisterProps) => {
                 );
               }}
               placeholder={t("firstName")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
 
             {status.firstName && (
@@ -69,7 +69,7 @@ const Register = ({ details }: RegisterProps) => {
                 );
               }}
               placeholder={t("lastName")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
 
             {status.lastName && (
@@ -89,7 +89,7 @@ const Register = ({ details }: RegisterProps) => {
                 form.onEmailChange(e.target.value);
               }}
               placeholder={t("email")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
 
             {status.email && (
@@ -109,7 +109,7 @@ const Register = ({ details }: RegisterProps) => {
                 form.onPasswordChange(e.target.value);
               }}
               placeholder={t("password")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
 
             {status.password && (
@@ -118,7 +118,7 @@ const Register = ({ details }: RegisterProps) => {
               </span>
             )}
           </div>
-          <div className="flex gap-2 border border-[color:var(--input-color)] rounded mt-2 p-4 flex-col w-full">
+          <div className="flex gap-2 border border-[color:var(--input-color)] rounded-sm mt-2 p-4 flex-col w-full">
             <div className="flex gap-2 w-full">
               <input
                 id={"registerPolicy"}
@@ -127,7 +127,7 @@ const Register = ({ details }: RegisterProps) => {
                 onChange={(e) => {
                   setRule(e.target.checked);
                 }}
-                className="text-[color:var(--color-three)] rounded-sm focus:outline-none focus:ring-0 focus:ring-transparent mt-[3px]"
+                className="text-[color:var(--color-three)] rounded-xs focus:outline-hidden focus:ring-0 focus:ring-transparent mt-[3px]"
               />
               <label
                 htmlFor={"registerPolicy"}
@@ -144,7 +144,7 @@ const Register = ({ details }: RegisterProps) => {
                 onChange={(e) => {
                   form.isMarketingAccepted = e.target.checked;
                 }}
-                className="text-[color:var(--color-three)] rounded-sm focus:outline-none focus:ring-0 focus:ring-transparent mt-[3px]"
+                className="text-[color:var(--color-three)] rounded-xs focus:outline-hidden focus:ring-0 focus:ring-transparent mt-[3px]"
               />
               <label
                 htmlFor={"newsTellerPolicy"}
@@ -156,14 +156,14 @@ const Register = ({ details }: RegisterProps) => {
           </div>
           <button
             disabled={isPending || !rule}
-            className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+            className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
             type="submit"
           >
             {isPending ? t("loading") : t("register")}
           </button>
         </form>
         <div>
-          <div className="flex bg-[color:var(--auth-color)] text-[color:var(--black-two)] gap-3 mt-[25px] rounded p-8 flex-col">
+          <div className="flex bg-[color:var(--auth-color)] text-[color:var(--black-two)] gap-3 mt-[25px] rounded-sm p-8 flex-col">
             {details.items.map((e) => (
               <div key={e.header}>
                 <h2 className="font-normal text-lg">{e.header}</h2>

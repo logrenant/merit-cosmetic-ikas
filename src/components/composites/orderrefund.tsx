@@ -25,7 +25,7 @@ const RefundQuantitySelect = observer(
     return (
       <select
         placeholder="Quantity"
-        className="w-full max-w-[100px] border-[color:var(--black-two)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-transparent relative z-[1] text-xs mt-2 font-light border rounded px-2.5"
+        className="w-full max-w-[100px] border-[color:var(--black-two)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-transparent relative z-1 text-xs mt-2 font-light border rounded-sm px-2.5"
         value={props.orderLineItem.refundQuantity || "0"}
         onChange={(value) => {
           props.orderLineItem.refundQuantity =
@@ -70,7 +70,7 @@ const OrderRefund = ({ order }: { order: IkasOrder }) => {
 
     return (
       <button
-        className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+        className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
         disabled={disabled}
         onClick={onClick}
       >
@@ -92,7 +92,7 @@ const OrderRefund = ({ order }: { order: IkasOrder }) => {
           onClick={() => {
             window.location.reload();
           }}
-          className="flex text-sm whitespace-nowrap mt-2 items-center justify-center w-min px-4 py-2 bg-[color:var(--color-one)] text-white rounded"
+          className="flex text-sm whitespace-nowrap mt-2 items-center justify-center w-min px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm"
         >
           {t("back")}
         </button>
@@ -105,7 +105,7 @@ const OrderRefund = ({ order }: { order: IkasOrder }) => {
       <div className="grid divide-y divide-[color:var(--gray-six)] grid-cols-1 mt-8">
         {order.refundableItems.map((orderLineItem) => (
           <div key={orderLineItem.id} className="flex py-4">
-            <div className="relative rounded aspect-[293/372] w-full overflow-hidden min-w-[80px] max-w-[80px]">
+            <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden min-w-[80px] max-w-[80px]">
               <Image
                 image={orderLineItem.variant.mainImage!}
                 alt={orderLineItem.variant.mainImage?.altText || ""}

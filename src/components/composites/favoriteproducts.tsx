@@ -25,7 +25,7 @@ const FavoriteProducts = () => {
             {t("emptyFavorite")}
           </div>
           <Link href="/">
-            <a className="mt-2 w-min whitespace-nowrap flex items-center justify-center lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded">
+            <a className="mt-2 w-min whitespace-nowrap flex items-center justify-center lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm">
               {t("findProducts")}
             </a>
           </Link>

@@ -41,7 +41,7 @@ const Login = ({ details }: LoginProps) => {
                 form.onEmailChange(e.target.value);
               }}
               placeholder={t("email")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
 
             {status.email && (
@@ -61,7 +61,7 @@ const Login = ({ details }: LoginProps) => {
                 form.onPasswordChange(e.target.value);
               }}
               placeholder={t("password")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
 
             {status.password && (
@@ -72,7 +72,7 @@ const Login = ({ details }: LoginProps) => {
           </div>
           <button
             disabled={isPending}
-            className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+            className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
             type="submit"
           >
             {isPending ? t("loading") : t("login")}
@@ -84,7 +84,7 @@ const Login = ({ details }: LoginProps) => {
           </Link>
         </form>
         <div>
-          <div className="flex bg-[color:var(--auth-color)] text-[color:var(--black-two)] gap-3 mt-[25px] rounded p-8 flex-col">
+          <div className="flex bg-[color:var(--auth-color)] text-[color:var(--black-two)] gap-3 mt-[25px] rounded-sm p-8 flex-col">
             {details.items.map((e) => (
               <div key={e.header}>
                 <h2 className="font-normal text-lg">{e.header}</h2>

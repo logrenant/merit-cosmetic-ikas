@@ -10,7 +10,7 @@ const NotFound = observer(() => {
           <p className="text-xl font-semibold">{t("notFound.message")}</p>
           <p className="mt-4 mb-4">{t("notFound.description")}</p>
           <Link href="/">
-            <a className="mt-2 w-min whitespace-nowrap flex items-center justify-center mx-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded">
+            <a className="mt-2 w-min whitespace-nowrap flex items-center justify-center mx-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm">
               {t("notFound.button")}
             </a>
           </Link>

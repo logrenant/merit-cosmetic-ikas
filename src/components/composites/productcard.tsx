@@ -62,7 +62,7 @@ const ProductCard: React.FC<{
         </svg>
       </button>
       <Link href={product.href}>
-        <a className="relative aspect-[293/372] w-full">
+        <a className="relative aspect-293/372 w-full">
           {showImage && (
             <Image
               alt={showImage.altText || ""}
@@ -133,7 +133,7 @@ const ProductCard: React.FC<{
             }
           }}
           disabled={loading || !product.isAddToCartEnabled}
-          className="mt-2.5 hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded py-2.5 px-5"
+          className="mt-2.5 hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
         >
           {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
         </button>

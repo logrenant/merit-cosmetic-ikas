@@ -32,7 +32,7 @@ const BagItem: React.FC<{
     setQuantity(product.quantity);
   }, [product.quantity]);
   return (
-    <div className="grid relative group gap-3 py-5 grid-cols-[20px,100px,1fr] md:grid-cols-[20px,100px,1fr,304px] w-full">
+    <div className="grid relative group gap-3 py-5 grid-cols-[20px_100px_1fr] md:grid-cols-[20px_100px_1fr_304px] w-full">
       <button
         onClick={() => {
           store.cartStore.removeItem(product);
@@ -55,7 +55,7 @@ const BagItem: React.FC<{
         </svg>
       </button>
       <Link href={product.variant.href || ""}>
-        <a className="p-2 rounded overflow-hidden aspect-[293/372] max-w-[100px] w-full border border-[color:var(--gray-one)]">
+        <a className="p-2 rounded-sm overflow-hidden aspect-293/372 max-w-[100px] w-full border border-[color:var(--gray-one)]">
           <div className="relative h-full w-full">
             <Image
               alt={product.variant.mainImage?.altText || ""}
@@ -79,7 +79,7 @@ const BagItem: React.FC<{
             .join(", ")}
         </span>
       </div>
-      <div className="grid-cols-2 md:grid-cols-[82px,210px] md:col-span-1 col-span-3 md:items-start items-center grid gap-3">
+      <div className="grid-cols-2 md:grid-cols-[82px_210px] md:col-span-1 col-span-3 md:items-start items-center grid gap-3">
         <div className="flex md:justify-end items-start">
           <div className="flex items-center">
             <button
@@ -272,7 +272,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
               </span>
             </h1>
           )}
-        <div className="grid lg:grid-cols-[calc(100%-432px),400px] gap-8">
+        <div className="grid lg:grid-cols-[calc(100%-432px)_400px] gap-8">
           {store?.cartStore?.cart?.itemCount &&
             store?.cartStore?.cart?.itemCount > 0 ? (
             <div className="grid h-min divide-y divide-[color:var(--gray-one)] grid-cols-1">
@@ -307,7 +307,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                 {t("bagEmpty")}
               </span>
               <Link href="/">
-                <a className="mt-2 px-4 py-2 bg-[color:var(--color-one)] text-white rounded">
+                <a className="mt-2 px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm">
                   {t("bagEmptyButton")}
                 </a>
               </Link>
@@ -315,7 +315,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
           )}
           {store?.cartStore?.cart?.itemCount &&
             store?.cartStore?.cart?.itemCount > 0 && (
-              <div className="border border-[color:var(--gray-five)] h-min p-5 rounded sticky top-8 left-0">
+              <div className="border border-[color:var(--gray-five)] h-min p-5 rounded-sm sticky top-8 left-0">
                 <h2 className="text-lg font-normal border-b border-[color:var(--gray-five)] text-[color:var(--black-two)] pb-3 mb-4">
                   {t("cartTotals")}
                 </h2>
@@ -367,7 +367,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       <div className="mt-1 mb-2">
                         <select
                           value={currentCountry}
-                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded px-2.5"
+                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5"
                           onChange={(e) => {
                             localStorage.setItem(
                               "iso2",
@@ -469,7 +469,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                         setCode(e.target.value);
                       }}
                       type="text"
-                      className={`w-full border-[color:var(--input-color)] focus:border-[color:var(--input-color)] focus:ring-transparent bg-[color:var(--tx-bg)] text-base font-light h-[38px] border-[1px] rounded px-2.5`}
+                      className={`w-full border-[color:var(--input-color)] focus:border-[color:var(--input-color)] focus:ring-transparent bg-[color:var(--tx-bg)] text-base font-light h-[38px] border-[1px] rounded-sm px-2.5`}
                     />
                     {/* {store.localeOptions.map((e) => e.countryName)} */}
                     {!!store.cartStore.cart?.couponCode ? (
@@ -488,7 +488,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                           setCodePending(false);
                           setCode("");
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
                       >
                         {t("remove")}
                       </button>
@@ -514,7 +514,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                           }
                           setCodePending(false);
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
                       >
                         {t("save")}
                       </button>
@@ -523,14 +523,14 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
 
                   {store?.cartStore?.checkoutUrl && (
                     <Link href="/">
-                      <a className="flex mt-1 items-center justify-center w-full px-4 py-2 bg-[color:var(--color-three)] text-white rounded">
+                      <a className="flex mt-1 items-center justify-center w-full px-4 py-2 bg-[color:var(--color-three)] text-white rounded-sm">
                         {t("continueShopping")}
                       </a>
                     </Link>
                   )}
                   {store?.cartStore?.checkoutUrl && (
                     <Link href={store?.cartStore?.checkoutUrl}>
-                      <a className="flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-one)] text-white rounded">
+                      <a className="flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm">
                         {t("checkout")}
                       </a>
                     </Link>

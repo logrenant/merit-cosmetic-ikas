@@ -53,9 +53,9 @@ const NavbarCategories = ({
                     onMouseEnter={() => {
                       clearTimeout(bagTimeOutId);
                     }}
-                    className="absolute left-0 w-full bg-[color:var(--bg-color)] shadow top-[60px] z-50"
+                    className="absolute left-0 w-full bg-[color:var(--bg-color)] shadow-sm top-[60px] z-50"
                   >
-                    <div className="layout grid grid-cols-5 !p-6">
+                    <div className="layout grid grid-cols-5 p-6!">
                       <div className="flex col-span-3 gap-20 flex-wrap">
                         {e.childrens.map((k) => (
                           <div key={k.id} className="flex gap-1.5 flex-col">
@@ -78,11 +78,11 @@ const NavbarCategories = ({
                           </div>
                         ))}
                       </div>
-                      <div className="rounded col-span-2 overflow-hidden">
+                      <div className="rounded-sm col-span-2 overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                           alt=""
-                          className="aspect-[16/6] w-full object-cover"
+                          className="aspect-16/6 w-full object-cover"
                         />
                       </div>
                     </div>
