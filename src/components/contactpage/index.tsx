@@ -32,10 +32,10 @@ const ContactPage = () => {
           {t("contactUs")}
         </h1>
       </div>
-      <div className="lg:grid-cols-[280px,1fr] mx-auto max-w-4xl mt-8 grid gap-4 w-full grid-cols-1">
+      <div className="lg:grid-cols-[280px_1fr] mx-auto max-w-4xl mt-8 grid gap-4 w-full grid-cols-1">
         {/* İletişim Bilgileri */}
         <div className="flex flex-col gap-2">
-          <div className="grid grid-cols-[20px,1fr] items-center gap-2">
+          <div className="grid grid-cols-[20px_1fr] items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,7 +54,7 @@ const ContactPage = () => {
               +1 234 567 890
             </div>
           </div>
-          <div className="grid grid-cols-[20px,1fr] items-center gap-2">
+          <div className="grid grid-cols-[20px_1fr] items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,7 +73,7 @@ const ContactPage = () => {
               contact@meletiorient.com
             </div>
           </div>
-          <div className="grid grid-cols-[20px,1fr] items-center gap-2">
+          <div className="grid grid-cols-[20px_1fr] items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -116,7 +116,7 @@ const ContactPage = () => {
               value={form.firstName}
               onChange={(e) => form.onFirstNameChange(e.target.value)}
               placeholder={t("firstName")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
             {status.firstname && (
               <span className="text-red-500 mt-0.5 text-xs">
@@ -134,7 +134,7 @@ const ContactPage = () => {
               value={form.lastName}
               onChange={(e) => form.onLastNameChange(e.target.value)}
               placeholder={t("lastName")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
             {status.lastname && (
               <span className="text-red-500 mt-0.5 text-xs">
@@ -152,7 +152,7 @@ const ContactPage = () => {
               value={form.email}
               onChange={(e) => form.onEmailChange(e.target.value)}
               placeholder={t("email")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
             {status.email && (
               <span className="text-red-500 mt-0.5 text-xs">
@@ -170,7 +170,7 @@ const ContactPage = () => {
               value={form.phone || ""}
               onChange={(e) => form.onPhoneChange(e.target.value)}
               placeholder={t("phoneNumber")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
             {status.phone && (
               <span className="text-red-500 mt-0.5 text-xs">
@@ -187,7 +187,7 @@ const ContactPage = () => {
               value={form.message}
               onChange={(e) => form.onMessageChange(e.target.value)}
               placeholder={t("message")}
-              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
             {status.message && (
               <span className="text-red-500 mt-0.5 text-xs">
@@ -198,7 +198,7 @@ const ContactPage = () => {
 
           <button
             disabled={isPending}
-            className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+            className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
             type="submit"
           >
             {isPending ? t("loading") : t("Submit")}

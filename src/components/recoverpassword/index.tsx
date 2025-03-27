@@ -34,7 +34,7 @@ const RecoverPassword = () => {
               form.onPasswordChange(e.target.value);
             }}
             placeholder={t("password")}
-            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
           />
 
           {status.password && (
@@ -54,7 +54,7 @@ const RecoverPassword = () => {
               form.onPasswordAgainChange(e.target.value);
             }}
             placeholder={t("passwordAgain")}
-            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
           />
 
           {status.passwordAgain && (
@@ -66,7 +66,7 @@ const RecoverPassword = () => {
 
         <button
           disabled={isPending}
-          className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+          className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
           type="submit"
         >
           {isPending ? t("loading") : t("submit")}

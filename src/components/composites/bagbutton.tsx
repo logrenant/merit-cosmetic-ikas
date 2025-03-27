@@ -28,9 +28,9 @@ const BagItem: React.FC<{
 }> = ({ product, store, pending, handleQuantityChange }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   return (
-    <div className="grid relative group gap-3 py-5 grid-cols-[90px,1fr] w-full">
+    <div className="grid relative group gap-3 py-5 grid-cols-[90px_1fr] w-full">
       <Link href={product.variant.href || ""}>
-        <a className="p-2 rounded overflow-hidden aspect-[293/372] max-w-[90px] w-full border border-[color:var(--gray-two)]">
+        <a className="p-2 rounded-sm overflow-hidden aspect-293/372 max-w-[90px] w-full border border-[color:var(--gray-two)]">
           <div className="relative h-full w-full">
             <Image
               alt={product.variant.mainImage?.altText || ""}
@@ -112,7 +112,7 @@ const BagItem: React.FC<{
                 }
               }}
               disabled={quantity - 1 === 0 || pending}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded border border-[color:var(--gray-two)]"
+              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded-sm border border-[color:var(--gray-two)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ const BagItem: React.FC<{
                   setQuantity(quantity + 1);
                 }
               }}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded border border-[color:var(--gray-two)]"
+              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded-sm border border-[color:var(--gray-two)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -298,7 +298,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
         </button>
       </div>
       <Transition
-        className="fixed bg-black/50 overflow-hidden z-[99] inset-0"
+        className="fixed bg-black/50 overflow-hidden z-99 inset-0"
         as="div"
         show={openBag}
       >
@@ -363,7 +363,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           ),
                         })}
                   </span>
-                  <div className="w-full h-1.5 rounded overflow-hidden bg-gray-200">
+                  <div className="w-full h-1.5 rounded-sm overflow-hidden bg-gray-200">
                     <div
                       style={{
                         width: `${
@@ -372,7 +372,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           100
                         }%`,
                       }}
-                      className="h-1.5 rounded overflow-hidden bg-[color:var(--color-one)]"
+                      className="h-1.5 rounded-sm overflow-hidden bg-[color:var(--color-one)]"
                     />
                   </div>
                 </div>
@@ -415,7 +415,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                 onClick={() => {
                   setOpenBag(false);
                 }}
-                className="mt-2 px-4 py-2 bg-[color:var(--color-one)] text-white rounded"
+                className="mt-2 px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm"
               >
                 {t("bagEmptyButton")}
               </button>
@@ -475,7 +475,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                       <div className="mt-1 mb-2">
                         <select
                           value={currentCountry}
-                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded px-2.5"
+                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5"
                           onChange={(e) => {
                             localStorage.setItem(
                               "iso2",
@@ -552,7 +552,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                       setOpenBag(false);
                       document.body.classList.remove("overflow-hidden");
                     }}
-                    className="mt-2 flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-three)] text-white rounded"
+                    className="mt-2 flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-three)] text-white rounded-sm"
                   >
                     {t("continueShopping")}
                   </button>
@@ -564,7 +564,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                         setCode(e.target.value);
                       }}
                       type="text"
-                      className={`w-full border-[color:var(--input-color)] focus:border-[color:var(--input-color)] focus:ring-transparent bg-[color:var(--tx-bg)] text-base font-light h-[38px] border-[1px] rounded px-2.5`}
+                      className={`w-full border-[color:var(--input-color)] focus:border-[color:var(--input-color)] focus:ring-transparent bg-[color:var(--tx-bg)] text-base font-light h-[38px] border-[1px] rounded-sm px-2.5`}
                     />
                     {/* {store.localeOptions.map((e) => e.countryName)} */}
                     {!!store.cartStore.cart?.couponCode ? (
@@ -583,7 +583,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           setCode("");
                           setCodePending(false);
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
                       >
                         {t("remove")}
                       </button>
@@ -609,7 +609,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           }
                           setCodePending(false);
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
                       >
                         {t("save")}
                       </button>
@@ -621,7 +621,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                         setOpenBag(false);
                         document.body.classList.remove("overflow-hidden");
                       }}
-                      className="mt-2 flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-one)] text-white rounded"
+                      className="mt-2 flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm"
                     >
                       {t("checkout")}
                     </a>

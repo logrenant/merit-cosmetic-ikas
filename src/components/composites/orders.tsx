@@ -19,7 +19,7 @@ const Orders = () => {
         <div className="flex flex-col">
           <div className="text-left font-light text-lg">{t("emptyOrder")}</div>
           <Link href="/">
-            <a className="mt-2 w-min whitespace-nowrap flex items-center justify-center  lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded">
+            <a className="mt-2 w-min whitespace-nowrap flex items-center justify-center  lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm">
               {t("findProducts")}
             </a>
           </Link>
@@ -31,10 +31,10 @@ const Orders = () => {
           {orders.map((order) => (
             <div
               key={order.id}
-              className="bg-[color:var(--bg-color)] grid md:grid-cols-[130px,calc(100%-162px)] gap-8 text-[color:var(--black-two)] rounded border border-[color:var(--black-one)] p-4"
+              className="bg-[color:var(--bg-color)] grid md:grid-cols-[130px_calc(100%-162px)] gap-8 text-[color:var(--black-two)] rounded-sm border border-[color:var(--black-one)] p-4"
             >
               <div>
-                <div className="relative rounded aspect-[293/372] w-full overflow-hidden">
+                <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
                   {order.orderLineItems.filter((e) => e.variant.mainImage)[0]
                     .variant.mainImage?.id && (
                     <Image
@@ -115,7 +115,7 @@ const Orders = () => {
                     </div>
                   </div>
                   <Link href={`/account/orders/${order.id}`}>
-                    <a className="flex items-center justify-center w-min px-4 py-2 bg-[color:var(--color-one)] text-white rounded">
+                    <a className="flex items-center justify-center w-min px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm">
                       {t("details")}
                     </a>
                   </Link>

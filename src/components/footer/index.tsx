@@ -166,7 +166,7 @@ const Footer = ({ linkdata }: FooterProps) => {
                 </div>
                 <div className="md:mb-0 mb-2">
                   <label htmlFor="contactEmailForm" className="sr-only">Label</label>
-                  <div className="flex rounded-lg shadow-sm">
+                  <div className="flex rounded-lg shadow-xs">
                     <input
                       type="email"
                       required
@@ -175,18 +175,18 @@ const Footer = ({ linkdata }: FooterProps) => {
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="py-3 px-4 block text-slate-700 w-full outline-none focus:ring-transparent ring-transparent active:ring-transparent bg-[color:var(--tx-bg)] shadow-sm rounded-s-lg text-sm focus:z-10 border-[color:var(--tx-bg)] focus:border-[color:var(--tx-bg)]"
+                      className="py-3 px-4 block text-slate-700 w-full outline-hidden focus:ring-transparent ring-transparent active:ring-transparent bg-[color:var(--tx-bg)] shadow-xs rounded-s-lg text-sm focus:z-10 border-[color:var(--tx-bg)] focus:border-[color:var(--tx-bg)]"
                     />
                     <button
                       type="submit"
                       disabled={!email || pending}
-                      className="py-3 border-t border-l border-r border-b border-[color:var(--tx-bg)] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-[color:var(--color-three)] text-white focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
+                      className="py-3 border-t border-l border-r border-b border-[color:var(--tx-bg)] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-[color:var(--color-three)] text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
                     >
                       {ts[currentLang].submit}
                     </button>
                   </div>
                 </div>
-                <img src={'payments-ps.png'} alt="logo" className="object-contain scale-[1] mt-6 w-full" />
+                <img src={'payments-ps.png'} alt="logo" className="object-contain scale-1 mt-6 w-full" />
               </div>
             </form>
           </section>

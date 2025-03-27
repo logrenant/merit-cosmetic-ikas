@@ -124,7 +124,7 @@ const ProductListGrid: React.FC<
   }, [pageSpecificData?.name]);
   return (
     <div dir={direction} className="my-10 layout">
-      <div className="grid grid-cols-[100%] lg:grid-cols-[260px,calc(100%-284px)] gap-6">
+      <div className="grid grid-cols-[100%] lg:grid-cols-[260px_calc(100%-284px)] gap-6">
         <div className="lg:block hidden">
           <div className="text-2xl text-[color:var(--color-two)] font-medium mb-4">
             {pageSpecificData?.name}
@@ -167,7 +167,7 @@ const ProductListGrid: React.FC<
                   products.clearFilters();
                 }
               }}
-              className="disabled:opacity-60 whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm w-full rounded py-1.5 px-5"
+              className="disabled:opacity-60 whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm w-full rounded-sm py-1.5 px-5"
             >
               {t("categoryPage.clearFilters")}
             </button>
@@ -225,7 +225,7 @@ const ProductListGrid: React.FC<
                 {t("categoryPage.sort")}:
               </div>
               <select
-                className="max-w-[350px] w-full text-xs border border-[color:var(--gray-two)] rounded"
+                className="max-w-[350px] w-full text-xs border border-[color:var(--gray-two)] rounded-sm"
                 onChange={onSelectChange}
                 disabled={products.isLoading}
               >
@@ -265,7 +265,7 @@ const ProductListGrid: React.FC<
                   });
                 }}
                 disabled={products.isLoading}
-                className="flex items-center justify-center gap-2 disabled:opacity-60 px-20 text-lg py-10 bg-[color:var(--color-two)] rounded text-white"
+                className="flex items-center justify-center gap-2 disabled:opacity-60 px-20 text-lg py-10 bg-[color:var(--color-two)] rounded-sm text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

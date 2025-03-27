@@ -26,7 +26,7 @@ const Account = () => {
               accountInfoForm.onFirstNameChange(e.target.value);
             }}
             placeholder={t("firstName")}
-            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
           />
 
           {status.firstName && (
@@ -46,7 +46,7 @@ const Account = () => {
               accountInfoForm.onLastNameChange(e.target.value);
             }}
             placeholder={t("lastName")}
-            className="w-full border-[color:var(--input-color)] focus:ring-transparent bg-[color:var(--tx-bg)] focus:border-[color:var(--color-six)] relative text-base font-light border rounded px-2.5"
+            className="w-full border-[color:var(--input-color)] focus:ring-transparent bg-[color:var(--tx-bg)] focus:border-[color:var(--color-six)] relative text-base font-light border rounded-sm px-2.5"
           />
 
           {status.lastName && (
@@ -66,7 +66,7 @@ const Account = () => {
               accountInfoForm.onPhoneChange(e.target.value);
             }}
             placeholder={t("phoneNumber")}
-            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+            className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
           />
 
           {status.phone && (
@@ -83,13 +83,13 @@ const Account = () => {
               type="email"
               readOnly
               value={accountInfoForm.email}
-              className="w-full disabled:opacity-50 border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded px-2.5"
+              className="w-full disabled:opacity-50 border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
             />
           </div>
         )}
         <button
           disabled={pending}
-          className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+          className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
           type="submit"
         >
           {pending ? t("loading") : t("submit")}

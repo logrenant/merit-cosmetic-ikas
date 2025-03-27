@@ -186,7 +186,7 @@ const LocalBar = () => {
             </svg>
           </button>
           {languageOpen && (
-            <div className="absolute z-50 right-0 top-[22px] rounded overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
+            <div className="absolute z-50 right-0 top-[22px] rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
               <div className="flex flex-col divide-y divide-[color:var(--gray-one)]">
                 {langOptions.map((localeOption) => (
                   <button
@@ -247,7 +247,7 @@ const LocalBar = () => {
             </svg>
           </button>
           {currencyOpen && (
-            <div className="absolute z-50 rtl:left-0 ltr:right-0 top-[22px] rounded overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
+            <div className="absolute z-50 rtl:left-0 ltr:right-0 top-[22px] rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
               <div className="flex flex-col divide-y divide-[color:var(--gray-one)]">
                 {datas.map((e) => (
                   <button

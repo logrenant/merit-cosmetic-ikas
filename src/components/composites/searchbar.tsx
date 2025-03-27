@@ -184,7 +184,7 @@ const SearchBar = ({
       >
         <button
           onClick={() => onClickEnterOrSearch()}
-          className="absolute z-[2] flex items-center justify-center h-full pl-2 pr-3 right-0 top-1/2 transform -translate-y-1/2"
+          className="absolute z-2 flex items-center justify-center h-full pl-2 pr-3 right-0 top-1/2 transform -translate-y-1/2"
         >
           <svg
             width="18"
@@ -216,7 +216,7 @@ const SearchBar = ({
           className={`w-full ${searchedProducts && searchedProducts?.length > 0
             ? "border-[color:var(--color-six)]"
             : "border-[color:var(--input-color)]"
-            } focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative z-[1] pr-9 text-sm font-light h-[38px] border-[1px] rounded px-2.5`}
+            } focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative z-1 pr-9 text-sm font-light h-[38px] border-[1px] rounded px-2.5`}
         />
 
         {placeholderOpen && !pageIsSearch && (
@@ -236,7 +236,7 @@ const SearchBar = ({
           </span>
         )}
         {!placeholderOpen && (
-          <div className="absolute z-[53] right-0 top-11 rounded overflow-hidden bg-[color:var(--bg-color)] shadow-navbar w-full">
+          <div className="absolute z-53 right-0 top-11 rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar w-full">
             {products.isLoading && uiStore.searchKeyword && (
               <div className="px-4 py-10 flex items-center justify-center">
                 <div className="customloader" />
@@ -246,7 +246,7 @@ const SearchBar = ({
               uiStore.searchKeyword &&
               searchedProducts &&
               searchedProducts.length > 0 && (
-                <div className="grid grid-cols-1 lg:grid-cols-[180px,auto]">
+                <div className="grid grid-cols-1 lg:grid-cols-[180px_auto]">
                   <div className="hidden lg:flex flex-col">
                     <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                       {t("relatedCategories")}
@@ -295,8 +295,8 @@ const SearchBar = ({
                             : product?.selectedVariant?.mainImage?.image!;
                         return (
                           <Link key={product.id} href={product.href}>
-                            <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded gap-1 p-1 grid-cols-[70px,1fr] w-full">
-                              <div className="relative rounded aspect-[293/372] w-full overflow-hidden">
+                            <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
+                              <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
                                 <Image
                                   image={showImage}
                                   alt={product.name}
@@ -349,7 +349,7 @@ const SearchBar = ({
                         </div>
                       )}
 
-                      <div className="col-span-2 rounded overflow-hidden">
+                      <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                           alt=""
@@ -362,7 +362,7 @@ const SearchBar = ({
               )}
             {(searchedProducts?.length === 0 || !searchedProducts) &&
               !uiStore.searchKeyword && (
-                <div className="grid grid-cols-1 lg:grid-cols-[180px,auto]">
+                <div className="grid grid-cols-1 lg:grid-cols-[180px_auto]">
                   <div className="hidden lg:flex flex-col">
                     <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                       {t("popularCategories")}
@@ -451,8 +451,8 @@ const SearchBar = ({
                                 : product?.selectedVariant?.mainImage?.image!;
                             return (
                               <Link key={product.id} href={product.href}>
-                                <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded gap-1 p-1 grid-cols-[70px,1fr] w-full">
-                                  <div className="relative rounded aspect-[293/372] w-full overflow-hidden">
+                                <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
+                                  <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
                                     <Image
                                       image={showImage}
                                       useBlur
@@ -497,7 +497,7 @@ const SearchBar = ({
 
 
 
-                      <div className="col-span-2 rounded overflow-hidden">
+                      <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                           alt=""
@@ -520,7 +520,7 @@ const SearchBar = ({
 
               {(searchedProducts && searchedProducts?.length > 0 && hoveredBrand) &&
                 !uiStore.searchKeyword && (
-                  <div className="grid grid-cols-1 lg:grid-cols-[180px,auto]">
+                  <div className="grid grid-cols-1 lg:grid-cols-[180px_auto]">
                     <div className="hidden lg:flex flex-col">
                       <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                         {t("popularCategories")}
@@ -603,8 +603,8 @@ const SearchBar = ({
                                   : product?.selectedVariant?.mainImage?.image!;
                               return (
                                 <Link key={product.id} href={product.href}>
-                                  <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded gap-1 p-1 grid-cols-[70px,1fr] w-full">
-                                    <div className="relative rounded aspect-[293/372] w-full overflow-hidden">
+                                  <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
+                                    <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
                                       <Image
                                         image={showImage}
                                         useBlur
@@ -680,7 +680,7 @@ const SearchBar = ({
 
 
 
-                        <div className="col-span-2 rounded overflow-hidden">
+                        <div className="col-span-2 rounded-sm overflow-hidden">
                           <img
                             src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                             alt=""

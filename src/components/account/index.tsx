@@ -29,7 +29,7 @@ const Account = () => {
     );
   return (
     <div dir={direction} className="min-h-[80vh]">
-      <div className="grid lg:grid-cols-[260px,calc(100%-292px)] gap-8 my-10 layout">
+      <div className="grid lg:grid-cols-[260px_calc(100%-292px)] gap-8 my-10 layout">
         <Accountmenu />
         {isAccount && <Accountinfo />}
         {isFavoriteProducts && <Favoriteproducts />}

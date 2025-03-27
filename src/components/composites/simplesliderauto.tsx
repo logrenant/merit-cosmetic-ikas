@@ -82,7 +82,7 @@ const SimpleSliderAuto = ({
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.prev()
             }
-            className="bg-[color:var(--bg-color)] shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 left-4 rounded w-9 h-9 text-gray-700 flex items-center justify-center"
+            className="bg-[color:var(--bg-color)] shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 left-4 rounded-sm w-9 h-9 text-gray-700 flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const SimpleSliderAuto = ({
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.next()
             }
-            className="bg-[color:var(--bg-color)] shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-4 rounded w-9 h-9 text-gray-700 flex items-center justify-center"
+            className="bg-[color:var(--bg-color)] shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-4 rounded-sm w-9 h-9 text-gray-700 flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

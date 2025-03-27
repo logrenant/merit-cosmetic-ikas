@@ -81,7 +81,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                     key={`${item.link.itemId}${col}${i}${item.link.href}`}
                   >
                     <a className="keen-slider__slide">
-                      <div className="aspect-[608/186] relative overflow-hidden w-full">
+                      <div className="aspect-608/186 relative overflow-hidden w-full">
                         <Image
                           image={item.image}
                           alt={item.image.altText || ""}
@@ -100,7 +100,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                     key={`${item.link.itemId}${col}${i}${item.link.href}`}
                   >
                     <a className="keen-slider__slide">
-                      <div className="aspect-[608/316] relative overflow-hidden w-full">
+                      <div className="aspect-608/316 relative overflow-hidden w-full">
                         <Image
                           image={item.image}
                           layout="fill"
@@ -118,7 +118,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                   key={`${item.link.itemId}${col}${i}${item.link.href}`}
                 >
                   <a className="keen-slider__slide">
-                    <div className="aspect-[608/310] relative overflow-hidden w-full">
+                    <div className="aspect-608/310 relative overflow-hidden w-full">
                       <Image
                         image={item.image}
                         layout="fill"
@@ -160,7 +160,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                 onClick={(e: any) =>
                   e.stopPropagation() || instanceRef.current?.next()
                 }
-                className="shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-2 rounded text-[color:var(--color-one)] flex items-center justify-center"
+                className="shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-2 rounded-sm text-[color:var(--color-one)] flex items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +188,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                 href={item.link.href}
                 key={`${item.link.itemId}${col}${i}${item.link.href}`}
               >
-                <a className="aspect-[608/380] relative overflow-hidden w-full">
+                <a className="aspect-608/380 relative overflow-hidden w-full">
                   <Image
                     image={item.image}
                     alt={item.image.altText || ""}
@@ -209,7 +209,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                 href={item.link.href}
                 key={`${item.link.itemId}${col}${i}${item.link.href}`}
               >
-                <a className="aspect-[608/316] relative overflow-hidden w-full">
+                <a className="aspect-608/316 relative overflow-hidden w-full">
                   <Image
                     image={item.image}
                     alt={item.image.altText || ""}
@@ -230,7 +230,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                 href={item.link.href}
                 key={`${item.link.itemId}${col}${i}${item.link.href}`}
               >
-                <a className="aspect-[608/186] relative overflow-hidden w-full">
+                <a className="aspect-608/186 relative overflow-hidden w-full">
                   <Image
                     image={item.image}
                     alt={item.image.altText || ""}

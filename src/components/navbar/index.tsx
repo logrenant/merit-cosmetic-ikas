@@ -85,12 +85,12 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
       <div className="bg-[color:var(--bg-color)]">
 
         <LocaleBar />
-        <div className="grid layout gap-3 items-center lg:gap-8  lg:pb-1 pt-1 grid-cols-[180px,1fr] lg:grid-cols-[1fr,minmax(200px,700px),1fr]">
+        <div className="grid layout gap-3 items-center lg:gap-8  lg:pb-1 pt-1 grid-cols-[180px_1fr] lg:grid-cols-[1fr_minmax(200px,700px)_1fr]">
           <div className="flex font-light text-[color:var(--black-two)] text-lg items-center justify-start">
             <Link href="/">
               <a className="relative aspect-square w-full max-w-[90px]">
-                <Image image={logo} layout="fill" className="object-contain scale-[1]" />
-                {/* <img src={'logo.png'} alt="logo" className="object-contain scale-[1]" /> */}
+                <Image image={logo} layout="fill" className="object-contain scale-1" />
+                {/* <img src={'logo.png'} alt="logo" className="object-contain scale-1" /> */}
               </a>
             </Link>
           </div>

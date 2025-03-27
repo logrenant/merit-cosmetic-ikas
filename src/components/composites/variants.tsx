@@ -135,7 +135,7 @@ const SelectVariantValue = observer(
         value={selectValue}
         onChange={(e) => onChange(e.target.value)}
         placeholder={t("country")}
-        className="w-full border-[color:var(--black-two)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-transparent relative text-base font-light border rounded px-2.5"
+        className="w-full border-[color:var(--black-two)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-transparent relative text-base font-light border rounded-sm px-2.5"
       >
         {selectOptions.map((e) => (
           <option key={e.value + "value"} value={e.value}>
@@ -190,13 +190,13 @@ export const Swatch = ({
     return (
       <div
         onClick={onClick}
-        className={`rounded relative w-20 aspect-[293/372] border flex items-center justify-center ${
+        className={`rounded relative w-20 aspect-293/372 border flex items-center justify-center ${
           selected
             ? "border-[color:var(--color-one)]"
             : "border-transparent hover:border-[color:var(--color-one)] cursor-pointer"
         }`}
       >
-        <div className="relative max-w-[72px] aspect-[293/372] w-full rounded overflow-hidden">
+        <div className="relative max-w-[72px] aspect-293/372 w-full rounded-sm overflow-hidden">
           <Image image={image!} layout="fill" className="object-contain" />
         </div>
       </div>

@@ -68,7 +68,7 @@ export const NumberList = observer(
                     readOnly
                     checked={item.isSelected}
                   />
-                  <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-sm after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
+                  <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded-sm peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-xs after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
                   <span
                     className={`text-base ${item.isSelected
                       ? "text-[color:var(--gray-three)] font-normal"
@@ -145,7 +145,7 @@ export const List = observer(
                     readOnly
                     checked={item.isSelected}
                   />
-                  <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-sm after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
+                  <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded-sm peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-xs after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
                   <span
                     className={`text-base ${item.isSelected
                       ? "text-[color:var(--gray-three)] font-normal"
@@ -284,7 +284,7 @@ const FilterMobile: React.FC<{
     <>
       <button
         onClick={() => setOpenFilter(!openFilter)}
-        className="max-w-[120px] w-full h-[34px] lg:hidden flex items-center justify-center text-xs border border-[color:var(--gray-two)] rounded"
+        className="max-w-[120px] w-full h-[34px] lg:hidden flex items-center justify-center text-xs border border-[color:var(--gray-two)] rounded-sm"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -305,7 +305,7 @@ const FilterMobile: React.FC<{
       </button>
 
       <Transition
-        className="fixed bg-[color:var(--gray-five)] overflow-hidden z-[99] inset-0"
+        className="fixed bg-[color:var(--gray-five)] overflow-hidden z-99 inset-0"
         as="div"
         show={openFilter}
       >
@@ -387,7 +387,7 @@ const FilterMobile: React.FC<{
                     products.clearFilters();
                   }
                 }}
-                className="disabled:opacity-60 whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm w-full rounded py-1.5 px-5"
+                className="disabled:opacity-60 whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm w-full rounded-sm py-1.5 px-5"
               >
                 {t("categoryPage.clearFilters")}
               </button>
