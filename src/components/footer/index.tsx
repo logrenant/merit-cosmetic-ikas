@@ -18,7 +18,7 @@ import Facebook from "../svg/Facebook";
 
 const ts = {
   en: {
-    contactUs: "CONTACT US",
+    contactUs: "Contact Us",
     links: "Useful Links",
     title: "NEWSLETTER SIGN UP",
     submit: "Submit",
@@ -40,7 +40,7 @@ const ts = {
 const Footer = ({ linkdata }: FooterProps) => {
   const router = useRouter();
   const { direction } = useDirection();
-  const currentLang = (router.locale as "en" | "ar") || "en";
+  const currentLang: "en" | "ar" = router.locale === "ar" || router.locale === "en" ? router.locale : "en";
   const currentYear = new Date().getFullYear();
 
 
@@ -101,7 +101,7 @@ const Footer = ({ linkdata }: FooterProps) => {
 
           {/* Contact Section */}
           <section className="mb-6 flex flex-col text-white items-center lg:items-start">
-            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].contactUs}</h5>
+            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang]?.contactUs}</h5>
             <div className="flex gap-2 mt-4">
               <Location />
               <span className="text-slate-200">Istanbul / Turkey</span>
@@ -145,7 +145,7 @@ const Footer = ({ linkdata }: FooterProps) => {
 
           {/* Useful Links Section */}
           <section className="mb-6 flex flex-col text-white items-center lg:items-start">
-            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].links}</h5>
+            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang]?.links}</h5>
             <nav className="mt-2.5 flex flex-col gap-1.5">
               {usefull?.map((fl, idx) => (
                 <Link key={fl.itemId + "-link-" + idx} href={fl.href}>
@@ -158,11 +158,11 @@ const Footer = ({ linkdata }: FooterProps) => {
 
           {/* Newsletter Section */}
           <section className="md:mb-6 self-start">
-            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].title}</h5>
+            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang]?.title}</h5>
             <form onSubmit={onSubmitEmail}>
               <div>
                 <div className="mb-2 md:mb-6 md:ms-auto">
-                  <p>{ts[currentLang].desc}</p>
+                  <p>{ts[currentLang]?.desc}</p>
                 </div>
                 <div className="md:mb-0 mb-2">
                   <label htmlFor="contactEmailForm" className="sr-only">Label</label>
@@ -182,7 +182,7 @@ const Footer = ({ linkdata }: FooterProps) => {
                       disabled={!email || pending}
                       className="py-3 border-t border-l border-r border-b border-[color:var(--tx-bg)] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-[color:var(--color-three)] text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
                     >
-                      {ts[currentLang].submit}
+                      {ts[currentLang]?.submit}
                     </button>
                   </div>
                 </div>
