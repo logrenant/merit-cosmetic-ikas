@@ -38,11 +38,11 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
         parentId: cat.parentId,
         childrens: [],
       };
-      // console.log("parent", cat.name);
+      console.log("parent", cat.name);
 
       const children: CategoryWithChildrenType[] = [];
       categories.data.map((child) => {
-        // console.log('child.name', child.name);
+        console.log('child.name', child.name);
         if (child.parentId === cat.id) {
           children.push({
             id: child.id,
@@ -89,8 +89,8 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
           <div className="flex font-light text-[color:var(--black-two)] text-lg items-center justify-start">
             <Link href="/">
               <a className="relative aspect-square w-full max-w-[90px]">
-                <Image image={logo} layout="fill" className="object-contain scale-1" />
-                {/* <img src={'logo.png'} alt="logo" className="object-contain scale-1" /> */}
+                <Image image={logo} layout="fill" className="object-contain" />
+                {/* <img src={'logo.jpg'} alt="logo" className="" /> */}
               </a>
             </Link>
           </div>
