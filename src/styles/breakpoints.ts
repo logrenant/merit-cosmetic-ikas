@@ -1,6 +1,7 @@
 const unit = "px";
 
 export const point = {
+  xs: 480, 
   sm: 640,
   md: 768,
   lg: 1024,
@@ -8,7 +9,8 @@ export const point = {
   xxl: 1536,
 };
 
-const breakpoints = {
+const breakpointValues = {
+  xs: point.xs + unit,
   sm: point.sm + unit,
   md: point.md + unit,
   lg: point.lg + unit,
@@ -16,14 +18,12 @@ const breakpoints = {
   xxl: point.xxl + unit,
 };
 
-const media = (width: string) => `@media only screen and (max-width: ${width})`;
-
-export const mediaQuery = {
-  sm: media(breakpoints.sm),
-  md: media(breakpoints.md),
-  lg: media(breakpoints.lg),
-  xl: media(breakpoints.xl),
-  xxl: media(breakpoints.xxl),
+export const sliderBreakpoints = {
+  xs: `(min-width: ${point.xs}${unit})`,
+  sm: `(min-width: ${point.sm}${unit})`,
+  md: `(min-width: ${point.md}${unit})`,
+  lg: `(min-width: ${point.lg}${unit})`,
+  xl: `(min-width: ${point.xl}${unit})`,
 };
 
-export default breakpoints;
+export default breakpointValues;

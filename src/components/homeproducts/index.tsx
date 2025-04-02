@@ -6,6 +6,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ProductCard from "../composites/productcard";
 import SimpleSlider from "../composites/simpleslider";
 import { HomeproductsProps } from "../__generated__/types";
+import { sliderBreakpoints } from "src/styles/breakpoints";
 
 const HomeProducts: React.FC<HomeproductsProps> = ({
   products,
@@ -29,24 +30,11 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
       setLoaded(true);
       setMaxSlide(s.track.details.maxIdx);
     },
-    slides: {
-      perView: 2,
-      spacing: 10,
-    }, renderMode: "precision",
-
+    slides: { perView: 2, spacing: 10 },
     breakpoints: {
-      "(min-width: 568px)": {
-        slides: { perView: 3, spacing: 16 },
-      },
-      "(min-width: 768px)": {
-        slides: { perView: 4, spacing: 16 },
-      },
-      "(min-width: 1024px)": {
-        slides: {
-          perView: 5,
-          spacing: 16,
-        },
-      },
+      [sliderBreakpoints.xs]: { slides: { perView: 3, spacing: 16 } },
+      [sliderBreakpoints.md]: { slides: { perView: 4, spacing: 16 } },
+      [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
     },
   });
 
@@ -104,7 +92,7 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
 
               breakpoints: {
                 "(min-width: 568px)": {
-                  slides: { perView: 3, spacing: 16 },
+                  slides: { perView: 2, spacing: 16 },
                 },
                 "(min-width: 768px)": {
                   slides: { perView: 4, spacing: 16 },
@@ -142,54 +130,12 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
               </div>
             ))}
           />
-          {loaded && slider.current && (
-            <div className="flex flex-row w-full gap-2">
-              <button
-                onClick={() => slider.current?.prev()}
-                className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
-                  }`}
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-
-              <button
-                onClick={() => slider.current?.next()}
-                className={`bg-[color:var(--color-two)] hover:bg-[color:var(--quick-color)] text-[color:var(--bg-color)] rounded-lg p-2 shadow-md transition-all duration-200 ${currentSlide === maxSlide ? "opacity-0 cursor-not-allowed" : ""
-                  }`}
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-          )}
         </div>
       )}
 
       <div className="TEST-SECOND-SLIDER w-full">
         <SimpleSlider
+          showPagination={true}
           keenOptions={{
             initial: 0,
             slides: {
@@ -198,7 +144,7 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
             },
             breakpoints: {
               "(min-width: 768px)": {
-                slides: { perView: 3, spacing: 8 },
+                slides: { perView: 2, spacing: 8 },
               },
               "(min-width: 1024px)": {
                 slides: {
