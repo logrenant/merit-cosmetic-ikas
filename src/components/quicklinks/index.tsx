@@ -2,8 +2,11 @@ import { useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Image, Link } from "@ikas/storefront";
 import { useKeenSlider } from "keen-slider/react";
-import { QuicklinksProps } from "../__generated__/types";
+
 import "keen-slider/keen-slider.min.css";
+import { QuicklinksProps } from "../__generated__/types";
+import { sliderBreakpoints } from "src/styles/breakpoints";
+
 
 const QuickLinks = ({ links }: QuicklinksProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,21 +23,46 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
       setLoaded(true);
       setMaxSlide(s.track.details.maxIdx);
     },
-    slides: {
-      perView: "auto",
-      spacing: 16,
+    slides: { perView: 2, spacing: 10 },
+    breakpoints: {
+      [sliderBreakpoints.md]: { slides: { perView: 3, spacing: 16 } },
+      [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
     },
   });
 
   return (
-    <div dir="ltr" className="pt-6 pb-2 layout relative flex flex-row items-center gap-4">
+    <div dir="ltr" className="pt-6 pb-2 layout relative items-center">
 
-      {/* Left Navigation Arrow */}
+      {/* Slider Container */}
+      <div ref={sliderRef} className="keen-slider flex flex-row justify-between">
+        {links.items.map((e, i) => (
+          <div className="keen-slider__slide max-w-fit" key={i}>
+            <Link href={e.link.href}>
+              <a className="flex gap-1 items-end">
+                <div className="w-[35px] h-[32px] relative">
+                  <Image
+                    alt={e.icon?.altText || ""}
+                    useBlur
+                    layout="fill"
+                    objectFit="contain"
+                    image={e.icon}
+                  />
+                </div>
+                <span className="text-[color:var(--black-two)] w-fit">
+                  {e.link.label}
+                </span>
+              </a>
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
       {loaded && slider.current && (
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
+            className={`absolute top-1/2 xl:left-[-12px] left-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "cursor-not-allowed hidden" : ""
               }`}
           >
             <svg
@@ -51,39 +79,9 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
               />
             </svg>
           </button>
-        </>
-      )}
-
-      {/* Slider Container */}
-      <div ref={sliderRef} className="keen-slider flex gap-2">
-        {links.items.map((e, i) => (
-          <div className="keen-slider__slide min-w-[160px]" key={i}>
-            <Link href={e.link.href}>
-              <a className="flex gap-1 items-end justify-center">
-                <div className="w-[35px] h-[32px] relative">
-                  <Image
-                    alt={e.icon?.altText || ""}
-                    useBlur
-                    layout="fill"
-                    objectFit="contain"
-                    image={e.icon}
-                  />
-                </div>
-                <span className="text-[color:var(--black-two)] w-[120px]">
-                  {e.link.label}
-                </span>
-              </a>
-            </Link>
-          </div>
-        ))}
-      </div>
-
-      {/* Right Navigation Arrow */}
-      {loaded && slider.current && (
-        <>
           <button
             onClick={() => slider.current?.next()}
-            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === maxSlide ? "opacity-0 cursor-not-allowed" : ""
+            className={`absolute top-1/2 xl:right-[-24px] right-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === maxSlide ? "cursor-not-allowed hidden" : ""
               }`}
           >
             <svg

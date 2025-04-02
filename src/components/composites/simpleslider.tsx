@@ -1,101 +1,89 @@
 import React, { ReactNode, useState, useEffect } from "react";
-import {
-  KeenSliderOptions,
-  KeenSliderInstance,
-  useKeenSlider,
-} from "keen-slider/react";
+import { KeenSliderInstance, KeenSliderOptions, useKeenSlider } from "keen-slider/react";
 import { observer } from "mobx-react-lite";
 
 import "keen-slider/keen-slider.min.css";
 
 interface SimpleSliderProps {
-  keenOptions: KeenSliderOptions;
+  keenOptions?: KeenSliderOptions;
   items: ReactNode[];
   showPagination?: boolean;
   showNavigation?: boolean;
 }
 
 const MutationPlugin = (slider: KeenSliderInstance) => {
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach(() => {
-      window.requestAnimationFrame(() => {
-        slider.update();
-      });
-    });
+  const observer = new MutationObserver(() => {
+    window.requestAnimationFrame(() => slider.update());
   });
-  const config = { childList: true };
 
   slider.on("created", () => {
-    observer.observe(slider.container, config);
+    observer.observe(slider.container, { childList: true });
   });
+
   slider.on("destroyed", () => {
     observer.disconnect();
   });
 };
 
-const SimpleSlider: React.FC<SimpleSliderProps> = ({
+const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
   keenOptions,
   items,
   showPagination = true,
   showNavigation = false,
 }) => {
-  const [created, setCreated] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [arrowMaxSlide, setArrowMaxSlide] = useState(0);
-  const [showDots, setShowDots] = useState(true);
+  const [loaded, setLoaded] = useState(false);
+  const [itemsPerView, setItemsPerView] = useState(2);
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      ...keenOptions,
-      created: () => {
-        setCreated(true);
-      },
-      slideChanged(s) {
-        setCurrentSlide(s.track.details.rel);
-        setArrowMaxSlide(s.track.details.maxIdx);
-      },
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsPerView(5);
+      } else {
+        setItemsPerView(2);
+      }
+    };
+
+    updateItemsPerView();
+    window.addEventListener("resize", updateItemsPerView);
+    return () => window.removeEventListener("resize", updateItemsPerView);
+  }, []);
+
+  const totalDots = Math.max(items.length - itemsPerView + 1, 1);
+
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    ...keenOptions,
+    initial: 0,
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
     },
+    created(s) {
+      setLoaded(true);
+    },
+    slides: { perView: 2, spacing: 10 },
+    breakpoints: {
+      "(min-width: 1024px)": { slides: { perView: 5, spacing: 16 } },
+    },
+  },
     [MutationPlugin]
   );
 
-  useEffect(() => {
-    if (created && instanceRef.current) {
-      const { slides } = instanceRef.current.track.details;
-      const totalSlides = slides.length;
-
-      const slidesOptions = instanceRef.current.options.slides;
-      let slidesPerView = 2;
-
-      if (typeof slidesOptions === "object" && !Array.isArray(slidesOptions)) {
-        const perViewValue = slidesOptions?.perView;
-
-        if (typeof perViewValue === "number") {
-          slidesPerView = perViewValue;
-        } else if (typeof perViewValue === "function") {
-          const result = perViewValue();
-          slidesPerView = typeof result === "number" ? result : 1;
-        } else if (perViewValue === "auto") {
-          slidesPerView = 1;
-        }
-      } else if (typeof slidesOptions === "number") {
-        slidesPerView = slidesOptions;
-      }
-
-      setShowDots(totalSlides > slidesPerView);
-    }
-  }, [created, items]);
-
-  const totalSlides = instanceRef.current?.track.details.slides.length || 0;
-
   return (
-    <section className="relative ">
-      <div className=" flex flex-row">
+    <section className="relative">
+      <div
+        ref={sliderRef}
+        style={{ opacity: loaded ? 1 : 0 }}
+        className="keen-slider w-full overflow-hidden"
+      >
+        {items}
+      </div>
 
-        {/* Left Button */}
-        {showNavigation && created && instanceRef.current && (
+      {showNavigation && instanceRef && (
+        <>
           <button
             onClick={() => instanceRef.current?.prev()}
-            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "opacity-0 cursor-not-allowed" : ""
+            disabled={currentSlide === 0}
+            className={`absolute top-[40%] xl:left-[-32px] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -112,21 +100,11 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
               />
             </svg>
           </button>
-        )}
 
-        <div
-          ref={sliderRef}
-          style={{ opacity: created ? 1 : 0 }}
-          className="keen-slider w-full overflow-hidden"
-        >
-          {items}
-        </div>
-
-        {/* Right Button */}
-        {showNavigation && created && instanceRef.current && (
           <button
             onClick={() => instanceRef.current?.next()}
-            className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === arrowMaxSlide ? "opacity-0 cursor-not-allowed" : ""
+            disabled={currentSlide === totalDots - 1}
+            className={`absolute top-[40%] xl:right-[-32px] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -143,18 +121,16 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
               />
             </svg>
           </button>
-        )}
-      </div>
+        </>
+      )}
 
-
-      {/* Pagination Dots */}
-      {showPagination && created && instanceRef.current && showDots && (
+      {showPagination && instanceRef && (
         <div className="dots flex justify-center mt-4">
-          {Array.from({ length: totalSlides }).map((_, idx) => (
+          {Array.from({ length: totalDots }).map((_, idx) => (
             <button
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
-              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-hidden ${currentSlide === idx
+              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx
                 ? "bg-[color:var(--color-four)]"
                 : "bg-[color:var(--color-one)]"
                 }`}
@@ -164,6 +140,6 @@ const SimpleSlider: React.FC<SimpleSliderProps> = ({
       )}
     </section>
   );
-};
+});
 
-export default observer(SimpleSlider);
+export default SimpleSlider;
