@@ -6,46 +6,28 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { StorylinksProps } from "../__generated__/types";
 
+
 const StoryLinks = ({ items }: StorylinksProps) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
     },
     created(s) {
       setLoaded(true);
     },
-    slides: {
-      perView: "auto",
-      spacing: 16,
+    slides: { perView: 3, spacing: 8 },
+    breakpoints: {
+      "(min-width: 1024px)": { slides: { perView: 6, spacing: 16 } },
+      "(min-width: 1280px)": { slides: { perView: 8, spacing: 16 } },
     },
   });
 
   return (
     <div className="relative mt-6 layout flex flex-row items-center w-full">
-
-      {/* Left Arrow */}
-      {loaded && slider.current && (
-        <button
-          onClick={() => slider.current?.prev()}
-          className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-      )}
 
       {/* Slider Container */}
       <div ref={sliderRef} className="keen-slider">
@@ -74,25 +56,46 @@ const StoryLinks = ({ items }: StorylinksProps) => {
       </div>
 
       {/* Right Arrow */}
-      {loaded && slider.current && (
-        <button
-          onClick={() => slider.current?.next()}
-          className={`text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+      {loaded && slider && (
+        <>
+          <button
+            onClick={() => slider.current?.prev()}
+            className={`absolute top-[30%] xl:left-[-12px] left-0 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => slider.current?.next()}
+            className={`absolute top-[30%] xl:right-[-12px] right-0 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </>
       )}
     </div>
   );

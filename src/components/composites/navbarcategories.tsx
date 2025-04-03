@@ -21,9 +21,22 @@ const NavbarCategories = ({
       });
     };
   }, []);
+
   return (
     <div className="bg-[color:var(--color-two)] relative lg:block hidden">
-      <nav className="layout overflow-x-auto overflow-y-visible scrollbar-hide">
+      <nav
+        className="layout overflow-x-auto overflow-y-visible"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        <style>{`
+          .layout::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+
         <div className="flex gap-3 -mx-4 whitespace-nowrap justify-between items-center">
           {categoriesWithChildrens.map((e) => (
             <div
