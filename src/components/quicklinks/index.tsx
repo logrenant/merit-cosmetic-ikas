@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Image, Link } from "@ikas/storefront";
-import { useKeenSlider } from "keen-slider/react";
+import { KeenSliderInstance, KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
 
 import "keen-slider/keen-slider.min.css";
 import { QuicklinksProps } from "../__generated__/types";
@@ -12,6 +12,21 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [maxSlide, setMaxSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+
+
+  const MutationPlugin = (slider: KeenSliderInstance) => {
+    const observer = new MutationObserver(() => {
+      window.requestAnimationFrame(() => slider.update());
+    });
+
+    slider.on("created", () => {
+      observer.observe(slider.container, { childList: true });
+    });
+
+    slider.on("destroyed", () => {
+      observer.disconnect();
+    });
+  };
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -26,15 +41,16 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
     slides: { perView: 2, spacing: 10 },
     breakpoints: {
       [sliderBreakpoints.md]: { slides: { perView: 3, spacing: 16 } },
-      [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
+      [sliderBreakpoints.lg]: { slides: { perView: 6, spacing: 16 } },
+      [sliderBreakpoints.xl]: { slides: { perView: 8, spacing: 16 } },
     },
-  });
+  }, [MutationPlugin]);
 
   return (
     <div dir="ltr" className="pt-6 pb-2 layout relative items-center">
 
       {/* Slider Container */}
-      <div ref={sliderRef} className="keen-slider flex flex-row justify-between">
+      <div ref={sliderRef} className="keen-slider flex flex-row">
         {links.items.map((e, i) => (
           <div className="keen-slider__slide max-w-fit" key={i}>
             <Link href={e.link.href}>
@@ -62,7 +78,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`absolute top-1/2 xl:left-[-12px] left-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "cursor-not-allowed hidden" : ""
+            className={`absolute top-1/2 xl:left-[-12px] left-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -81,7 +97,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
           </button>
           <button
             onClick={() => slider.current?.next()}
-            className={`absolute top-1/2 xl:right-[-24px] right-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === maxSlide ? "cursor-not-allowed hidden" : ""
+            className={`absolute top-1/2 xl:right-[-24px] right-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === maxSlide ? "cursor-not-allowed" : ""
               }`}
           >
             <svg

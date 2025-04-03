@@ -120,7 +120,7 @@ const Footer = ({ linkdata }: FooterProps) => {
               <span className="text-slate-200">+90 555 555 5555</span>
             </div>
             {/* Social Links */}
-            <div className="flex justify-center w-full gap-8 mt-4 md:mt-6">
+            <div className="flex xl:justify-start justify-center w-full gap-8 mt-4 md:mt-6">
               {social?.map((fl, idx) => {
                 const socialLink = fl.href as string;
                 if (socialLink.includes("x.com") || socialLink.includes("twitter.com")) {
@@ -186,7 +186,7 @@ const Footer = ({ linkdata }: FooterProps) => {
                     </button>
                   </div>
                 </div>
-                <img src={"payments-ps.png"} alt="logo" className="object-contain scale-1 mt-6 w-full" />
+                <img src={"payments-ps.png"} alt="logo" className="object-contain mt-6 w-full" />
               </div>
             </form>
           </section>
