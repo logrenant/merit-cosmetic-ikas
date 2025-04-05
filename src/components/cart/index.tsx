@@ -416,6 +416,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       />
                     </span>
                   </div>
+
                   {/* Discount */}
                   {!!store.cartStore.cart?.couponCode && (
                     <div className="flex items-center justify-between w-full">
@@ -539,6 +540,8 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
               </div>
             )}
         </div>
+
+
         <div className="text-xl font-medium my-14 text-center tracking-widest">
           {t("productDetail.relatedProducts")}
         </div>

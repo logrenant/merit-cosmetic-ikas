@@ -74,9 +74,9 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
           {products.count > 0 &&
             products?.filters?.map((filter) => (
               <div key={filter.id}>
-                {filter.displayType === IkasProductFilterDisplayType.LIST && (
+                {/* {filter.displayType === IkasProductFilterDisplayType.LIST && (
                   <List filter={filter} items={filter.displayedValues} />
-                )}
+                )} */}
                 {filter.displayType ===
                   IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
                     <NumberList
@@ -103,7 +103,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
         </div>
         <div>
           <div className="mb-8 flex items-center justify-between">
-            <div className="text-[14px] text-[color:var(--color-two)] lg:block hidden">
+            <div className="text-[14px] lg:block hidden">
               {products.count} {t("categoryPage.product")}
             </div>
 

@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "40995b06-4ffa-48e5-9f14-6874ba9a982e",
+          "id": "a53efc31-5648-47d8-a883-b16abb618ff6",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -24,10 +24,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "5452232a-e7cf-450b-b9ed-70f82c48e1c6",
+          "id": "2db00f1d-d853-4af4-b70d-86dc42173ece",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -37,10 +38,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "bae9cb2a-3fcd-4899-adf6-1efee350f934",
+          "id": "1529b78d-1494-463c-8650-492b1f62524e",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -50,10 +52,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "f432cad9-d3b9-42da-9c1f-f4f356eb1555",
+          "id": "581ad8ff-cac2-45e1-ba2c-f62a5729d4d1",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -63,10 +66,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "df963f9e-01cc-4932-9745-8a478ff99f23",
+          "id": "67caf0af-48fe-4c87-a29c-a15b84c15daf",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -76,10 +80,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings-success-page",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "52a0a3d1-fd3b-46ad-acf9-0896d31d6063",
+          "id": "abde2d46-d389-4965-aa65-b97b26f2bd57",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -89,10 +94,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "31e667bd-f8db-40ed-bb84-e64e8c176354",
+          "id": "f45a2863-2f1a-4aa5-8837-56f99e6bbd41",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -102,10 +108,25 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "fd9d8362-b22f-4cee-9a50-e1c32f632310",
+          "id": "a2096fe8-bc8f-498a-9ada-9b5eb06078c8",
+          "name": "campaignOffersContainerBgColor",
+          "displayName": "",
+          "description": "",
+          "type": "COLOR",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "checkout-campaign-offers-design-settings",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "c759ae15-b1a5-4b0d-b27b-ec5efe114d11",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -115,10 +136,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "d9349375-4f22-44f3-9179-b9ab9a5cb144",
+          "id": "affbb6a0-43c1-446c-b344-3fc73619645a",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -128,10 +150,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "8be2e392-c074-4dc5-b4d6-41321aee87e1",
+          "id": "e899193e-b04b-4ea1-bc82-02d9cbfba766",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -141,10 +164,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "064cacf0-e6ca-415f-8d44-273f30e7ae40",
+          "id": "49a62b24-c62d-4d7d-b2a4-5b5f20d18674",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -154,10 +178,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "8f0b7313-a06c-4417-ba7e-2f61aa7a8be1",
+          "id": "43fd13f4-ea01-4afb-b35c-8fc761a13bec",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -167,10 +192,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "11224e4b-44b0-436e-a64f-cb07c521d34d",
+          "id": "f6f2cd00-ca0e-4032-9af3-ac5a0e807dcd",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -180,10 +206,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "97e7516d-27e6-4161-9f5b-3836bb96cf40",
+          "id": "e08a0c62-5d40-4a38-a3a0-c809ffaa1927",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -193,10 +220,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "b237efdd-3721-4b2d-b825-7c5a69f8dbfc",
+          "id": "7b61e7f9-3be7-4a94-84b3-c0e2f4a3e830",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -206,10 +234,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "e834c8dc-bad6-44ee-8e7e-cb1e94a6a136",
+          "id": "612bc56c-216f-4a66-b057-e94fa8c9ce6c",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -219,10 +248,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "612eef62-5ead-4aa9-a803-3906d38471d1",
+          "id": "bbb9c341-9ec6-46dc-acec-fbaa1f1d0b2d",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -232,10 +262,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings-success-page",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "4a51b882-a026-4a48-a35b-452d29856907",
+          "id": "993276fc-c33b-495c-aec0-574f8305e9d6",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -245,10 +276,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings-success-page",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "0a9b19f2-db9f-44a5-a1c7-8e9d527c673b",
+          "id": "e1969960-eeaa-40e9-b50d-f69099ac00b8",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -258,10 +290,11 @@
           "translations": {},
           "groupId": "checkout-campaign-offers-design-settings-success-page",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "b9551cb2-d2c6-4396-8d21-f28fdbe98da6",
+          "id": "e0d363da-bb0f-45cb-afb8-597554800712",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -271,10 +304,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "ca1edeb5-9c0c-498e-b6db-c976998fb3e6",
+          "id": "7a0f326f-7c15-401c-bcfb-9264cb5a54e3",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -284,10 +318,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "39edaeb4-b27c-4d60-987d-8b0a6f701ff7",
+          "id": "1988dcd5-327c-47ba-80ac-5a0ea67f8715",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -297,10 +332,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "e7674d0a-7685-4937-9a9e-b057ce0a2958",
+          "id": "530cf1c2-2c84-4a34-9f28-81b183d0841e",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -310,10 +346,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "6399c7cf-b0f8-4e2b-a69b-793599b57dfb",
+          "id": "4be4ab05-9647-4445-89d0-4d68ac9ed2e8",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -323,10 +360,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "a89b2c9f-3a76-49fb-b5d4-a8c68c0d4857",
+          "id": "11aaf449-69b9-4c20-a0b3-b3b2ee240855",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -336,10 +374,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "834f867a-5d3d-4cfc-bcf9-6f00417064e9",
+          "id": "9b7b46d5-729e-48ff-aea6-4f9196d3138e",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -349,10 +388,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "96f15548-63c0-4dee-bc05-e8dd5f13cc2e",
+          "id": "7b477fe3-6774-45fd-8cda-a1e5a974fde0",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -362,10 +402,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "3e69b38d-0179-4c0d-989b-d98c3a7f0301",
+          "id": "274deeef-1b15-43ed-af33-7127c3c54c0d",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -375,10 +416,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "1480c8b9-0c04-4a4d-a690-5a0dea1630bd",
+          "id": "b931bbf7-daf8-4c53-bc01-f79d09c4116a",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -388,10 +430,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "6d600a8e-8994-4cc6-a17c-669345dd5551",
+          "id": "703975ce-f7ff-4e66-a57d-c925b90918da",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -401,10 +444,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "cfd2c3d8-b965-4753-9a4f-4ee73a65d7ea",
+          "id": "f8af3627-5371-408f-91bd-28ac654ab8a5",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -414,10 +458,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "2489727a-8259-410a-a0c6-12ad523150d8",
+          "id": "98bfe293-a281-437e-892e-98ed0ea4f9c8",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -427,10 +472,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "0b198df7-eb99-4064-af42-f65c30cad31e",
+          "id": "8c13d34f-95b8-4d45-ae76-099b322b129f",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -440,10 +486,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "5e40c245-d030-45da-9252-d92f7de238b9",
+          "id": "4fd0faad-6c24-406a-9ef6-272c1a3a32fd",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -453,10 +500,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "a37aaade-e2cc-4071-8ced-49700a03b971",
+          "id": "e5ba06b1-75c8-4566-b2ad-6ec4e915a45d",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -466,10 +514,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "29ed3c59-5511-4890-9d06-780c8d63cf64",
+          "id": "ada8dda3-9f33-4566-8f0b-898e497b1f14",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -479,10 +528,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "63fc0c53-0b36-4cf3-9c9d-8b0840af451c",
+          "id": "c1213a9f-7e92-4089-aa82-fcd61370a251",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -492,10 +542,11 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
-          "id": "c4800c7e-f366-4c8d-b03c-6966c45b1ce0",
+          "id": "4b06c6e8-ba65-4607-90ce-622d45e40660",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -505,14 +556,55 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
       "isFooter": false,
       "translations": {},
       "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValues": {
+        "logo": null,
+        "showTax": null,
+        "showCampaignOffersDesign": null,
+        "campaignOfferIsSmallDesign": null,
+        "showCampaignIsBiggerImage": null,
+        "campaignOffersTitleColor": null,
+        "campaignOffersDescriptionColor": null,
+        "campaignOffersContainerBgColor": null,
+        "showCampaignShowDiscountSettings": null,
+        "showCampaignHideDiscountBadge": null,
+        "campaignOffersDiscountPercentageColor": null,
+        "campaignOffersDiscountPercentageBgColor": null,
+        "showCampaignShowCountdownSettings": null,
+        "campaignOfferCountdownStyleIsLine": null,
+        "campaignOffersCountdownTextColor": null,
+        "campaignOffersCountdownTimeColor": null,
+        "campaignOffersCountdownBgColor": null,
+        "campaignOffersEnableMiddlePhase": null,
+        "campaignOffersMiddlePhaseOverlayColor": null,
+        "campaignOfferCountdownStyleIsLineSuccessPage": null,
+        "buttonBgColor": null,
+        "buttonTextColor": null,
+        "buttonDisabledBgColor": null,
+        "buttonDisabledTextColor": null,
+        "primaryTextColor": null,
+        "secondaryTextColor": null,
+        "primaryBgColor": null,
+        "secondaryBgColor": null,
+        "borderColor": null,
+        "cardBgColor": null,
+        "errorColor": null,
+        "errorLightColor": null,
+        "warningColor": null,
+        "warningLightColor": null,
+        "successColor": null,
+        "successLightColor": null,
+        "secondaryButtonBgColor": null,
+        "secondaryButtonTextColor": null,
+        "secondaryButtonBorderColor": null
+      },
       "commonPropValues": null
     },
     {
@@ -534,7 +626,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "1742fde1-2c44-4392-b7cc-e454f0f0d1c3",
@@ -547,7 +640,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "a248f35d-9f06-4f0b-95fb-9612e1bec45f",
@@ -560,7 +654,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "02b27a19-aa26-41fc-b3d2-5aa485c879c8",
@@ -573,7 +668,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "b8846002-c57c-47f6-b0dc-dd14dc476e6e",
@@ -586,7 +682,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "42903cb6-0f32-42db-a2db-7a657904065e",
@@ -600,7 +697,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "1013b7d7-6ecc-48c2-9512-0e625a4a9989",
@@ -613,7 +711,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "546e3fbd-f996-4f09-b1ca-6c73e24fca01",
@@ -626,7 +725,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "f366719d-ca57-4654-b725-a6c52705a126",
@@ -639,7 +739,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": true,
@@ -691,11 +792,6 @@
           "logo": {
             "id": "theme-images/4d7d5725-1ff3-40fa-9f5a-94a783830b94",
             "altText": null
-          },
-          "categoriels": {
-            "categoryListType": "ALL",
-            "initialSort": "A_Z",
-            "initialLimit": 20
           }
         },
         "tr": {
@@ -738,14 +834,7 @@
             "Deneme Ürün İsmi",
             "Maskara"
           ],
-          "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-          "sortItems": null,
-          "logo": null,
-          "categoriels": {
-            "categoryListType": "ALL",
-            "initialSort": "A_Z",
-            "initialLimit": 20
-          }
+          "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo"
         },
         "ar": {
           "categories": {
@@ -792,20 +881,10 @@
           "logo": {
             "id": "theme-images/9ab2e2f8-f82b-44f9-a653-1019bb4c33af",
             "altText": null
-          },
-          "categoriels": {
-            "categoryListType": "ALL",
-            "initialSort": "A_Z",
-            "initialLimit": 20
           }
         }
       },
       "defaultPropValues": {
-        "categoriels": {
-          "categoryListType": "ALL",
-          "initialSort": "A_Z",
-          "initialLimit": 20
-        },
         "categories": {
           "categoryListType": "ALL",
           "initialSort": "A_Z",
@@ -874,7 +953,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -890,10 +970,6 @@
         "links": {
           "items": [
             {
-              "icon": {
-                "id": "theme-images/2b97ce81-5764-477f-b4e8-a2fcfa6f20bd",
-                "altText": null
-              },
               "link": {
                 "id": "2e3e56d7-84a9-4c67-a70c-bc014d330b5f",
                 "linkType": "PAGE",
@@ -902,6 +978,10 @@
                 "pageType": "CATEGORY",
                 "itemId": "bb97f0d5-296c-4ba2-9ab1-061ba069c432",
                 "subLinks": []
+              },
+              "icon": {
+                "id": "theme-images/2b97ce81-5764-477f-b4e8-a2fcfa6f20bd",
+                "altText": null
               }
             }
           ]
@@ -929,7 +1009,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "0fec1433-3bf4-487a-943d-b0e8f13fc049",
@@ -942,7 +1023,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "627306c9-c707-46bf-9a32-5966605d509a",
@@ -955,7 +1037,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1011,8 +1094,6 @@
         }
       },
       "defaultPropValues": {
-        "col": "1",
-        "slider": true,
         "banners": [
           {
             "link": {
@@ -1029,7 +1110,9 @@
               "altText": null
             }
           }
-        ]
+        ],
+        "col": "1",
+        "slider": true
       },
       "commonPropValues": null
     },
@@ -1053,7 +1136,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "baf1f90e-9c1c-4b48-812d-210f7eb5d2c0",
@@ -1066,7 +1150,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1076,6 +1161,10 @@
         "en": {
           "products": [
             {
+              "image": {
+                "id": "theme-images/7f3a9641-be25-4872-8262-b44dd455d7b0",
+                "altText": null
+              },
               "products": {
                 "id": "0a075f36-1031-4a41-98e5-8b7f86c1e1a9",
                 "productListType": "STATIC",
@@ -1103,10 +1192,6 @@
                     "variantId": "5cfa26ba-4734-43a1-8163-98139116406b"
                   }
                 ]
-              },
-              "image": {
-                "id": "theme-images/7f3a9641-be25-4872-8262-b44dd455d7b0",
-                "altText": null
               }
             }
           ],
@@ -1115,6 +1200,10 @@
         "ar": {
           "products": [
             {
+              "image": {
+                "id": "theme-images/7f3a9641-be25-4872-8262-b44dd455d7b0",
+                "altText": null
+              },
               "products": {
                 "id": "0a075f36-1031-4a41-98e5-8b7f86c1e1a9",
                 "productListType": "STATIC",
@@ -1142,10 +1231,6 @@
                     "variantId": "5cfa26ba-4734-43a1-8163-98139116406b"
                   }
                 ]
-              },
-              "image": {
-                "id": "theme-images/7f3a9641-be25-4872-8262-b44dd455d7b0",
-                "altText": null
               }
             }
           ],
@@ -1153,9 +1238,12 @@
         }
       },
       "defaultPropValues": {
-        "categories": false,
         "products": [
           {
+            "image": {
+              "id": "theme-images/7f3a9641-be25-4872-8262-b44dd455d7b0",
+              "altText": null
+            },
             "products": {
               "id": "0a075f36-1031-4a41-98e5-8b7f86c1e1a9",
               "productListType": "STATIC",
@@ -1183,13 +1271,10 @@
                   "variantId": "5cfa26ba-4734-43a1-8163-98139116406b"
                 }
               ]
-            },
-            "image": {
-              "id": "theme-images/7f3a9641-be25-4872-8262-b44dd455d7b0",
-              "altText": null
             }
           }
-        ]
+        ],
+        "categories": false
       },
       "commonPropValues": null
     },
@@ -1213,7 +1298,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1242,7 +1328,7 @@
           "items": []
         }
       },
-      "defaultPropValues": null,
+      "defaultPropValues": {},
       "commonPropValues": null
     },
     {
@@ -1265,7 +1351,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1362,7 +1449,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "c99db445-de8f-42bf-a0f3-a4f506708228",
@@ -1375,7 +1463,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "e2c9d1e3-0e99-4f9c-b576-fe7d8a6546c9",
@@ -1388,7 +1477,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1413,12 +1503,6 @@
             "categoryListType": "ALL",
             "initialSort": "A_Z",
             "initialLimit": 50
-          },
-          "customdetails": [],
-          "category": {
-            "categoryListType": "ALL",
-            "initialSort": "A_Z",
-            "initialLimit": 20
           }
         },
         "en": {
@@ -1440,13 +1524,7 @@
             "categoryListType": "ALL",
             "initialSort": "A_Z",
             "initialLimit": 50
-          },
-          "category": {
-            "categoryListType": "ALL",
-            "initialSort": "A_Z",
-            "initialLimit": 20
-          },
-          "customdetails": []
+          }
         },
         "ar": {
           "products": {
@@ -1467,26 +1545,7 @@
             "categoryListType": "ALL",
             "initialSort": "A_Z",
             "initialLimit": 50
-          },
-          "category": {
-            "categoryListType": "ALL",
-            "initialSort": "A_Z",
-            "initialLimit": 20
-          },
-          "customdetails": [
-            {
-              "title": "Teslimat",
-              "list": [
-                {
-                  "title": "Deneme",
-                  "icon": {
-                    "id": "theme-images/7361e3e1-edc8-43f0-8271-6359f23aaa38",
-                    "altText": null
-                  }
-                }
-              ]
-            }
-          ]
+          }
         }
       },
       "defaultPropValues": {
@@ -1504,30 +1563,11 @@
           "initialLimit": 10,
           "usePageFilter": true
         },
-        "category": {
-          "categoryListType": "ALL",
-          "initialSort": "A_Z",
-          "initialLimit": 20
-        },
         "categories": {
           "categoryListType": "ALL",
           "initialSort": "A_Z",
           "initialLimit": 50
-        },
-        "customdetails": [
-          {
-            "title": "Teslimat",
-            "list": [
-              {
-                "title": "Deneme",
-                "icon": {
-                  "id": "theme-images/7361e3e1-edc8-43f0-8271-6359f23aaa38",
-                  "altText": null
-                }
-              }
-            ]
-          }
-        ]
+        }
       },
       "commonPropValues": null
     },
@@ -1550,7 +1590,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "7807c312-c3ce-437c-a210-50a918d4e94d",
@@ -1563,7 +1604,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "00a6eb03-c9c4-46dc-9701-e712aa441459",
@@ -1576,7 +1618,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "beabb20c-5a38-445e-91d7-02b1b143b605",
@@ -1590,7 +1633,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "aa9881a0-5f9a-4b47-9654-7e88587d4156",
@@ -1603,7 +1647,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "3aedee29-62aa-4700-9f6f-8f478ca1751a",
@@ -1616,7 +1661,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1642,10 +1688,7 @@
           },
           "boxdata": {
             "items": []
-          },
-          "paymentText": null,
-          "returnText": null,
-          "customdetail": []
+          }
         },
         "en": {
           "product": {
@@ -1684,8 +1727,7 @@
             ]
           },
           "paymentText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>",
-          "returnText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>",
-          "customdetail": []
+          "returnText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>"
         },
         "ar": {
           "product": {
@@ -1723,21 +1765,7 @@
             ]
           },
           "paymentText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>",
-          "returnText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>",
-          "customdetail": [
-            {
-              "header": "Teslimat Ve Ödeme",
-              "list": [
-                {
-                  "title": "Deneme",
-                  "icon": {
-                    "id": "theme-images/d5ac304e-1855-4ef2-86ff-d8e42fce1a05",
-                    "altText": null
-                  }
-                }
-              ]
-            }
-          ]
+          "returnText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>"
         }
       },
       "defaultPropValues": {
@@ -1757,20 +1785,6 @@
           "initialSort": "LAST_ADDED",
           "initialLimit": 20
         },
-        "customdetail": [
-          {
-            "header": "Teslimat Ve Ödeme",
-            "list": [
-              {
-                "title": "Deneme",
-                "icon": {
-                  "id": "theme-images/d5ac304e-1855-4ef2-86ff-d8e42fce1a05",
-                  "altText": null
-                }
-              }
-            ]
-          }
-        ],
         "boxdata": {
           "items": [
             {
@@ -1789,8 +1803,8 @@
             }
           ]
         },
-        "returnText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-top: 1.14286em; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-top: 1.14286em; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-top: 1.14286em; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>",
-        "paymentText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>"
+        "paymentText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); margin-top: 1.14286em; margin-bottom: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>",
+        "returnText": "<p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İptal Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-top: 1.14286em; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sipariş adımlarını tamamlayarak ödemenizi gerçekleştirdikten sonra siparişinizin iptali için talep oluşturabilirsiniz. Talebinizi oluşturmak için sipariş numaranızla birlikte 0850 755 9987 numaralı İletişim Merkezimizi aramanız gerekmektedir. İptal talepleri İletişim Formumuz üzerinden yapılamamaktadır. İptal talepleri yalnızca siparişinizde bulunan ürünlerin depomuzda toplanma işlemi başlamamışsa değerlendirmeye alınabilmektedir. Sipariş verdiğiniz ürünlerin toplanma süreci başladıktan sonra iptal işlemi yapılamamaktadır. Böyle durumlarda iade talebi oluşturabilirsiniz.</p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-top: 1.14286em; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\"><span style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-style: inherit; font-variant: inherit; font-weight: 700; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;\">İade Koşulları:</span></p><p style=\"border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; margin-top: 1.14286em; margin-bottom: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; font-family: Rubik, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);\">Sitemiz üzerinden vermiş olduğunuz siparişlerle ilgili iade taleplerinizi sipariş numaranız ile birlikte 0850 755 9987 numaralı İletişim Merkezi hattımızı arayarak oluşturabilirsiniz. İade talebinizin olumlu sonuçlanması durumunda İletişim Merkezimizin sağlayacağı Kargo İade kodunu kullanarak Yurtiçi Kargo ile satın almış olduğunuz ürünleri iade edebilirsiniz. Ambalajı açılmış, kullanılmış ya da tekrar satışa engel durumu olan ürünler için iade işlemi yapılamamaktadır.Şampuan, duş jeli, cilt ve saç bakım ürünleri gibi iadesi sağlık ve hijyen açısından uygun olmayan ürünler için iade yapılamamaktadır. Koruma ambalajı bulunan makyaj, cilt bakım ürünlerinde de koruma bandı açıldığı takdirde iade işlemi yapılamamaktadır. İade etmek istediğiniz ürünlerin bu koşulları karşılamaması durumunda iade onayı iptal edilerek Yurtiçi Kargo ile ürünleriniz Alıcı Ödemeli olarak tarafınıza gönderilecektir. İptal ve iade süreçleri hakkında detaylı bilgi için İptal &amp; İade sayfamızı ziyaret edebilirsiniz.</p>"
       },
       "commonPropValues": null
     },
@@ -1813,7 +1827,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1879,7 +1894,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1920,7 +1936,7 @@
       "isFooter": false,
       "translations": {},
       "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValues": {},
       "commonPropValues": null
     },
     {
@@ -1943,7 +1959,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1954,18 +1971,18 @@
           "details": {
             "items": [
               {
+                "header": "Deneme",
                 "items": [
                   {
                     "itemsdata": {
+                      "title": "Deneme",
                       "icon": {
                         "id": "theme-images/66d5e684-5312-4394-9581-58927474e30b",
                         "altText": null
-                      },
-                      "title": "Deneme"
+                      }
                     }
                   }
-                ],
-                "header": "Deneme"
+                ]
               }
             ]
           }
@@ -1974,18 +1991,18 @@
           "details": {
             "items": [
               {
+                "header": "Deneme",
                 "items": [
                   {
                     "itemsdata": {
+                      "title": "Deneme",
                       "icon": {
                         "id": "theme-images/66d5e684-5312-4394-9581-58927474e30b",
                         "altText": null
-                      },
-                      "title": "Deneme"
+                      }
                     }
                   }
-                ],
-                "header": "Deneme"
+                ]
               }
             ]
           }
@@ -1995,18 +2012,18 @@
         "details": {
           "items": [
             {
+              "header": "Deneme",
               "items": [
                 {
                   "itemsdata": {
+                    "title": "Deneme",
                     "icon": {
                       "id": "theme-images/66d5e684-5312-4394-9581-58927474e30b",
                       "altText": null
-                    },
-                    "title": "Deneme"
+                    }
                   }
                 }
-              ],
-              "header": "Deneme"
+              ]
             }
           ]
         }
@@ -2025,7 +2042,7 @@
       "isFooter": false,
       "translations": {},
       "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValues": {},
       "commonPropValues": null
     },
     {
@@ -2040,7 +2057,7 @@
       "isFooter": false,
       "translations": {},
       "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValues": {},
       "commonPropValues": null
     },
     {
@@ -2055,7 +2072,7 @@
       "isFooter": false,
       "translations": {},
       "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValues": {},
       "commonPropValues": null
     },
     {
@@ -2077,7 +2094,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -2113,7 +2131,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -2144,7 +2163,8 @@
           "translations": {},
           "groupId": "",
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -2169,12 +2189,37 @@
       "description": "",
       "type": "COMPONENT",
       "componentJson": null,
-      "props": [],
+      "props": [
+        {
+          "id": "97dee5f0-d4b5-47ea-a2ca-eae23c02f900",
+          "name": "contactProps",
+          "displayName": "Contact Props",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": true,
+          "customDataId": "915b6095-ab53-4352-8a48-cac792406a1c",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
       "isHeader": false,
       "isFooter": false,
       "translations": {},
-      "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValuesTranslations": {
+        "en": {},
+        "ar": {}
+      },
+      "defaultPropValues": {
+        "contactProps": {
+          "mail": "mail@gmail.com",
+          "phone": "1234564123",
+          "address": "adress"
+        }
+      },
       "commonPropValues": null
     }
   ],
@@ -2251,10 +2296,6 @@
             "links": {
               "items": [
                 {
-                  "icon": {
-                    "id": "theme-images/2b97ce81-5764-477f-b4e8-a2fcfa6f20bd",
-                    "altText": null
-                  },
                   "link": {
                     "id": "2e3e56d7-84a9-4c67-a70c-bc014d330b5f",
                     "linkType": "PAGE",
@@ -2265,6 +2306,10 @@
                     "subLinks": [],
                     "level": 0,
                     "isCollapsed": true
+                  },
+                  "icon": {
+                    "id": "theme-images/2b97ce81-5764-477f-b4e8-a2fcfa6f20bd",
+                    "altText": null
                   }
                 }
               ]
@@ -2367,10 +2412,6 @@
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/452aadca-6815-4b8a-8d15-9a5c5454defc",
-                  "altText": null
-                },
                 "link": {
                   "id": "4803afcc-1a1b-4ecd-a726-e2613213fbea",
                   "linkType": "PAGE",
@@ -2379,13 +2420,13 @@
                   "pageType": "CUSTOM",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/452aadca-6815-4b8a-8d15-9a5c5454defc",
+                  "altText": null
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/de2674c9-f7bd-4b45-aed4-9e78d3b5a0b4",
-                  "altText": null
-                },
                 "link": {
                   "id": "24e98a66-148e-46c2-b1bf-3b0c86c168e8",
                   "linkType": "PAGE",
@@ -2394,13 +2435,13 @@
                   "pageType": "CHECKOUT",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/de2674c9-f7bd-4b45-aed4-9e78d3b5a0b4",
+                  "altText": null
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/01c9451b-bf00-4e2f-8cb8-96f4e424aacc",
-                  "altText": null
-                },
                 "link": {
                   "id": "15793476-66cd-4acb-a40f-c6c8c62d59d4",
                   "linkType": "PAGE",
@@ -2409,13 +2450,13 @@
                   "pageType": "CHECKOUT",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/01c9451b-bf00-4e2f-8cb8-96f4e424aacc",
+                  "altText": null
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/09f3c441-f936-4a13-ac79-0b8adfa59b84",
-                  "altText": null
-                },
                 "link": {
                   "id": "fc2af30e-5a00-4426-8eaf-ee359a733c22",
                   "linkType": "PAGE",
@@ -2424,13 +2465,13 @@
                   "pageType": "CHECKOUT",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/09f3c441-f936-4a13-ac79-0b8adfa59b84",
+                  "altText": null
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/23cb4fc9-bb1c-4c86-9a82-68acb96af4de",
-                  "altText": null
-                },
                 "link": {
                   "id": "da4432f0-3694-4d7d-a488-1219eba2fd79",
                   "linkType": "PAGE",
@@ -2439,13 +2480,13 @@
                   "pageType": "REGISTER",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/23cb4fc9-bb1c-4c86-9a82-68acb96af4de",
+                  "altText": null
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/c82e0958-dffc-4242-a66b-2b2c745c42b2",
-                  "altText": null
-                },
                 "link": {
                   "id": "c183629f-b8ee-444a-b513-35b46d137193",
                   "linkType": "PAGE",
@@ -2454,6 +2495,10 @@
                   "pageType": "CHECKOUT",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/c82e0958-dffc-4242-a66b-2b2c745c42b2",
+                  "altText": null
                 }
               },
               {
@@ -2472,10 +2517,6 @@
                 }
               },
               {
-                "image": {
-                  "id": "theme-images/bfc0e280-0f6c-4d14-b726-ffb3cff8ff7f",
-                  "altText": null
-                },
                 "link": {
                   "id": "fcbe793e-f180-4807-904b-0ecca656a268",
                   "linkType": "PAGE",
@@ -2484,6 +2525,10 @@
                   "pageType": "INDEX",
                   "pageComponentId": null,
                   "subLinks": []
+                },
+                "image": {
+                  "id": "theme-images/bfc0e280-0f6c-4d14-b726-ffb3cff8ff7f",
+                  "altText": null
                 }
               }
             ]
@@ -2495,6 +2540,10 @@
           "propValues": {
             "products": [
               {
+                "image": {
+                  "id": "theme-images/0f1d593e-c0e3-4a1b-bd72-230eb99361d9",
+                  "altText": null
+                },
                 "products": {
                   "id": "2e73aa38-95f8-4532-9250-071a8b738266",
                   "productListType": "CATEGORY",
@@ -2537,13 +2586,13 @@
                   "recommendedProductsType": {
                     "recommendedProductType": "CATEGORY"
                   }
-                },
-                "image": {
-                  "id": "theme-images/0f1d593e-c0e3-4a1b-bd72-230eb99361d9",
-                  "altText": null
                 }
               },
               {
+                "image": {
+                  "id": "theme-images/5425262d-3751-4e79-a6f2-b91567252586",
+                  "altText": null
+                },
                 "products": {
                   "id": "1188e70d-1d7d-41a3-aec0-5fee96dd9451",
                   "productListType": "CATEGORY",
@@ -2566,10 +2615,6 @@
                   "recommendedProductsType": {
                     "recommendedProductType": "CATEGORY"
                   }
-                },
-                "image": {
-                  "id": "theme-images/5425262d-3751-4e79-a6f2-b91567252586",
-                  "altText": null
                 }
               }
             ],
@@ -2734,15 +2779,15 @@
           "propValues": {
             "products": [
               {
+                "image": {
+                  "id": "theme-images/ced060cf-f409-4295-8acb-7a9fd5866ea0",
+                  "altText": null
+                },
                 "products": {
                   "id": "236d6774-6673-48cf-9752-2a14f46500bb",
                   "productListType": "ALL",
                   "initialSort": "LAST_ADDED",
                   "initialLimit": 20
-                },
-                "image": {
-                  "id": "theme-images/ced060cf-f409-4295-8acb-7a9fd5866ea0",
-                  "altText": null
                 }
               }
             ],
@@ -3192,11 +3237,11 @@
                     },
                     {
                       "itemsdata": {
+                        "title": "Email",
                         "icon": {
                           "id": "theme-images/50d056c8-3ce4-46d8-aebb-a1831f1e1bab",
                           "altText": null
-                        },
-                        "title": "Email"
+                        }
                       }
                     }
                   ]
@@ -3220,7 +3265,26 @@
           "id": "67673ce6-f309-4e2b-8d42-9eff9afa8029",
           "componentId": "checkout",
           "propValues": {
+            "logo": null,
             "showTax": true,
+            "showCampaignOffersDesign": false,
+            "campaignOfferIsSmallDesign": false,
+            "showCampaignIsBiggerImage": false,
+            "campaignOffersTitleColor": null,
+            "campaignOffersDescriptionColor": null,
+            "campaignOffersContainerBgColor": null,
+            "showCampaignShowDiscountSettings": false,
+            "showCampaignHideDiscountBadge": false,
+            "campaignOffersDiscountPercentageColor": null,
+            "campaignOffersDiscountPercentageBgColor": null,
+            "showCampaignShowCountdownSettings": false,
+            "campaignOfferCountdownStyleIsLine": false,
+            "campaignOffersCountdownTextColor": null,
+            "campaignOffersCountdownTimeColor": null,
+            "campaignOffersCountdownBgColor": null,
+            "campaignOffersEnableMiddlePhase": false,
+            "campaignOffersMiddlePhaseOverlayColor": null,
+            "campaignOfferCountdownStyleIsLineSuccessPage": false,
             "buttonBgColor": "#272727",
             "buttonTextColor": "#FFFFFF",
             "buttonDisabledBgColor": "#F7F7F9",
@@ -3237,16 +3301,9 @@
             "warningLightColor": "#FFFAEE",
             "successColor": "#2DCA73",
             "successLightColor": "#F6FFED",
-            "logo": null,
-            "showCampaignOffersDesign": false,
-            "campaignOfferIsSmallDesign": false,
-            "showCampaignIsBiggerImage": false,
-            "showCampaignShowDiscountSettings": false,
-            "showCampaignHideDiscountBadge": false,
-            "showCampaignShowCountdownSettings": false,
-            "campaignOfferCountdownStyleIsLine": false,
-            "campaignOfferCountdownStyleIsLineSuccessPage": false,
-            "campaignOffersEnableMiddlePhase": false
+            "secondaryButtonBgColor": null,
+            "secondaryButtonTextColor": null,
+            "secondaryButtonBorderColor": null
           }
         }
       ],
@@ -3392,27 +3449,7 @@
         {
           "id": "4efba374-2585-4bdf-905b-c9d68655dddf",
           "componentId": "81731b4c-ab17-49dd-9495-edf07d236cca",
-          "propValues": {
-            "products": {
-              "id": "1822f7e2-4e38-4a85-8545-4b212ee4f8a5",
-              "productListType": "ALL",
-              "initialSort": "DEFAULT",
-              "initialLimit": 5,
-              "usePageFilter": true
-            },
-            "popular": {
-              "id": "44dc6769-584e-48df-abfd-a777655fd9d4",
-              "productListType": "ALL",
-              "initialSort": "LAST_ADDED",
-              "initialLimit": 10,
-              "usePageFilter": true
-            },
-            "categories": {
-              "categoryListType": "ALL",
-              "initialSort": "A_Z",
-              "initialLimit": 50
-            }
-          }
+          "propValues": {}
         }
       ],
       "specifications": [],
@@ -4154,18 +4191,18 @@
             "details": {
               "items": [
                 {
+                  "header": "Deneme",
                   "items": [
                     {
                       "itemsdata": {
+                        "title": "Deneme",
                         "icon": {
                           "id": "theme-images/66d5e684-5312-4394-9581-58927474e30b",
                           "altText": null
-                        },
-                        "title": "Deneme"
+                        }
                       }
                     }
-                  ],
-                  "header": "Deneme"
+                  ]
                 }
               ]
             }
@@ -6830,7 +6867,13 @@
         {
           "id": "114cb4a0-7224-4318-b3e1-892c6cb2d68f",
           "componentId": "b6481f53-b8c1-46a0-8a68-84ca23c3a6b7",
-          "propValues": {}
+          "propValues": {
+            "contactProps": {
+              "mail": "adress@gmail.com",
+              "phone": "123123123",
+              "address": "adress"
+            }
+          }
         }
       ],
       "slug": "contact",
@@ -7040,7 +7083,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "7b573af9-e2f9-4140-ac11-7a8ec8d3237b",
@@ -7054,7 +7098,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7062,7 +7107,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "fef28014-e9fe-42f8-88d5-61369f583293",
@@ -7083,7 +7129,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7091,7 +7138,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "a2f7fa1a-8ea9-402c-8e97-46a378d51dac",
@@ -7113,7 +7161,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "8c16fee1-a25b-4955-8c8f-eba7aa3d09f2",
@@ -7127,7 +7176,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7135,7 +7185,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "9c1b8a14-9aa6-46e8-ad70-197cfa80a234",
@@ -7156,7 +7207,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7164,7 +7216,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "28fee9d8-0b2d-4d8b-8bcc-2666b3a6c814",
@@ -7184,7 +7237,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7192,7 +7246,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "0f00197a-0db8-4b22-a6af-f5d36d86c805",
@@ -7214,7 +7269,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "01e25975-35ea-4955-b7b8-c0dd8ed2c487",
@@ -7228,7 +7284,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7236,7 +7293,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "e5c557df-906e-483d-b7d9-74c7a22c9d49",
@@ -7257,7 +7315,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7265,7 +7324,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "0aa8d45a-cb97-46ef-b2af-dbc97ce9517c",
@@ -7287,7 +7347,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "ee5af324-e6f6-4c73-ae9f-7f8417813bfb",
@@ -7301,7 +7362,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7309,7 +7371,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "76f99690-871c-4455-b8a7-630517d9ae23",
@@ -7332,7 +7395,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7340,7 +7404,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "51acf09b-285f-43a1-83f8-3bc531315da8",
@@ -7362,7 +7427,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "3572c8de-8881-488a-8e00-c8ce26d464f2",
@@ -7384,7 +7450,8 @@
               "isRoot": false,
               "level": 2,
               "excludedFields": [],
-              "excludedFieldsCategory": []
+              "excludedFieldsCategory": [],
+              "isFacetListNotSent": false
             }
           ],
           "sliderData": {},
@@ -7392,7 +7459,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7400,7 +7468,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "6002cb86-c888-4a13-a260-ac695b0813f7",
@@ -7430,7 +7499,8 @@
               "isRoot": false,
               "level": 2,
               "excludedFields": [],
-              "excludedFieldsCategory": []
+              "excludedFieldsCategory": [],
+              "isFacetListNotSent": false
             }
           ],
           "sliderData": {},
@@ -7438,7 +7508,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7446,7 +7517,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "c4320ef6-2429-4d51-8c04-24008920abeb",
@@ -7468,7 +7540,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         },
         {
           "id": "80fc7c4b-d50f-46c9-ad4c-52324d86518e",
@@ -7482,7 +7555,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7490,7 +7564,8 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     },
     {
       "id": "ca0c77f7-2407-4807-a266-2956397319b3",
@@ -7520,7 +7595,8 @@
               "isRoot": false,
               "level": 2,
               "excludedFields": [],
-              "excludedFieldsCategory": []
+              "excludedFieldsCategory": [],
+              "isFacetListNotSent": false
             }
           ],
           "sliderData": {},
@@ -7528,7 +7604,8 @@
           "isRoot": false,
           "level": 1,
           "excludedFields": [],
-          "excludedFieldsCategory": []
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
@@ -7536,7 +7613,70 @@
       "isRoot": true,
       "level": 0,
       "excludedFields": [],
-      "excludedFieldsCategory": []
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
+    },
+    {
+      "id": "915b6095-ab53-4352-8a48-cac792406a1c",
+      "name": "ContactProps",
+      "typescriptName": "ContactProps",
+      "translations": {},
+      "type": "OBJECT",
+      "isRequired": true,
+      "nestedData": [
+        {
+          "id": "104acaff-dd32-49f0-8cb3-1a8d39359167",
+          "name": "mail",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "mail",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "06f58ed7-4424-488a-ab7d-630501ccfb0f",
+          "name": "phone",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "phone",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "6eaa0c93-42ca-4c33-b1e6-db7eb36db02b",
+          "name": "address",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "address",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "sliderData": {},
+      "groupId": "",
+      "isRoot": true,
+      "level": 0,
+      "excludedFields": [],
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
     }
   ],
   "groups": [],

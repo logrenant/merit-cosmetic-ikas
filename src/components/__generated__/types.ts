@@ -8,9 +8,8 @@ import {
 } from "@ikas/storefront"
 
 export type BannerLink = { 
-	image: IkasImage;
-	mobile_image: IkasImage;
 	link: IkasNavigationLink;
+	image: IkasImage;
 };
 
 export type Banner = { 
@@ -60,6 +59,12 @@ export type ImageLinkListItem = {
 
 export type ImageLinkList = { 
 	items: ImageLinkListItem[];
+};
+
+export type ContactProps = { 
+	mail: string;
+	phone: string;
+	address: string;
 };
 
 export type NavbarProps = {
@@ -134,5 +139,9 @@ export type SpecialpagesProps = {
 
 export type BrandsProps = {
 	products: IkasProductList;
+};
+
+export type ContactpageProps = {
+	contactProps: ContactProps;
 };
 
