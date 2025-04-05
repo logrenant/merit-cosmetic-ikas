@@ -224,7 +224,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
 
       setRemaining(
         remainingObject!.condition.minAmount -
-          store.cartStore.cart!.totalFinalPrice
+        store.cartStore.cart!.totalFinalPrice
       );
     }
   }, [freeShippingRule, store.cartStore.cart]);
@@ -273,9 +273,8 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
           setOpenBag(true);
           document.body.classList.add("overflow-hidden");
         }}
-        className={`flex cursor-pointer h-full items-center justify-center relative ${
-          className || ""
-        }`}
+        className={`flex cursor-pointer h-full items-center justify-center relative ${className || ""
+          }`}
       >
         <button className="flex pb-[5px] relative items-center justify-center">
           <svg
@@ -353,24 +352,23 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                     {remaining < 0
                       ? t("reachedFreeShipping")
                       : t("forFreeShipping", {
-                          amount: formatPrice(
+                        amount: formatPrice(
+                          remaining!,
+                          formatCurrency(
                             remaining!,
-                            formatCurrency(
-                              remaining!,
-                              store.cartStore.cart?.currencyCode!,
-                              store.cartStore.cart?.currencySymbol!
-                            )
-                          ),
-                        })}
+                            store.cartStore.cart?.currencyCode!,
+                            store.cartStore.cart?.currencySymbol!
+                          )
+                        ),
+                      })}
                   </span>
                   <div className="w-full h-1.5 rounded-sm overflow-hidden bg-gray-200">
                     <div
                       style={{
-                        width: `${
-                          (store.cartStore.cart?.totalPrice! /
-                            (remaining + store.cartStore.cart?.totalPrice!)) *
+                        width: `${(store.cartStore.cart?.totalPrice! /
+                          (remaining + store.cartStore.cart?.totalPrice!)) *
                           100
-                        }%`,
+                          }%`,
                       }}
                       className="h-1.5 rounded-sm overflow-hidden bg-[color:var(--color-one)]"
                     />
@@ -379,7 +377,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
               </div>
             )}
           {store?.cartStore?.cart?.itemCount &&
-          store?.cartStore?.cart?.itemCount > 0 ? (
+            store?.cartStore?.cart?.itemCount > 0 ? (
             <div className="grid divide-y px-3 sm:px-5 divide-[color:var(--gray-two)] grid-cols-1">
               {store.cartStore.cart?.items.map((product) => (
                 <BagItem

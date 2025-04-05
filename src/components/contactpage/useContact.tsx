@@ -6,7 +6,7 @@ export type FormAlertType = {
     status: "success" | "error";
     title: string;
     text: string;
-};
+} | null;
 
 type FormItemStatus = "error" | undefined;
 
@@ -18,11 +18,45 @@ type UseContactStatus = {
     phone: FormItemStatus;
 };
 
+const formAlertMessages = {
+    en: {
+        success: {
+            title: "Success!",
+            text: "Your message has been sent successfully.",
+        },
+        unsuccess: {
+            title: "Submission Failed",
+            text: "Please check your entries and try again.",
+        },
+        error: {
+            title: "Error!",
+            text: "An error occurred while sending your message.",
+        },
+    },
+    ar: {
+        success: {
+            title: "تم الإرسال بنجاح!",
+            text: "لقد تم إرسال رسالتك بنجاح.",
+        },
+        unsuccess: {
+            title: "فشل الإرسال",
+            text: "يرجى مراجعة المدخلات والمحاولة مرة أخرى.",
+        },
+        error: {
+            title: "خطأ!",
+            text: "حدث خطأ أثناء إرسال رسالتك.",
+        },
+    },
+};
+
 export default function useContact() {
+    const store = useStore();
     const [psInfo, setPsInfo] = useState(true);
     const [marketingInfo, setMarketingInfo] = useState(true);
     const router = useRouter();
     const { t } = useTranslation();
+    const { locale } = router;
+    const currentLang = locale === 'ar' ? 'ar' : 'en';
 
     const [form] = useState(
         new ContactForm({
@@ -35,20 +69,19 @@ export default function useContact() {
     );
 
     const [isPending, setPending] = useState(false);
-    const [formAlert, setFormAlert] = useState<FormAlertType>();
+    const [formAlert, setFormAlert] = useState<FormAlertType>(null);
 
     useEffect(() => {
-        const store = useStore();
         if (!store.customerStore.customer?.id) return;
         router.push(form.redirect ? decodeURIComponent(form.redirect) : "/");
-    }, []);
+    }, [store.customerStore.customer?.id, router, form.redirect]);
 
     const onFormSubmit = async () => {
         if (isPending || !psInfo || !marketingInfo) return;
 
         try {
             setPending(true);
-            setFormAlert(undefined);
+            setFormAlert(null);
 
             const response = await form.saveContactForm();
             if (response.isFormError) return;
@@ -56,16 +89,16 @@ export default function useContact() {
             if (!response.isSuccess) {
                 setFormAlert({
                     status: "error",
-                    title: t("formAlert.unsuccessTitle"),
-                    text: t("formAlert.unsuccessText")
+                    title: formAlertMessages[currentLang].unsuccess.title,
+                    text: formAlertMessages[currentLang].unsuccess.text
                 });
                 return;
             }
 
             setFormAlert({
                 status: "success",
-                title: t("formAlert.successTitle"),
-                text: t("formAlert.successText")
+                title: formAlertMessages[currentLang].success.title,
+                text: formAlertMessages[currentLang].success.text
             });
 
             setTimeout(() => {
@@ -75,15 +108,15 @@ export default function useContact() {
         } catch {
             setFormAlert({
                 status: "error",
-                title: t("formAlert.errorTitle"),
-                text: t("formAlert.errorText")
+                title: formAlertMessages[currentLang].error.title,
+                text: formAlertMessages[currentLang].error.text
             });
         } finally {
             setPending(false);
         }
     };
 
-    const onFormAlertClose = () => setFormAlert(undefined);
+    const onFormAlertClose = () => setFormAlert(null);
 
     const status: UseContactStatus = {
         email: form.emailErrorMessage ? "error" : undefined,

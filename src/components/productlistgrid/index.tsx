@@ -209,7 +209,7 @@ const ProductListGrid: React.FC<
             </>
           )}
           <div className="mb-8 flex items-center justify-between">
-            <div className="text-[14px] text-[color:var(--color-two)] lg:block hidden">
+            <div className="text-[14px] lg:block hidden">
               {products.count} {t("categoryPage.product")}
             </div>
 
