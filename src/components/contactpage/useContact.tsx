@@ -61,20 +61,15 @@ export default function useContact() {
     const [form] = useState(
         new ContactForm({
             message: {
-                requiredRule: t("formMessage.requiredRule"),
-                emailRule: t("formMessage.emailRule"),
-                minRule: t("formMessage.minRule"),
+                requiredRule: t("required"),
+                emailRule: t("required"),
+                minRule: t("required"),
             },
         })
     );
 
     const [isPending, setPending] = useState(false);
     const [formAlert, setFormAlert] = useState<FormAlertType>(null);
-
-    useEffect(() => {
-        if (!store.customerStore.customer?.id) return;
-        router.push(form.redirect ? decodeURIComponent(form.redirect) : "/");
-    }, [store.customerStore.customer?.id, router, form.redirect]);
 
     const onFormSubmit = async () => {
         if (isPending || !psInfo || !marketingInfo) return;
@@ -101,9 +96,11 @@ export default function useContact() {
                 text: formAlertMessages[currentLang].success.text
             });
 
-            setTimeout(() => {
-                router.push(form.redirect ? decodeURIComponent(form.redirect) : "/");
-            }, 1000);
+            form.onFirstNameChange("");
+            form.onLastNameChange("");
+            form.onEmailChange("");
+            form.onPhoneChange("");
+            form.onMessageChange("");
 
         } catch {
             setFormAlert({
@@ -115,6 +112,7 @@ export default function useContact() {
             setPending(false);
         }
     };
+
 
     const onFormAlertClose = () => setFormAlert(null);
 

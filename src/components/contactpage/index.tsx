@@ -18,7 +18,7 @@ const ContactPage = (props: ContactpageProps) => {
   return (
     <div className="layout my-10" dir={direction}>
       <div className="mx-auto max-w-4xl">
-        <h1 className="mb-0 leading-none text-[color:var(--black-two)] text-xl lg:text-2xl">
+        <h1 className="mb-0 leading-none text-[color:var(--color-two)] text-xl lg:text-2xl">
           {t("contactUs")}
         </h1>
       </div>
