@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "keen-slider": "^6.8.5",
     "nprogress": "^0.2.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-hot-toast": "^2.4.0",
     "react-simple-star-rating": "^5.1.7",
     "tailwind-scrollbar-hide": "^1.1.7",

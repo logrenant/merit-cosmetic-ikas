@@ -175,6 +175,15 @@ const SearchBar = ({
 
   };
 
+  const slugify = (str: string) => {
+    return str
+      .toLowerCase()
+      .replace(/&/g, '-')
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
+
 
   return (
     <div className="block lg:order-none order-last lg:col-span-1 col-span-2">
@@ -415,7 +424,6 @@ const SearchBar = ({
 
                     <div className="grid p-4 grid-cols-2 gap-2">
 
-
                       {popularProducts.data.filter((p) => {
                         // console.log('p.categories-0', p.categories[0].name, { hoveredCategory });
 
@@ -491,12 +499,6 @@ const SearchBar = ({
                           </button>
                         </div>
                       )}
-
-
-
-
-
-
                       <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
@@ -504,20 +506,11 @@ const SearchBar = ({
                         />
                       </div>
 
-
-
-
                     </div>
                   </div>
                 </div>
               )}
-
-
-
             <article className="">
-
-
-
               {(searchedProducts && searchedProducts?.length > 0 && hoveredBrand) &&
                 !uiStore.searchKeyword && (
                   <div className="grid grid-cols-1 lg:grid-cols-[180px_auto]">
@@ -574,29 +567,15 @@ const SearchBar = ({
                       {/* SEARCH RESULTS */}
 
                       <div className="grid p-4 grid-cols-2 gap-2">
-
-
-
-
-          {/* <!--  --> 
-          - searchbox kategori listesinin arkaplanini uzat
-          */ }
-
-
-
-
-
-
                         {products.data.length > 0 ? (
                           products.data.slice(0, 8)
 
                             .map((product) => {
                               // console.log('product.name', product.name);
-
                               const mainImages = product?.attributes?.find(
                                 (e) => e.productAttribute?.name === "Ana Resim"
                               )?.images;
-                              
+
                               const showImage =
                                 mainImages && mainImages.length > 0
                                   ? mainImages[0]
@@ -643,13 +622,9 @@ const SearchBar = ({
                             </button>
                           </div>
                         )}
-
-
-
-
                         {products.data.length > 8 && (
                           <div className="col-span-2 flex">
-                            <Link href={"/" + linkToCategory}>
+                            <Link href={`/${slugify(linkToCategory)}`}>
                               <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)]">
 
                                 <span>
@@ -676,20 +651,12 @@ const SearchBar = ({
                             </Link>
                           </div>
                         )}
-
-
-
-
                         <div className="col-span-2 rounded-sm overflow-hidden">
                           <img
                             src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                             alt=""
                           />
                         </div>
-
-
-
-
                       </div>
                     </div>
                   </div>
