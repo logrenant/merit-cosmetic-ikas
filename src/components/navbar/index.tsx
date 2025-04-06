@@ -27,8 +27,6 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   const [open, setOpen] = useState(false);
   const categoriesWithChildrens: CategoryWithChildrenType[] = [];
 
-
-
   categories.data.map((cat) => {
     if (cat.parentId === null) {
       const baseCat: CategoryWithChildrenType = {

@@ -10,6 +10,7 @@ import "src/styles/global.css";
 import { Toaster } from "react-hot-toast";
 import UIStore from "../store/ui-store";
 import { useStore } from "@ikas/storefront";
+import ContentProtector from "src/components/composites/ContentProtector";
 
 IkasStorefrontConfig.init({
   ...Config,
@@ -58,6 +59,7 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
           duration: 3500,
         }}
       />
+      <ContentProtector />
       <Component {...pageProps} />
     </>
   );

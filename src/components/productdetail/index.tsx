@@ -260,14 +260,14 @@ const ProductDetail = ({
                   image={selectedImage}
                   alt={selectedImage?.altText || ""}
                   layout="responsive"
-                  objectFit="cover"
+                  objectFit="contain"
                   height={372}
                   width={293}
                   useBlur
                 />
               )}
             </div>
-            <div className="flex gap-3 mt-2 md:mt-6 items-center">
+            <div className="flex gap-3 mt-2 md:mt-12 items-center">
               {allImages.map((image) => (
                 <div
                   key={image.id + "image2"}
@@ -476,6 +476,8 @@ const ProductDetail = ({
             </div>
           </div>
         </div>
+
+        {/* Combine Products */}
         {combineProducts && (
           <div className="mt-8">
             <h3 className="text-xl text-[color:var(--color-one)] font-medium">
@@ -613,8 +615,8 @@ const ProductDetail = ({
                         }}
                         disabled={
                           loading ||
-                          e.isAddToCartEnabled ||
-                          product.isAddToCartEnabled
+                          !e.isAddToCartEnabled ||
+                          !product.isAddToCartEnabled
                         }
                         className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 whitespace-nowrap w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
                       >
@@ -628,6 +630,7 @@ const ProductDetail = ({
             </div>
           </div>
         )}
+
       </div>
       <div>
         <div className="flex border border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col items-center">
@@ -932,7 +935,7 @@ const ProductDetail = ({
                   )}
               </div>
 
-              <div className="w-full mt-8 pt-6 border-t border-[color:var(--gray-one)]">
+              <div className="w-full my-8 pt-6 border-t border-[color:var(--gray-one)]">
                 {reviews.data.map((comment) => (
                   <div
                     key={comment.id + "comment"}
