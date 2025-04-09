@@ -1,109 +1,106 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { formatCurrency } from "@ikas/storefront";
-
 import UIStore from "../store/ui-store";
 
-export default function useConvertedPrice() {
-  const data = [
-    {
-      name: "USD",
-      currencySymbol: "$",
-    },
-    {
-      name: "EUR",
-      currencySymbol: "€",
-    },
-    {
-      name: "GBP",
-      currencySymbol: "£",
-    },
-    {
-      name: "AED",
-      currencySymbol: "د.إ",
-    },
-    {
-      name: "SAR",
-      currencySymbol: "ر.س",
-    },
-    {
-      name: "KWD",
-      currencySymbol: "د.ك",
-    },
-    {
-      name: "BHD",
-      currencySymbol: "د.ب",
-    },
-    {
-      name: "OMR",
-      currencySymbol: "ر.ع",
-    },
-    {
-      name: "QAR",
-      currencySymbol: "ر.ق",
-    },
-    {
-      name: "TRY",
-      currencySymbol: "₺",
-    },
-    {
-      name: "CAD",
-      currencySymbol: "$",
-    },
-  ];
-  const uiStore = UIStore.getInstance();
-  const [currencies, setCurrencies] = useState<{
-    AED: number;
-    BHD: number;
-    CAD: number;
-    EUR: number;
-    GBP: number;
-    KWD: number;
-    OMR: number;
-    QAR: number;
-    SAR: number;
-    TRY: number;
-  }>();
+// Tüm para birimi verilerini merkezi bir yerde tutalım
+const currencyData = [
+  {
+    name: "USD",
+    currencySymbol: "$",
+  },
+  {
+    name: "EUR",
+    currencySymbol: "€",
+  },
+  {
+    name: "GBP",
+    currencySymbol: "£",
+  },
+  {
+    name: "AED",
+    currencySymbol: "د.إ",
+  },
+  {
+    name: "SAR",
+    currencySymbol: "ر.س",
+  },
+  {
+    name: "KWD",
+    currencySymbol: "د.ك",
+  },
+  {
+    name: "BHD",
+    currencySymbol: "د.ب",
+  },
+  {
+    name: "OMR",
+    currencySymbol: "ر.ع",
+  },
+  {
+    name: "QAR",
+    currencySymbol: "ر.ق",
+  },
+  {
+    name: "TRY",
+    currencySymbol: "₺",
+  },
+  {
+    name: "CAD",
+    currencySymbol: "$",
+  },
+];
 
-useEffect(() => {
-  const fetchCurrencies = async () => {
-    const response = await axios.get(
-      "https://api.exchangerate.host/live?access_key=1a7f131e80a984e61b57d34a56d1de09"
-    );
-    localStorage.setItem("currency", JSON.stringify(response.data.quotes));
-    setCurrencies(response.data.quotes);
+export default function useConvertedPrice() {
+  const uiStore = UIStore.getInstance();
+
+  const convertPrice = (price: number) => {
+    try {
+      // Store'dan güncel döviz kurlarını al
+      const rates = uiStore.rates;
+      
+      // Eğer USD seçiliyse veya kur yoksa orijinal fiyatı dön
+      if (!rates || uiStore.currency === "USD") return price;
+
+      // Mevcut para biriminin kurunu bul
+      const rate = rates[uiStore.currency];
+      if (!rate) return price;
+
+      // Dönüşümü yap ve yuvarla
+      return parseFloat((price * rate).toFixed(2));
+    } catch (error) {
+      console.error("Price conversion error:", error);
+      return price;
+    }
   };
 
-  if (typeof window !== "undefined") {
-    const storedData = localStorage.getItem("currency");
-    if (storedData) {
-      try {
-        setCurrencies(JSON.parse(storedData));
-      } catch (error) {
-        fetchCurrencies();
+  const formatConvertedPrice = (price: number) => {
+    try {
+      // Para birimi verilerini bul
+      const targetCurrency = currencyData.find(
+        (c) => c.name === uiStore.currency
+      );
+
+      // Fallback olarak USD kullan
+      if (!targetCurrency) {
+        return formatCurrency(price, "USD", "$");
       }
-    } else {
-      fetchCurrencies();
+
+      // Dönüştürülmüş fiyatı al
+      const convertedPrice = convertPrice(price);
+
+      // Formatlanmış string'i döndür
+      return formatCurrency(
+        convertedPrice,
+        targetCurrency.name,
+        targetCurrency.currencySymbol
+      );
+    } catch (error) {
+      console.error("Price formatting error:", error);
+      return formatCurrency(price, "USD", "$");
     }
-  }
-}, [uiStore.currency]);
-
-  
-const formatPrice = (price: number, formattedPrice: string) => {
-  if (!currencies || uiStore.currency === "USD") return formattedPrice;
-  
-  const rate = currencies[`USD${uiStore.currency}` as keyof typeof currencies];
-  if (!rate) return formattedPrice;
-
-  const convertedPrice = price * rate;
-  const currencyInfo = data.find((e) => e.name === uiStore.currency);
-  
-  return currencyInfo 
-    ? formatCurrency(convertedPrice, currencyInfo.name, currencyInfo.currencySymbol)
-    : formattedPrice;
-};
+  };
 
   return {
-    formatPrice,
+    formatPrice: formatConvertedPrice,
+    convertPrice,
   };
 }

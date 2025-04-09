@@ -117,27 +117,24 @@ const LocalBar = () => {
     setCurrencyOpen(false);
   });
   const [selectedLocale, setSelectedLocale] = useState<string>();
-  useEffect(() => {
-    if (store.router?.locale) {
-      setSelectedLocale(store.router?.locale);
-    }
-  }, [store.router]);
+
   useEffect(() => {
     const fetchCurrency = async () => {
       try {
         const response = await axios.get(
-          "https://api.exchangerate.host/live?access_key=1a7f131e80a984e61b57d34a56d1de09"
+          "https://v6.exchangerate-api.com/v6/04d9a8a9c910f9d2f5fd255a/latest/USD"
         );
-        console.log(response.data.quotes);
 
-        localStorage.setItem("currency", JSON.stringify(response.data.rates));
-        const currencyLocal = localStorage.getItem("selectedcurrency");
-        if (currencyLocal) {
-          uiStore.currency = JSON?.parse(currencyLocal).name;
-          setCurrency(JSON?.parse(currencyLocal));
+        if (response.data.result === "success") {
+          const rates = response.data.conversion_rates;
+          uiStore.setRates(rates);
+
+          const currencyLocal = localStorage.getItem("selectedcurrency");
+          if (!currencyLocal) {
+            localStorage.setItem("selectedcurrency", JSON.stringify(datas[0]));
+          }
         }
       } catch (err) {
-        setLoading(false);
         setError(true);
       } finally {
         setLoading(false);
@@ -146,6 +143,14 @@ const LocalBar = () => {
 
     fetchCurrency();
   }, []);
+
+  const handleCurrencySelect = (e: typeof datas[number]) => {
+    setCurrency(e);
+    uiStore.setCurrency(e.name);
+    localStorage.setItem("selectedcurrency", JSON.stringify(e));
+    setCurrencyOpen(false);
+  };
+
   const langOptions = IkasStorefrontConfig.getRoutings();
   return (
     <div className="w-full py-1.5 text-center text-[13px] text-[color:var(--black-two)] flex items-center justify-center bg-[color:var(--gray-bg)]">

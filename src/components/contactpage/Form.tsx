@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore, useTranslation } from '@ikas/storefront';
+import { useStore } from '@ikas/storefront';
 import useContact from './useContact';
 
 const formTranslations = {
