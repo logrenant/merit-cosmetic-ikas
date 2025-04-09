@@ -260,7 +260,7 @@ const ProductDetail = ({
                   image={selectedImage}
                   alt={selectedImage?.altText || ""}
                   layout="responsive"
-                  objectFit="contain"
+                  objectFit="cover"
                   height={372}
                   width={293}
                   useBlur

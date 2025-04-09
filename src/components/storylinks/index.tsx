@@ -60,7 +60,7 @@ const StoryLinks = ({ items }: StorylinksProps) => {
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`absolute top-[30%] xl:left-[-12px] left-0 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
+            className={`absolute top-[30%] xl:left-[-20px] left-0 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
           >
             <svg
               className="w-8 h-8"
@@ -79,7 +79,7 @@ const StoryLinks = ({ items }: StorylinksProps) => {
 
           <button
             onClick={() => slider.current?.next()}
-            className={`absolute top-[30%] xl:right-[-12px] right-0 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
+            className={`absolute top-[30%] xl:right-[-20px] right-0 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200`}
           >
             <svg
               className="w-8 h-8"

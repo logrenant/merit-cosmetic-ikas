@@ -7,7 +7,7 @@ const Pricedisplay = ({
   currencyCode,
   currencySymbol,
   center,
-  left,
+  left
 }: {
   amount: number;
   currencyCode: string;
@@ -25,12 +25,7 @@ const Pricedisplay = ({
       {formatCurrency(amount, currencyCode, currencySymbol)}
       {uiStore.currency !== "USD" && (
         <span className="text-xs mt-0.5 md:text-sm text-[color:var(--color-four)]">
-          (
-          {formatPrice(
-            amount,
-            formatCurrency(amount, currencyCode, currencySymbol)
-          )}
-          )
+          ({formatPrice(amount)})
         </span>
       )}
     </span>

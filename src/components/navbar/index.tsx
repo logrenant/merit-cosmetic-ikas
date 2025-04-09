@@ -86,7 +86,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
         <div className="grid layout gap-3 items-center lg:gap-8  lg:pb-1 pt-1 grid-cols-[180px_1fr] lg:grid-cols-[1fr_minmax(200px,700px)_1fr]">
           <div className="flex font-light text-[color:var(--black-two)] text-lg items-center justify-start">
             <Link href="/">
-              <a className="relative aspect-square w-[48px] lg:min-w-[72px] max-w-[90px]">
+              <a className="relative aspect-square w-[48px] lg:min-w-[90px] max-w-[90px]">
                 <Image image={logo} layout="fill" className="object-contain" />
               </a>
             </Link>
