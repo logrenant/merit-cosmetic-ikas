@@ -1,7 +1,9 @@
-import { formatCurrency } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
-import useConvertedPrice from "../../utils/useConvertedPrice";
+import { formatCurrency } from "@ikas/storefront";
+
 import UIStore from "../../store/ui-store";
+import useConvertedPrice from "../../utils/useConvertedPrice";
+
 const Pricedisplay = ({
   amount,
   currencyCode,

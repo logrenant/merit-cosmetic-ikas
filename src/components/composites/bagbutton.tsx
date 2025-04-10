@@ -352,14 +352,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                     {remaining < 0
                       ? t("reachedFreeShipping")
                       : t("forFreeShipping", {
-                        amount: formatPrice(
-                          remaining!,
-                          formatCurrency(
-                            remaining!,
-                            store.cartStore.cart?.currencyCode!,
-                            store.cartStore.cart?.currencySymbol!
-                          )
-                        ),
+                        amount: formatPrice(remaining)
                       })}
                   </span>
                   <div className="w-full h-1.5 rounded-sm overflow-hidden bg-gray-200">
