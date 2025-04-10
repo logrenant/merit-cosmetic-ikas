@@ -3,7 +3,6 @@ import {
   IkasOrderLineItem,
   Image,
   Link,
-  formatCurrency,
   useStore,
   useTranslation,
 } from "@ikas/storefront";
