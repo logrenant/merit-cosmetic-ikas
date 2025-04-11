@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
           <div className="flex gap-1 items-center justify-end text-[color:var(--black-two)]">
             <AccountButton />
             <BellButton popularProducts={popularProducts.data} />
-            <BagButton className="rtl:pr-2 ltr:pl-2" />
+            <BagButton />
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden rtl:mr-3.5 ltr:ml-3.5 flex items-center justify-center w-6 h-6"

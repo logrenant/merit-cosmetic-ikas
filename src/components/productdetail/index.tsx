@@ -22,6 +22,7 @@ import CommentModal from "../composites/commentModal";
 import { useDirection } from "../../utils/useDirection";
 import { useAddToCart } from "../../utils/useAddToCart";
 import { ProductdetailProps } from "../__generated__/types";
+import ContentProtector from "../composites/ContentProtector";
 
 const Accordion = observer(
   ({ title, children }: { title: string; children: React.ReactNode }) => {
@@ -144,6 +145,7 @@ const ProductDetail = ({
       dir={direction}
       className="mb-10 mt-6 text-[color:var(--black-two)] layout grid grid-cols-[100%] lg:grid-cols-[calc(100%-292px)_260px] gap-8"
     >
+      <ContentProtector />
       {allImages && modalImage && allImages.length > 0 && (
         <Imagemodal
           selectedImage={selectedImage}
@@ -153,7 +155,6 @@ const ProductDetail = ({
       )}
 
       <div className="lg:col-span-2">
-
         {/* Breadcrumbs */}
         <ul className="flex flex-wrap gap-x-2 gap-y-0.5 text-[13px]">
           <li className="flex items-center gap-x-2">
@@ -224,100 +225,84 @@ const ProductDetail = ({
       </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-8">
-
           {/* Image Gallery */}
-          <div className="md:block xhidden">
-            <div
-              onClick={() => setModalImage(true)}
-              className="aspect-293/372 cursor-zoom-in relative w-full overflow-hidden"
-            >
-              <button
-                disabled={pending}
-                onClick={(e) => {
-                  toggleFavorite(e);
+          <div className="md:block">
+            <div className="flex flex-col-reverse xl:flex-row gap-4">
+              {/* all images */}
+              <div
+                className="overflow-x-auto xl:overflow-y-auto"
+                style={{
+                  maxWidth: "calc(5 * 80px + 4 * 16px)",
+                  maxHeight: "calc(5 * 80px + 4 * 16px)",
+                  scrollbarWidth: "none"
                 }}
-                className="flex disabled:opacity-60 disabled:animate-pulse items-center justify-center w-7 h-7 absolute right-1 top-1 z-20"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className={`w-7 h-7 stroke-[color:var(--color-three)] ${isProductFavorite ? "fill-[color:var(--color-three)]" : ""
-                    }`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                  />
-                </svg>
-              </button>
-              {selectedImage && (
-                <Image
-                  id="xx-selectedImage"
-                  image={selectedImage}
-                  alt={selectedImage?.altText || ""}
-                  layout="responsive"
-                  objectFit="cover"
-                  height={372}
-                  width={293}
-                  useBlur
-                />
-              )}
-            </div>
-            <div className="flex gap-3 mt-2 md:mt-12 items-center">
-              {allImages.map((image) => (
-                <div
-                  key={image.id + "image2"}
-                  onClick={() => setSelectedImage(image!)}
-                  className={`aspect-293/372 cursor-pointer border max-w-[65px] lg:max-w-[80px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
-                    ? "border-[color:var(--color-three)]"
-                    : "border-transparent hover:border-[color:var(--gray-three)]"
-                    }`}
-                >
-                  <Image
-                    image={image!}
-                    alt={image?.altText || ""}
-                    layout="responsive"
-                    objectFit="cover"
-                    height={372}
-                    width={293}
-                    useBlur
-                  />
+                <div className="flex flex-row xl:flex-col gap-4">
+                  {allImages.map((image) => (
+                    <div
+                      key={image.id + "image2"}
+                      onClick={() => setSelectedImage(image)}
+                      className={`cursor-pointer border min-w-[65px] lg:max-w-[80px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
+                        ? "border-[color:var(--color-three)]"
+                        : "border-transparent hover:border-[color:var(--gray-three)]"
+                        }`}
+                    >
+                      <Image
+                        image={image!}
+                        alt={image?.altText || ""}
+                        layout="responsive"
+                        objectFit="cover"
+                        height={372}
+                        width={293}
+                        useBlur
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              {/* selected image */}
+              <div className="flex-1" onClick={() => setModalImage(true)}>
+                <div className="aspect-293/372 cursor-zoom-in relative w-full overflow-hidden bg-[color:var(--gray-bg)]/10 rounded">
+                  <button
+                    disabled={pending}
+                    onClick={(e) => {
+                      toggleFavorite(e);
+                    }}
+                    className="flex disabled:opacity-60 disabled:animate-pulse items-center justify-center w-7 h-7 absolute right-1 top-1 z-20"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={`w-7 h-7 stroke-[color:var(--color-three)] ${isProductFavorite ? "fill-[color:var(--color-three)]" : ""
+                        }`}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                      />
+                    </svg>
+                  </button>
+                  {selectedImage && (
+                    <Image
+                      id="xx-selectedImage"
+                      image={selectedImage}
+                      alt={selectedImage?.altText || ""}
+                      layout="responsive"
+                      objectFit="contain"
+                      height={372}
+                      width={293}
+                      useBlur
+                    />
+                  )}
+                </div>
+              </div>
             </div>
           </div>
 
-          {show && (
-            <div dir="ltr" className="md:hidden hidden">
-              <Simpleslider
-                keenOptions={{
-                  initial: 0,
-                  slides: {
-                    perView: 1,
-                    spacing: 4,
-                  },
-                }}
-                items={allImages?.map((image) => (
-                  <div key={image.id + "image3"} className="keen-slider__slide">
-                    <div className="aspect-293/372 relative w-full overflow-hidden">
-                      <Image
-                        id="xx-slider-image"
-                        image={image!}
-                        alt={image?.altText || ""}
-                        useBlur
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                  </div>
-                ))}
-              />
-            </div>
-          )}
           <div>
             <h1 className="text-2xl">{product.name}</h1>
             <div className="flex flex-col gap-4 mt-4">
@@ -476,10 +461,48 @@ const ProductDetail = ({
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <div className="flex border border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col items-center">
+          <h2 className="text-xl  text-[color:var(--color-three)] font-light">
+            {product.brand?.name}
+          </h2>
+          <Link href={product.brand?.href || ""}>
+            <a className="text-sm px-4 py-2.5 mt-2 text-[color:var(--color-three)] border border-[color:var(--color-three)] rounded-sm">
+              {t("productDetail.allProductsInBrand")}
+            </a>
+          </Link>
+        </div>
+        <div className="flex border gap-3 mt-6 border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col">
+          {boxdata.items.map((e) => (
+            <div key={e.header + "head"}>
+              <h2 className="font-medium">{e.header}</h2>
+              {e.items.map((l) => (
+                <div
+                  key={l.itemsdata.title + "title"}
+                  className="flex mt-3.5 items-center gap-2"
+                >
+                  <div className="w-10 h-10 relative">
+                    <Image
+                      image={l.itemsdata.icon}
+                      alt={l.itemsdata.icon.altText || ""}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+
+                  <span className="text-sm">{l.itemsdata.title}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="lg:col-span-2">
 
         {/* Combine Products */}
         {combineProducts && (
-          <div className="mt-8">
+          <div>
             <h3 className="text-xl text-[color:var(--color-one)] font-medium">
               {t("productDetail.package")}
             </h3>
@@ -631,44 +654,6 @@ const ProductDetail = ({
           </div>
         )}
 
-      </div>
-      <div>
-        <div className="flex border border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col items-center">
-          <h2 className="text-xl  text-[color:var(--color-three)] font-light">
-            {product.brand?.name}
-          </h2>
-          <Link href={product.brand?.href || ""}>
-            <a className="text-sm px-4 py-2.5 mt-2 text-[color:var(--color-three)] border border-[color:var(--color-three)] rounded-sm">
-              {t("productDetail.allProductsInBrand")}
-            </a>
-          </Link>
-        </div>
-        <div className="flex border gap-3 mt-6 border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col">
-          {boxdata.items.map((e) => (
-            <div key={e.header + "head"}>
-              <h2 className="font-medium">{e.header}</h2>
-              {e.items.map((l) => (
-                <div
-                  key={l.itemsdata.title + "title"}
-                  className="flex mt-3.5 items-center gap-2"
-                >
-                  <div className="w-10 h-10 relative">
-                    <Image
-                      image={l.itemsdata.icon}
-                      alt={l.itemsdata.icon.altText || ""}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-
-                  <span className="text-sm">{l.itemsdata.title}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="lg:col-span-2">
         <div className="md:flex hidden flex-col gap-6 mt-8 p-6 border border-[color:var(--gray-six)]">
           <div className="grid grid-cols-3">
             <button

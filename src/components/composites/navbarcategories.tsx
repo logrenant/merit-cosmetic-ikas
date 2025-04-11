@@ -51,10 +51,10 @@ const NavbarCategories = ({
                 setBagTimeOutId(
                   setTimeout(() => {
                     setHoveredCategory(undefined);
-                  }, 1500)
+                  }, 300)
                 );
               }}
-              className="flex py-5 px-4 hover:bg-[color:var(--bg-color)]/10 items-center justify-center"
+              className="flex py-5 px-4 hover:bg-[color:var(--bg-color)]/10 items-center justify-center hover:cursor-pointer"
             >
               <Link href={e.href}>
                 <a className="text-sm tracking-widest text-white">{e.name}</a>

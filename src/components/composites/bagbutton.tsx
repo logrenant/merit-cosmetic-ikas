@@ -273,10 +273,10 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
           setOpenBag(true);
           document.body.classList.add("overflow-hidden");
         }}
-        className={`flex cursor-pointer h-full items-center justify-center relative ${className || ""
+        className={`flex h-full items-center justify-center relative ${className || ""
           }`}
       >
-        <button className="flex pb-[5px] relative items-center justify-center">
+        <button className="flex pb-[5px] relative items-center justify-center cursor-pointer">
           <svg
             width="22"
             height="24"
@@ -324,7 +324,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                   setOpenBag(false);
                   document.body.classList.remove("overflow-hidden");
                 }}
-                className="flex items-center justify-center -mr-[3px] w-6 h-6"
+                className="flex items-center cursor-pointer justify-center -mr-[3px] w-6 h-6"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -406,7 +406,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                 onClick={() => {
                   setOpenBag(false);
                 }}
-                className="mt-2 px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm"
+                className="mt-2 px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm cursor-pointer"
               >
                 {t("bagEmptyButton")}
               </button>
