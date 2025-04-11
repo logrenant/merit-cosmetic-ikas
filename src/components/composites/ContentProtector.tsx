@@ -9,27 +9,22 @@ declare module 'react' {
 
 const ContentProtector = () => {
     useEffect(() => {
-        // Metin seçimini engelleme
         const disableSelection = (e: Event) => {
             e.preventDefault();
             return false;
         };
 
-        // Klavye kısayollarını engelleme
         const disableShortcuts = (e: KeyboardEvent) => {
-            if (
-                e.ctrlKey ||
-                e.metaKey ||
-                e.key === 'PrintScreen' ||
-                e.key === 'F12'
-            ) {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'v') {
+                return;
+            }
+            if (e.ctrlKey || e.metaKey || e.key === 'PrintScreen') {
                 e.preventDefault();
                 e.stopPropagation();
                 return false;
             }
         };
 
-        // Mobil long-press engelleme
         let touchTimer: NodeJS.Timeout;
         const handleTouchStart = () => {
             touchTimer = setTimeout(() => {
@@ -41,7 +36,6 @@ const ContentProtector = () => {
             clearTimeout(touchTimer);
         };
 
-        // Event listener'ları ekle
         document.addEventListener('selectstart', disableSelection);
         document.addEventListener('contextmenu', disableSelection);
         document.addEventListener('keydown', disableShortcuts);
@@ -49,7 +43,6 @@ const ContentProtector = () => {
         document.addEventListener('touchend', handleTouchEnd);
         document.addEventListener('touchcancel', handleTouchEnd);
 
-        // Temizlik
         return () => {
             document.removeEventListener('selectstart', disableSelection);
             document.removeEventListener('contextmenu', disableSelection);
@@ -71,7 +64,6 @@ const ContentProtector = () => {
       }
       
       img, video {
-        pointer-events: none;
         -webkit-user-drag: none;
         -khtml-user-drag: none;
         -moz-user-drag: none;

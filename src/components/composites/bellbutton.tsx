@@ -23,7 +23,7 @@ const BellButton = ({
 
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, () => {
-        setOpenBell(false);
+    setOpenBell(false);
 
   });
 
@@ -61,7 +61,7 @@ const BellButton = ({
         onMouseEnter={() => {
           setOpenBell(true);
         }}
-        className="flex items-center justify-center"
+        className="flex items-center justify-center cursor-pointer"
       >
         <svg
           width="22"
@@ -85,8 +85,8 @@ const BellButton = ({
           </h3>
           <div className="grid divide-y divide-[color:var(--gray-one)] grid-cols-1"
             onMouseLeave={() => {
-            setOpenBell(false);
-          }}
+              setOpenBell(false);
+            }}
           >
             {isPending ? (
               <div className="flex items-center justify-center h-[200px]">
