@@ -38,7 +38,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
       setLoaded(true);
       setMaxSlide(s.track.details.maxIdx);
     },
-    slides: { perView: 2, spacing: 10 },
+    slides: { perView: 2, spacing: 12 },
     breakpoints: {
       [sliderBreakpoints.md]: { slides: { perView: 3, spacing: 16 } },
       [sliderBreakpoints.lg]: { slides: { perView: 6, spacing: 16 } },
@@ -78,11 +78,11 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`absolute top-1/2 xl:left-[-12px] left-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === 0 ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[40%] left-0 text-[color:var(--color-two)] ${currentSlide === 0 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -97,11 +97,11 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
           </button>
           <button
             onClick={() => slider.current?.next()}
-            className={`absolute top-1/2 xl:right-[-24px] right-[12px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] transition-all duration-200 ${currentSlide === maxSlide ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[40%] right-0 text-[color:var(--color-two)] ${currentSlide === maxSlide ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
