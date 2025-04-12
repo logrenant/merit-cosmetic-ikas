@@ -9,7 +9,7 @@ import {
   IkasProductListSortType,
   useTranslation,
 } from "@ikas/storefront";
-import Filtermobile, { List, NumberList } from "../composites/filtermobile";
+import Filtermobile, { FilterMobileBrands, List, NumberList, StockList, TypeList } from "../composites/filtermobile";
 
 type Option = {
   value: string;
@@ -74,9 +74,12 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
           {products.count > 0 &&
             products?.filters?.map((filter) => (
               <div key={filter.id}>
-                {/* {filter.displayType === IkasProductFilterDisplayType.LIST && (
-                  <List filter={filter} items={filter.displayedValues} />
-                )} */}
+                {filter.displayType === IkasProductFilterDisplayType.LIST && (
+                  <StockList filter={filter} items={filter.displayedValues} />
+                )}
+                {filter.displayType === IkasProductFilterDisplayType.LIST && (
+                  <TypeList filter={filter} items={filter.displayedValues} />
+                )}
                 {filter.displayType ===
                   IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
                     <NumberList
@@ -108,9 +111,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
             </div>
 
             <div className="flex w-full justify-end lg:w-[unset] items-center gap-2">
-              <Filtermobile
-                categoriesWithChildrens={undefined}
-                categories={undefined}
+              <FilterMobileBrands
                 pageSpecificData={pageSpecificData.name}
                 products={products}
               />
