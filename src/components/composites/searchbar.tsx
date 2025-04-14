@@ -1,20 +1,16 @@
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { observer } from "mobx-react-lite";
 import Router from "next/router";
-import Filtermobile, { List, NumberList } from "../composites/filtermobile";
 
 import {
   IkasBrandList,
   IkasCategoryList,
-  IkasProductFilterDisplayType,
-  IkasProductFilter,
   IkasProduct,
   IkasProductList,
   Image,
   Link,
   useStore,
   useTranslation,
-  IkasImage,
 } from "@ikas/storefront";
 import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
@@ -116,22 +112,13 @@ const SearchBar = ({
   const onClickEnterOrSearch = () => {
     store?.router?.push(`/search?s=${uiStore.searchKeyword}`);
   };
-
-  const [productsOfCat, setProductsOfCat] = useState<any[]>([]);
   const [linkToCategory, setLinkToCategory] = useState('/');
 
-
   useEffect(() => {
-
     if (hoveredCategory) {
-
       const hoveredLink = hoveredCategory.toLowerCase().replaceAll(" ", "-");
-
       setLinkToCategory(hoveredLink)
-
     }
-
-
   }, [hoveredCategory]);
 
   const { t } = useTranslation();
@@ -156,16 +143,11 @@ const SearchBar = ({
 
   // console.log(!!onHoverChange, !!onChangeHover);
 
-
-
   const onHoverBrand = (br: string) => {
     const hoveredLink = br.toLowerCase().replaceAll(" ", "-");
-
     setLinkToCategory(hoveredLink)
     // setHoveredCategory(undefined);
     setHoveredCategory(hoveredLink);
-
-
 
     // uiStore.searchKeyword = br;
     products.searchKeyword = br;
@@ -328,14 +310,26 @@ const SearchBar = ({
                         );
                       })}
 
-
                       {searchedProducts.length > 8 && (
-                        <div className="col-span-2 flex">
-                          <Link href={'/' + linkToCategory}>
+                        <div className="flex col-span-2">
+                          <button
+                            className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
+                            onClick={() => {
+                              setHoveredCategory(undefined);
+                              setHoveredBrand(undefined);
+                              products.searchKeyword = "";
+                              uiStore.searchKeyword = "";
+                              setSearchedProducts(undefined);
+                              setSearchedProductsNotFiltered(undefined);
+                            }}
+                          >
+                            {t("Clear Filter")}
+                          </button>
+                          <Link href={`/${slugify(linkToCategory)}`}>
                             <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)]">
                               <span>
                                 <span className="font-bold text-slate-900">
-                                  &quot;{hoveredCategory || uiStore.searchKeyword}&quot; {" "}
+                                  &quot;{hoveredCategory || uiStore.searchKeyword}&quot;{" "}
                                 </span>
                                 &nbsp;{t("seeAllResults")}
                               </span>
@@ -345,7 +339,7 @@ const SearchBar = ({
                                 viewBox="0 0 24 24"
                                 strokeWidth={2}
                                 stroke="currentColor"
-                                className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
+                                className="w-4 stroke-[color:var(--color-one)] h-4 ml-0.5"
                               >
                                 <path
                                   strokeLinecap="round"
@@ -493,6 +487,11 @@ const SearchBar = ({
                             className="underline text-[color:var(--color-one)]"
                             onClick={() => {
                               setHoveredCategory(undefined);
+                              setHoveredBrand(undefined);
+                              products.searchKeyword = "";
+                              uiStore.searchKeyword = "";
+                              setSearchedProducts(undefined);
+                              setSearchedProductsNotFiltered(undefined);
                             }}
                           >
                             {t("noProductClearFilter")}
@@ -569,7 +568,6 @@ const SearchBar = ({
                       <div className="grid p-4 grid-cols-2 gap-2">
                         {products.data.length > 0 ? (
                           products.data.slice(0, 8)
-
                             .map((product) => {
                               // console.log('product.name', product.name);
                               const mainImages = product?.attributes?.find(
