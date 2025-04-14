@@ -67,6 +67,11 @@ export type ContactProps = {
 	address: string;
 };
 
+export type FormMessages = { 
+	title: string;
+	text: string;
+};
+
 export type NavbarProps = {
 	categories: IkasCategoryList;
 	products: IkasProductList;
@@ -143,5 +148,6 @@ export type BrandsProps = {
 
 export type ContactpageProps = {
 	contactProps: ContactProps;
+	formMessages: FormMessages;
 };
 
