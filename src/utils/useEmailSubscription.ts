@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { useStore } from "@ikas/storefront";
-import { toast } from "react-hot-toast";
+import { useState, useEffect } from "react";
 
 export default function useEmailSubscription() {
 	const store = useStore();

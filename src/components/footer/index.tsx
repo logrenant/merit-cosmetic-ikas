@@ -1,53 +1,53 @@
 import { toast } from "react-hot-toast";
-import { useStore } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
 import React, { useState, useEffect } from "react";
-import { IkasNavigationLink, Link } from "@ikas/storefront";
+
 import { FooterProps } from "../__generated__/types";
 import { useDirection } from "../../utils/useDirection";
+import { IkasNavigationLink, Link } from "@ikas/storefront";
+import { useStore, useTranslation } from "@ikas/storefront";
 import useEmailSubscription from "src/utils/useEmailSubscription";
 
+import X from "../svg/X";
+import Phone from "../svg/Phone";
 import Location from "../svg/Location";
 import Envelope from "../svg/Envelope";
-import Phone from "../svg/Phone";
-import Instagram from "../svg/Instagram";
-import X from "../svg/X";
 import Facebook from "../svg/Facebook";
+import Instagram from "../svg/Instagram";
 
 const ts = {
   en: {
-    contactUs: "CONTACT US",
     links: "Useful Links",
     title: "NEWSLETTER SIGN UP",
-    submit: "Submit",
     desc: "Subscribe to our newsletter and get the latest news and offers from us.",
     success: "You have successfully subscribed to our newsletter",
     error: "You are already subscribed to our newsletter",
+    invalidEmail: "Invalid email address",
+    domainError: "Please use a Gmail, Outlook, or Hotmail email address."
   },
   ar: {
-    contactUs: "اتصل بنا",
     links: "روابط مفيدة",
     title: "الاشتراك في النشرة الإخبارية",
-    submit: "الاشتراك",
     desc: "اشترك في النشرة الإخبارية لدينا واحصل على آخر الأخبار والعروض منا.",
     success: "لقد اشتركت بنجاح في النشرة الإخبارية لدينا",
     error: "أنت مشترك بالفعل في النشرة الإخبارية لدينا",
+    invalidEmail: "عنوان البريد الإلكتروني غير صالح",
+    domainError: "يرجى استخدام عنوان بريد إلكتروني من Gmail أو Outlook أو Hotmail."
   },
 };
 
 const Footer = ({ linkdata }: FooterProps) => {
-  const { direction } = useDirection();
   const store = useStore();
+  const { t } = useTranslation();
+  const { direction } = useDirection();
   const [selectedLocale, setSelectedLocale] = useState<string>("en");
 
-  // LocalBar'da uygulanan mantığa benzer şekilde, store üzerinden dil bilgisini alıyoruz.
   useEffect(() => {
     if (store.router?.locale) {
       setSelectedLocale(store.router.locale);
     }
   }, [store.router]);
 
-  // selectedLocale "ar" ise Arapça, aksi halde İngilizce kullanıyoruz.
   const currentLang: "en" | "ar" = selectedLocale === "ar" ? "ar" : "en";
   const currentYear = new Date().getFullYear();
 
@@ -86,6 +86,22 @@ const Footer = ({ linkdata }: FooterProps) => {
 
   const onSubmitEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const emailParts = email.split('@');
+    if (emailParts.length !== 2) {
+      toast.error(ts[currentLang].invalidEmail);
+      return;
+    }
+
+    // Domain validation
+    const domain = emailParts[1].toLowerCase();
+    const allowedDomains = ['gmail.com', 'outlook.com', 'hotmail.com'];
+
+    if (!allowedDomains.includes(domain)) {
+      toast.error(ts[currentLang].domainError);
+      return;
+    }
+
     onSubmit();
   };
 
@@ -105,8 +121,8 @@ const Footer = ({ linkdata }: FooterProps) => {
       <div className="py-6 layout">
         <section className="text-white flex flex-col gap-4 lg:flex-row justify-between lg:items-start w-full">
           {/* Contact Section */}
-          <section className="mb-6 flex flex-col text-white items-center lg:items-start">
-            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].contactUs}</h5>
+          <section className="flex flex-col text-white items-center lg:items-start">
+            <h5 className="mb-2.5 font-bold uppercase">{t("contactUs")}</h5>
             <div className="flex gap-2 mt-4">
               <Location />
               <span className="text-slate-200">Istanbul / Turkey</span>
@@ -157,7 +173,7 @@ const Footer = ({ linkdata }: FooterProps) => {
             </nav>
           </section>
           {/* Newsletter Section */}
-          <section className="md:mb-6 self-start">
+          <section className="self-start">
             <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].title}</h5>
             <form onSubmit={onSubmitEmail}>
               <div>
@@ -172,7 +188,7 @@ const Footer = ({ linkdata }: FooterProps) => {
                       required
                       id="contactEmailForm"
                       name="contactEmailForm"
-                      placeholder="Email"
+                      placeholder={t("email")}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="py-3 px-4 block text-slate-700 w-full outline-hidden focus:ring-transparent ring-transparent active:ring-transparent bg-[color:var(--tx-bg)] shadow-xs rounded-s-lg text-sm focus:z-10 border-[color:var(--tx-bg)] focus:border-[color:var(--tx-bg)]"
@@ -182,7 +198,7 @@ const Footer = ({ linkdata }: FooterProps) => {
                       disabled={!email || pending}
                       className="py-3 border-t border-l border-r border-b border-[color:var(--tx-bg)] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-[color:var(--color-three)] text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
                     >
-                      {ts[currentLang].submit}
+                      {t("submit")}
                     </button>
                   </div>
                 </div>
