@@ -141,6 +141,13 @@ const SearchBar = ({
     setSearchedProductsNotFiltered(undefined);
   };
 
+  const handleClearFilter = () => {
+    setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
+    setSearchedProducts(products.data);
+    setSearchedProductsNotFiltered(products.data);
+  };
+
   // console.log(!!onHoverChange, !!onChangeHover);
 
   const onHoverBrand = (br: string) => {
@@ -310,48 +317,16 @@ const SearchBar = ({
                         );
                       })}
 
-                      {searchedProducts.length > 8 && (
+                      {searchedProducts.length > 0 && (
                         <div className="flex col-span-2">
                           <button
                             className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
-                            onClick={() => {
-                              setHoveredCategory(undefined);
-                              setHoveredBrand(undefined);
-                              products.searchKeyword = "";
-                              uiStore.searchKeyword = "";
-                              setSearchedProducts(undefined);
-                              setSearchedProductsNotFiltered(undefined);
-                            }}
+                            onClick={handleClearFilter}
                           >
                             {t("Clear Filter")}
                           </button>
-                          <Link href={`/${slugify(linkToCategory)}`}>
-                            <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)]">
-                              <span>
-                                <span className="font-bold text-slate-900">
-                                  &quot;{hoveredCategory || uiStore.searchKeyword}&quot;{" "}
-                                </span>
-                                &nbsp;{t("seeAllResults")}
-                              </span>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={2}
-                                stroke="currentColor"
-                                className="w-4 stroke-[color:var(--color-one)] h-4 ml-0.5"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                />
-                              </svg>
-                            </a>
-                          </Link>
                         </div>
                       )}
-
                       <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
@@ -624,7 +599,6 @@ const SearchBar = ({
                           <div className="col-span-2 flex">
                             <Link href={`/${slugify(linkToCategory)}`}>
                               <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)]">
-
                                 <span>
                                   <span className="font-bold text-slate-900">
                                     &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
