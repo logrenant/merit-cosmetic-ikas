@@ -2,9 +2,11 @@ import {
 	IkasNavigationLink,
 	IkasImage,
 	IkasProductList,
+	IkasBlog,
 	IkasCategoryList,
 	IkasBrandList,
 	IkasProduct,
+	IkasBlogList,
 } from "@ikas/storefront"
 
 export type BannerLink = { 
@@ -70,6 +72,20 @@ export type ContactProps = {
 export type FormMessages = { 
 	title: string;
 	text: string;
+};
+
+export type BlogProps = { 
+	blog: IkasBlog;
+	showImage?: boolean;
+	imageAspectRatio: ImageAspectRatio;
+};
+
+export enum ImageAspectRatio{ 
+	"_1_1" = "_1_1",
+	"_16_9" = "_16_9",
+	"_3_1" = "_3_1",
+	"_4_3" = "_4_3",
+	"_21_9" = "_21_9",
 };
 
 export type NavbarProps = {
@@ -149,5 +165,19 @@ export type BrandsProps = {
 export type ContactpageProps = {
 	contactProps: ContactProps;
 	formMessages: FormMessages;
+};
+
+export type PageBlogProps = {
+	blog: IkasBlog;
+	showImage?: boolean;
+};
+
+export type PageBlogsProps = {
+	title?: string;
+	blogList: IkasBlogList;
+	showAuthor?: boolean;
+	showDescription?: boolean;
+	showCategory?: boolean;
+	showPublishedDate?: boolean;
 };
 

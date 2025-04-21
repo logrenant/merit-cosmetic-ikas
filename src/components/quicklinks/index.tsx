@@ -38,11 +38,11 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
       setLoaded(true);
       setMaxSlide(s.track.details.maxIdx);
     },
-    slides: { perView: 2, spacing: 12 },
+    slides: { perView: 2, spacing: 16 },
     breakpoints: {
       [sliderBreakpoints.md]: { slides: { perView: 3, spacing: 16 } },
       [sliderBreakpoints.lg]: { slides: { perView: 6, spacing: 16 } },
-      [sliderBreakpoints.xl]: { slides: { perView: 8, spacing: 16 } },
+      [sliderBreakpoints.xl]: { slides: { perView: 6, spacing: 48 } },
     },
   }, [MutationPlugin]);
 
@@ -52,10 +52,10 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
       {/* Slider Container */}
       <div ref={sliderRef} className="keen-slider flex flex-row">
         {links.items.map((e, i) => (
-          <div className="keen-slider__slide max-w-fit" key={i}>
+          <div className="keen-slider__slide" key={i}>
             <Link href={e.link.href}>
-              <a className="flex gap-1 items-end">
-                <div className="w-[35px] h-[32px] relative">
+              <a className="flex flex-row xl:justify-between gap-1 items-end">
+                <div className="w-[35px] h-[32px] xl:w-[48px] xl:h-[42px] relative">
                   <Image
                     alt={e.icon?.altText || ""}
                     useBlur
@@ -64,7 +64,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
                     image={e.icon}
                   />
                 </div>
-                <span className="text-[color:var(--black-two)] w-fit">
+                <span className="text-[color:var(--black-two)] w-fit xl:text-xl">
                   {e.link.label}
                 </span>
               </a>

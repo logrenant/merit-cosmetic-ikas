@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "42825b8b-7690-44ea-b9ac-57e3974a4db3",
+          "id": "73bd2852-13f7-49e5-9b2c-4d9da08135da",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c7a49e14-0928-4d7f-a567-058ff072c990",
+          "id": "3fa84754-df72-469e-b5cd-378b7a70b9dc",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bc6383ca-5404-427b-8a1b-64dd5b692ab3",
+          "id": "d7b45f81-400b-425c-bd73-a9b2cb733fb9",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "711bdc16-38dd-4108-ac0b-af8806625b37",
+          "id": "608edda6-f6e0-4723-91c1-f75a179e588a",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cda91ebe-4a48-4224-8dd7-a5a5cc199875",
+          "id": "59c58863-553c-4533-acce-c1f1cb9fdf0e",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7799096b-0a81-43fd-a3c2-cecdfa4af9bd",
+          "id": "dee8df4c-25b6-4f05-8122-25d7e29366c8",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2246cd3e-900a-42a0-9430-c75aed447675",
+          "id": "0d446791-c1f3-4757-bbaa-866e99b29dfb",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5f5e294e-851b-4226-8c07-bdb7e9f94fdc",
+          "id": "de4172d9-f3df-47af-bc78-d2f1c8e0a9b5",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cf4aaa8f-749d-4d15-920a-e523b1e64ff0",
+          "id": "1ea81c1b-7d24-42f3-9b40-65c0357b56f7",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f9209a14-873c-406a-bcc0-b0018c3b8153",
+          "id": "142e1770-2088-46ec-8516-68e94a5e2084",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3f19fe3c-1b79-41f9-b580-e6ee4e35494c",
+          "id": "dd94a2f0-c1d5-43cf-8937-d11b89840337",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "abe4785a-05ec-4da2-ba39-ff8205c2de84",
+          "id": "b5d31d26-32f4-4fae-840b-f8b9cd949afe",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "136948ca-7747-4f3c-99ea-8f415305da87",
+          "id": "e6dd423d-c49a-4ed4-a276-3c09a446a410",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2e347433-98b6-46ea-8ff1-a5fbe3323553",
+          "id": "84edb620-5690-4f0b-ab33-1c18a96c4b87",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0b7378df-a621-4f27-b5b2-94d08fae228a",
+          "id": "165641a8-a300-4c1c-8014-ea6fe51e0fae",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8ff3c16e-7eb1-4f38-9068-05ef37246865",
+          "id": "40962841-2e2a-44d4-a589-596ed8cddf30",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f32b7ed2-9c07-41f0-9492-091991d34e1e",
+          "id": "53096c78-4e73-4e94-b05c-5c8e121788f1",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f929eb3a-8935-4715-928a-c260b8c2e7f2",
+          "id": "2e1419b5-05ec-44cf-8887-15d889c77d13",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cb5e7686-a1a7-4b64-91b1-94923a92bf1b",
+          "id": "5748775e-1a18-4058-bfa2-f8e17305021c",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "faffe5c4-3500-4c68-9428-b640a5734e4b",
+          "id": "b5cd9b59-4af5-4980-9515-87555e12697b",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "21f79fb2-1a7d-4b76-869a-3900440e002c",
+          "id": "1d289f20-3397-4c88-84eb-2f34b8e3ac21",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e3f77687-5b65-4582-aade-472d817e844f",
+          "id": "22f4fbd8-ead9-412f-b6bf-1176ca33e536",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "88cf2eaa-5ff5-43d7-8299-665d5744ac1a",
+          "id": "a5247464-ebd4-4943-a801-155848e21659",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d44f4562-e5cd-495f-b6b9-88dfc1ffa880",
+          "id": "14f37172-ebf7-4110-9edb-2266a7a28c4e",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "19b17f1f-7de6-4f55-88e5-6ef3d60b7077",
+          "id": "2442e267-d014-4ba2-bacf-ee0d7182e8c9",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6a965bc8-d879-432b-a434-bb20a0ad6f8b",
+          "id": "9ff042a6-0795-42b6-aac5-429c22220b66",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "835b48b3-5327-4137-8682-92bd72547ce0",
+          "id": "6b0b21a1-e56c-4560-91e8-81b8cd92804f",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2749da8c-23dc-4c71-b07d-d44b7bf3d54e",
+          "id": "078e954a-212f-4bc4-a7ee-94d8aeb31af9",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "41f395d3-b0df-452d-aba0-db9a6d740575",
+          "id": "7b39b113-7e90-4679-93cc-b72e6d9cd5e8",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3ce389fb-d2fd-465b-b21c-d4a9945545b2",
+          "id": "792c4648-d5b6-4020-a98a-cf4e372eb0d4",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f8bb5704-5329-4461-a756-a518d9d091e1",
+          "id": "32aab26b-9266-4098-8593-c2b8877957a4",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bf1a94ba-ebf0-42e1-a4a8-3dd4c7146476",
+          "id": "fbb032b5-6513-44af-b0d2-46c92eda8977",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c4f26086-0de2-4d25-8bbf-6cae2331252d",
+          "id": "0dd1fcc6-763c-45be-bfd9-42fe61538adb",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ef09f85f-45cb-45f2-a5b3-2c0ad9fa3284",
+          "id": "99e33ce3-ad2d-430b-af85-0c08a3cea056",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dd91a84a-6e83-4912-8941-abd876f96a5e",
+          "id": "d7a2992d-c659-4f56-814a-a0a6697540fd",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "44f70dca-721e-414d-89aa-14d29a2595a0",
+          "id": "96cafe6c-147e-4d9a-a47f-53bc2554ddf2",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "47caa8fd-254f-4624-b145-e4ef9c28910b",
+          "id": "25f4546f-0d2f-45fa-b3b6-9791d65b22fd",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f1d9df77-8619-454b-9759-d6254f396fed",
+          "id": "129153f4-d6a8-4edf-b89f-3e9a7814cba4",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "53dc9384-2e50-47f5-af31-a169f408a1ee",
+          "id": "4b87ce82-d23a-4f76-863e-04ee70d98503",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -2260,6 +2260,198 @@
         }
       },
       "commonPropValues": null
+    },
+    {
+      "id": "5fa44498-bb55-4496-abd7-a537be4da4bf",
+      "dir": "order-tracking",
+      "displayName": "Sipariş Takip",
+      "description": "",
+      "type": "COMPONENT",
+      "componentJson": null,
+      "props": [],
+      "isHeader": false,
+      "isFooter": false,
+      "translations": {},
+      "defaultPropValuesTranslations": {},
+      "defaultPropValues": {},
+      "commonPropValues": null
+    },
+    {
+      "id": "74b2a071-77dd-4d27-89e0-1d7029044274",
+      "dir": "page-blog",
+      "displayName": "Blog Sayfası",
+      "description": "",
+      "type": "COMPONENT",
+      "componentJson": null,
+      "props": [
+        {
+          "id": "c46739a8-c3a5-4edf-8323-1e2876ba584d",
+          "name": "blog",
+          "displayName": "blog",
+          "description": "",
+          "type": "BLOG",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "4253efe6-b840-4a0a-9976-cec392214971",
+          "name": "showImage",
+          "displayName": "showImage",
+          "description": "",
+          "type": "BOOLEAN",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "isHeader": false,
+      "isFooter": false,
+      "translations": {},
+      "defaultPropValuesTranslations": {},
+      "defaultPropValues": {
+        "blog": {
+          "blogId": null,
+          "usePageData": true
+        },
+        "showImage": true
+      },
+      "commonPropValues": null
+    },
+    {
+      "id": "e8116f78-299e-4394-9ad4-c3bace85f854",
+      "dir": "page-blogs",
+      "displayName": "Bloglar",
+      "description": "",
+      "type": "COMPONENT",
+      "componentJson": null,
+      "props": [
+        {
+          "id": "998de822-f419-4401-945a-1aee181cb87c",
+          "name": "title",
+          "displayName": "title",
+          "description": "",
+          "type": "TEXT",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "46479fb4-09ef-4502-90c5-ea7702a164e1",
+          "name": "blogList",
+          "displayName": "blogList",
+          "description": "",
+          "type": "BLOG_LIST",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "a4446ccb-ca88-4961-8a0f-70e2a2a9b9dc",
+          "name": "showAuthor",
+          "displayName": "showAuthor",
+          "description": "",
+          "type": "BOOLEAN",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "f504f6fe-8c72-417d-8509-0564f4aaea77",
+          "name": "showDescription",
+          "displayName": "showDescription",
+          "description": "",
+          "type": "BOOLEAN",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "688ae6bf-5315-42c5-80a9-428fec485a07",
+          "name": "showCategory",
+          "displayName": "showCategory",
+          "description": "",
+          "type": "BOOLEAN",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "fbd3908f-8174-4e7a-acd6-74abd60519f9",
+          "name": "showPublishedDate",
+          "displayName": "showPublishedDate",
+          "description": "",
+          "type": "BOOLEAN",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "isHeader": false,
+      "isFooter": false,
+      "translations": {},
+      "defaultPropValuesTranslations": {
+        "en": {
+          "blogList": {
+            "blogListType": "ALL",
+            "initialLimit": 20,
+            "blogIds": null,
+            "categoryId": null,
+            "usePageFilter": null
+          }
+        },
+        "ar": {
+          "blogList": {
+            "blogListType": "ALL",
+            "initialLimit": 20,
+            "blogIds": null,
+            "categoryId": null,
+            "usePageFilter": null
+          }
+        }
+      },
+      "defaultPropValues": {
+        "blogList": {
+          "blogListType": "ALL",
+          "initialLimit": 20,
+          "blogIds": null,
+          "categoryId": null,
+          "usePageFilter": null
+        }
+      },
+      "commonPropValues": null
     }
   ],
   "pages": [
@@ -3117,6 +3309,27 @@
               }
             ]
           }
+        },
+        {
+          "id": "c427e409-281f-4855-a105-8bfc1d183ca0",
+          "componentId": "e8116f78-299e-4394-9ad4-c3bace85f854",
+          "propValues": {
+            "blogList": {
+              "blogListType": "STATIC",
+              "initialLimit": 20,
+              "blogIds": [
+                "98794e9d-60f8-425a-a396-cf2d78ad606f",
+                "d5226c33-62b2-419f-9ad6-af6797ea06a4",
+                "b75ab3c0-50af-4878-8e41-7e5238592b3e"
+              ],
+              "categoryId": null,
+              "usePageFilter": null
+            },
+            "showAuthor": true,
+            "showDescription": true,
+            "showCategory": true,
+            "showPublishedDate": true
+          }
         }
       ],
       "pageTitle": "Anasayfa",
@@ -3522,7 +3735,43 @@
         {
           "id": "4efba374-2585-4bdf-905b-c9d68655dddf",
           "componentId": "81731b4c-ab17-49dd-9495-edf07d236cca",
-          "propValues": {}
+          "propValues": {
+            "products": {
+              "id": "1ab6ed3a-ee4b-4c99-a1fb-82a1aefa17f0",
+              "productListType": "ALL",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20,
+              "productCount": null,
+              "productIds": null,
+              "category": null,
+              "usePageFilter": null,
+              "relatedProductsType": null,
+              "recommendedProductsType": {
+                "recommendedProductType": "CATEGORY"
+              }
+            },
+            "popular": {
+              "id": "fcb65aea-ff38-425f-8da9-94461270675c",
+              "productListType": "ALL",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20,
+              "productCount": null,
+              "productIds": null,
+              "category": null,
+              "usePageFilter": null,
+              "relatedProductsType": null,
+              "recommendedProductsType": {
+                "recommendedProductType": "CATEGORY"
+              }
+            },
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": null
+            }
+          }
         }
       ],
       "specifications": [],
@@ -6956,6 +7205,464 @@
       "slug": "contact",
       "specifications": [],
       "disableIndex": false
+    },
+    {
+      "id": "43d50b03-6ea7-4235-a30e-017f7583e4cf",
+      "name": "Sipariş Takip",
+      "type": "CUSTOM",
+      "components": [
+        {
+          "id": "f2f291fc-e174-41a2-ae87-6f0d65a7ffea",
+          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
+          "propValues": {
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 50,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
+                "91ee2172-008c-4866-9241-88e919877f9c"
+              ]
+            },
+            "products": {
+              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
+              "productListType": "SEARCH",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20
+            },
+            "popularCategories": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 8,
+              "categoryCount": null,
+              "categoryIds": [
+                "8f14392d-23ab-446e-9556-d10fae14f176",
+                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
+                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
+                "f03c3417-578b-4444-a376-3af06f3349d2",
+                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
+                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
+              ]
+            },
+            "popularProducts": {
+              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
+              "productListType": "ALL",
+              "initialSort": "DEFAULT",
+              "initialLimit": 8
+            },
+            "popularBrands": {
+              "brandListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 8
+            },
+            "slogans": [
+              "Ürün Arayınız",
+              "Deneme Ürün İsmi",
+              "Maskara"
+            ],
+            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
+            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
+            "logo": {
+              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
+              "altText": null
+            }
+          }
+        },
+        {
+          "id": "b9c8c333-4cad-4b0f-865c-4b182311c05f",
+          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
+          "propValues": {
+            "linkdata": [
+              {
+                "title": "Kurumsal",
+                "links": [
+                  {
+                    "id": "0921169e-a9e0-4059-900b-ec06f036549e",
+                    "linkType": "PAGE",
+                    "label": "Hakkımızda",
+                    "pageId": "b6624299-8c47-4e97-8a9d-03288b1873b7",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "a5d29d20-6f93-46ee-96eb-cfa49fb11dcf",
+                    "linkType": "PAGE",
+                    "label": "İletişim",
+                    "pageId": "7ab9d5a5-085e-40dc-aba7-17216b613c30",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "dc1deee5-9997-4574-99bc-989d55138a99",
+                    "linkType": "PAGE",
+                    "label": "Anasayfa",
+                    "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
+                    "pageType": "INDEX",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              },
+              {
+                "title": "social",
+                "links": [
+                  {
+                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
+                    "linkType": "EXTERNAL",
+                    "label": "twitter",
+                    "pageId": null,
+                    "pageType": null,
+                    "itemId": null,
+                    "externalLink": "https://x.com",
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
+                    "linkType": "EXTERNAL",
+                    "label": "insta",
+                    "externalLink": "https://instagram.com",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "6800b594-8470-42fa-b929-25336d2024bc",
+          "componentId": "5fa44498-bb55-4496-abd7-a537be4da4bf",
+          "propValues": {}
+        }
+      ],
+      "slug": "order-tracking",
+      "specifications": [],
+      "disableIndex": false
+    },
+    {
+      "id": "91184c4a-16d3-4628-8772-c9aed91f141c",
+      "name": "",
+      "type": "BLOG_INDEX",
+      "components": [
+        {
+          "id": "47a9ad94-2a42-4f40-93d2-fb10bbf97696",
+          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
+          "propValues": {
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 50,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
+                "91ee2172-008c-4866-9241-88e919877f9c"
+              ]
+            },
+            "products": {
+              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
+              "productListType": "SEARCH",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20
+            },
+            "popularCategories": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 8,
+              "categoryCount": null,
+              "categoryIds": [
+                "8f14392d-23ab-446e-9556-d10fae14f176",
+                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
+                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
+                "f03c3417-578b-4444-a376-3af06f3349d2",
+                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
+                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
+              ]
+            },
+            "popularProducts": {
+              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
+              "productListType": "ALL",
+              "initialSort": "DEFAULT",
+              "initialLimit": 8
+            },
+            "popularBrands": {
+              "brandListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 8
+            },
+            "slogans": [
+              "Ürün Arayınız",
+              "Deneme Ürün İsmi",
+              "Maskara"
+            ],
+            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
+            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
+            "logo": {
+              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
+              "altText": null
+            }
+          }
+        },
+        {
+          "id": "6ad13b05-175e-4325-83e8-c797276d6eca",
+          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
+          "propValues": {
+            "linkdata": [
+              {
+                "title": "Kurumsal",
+                "links": [
+                  {
+                    "id": "0921169e-a9e0-4059-900b-ec06f036549e",
+                    "linkType": "PAGE",
+                    "label": "Hakkımızda",
+                    "pageId": "b6624299-8c47-4e97-8a9d-03288b1873b7",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "a5d29d20-6f93-46ee-96eb-cfa49fb11dcf",
+                    "linkType": "PAGE",
+                    "label": "İletişim",
+                    "pageId": "7ab9d5a5-085e-40dc-aba7-17216b613c30",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "dc1deee5-9997-4574-99bc-989d55138a99",
+                    "linkType": "PAGE",
+                    "label": "Anasayfa",
+                    "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
+                    "pageType": "INDEX",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              },
+              {
+                "title": "social",
+                "links": [
+                  {
+                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
+                    "linkType": "EXTERNAL",
+                    "label": "twitter",
+                    "pageId": null,
+                    "pageType": null,
+                    "itemId": null,
+                    "externalLink": "https://x.com",
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
+                    "linkType": "EXTERNAL",
+                    "label": "insta",
+                    "externalLink": "https://instagram.com",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "82ad72b1-fd3e-4725-b0c7-e7a5012b18be",
+          "componentId": "e8116f78-299e-4394-9ad4-c3bace85f854",
+          "propValues": {
+            "title": "Deneme",
+            "blogList": {
+              "blogListType": "ALL",
+              "initialLimit": 20,
+              "blogIds": [
+                "b75ab3c0-50af-4878-8e41-7e5238592b3e",
+                "5245114b-1049-49cf-8e8d-f4841adf6a1c"
+              ],
+              "categoryId": null,
+              "usePageFilter": null
+            },
+            "showAuthor": true,
+            "showDescription": true,
+            "showCategory": true,
+            "showPublishedDate": true
+          }
+        }
+      ],
+      "specifications": [],
+      "disableIndex": false
+    },
+    {
+      "id": "9c3b7afb-0fae-4cde-a233-c7cd0d34e33b",
+      "name": "",
+      "type": "BLOG",
+      "components": [
+        {
+          "id": "f4968d43-819d-431f-a382-d253fe614c53",
+          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
+          "propValues": {
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 50,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
+                "91ee2172-008c-4866-9241-88e919877f9c"
+              ]
+            },
+            "products": {
+              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
+              "productListType": "SEARCH",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20
+            },
+            "popularCategories": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 8,
+              "categoryCount": null,
+              "categoryIds": [
+                "8f14392d-23ab-446e-9556-d10fae14f176",
+                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
+                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
+                "f03c3417-578b-4444-a376-3af06f3349d2",
+                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
+                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
+              ]
+            },
+            "popularProducts": {
+              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
+              "productListType": "ALL",
+              "initialSort": "DEFAULT",
+              "initialLimit": 8
+            },
+            "popularBrands": {
+              "brandListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 8
+            },
+            "slogans": [
+              "Ürün Arayınız",
+              "Deneme Ürün İsmi",
+              "Maskara"
+            ],
+            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
+            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
+            "logo": {
+              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
+              "altText": null
+            }
+          }
+        },
+        {
+          "id": "cc79db4e-e007-4d51-8911-3ffaa31488b4",
+          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
+          "propValues": {
+            "linkdata": [
+              {
+                "title": "Kurumsal",
+                "links": [
+                  {
+                    "id": "0921169e-a9e0-4059-900b-ec06f036549e",
+                    "linkType": "PAGE",
+                    "label": "Hakkımızda",
+                    "pageId": "b6624299-8c47-4e97-8a9d-03288b1873b7",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "a5d29d20-6f93-46ee-96eb-cfa49fb11dcf",
+                    "linkType": "PAGE",
+                    "label": "İletişim",
+                    "pageId": "7ab9d5a5-085e-40dc-aba7-17216b613c30",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "dc1deee5-9997-4574-99bc-989d55138a99",
+                    "linkType": "PAGE",
+                    "label": "Anasayfa",
+                    "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
+                    "pageType": "INDEX",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              },
+              {
+                "title": "social",
+                "links": [
+                  {
+                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
+                    "linkType": "EXTERNAL",
+                    "label": "twitter",
+                    "pageId": null,
+                    "pageType": null,
+                    "itemId": null,
+                    "externalLink": "https://x.com",
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
+                    "linkType": "EXTERNAL",
+                    "label": "insta",
+                    "externalLink": "https://instagram.com",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "7ba1de81-fdbd-4227-84db-1b82843aca82",
+          "componentId": "74b2a071-77dd-4d27-89e0-1d7029044274",
+          "propValues": {
+            "blog": {
+              "blogId": null,
+              "usePageData": true
+            },
+            "showImage": true
+          }
+        }
+      ],
+      "specifications": [],
+      "disableIndex": false
     }
   ],
   "settings": {
@@ -7792,6 +8499,117 @@
           "excludedFields": [],
           "excludedFieldsCategory": [],
           "isFacetListNotSent": false
+        }
+      ],
+      "sliderData": {},
+      "groupId": "",
+      "isRoot": true,
+      "level": 0,
+      "excludedFields": [],
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
+    },
+    {
+      "id": "fbe397e6-7019-40eb-9bb2-b3681de6f57e",
+      "name": "BlogProps",
+      "typescriptName": "BlogProps",
+      "translations": {},
+      "type": "OBJECT",
+      "isRequired": true,
+      "nestedData": [
+        {
+          "id": "106b8e8c-cd57-463a-9559-a4abbabebb2f",
+          "name": "blog",
+          "translations": {},
+          "type": "BLOG",
+          "isRequired": true,
+          "key": "blog",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "ee468c19-bdfa-490c-97db-c58068713b3b",
+          "name": "showImage",
+          "translations": {},
+          "type": "BOOLEAN",
+          "isRequired": false,
+          "key": "showImage",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "fd442116-0213-40a3-8bd4-c265097dd8e6",
+          "name": "imageAspectRatio",
+          "typescriptName": "ImageAspectRatio",
+          "translations": {},
+          "type": "CUSTOM",
+          "isRequired": true,
+          "key": "imageAspectRatio",
+          "customDataId": "5e408f4e-4a0e-4ca1-a748-d8c064fd67c8",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "sliderData": {},
+      "groupId": "",
+      "isRoot": true,
+      "level": 0,
+      "excludedFields": [],
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
+    },
+    {
+      "id": "5e408f4e-4a0e-4ca1-a748-d8c064fd67c8",
+      "name": "ImageAspectRatio",
+      "typescriptName": "ImageAspectRatio",
+      "translations": {},
+      "type": "ENUM",
+      "isRequired": true,
+      "enumOptions": [
+        {
+          "id": "822d3718-4e5d-4e8c-9096-e85d43ea7f2e",
+          "displayName": "1_1",
+          "value": "_1_1",
+          "translations": {}
+        },
+        {
+          "id": "e100adb3-6403-40eb-b4ac-5b742e7fe2f3",
+          "displayName": "16_9",
+          "value": "_16_9",
+          "translations": {}
+        },
+        {
+          "id": "0b5243a1-ca83-4c11-b970-e055b2923075",
+          "displayName": "3_1",
+          "value": "_3_1",
+          "translations": {}
+        },
+        {
+          "id": "03d618c3-67a6-4c15-810c-76321214baae",
+          "displayName": "4_3",
+          "value": "_4_3",
+          "translations": {}
+        },
+        {
+          "id": "ceb3327d-150f-412c-88d1-f3968a92f2d6",
+          "displayName": "21_9",
+          "value": "_21_9",
+          "translations": {}
         }
       ],
       "sliderData": {},

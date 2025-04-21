@@ -26,4 +26,14 @@ export const sliderBreakpoints = {
   xl: `(min-width: ${point.xl}${unit})`,
 };
 
+const media = (width: string) => `@media only screen and (max-width: ${width})`;
+
+export const mediaQuery = {
+  sm: media(breakpointValues.sm),
+  md: media(breakpointValues.md),
+  lg: media(breakpointValues.lg),
+  xl: media(breakpointValues.xl),
+  xxl: media(breakpointValues.xxl),
+};
+
 export default breakpointValues;
