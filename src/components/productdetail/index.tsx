@@ -654,7 +654,7 @@ const ProductDetail = ({
           </div>
         )}
 
-        <div className="md:flex hidden flex-col gap-6 mt-8 p-6 border border-[color:var(--gray-six)]">
+        <div className="md:flex hidden flex-col gap-6 mt-4 p-6 border border-[color:var(--gray-six)]">
           <div className="grid grid-cols-3">
             <button
               onClick={() => setTab("D")}
