@@ -88,6 +88,11 @@ export enum ImageAspectRatio{
 	"_21_9" = "_21_9",
 };
 
+export type PolicyContent = { 
+	title?: string;
+	content?: string;
+};
+
 export type NavbarProps = {
 	categories: IkasCategoryList;
 	products: IkasProductList;
@@ -179,5 +184,28 @@ export type PageBlogsProps = {
 	showDescription?: boolean;
 	showCategory?: boolean;
 	showPublishedDate?: boolean;
+};
+
+export type UserPolicyProps = {
+	acceptanceofTerms?: PolicyContent;
+	partiesResponsibilities?: PolicyContent;
+	intellectualPropertyRights?: PolicyContent;
+	privacyConfidentialInformation?: PolicyContent;
+	userRegistrationSecurity?: PolicyContent;
+	forceMajeure?: PolicyContent;
+	agreementValidity?: PolicyContent;
+	amendmentstoTerms?: PolicyContent;
+	notifications?: PolicyContent;
+	generalTermsofUse?: PolicyContent;
+};
+
+export type FaqProps = {
+	title: string;
+	faqQuestion1?: PolicyContent;
+	faqQuestion2?: PolicyContent;
+	faqQuestion3?: PolicyContent;
+	faqQuestion4?: PolicyContent;
+	faqQuestion5?: PolicyContent;
+	faqQuestion6?: PolicyContent;
 };
 

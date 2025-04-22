@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "73bd2852-13f7-49e5-9b2c-4d9da08135da",
+          "id": "cfcad0cb-2bbc-478d-a52f-5793decf2bcc",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3fa84754-df72-469e-b5cd-378b7a70b9dc",
+          "id": "aa407ff5-d64c-4db0-9d75-d1e57a036c07",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d7b45f81-400b-425c-bd73-a9b2cb733fb9",
+          "id": "906dabff-66dd-457e-915b-3a193e976fa8",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "608edda6-f6e0-4723-91c1-f75a179e588a",
+          "id": "36864600-0654-4e8f-ab7c-8e572a97ffb5",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "59c58863-553c-4533-acce-c1f1cb9fdf0e",
+          "id": "e309e032-5c90-48f4-9240-c879e53226ae",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dee8df4c-25b6-4f05-8122-25d7e29366c8",
+          "id": "fe887e45-f8f9-465f-ac20-29f710d8940f",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0d446791-c1f3-4757-bbaa-866e99b29dfb",
+          "id": "29364e1d-5e19-418f-8658-7afce74a9ded",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "de4172d9-f3df-47af-bc78-d2f1c8e0a9b5",
+          "id": "44a1cef8-21cb-46a8-ad92-a1657b9c5422",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1ea81c1b-7d24-42f3-9b40-65c0357b56f7",
+          "id": "98fd277d-02f9-4087-ba6d-74fa6f3ac751",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "142e1770-2088-46ec-8516-68e94a5e2084",
+          "id": "1c548571-dd48-40d3-8a77-69efb56a719b",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dd94a2f0-c1d5-43cf-8937-d11b89840337",
+          "id": "b775034a-8104-4653-81c4-98ebf9deefc8",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b5d31d26-32f4-4fae-840b-f8b9cd949afe",
+          "id": "922702b3-6100-4c54-a4ab-a14046d4b70d",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e6dd423d-c49a-4ed4-a276-3c09a446a410",
+          "id": "4b73f200-83ce-4f14-bfb6-7e52931bd600",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "84edb620-5690-4f0b-ab33-1c18a96c4b87",
+          "id": "b64c630e-e06a-4668-a6c8-56d3dcc25681",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "165641a8-a300-4c1c-8014-ea6fe51e0fae",
+          "id": "ba2cbcbd-1801-4830-89bb-6f2be95ebba0",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "40962841-2e2a-44d4-a589-596ed8cddf30",
+          "id": "e1121d48-6e82-4360-97e8-50c312cceaf0",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "53096c78-4e73-4e94-b05c-5c8e121788f1",
+          "id": "75b2497c-907b-49bb-a331-61b1d5e99461",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2e1419b5-05ec-44cf-8887-15d889c77d13",
+          "id": "fc372698-8718-4dad-8fde-75e10f0a70b0",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5748775e-1a18-4058-bfa2-f8e17305021c",
+          "id": "834271f0-6bae-4dab-80e0-ab1e60d9a269",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b5cd9b59-4af5-4980-9515-87555e12697b",
+          "id": "8f00f2d2-96d7-4085-bbb6-2a45203f18fb",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1d289f20-3397-4c88-84eb-2f34b8e3ac21",
+          "id": "4a8fc260-126f-4f0d-8a59-65efedc0238e",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "22f4fbd8-ead9-412f-b6bf-1176ca33e536",
+          "id": "2638dd1a-36d8-4bdf-acc3-f8a727fdb5f9",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a5247464-ebd4-4943-a801-155848e21659",
+          "id": "906a1c6f-c316-4689-908b-fe441c0a8bf3",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "14f37172-ebf7-4110-9edb-2266a7a28c4e",
+          "id": "46133426-4e0a-4d7f-8578-633f8659a334",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2442e267-d014-4ba2-bacf-ee0d7182e8c9",
+          "id": "82b024b4-c06e-47cb-a34a-a632bdde2168",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9ff042a6-0795-42b6-aac5-429c22220b66",
+          "id": "e4ca197d-9c7d-4735-8d39-85e64f76dc49",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6b0b21a1-e56c-4560-91e8-81b8cd92804f",
+          "id": "c54a27e5-39ea-477b-87d8-679bffe5bc0d",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "078e954a-212f-4bc4-a7ee-94d8aeb31af9",
+          "id": "e43c3fb3-24f4-4918-8376-8c5970f99d47",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7b39b113-7e90-4679-93cc-b72e6d9cd5e8",
+          "id": "421c9984-da1a-447b-86ce-ba6a7ab0011d",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "792c4648-d5b6-4020-a98a-cf4e372eb0d4",
+          "id": "a574317a-dbed-48a7-ba7b-6282bb540218",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "32aab26b-9266-4098-8593-c2b8877957a4",
+          "id": "378f63e1-7b4a-43a9-a1f8-d9e3469fe646",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fbb032b5-6513-44af-b0d2-46c92eda8977",
+          "id": "67f54902-c449-49dc-bbad-d24d8ba5d608",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0dd1fcc6-763c-45be-bfd9-42fe61538adb",
+          "id": "233095ff-37f7-4ac4-b8c6-aae9b2cd7923",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "99e33ce3-ad2d-430b-af85-0c08a3cea056",
+          "id": "479b3701-d39b-431f-86d5-4a3694f977ac",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d7a2992d-c659-4f56-814a-a0a6697540fd",
+          "id": "21adfea2-517a-4af9-8942-e7604c09b5f7",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "96cafe6c-147e-4d9a-a47f-53bc2554ddf2",
+          "id": "dc2221e0-fcc1-41ee-bac4-8e478191bab9",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "25f4546f-0d2f-45fa-b3b6-9791d65b22fd",
+          "id": "41c23e5c-765a-4da6-b2b9-f023cd8f8455",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "129153f4-d6a8-4edf-b89f-3e9a7814cba4",
+          "id": "f6522cfa-4c24-453b-958f-a673917f0d91",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4b87ce82-d23a-4f76-863e-04ee70d98503",
+          "id": "872be60e-d443-44a7-8398-0e2c83da3db4",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -2450,6 +2450,305 @@
           "categoryId": null,
           "usePageFilter": null
         }
+      },
+      "commonPropValues": null
+    },
+    {
+      "id": "86ebd305-93a8-42cf-9983-feec0c19f044",
+      "dir": "user-policy",
+      "displayName": "User Policy",
+      "description": "",
+      "type": "COMPONENT",
+      "componentJson": null,
+      "props": [
+        {
+          "id": "12e67605-7151-47ec-ac3b-9c86f5bc4c1c",
+          "name": "acceptanceofTerms",
+          "displayName": "Acceptance of Terms",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "adac355b-fa2a-4599-b2de-0bd82211b957",
+          "name": "partiesResponsibilities",
+          "displayName": "Parties' Responsibilities",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "25d12677-dc09-49bd-b77a-9f7835711acb",
+          "name": "intellectualPropertyRights",
+          "displayName": "Intellectual Property Rights",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "0bf55340-7644-46c3-8730-ae91220fcdd5",
+          "name": "privacyConfidentialInformation",
+          "displayName": "Privacy & Confidential Information",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "898752c8-09fd-4e77-80bf-de840e496d50",
+          "name": "userRegistrationSecurity",
+          "displayName": "User Registration & Security",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "89b272ba-bf3c-47df-b894-0cac5faca0b1",
+          "name": "forceMajeure",
+          "displayName": "Force Majeure",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "01577ddf-59f6-4e9f-9861-60f9e96fe086",
+          "name": "agreementValidity",
+          "displayName": "Agreement Validity",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "a0c66af0-8d44-48c5-ab77-e841b133eb7f",
+          "name": "amendmentstoTerms",
+          "displayName": "Amendments to Terms",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "63d3e16b-c7bf-4f87-884a-17b02c85a82d",
+          "name": "notifications",
+          "displayName": "Notifications",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "0276d5f6-ceb1-469f-b834-c2fce97b58cd",
+          "name": "generalTermsofUse",
+          "displayName": "General Terms of Use",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "isHeader": false,
+      "isFooter": false,
+      "translations": {},
+      "defaultPropValuesTranslations": {},
+      "defaultPropValues": {},
+      "commonPropValues": null
+    },
+    {
+      "id": "6922648e-3175-4457-b620-1d40fdb1d58a",
+      "dir": "faq",
+      "displayName": "FaqProps",
+      "description": "",
+      "type": "COMPONENT",
+      "componentJson": null,
+      "props": [
+        {
+          "id": "2f0046cb-3ad4-4dda-b892-fa022e02d4c2",
+          "name": "title",
+          "displayName": "Page Title",
+          "description": "",
+          "type": "TEXT",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "f0269421-1c9a-41ae-a676-9e2bfce2e595",
+          "name": "faqQuestion1",
+          "displayName": "FaqQuestion1",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "740b2bdb-92d5-40ca-b996-c89b1c686c07",
+          "name": "faqQuestion2",
+          "displayName": "FaqQuestion2",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "d5b718aa-143f-41cd-a072-bbff7ffa6beb",
+          "name": "faqQuestion3",
+          "displayName": "FaqQuestion3",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "9e7c8eb2-65d9-4958-a0e9-681e88257ed2",
+          "name": "faqQuestion4",
+          "displayName": "FaqQuestion4",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "5d70e169-812d-4a73-af2f-5ad19b22e9d6",
+          "name": "faqQuestion5",
+          "displayName": "FaqQuestion5",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "973c77aa-9117-42a3-b15c-cb68d3fe9dfe",
+          "name": "faqQuestion6",
+          "displayName": "FaqQuestion6",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "isHeader": false,
+      "isFooter": false,
+      "translations": {},
+      "defaultPropValuesTranslations": {
+        "en": {
+          "title": "FQA"
+        },
+        "ar": {
+          "title": "FQA arabic",
+          "faqQuestion1": {
+            "title": "When will my order be shipped? -same but arabic",
+            "content": "<p data-start=\"131\" data-end=\"311\" class=\"\">Your order will be processed and shipped within 1–3 business days after confirmation. During promotional periods, processing times may vary.&nbsp;-same but arabic</p>\n<p data-start=\"313\" data-end=\"526\" class=\"\"></p>"
+          }
+        }
+      },
+      "defaultPropValues": {
+        "title": "FQA"
       },
       "commonPropValues": null
     }
@@ -7663,6 +7962,365 @@
       ],
       "specifications": [],
       "disableIndex": false
+    },
+    {
+      "id": "1301110f-4cf7-4171-9a68-1fb822c191e0",
+      "name": "User Policy",
+      "type": "CUSTOM",
+      "components": [
+        {
+          "id": "356efa3b-6c21-4d5a-bd1b-7e670b161067",
+          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
+          "propValues": {
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 50,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
+                "91ee2172-008c-4866-9241-88e919877f9c"
+              ]
+            },
+            "products": {
+              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
+              "productListType": "SEARCH",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20
+            },
+            "popularCategories": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 8,
+              "categoryCount": null,
+              "categoryIds": [
+                "8f14392d-23ab-446e-9556-d10fae14f176",
+                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
+                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
+                "f03c3417-578b-4444-a376-3af06f3349d2",
+                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
+                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
+              ]
+            },
+            "popularProducts": {
+              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
+              "productListType": "ALL",
+              "initialSort": "DEFAULT",
+              "initialLimit": 8
+            },
+            "popularBrands": {
+              "brandListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 8
+            },
+            "slogans": [
+              "Ürün Arayınız",
+              "Deneme Ürün İsmi",
+              "Maskara"
+            ],
+            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
+            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
+            "logo": {
+              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
+              "altText": null
+            }
+          }
+        },
+        {
+          "id": "8fef5a77-7a30-4bdb-8757-7bc9ce3d71ba",
+          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
+          "propValues": {
+            "linkdata": [
+              {
+                "title": "Kurumsal",
+                "links": [
+                  {
+                    "id": "0921169e-a9e0-4059-900b-ec06f036549e",
+                    "linkType": "PAGE",
+                    "label": "Hakkımızda",
+                    "pageId": "b6624299-8c47-4e97-8a9d-03288b1873b7",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "a5d29d20-6f93-46ee-96eb-cfa49fb11dcf",
+                    "linkType": "PAGE",
+                    "label": "İletişim",
+                    "pageId": "7ab9d5a5-085e-40dc-aba7-17216b613c30",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "dc1deee5-9997-4574-99bc-989d55138a99",
+                    "linkType": "PAGE",
+                    "label": "Anasayfa",
+                    "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
+                    "pageType": "INDEX",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              },
+              {
+                "title": "social",
+                "links": [
+                  {
+                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
+                    "linkType": "EXTERNAL",
+                    "label": "twitter",
+                    "pageId": null,
+                    "pageType": null,
+                    "itemId": null,
+                    "externalLink": "https://x.com",
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
+                    "linkType": "EXTERNAL",
+                    "label": "insta",
+                    "externalLink": "https://instagram.com",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "3e48fbde-b1eb-4629-9805-0d92f3d0e6f7",
+          "componentId": "86ebd305-93a8-42cf-9983-feec0c19f044",
+          "propValues": {
+            "acceptanceofTerms": {
+              "title": "Acceptance of Terms",
+              "content": "By accessing and using this platform, you confirm your agreement to be legally bound by these terms. Continued use constitutes ongoing acceptance of any revised provisions. Failure to comply requires immediate termination of all services."
+            },
+            "partiesResponsibilities": {
+              "title": "Parties' Responsibilities",
+              "content": "The company reserves the right to modify product specifications without prior notice. Users are strictly prohibited from engaging in unauthorized commercial activities through the platform. Technical support is excluded during scheduled maintenance periods."
+            },
+            "intellectualPropertyRights": {
+              "content": "<p data-start=\"658\" data-end=\"931\" class=\"\">All visual assets including logos and interface designs constitute registered trademarks. Reverse engineering of any platform components will result in immediate legal action. Limited personal use exceptions require written authorization.</p>",
+              "title": "Intellectual Property Rights"
+            },
+            "privacyConfidentialInformation": {
+              "title": "Privacy & Confidential Information",
+              "content": "<p data-start=\"938\" data-end=\"1222\" class=\"\">User data collection focuses exclusively on transaction processing requirements. Third-party data sharing occurs only with verified logistics partners. Mandatory disclosure obligations to regulatory bodies supersede standard privacy protocols.</p>"
+            },
+            "userRegistrationSecurity": {
+              "title": "User Registration & Security",
+              "content": "<p data-start=\"1229\" data-end=\"1491\" class=\"\">Account credentials must contain multifactor authentication within 30 days of registration. Immediate notification is required for suspected security breaches. Inactive accounts exceeding 18 months will be permanently archived.</p>"
+            },
+            "forceMajeure": {
+              "title": "Force Majeure",
+              "content": "<p data-start=\"1498\" data-end=\"1711\" class=\"\">Service interruptions caused by extreme weather events or government mandates exempt the company from liability. Affected users will receive priority service restoration when operations resume.</p>"
+            },
+            "agreementValidity": {
+              "title": "Agreement Validity",
+              "content": "<p data-start=\"1718\" data-end=\"1937\" class=\"\">Should any clause be deemed unenforceable by competent authorities, remaining provisions retain full legal effect. Disputes must be formally filed within 90 calendar days of incident occurrence.</p>"
+            },
+            "amendmentstoTerms": {
+              "title": "Amendments to Terms",
+              "content": "<p data-start=\"1944\" data-end=\"2173\" class=\"\">Significant changes to service conditions trigger mandatory user notifications through registered communication channels. Historical version tracking is available through the legal documentation archive.</p>"
+            },
+            "notifications": {
+              "title": "Notifications",
+              "content": "Official communications utilize encrypted channels verified through blockchain timestamps. Users must maintain current contact details with real-time update capabilities through the account management portal."
+            },
+            "generalTermsofUse": {
+              "title": "General Terms of Use",
+              "content": "<p data-start=\"2415\" data-end=\"2678\" class=\"\">Commercial-scale data scraping requires explicit written consent. Artificial inflation of engagement metrics will result in permanent account suspension. All user-generated content is subject to automated plagiarism detection protocols.</p>"
+            }
+          }
+        }
+      ],
+      "slug": "user-policy",
+      "specifications": [],
+      "disableIndex": false
+    },
+    {
+      "id": "ca87b367-b321-4ab6-b3f7-9a7d41fb6fc4",
+      "name": "FAQ",
+      "type": "CUSTOM",
+      "components": [
+        {
+          "id": "0d9879fa-f5db-4c55-95ab-26e4e828bf8c",
+          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
+          "propValues": {
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 50,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
+                "91ee2172-008c-4866-9241-88e919877f9c"
+              ]
+            },
+            "products": {
+              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
+              "productListType": "SEARCH",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20
+            },
+            "popularCategories": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 8,
+              "categoryCount": null,
+              "categoryIds": [
+                "8f14392d-23ab-446e-9556-d10fae14f176",
+                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
+                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
+                "f03c3417-578b-4444-a376-3af06f3349d2",
+                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
+                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
+              ]
+            },
+            "popularProducts": {
+              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
+              "productListType": "ALL",
+              "initialSort": "DEFAULT",
+              "initialLimit": 8
+            },
+            "popularBrands": {
+              "brandListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 8
+            },
+            "slogans": [
+              "Ürün Arayınız",
+              "Deneme Ürün İsmi",
+              "Maskara"
+            ],
+            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
+            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
+            "logo": {
+              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
+              "altText": null
+            }
+          }
+        },
+        {
+          "id": "fbc07f61-c641-493d-9645-6d0cd2a5d341",
+          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
+          "propValues": {
+            "linkdata": [
+              {
+                "title": "Kurumsal",
+                "links": [
+                  {
+                    "id": "0921169e-a9e0-4059-900b-ec06f036549e",
+                    "linkType": "PAGE",
+                    "label": "Hakkımızda",
+                    "pageId": "b6624299-8c47-4e97-8a9d-03288b1873b7",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "a5d29d20-6f93-46ee-96eb-cfa49fb11dcf",
+                    "linkType": "PAGE",
+                    "label": "İletişim",
+                    "pageId": "7ab9d5a5-085e-40dc-aba7-17216b613c30",
+                    "pageType": "CUSTOM",
+                    "itemId": null,
+                    "externalLink": null,
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "dc1deee5-9997-4574-99bc-989d55138a99",
+                    "linkType": "PAGE",
+                    "label": "Anasayfa",
+                    "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
+                    "pageType": "INDEX",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              },
+              {
+                "title": "social",
+                "links": [
+                  {
+                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
+                    "linkType": "EXTERNAL",
+                    "label": "twitter",
+                    "pageId": null,
+                    "pageType": null,
+                    "itemId": null,
+                    "externalLink": "https://x.com",
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
+                    "linkType": "EXTERNAL",
+                    "label": "insta",
+                    "externalLink": "https://instagram.com",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "055d9022-3e9d-4143-b64f-8dc9aab1aa19",
+          "componentId": "6922648e-3175-4457-b620-1d40fdb1d58a",
+          "propValues": {
+            "faqQuestion1": {
+              "title": "When will my order be shipped?",
+              "content": "<p data-start=\"131\" data-end=\"311\" class=\"\">Your order will be processed and shipped within 1–3 business days after confirmation. During promotional periods, processing times may vary.</p>\n<p data-start=\"313\" data-end=\"526\" class=\"\"></p>"
+            },
+            "title": "FAQ",
+            "faqQuestion2": {
+              "title": "How much is the shipping fee?",
+              "content": "Shipping is free for orders above a certain amount. For orders below that amount, a flat shipping fee applies. For more details, please visit our <a href=\"https://3185ddb8-a430-4b62-836a-ddbbc42e2640-meletiorient.myikas.com/pages/about-us?_gl=1*irdcau*_gcl_au*MTQ3OTA3NDU3MS4xNzQxMzM0ODI0\" target=\"_blank\" style=\"text-decoration-line: underline;\">[Shipping Information]</a> page."
+            },
+            "faqQuestion3": {
+              "title": "How can I return a product?",
+              "content": "If you wish to return a product, you can do so within 14 days from the delivery date, provided it is unused and in its original packaging with the invoice. Visit our [Returns &amp; Exchanges] page for full instructions."
+            },
+            "faqQuestion4": {
+              "title": "What payment methods do you accept?",
+              "content": "We accept credit cards, debit cards, and cash on delivery. In some cases, bank transfer may also be available during certain periods."
+            },
+            "faqQuestion5": {
+              "title": "Can I place an order without creating an account?",
+              "content": "Yes, you can checkout as a guest without registering. However, creating an account makes it easier to track your orders and access special offers."
+            },
+            "faqQuestion6": {
+              "title": "My item arrived damaged, what should I do?",
+              "content": "Please take photos of the damaged item and contact our customer service within 48 hours. Once reviewed, we’ll assist you with a replacement or refund process."
+            }
+          }
+        }
+      ],
+      "slug": "faq",
+      "specifications": [],
+      "disableIndex": false
     }
   ],
   "settings": {
@@ -8610,6 +9268,53 @@
           "displayName": "21_9",
           "value": "_21_9",
           "translations": {}
+        }
+      ],
+      "sliderData": {},
+      "groupId": "",
+      "isRoot": true,
+      "level": 0,
+      "excludedFields": [],
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
+    },
+    {
+      "id": "e26f224e-e722-45a3-97fd-f1f9794448c0",
+      "name": "PolicyContent",
+      "typescriptName": "PolicyContent",
+      "translations": {},
+      "type": "OBJECT",
+      "isRequired": true,
+      "nestedData": [
+        {
+          "id": "7799a8fe-5b6e-494e-a35a-0e4195a7028b",
+          "name": "title",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": false,
+          "key": "title",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "c7470777-dc6d-4a1f-a4f0-21afd142fcd5",
+          "name": "content",
+          "translations": {},
+          "type": "RICH_TEXT",
+          "isRequired": false,
+          "key": "content",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "sliderData": {},
