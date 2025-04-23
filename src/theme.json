@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "cfcad0cb-2bbc-478d-a52f-5793decf2bcc",
+          "id": "bf02fbc5-e727-4467-9cc3-41989e5abc34",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "aa407ff5-d64c-4db0-9d75-d1e57a036c07",
+          "id": "1ecefb28-806e-41c3-9482-5d082c242fa5",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "906dabff-66dd-457e-915b-3a193e976fa8",
+          "id": "ae5d1661-2e6c-4cb1-8c71-179cfbb17e2a",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "36864600-0654-4e8f-ab7c-8e572a97ffb5",
+          "id": "cf7194c2-1fff-42ef-b37e-f99ba875bc06",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e309e032-5c90-48f4-9240-c879e53226ae",
+          "id": "e1d89e7d-8360-482d-9d45-a70a09368caf",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fe887e45-f8f9-465f-ac20-29f710d8940f",
+          "id": "6712b9db-f3db-48c1-bb3f-616bc9c17aa4",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "29364e1d-5e19-418f-8658-7afce74a9ded",
+          "id": "0faf3662-882d-48c9-b7fd-2039bde0e825",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "44a1cef8-21cb-46a8-ad92-a1657b9c5422",
+          "id": "9776031a-66c3-478d-8119-366fd2dd0c94",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "98fd277d-02f9-4087-ba6d-74fa6f3ac751",
+          "id": "a03f9099-52bf-44ad-9168-2de2930afd07",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1c548571-dd48-40d3-8a77-69efb56a719b",
+          "id": "7efa1475-9225-4319-b441-03141c1aac47",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b775034a-8104-4653-81c4-98ebf9deefc8",
+          "id": "075713c6-defc-4759-83d8-c92170bcb1b0",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "922702b3-6100-4c54-a4ab-a14046d4b70d",
+          "id": "c7308f33-3920-4765-b2ab-4ac9e1093901",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4b73f200-83ce-4f14-bfb6-7e52931bd600",
+          "id": "fc6c1a95-bb41-46d9-a868-d87f74237130",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b64c630e-e06a-4668-a6c8-56d3dcc25681",
+          "id": "1303181b-043f-49cc-8a79-bf8d999ed900",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ba2cbcbd-1801-4830-89bb-6f2be95ebba0",
+          "id": "699f79a0-37e6-4898-b018-dedd9132609b",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e1121d48-6e82-4360-97e8-50c312cceaf0",
+          "id": "e5b3ef88-584c-4891-8f0e-d8971812ca4b",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "75b2497c-907b-49bb-a331-61b1d5e99461",
+          "id": "f59ba38d-3740-4355-abb1-4dc7ba1c2807",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fc372698-8718-4dad-8fde-75e10f0a70b0",
+          "id": "d507a184-22d3-456d-9465-d2bf4c592afd",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "834271f0-6bae-4dab-80e0-ab1e60d9a269",
+          "id": "4b3a1960-f2c6-4b7a-bcbb-f00fdcda047d",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8f00f2d2-96d7-4085-bbb6-2a45203f18fb",
+          "id": "bb336df0-0b00-4ddb-b480-a2fb78f3add9",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4a8fc260-126f-4f0d-8a59-65efedc0238e",
+          "id": "6e99e3a4-c575-40fa-82d7-c36ab207e075",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2638dd1a-36d8-4bdf-acc3-f8a727fdb5f9",
+          "id": "a3e33656-bca5-4c77-bcb0-1a1f652fd3b0",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "906a1c6f-c316-4689-908b-fe441c0a8bf3",
+          "id": "d1776c87-3788-4672-9a50-5aa6124d3e52",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "46133426-4e0a-4d7f-8578-633f8659a334",
+          "id": "05bd03e8-da17-448c-85af-314dfe2e53ad",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "82b024b4-c06e-47cb-a34a-a632bdde2168",
+          "id": "48626f67-c4a3-4c6f-8246-16ca249f76bb",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e4ca197d-9c7d-4735-8d39-85e64f76dc49",
+          "id": "90a39d33-7548-4b71-af6f-6c6c79a81fa1",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c54a27e5-39ea-477b-87d8-679bffe5bc0d",
+          "id": "19a4f542-4558-4493-8bde-c72dad6245f6",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e43c3fb3-24f4-4918-8376-8c5970f99d47",
+          "id": "c37d8cc5-3149-4164-b674-fb798be430e8",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "421c9984-da1a-447b-86ce-ba6a7ab0011d",
+          "id": "7780aad5-70e6-4278-ad6a-ff759d6d185e",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a574317a-dbed-48a7-ba7b-6282bb540218",
+          "id": "2e9e50f0-4c94-4a30-933c-2343fc336624",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "378f63e1-7b4a-43a9-a1f8-d9e3469fe646",
+          "id": "65b4ae09-e9f9-4431-b317-d9a5c85869ea",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "67f54902-c449-49dc-bbad-d24d8ba5d608",
+          "id": "6c0c7847-ff58-4fc5-ab72-3bac7bb4186b",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "233095ff-37f7-4ac4-b8c6-aae9b2cd7923",
+          "id": "df6a00f7-23ec-4485-9b8a-c1e1c6cc0472",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "479b3701-d39b-431f-86d5-4a3694f977ac",
+          "id": "067e6bf1-db76-4967-aa3e-477b6735b53d",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "21adfea2-517a-4af9-8942-e7604c09b5f7",
+          "id": "c15bab98-d83a-4111-bf47-8deaa5de7b95",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dc2221e0-fcc1-41ee-bac4-8e478191bab9",
+          "id": "e211e5c0-7c11-443f-bcb2-6663ce5ff9c4",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "41c23e5c-765a-4da6-b2b9-f023cd8f8455",
+          "id": "7537b8f9-3a21-426b-aa3f-f1dba2e6569a",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f6522cfa-4c24-453b-958f-a673917f0d91",
+          "id": "b942d3ff-c3f3-4afd-a738-7d4c930497a2",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "872be60e-d443-44a7-8398-0e2c83da3db4",
+          "id": "06c62644-6cbe-4cc7-8768-1b54ee490a2f",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -1353,6 +1353,49 @@
           "excludedFields": [],
           "excludedFieldsCategory": [],
           "isFacetListNotSent": false
+        },
+        {
+          "id": "03ab8474-5d0a-4fa8-9c93-8ac3ec753ff5",
+          "name": "footerResponse",
+          "displayName": "FooterResponse",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": false,
+          "customDataId": "9dffefa0-6368-432c-9d40-445bbe2c9dd2",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "d8650a43-6d46-4060-8faf-b7ff4883775a",
+          "name": "newsletterTitle",
+          "displayName": "NewsletterTitle",
+          "description": "",
+          "type": "TEXT",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "83894cdc-fa3a-4b0d-9409-94c1688832b5",
+          "name": "newsletterDesc",
+          "displayName": "NewsletterDesc",
+          "description": "",
+          "type": "TEXT",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -1426,7 +1469,15 @@
               }
             ]
           }
-        ]
+        ],
+        "footerResponse": {
+          "success": "You have successfully subscribed to our newsletter",
+          "error": "You are already subscribed to our newsletter",
+          "invalidEmail": "Invalid email address",
+          "domainError": "Please use a Gmail, Outlook, or Hotmail email address."
+        },
+        "newsletterTitle": "NEWSLETTER SIGN UP",
+        "newsletterDesc": "Subscribe to our newsletter and get the latest news and offers from us."
       },
       "commonPropValues": null
     },
@@ -2219,6 +2270,21 @@
           "excludedFields": [],
           "excludedFieldsCategory": [],
           "isFacetListNotSent": false
+        },
+        {
+          "id": "6abe0b81-a104-4769-9333-147879925fb2",
+          "name": "formRule",
+          "displayName": "FormRule",
+          "description": "",
+          "type": "CUSTOM",
+          "isRequired": true,
+          "customDataId": "f434a45e-6c84-40f6-8833-aeace131b072",
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -2238,7 +2304,7 @@
         },
         "ar": {
           "contactProps": {
-            "mail": "mail@gmail.com",
+            "mail": "arabic@gmail.com",
             "phone": "1234564123",
             "address": "adress"
           },
@@ -2257,6 +2323,11 @@
         "formMessages": {
           "title": "Deneme",
           "text": "DenemeText"
+        },
+        "formRule": {
+          "requiredRule": "This field is required",
+          "emailRule": "Please enter a valid email address",
+          "minRule": "Please enter at least 8 characters"
         }
       },
       "commonPropValues": null
@@ -3606,7 +3677,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -3768,7 +3847,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -4028,7 +4115,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -4209,7 +4304,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -4362,7 +4465,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -4517,7 +4628,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         }
       ],
@@ -4657,7 +4776,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -4802,7 +4929,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -4966,7 +5101,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5097,7 +5240,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5242,7 +5393,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5373,7 +5532,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5518,7 +5685,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5649,7 +5824,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5794,7 +5977,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -5925,7 +6116,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -6061,7 +6260,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         }
       ],
@@ -6201,7 +6408,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -6346,7 +6561,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -6482,7 +6705,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         }
       ],
@@ -6622,7 +6853,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -6767,7 +7006,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -6898,7 +7145,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7050,7 +7305,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7181,7 +7444,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7334,7 +7605,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7482,7 +7761,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7497,6 +7784,12 @@
             "formMessages": {
               "title": "deneme",
               "text": "deneme text"
+            },
+            "formRule": {
+              "requiredRule": "This field is requiredsss",
+              "emailRule": "Please enter a valid email address",
+              "minRule": "Please enter at least 8 characters",
+              "phoneRule": "Phone should be numeric"
             }
           }
         }
@@ -7638,7 +7931,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7784,7 +8085,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -7945,7 +8254,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -8096,7 +8413,15 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
@@ -8112,8 +8437,8 @@
               "content": "The company reserves the right to modify product specifications without prior notice. Users are strictly prohibited from engaging in unauthorized commercial activities through the platform. Technical support is excluded during scheduled maintenance periods."
             },
             "intellectualPropertyRights": {
-              "content": "<p data-start=\"658\" data-end=\"931\" class=\"\">All visual assets including logos and interface designs constitute registered trademarks. Reverse engineering of any platform components will result in immediate legal action. Limited personal use exceptions require written authorization.</p>",
-              "title": "Intellectual Property Rights"
+              "title": "Intellectual Property Rights",
+              "content": "<p data-start=\"658\" data-end=\"931\" class=\"\">All visual assets including logos and interface designs constitute registered trademarks. Reverse engineering of any platform components will result in immediate legal action. Limited personal use exceptions require written authorization.</p>"
             },
             "privacyConfidentialInformation": {
               "title": "Privacy & Confidential Information",
@@ -8283,18 +8608,26 @@
                   }
                 ]
               }
-            ]
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc"
           }
         },
         {
           "id": "055d9022-3e9d-4143-b64f-8dc9aab1aa19",
           "componentId": "6922648e-3175-4457-b620-1d40fdb1d58a",
           "propValues": {
+            "title": "FAQ",
             "faqQuestion1": {
               "title": "When will my order be shipped?",
               "content": "<p data-start=\"131\" data-end=\"311\" class=\"\">Your order will be processed and shipped within 1–3 business days after confirmation. During promotional periods, processing times may vary.</p>\n<p data-start=\"313\" data-end=\"526\" class=\"\"></p>"
             },
-            "title": "FAQ",
             "faqQuestion2": {
               "title": "How much is the shipping fee?",
               "content": "Shipping is free for orders above a certain amount. For orders below that amount, a flat shipping fee applies. For more details, please visit our <a href=\"https://3185ddb8-a430-4b62-836a-ddbbc42e2640-meletiorient.myikas.com/pages/about-us?_gl=1*irdcau*_gcl_au*MTQ3OTA3NDU3MS4xNzQxMzM0ODI0\" target=\"_blank\" style=\"text-decoration-line: underline;\">[Shipping Information]</a> page."
@@ -9130,7 +9463,7 @@
       "nestedData": [
         {
           "id": "c64bac22-84fd-4c03-a748-d2544036eac2",
-          "name": "title",
+          "name": "Response Title",
           "translations": {},
           "type": "TEXT",
           "isRequired": true,
@@ -9145,7 +9478,7 @@
         },
         {
           "id": "df49f74a-5e78-4663-8e17-b389bea8b684",
-          "name": "text",
+          "name": "Response Desc",
           "translations": {},
           "type": "TEXT",
           "isRequired": true,
@@ -9308,6 +9641,160 @@
           "type": "RICH_TEXT",
           "isRequired": false,
           "key": "content",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "sliderData": {},
+      "groupId": "",
+      "isRoot": true,
+      "level": 0,
+      "excludedFields": [],
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
+    },
+    {
+      "id": "9dffefa0-6368-432c-9d40-445bbe2c9dd2",
+      "name": "FooterToast",
+      "typescriptName": "FooterToast",
+      "translations": {},
+      "type": "OBJECT",
+      "isRequired": true,
+      "nestedData": [
+        {
+          "id": "171d9c25-01f2-46c4-bacf-649a73ba3f2c",
+          "name": "success",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": false,
+          "key": "success",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "78ff63c5-1fe3-4f80-909b-e3c0dfc4a981",
+          "name": "error",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": false,
+          "key": "error",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "42d211a4-e7c4-407e-ae24-91d397139b42",
+          "name": "invalidEmail",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": false,
+          "key": "invalidEmail",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "3ff245f4-7d1f-4ac6-9178-4fde051f097c",
+          "name": "domainError",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": false,
+          "key": "domainError",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
+      "sliderData": {},
+      "groupId": "",
+      "isRoot": true,
+      "level": 0,
+      "excludedFields": [],
+      "excludedFieldsCategory": [],
+      "isFacetListNotSent": false
+    },
+    {
+      "id": "f434a45e-6c84-40f6-8833-aeace131b072",
+      "name": "ContactFormRule",
+      "typescriptName": "ContactFormRule",
+      "translations": {},
+      "type": "OBJECT",
+      "isRequired": true,
+      "nestedData": [
+        {
+          "id": "eb44b97d-575e-4f53-b790-7bf6b8fd1569",
+          "name": "requiredRule",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "requiredRule",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "398d0562-dd30-4b59-9af0-802680ee2eef",
+          "name": "emailRule",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "emailRule",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "f3f49e17-e603-4cdd-94ff-2ad7a42db6f1",
+          "name": "minRule",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "minRule",
+          "sliderData": {},
+          "groupId": "",
+          "isRoot": false,
+          "level": 1,
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "1dc870de-267e-49d7-8e17-d44dfc406c16",
+          "name": "phoneRule",
+          "translations": {},
+          "type": "TEXT",
+          "isRequired": true,
+          "key": "phoneRule",
           "sliderData": {},
           "groupId": "",
           "isRoot": false,
