@@ -93,6 +93,20 @@ export type PolicyContent = {
 	content?: string;
 };
 
+export type FooterToast = { 
+	success?: string;
+	error?: string;
+	invalidEmail?: string;
+	domainError?: string;
+};
+
+export type ContactFormRule = { 
+	requiredRule: string;
+	emailRule: string;
+	minRule: string;
+	phoneRule: string;
+};
+
 export type NavbarProps = {
 	categories: IkasCategoryList;
 	products: IkasProductList;
@@ -126,6 +140,9 @@ export type StorylinksProps = {
 
 export type FooterProps = {
 	linkdata: FooterLink[];
+	footerResponse?: FooterToast;
+	newsletterTitle: string;
+	newsletterDesc: string;
 };
 
 export type ProductlistgridProps = {
@@ -170,6 +187,7 @@ export type BrandsProps = {
 export type ContactpageProps = {
 	contactProps: ContactProps;
 	formMessages: FormMessages;
+	formRule: ContactFormRule;
 };
 
 export type PageBlogProps = {

@@ -15,40 +15,11 @@ import Envelope from "../svg/Envelope";
 import Facebook from "../svg/Facebook";
 import Instagram from "../svg/Instagram";
 
-const ts = {
-  en: {
-    links: "Useful Links",
-    title: "NEWSLETTER SIGN UP",
-    desc: "Subscribe to our newsletter and get the latest news and offers from us.",
-    success: "You have successfully subscribed to our newsletter",
-    error: "You are already subscribed to our newsletter",
-    invalidEmail: "Invalid email address",
-    domainError: "Please use a Gmail, Outlook, or Hotmail email address."
-  },
-  ar: {
-    links: "روابط مفيدة",
-    title: "الاشتراك في النشرة الإخبارية",
-    desc: "اشترك في النشرة الإخبارية لدينا واحصل على آخر الأخبار والعروض منا.",
-    success: "لقد اشتركت بنجاح في النشرة الإخبارية لدينا",
-    error: "أنت مشترك بالفعل في النشرة الإخبارية لدينا",
-    invalidEmail: "عنوان البريد الإلكتروني غير صالح",
-    domainError: "يرجى استخدام عنوان بريد إلكتروني من Gmail أو Outlook أو Hotmail."
-  },
-};
 
-const Footer = ({ linkdata }: FooterProps) => {
-  const store = useStore();
+const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc }: FooterProps) => {
   const { t } = useTranslation();
   const { direction } = useDirection();
-  const [selectedLocale, setSelectedLocale] = useState<string>("en");
 
-  useEffect(() => {
-    if (store.router?.locale) {
-      setSelectedLocale(store.router.locale);
-    }
-  }, [store.router]);
-
-  const currentLang: "en" | "ar" = selectedLocale === "ar" ? "ar" : "en";
   const currentYear = new Date().getFullYear();
 
   const [usefull, setUsefull] = useState<IkasNavigationLink[]>([]);
@@ -87,18 +58,22 @@ const Footer = ({ linkdata }: FooterProps) => {
   const onSubmitEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const emailParts = email.split('@');
-    if (emailParts.length !== 2) {
-      toast.error(ts[currentLang].invalidEmail);
+    const parts = email.split('@');
+    if (parts.length !== 2) {
+      toast.error(
+        footerResponse?.invalidEmail
+        ?? 'Please enter a valid email address.'
+      );
       return;
     }
 
-    // Domain validation
-    const domain = emailParts[1].toLowerCase();
+    const domain = parts[1].toLowerCase();
     const allowedDomains = ['gmail.com', 'outlook.com', 'hotmail.com'];
-
     if (!allowedDomains.includes(domain)) {
-      toast.error(ts[currentLang].domainError);
+      toast.error(
+        footerResponse?.domainError
+        ?? 'This email domain is not supported.'
+      );
       return;
     }
 
@@ -106,12 +81,18 @@ const Footer = ({ linkdata }: FooterProps) => {
   };
 
   useEffect(() => {
-    if (responseStatus === "success") {
-      toast.success(ts[currentLang].success);
-    } else if (responseStatus === "error") {
-      toast.error(ts[currentLang].error);
+    if (responseStatus === 'success') {
+      toast.success(
+        footerResponse?.success
+        ?? 'Your subscription was successful.'
+      );
+    } else if (responseStatus === 'error') {
+      toast.error(
+        footerResponse?.error
+        ?? 'An unexpected error occurred. Please try again.'
+      );
     }
-  }, [responseStatus, currentLang]);
+  }, [responseStatus, footerResponse]);
 
   return (
     <footer
@@ -163,7 +144,7 @@ const Footer = ({ linkdata }: FooterProps) => {
           </section>
           {/* Useful Links Section */}
           <section className="mb-6 flex flex-col text-white items-center lg:items-start">
-            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].links}</h5>
+            <h5 className="mb-2.5 font-bold uppercase">{t("useful links")}</h5>
             <nav className="mt-2.5 flex flex-col gap-1.5">
               {usefull?.map((fl, idx) => (
                 <Link key={fl.itemId + "-link-" + idx} href={fl.href}>
@@ -174,11 +155,11 @@ const Footer = ({ linkdata }: FooterProps) => {
           </section>
           {/* Newsletter Section */}
           <section className="self-start">
-            <h5 className="mb-2.5 font-bold uppercase">{ts[currentLang].title}</h5>
+            <h5 className="mb-2.5 font-bold uppercase">{newsletterTitle}</h5>
             <form onSubmit={onSubmitEmail}>
               <div>
                 <div className="mb-2 md:mb-6 md:ms-auto">
-                  <p>{ts[currentLang].desc}</p>
+                  <p>{newsletterDesc}</p>
                 </div>
                 <div className="md:mb-0 mb-2">
                   <label htmlFor="contactEmailForm" className="sr-only">Label</label>
