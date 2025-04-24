@@ -9,7 +9,7 @@ import {
   useTranslation,
 } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Rating } from "react-simple-star-rating";
 
 import useFavorite from "src/utils/useFavorite";
@@ -98,6 +98,71 @@ const ProductDetail = ({
   const [reviews, setReviews] = useState<IkasCustomerReviewList>();
   const [combineProducts, setCombineProducts] = useState<IkasProduct[]>();
   const { addToCart, loading } = useAddToCart();
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [canScrollUp, setCanScrollUp] = useState(false);
+  const [canScrollDown, setCanScrollDown] = useState(false);
+
+  const checkScroll = useCallback(() => {
+    const element = scrollContainerRef.current;
+    if (!element) return;
+
+    // Horizontal scroll kontrolü
+    setCanScrollLeft(element.scrollLeft > 0);
+    setCanScrollRight(
+      element.scrollLeft + element.clientWidth < element.scrollWidth
+    );
+
+    // Vertical scroll kontrolü
+    setCanScrollUp(element.scrollTop > 0);
+    setCanScrollDown(
+      element.scrollTop + element.clientHeight < element.scrollHeight
+    );
+  }, []);
+
+  useEffect(() => {
+    const element = scrollContainerRef.current;
+    if (!element) return;
+
+    checkScroll();
+    element.addEventListener('scroll', checkScroll);
+    window.addEventListener('resize', checkScroll);
+
+    return () => {
+      element.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [checkScroll]);
+
+  const scrollHorizontal = (direction: 'left' | 'right') => {
+    const element = scrollContainerRef.current;
+    if (!element) return;
+
+    const scrollAmount = element.clientWidth * 0.8; // Görünür alanın %80'i kadar kaydır
+    element.scrollBy({
+      left: direction === 'right' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollVertical = (direction: 'up' | 'down') => {
+    const element = scrollContainerRef.current;
+    if (!element) return;
+
+    const scrollAmount = element.clientHeight * 0.8;
+    element.scrollBy({
+      top: direction === 'down' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
+  // Handler'lar
+  const scrollLeft = () => scrollHorizontal('left');
+  const scrollRight = () => scrollHorizontal('right');
+  const scrollUp = () => scrollVertical('up');
+  const scrollDown = () => scrollVertical('down');
 
   useEffect(() => {
     const kombinUrun = product?.attributes?.find(
@@ -228,38 +293,123 @@ const ProductDetail = ({
           {/* Image Gallery */}
           <div className="md:block">
             <div className="flex flex-col-reverse xl:flex-row gap-4">
-              {/* all images */}
-              <div
-                className="overflow-x-auto xl:overflow-y-auto"
-                style={{
-                  maxWidth: "calc(5 * 80px + 4 * 16px)",
-                  maxHeight: "calc(5 * 80px + 4 * 16px)",
-                  scrollbarWidth: "none"
-                }}
-              >
-                <div className="flex flex-row xl:flex-col gap-4">
-                  {allImages.map((image) => (
-                    <div
-                      key={image.id + "image2"}
-                      onClick={() => setSelectedImage(image)}
-                      className={`cursor-pointer border min-w-[65px] lg:max-w-[80px] relative w-full overflow-hidden ${selectedImage?.id === image?.id
-                        ? "border-[color:var(--color-three)]"
-                        : "border-transparent hover:border-[color:var(--gray-three)]"
-                        }`}
-                    >
-                      <Image
-                        image={image!}
-                        alt={image?.altText || ""}
-                        layout="responsive"
-                        objectFit="cover"
-                        height={372}
-                        width={293}
-                        useBlur
-                      />
-                    </div>
-                  ))}
+              <div className="relative">
+                {/* all images */}
+                <div
+                  ref={scrollContainerRef}
+                  className="overflow-x-auto xl:overflow-y-auto mt-8 xl:ml-0 ml-1"
+                  style={{
+                    maxWidth: "calc(5 * 82px + 4 * 16px)",
+                    maxHeight: "calc(5 * 80px + 4 * 20px)",
+                    scrollbarWidth: "none"
+                  }}
+                >
+                  <div className="flex flex-row xl:flex-col gap-4">
+                    {allImages.map((image) => (
+                      <div
+                        key={image.id + "image2"}
+                        onClick={() => setSelectedImage(image)}
+                        className={`cursor-pointer border min-w-[65px] lg:max-w-[80px] relative overflow-hidden ${selectedImage?.id === image?.id
+                          ? "border-[color:var(--color-three)]"
+                          : "border-transparent hover:border-[color:var(--gray-three)]"
+                          }`}
+                      >
+                        <Image
+                          image={image!}
+                          alt={image?.altText || ""}
+                          layout="responsive"
+                          objectFit="cover"
+                          height={372}
+                          width={293}
+                          useBlur
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
+
+                {canScrollLeft && (
+                  <button
+                    onClick={scrollLeft}
+                    className="inline xl:hidden absolute -left-7 top-1/2 z-10 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer"
+                  >
+                    <svg
+                      className="w-8 h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                )}
+                {canScrollRight && (
+                  <button
+                    onClick={scrollRight}
+                    className="inline xl:hidden absolute -right-7 top-1/2 z-10 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer"
+                  >
+                    <svg
+                      className="w-8 h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                )}
+                {canScrollUp && (
+                  <button
+                    onClick={scrollUp}
+                    className="xl:inline absolute -top-4 left-1/2 -translate-x-1/2 z-10 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer"
+                  >
+                    <svg
+                      className="w-8 h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 15l-7-7-7 7"
+                      />
+                    </svg>
+                  </button>
+                )}
+                {canScrollDown && (
+                  <button
+                    onClick={scrollDown}
+                    className="xl:inline absolute -bottom-4 left-1/2 -translate-x-1/2 z-10 text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer"
+                  >
+                    <svg
+                      className="w-8 h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 9l7 7 7-7"
+                      />
+                    </svg>
+                  </button>
+                )}
               </div>
+
               {/* selected image */}
               <div className="flex-1" onClick={() => setModalImage(true)}>
                 <div className="aspect-293/372 cursor-zoom-in relative w-full overflow-hidden bg-[color:var(--gray-bg)]/10 rounded">
@@ -757,7 +907,7 @@ const ProductDetail = ({
         </div>
         {show && similar.count > 0 && (
           <>
-            <div className="text-xl text-[color:var(--color-two)] font-medium my-14 text-center tracking-widest">
+            <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.relatedProducts")}
             </div>
             <div dir="ltr" className="w-full">
@@ -794,7 +944,7 @@ const ProductDetail = ({
         )}
         {show && lastvisited.count > 0 && (
           <>
-            <div className="text-xl text-[color:var(--color-two)] font-medium my-14 text-center tracking-widest">
+            <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.insterestedProducts")}
             </div>
             <div dir="ltr" className="w-full">
@@ -831,7 +981,7 @@ const ProductDetail = ({
         )}
         {reviews && (
           <div id="reviewsection">
-            <div className="text-xl text-[color:var(--color-two)] font-medium mt-14 mb-6 text-left tracking-widest">
+            <div className="text-xl text-[color:var(--color-two)] font-medium mt-7 mb-6 text-left tracking-widest">
               {t("productDetail.comments")}
             </div>
             <div className="flex flex-col w-full">

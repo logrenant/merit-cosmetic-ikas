@@ -83,7 +83,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
           <button
             onClick={() => instanceRef.current?.prev()}
             disabled={currentSlide === 0}
-            className={`xl:hidden absolute top-[40%] left-[-32px] text-[color:var(--color-two)] ${currentSlide === 0 ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer ${currentSlide === 0 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -104,7 +104,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
           <button
             onClick={() => instanceRef.current?.next()}
             disabled={currentSlide === totalDots - 1}
-            className={`xl:hidden absolute top-[40%] right-[-32px] text-[color:var(--color-two)] ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer  ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -124,13 +124,13 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
         </>
       )}
 
-      {showPagination && instanceRef && (
+      {showPagination && instanceRef && totalDots > 1 && (
         <div className="dots flex justify-center mt-4">
           {Array.from({ length: totalDots }).map((_, idx) => (
             <button
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
-              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx
+              className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none cursor-pointer ${currentSlide === idx
                 ? "bg-[color:var(--color-four)]"
                 : "bg-[color:var(--color-one)]"
                 }`}

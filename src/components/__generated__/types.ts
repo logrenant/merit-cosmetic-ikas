@@ -143,6 +143,7 @@ export type FooterProps = {
 	footerResponse?: FooterToast;
 	newsletterTitle: string;
 	newsletterDesc: string;
+	footerImage?: IkasImage;
 };
 
 export type ProductlistgridProps = {

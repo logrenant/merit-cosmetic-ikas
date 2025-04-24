@@ -60,7 +60,7 @@ const StoryLinks = ({ items }: StorylinksProps) => {
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`xl:hidden absolute top-[30%] left-0 text-[color:var(--color-two)]`}
+            className={`xl:hidden absolute top-[30%] left-0 lg:left-[16px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
           >
             <svg
               className="w-8 h-8"
@@ -79,7 +79,7 @@ const StoryLinks = ({ items }: StorylinksProps) => {
 
           <button
             onClick={() => slider.current?.next()}
-            className={`xl:hidden absolute top-[30%] right-0 text-[color:var(--color-two)]`}
+            className={`xl:hidden absolute top-[30%] right-0 lg:right-[16px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
           >
             <svg
               className="w-8 h-8"

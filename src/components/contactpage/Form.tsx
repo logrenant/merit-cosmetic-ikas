@@ -9,9 +9,8 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
 
     const [isPending, setPending] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [domainError, setDomainError] = useState<string | undefined>(undefined);
-    const [phoneError, setPhoneError] = useState<string | undefined>(undefined);
-    const allowedDomains = ["gmail.com", "hotmail.com", "outlook.com"];
+    const [domainError, setDomainError] = useState<string>();
+    const [phoneError, setPhoneError] = useState<string>();
 
     const [form] = useState(() =>
         new ContactForm({
@@ -28,48 +27,32 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
         e.preventDefault();
         if (isPending) return;
 
-        // reset custom errors
+        // Domain reset
         setDomainError(undefined);
+        // Phone reset
         setPhoneError(undefined);
 
-        // 1) ContactForm internal validation
+        // Phone-only numeric check
+        if (form.phone && !/^[0-9]+$/.test(form.phone)) {
+            setPhoneError(formRule.phoneRule || formRule.minRule);
+            return;
+        }
+
         setPending(true);
-        let response;
         try {
-            response = await form.saveContactForm();
+            const response = await form.saveContactForm();
+
+            if (!response.isFormError && response.isSuccess) {
+                form.onFirstNameChange('');
+                form.onLastNameChange('');
+                form.onEmailChange('');
+                form.onPhoneChange('');
+                form.onMessageChange('');
+                setIsSubmitted(true);
+            }
         } finally {
             setPending(false);
         }
-
-        // 2) Custom email domain validation
-        const emailParts = form.email.split('@');
-        if (emailParts.length !== 2 || !allowedDomains.includes(emailParts[1].toLowerCase())) {
-            setDomainError(formRule.emailRule);
-            return response;
-        }
-
-        // 3) Custom phone numeric validation
-        if (form.phone && !/^[0-9]+$/.test(form.phone)) {
-            setPhoneError(formRule.phoneRule || formRule.minRule);
-            return response;
-        }
-
-        // 4) If any errors, exit
-        if (response.isFormError || domainError || phoneError) {
-            return response;
-        }
-
-        // 5) On success, reset form and show banner
-        if (response.isSuccess) {
-            form.onFirstNameChange('');
-            form.onLastNameChange('');
-            form.onEmailChange('');
-            form.onPhoneChange('');
-            form.onMessageChange('');
-            setIsSubmitted(true);
-        }
-
-        return response;
     };
 
     const renderField = (
@@ -77,7 +60,7 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
         value: string,
         onChange: (v: string) => void,
         errorMessage?: string,
-        type: 'text' | 'email' | 'tel' = 'text',
+        type: 'text' | 'email' | 'phone' = 'text',
         textarea = false
     ) => (
         <div className="flex flex-col w-full">
@@ -90,23 +73,21 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
                     value={value}
                     onChange={e => {
                         onChange(e.target.value);
-                        if (label === 'email') setDomainError(undefined);
-                        if (label === 'phone') setPhoneError(undefined);
+                        if (label === 'phoneNumber') setPhoneError(undefined);
                     }}
                     placeholder={t(label)}
                     className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
                 />
             ) : (
                 <input
-                    type={type}
+                    type={type === 'phone' ? 'tel' : type}
                     value={value}
                     onChange={e => {
                         onChange(e.target.value);
-                        if (label === 'email') setDomainError(undefined);
-                        if (label === 'phone') setPhoneError(undefined);
+                        if (label === 'phoneNumber') setPhoneError(undefined);
                     }}
                     placeholder={t(label)}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm p-2.5"
                 />
             )}
             {label === 'email' ? (
@@ -115,7 +96,7 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
                         {domainError ?? errorMessage}
                     </span>
                 )
-            ) : label === 'phone' ? (
+            ) : label === 'phoneNumber' ? (
                 (phoneError ?? errorMessage) && (
                     <span className="text-red-500 mt-0.5 text-xs">
                         {phoneError ?? errorMessage}
@@ -143,12 +124,20 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
             {renderField("firstName", form.firstName, form.onFirstNameChange, form.firstNameErrorMessage)}
             {renderField("lastName", form.lastName, form.onLastNameChange, form.lastNameErrorMessage)}
             {renderField("email", form.email, form.onEmailChange, form.emailErrorMessage, 'email')}
-            {renderField("phone", form.phone || '', form.onPhoneChange, form.phoneErrorMessage, 'tel')}
+            {renderField("phoneNumber", form.phone || '', form.onPhoneChange, form.phoneErrorMessage, 'phone')}
             {renderField("message", form.message, form.onMessageChange, form.messageErrorMessage, 'text', true)}
 
             <button
                 type="submit"
-                disabled={isPending}
+                disabled={
+                    isPending ||
+                    Boolean(domainError) ||
+                    Boolean(phoneError) ||
+                    Boolean(form.firstNameErrorMessage) ||
+                    Boolean(form.lastNameErrorMessage) ||
+                    Boolean(form.emailErrorMessage) ||
+                    Boolean(form.messageErrorMessage)
+                }
                 className="tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 disabled:opacity-60"
             >
                 {isPending ? t("loading") : t("submit")}

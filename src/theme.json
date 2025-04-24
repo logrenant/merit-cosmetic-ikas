@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "bf02fbc5-e727-4467-9cc3-41989e5abc34",
+          "id": "0b783154-0535-4721-b4a4-8148cba0b6ef",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1ecefb28-806e-41c3-9482-5d082c242fa5",
+          "id": "d5d11ab1-b8d5-4521-86c1-f128f746e09e",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ae5d1661-2e6c-4cb1-8c71-179cfbb17e2a",
+          "id": "50a38121-edee-4e3d-86fd-0a2e2a53daea",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cf7194c2-1fff-42ef-b37e-f99ba875bc06",
+          "id": "ff8d4daa-7d9c-4d2b-9115-bb7a50dc847d",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e1d89e7d-8360-482d-9d45-a70a09368caf",
+          "id": "da6ceaee-0276-443e-ba7f-dfc16578ed80",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6712b9db-f3db-48c1-bb3f-616bc9c17aa4",
+          "id": "47116de3-e7be-40f6-8bf2-a75440e364ad",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0faf3662-882d-48c9-b7fd-2039bde0e825",
+          "id": "587bc579-ccc2-48d9-b0ef-8f0bdb36de50",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9776031a-66c3-478d-8119-366fd2dd0c94",
+          "id": "c0ccfdb6-d402-4311-b176-33ef6b4bc380",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a03f9099-52bf-44ad-9168-2de2930afd07",
+          "id": "6fe00f32-d674-43f6-b584-e87bfb2866fe",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7efa1475-9225-4319-b441-03141c1aac47",
+          "id": "925a8c46-6a65-469f-b6ef-61cc6d5448ec",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "075713c6-defc-4759-83d8-c92170bcb1b0",
+          "id": "54277985-2adb-46f3-8382-1842aada518c",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c7308f33-3920-4765-b2ab-4ac9e1093901",
+          "id": "4dfa9bf6-c76b-472f-9105-d874cfb9bbc4",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fc6c1a95-bb41-46d9-a868-d87f74237130",
+          "id": "24078370-5008-44d5-b49c-f0d4a1d05c78",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1303181b-043f-49cc-8a79-bf8d999ed900",
+          "id": "3e5e3695-b9af-4b37-97fa-d5849f04d12e",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "699f79a0-37e6-4898-b018-dedd9132609b",
+          "id": "666caf18-fdeb-4497-a822-08941cab8392",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e5b3ef88-584c-4891-8f0e-d8971812ca4b",
+          "id": "7dcab6c6-da5a-4ca7-a7b4-5ae75134279e",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f59ba38d-3740-4355-abb1-4dc7ba1c2807",
+          "id": "36c9721c-a4d0-4055-b292-ac33ebb52c1f",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d507a184-22d3-456d-9465-d2bf4c592afd",
+          "id": "a9aab76c-a808-4bdb-b0c3-497dae5dbe86",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4b3a1960-f2c6-4b7a-bcbb-f00fdcda047d",
+          "id": "b80f0325-64e2-4b5f-b9b2-2d561d0d85c1",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bb336df0-0b00-4ddb-b480-a2fb78f3add9",
+          "id": "06638c04-d5c6-4c04-9581-6c37e8d02e50",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6e99e3a4-c575-40fa-82d7-c36ab207e075",
+          "id": "58f300ba-45ed-4865-97aa-a1d97d5ab660",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a3e33656-bca5-4c77-bcb0-1a1f652fd3b0",
+          "id": "a4a621a3-6530-41de-a9f2-eded7059f90c",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d1776c87-3788-4672-9a50-5aa6124d3e52",
+          "id": "53b252ac-6b5e-4d86-91b8-9beccfc29433",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "05bd03e8-da17-448c-85af-314dfe2e53ad",
+          "id": "0a2f5882-6202-4947-9127-5b2b706987a2",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "48626f67-c4a3-4c6f-8246-16ca249f76bb",
+          "id": "22fd8c84-2d88-4104-93b5-0a3410081f9f",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "90a39d33-7548-4b71-af6f-6c6c79a81fa1",
+          "id": "be1790c1-18d1-4976-8b51-bde5a8be899f",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "19a4f542-4558-4493-8bde-c72dad6245f6",
+          "id": "bb6cd471-4b23-4e94-b5d2-d07e9158394c",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c37d8cc5-3149-4164-b674-fb798be430e8",
+          "id": "34d3725c-ed6f-46c7-a6aa-73d2181b86c2",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7780aad5-70e6-4278-ad6a-ff759d6d185e",
+          "id": "791f3224-6f48-47bd-b326-0b36edac21af",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2e9e50f0-4c94-4a30-933c-2343fc336624",
+          "id": "8328f029-dd16-405f-8790-8ab112c89007",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "65b4ae09-e9f9-4431-b317-d9a5c85869ea",
+          "id": "3464f2eb-d092-4b8c-ab20-35a669ea2973",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6c0c7847-ff58-4fc5-ab72-3bac7bb4186b",
+          "id": "9749b58d-0564-46f7-b7bc-c78f221f9557",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "df6a00f7-23ec-4485-9b8a-c1e1c6cc0472",
+          "id": "9b6e7832-9f63-48f3-aafe-512090e5b797",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "067e6bf1-db76-4967-aa3e-477b6735b53d",
+          "id": "2c06346c-1c5b-4db5-be8d-1c56aede524f",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c15bab98-d83a-4111-bf47-8deaa5de7b95",
+          "id": "3d625d06-fc7f-4d0c-8dd6-f36ee9c2d1a0",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e211e5c0-7c11-443f-bcb2-6663ce5ff9c4",
+          "id": "bea02fb1-5d17-4538-acba-e987421fbb98",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7537b8f9-3a21-426b-aa3f-f1dba2e6569a",
+          "id": "5138ed65-8d09-4aa7-a877-4421ac995730",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b942d3ff-c3f3-4afd-a738-7d4c930497a2",
+          "id": "0876148d-3fe4-464f-952c-a37463b91c7f",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "06c62644-6cbe-4cc7-8768-1b54ee490a2f",
+          "id": "646d049d-ffc3-47ba-92ff-36371f58b04a",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -1390,6 +1390,20 @@
           "description": "",
           "type": "TEXT",
           "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "6a4ec278-bba9-448f-9c19-3858c4582c58",
+          "name": "footerImage",
+          "displayName": "FooterImage",
+          "description": "",
+          "type": "IMAGE",
+          "isRequired": false,
           "sliderData": {},
           "translations": {},
           "groupId": "",
@@ -3685,7 +3699,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -3855,7 +3873,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -4123,7 +4145,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -4312,7 +4338,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -4473,7 +4503,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -4636,7 +4670,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         }
       ],
@@ -4784,7 +4822,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -4937,7 +4979,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5109,7 +5155,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5248,7 +5298,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5401,7 +5455,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5540,7 +5598,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5693,7 +5755,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5832,7 +5898,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -5985,7 +6055,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -6124,7 +6198,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -6268,7 +6346,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         }
       ],
@@ -6416,7 +6498,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -6569,7 +6655,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -6713,7 +6803,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         }
       ],
@@ -6861,7 +6955,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7014,7 +7112,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7153,7 +7255,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7313,7 +7419,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7452,7 +7562,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7613,7 +7727,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7769,7 +7887,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -7939,7 +8061,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -8093,7 +8219,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -8262,7 +8392,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -8421,7 +8555,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -8616,7 +8754,11 @@
               "invalidEmail": "invalid"
             },
             "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc"
+            "newsletterDesc": "newsletterDesc",
+            "footerImage": {
+              "id": "theme-images/9874acf2-95c7-4cca-88a4-f15d029555dd",
+              "altText": null
+            }
           }
         },
         {
@@ -8653,7 +8795,8 @@
       ],
       "slug": "faq",
       "specifications": [],
-      "disableIndex": false
+      "disableIndex": false,
+      "canonicals": []
     }
   ],
   "settings": {
