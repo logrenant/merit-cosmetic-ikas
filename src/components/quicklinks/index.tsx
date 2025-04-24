@@ -78,7 +78,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
         <>
           <button
             onClick={() => slider.current?.prev()}
-            className={`xl:hidden absolute top-[40%] left-0 text-[color:var(--color-two)] ${currentSlide === 0 ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[40%] left-0 lg:left-[16px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer ${currentSlide === 0 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -97,7 +97,7 @@ const QuickLinks = ({ links }: QuicklinksProps) => {
           </button>
           <button
             onClick={() => slider.current?.next()}
-            className={`xl:hidden absolute top-[40%] right-0 text-[color:var(--color-two)] ${currentSlide === maxSlide ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[40%] right-0 lg:right-[16px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer ${currentSlide === maxSlide ? "cursor-not-allowed" : ""
               }`}
           >
             <svg

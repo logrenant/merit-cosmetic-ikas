@@ -35,6 +35,7 @@ export function useAddToCart() {
     if (result.response?.graphQLErrors) {
       maxQuantityPerCartHandler({
         productName: product.name,
+        //@ts-ignore
         errors: result.response?.graphQLErrors,
         message: t("maxQuantityPerCartError"),
       });

@@ -13,22 +13,17 @@ const Faq = ({
     faqQuestion6,
 }: FaqProps) => {
 
-    const sanitizeHTML = (dirtyHTML: string | undefined) => {
-        if (!dirtyHTML) return { __html: '' };
-        return { __html: DOMPurify.sanitize(dirtyHTML) };
-    };
-
     const renderSection = (section: { title?: string, content?: string } | null | undefined) => {
         if (!section || !section.title || !section.content) return null;
 
         return (
             <div key={section.title} className='flex flex-col gap-2'>
-                <h1 className="text-xl font-medium text-[color:var(--black-two)]">
+                <h1 className="text-2xl font-medium text-[color:var(--color-two)]">
                     {section.title}
                 </h1>
                 <div
                     className='text-lg text-[color:var(--black-two)]'
-                    dangerouslySetInnerHTML={sanitizeHTML(section.content)}
+                    dangerouslySetInnerHTML={{ __html: section.content }}
                 />
             </div>
         )
@@ -36,7 +31,7 @@ const Faq = ({
 
     return (
         <div className="layout flex flex-col gap-8 my-14">
-            <div className='text-3xl font-medium text-[color:var(--color-two)]'>{title}</div>
+            {/* <div className='text-3xl font-medium text-[color:var(--color-two)]'>{title}</div> */}
             {renderSection(faqQuestion1)}
             {renderSection(faqQuestion2)}
             {renderSection(faqQuestion3)}

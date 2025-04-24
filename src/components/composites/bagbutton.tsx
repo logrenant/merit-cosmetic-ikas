@@ -256,6 +256,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
     if (result.response?.graphQLErrors) {
       maxQuantityPerCartHandler({
         productName: item.variant.name,
+        //@ts-ignore
         errors: result.response?.graphQLErrors,
         message: t("maxQuantityPerCartError"),
       });

@@ -98,17 +98,19 @@ const datas = [
   },
 ];
 const LocalBar = () => {
+  const store = useStore();
   const languageRef = useRef<HTMLDivElement>(null);
   const currencyRef = useRef<HTMLDivElement>(null);
+
   const [languageOpen, setLanguageOpen] = useState(false);
   const [currencyOpen, setCurrencyOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
   const [currency, setCurrency] = useState({
     currencySymbol: "$",
     name: "USD",
   });
-  const store = useStore();
   const uiStore = UIStore.getInstance();
   useOnClickOutside(languageRef, () => {
     setLanguageOpen(false);
@@ -116,7 +118,6 @@ const LocalBar = () => {
   useOnClickOutside(currencyRef, () => {
     setCurrencyOpen(false);
   });
-  const [selectedLocale, setSelectedLocale] = useState<string>();
 
   useEffect(() => {
     const fetchCurrency = async () => {
@@ -144,37 +145,25 @@ const LocalBar = () => {
     fetchCurrency();
   }, []);
 
-  const handleCurrencySelect = (e: typeof datas[number]) => {
-    setCurrency(e);
-    uiStore.setCurrency(e.name);
-    localStorage.setItem("selectedcurrency", JSON.stringify(e));
-    setCurrencyOpen(false);
-  };
-
   const langOptions = IkasStorefrontConfig.getRoutings();
+  const selectedLocale = store.router?.locale ?? langOptions[0].locale;
   return (
     <div className="w-full py-1.5 text-center text-[13px] text-[color:var(--black-two)] flex items-center justify-center bg-[color:var(--gray-bg)]">
       <div className="layout w-full flex justify-end">
         <div ref={languageRef} className="relative">
           <button
-            onClick={() => {
-              setLanguageOpen(!languageOpen);
-            }}
+            onClick={() => setLanguageOpen(!languageOpen)}
             className="flex gap-1 items-center"
           >
-            {selectedLocale !== "ar" && (
-              <span className="flex gap-1 items-center justify-center">
-                <UkFlag />
-                English
+            {selectedLocale !== "ar" ? (
+              <span className="flex gap-1 items-center">
+                <UkFlag /> English
+              </span>
+            ) : (
+              <span className="flex gap-1 items-center">
+                <SarFlag /> العربية
               </span>
             )}
-            {selectedLocale === "ar" && (
-              <span className="flex gap-1 items-center justify-center">
-                <SarFlag />
-                Arabic
-              </span>
-            )}
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -183,39 +172,26 @@ const LocalBar = () => {
               stroke="currentColor"
               className="w-4 h-4"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
           </button>
+
           {languageOpen && (
             <div className="absolute z-50 right-0 top-[22px] rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
               <div className="flex flex-col divide-y divide-[color:var(--gray-one)]">
-                {langOptions.map((localeOption) => (
+                {langOptions.map(({ id, locale }) => (
                   <button
-                    key={localeOption.id}
+                    key={id}
                     onClick={() => {
-                      window.location.replace(
-                        window.location.origin +
-                        (localeOption.locale === "ar" ? "/ar" : "") +
-                        (store.router ? store.router.asPath : "")
-                      );
+                      const prefix = locale === "ar" ? "/ar" : "";
+                      const path = store.router?.asPath ?? "/";
+                      window.location.replace(window.location.origin + prefix + path);
                       setLanguageOpen(false);
                     }}
                     className="text-left gap-1.5 flex items-center px-3 whitespace-nowrap py-1.5 w-full"
                   >
-                    {localeOption.locale === "ar" && (
-                      <SarFlag />
-                    )}
-
-                    {localeOption.locale !== "ar" && (
-                      <UkFlag />
-                    )}
-
-                    {localeOption.locale === "ar" && "Arabic"}
-                    {localeOption.locale !== "ar" && "English"}
+                    {locale === "ar" ? <SarFlag /> : <UkFlag />}
+                    {locale === "ar" ? "العربية" : "English"}
                   </button>
                 ))}
               </div>
