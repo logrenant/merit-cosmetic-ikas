@@ -153,7 +153,7 @@ const LocalBar = () => {
         <div ref={languageRef} className="relative">
           <button
             onClick={() => setLanguageOpen(!languageOpen)}
-            className="flex gap-1 items-center"
+            className="flex gap-1 items-center cursor-pointer"
           >
             {selectedLocale !== "ar" ? (
               <span className="flex gap-1 items-center">
@@ -188,7 +188,7 @@ const LocalBar = () => {
                       window.location.replace(window.location.origin + prefix + path);
                       setLanguageOpen(false);
                     }}
-                    className="text-left gap-1.5 flex items-center px-3 whitespace-nowrap py-1.5 w-full"
+                    className="text-left gap-1.5 flex items-center px-3 whitespace-nowrap py-1.5 w-full cursor-pointer"
                   >
                     {locale === "ar" ? <SarFlag /> : <UkFlag />}
                     {locale === "ar" ? "العربية" : "English"}
@@ -204,7 +204,7 @@ const LocalBar = () => {
             onClick={() => {
               setCurrencyOpen(!currencyOpen);
             }}
-            className="flex gap-1 items-center disabled:cursor-default disabled:animate-pulse"
+            className="flex gap-1 items-center disabled:cursor-default disabled:animate-pulse cursor-pointer"
           >
             <span className="flex items-center gap-1">
               {datas.find((e) => e.name === currency.name)?.flag}
@@ -245,7 +245,7 @@ const LocalBar = () => {
                       setCurrencyOpen(false);
                     }}
                     key={e.name}
-                    className="px-4 flex items-center gap-1 whitespace-nowrap py-1.5 w-full"
+                    className="px-4 flex items-center gap-1 whitespace-nowrap py-1.5 w-full cursor-pointer"
                   >
                     {e.flag}
                     <span>

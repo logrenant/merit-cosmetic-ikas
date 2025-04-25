@@ -1,23 +1,39 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import { Image } from "@ikas/storefront";
+import { Image, Link } from "@ikas/storefront";
 
 import { PageBlogProps } from "../__generated__/types";
 
 const Blog = (props: PageBlogProps) => {
     const { blog } = props;
 
+    const categories = Array.isArray(blog.category)
+        ? blog.category
+        : blog.category
+            ? [blog.category]
+            : [];
+
+
     return (
-        <div className="block my-8">
+        <div className="layout block my-8">
             <BlogImage {...props} />
-            <div className="w-[calc(100%-20px)] mx-[10px] md:w-[calc(100%-32px)] lg:max-w-[1024px] lg:mx-auto">
-                <h1 className="font-medium text-3xl mt-5 mb-8 xl:text-4xl text-[color:var(--color-one)]">
+            <div className="flex flex-col gap-8">
+                <h1 className="font-medium text-3xl xl:text-4xl text-[color:var(--color-one)]">
                     {blog.title}
                 </h1>
-                <div
-                    className="text-[color:var(--black-two)] text-lg xl:text-2xl"
-                    dangerouslySetInnerHTML={{ __html: blog.blogContent.content }}
-                />
+                <div className="w-full flex flex-row gap-4">
+                    <div className="flex flex-wrap gap-2 w-1/5">
+                        {categories.map((cat) => (
+                            <div className="inline-block bg-[color:var(--color-three)] text-white text-sm px-3 py-1 rounded-full transition">
+                                {cat.name}
+                            </div>
+                        ))}
+                    </div>
+                    <div
+                        className="text-[color:var(--black-two)] text-lg xl:text-2xl w-4/5"
+                        dangerouslySetInnerHTML={{ __html: blog.blogContent.content }}
+                    />
+                </div>
             </div>
         </div>
     );
@@ -33,7 +49,7 @@ const BlogImage = observer(
                     useBlur
                     image={blog.image}
                     layout="responsive"
-                    width={3}
+                    width={5}
                     height={1}
                     objectFit="cover"
                     className="w-full h-auto"

@@ -16,7 +16,7 @@ import Facebook from "../svg/Facebook";
 import Instagram from "../svg/Instagram";
 
 
-const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc }: FooterProps) => {
+const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc, helpLinks, helpLinksTitle }: FooterProps) => {
   const { t } = useTranslation();
   const { direction } = useDirection();
 
@@ -103,18 +103,21 @@ const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc }: F
         <section className="text-white flex flex-col gap-4 lg:flex-row justify-between lg:items-start w-full">
           {/* Contact Section */}
           <section className="flex flex-col text-white items-center lg:items-start">
-            <h5 className="mb-2.5 font-bold uppercase">{t("contactUs")}</h5>
-            <div className="flex gap-2 mt-4">
-              <Location />
-              <span className="text-slate-200">Istanbul / Turkey</span>
-            </div>
-            <div className="flex gap-2 mt-4">
-              <Envelope />
-              <span className="text-slate-200">info@meritcosmetics.com</span>
-            </div>
-            <div className="flex gap-2 mt-4">
-              <Phone />
-              <span className="text-slate-200">+90 555 555 5555</span>
+
+            <div className="flex flex-col gap-2 items-center lg:items-start">
+              <h5 className="mb-2.5 font-bold uppercase">{t("contactUs")}</h5>
+              <div className="flex flex-row items-start gap-2">
+                <Location />
+                <span className="text-slate-200">Muratpaşa mah. 561. sokak 41/B <br />MURATPAŞA / ANTALYA</span>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <Envelope />
+                <span className="text-slate-200">info@meritcosmetics.com</span>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <Phone />
+                <span className="text-slate-200">+90 (551)-812-81-00</span>
+              </div>
             </div>
             {/* Social Links */}
             <div className="flex xl:justify-start justify-center w-full gap-8 mt-4 md:mt-6">
@@ -144,9 +147,9 @@ const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc }: F
           </section>
           {/* Useful Links Section */}
           <section className="mb-6 flex flex-col text-white items-center lg:items-start">
-            <h5 className="mb-2.5 font-bold uppercase">{t("useful links")}</h5>
+            <h5 className="mb-2.5 font-bold uppercase">{helpLinksTitle}</h5>
             <nav className="mt-2.5 flex flex-col gap-1.5">
-              {usefull?.map((fl, idx) => (
+              {helpLinks?.map((fl, idx) => (
                 <Link key={fl.itemId + "-link-" + idx} href={fl.href}>
                   {fl.label}
                 </Link>
@@ -177,7 +180,7 @@ const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc }: F
                     <button
                       type="submit"
                       disabled={!email || pending}
-                      className="py-3 border-t border-l border-r border-b border-[color:var(--tx-bg)] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-[color:var(--color-three)] text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
+                      className="py-3 border-t border-l border-r border-b border-[color:var(--tx-bg)] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-[color:var(--color-three)] text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                     >
                       {t("submit")}
                     </button>

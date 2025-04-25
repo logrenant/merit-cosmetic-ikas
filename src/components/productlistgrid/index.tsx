@@ -167,7 +167,7 @@ const ProductListGrid: React.FC<
                   products.clearFilters();
                 }
               }}
-              className="disabled:opacity-60 whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm w-full rounded-sm py-1.5 px-5"
+              className="disabled:opacity-60 whitespace-nowrap mx-auto tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm w-full rounded-sm py-1.5 px-5 cursor-pointer"
             >
               {t("categoryPage.clearFilters")}
             </button>
