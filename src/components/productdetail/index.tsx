@@ -559,7 +559,7 @@ const ProductDetail = ({
                     onClick={() => {
                       setQuantity((prev) => (prev - 1 > 1 ? prev - 1 : 1));
                     }}
-                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center"
+                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -583,7 +583,7 @@ const ProductDetail = ({
                     onClick={() => {
                       setQuantity((prev) => (prev + 1 < 11 ? prev + 1 : 10));
                     }}
-                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center"
+                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -603,7 +603,7 @@ const ProductDetail = ({
                 <button
                   disabled={loading || !product.isAddToCartEnabled}
                   onClick={() => addToCart(product, quantity)}
-                  className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
+                  className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
                 >
                   {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
                 </button>
@@ -836,7 +836,7 @@ const ProductDetail = ({
           </div>
           {tab === "D" && (
             <div
-              className="prose marker:text-[color:var(--rich-color)] prose-ul:rtl:pr-3 prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:#374151] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
+              className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm"
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
           )}

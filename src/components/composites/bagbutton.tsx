@@ -47,7 +47,7 @@ const BagItem: React.FC<{
           onClick={() => {
             store.cartStore.removeItem(product);
           }}
-          className="items-center absolute rtl:left-0 ltr:right-0 top-0  flex justify-center"
+          className="items-center absolute rtl:left-0 ltr:right-0 top-0  flex justify-center cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const BagItem: React.FC<{
                 }
               }}
               disabled={quantity - 1 === 0 || pending}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded-sm border border-[color:var(--gray-two)]"
+              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded-sm border border-[color:var(--gray-two)] disabled:pointer-events-none cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ const BagItem: React.FC<{
                   setQuantity(quantity + 1);
                 }
               }}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded-sm border border-[color:var(--gray-two)]"
+              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-5 h-5 rounded-sm border border-[color:var(--gray-two)] cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +424,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                         onClick={() => {
                           setOpenSelectCountry(!openSelectCountry);
                         }}
-                        className="text-[color:var(--black-two)] gap-1 flex items-center font-light"
+                        className="text-[color:var(--black-two)] gap-1 flex items-center font-light cursor-pointer"
                       >
                         {t("orderDetail.shipping")}
                         <svg
@@ -467,7 +467,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                       <div className="mt-1 mb-2">
                         <select
                           value={currentCountry}
-                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5"
+                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5 cursor-pointer"
                           onChange={(e) => {
                             localStorage.setItem(
                               "iso2",
@@ -544,7 +544,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                       setOpenBag(false);
                       document.body.classList.remove("overflow-hidden");
                     }}
-                    className="mt-2 flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-three)] text-white rounded-sm"
+                    className="mt-2 flex items-center justify-center w-full px-4 py-2 bg-[color:var(--color-three)] text-white rounded-sm cursor-pointer"
                   >
                     {t("continueShopping")}
                   </button>
@@ -601,7 +601,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           }
                           setCodePending(false);
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm disabled:pointer-events-none cursor-pointer"
                       >
                         {t("save")}
                       </button>

@@ -55,7 +55,7 @@ const ImageModal = ({
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 stroke-[#fff]"
+          className="w-6 h-6 stroke-[#fff] cursor-pointer"
         >
           <path
             strokeLinecap="round"
@@ -84,7 +84,7 @@ const ImageModal = ({
                 }
               }}
               type="button"
-              className="w-7 h-7 absolute left-3 z-40 top-1/2 transform -translate-y-1/2 rounded-full bg-[color:var(--bg-color)] border-[color:var(--black-one)] border flex items-center justify-center"
+              className="w-7 h-7 absolute left-3 z-40 top-1/2 transform -translate-y-1/2 rounded-full bg-[color:var(--bg-color)] border-[color:var(--color-two)] text-[color:var(--color-two)] border flex items-center justify-center cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ const ImageModal = ({
               </svg>
             </button>
           )}
-        
+
           <div
             className={`cursor-${isZoomed ? 'zoom-out' : 'zoom-in'} relative h-full w-full`}
             onClick={handleImageClick}
@@ -131,7 +131,7 @@ const ImageModal = ({
                   setCurrentImage(images[0]);
                 }
               }}
-              className="w-7 h-7 absolute right-3 z-40 top-1/2 transform -translate-y-1/2 rounded-full bg-[color:var(--bg-color)] border-[color:var(--black-one)] border flex items-center justify-center"
+              className="w-7 h-7 absolute right-3 z-40 top-1/2 transform -translate-y-1/2 rounded-full bg-[color:var(--bg-color)] border-[color:var(--color-two)] text-[color:var(--color-two)] border flex items-center justify-center cursor-pointer"
               type="button"
             >
               <svg

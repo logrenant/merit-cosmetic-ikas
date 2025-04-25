@@ -1,9 +1,8 @@
 import React from 'react'
 import { observer } from "mobx-react-lite";
-import { FaqProps } from '../__generated__/types';
+import { DistanceAgreementProps } from '../__generated__/types';
 
-const Faq = (props: FaqProps) => {
-
+const DistanceAndAgreements = (props: DistanceAgreementProps) => {
     return (
         <div className='layout flex flex-col gap-8 my-14'>
             <h1 className="text-2xl font-medium text-[color:var(--color-two)]">
@@ -17,4 +16,4 @@ const Faq = (props: FaqProps) => {
     )
 }
 
-export default observer(Faq)
+export default observer(DistanceAndAgreements)

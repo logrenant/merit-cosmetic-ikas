@@ -1,8 +1,8 @@
 import React from 'react'
 import { observer } from "mobx-react-lite";
-import { FaqProps } from '../__generated__/types';
+import { PrivacyPolicyProps } from '../__generated__/types';
 
-const Faq = (props: FaqProps) => {
+const PrivacyPolicy = (props: PrivacyPolicyProps) => {
 
     return (
         <div className='layout flex flex-col gap-8 my-14'>
@@ -14,7 +14,7 @@ const Faq = (props: FaqProps) => {
                 dangerouslySetInnerHTML={{ __html: props.pageContent ?? "" }}
             />
         </div>
-    )
-}
+    );
+};
 
-export default observer(Faq)
+export default observer(PrivacyPolicy);

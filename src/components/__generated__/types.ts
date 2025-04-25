@@ -140,10 +140,11 @@ export type StorylinksProps = {
 
 export type FooterProps = {
 	linkdata: FooterLink[];
+	helpLinksTitle?: string;
+	helpLinks?: IkasNavigationLink[];
 	footerResponse?: FooterToast;
 	newsletterTitle: string;
 	newsletterDesc: string;
-	footerImage?: IkasImage;
 };
 
 export type ProductlistgridProps = {
@@ -205,26 +206,36 @@ export type PageBlogsProps = {
 	showPublishedDate?: boolean;
 };
 
-export type UserPolicyProps = {
-	acceptanceofTerms?: PolicyContent;
-	partiesResponsibilities?: PolicyContent;
-	intellectualPropertyRights?: PolicyContent;
-	privacyConfidentialInformation?: PolicyContent;
-	userRegistrationSecurity?: PolicyContent;
-	forceMajeure?: PolicyContent;
-	agreementValidity?: PolicyContent;
-	amendmentstoTerms?: PolicyContent;
-	notifications?: PolicyContent;
-	generalTermsofUse?: PolicyContent;
+export type FaqProps = {
+	pageTitle: string;
+	pageContent: string;
 };
 
-export type FaqProps = {
-	title: string;
-	faqQuestion1?: PolicyContent;
-	faqQuestion2?: PolicyContent;
-	faqQuestion3?: PolicyContent;
-	faqQuestion4?: PolicyContent;
-	faqQuestion5?: PolicyContent;
-	faqQuestion6?: PolicyContent;
+export type PageBlogCategoryProps = {
+	blogList: IkasBlogList;
+	showAuthor?: boolean;
+	showDescription?: boolean;
+	showCategory?: boolean;
+	showPublishedDate?: boolean;
+};
+
+export type AboutusProps = {
+	pageTitle: string;
+	pageContent?: string;
+};
+
+export type TermsconditionsProps = {
+	pageTitle: string;
+	pageContent: string;
+};
+
+export type DistanceAgreementProps = {
+	pageTitle: string;
+	pageContent: string;
+};
+
+export type PrivacyPolicyProps = {
+	pageTitle: string;
+	pageContent: string;
 };
 

@@ -50,9 +50,8 @@ const ProductCard: React.FC<{
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`w-7 h-7 stroke-[color:var(--color-three)] ${
-            isProductFavorite ? "fill-[color:var(--color-three)]" : ""
-          }`}
+          className={`w-7 h-7 stroke-[color:var(--color-three)] ${isProductFavorite ? "fill-[color:var(--color-three)]" : ""
+            }`}
         >
           <path
             strokeLinecap="round"
@@ -85,11 +84,10 @@ const ProductCard: React.FC<{
         <Link href={product.href}>
           <a className="flex flex-col items-center">
             <h3
-              className={`text-lg ${
-                !product.selectedVariant.price.hasDiscount
+              className={`text-lg ${!product.selectedVariant.price.hasDiscount
                   ? "line-clamp-3 h-[84px]"
                   : "h-[56px] line-clamp-2 "
-              } text-center cursor-pointer`}
+                } text-center cursor-pointer`}
             >
               {product.name}
             </h3>
@@ -109,9 +107,8 @@ const ProductCard: React.FC<{
             )}
 
             <span
-              className={`text-lg md:text-xl font-medium ${
-                !product.selectedVariant.price.hasDiscount ? "mt-2.5" : ""
-              }`}
+              className={`text-lg md:text-xl font-medium ${!product.selectedVariant.price.hasDiscount ? "mt-2.5" : ""
+                }`}
             >
               <Pricedisplay
                 amount={product.selectedVariant.price.finalPrice}
@@ -133,7 +130,7 @@ const ProductCard: React.FC<{
             }
           }}
           disabled={loading || !product.isAddToCartEnabled}
-          className="mt-2.5 hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
+          className="mt-2.5 hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
         >
           {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
         </button>

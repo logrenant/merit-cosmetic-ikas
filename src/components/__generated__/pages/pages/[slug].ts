@@ -1,13 +1,15 @@
 import Component0 from "src/components/navbar";
 import Component1 from "src/components/footer";
-import Component2 from "src/components/specialpages";
-import Component3 from "src/components/contactpage";
-import Component4 from "src/components/order-tracking";
-import Component5 from "src/components/user-policy";
-import Component6 from "src/components/faq";
+import Component2 from "src/components/contactpage";
+import Component3 from "src/components/order-tracking";
+import Component4 from "src/components/faq";
+import Component5 from "src/components/aboutus";
+import Component6 from "src/components/termsconditions";
+import Component7 from "src/components/distance-agreement";
+import Component8 from "src/components/privacy-policy";
 
   const Components = {
-    "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40": Component0,"3172a00f-46f6-4d21-b72f-8918dc95d7d9": Component1,"704ffdf5-6c65-4c10-8e65-cbbcc299429d": Component2,"b6481f53-b8c1-46a0-8a68-84ca23c3a6b7": Component3,"5fa44498-bb55-4496-abd7-a537be4da4bf": Component4,"86ebd305-93a8-42cf-9983-feec0c19f044": Component5,"6922648e-3175-4457-b620-1d40fdb1d58a": Component6
+    "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40": Component0,"3172a00f-46f6-4d21-b72f-8918dc95d7d9": Component1,"b6481f53-b8c1-46a0-8a68-84ca23c3a6b7": Component2,"5fa44498-bb55-4496-abd7-a537be4da4bf": Component3,"6922648e-3175-4457-b620-1d40fdb1d58a": Component4,"d312a6a2-d362-4b44-bc11-03b72c0a1293": Component5,"5a59b501-c84b-4a34-9147-ba51a0c8c6f6": Component6,"0646f8f4-3dfb-449f-9674-cb83fed9338d": Component7,"953f0714-0140-4e76-bd73-f0b99e1f93e9": Component8
   };
   
 export default Components;

@@ -138,7 +138,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                 onClick={(e: any) =>
                   e.stopPropagation() || instanceRef.current?.prev()
                 }
-                className="shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 left-2 text-[color:var(--color-one)] flex items-center justify-center"
+                className="shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 left-2 text-[color:var(--color-one)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer flex items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +160,7 @@ const Banner: React.FC<BannerProps> = ({ banners, col, slider }) => {
                 onClick={(e: any) =>
                   e.stopPropagation() || instanceRef.current?.next()
                 }
-                className="shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-2 rounded-sm text-[color:var(--color-one)] flex items-center justify-center"
+                className="shadow-shadow2 absolute top-1/2 transform -translate-y-1/2 right-2 rounded-sm text-[color:var(--color-one)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer flex items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
