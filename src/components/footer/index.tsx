@@ -16,7 +16,7 @@ import Facebook from "../svg/Facebook";
 import Instagram from "../svg/Instagram";
 
 
-const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc, helpLinks, helpLinksTitle }: FooterProps) => {
+const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc, helpLinks, helpLinksTitle, brandName }: FooterProps) => {
   const { t } = useTranslation();
   const { direction } = useDirection();
 
@@ -185,7 +185,7 @@ const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc, hel
       {/* Footer Bottom */}
       <div className="w-full bg-black/5 p-4 text-center">
         <span className="rtl:mr-2 ltr:ml-2 text-xs text-slate-200 leading-none pb-[1.5px]">
-          &copy; {currentYear} Merit Cosmetics
+          &copy; {currentYear} {brandName}
         </span>
       </div>
     </footer>

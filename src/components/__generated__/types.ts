@@ -145,6 +145,7 @@ export type FooterProps = {
 	footerResponse?: FooterToast;
 	newsletterTitle: string;
 	newsletterDesc: string;
+	brandName?: string;
 };
 
 export type ProductlistgridProps = {
@@ -207,7 +208,6 @@ export type PageBlogsProps = {
 };
 
 export type FaqProps = {
-	pageTitle: string;
 	pageContent: string;
 };
 
@@ -225,27 +225,22 @@ export type AboutusProps = {
 };
 
 export type TermsconditionsProps = {
-	pageTitle: string;
 	pageContent: string;
 };
 
 export type DistanceAgreementProps = {
-	pageTitle: string;
 	pageContent: string;
 };
 
 export type PrivacyPolicyProps = {
-	pageTitle: string;
 	pageContent: string;
 };
 
 export type DisclaimerProps = {
-	pageTitle: string;
 	pageContent: string;
 };
 
 export type ShippingPolicyProps = {
-	pageTitle: string;
 	pageContent: string;
 };
 

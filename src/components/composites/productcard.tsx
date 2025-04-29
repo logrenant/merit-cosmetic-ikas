@@ -42,7 +42,7 @@ const ProductCard: React.FC<{
             onToggle(isProductFavorite);
           }
         }}
-        className="flex disabled:opacity-60 disabled:animate-pulse items-center justify-center w-7 h-7 absolute right-1 top-1 z-20"
+        className="flex disabled:opacity-60 disabled:animate-pulse items-center justify-center w-7 h-7 absolute right-1 top-1 z-20 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +85,8 @@ const ProductCard: React.FC<{
           <a className="flex flex-col items-center">
             <h3
               className={`text-lg ${!product.selectedVariant.price.hasDiscount
-                  ? "line-clamp-3 h-[84px]"
-                  : "h-[56px] line-clamp-2 "
+                ? "line-clamp-3 h-[84px]"
+                : "h-[56px] line-clamp-2 "
                 } text-center cursor-pointer`}
             >
               {product.name}

@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "5bd56c4a-c6a7-4b8e-b0f0-7d0b30adb521",
+          "id": "ce6d84a7-1a68-43b2-99ac-e288937bf050",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "409c3887-2cb7-4b47-b552-32cc1d433c23",
+          "id": "5b1614b1-9c1a-4fb1-a6b9-0d5619049b39",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3ab69347-3d29-4e1a-9937-aa6f4ef48af0",
+          "id": "dc47216b-f196-435b-a910-800014c4032c",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b408e48d-1c57-4007-80df-ba71a68da8dc",
+          "id": "862a4c79-a974-4ada-887d-ed9e1c7d16a8",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2508b612-452d-4a4a-9960-c5f5bf022f33",
+          "id": "ef1844e0-0fd2-47e5-8022-c34ebadbb491",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e5d6ff3a-3384-4672-b68a-60efbf0093ab",
+          "id": "e7f5cfc1-9186-46fe-87c9-716332983cca",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d20dcb55-815b-418a-86ef-771d11384285",
+          "id": "31c0cbad-c501-4550-a234-c61677963ffd",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e687c2fe-9fb2-4b47-8a26-9348f4df20c2",
+          "id": "0db1c0dc-de9e-451b-924f-78a710874d78",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fa49b727-55b9-4bfe-ade2-03470cf8ee0d",
+          "id": "12b1a91d-2de2-4387-81fd-c0d827889082",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c066a8e2-b35a-44d3-84c7-d023b6bd04d1",
+          "id": "0203991a-0c27-4dd1-a51e-575283d4c790",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "380f6dab-f511-45f2-81ab-d372b842a35b",
+          "id": "26bc0301-367b-49d2-a177-af3b4359e850",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b89cc348-96fa-4c2d-94af-2bf6923e47c0",
+          "id": "da1afb13-7a78-4104-8237-c1c33291fab5",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "008ae626-012f-4da5-bfb8-20d846a0256d",
+          "id": "ba62c417-ec7b-4277-890e-da4965277bdb",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "660871c8-ac01-4b83-bcf0-b396706c0303",
+          "id": "b5f3a222-d2dc-4786-9e4a-bf18bbd73735",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fbad949f-8d4a-435e-98a4-88ffb26a6b93",
+          "id": "2b9a5ee0-6375-4b0c-84ed-f8e934857d12",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e1c70633-49fa-4408-8252-0d643acc3b31",
+          "id": "833a01af-eb34-4fac-9869-ef4960f03e89",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3d4c5a32-167c-45bc-99a3-93bc752894e2",
+          "id": "3762b832-f3bc-4538-8cda-fc7ba1246f93",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7f29259d-5477-4953-b92f-3848e18c4e91",
+          "id": "9b672d8e-7ffa-4b48-a7f7-d6562544bc02",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8f6db1e7-b154-4786-b96d-ef27f3a1a850",
+          "id": "daad1f80-2b3c-4d51-8e2e-c613b48a8d83",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6f190c57-8532-4f20-b56e-68e2fdc99e08",
+          "id": "5b678bad-78d7-499e-bf71-30a1e47d1770",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0428380c-037f-4e46-a682-5d1090a8a99d",
+          "id": "14d8c4dc-b7a9-4173-b24c-9e4e4d0f0442",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9666769b-3af5-4d4c-a335-ce84eaf13f38",
+          "id": "6c4ec4f2-5f2c-4997-b1ab-60a1eac521b6",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0b69b979-e0da-4f24-bce8-0e5405376339",
+          "id": "a88cd733-23ab-4816-bac8-f51abfebafec",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4aa455d2-0bc2-4801-b053-0f1afe779df8",
+          "id": "9f0075f4-0581-4bd9-b2fa-bf0a836ee7bf",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "44718fc6-2282-4503-8945-aff82c86b439",
+          "id": "cc6afe03-bb66-4e86-ba53-a4ea06aca3a3",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6ef0a399-f046-4d92-9e32-b7eee355f328",
+          "id": "7c5e741a-a8b6-434f-ade7-810a351ad09b",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c21b0e69-2884-43a4-9e31-41ea154e4d38",
+          "id": "148184d4-7c8b-497f-8736-49e0408116b3",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "52d70780-b3cc-4697-870f-f20d06ee7316",
+          "id": "81b1d79f-b038-47dc-a7ae-c5e0a9c25f09",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4f990e0e-bb7c-49ea-8a33-d12494a655ef",
+          "id": "3939d7e2-d54b-4f08-98f3-276604c7f533",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2d10b6cf-666d-4ff9-acb5-1b3081458eb2",
+          "id": "107cee19-9a95-468a-8553-0558255fa0e5",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fa2ff625-2a0b-4f51-9633-4a7f4b450072",
+          "id": "b084df89-c25f-4b9b-9c0f-97f546686a92",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ced3bc16-1c35-4224-afa0-4be99685ae18",
+          "id": "1e1bb73b-88e3-4683-8fc5-9f3959baca37",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c120efe8-089e-4974-ad1e-6fb6f3f3502f",
+          "id": "dd1af5a5-f21e-48b7-997e-6f3a3d1f4f16",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3856dc85-386a-48f2-8cef-17d5d1e470a4",
+          "id": "4fb69b98-f1bd-4073-bc88-f97e1856c212",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9e489f6c-1653-4d3c-8c6f-56b926f25656",
+          "id": "dd4fc655-1841-4056-8a97-380eb56d0a7c",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ff478db9-959f-4ddc-bd17-16b6d0e2bf79",
+          "id": "f23afadc-c8eb-4c2a-b63f-f0a4112934a9",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d197f6ac-3ca3-4943-9d10-035efd936ff0",
+          "id": "99a8fc10-ea55-4338-b511-29d04ca28408",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4b15976f-ce02-4d8c-9aae-98875c8b7bec",
+          "id": "5fd247f5-6b1e-410b-b1c2-67cae92a0dbb",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "170dfd0f-a1eb-4248-bd4c-2289d69c8842",
+          "id": "e6a95e13-e906-44dd-a2d3-beb5fbb21e41",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -1418,6 +1418,20 @@
           "description": "",
           "type": "TEXT",
           "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "603e66b9-7ed3-4c57-b9d2-2919024728be",
+          "name": "brandName",
+          "displayName": "brandName",
+          "description": "",
+          "type": "TEXT",
+          "isRequired": false,
           "sliderData": {},
           "translations": {},
           "groupId": "",
@@ -2561,20 +2575,6 @@
       "componentJson": null,
       "props": [
         {
-          "id": "2f0046cb-3ad4-4dda-b892-fa022e02d4c2",
-          "name": "pageTitle",
-          "displayName": "pageTitle",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
-        {
           "id": "bb23dfb5-b423-4446-beaa-ecf5db8aa0f9",
           "name": "pageContent",
           "displayName": "pageContent",
@@ -2597,7 +2597,6 @@
         "ar": {}
       },
       "defaultPropValues": {
-        "pageTitle": "title",
         "pageContent": "<p>content</p><p><br></p>"
       },
       "commonPropValues": null
@@ -2752,20 +2751,6 @@
       "componentJson": null,
       "props": [
         {
-          "id": "5adeea1b-d826-407f-8999-89c2893f9b6b",
-          "name": "pageTitle",
-          "displayName": "pageTitle",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
-        {
           "id": "dee50c44-a096-4f92-b82b-ce2b93f55f7a",
           "name": "pageContent",
           "displayName": "pageContent",
@@ -2785,7 +2770,6 @@
       "translations": {},
       "defaultPropValuesTranslations": {},
       "defaultPropValues": {
-        "pageTitle": "title",
         "pageContent": "<p>content</p><p><br></p>"
       },
       "commonPropValues": null
@@ -2798,20 +2782,6 @@
       "type": "COMPONENT",
       "componentJson": null,
       "props": [
-        {
-          "id": "ce55f591-830d-4fd8-b4b6-421dcbcc2d6f",
-          "name": "pageTitle",
-          "displayName": "pageTitle",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
         {
           "id": "dafdf193-0adb-4d4f-b920-d4c7a8b7dbcc",
           "name": "pageContent",
@@ -2832,7 +2802,6 @@
       "translations": {},
       "defaultPropValuesTranslations": {},
       "defaultPropValues": {
-        "pageTitle": "Title",
         "pageContent": "<p>Content</p><p><br></p>"
       },
       "commonPropValues": null
@@ -2845,20 +2814,6 @@
       "type": "COMPONENT",
       "componentJson": null,
       "props": [
-        {
-          "id": "03dd9961-63ef-4517-9ed2-0dfa79eee161",
-          "name": "pageTitle",
-          "displayName": "pageTitle",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
         {
           "id": "3a428a36-8926-4d1b-8f29-211ad268434c",
           "name": "pageContent",
@@ -2879,7 +2834,6 @@
       "translations": {},
       "defaultPropValuesTranslations": {},
       "defaultPropValues": {
-        "pageTitle": "Privacy Policy",
         "pageContent": "<div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Acceptance of Terms</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">By accessing and using this platform, you confirm your agreement to be legally bound by these terms. Continued use constitutes ongoing acceptance of any revised provisions. Failure to comply requires immediate termination of all services.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Parties' Responsibilities</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">The company reserves the right to modify product specifications without prior notice. Users are strictly prohibited from engaging in unauthorized commercial activities through the platform. Technical support is excluded during scheduled maintenance periods.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Intellectual Property Rights</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"658\" data-end=\"931\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">All visual assets including logos and interface designs constitute registered trademarks. Reverse engineering of any platform components will result in immediate legal action. Limited personal use exceptions require written authorization.</p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Privacy &amp; Confidential Information</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"938\" data-end=\"1222\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">User data collection focuses exclusively on transaction processing requirements. Third-party data sharing occurs only with verified logistics partners. Mandatory disclosure obligations to regulatory bodies supersede standard privacy protocols.</p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">User Registration &amp; Security</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"1229\" data-end=\"1491\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Account credentials must contain multifactor authentication within 30 days of registration. Immediate notification is required for suspected security breaches. Inactive accounts exceeding 18 months will be permanently archived.</p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Force Majeure</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"1498\" data-end=\"1711\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Service interruptions caused by extreme weather events or government mandates exempt the company from liability. Affected users will receive priority service restoration when operations resume.</p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Agreement Validity</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"1718\" data-end=\"1937\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Should any clause be deemed unenforceable by competent authorities, remaining provisions retain full legal effect. Disputes must be formally filed within 90 calendar days of incident occurrence.</p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Amendments to Terms</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"1944\" data-end=\"2173\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Significant changes to service conditions trigger mandatory user notifications through registered communication channels. Historical version tracking is available through the legal documentation archive.</p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Notifications</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Official communications utilize encrypted channels verified through blockchain timestamps. Users must maintain current contact details with real-time update capabilities through the account management portal.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h2 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"margin-bottom: 0px; border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(152, 43, 45); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">General Terms of Use</h2><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"2415\" data-end=\"2678\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Commercial-scale data scraping requires explicit written consent. Artificial inflation of engagement metrics will result in permanent account suspension. All user-generated content is subject to automated plagiarism detection protocols.</p></div></div>"
       },
       "commonPropValues": null
@@ -2892,20 +2846,6 @@
       "type": "COMPONENT",
       "componentJson": null,
       "props": [
-        {
-          "id": "6fadb4ff-1f33-417c-8950-02f684e2cac4",
-          "name": "pageTitle",
-          "displayName": "pageTitle",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
         {
           "id": "d5604718-1365-4e7c-aa5d-f6e0450d6521",
           "name": "pageContent",
@@ -2926,7 +2866,6 @@
       "translations": {},
       "defaultPropValuesTranslations": {},
       "defaultPropValues": {
-        "pageTitle": "title",
         "pageContent": "<p>content</p>"
       },
       "commonPropValues": null
@@ -2939,20 +2878,6 @@
       "type": "COMPONENT",
       "componentJson": null,
       "props": [
-        {
-          "id": "07e4c647-c2e5-48a0-839e-888e86c1fa67",
-          "name": "pageTitle",
-          "displayName": "pageTitle",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
         {
           "id": "f19d6d72-6737-48b1-8a3f-e2df8578f5e7",
           "name": "pageContent",
@@ -2973,7 +2898,6 @@
       "translations": {},
       "defaultPropValuesTranslations": {},
       "defaultPropValues": {
-        "pageTitle": "title",
         "pageContent": "<p>content</p><p><br></p>"
       },
       "commonPropValues": null
@@ -3408,6 +3332,10 @@
                 }
               },
               {
+                "image": {
+                  "id": "theme-images/42bb0c83-8e17-4f8b-af47-1a445825a38d",
+                  "altText": null
+                },
                 "products": {
                   "id": "7fa863dc-08db-4f38-be57-d58d85076bca",
                   "productListType": "CATEGORY",
@@ -3421,13 +3349,13 @@
                   "recommendedProductsType": {
                     "recommendedProductType": "CATEGORY"
                   }
-                },
-                "image": {
-                  "id": "theme-images/42bb0c83-8e17-4f8b-af47-1a445825a38d",
-                  "altText": null
                 }
               },
               {
+                "image": {
+                  "id": "theme-images/5f134155-e189-42d6-b206-9df1436c8cff",
+                  "altText": null
+                },
                 "products": {
                   "id": "ccc075d7-d013-4f44-a8b0-1903bacfbc7a",
                   "productListType": "CATEGORY",
@@ -3441,13 +3369,13 @@
                   "recommendedProductsType": {
                     "recommendedProductType": "CATEGORY"
                   }
-                },
-                "image": {
-                  "id": "theme-images/5f134155-e189-42d6-b206-9df1436c8cff",
-                  "altText": null
                 }
               },
               {
+                "image": {
+                  "id": "theme-images/f29362ee-b9ed-48c3-b477-862c8aa06504",
+                  "altText": null
+                },
                 "products": {
                   "id": "3625f25d-08bf-4b99-934b-1d87815260d0",
                   "productListType": "CATEGORY",
@@ -3461,10 +3389,6 @@
                   "recommendedProductsType": {
                     "recommendedProductType": "CATEGORY"
                   }
-                },
-                "image": {
-                  "id": "theme-images/f29362ee-b9ed-48c3-b477-862c8aa06504",
-                  "altText": null
                 }
               }
             ],
@@ -3886,7 +3810,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -4042,7 +3967,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -4296,7 +4222,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -4471,7 +4398,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -4618,7 +4546,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -4767,7 +4696,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         }
       ],
@@ -4901,7 +4831,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5040,7 +4971,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5198,7 +5130,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5323,7 +5256,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5462,7 +5396,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5587,7 +5522,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5726,7 +5662,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5851,7 +5788,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -5990,7 +5928,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -6115,7 +6054,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -6245,7 +6185,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         }
       ],
@@ -6379,7 +6320,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -6518,7 +6460,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -6648,7 +6591,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         }
       ],
@@ -6782,7 +6726,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -6921,7 +6866,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7046,7 +6992,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7192,7 +7139,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7317,7 +7265,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7464,7 +7413,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7607,7 +7557,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7763,7 +7714,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -7903,7 +7855,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -8058,7 +8011,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -8203,14 +8157,14 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
           "id": "055d9022-3e9d-4143-b64f-8dc9aab1aa19",
           "componentId": "6922648e-3175-4457-b620-1d40fdb1d58a",
           "propValues": {
-            "pageTitle": "FAQ",
             "pageContent": "<div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">When will my order be shipped?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-size: medium; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"131\" data-end=\"311\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Your order will be processed and shipped within 1–3 business days after confirmation. During promotional periods, processing times may vary.</p><p data-start=\"313\" data-end=\"526\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"></p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-size: medium; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">How much is the shipping fee?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Shipping is free for orders above a certain amount. For orders below that amount, a flat shipping fee applies. For more details, please visit our&nbsp;<a href=\"https://3185ddb8-a430-4b62-836a-ddbbc42e2640-meletiorient.myikas.com/pages/about-us?_gl=1*irdcau*_gcl_au*MTQ3OTA3NDU3MS4xNzQxMzM0ODI0\" target=\"_blank\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); color: inherit; text-decoration: inherit; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">[Shipping Information]</a>&nbsp;page.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">How can I return a product?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">If you wish to return a product, you can do so within 14 days from the delivery date, provided it is unused and in its original packaging with the invoice. Visit our [Returns &amp; Exchanges] page for full instructions.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">What payment methods do you accept?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">We accept credit cards, debit cards, and cash on delivery. In some cases, bank transfer may also be available during certain periods.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">Can I place an order without creating an account?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Yes, you can checkout as a guest without registering. However, creating an account makes it easier to track your orders and access special offers.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">My item arrived damaged, what should I do?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><span style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\">Please take photos of the damaged item and contact our customer service within 48 hours. Once reviewed, we’ll assist you with a replacement or refund process.</span></div></div>"
           }
         }
@@ -8347,7 +8301,8 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
@@ -8495,14 +8450,14 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
           "id": "d023b461-a923-45fb-b942-835238c97177",
           "componentId": "5a59b501-c84b-4a34-9147-ba51a0c8c6f6",
           "propValues": {
-            "pageTitle": "Terms & Conditions",
             "pageContent": "<p data-start=\"0\" data-end=\"222\" class=\"\"><strong data-start=\"0\" data-end=\"18\">1. Definitions</strong><br data-start=\"18\" data-end=\"21\">\nThe term “Company” refers to [Company Name]; “User” means the individual accessing or using the Service; and “Service” refers to the website or mobile application.&nbsp;</p><p data-start=\"0\" data-end=\"222\" class=\"\"><br></p><p data-start=\"224\" data-end=\"548\" class=\"\"><strong data-start=\"224\" data-end=\"254\">2. Acceptance and Validity</strong><br data-start=\"254\" data-end=\"257\">\nYou agree to these Terms &amp; Conditions (hereinafter “Terms”) by accessing or using the Service. Any changes to the Terms take effect as soon as they are posted on the website; your continued use of the Service constitutes acceptance of the updated Terms.&nbsp;</p><p><strong data-start=\"550\" data-end=\"586\"><br>3. Access and Use of the Service</strong><br data-start=\"586\" data-end=\"589\">\nYou may use the Service only for lawful and permitted purposes. The following actions are prohibited:<br></p><p>Misusing, damaging, or interfering with the Service</p><p>Unauthorized access attempts or security breaches</p><p>Spamming, fraudulent registrations, or automated bots</p><p>Infringing on copyright, trademark, or other intellectual property rights&nbsp;</p><p data-start=\"976\" data-end=\"1336\" class=\"\"><strong data-start=\"976\" data-end=\"1014\">4. Membership and Account Security</strong><br data-start=\"1014\" data-end=\"1017\">\nYou must provide accurate, current, and complete information to access portions of the Service requiring registration. You are solely responsible for maintaining the confidentiality of your account credentials; you must promptly notify the Company of any suspected security breach.&nbsp;<br></p><div><br></div><p></p><p data-start=\"1338\" data-end=\"1633\" class=\"\"><strong data-start=\"1338\" data-end=\"1366\">5. Intellectual Property</strong><br data-start=\"1366\" data-end=\"1369\">\nAll content on the site, including text, graphics, logos, images, trademarks, and software, is the property of the Company or its licensors. Unauthorized copying, distribution, reproduction, or derivative works are prohibited.&nbsp;<span class=\"ms-1 inline-flex max-w-full items-center relative top-[-0.094rem] animate-[show_150ms_ease-in]\"><br><br></span></p><p data-start=\"1635\" data-end=\"1905\" class=\"\"><strong data-start=\"1635\" data-end=\"1659\">6. Third-Party Links</strong><br data-start=\"1659\" data-end=\"1662\">\nLinks to third-party websites or resources on the Service are provided for informational purposes only. The Company is not responsible for the content of these sites and does not endorse or guarantee them.<br>&nbsp;</p><p data-start=\"1907\" data-end=\"2241\" class=\"\"><strong data-start=\"1907\" data-end=\"1964\">7. Disclaimer of Warranty and Limitation of Liability</strong><br data-start=\"1964\" data-end=\"1967\">\nThe Service is provided “as is” and “as available.” The Company makes no warranty that the Service will be uninterrupted or error-free. Under no circumstances shall the Company be liable for any indirect, incidental, or special damages.&nbsp;<br><br></p><p data-start=\"2243\" data-end=\"2525\" class=\"\"><strong data-start=\"2243\" data-end=\"2286\">8. Dispute Resolution and Governing Law</strong><br data-start=\"2286\" data-end=\"2289\">\nThese Terms are governed by the laws of the Republic of Turkey. Any disputes between the parties shall be subject to the jurisdiction of the Istanbul (Anatolian) Courthouses and Enforcement Offices.<br>&nbsp;</p><p>\n\n\n\n\n\n\n\n\n</p><p data-start=\"2527\" data-end=\"2796\" class=\"\"><strong data-start=\"2527\" data-end=\"2555\">9. Modification of Terms</strong><br data-start=\"2555\" data-end=\"2558\">\nThe Company reserves the right to update these Terms at any time. Changes become effective upon publication on the website, and your continued use of the Service will be governed by the updated Terms.</p>"
           }
         }
@@ -8638,14 +8593,14 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
           "id": "d331f36d-b574-42db-b17e-8168c14e9844",
           "componentId": "0646f8f4-3dfb-449f-9674-cb83fed9338d",
           "propValues": {
-            "pageTitle": "null",
             "pageContent": "\n<h1>Disclaimer for Natural Dietary Supplements</h1>\n<p>We provide high quality, natural and halal nutritional dietary supplements aimed at supporting health and well-being. Please read this disclaimer carefully before using or consuming any of our products. By using or purchasing any of our products, you agree to this disclaimer and fully accept its terms.</p>\n\n<p>This disclaimer should not be considered a substitute for consulting a qualified medical professional. It is strongly recommended to consult a doctor before using any dietary supplement, especially if you have any existing health conditions or are taking other medications.</p>\n\n<p>Our products are produced from natural ingredients, following the highest quality standards. However, individual tolerance and responses to dietary supplements may vary. We do not guarantee individual results and do not take responsibility for any unexpected side effects.</p>\n\n<p>Please read the list of ingredients and usage instructions on the packaging carefully before using the product. Some products may contain ingredients that could cause allergies in certain individuals.</p>\n\n<p>Products should be stored in a cool, dry place, and kept out of reach of children.</p>\n\n<p>Our products are not intended to be a substitute for a healthy and balanced diet but should be part of a healthy lifestyle.</p>\n<p>The use of our products is prohibited for individuals below the age of maturity, pregnant or breastfeeding women without consulting a doctor.</p>\n<p>By using any of our products, you acknowledge that you agree to this disclaimer and accept its terms. If you do not agree with these conditions, please refrain from using our products. Feel free to contact us if you have any questions or need further information.</p>\n\n<p>UMUT TUNÇDEMİR - MELETI ORIENT İTH. İHR. TİC.<br><br>Muratpaşa mah. 561.sokak 41/B Antalya / Turkey<br><br>Website: www.meritcosmetics.com<br>Phone: (+90) 5365130105<br>E-mail: info@meritcosmetics.com</p>\n"
           }
         }
@@ -8781,14 +8736,14 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
           "id": "c6ad454f-4ab7-4560-a70a-1fe521049859",
           "componentId": "953f0714-0140-4e76-bd73-f0b99e1f93e9",
           "propValues": {
-            "pageTitle": "Privacy Policy",
             "pageContent": "\n<h1>Disclaimer for Natural Dietary Supplements</h1>\n<p>We provide high quality, natural and halal nutritional dietary supplements aimed at supporting health and well-being. Please read this disclaimer carefully before using or consuming any of our products. By using or purchasing any of our products, you agree to this disclaimer and fully accept its terms.</p>\n\n<p>This disclaimer should not be considered a substitute for consulting a qualified medical professional. It is strongly recommended to consult a doctor before using any dietary supplement, especially if you have any existing health conditions or are taking other medications.</p>\n\n<p>Our products are produced from natural ingredients, following the highest quality standards. However, individual tolerance and responses to dietary supplements may vary. We do not guarantee individual results and do not take responsibility for any unexpected side effects.</p>\n\n<p>Please read the list of ingredients and usage instructions on the packaging carefully before using the product. Some products may contain ingredients that could cause allergies in certain individuals.</p>\n\n<p>Products should be stored in a cool, dry place, and kept out of reach of children.</p>\n\n<p>Our products are not intended to be a substitute for a healthy and balanced diet but should be part of a healthy lifestyle.</p>\n<p>The use of our products is prohibited for individuals below the age of maturity, pregnant or breastfeeding women without consulting a doctor.</p>\n<p>By using any of our products, you acknowledge that you agree to this disclaimer and accept its terms. If you do not agree with these conditions, please refrain from using our products. Feel free to contact us if you have any questions or need further information.</p>\n\n<p>UMUT TUNÇDEMİR - MELETI ORIENT İTH. İHR. TİC.<br><br>Muratpaşa mah. 561.sokak 41/B Antalya / Turkey<br><br>Website: www.meritcosmetics.com<br>Phone: (+90) 5365130105<br>E-mail: info@meritcosmetics.com</p>"
           }
         }
@@ -8924,14 +8879,14 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
           "id": "9f4406ca-4e9c-4b27-98d8-490bfdea1398",
           "componentId": "53adc8e5-4cc9-473f-bb65-5ec244db82c5",
           "propValues": {
-            "pageTitle": "titles",
             "pageContent": "<p>content</p>"
           }
         }
@@ -9067,14 +9022,14 @@
                 "subLinks": []
               }
             ],
-            "helpLinksTitle": "DEstek"
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
           }
         },
         {
           "id": "d8dc27f1-4359-4d0c-8db9-a1b30e2fd4ef",
           "componentId": "2ad0eed1-1d31-4315-98fb-4192f2042507",
           "propValues": {
-            "pageTitle": "title",
             "pageContent": "<p>content</p><p><br></p>"
           }
         }
