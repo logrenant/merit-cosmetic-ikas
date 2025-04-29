@@ -36,7 +36,7 @@ const BagItem: React.FC<{
         onClick={() => {
           store.cartStore.removeItem(product);
         }}
-        className="items-center flex justify-center"
+        className="items-center flex justify-center cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const BagItem: React.FC<{
                 }
               }}
               disabled={quantity - 1 === 0 || pending}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)]"
+              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)] cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +125,7 @@ const BagItem: React.FC<{
                   setQuantity(quantity + 1);
                 }
               }}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)]"
+              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)] cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +326,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                         onClick={() => {
                           setOpenSelectCountry(!openSelectCountry);
                         }}
-                        className="text-[color:var(--black-two)] gap-1 flex text-lg items-center font-light"
+                        className="text-[color:var(--black-two)] gap-1 flex text-lg items-center font-light cursor-pointer"
                       >
                         {t("orderDetail.shipping")}
                         <svg
@@ -367,7 +367,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       <div className="mt-1 mb-2">
                         <select
                           value={currentCountry}
-                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5"
+                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5 cursor-pointer"
                           onChange={(e) => {
                             localStorage.setItem(
                               "iso2",
@@ -489,7 +489,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                           setCodePending(false);
                           setCode("");
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm cursor-pointer"
                       >
                         {t("remove")}
                       </button>
@@ -515,7 +515,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                           }
                           setCodePending(false);
                         }}
-                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm"
+                        className="w-min disabled:opacity-60 flex items-center justify-center px-4 h-[38px] text-base bg-[color:var(--color-three)] text-white rounded-sm cursor-pointer"
                       >
                         {t("save")}
                       </button>

@@ -791,7 +791,7 @@ const ProductDetail = ({
                           !e.isAddToCartEnabled ||
                           !product.isAddToCartEnabled
                         }
-                        className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 whitespace-nowrap w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5"
+                        className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 whitespace-nowrap w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
                       >
                         {product.isAddToCartEnabled
                           ? t("productDetail.addBasketTogether")
