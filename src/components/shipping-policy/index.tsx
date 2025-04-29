@@ -1,9 +1,8 @@
 import React from 'react'
 import { observer } from "mobx-react-lite";
-import { PrivacyPolicyProps } from '../__generated__/types';
+import { ShippingPolicyProps } from '../__generated__/types';
 
-const PrivacyPolicy = (props: PrivacyPolicyProps) => {
-
+const ShippingPolicy = (props: ShippingPolicyProps) => {
     return (
         <div className='layout flex flex-col gap-8 my-14'>
             <h1 className="text-2xl font-medium text-[color:var(--color-two)]">
@@ -14,7 +13,7 @@ const PrivacyPolicy = (props: PrivacyPolicyProps) => {
                 dangerouslySetInnerHTML={{ __html: props.pageContent }}
             />
         </div>
-    );
-};
+    )
+}
 
-export default observer(PrivacyPolicy);
+export default observer(ShippingPolicy)

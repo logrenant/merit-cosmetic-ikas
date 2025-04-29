@@ -139,19 +139,8 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
           keenOptions={{
             initial: 0,
             slides: {
-              perView: 2,
-              spacing: 4,
-            },
-            breakpoints: {
-              "(min-width: 768px)": {
-                slides: { perView: 2, spacing: 8 },
-              },
-              "(min-width: 1024px)": {
-                slides: {
-                  perView: 5,
-                  spacing: 8,
-                },
-              },
+              perView: 5,
+              spacing: 8,
             },
           }}
           items={products
