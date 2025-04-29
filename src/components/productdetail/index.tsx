@@ -418,7 +418,7 @@ const ProductDetail = ({
                     onClick={(e) => {
                       toggleFavorite(e);
                     }}
-                    className="flex disabled:opacity-60 disabled:animate-pulse items-center justify-center w-7 h-7 absolute right-1 top-1 z-20"
+                    className="flex disabled:opacity-60 disabled:animate-pulse items-center justify-center w-7 h-7 absolute right-1 top-1 z-20 cursor-pointer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -808,7 +808,7 @@ const ProductDetail = ({
           <div className="grid grid-cols-3">
             <button
               onClick={() => setTab("D")}
-              className={`py-3 border rtl:rounded-r ltr:rounded-l border-[color:var(--color-three)] px-4 transition ${tab === "D"
+              className={`py-3 border rtl:rounded-r ltr:rounded-l border-[color:var(--color-three)] px-4 transition cursor-pointer ${tab === "D"
                 ? "bg-[color:var(--color-three)] text-white"
                 : "hover:bg-[color:var(--color-three)] hover:text-white"
                 }`}
@@ -817,7 +817,7 @@ const ProductDetail = ({
             </button>
             <button
               onClick={() => setTab("R")}
-              className={`py-3 px-4 border-y border-r border-[color:var(--color-three)] transition ${tab === "R"
+              className={`py-3 px-4 border-y border-r border-[color:var(--color-three)] transition cursor-pointer ${tab === "R"
                 ? "bg-[color:var(--color-three)] text-white"
                 : "hover:bg-[color:var(--color-three)] hover:text-white"
                 }`}
@@ -826,7 +826,7 @@ const ProductDetail = ({
             </button>
             <button
               onClick={() => setTab("P")}
-              className={`py-3 px-4 border-y rtl:border-l border-r border-[color:var(--color-three)] rtl:rounded-l ltr:rounded-r transition ${tab === "P"
+              className={`py-3 px-4 border-y rtl:border-l border-r border-[color:var(--color-three)] rtl:rounded-l ltr:rounded-r transition cursor-pointer ${tab === "P"
                 ? "bg-[color:var(--color-three)] text-white"
                 : "hover:bg-[color:var(--color-three)] hover:text-white"
                 }`}
