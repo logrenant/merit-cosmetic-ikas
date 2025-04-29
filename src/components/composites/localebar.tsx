@@ -123,7 +123,7 @@ const LocalBar = () => {
     const fetchCurrency = async () => {
       try {
         const response = await axios.get(
-          "https://v6.exchangerate-api.com/v6/04d9a8a9c910f9d2f5fd255a/latest/USD"
+          "https://v6.exchangerate-api.com/v6/3e5a90a7e9e5feacc93aeb8e/latest/USD"
         );
 
         if (response.data.result === "success") {
@@ -200,11 +200,10 @@ const LocalBar = () => {
         </div>
         <div ref={currencyRef} className="relative rtl:mr-3 ltr:ml-3">
           <button
-            disabled={loading || error}
             onClick={() => {
               setCurrencyOpen(!currencyOpen);
             }}
-            className="flex gap-1 items-center disabled:cursor-default disabled:animate-pulse cursor-pointer"
+            className="flex gap-1 items-center disabled:cursor-default cursor-pointer"
           >
             <span className="flex items-center gap-1">
               {datas.find((e) => e.name === currency.name)?.flag}

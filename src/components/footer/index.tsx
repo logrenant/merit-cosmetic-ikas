@@ -58,21 +58,11 @@ const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc, hel
   const onSubmitEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const parts = email.split('@');
-    if (parts.length !== 2) {
+    const emailPattern = /^\S+@\S+\.\S+$/;
+    if (!emailPattern.test(email)) {
       toast.error(
         footerResponse?.invalidEmail
         ?? 'Please enter a valid email address.'
-      );
-      return;
-    }
-
-    const domain = parts[1].toLowerCase();
-    const allowedDomains = ['gmail.com', 'outlook.com', 'hotmail.com'];
-    if (!allowedDomains.includes(domain)) {
-      toast.error(
-        footerResponse?.domainError
-        ?? 'This email domain is not supported.'
       );
       return;
     }

@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "668f4433-d58b-4d33-b8e5-013ef7ba132b",
+          "id": "8c76e1a7-1b09-4106-9032-15e4cbedd34c",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7881ba09-bd6f-4ac8-ba32-9e0c67f57cbf",
+          "id": "395d50ff-3c02-4475-bfdf-fcbd75963122",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f408f1be-e55b-4727-9ab5-48261246ce65",
+          "id": "18cace5c-c0ca-4cca-b118-074daeeeae3e",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b6b330ea-b7b6-49a1-a9c5-e5e9f23166fe",
+          "id": "96a41ecc-4da4-4d98-a335-d7e56eafaaa0",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "94d3404a-2e61-451d-9259-cf3889a66764",
+          "id": "14c83c71-956f-4601-a340-772094beca31",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "06890b74-0bba-4011-ae96-e3f5f27aaf06",
+          "id": "1e4cf432-e1a6-47ef-baad-2338c8e2862a",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a91812f2-bc45-4de1-8d41-807beab44338",
+          "id": "8e65b0aa-5419-4f5f-8aeb-574bd65bc604",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "59ffb128-45cb-4cb5-b2ba-b7536c91815c",
+          "id": "097f6106-9c47-467f-ac72-e2bc70898c78",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4ece7966-e5b3-4741-acb3-128323745c5e",
+          "id": "52f8c11d-26b6-4d66-9751-029e5d99b90d",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "97a89370-69b0-44e2-9691-8bd526858942",
+          "id": "eb65de61-6388-425e-883b-4a5ca7be46cd",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "21ee370c-61ec-4b50-b175-cd0c5cb0107c",
+          "id": "d1d9b178-6c7f-4555-a200-6d8385f39f15",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a66a668d-be69-4382-9556-7f618a766cf5",
+          "id": "213d3722-c2e3-40d4-b922-ad659aae164d",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f594cbdb-613e-4c74-8782-31d3c2053a7f",
+          "id": "e5f2388d-733e-43a8-a9fa-9b9afc9c159c",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5faf3c02-ae37-4cb1-b06c-83bf4f717f8c",
+          "id": "3d4d1910-ec99-457c-82a7-92a7d2b2a52c",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bb0ca5f3-dc0c-43ab-8b57-b8d2c7cc138b",
+          "id": "d3460fab-a89e-4063-9c6f-ffabcc15e12c",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c049afd5-7876-4bc0-bfce-04ba40bd6a74",
+          "id": "8680b391-82a8-4a88-94d8-ef8fd1f44b19",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fb99272d-75f5-4234-a96a-cca2583f706e",
+          "id": "aba0edd1-1f7a-447b-929f-5d5a1f0fca7a",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ce862dff-0f52-4220-82f1-b8afe26aae97",
+          "id": "e8004a56-ada0-4d89-97d7-d283b6a9f060",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "789c9e6d-c84f-4816-9ad7-3c03af85b362",
+          "id": "20284ff6-b62b-48f9-a512-fc7296bf24a2",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "447a1390-0a1e-45fb-b339-2fe2b2d52051",
+          "id": "f7f9fb79-6072-4efa-b326-5ba782282b34",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "515b5530-7fe0-433b-8ba1-e6bc908b62e2",
+          "id": "50f4981d-b3ae-4f68-a3ae-68e3c76be6ef",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3770982d-e253-4833-a666-3e149f1397cd",
+          "id": "a7f4d74c-7fd4-4402-9c84-b78a185351b6",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "960794fc-6df4-4baa-8539-f07c130055f3",
+          "id": "427a5540-0c73-4e32-9d45-8b7f550fee36",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fd26d82b-ae23-4ab8-981c-f99406cc33a8",
+          "id": "0a78a2e1-c5f2-429f-8f3f-b5375febb4b1",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0f220089-dca8-4309-856c-fead7de0ab8d",
+          "id": "05abcb48-7997-4b90-8a15-7e06ba90af3b",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bfd0da7c-f902-448d-a39d-69b52847f37f",
+          "id": "5895558b-1a60-4ada-b3e1-14ee31a4a530",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2009e627-d990-4e3a-9719-1d374f03ef7a",
+          "id": "a204c70f-4fdb-4140-9547-7b85facc04e7",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7de3f58c-16d5-478f-b335-ad8cb6b28bf5",
+          "id": "0ca6e782-8ea2-4416-926a-0d6409b42a66",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "052d0441-2eda-4a1e-a065-2c192248e8f2",
+          "id": "abd52298-44f5-4c83-8bb4-a76b80ee0157",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "df600370-626f-40fb-bd78-d295e58be46e",
+          "id": "df49ff6a-fb11-4f58-8ded-671a8f921952",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a725c230-f138-46ae-aaf6-f2f767e3b30a",
+          "id": "29acb8ba-b3d9-492f-bfdf-5a368b4ff35c",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ab2b247d-d7d0-40bc-90a8-be6fd0216ef1",
+          "id": "f72224f4-b908-4a8c-946b-a0dd706f1cf7",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d9d52c00-7e0b-4c1a-bf52-338f8e101c11",
+          "id": "d71cf10b-8f98-4cf7-8714-dc49115ae884",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3628b356-e260-460d-b808-c335145d9d57",
+          "id": "28294c85-facb-45c0-9194-028bc4fe36a8",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e0b3820c-1675-42c5-9ffd-a81e8b0fd5f8",
+          "id": "a37964e5-5631-4623-abf7-7226cec87b3c",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4835b866-2028-4c60-8f85-8b475c086f34",
+          "id": "2ee9a65c-a217-42c3-b8e9-d190a942beea",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f67b1c82-b47a-461f-867d-0dbc8e6e7fa8",
+          "id": "238ba789-aaf0-4888-9b3e-0528215cbb70",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a9880559-2bea-4e38-ba0f-6ce9582b92f2",
+          "id": "34070224-597a-49f2-ae00-87201f87ad25",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d0f85d0d-349c-4282-80e4-66263d16473b",
+          "id": "9b3113d8-b745-4580-b3f1-7a73c038438d",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -3311,6 +3311,66 @@
                   "recommendedProductsType": {
                     "recommendedProductType": "CATEGORY"
                   }
+                }
+              },
+              {
+                "products": {
+                  "id": "7fa863dc-08db-4f38-be57-d58d85076bca",
+                  "productListType": "CATEGORY",
+                  "initialSort": "LAST_ADDED",
+                  "initialLimit": 20,
+                  "productCount": null,
+                  "productIds": null,
+                  "category": "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                  "usePageFilter": null,
+                  "relatedProductsType": null,
+                  "recommendedProductsType": {
+                    "recommendedProductType": "CATEGORY"
+                  }
+                },
+                "image": {
+                  "id": "theme-images/42bb0c83-8e17-4f8b-af47-1a445825a38d",
+                  "altText": null
+                }
+              },
+              {
+                "products": {
+                  "id": "ccc075d7-d013-4f44-a8b0-1903bacfbc7a",
+                  "productListType": "CATEGORY",
+                  "initialSort": "LAST_ADDED",
+                  "initialLimit": 20,
+                  "productCount": null,
+                  "productIds": null,
+                  "category": "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                  "usePageFilter": null,
+                  "relatedProductsType": null,
+                  "recommendedProductsType": {
+                    "recommendedProductType": "CATEGORY"
+                  }
+                },
+                "image": {
+                  "id": "theme-images/5f134155-e189-42d6-b206-9df1436c8cff",
+                  "altText": null
+                }
+              },
+              {
+                "products": {
+                  "id": "3625f25d-08bf-4b99-934b-1d87815260d0",
+                  "productListType": "CATEGORY",
+                  "initialSort": "LAST_ADDED",
+                  "initialLimit": 20,
+                  "productCount": null,
+                  "productIds": null,
+                  "category": "d9f4c661-7674-4618-a123-18692393858c",
+                  "usePageFilter": null,
+                  "relatedProductsType": null,
+                  "recommendedProductsType": {
+                    "recommendedProductType": "CATEGORY"
+                  }
+                },
+                "image": {
+                  "id": "theme-images/f29362ee-b9ed-48c3-b477-862c8aa06504",
+                  "altText": null
                 }
               }
             ],
@@ -8492,7 +8552,7 @@
           "componentId": "0646f8f4-3dfb-449f-9674-cb83fed9338d",
           "propValues": {
             "pageTitle": "null",
-            "pageContent": "<div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">When will my order be shipped?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-size: medium; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"><p data-start=\"131\" data-end=\"311\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Your order will be processed and shipped within 1–3 business days after confirmation. During promotional periods, processing times may vary.</p><p data-start=\"313\" data-end=\"526\" class=\"\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\"></p></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-size: medium; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">How much is the shipping fee?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Shipping is free for orders above a certain amount. For orders below that amount, a flat shipping fee applies. For more details, please visit our&nbsp;<a href=\"https://3185ddb8-a430-4b62-836a-ddbbc42e2640-meletiorient.myikas.com/pages/about-us?_gl=1*irdcau*_gcl_au*MTQ3OTA3NDU3MS4xNzQxMzM0ODI0\" target=\"_blank\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); color: inherit; text-decoration: inherit; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">[Shipping Information]</a>&nbsp;page.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">How can I return a product?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">If you wish to return a product, you can do so within 14 days from the delivery date, provided it is unused and in its original packaging with the invoice. Visit our [Returns &amp; Exchanges] page for full instructions.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">What payment methods do you accept?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">We accept credit cards, debit cards, and cash on delivery. In some cases, bank transfer may also be available during certain periods.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">Can I place an order without creating an account?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin;\">Yes, you can checkout as a guest without registering. However, creating an account makes it easier to track your orders and access special offers.</div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(152, 43, 45) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"></div></div></div><div class=\"flex flex-col gap-2\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); display: flex; flex-direction: column; gap: 8px; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0); font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; background-color: rgb(254, 250, 246);\"><h1 class=\"text-2xl font-medium text-[color:var(--color-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); margin-bottom: 0px; font-size: 24px; font-weight: 500; line-height: 1.33333; --tw-font-weight: 500; color: rgb(172, 8, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">My item arrived damaged, what should I do?</h1><div class=\"text-lg text-[color:var(--black-two)]\" style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); font-size: 18px; line-height: 1.55556; color: rgb(33, 33, 33); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><span style=\"border-style: solid; border-color: oklch(0.928 0.006 264.531); scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; font-family: Rubik, -apple-system, system-ui, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\">Please take photos of the damaged item and contact our customer service within 48 hours. Once reviewed, we’ll assist you with a replacement or refund process.</span></div></div>"
+            "pageContent": "\n<h1>Disclaimer for Natural Dietary Supplements</h1>\n<p>We provide high quality, natural and halal nutritional dietary supplements aimed at supporting health and well-being. Please read this disclaimer carefully before using or consuming any of our products. By using or purchasing any of our products, you agree to this disclaimer and fully accept its terms.</p>\n\n<p>This disclaimer should not be considered a substitute for consulting a qualified medical professional. It is strongly recommended to consult a doctor before using any dietary supplement, especially if you have any existing health conditions or are taking other medications.</p>\n\n<p>Our products are produced from natural ingredients, following the highest quality standards. However, individual tolerance and responses to dietary supplements may vary. We do not guarantee individual results and do not take responsibility for any unexpected side effects.</p>\n\n<p>Please read the list of ingredients and usage instructions on the packaging carefully before using the product. Some products may contain ingredients that could cause allergies in certain individuals.</p>\n\n<p>Products should be stored in a cool, dry place, and kept out of reach of children.</p>\n\n<p>Our products are not intended to be a substitute for a healthy and balanced diet but should be part of a healthy lifestyle.</p>\n<p>The use of our products is prohibited for individuals below the age of maturity, pregnant or breastfeeding women without consulting a doctor.</p>\n<p>By using any of our products, you acknowledge that you agree to this disclaimer and accept its terms. If you do not agree with these conditions, please refrain from using our products. Feel free to contact us if you have any questions or need further information.</p>\n\n<p>UMUT TUNÇDEMİR - MELETI ORIENT İTH. İHR. TİC.<br><br>Muratpaşa mah. 561.sokak 41/B Antalya / Turkey<br><br>Website: www.meritcosmetics.com<br>Phone: (+90) 5365130105<br>E-mail: info@meritcosmetics.com</p>\n"
           }
         }
       ],

@@ -38,7 +38,7 @@ const AccountButton = () => {
           </svg>
           <span className="text-xs whitespace-nowrap rtl:mr-1.5 ltr:ml-1.5">
             {!store.customerStore.customer?.firstName &&
-            !store.customerStore.customer?.lastName
+              !store.customerStore.customer?.lastName
               ? t("account")
               : ""}{" "}
             {store.customerStore.customer?.firstName}{" "}

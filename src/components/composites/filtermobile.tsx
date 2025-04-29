@@ -63,7 +63,7 @@ export const NumberList = observer(
                     });
                   }}
                   key={item.key}
-                  className="text-base gap-2 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)]"
+                  className="text-base gap-2 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer"
                 >
                   <input
                     className="hidden peer"
@@ -147,7 +147,7 @@ export const StockList = observer(
                       behavior: "smooth",
                     });
                   }}
-                  className="text-base gap-2 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)]"
+                  className="text-base gap-2 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer"
                 >
                   <input
                     className="hidden peer"
@@ -225,7 +225,7 @@ export const TypeList = observer(
                       behavior: "smooth",
                     });
                   }}
-                  className="w-full flex items-center gap-2 border-t-0 border border-[color:var(--gray-two)] px-2 py-1 text-base text-[color:var(--gray-five)]"
+                  className="w-full flex items-center gap-2 border-t-0 border border-[color:var(--gray-two)] px-2 py-1 text-base text-[color:var(--gray-five)] cursor-pointer"
                 >
                   <input
                     type="checkbox"
@@ -302,7 +302,7 @@ export const List = observer(
                     });
                   }}
                   key={item.key}
-                  className="text-base gap-2 border last:border-b-0 border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)]"
+                  className="text-base gap-2 border last:border-b-0 border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer"
                 >
                   <input
                     className="hidden peer"

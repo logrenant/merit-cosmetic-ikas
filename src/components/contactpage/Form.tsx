@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useTranslation, ContactForm } from '@ikas/storefront';
 import type { ContactpageProps } from "../__generated__/types";
+import { useDirection } from 'src/utils/useDirection';
 
 const Form = ({ formRule, formMessages }: ContactpageProps) => {
     const { title, text } = formMessages;
     const { t } = useTranslation();
+    const { direction } = useDirection();
 
     const [isPending, setPending] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -86,6 +88,7 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
                         onChange(e.target.value);
                         if (label === 'phoneNumber') setPhoneError(undefined);
                     }}
+                    dir={direction}
                     placeholder={t(label)}
                     className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm p-2.5"
                 />
@@ -138,7 +141,7 @@ const Form = ({ formRule, formMessages }: ContactpageProps) => {
                     Boolean(form.emailErrorMessage) ||
                     Boolean(form.messageErrorMessage)
                 }
-                className="tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 disabled:opacity-60"
+                className="tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 disabled:opacity-60 cursor-pointer"
             >
                 {isPending ? t("loading") : t("submit")}
             </button>
