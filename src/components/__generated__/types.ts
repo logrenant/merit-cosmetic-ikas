@@ -239,3 +239,13 @@ export type PrivacyPolicyProps = {
 	pageContent: string;
 };
 
+export type DisclaimerProps = {
+	pageTitle: string;
+	pageContent: string;
+};
+
+export type ShippingPolicyProps = {
+	pageTitle: string;
+	pageContent: string;
+};
+
