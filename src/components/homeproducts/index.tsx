@@ -8,10 +8,8 @@ import SimpleSlider from "../composites/simpleslider";
 import { HomeproductsProps } from "../__generated__/types";
 import { sliderBreakpoints } from "src/styles/breakpoints";
 
-const HomeProducts: React.FC<HomeproductsProps> = ({
-  products,
-  categories,
-}) => {
+const HomeProducts = (props: HomeproductsProps) => {
+  const { products, categories } = props;
   const [selectedProducts, setSelectedProducts] = useState(
     products![0].image.id
   );
@@ -87,9 +85,9 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
               initial: 0,
               loop: false,
               slides: {
+                perView: 2,
                 spacing: 10,
               }, renderMode: "precision",
-
               breakpoints: {
                 "(min-width: 568px)": {
                   slides: { perView: 2, spacing: 16 },
@@ -134,34 +132,26 @@ const HomeProducts: React.FC<HomeproductsProps> = ({
       )}
 
       <div className="TEST-SECOND-SLIDER w-full">
-        <SimpleSlider
-          showPagination={true}
-          keenOptions={{
-            initial: 0,
-            slides: {
-              perView: 5,
-              spacing: 8,
-            },
-          }}
-          items={products
-            ?.find((e) => {
-              console.log("e.image.id", e.image.id, selectedProducts === e.image.id);
-              e.products.data.forEach((prod) => {
-                console.log("prod.name", prod.name);
-              })
-              return e.image.id === selectedProducts
-            })
-            ?.products.data?.map((product) => {
-              console.log("product.name", product.name);
-              return (
+        <div className="TEST-SECOND-SLIDER w-full">
+          <SimpleSlider
+            key={selectedProducts}
+            showPagination={true}
+            keenOptions={{
+              initial: 0,
+              slides: {
+                perView: 5,
+                spacing: 8,
+              },
+            }}
+            items={products
+              ?.find((e) => e.image.id === selectedProducts)
+              ?.products.data?.map((product) => (
                 <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
-                  {/* <p className="text-blue-500 font-bold text-sm">{product.name.slice(0, 10)}</p> */}
                   <ProductCard product={product} />
                 </div>
-              )
-            }) ?? []
-          }
-        />
+              )) ?? []}
+          />
+        </div>
       </div>
 
     </div>

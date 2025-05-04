@@ -2,14 +2,16 @@ import React, { useRef } from "react";
 import { observer } from "mobx-react-lite";
 
 import BlogCard from "./blog-card";
+import { useDirection } from "src/utils/useDirection";
 import { PageBlogsProps } from "../__generated__/types";
 
 
 const BlogList = ({ blogList, ...props }: PageBlogsProps) => {
+    const { direction } = useDirection();
     const blogsRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="layout" ref={blogsRef}>
+        <div className="layout" ref={blogsRef} dir={direction}>
             {/* Title */}
             <h1 className="text-3xl font-bold my-12">{props.title}</h1>
             {/* Grid List */}

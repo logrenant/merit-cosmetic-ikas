@@ -8,6 +8,7 @@ import {
 } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
 import getMonthName from "src/utils/getMonthName";
+import { useDirection } from "src/utils/useDirection";
 import { PageBlogsProps } from "src/components/__generated__/types";
 
 type Props = {
@@ -22,6 +23,7 @@ type Props = {
 
 const BlogCard = (props: Props) => {
   const { t } = useTranslation();
+  const { direction } = useDirection();
   const publishedDate = useMemo(() => {
     const ts = props.data.createdAt;
     if (!ts) return "";
@@ -39,7 +41,7 @@ const BlogCard = (props: Props) => {
   const showCategory = !!props.showCategory && !!props.data.category;
 
   return (
-    <div className="relative flex flex-col h-full rounded bg-[color:var(--bg-color)] shadow-lg">
+    <div className="relative flex flex-col h-full rounded bg-[color:var(--bg-color)] shadow-lg" dir={direction}>
       {/* Image */}
       {props.data.image?.id && (
         <Link href={props.data.href}>

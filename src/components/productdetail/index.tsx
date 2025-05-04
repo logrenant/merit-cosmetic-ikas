@@ -872,7 +872,7 @@ const ProductDetail = ({
         <div className="mt-8 border-t border-[color:var(--gray-six)] md:hidden block">
           <Accordion title={t("productDetail.description")}>
             <div
-              className="prose prose-table:overflow-hidden prose-ul:rtl:pr-3 prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm"
+              className="prose prose-table:overflow-hidden prose-ul:rtl:pr-3 prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm "
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
           </Accordion>

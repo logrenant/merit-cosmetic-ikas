@@ -145,7 +145,7 @@ export type FooterProps = {
 	footerResponse?: FooterToast;
 	newsletterTitle: string;
 	newsletterDesc: string;
-	brandName?: string;
+	brandName: string;
 };
 
 export type ProductlistgridProps = {
@@ -193,9 +193,14 @@ export type ContactpageProps = {
 	formRule: ContactFormRule;
 };
 
+export type OrderTrackingProps = {
+	pageTitle?: string;
+};
+
 export type PageBlogProps = {
 	blog: IkasBlog;
 	showImage?: boolean;
+	blogList: IkasBlogList;
 };
 
 export type PageBlogsProps = {
