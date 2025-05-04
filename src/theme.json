@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "ce6d84a7-1a68-43b2-99ac-e288937bf050",
+          "id": "e2530915-83b4-4865-b95e-5d14c1c43285",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5b1614b1-9c1a-4fb1-a6b9-0d5619049b39",
+          "id": "fd8755d0-6d63-4b9e-80fe-945cacee6fd5",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dc47216b-f196-435b-a910-800014c4032c",
+          "id": "d76dce9e-518c-4057-9e49-a675f19c3036",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "862a4c79-a974-4ada-887d-ed9e1c7d16a8",
+          "id": "c5429d77-6685-4a5b-b456-65d045dd8ed4",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ef1844e0-0fd2-47e5-8022-c34ebadbb491",
+          "id": "7f46f2ce-0aca-4b84-acf6-72649d3f171e",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e7f5cfc1-9186-46fe-87c9-716332983cca",
+          "id": "25f2c80f-91cd-4c79-b9db-56a22b8bfc34",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "31c0cbad-c501-4550-a234-c61677963ffd",
+          "id": "ba9edf36-ae83-499a-968b-e632ad3bbdfb",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0db1c0dc-de9e-451b-924f-78a710874d78",
+          "id": "741d7745-2efa-40cb-8d7b-63f817f57290",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "12b1a91d-2de2-4387-81fd-c0d827889082",
+          "id": "44c8bb12-9533-4c5a-a749-9492364415ca",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0203991a-0c27-4dd1-a51e-575283d4c790",
+          "id": "c4b6c8ee-82cd-4bf3-9eba-f091eb24acdf",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "26bc0301-367b-49d2-a177-af3b4359e850",
+          "id": "0da792a3-0089-4fac-8662-ee3c1b9aa62f",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "da1afb13-7a78-4104-8237-c1c33291fab5",
+          "id": "b52beaf9-1bd6-4d83-8b53-cde3a30573f3",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ba62c417-ec7b-4277-890e-da4965277bdb",
+          "id": "0adee3ec-bbcb-4c09-bd16-208b09b06305",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b5f3a222-d2dc-4786-9e4a-bf18bbd73735",
+          "id": "790ebe74-83b9-4df7-b8a2-bb46bfdcc01f",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2b9a5ee0-6375-4b0c-84ed-f8e934857d12",
+          "id": "2632de2c-1b73-4334-aad0-89514b34c4e9",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "833a01af-eb34-4fac-9869-ef4960f03e89",
+          "id": "812b8af1-dc48-4cf0-9ceb-4fa19e17c03e",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3762b832-f3bc-4538-8cda-fc7ba1246f93",
+          "id": "fa7d8cf8-7df3-4442-b857-e77056ec1e8c",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9b672d8e-7ffa-4b48-a7f7-d6562544bc02",
+          "id": "71586f0d-1199-4bb9-8912-0322e79e2163",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "daad1f80-2b3c-4d51-8e2e-c613b48a8d83",
+          "id": "bf9517fd-62fc-4bfd-b85b-fef3453c9f73",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5b678bad-78d7-499e-bf71-30a1e47d1770",
+          "id": "3a70ffc1-fd01-40f9-9294-d1f56ed85c6f",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "14d8c4dc-b7a9-4173-b24c-9e4e4d0f0442",
+          "id": "0886a9ec-8eba-49a3-ad3b-36f0d209afe1",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6c4ec4f2-5f2c-4997-b1ab-60a1eac521b6",
+          "id": "82ea050a-9604-46b7-95f0-b5bd25d9e947",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a88cd733-23ab-4816-bac8-f51abfebafec",
+          "id": "fc102da9-cf00-4e80-9746-43e8ad855800",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9f0075f4-0581-4bd9-b2fa-bf0a836ee7bf",
+          "id": "dd008c90-c1b9-4a5f-ae07-24536061dd3f",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cc6afe03-bb66-4e86-ba53-a4ea06aca3a3",
+          "id": "8d865572-9299-42cf-b782-a5b818df7a85",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7c5e741a-a8b6-434f-ade7-810a351ad09b",
+          "id": "48fc7f82-7ce8-48e4-8747-afdee2523d7b",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "148184d4-7c8b-497f-8736-49e0408116b3",
+          "id": "2c3fe706-b522-4558-9863-9cddae36ff40",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "81b1d79f-b038-47dc-a7ae-c5e0a9c25f09",
+          "id": "aad6002d-735c-4aa4-9645-9f3571047de2",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3939d7e2-d54b-4f08-98f3-276604c7f533",
+          "id": "2ace8874-7117-4e6a-b809-cb9d1a5140bd",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "107cee19-9a95-468a-8553-0558255fa0e5",
+          "id": "345fe3b5-a040-41f2-a44a-44b9f9268f21",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b084df89-c25f-4b9b-9c0f-97f546686a92",
+          "id": "2764ca60-a09f-4284-9ce8-5d51033db299",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1e1bb73b-88e3-4683-8fc5-9f3959baca37",
+          "id": "cb4da89c-e069-4ba3-af77-bda747c8f394",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dd1af5a5-f21e-48b7-997e-6f3a3d1f4f16",
+          "id": "b1e18f12-66e2-41e5-a0cb-b618ab27c7be",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4fb69b98-f1bd-4073-bc88-f97e1856c212",
+          "id": "3f628cc7-a2cd-4e4a-8947-0543ba290e33",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dd4fc655-1841-4056-8a97-380eb56d0a7c",
+          "id": "545e781b-b8dc-49bc-9a89-80f8caf7a2ce",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f23afadc-c8eb-4c2a-b63f-f0a4112934a9",
+          "id": "a0be26c6-3e94-421b-b4d1-a1749d5e8aa2",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "99a8fc10-ea55-4338-b511-29d04ca28408",
+          "id": "9bea1f5d-0f8f-4bac-acca-b226745c6bf8",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5fd247f5-6b1e-410b-b1c2-67cae92a0dbb",
+          "id": "2dfb64af-a384-4ac8-9756-fe764ed41807",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e6a95e13-e906-44dd-a2d3-beb5fbb21e41",
+          "id": "a963356e-1c48-4634-887a-ef56621e60e7",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -1431,7 +1431,7 @@
           "displayName": "brandName",
           "description": "",
           "type": "TEXT",
-          "isRequired": false,
+          "isRequired": true,
           "sliderData": {},
           "translations": {},
           "groupId": "",
@@ -1519,7 +1519,8 @@
           "domainError": "Please use a Gmail, Outlook, or Hotmail email address."
         },
         "newsletterTitle": "NEWSLETTER SIGN UP",
-        "newsletterDesc": "Subscribe to our newsletter and get the latest news and offers from us."
+        "newsletterDesc": "Subscribe to our newsletter and get the latest news and offers from us.",
+        "brandName": "Merit Cosmetics"
       },
       "commonPropValues": null
     },
@@ -2381,7 +2382,22 @@
       "description": "",
       "type": "COMPONENT",
       "componentJson": null,
-      "props": [],
+      "props": [
+        {
+          "id": "05f2eb2a-c57a-4db1-9d41-ae6234e94e8c",
+          "name": "pageTitle",
+          "displayName": "pageTitle",
+          "description": "",
+          "type": "TEXT",
+          "isRequired": false,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        }
+      ],
       "isHeader": false,
       "isFooter": false,
       "translations": {},
@@ -2424,6 +2440,20 @@
           "excludedFields": [],
           "excludedFieldsCategory": [],
           "isFacetListNotSent": false
+        },
+        {
+          "id": "3a73155a-7fb3-4fab-942a-c37db480909c",
+          "name": "blogList",
+          "displayName": "blogList",
+          "description": "",
+          "type": "BLOG_LIST",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
         }
       ],
       "isHeader": false,
@@ -2435,7 +2465,14 @@
           "blogId": null,
           "usePageData": true
         },
-        "showImage": true
+        "showImage": true,
+        "blogList": {
+          "blogListType": "ALL",
+          "initialLimit": 20,
+          "blogIds": null,
+          "categoryId": null,
+          "usePageFilter": null
+        }
       },
       "commonPropValues": null
     },
@@ -7721,7 +7758,9 @@
         {
           "id": "6800b594-8470-42fa-b929-25336d2024bc",
           "componentId": "5fa44498-bb55-4496-abd7-a537be4da4bf",
-          "propValues": {}
+          "propValues": {
+            "pageTitle": "Page Title"
+          }
         }
       ],
       "slug": "order-tracking",
@@ -8023,7 +8062,14 @@
               "blogId": null,
               "usePageData": true
             },
-            "showImage": true
+            "showImage": true,
+            "blogList": {
+              "blogListType": "ALL",
+              "initialLimit": 20,
+              "blogIds": null,
+              "categoryId": null,
+              "usePageFilter": null
+            }
           }
         }
       ],
@@ -8173,155 +8219,6 @@
       "specifications": [],
       "disableIndex": false,
       "canonicals": []
-    },
-    {
-      "id": "ee2ba54b-971f-4906-827d-18d172b85d2d",
-      "name": "",
-      "type": "BLOG_CATEGORY",
-      "components": [
-        {
-          "id": "daf2b158-5dbc-4698-b766-f6d2b9649b1a",
-          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
-          "propValues": {
-            "categories": {
-              "categoryListType": "ALL",
-              "initialSort": "A_Z",
-              "initialLimit": 50,
-              "categoryIds": [
-                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
-                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
-                "91ee2172-008c-4866-9241-88e919877f9c"
-              ]
-            },
-            "products": {
-              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
-              "productListType": "SEARCH",
-              "initialSort": "LAST_ADDED",
-              "initialLimit": 20
-            },
-            "popularCategories": {
-              "categoryListType": "STATIC",
-              "initialSort": "A_Z",
-              "initialLimit": 8,
-              "categoryCount": null,
-              "categoryIds": [
-                "8f14392d-23ab-446e-9556-d10fae14f176",
-                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
-                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
-                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
-                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
-                "f03c3417-578b-4444-a376-3af06f3349d2",
-                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
-                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
-              ]
-            },
-            "popularProducts": {
-              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
-              "productListType": "ALL",
-              "initialSort": "DEFAULT",
-              "initialLimit": 8
-            },
-            "popularBrands": {
-              "brandListType": "ALL",
-              "initialSort": "A_Z",
-              "initialLimit": 8
-            },
-            "slogans": [
-              "Ürün Arayınız",
-              "Deneme Ürün İsmi",
-              "Maskara"
-            ],
-            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
-            "logo": {
-              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
-              "altText": null
-            }
-          }
-        },
-        {
-          "id": "cfe1cf42-84b1-4a77-b6b5-deac7db39f35",
-          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
-          "propValues": {
-            "linkdata": [
-              {
-                "title": "social",
-                "links": [
-                  {
-                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
-                    "linkType": "EXTERNAL",
-                    "label": "twitter",
-                    "pageId": null,
-                    "pageType": null,
-                    "itemId": null,
-                    "externalLink": "https://x.com",
-                    "fileUrl": null,
-                    "pageComponentId": null,
-                    "subLinks": []
-                  },
-                  {
-                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
-                    "linkType": "EXTERNAL",
-                    "label": "insta",
-                    "externalLink": "https://instagram.com",
-                    "pageComponentId": null,
-                    "subLinks": []
-                  }
-                ]
-              }
-            ],
-            "footerResponse": {
-              "domainError": "domain hatası",
-              "success": "başarılı",
-              "error": "hata",
-              "invalidEmail": "invalid"
-            },
-            "newsletterTitle": "newsletterTitle",
-            "newsletterDesc": "newsletterDesc",
-            "helpLinks": [
-              {
-                "id": "a8ca02ae-d826-40fa-a6e3-f712721ff84e",
-                "linkType": "PAGE",
-                "label": "Anasayfa",
-                "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
-                "pageType": "INDEX",
-                "itemId": null,
-                "externalLink": null,
-                "fileUrl": null,
-                "pageComponentId": null,
-                "subLinks": []
-              },
-              {
-                "id": "6b0eed58-1b69-4164-b21f-33f522416864",
-                "linkType": "PAGE",
-                "label": "FAQ",
-                "pageId": "ca87b367-b321-4ab6-b3f7-9a7d41fb6fc4",
-                "pageType": "CUSTOM",
-                "pageComponentId": null,
-                "subLinks": []
-              }
-            ],
-            "helpLinksTitle": "Destek",
-            "brandName": "Merit Cosmetics"
-          }
-        },
-        {
-          "id": "49706617-ecd9-465e-a59c-bff34251e05a",
-          "componentId": "60ba5bcc-52ce-414e-a40d-67d22ce88928",
-          "propValues": {
-            "blogList": {
-              "blogListType": "ALL",
-              "initialLimit": 20,
-              "blogIds": null,
-              "categoryId": null,
-              "usePageFilter": null
-            },
-            "showCategory": false
-          }
-        }
-      ],
-      "specifications": [],
-      "disableIndex": false
     },
     {
       "id": "2bfc1fa1-2d1b-439b-a434-a800989ffeae",
@@ -9035,6 +8932,156 @@
         }
       ],
       "slug": "shipping-policy",
+      "specifications": [],
+      "disableIndex": false
+    },
+    {
+      "id": "58846d95-d32c-4253-ac9e-53999968a470",
+      "name": "",
+      "type": "BLOG_CATEGORY",
+      "components": [
+        {
+          "id": "6a7eed12-f4c1-4019-ba6e-20c1acac1801",
+          "componentId": "7b8fb0b4-4b50-49fa-9bd7-08d4dcf78e40",
+          "propValues": {
+            "categories": {
+              "categoryListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 50,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "0c91b4cb-db77-45fd-8425-ded4fab395f1",
+                "91ee2172-008c-4866-9241-88e919877f9c"
+              ]
+            },
+            "products": {
+              "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
+              "productListType": "SEARCH",
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 20
+            },
+            "popularCategories": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 8,
+              "categoryCount": null,
+              "categoryIds": [
+                "8f14392d-23ab-446e-9556-d10fae14f176",
+                "ef34ea76-d3f7-4192-aece-7b2ad38f774d",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3",
+                "c8bb6da3-9d38-4e93-83e1-bfba1b7f370a",
+                "f03c3417-578b-4444-a376-3af06f3349d2",
+                "b8d978e9-c449-4bef-b734-a8dd8bab54c8",
+                "bb1b4823-c890-4e00-99f8-674cfe2bd694"
+              ]
+            },
+            "popularProducts": {
+              "id": "6f268bc8-ebe7-4826-b030-2bf967185eda",
+              "productListType": "ALL",
+              "initialSort": "DEFAULT",
+              "initialLimit": 8
+            },
+            "popularBrands": {
+              "brandListType": "ALL",
+              "initialSort": "A_Z",
+              "initialLimit": 8
+            },
+            "slogans": [
+              "Ürün Arayınız",
+              "Deneme Ürün İsmi",
+              "Maskara"
+            ],
+            "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
+            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
+            "logo": {
+              "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
+              "altText": null
+            }
+          }
+        },
+        {
+          "id": "ebc0d0ad-8f86-4fad-8de0-941a778b4f73",
+          "componentId": "3172a00f-46f6-4d21-b72f-8918dc95d7d9",
+          "propValues": {
+            "linkdata": [
+              {
+                "title": "social",
+                "links": [
+                  {
+                    "id": "80667c37-599e-48f2-9720-515b87d6f90f",
+                    "linkType": "EXTERNAL",
+                    "label": "twitter",
+                    "pageId": null,
+                    "pageType": null,
+                    "itemId": null,
+                    "externalLink": "https://x.com",
+                    "fileUrl": null,
+                    "pageComponentId": null,
+                    "subLinks": []
+                  },
+                  {
+                    "id": "f2c48a18-9568-4f03-952e-001a76a1badd",
+                    "linkType": "EXTERNAL",
+                    "label": "insta",
+                    "externalLink": "https://instagram.com",
+                    "pageComponentId": null,
+                    "subLinks": []
+                  }
+                ]
+              }
+            ],
+            "footerResponse": {
+              "domainError": "domain hatası",
+              "success": "başarılı",
+              "error": "hata",
+              "invalidEmail": "invalid"
+            },
+            "newsletterTitle": "newsletterTitle",
+            "newsletterDesc": "newsletterDesc",
+            "helpLinks": [
+              {
+                "id": "a8ca02ae-d826-40fa-a6e3-f712721ff84e",
+                "linkType": "PAGE",
+                "label": "Anasayfa",
+                "pageId": "4257a355-ef05-4387-9cd1-3c4a0ac53f89",
+                "pageType": "INDEX",
+                "itemId": null,
+                "externalLink": null,
+                "fileUrl": null,
+                "pageComponentId": null,
+                "subLinks": []
+              },
+              {
+                "id": "6b0eed58-1b69-4164-b21f-33f522416864",
+                "linkType": "PAGE",
+                "label": "FAQ",
+                "pageId": "ca87b367-b321-4ab6-b3f7-9a7d41fb6fc4",
+                "pageType": "CUSTOM",
+                "pageComponentId": null,
+                "subLinks": []
+              }
+            ],
+            "helpLinksTitle": "Destek",
+            "brandName": "Merit Cosmetics"
+          }
+        },
+        {
+          "id": "d27ae21e-b2ad-4403-a863-ca551ddf852f",
+          "componentId": "60ba5bcc-52ce-414e-a40d-67d22ce88928",
+          "propValues": {
+            "blogList": {
+              "blogListType": "ALL",
+              "initialLimit": 20,
+              "blogIds": null,
+              "categoryId": "432427ab-7a6e-4cc7-ae1b-d66dff526cb1",
+              "usePageFilter": null
+            },
+            "showCategory": true
+          }
+        }
+      ],
+      "slug": "d",
       "specifications": [],
       "disableIndex": false
     }
