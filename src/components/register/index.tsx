@@ -1,16 +1,18 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
+
 import useRegister from "../../utils/useRegister";
-import { Image, Link, useTranslation } from "@ikas/storefront";
-import { useDirection } from "../../utils/useDirection";
 import { RegisterProps } from "../__generated__/types";
+import { useDirection } from "../../utils/useDirection";
+import { Image, Link, useTranslation } from "@ikas/storefront";
 
 const Register = ({ details }: RegisterProps) => {
-  const register = useRegister();
-  const { isPending, onFormSubmit, status, form } = register;
-  const [rule, setRule] = useState(false);
   const { t } = useTranslation();
+  const register = useRegister();
   const { direction } = useDirection();
+  const [rule, setRule] = useState(false);
+
+  const { isPending, onFormSubmit, status, form } = register;
   return (
     <div dir={direction}>
       <div className="flex items-center mt-10 gap-4 border-b-[4px] border-[color:var(--color-five)] pb-6 justify-center">
@@ -42,7 +44,7 @@ const Register = ({ details }: RegisterProps) => {
               onChange={(e) => {
                 form.onFirstNameChange(
                   e.target.value.charAt(0).toUpperCase() +
-                    e.target.value.slice(1)
+                  e.target.value.slice(1)
                 );
               }}
               placeholder={t("firstName")}
@@ -65,7 +67,7 @@ const Register = ({ details }: RegisterProps) => {
               onChange={(e) => {
                 form.onLastNameChange(
                   e.target.value.charAt(0).toUpperCase() +
-                    e.target.value.slice(1)
+                  e.target.value.slice(1)
                 );
               }}
               placeholder={t("lastName")}
@@ -156,7 +158,7 @@ const Register = ({ details }: RegisterProps) => {
           </div>
           <button
             disabled={isPending || !rule}
-            className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
+            className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
             type="submit"
           >
             {isPending ? t("loading") : t("register")}

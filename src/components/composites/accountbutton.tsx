@@ -20,7 +20,7 @@ const AccountButton = () => {
           onClick={() => {
             setOpen(!open);
           }}
-          className="rtl:ml-1.5 ltr:mr-2 lg:flex items-center justify-center"
+          className="rtl:ml-1.5 ltr:mr-2 lg:flex items-center justify-center cursor-pointer"
         >
           <svg
             width="24"
@@ -53,7 +53,7 @@ const AccountButton = () => {
                   store.router?.push("/account");
                   setOpen(false);
                 }}
-                className="text-left text-xs font-light gap-1.5 flex items-center px-5 whitespace-nowrap py-2 w-full"
+                className="text-left text-xs font-light gap-1.5 flex items-center px-5 whitespace-nowrap py-2 w-full cursor-pointer"
               >
                 <svg
                   width="14"
@@ -77,7 +77,7 @@ const AccountButton = () => {
                   store.customerStore.logout();
                   setOpen(false);
                 }}
-                className="text-left text-xs font-light gap-1.5 flex items-center px-5 whitespace-nowrap py-2 w-full"
+                className="text-left text-xs font-light gap-1.5 flex items-center px-5 whitespace-nowrap py-2 w-full cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

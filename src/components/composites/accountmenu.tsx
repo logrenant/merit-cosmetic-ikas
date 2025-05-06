@@ -27,11 +27,10 @@ const ProductCard: React.FC = () => {
       {links.map((lnk, i) => (
         <Link key={`${lnk.label}${lnk.href}${i}`} href={lnk.href}>
           <a
-            className={`${
-              store?.router?.pathname === lnk.href
+            className={`${store?.router?.pathname === lnk.href
                 ? "text-[color:var(--black-two)]"
                 : "hover:text-[color:var(--black-two)] text-[color:var(--gray-five)]"
-            } flex py-4 first:pt-0.5 leading-none border-b border-[color:var(--black-two)] items-center justify-between w-full`}
+              } flex py-4 first:pt-0.5 leading-none border-b border-[color:var(--black-two)] items-center justify-between w-full`}
           >
             <span>{lnk.label}</span>
             {store?.router?.pathname !== lnk.href && (
@@ -54,7 +53,7 @@ const ProductCard: React.FC = () => {
         </Link>
       ))}
       <button
-        className="text-[color:var(--gray-five)] hover:text-[color:var(--black-two)] leading-none lg:flex hidden mt-32 items-center justify-start gap-1.5 w-full"
+        className="text-[color:var(--gray-five)] hover:text-[color:var(--black-two)] leading-none lg:flex hidden mt-32 items-center justify-start gap-1.5 w-full cursor-pointer"
         onClick={() => {
           store.customerStore.logout();
         }}

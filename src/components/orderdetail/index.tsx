@@ -1,13 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
 import {
   IkasOrder,
   Image,
   formatDate,
   IkasOrderPackageFullfillStatus,
-  useTranslation
+  useTranslation,
+  IkasOrderLineItem,
+  IkasOrderLineItemStatus
 } from "@ikas/storefront";
 import Pricedisplay from "../composites/pricedisplay";
+
+import { OrderPackageStatus } from "../composites/orders";
+import { useDirection } from "src/utils/useDirection";
+
+const OrderLineItemRefundStatusComponent = observer(
+  ({
+    orderLineItemStatus,
+  }: {
+    orderLineItemStatus: IkasOrderLineItem["status"];
+  }) => {
+    const status = orderRefundLineItemStatus(orderLineItemStatus);
+    if (!status) return null;
+    return (
+      <span
+        className="text-sm uppercase opacity-90 mt-2"
+        style={{ color: status.color }}
+      >
+        {status.text}
+      </span>
+    );
+  }
+);
+
+function orderRefundLineItemStatus(
+  orderLineItemStatus: IkasOrderLineItemStatus
+): { text: string; color: string } | null {
+  const { t } = useTranslation();
+  const text = (key: string) => t(`orderPackageStatus.${key}`);
+  switch (orderLineItemStatus) {
+    case IkasOrderLineItemStatus.REFUND_REQUEST_ACCEPTED:
+      return { text: text("refundApproved"), color: "green" };
+    case IkasOrderLineItemStatus.REFUNDED:
+      return { text: text("refunded"), color: "green" };
+    case IkasOrderLineItemStatus.REFUND_REJECTED:
+      return { text: text("cancelRefunded"), color: "red" };
+    case IkasOrderLineItemStatus.REFUND_REQUESTED:
+      return { text: text("refundRequested"), color: "orange" };
+    case IkasOrderLineItemStatus.DELIVERED:
+      return { text: text("delivered"), color: "green" };
+    case IkasOrderLineItemStatus.FULFILLED:
+      return { text: text("fulfilled"), color: "green" };
+    case IkasOrderLineItemStatus.CANCELLED:
+      return { text: text("cancelled"), color: "red" };
+    case IkasOrderLineItemStatus.UNFULFILLED:
+      return { text: text("unfulfilled"), color: "gray" };
+
+    default:
+      return null;
+  }
+}
 
 export default observer(function Orderdetail({
   order,
@@ -17,6 +69,8 @@ export default observer(function Orderdetail({
   refundEmailAddress: string;
 }) {
   const { t } = useTranslation();
+  const { direction } = useDirection();
+
   function getPackageTitle(status: IkasOrderPackageFullfillStatus): string {
     const text = (key: string) => t(`orderPackageStatus.${key}`);
     switch (status) {
@@ -42,153 +96,219 @@ export default observer(function Orderdetail({
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-4 space-y-6 rounded">
-      {/* Başlık */}
-      <div>
-        <h2 className="text-2xl font-bold">Order #{order.orderNumber}</h2>
-        <p className="text-[color:var(--black-one)]">
-          {order.orderedAt
-            ? formatDate(new Date(order.orderedAt))
-            : "Tarih yok"}
-        </p>
-      </div>
+    <div className="max-w-4xl mx-auto flex flex-row gap-24" dir={direction}>
+      <div className="flex flex-col min-w-[60%] ">
+        {/* Başlık */}
+        <div className="flex mb-4 items-start flex-col">
+          <div className="text-2xl">
+            {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
+          </div>
+          <div className="flex items-center gap-3 mt-1">
+            <OrderPackageStatus status={order.orderPackageStatus!} />
+            <div className="text-sm text-[color:var(--gray-three)]">
+              {order.orderedAt
+                ? formatDate(new Date(order.orderedAt))
+                : "No Date"}
+            </div>
+          </div>
+        </div>
 
-      {/* Paketler & Ürünler */}
-      {order.displayedPackages?.map((pkg) => {
-        const items = pkg.getOrderLineItems(order);
-        return (
-          <div key={pkg.id} className="space-y-4">
-            <h3 className="text-xl font-semibold">
-              {getPackageTitle(pkg.orderPackageFulfillStatus)}
-            </h3>
-            <div className="divide-y">
-              {items.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-center py-3 first:pt-0 last:pb-0"
-                >
-                  {/* Ürün Görseli */}
-                  <div className="w-24 h-24 flex-shrink-0">
-                    <Image
-                      image={item.variant.mainImage!}
-                      alt={item.variant.name}
-                      useBlur
-                      width={80}
-                      height={80}
-                      className="rounded object-cover"
-                    />
-                  </div>
-                  {/* Ürün Bilgisi */}
-                  <div className="ml-4 flex-1">
-                    <p className="font-medium">{item.variant.name}</p>
-                    {item.variant.variantValues?.length && (
-                      <p className="text-sm text-[color:var(--black-one)]">
-                        {item.variant.variantValues
-                          .map((v) => v.variantValueName)
-                          .join(", ")}
-                      </p>
-                    )}
-                    <div className="mt-1 flex justify-between text-sm">
-                      <span>Adet: {item.quantity}</span>
-                      <Pricedisplay
-                        amount={item.finalPriceWithQuantity}
-                        currencyCode={item.currencyCode!}
-                        currencySymbol={item.currencySymbol!}
-                        center={false}
+        {/* Paketler & Ürünler */}
+        {order.displayedPackages?.map((pkg) => {
+          const items = pkg.getOrderLineItems(order);
+          return (
+            <div key={pkg.id} className="space-y-4">
+              <h3 className="text-xl">
+                {getPackageTitle(pkg.orderPackageFulfillStatus)}
+              </h3>
+              <div className="divide-y">
+                {items.map((item) => (
+                  <div key={item.id} className="flex py-4">
+                    <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden min-w-[130px] max-w-[130px]">
+                      <Image
+                        image={item.variant.mainImage!}
+                        alt={item.variant.mainImage?.altText || ""}
+                        useBlur
+                        layout="fill"
+                      />
+                    </div>
+                    <div className="flex text-[color:var(--black-two)] flex-col ml-4">
+                      <div className="text-base md:text-lg flex gap-1.5">
+                        <span className="line-clamp-3">{item.variant.name} </span>
+
+                        <span className="text-sm">(x{item.quantity})</span>
+                      </div>
+                      {item.variant.variantValues &&
+                        item.variant.variantValues?.length > 0 && (
+                          <span className="text-sm text-[color:var(--color-three)]">
+                            {item.variant.variantValues
+                              ?.map((e) => e.variantValueName)
+                              .join(", ")}
+                          </span>
+                        )}
+                      {item.variant.sku &&
+                        item.variant.barcodeList &&
+                        item.variant.barcodeList?.length > 0 && (
+                          <div className="text-sm text-[color:var(--gray-three)]">
+                            {item.variant.sku} |{" "}
+                            {item.variant.barcodeList?.map((e) => e).join(", ")}
+                          </div>
+                        )}
+                      <div className="flex mt-2 flex-col">
+                        {!!item.discountPrice && (
+                          <span className="text-lg flex items-center justify-center mr-auto mb-1 whitespace-nowrap leading-none opacity-80 relative">
+                            <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
+                            <Pricedisplay
+                              center={false}
+                              amount={item.overridenPriceWithQuantity}
+                              currencyCode={item.currencyCode || "USD"}
+                              currencySymbol={item.currencySymbol || "$"}
+                            />
+                          </span>
+                        )}
+                        <span className="text-xl leading-none">
+                          <Pricedisplay
+                            center={false}
+                            amount={item.finalPriceWithQuantity}
+                            currencyCode={item.currencyCode || "USD"}
+                            currencySymbol={item.currencySymbol || "$"}
+                          />
+                        </span>
+                      </div>
+                      <OrderLineItemRefundStatusComponent
+                        orderLineItemStatus={item.status}
                       />
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        );
-      })}
-
-      {/* Adresler */}
-      <div className="flex flex-row gap-8">
-        <div>
-          <h4 className="font-semibold mb-1">Teslimat Adresi</h4>
-          {order.shippingAddress && (
-            <address className="not-italic text-sm">
-              {order.shippingAddress.firstName}{" "}
-              {order.shippingAddress.lastName}
-              <br />
-              {order.shippingAddress.addressText}
-            </address>
-          )}
-        </div>
-        <div>
-          <h4 className="font-semibold mb-1">Fatura Adresi</h4>
-          {order.billingAddress && (
-            <address className="not-italic text-sm">
-              {order.billingAddress.firstName}{" "}
-              {order.billingAddress.lastName}
-              <br />
-              {order.billingAddress.addressText}
-            </address>
-          )}
-        </div>
+          );
+        })}
       </div>
 
-      {/* Özet */}
-      <div className=" mx-auto border-t pt-4 space-y-2 text-sm">
-        <div className="flex justify-between">
-          <div className="text-[color:var(--gray-three)]">
-            {t("orderDetail.subtotal")}
+      <div className="flex flex-col w-full">
+        {/* Adresler */}
+        <div className="flex flex-col">
+          {order.displayedPackages.filter(
+            (e) => !!e.trackingInfo?.cargoCompany
+          ).length > 0 && (
+              <>
+                <div className="text-xl">{t("trackingInfo")}</div>
+                {order.displayedPackages?.map((orderPackage) => (
+                  <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+                    <div className="text-[color:var(--gray-three)]">
+                      {orderPackage.trackingInfo?.cargoCompany}
+                    </div>
+                    <div className="text-right">
+                      <a
+                        href={orderPackage.trackingInfo?.trackingLink || ""}
+                        target="_blank"
+                        className="text-[color:var(--color-three)] underline"
+                      >
+                        {orderPackage.trackingInfo?.trackingNumber}
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
+          <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
+          <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.name")}
+            </div>
+            <div className="text-right">
+              {order.shippingAddress?.firstName}{" "}
+              {order.shippingAddress?.lastName}
+            </div>
+            <div className="col-span-2 text-[color:var(--gray-three)]">
+              {order.shippingAddress?.addressText}
+            </div>
           </div>
-          <Pricedisplay
-            amount={order.totalPrice}
-            currencyCode={order.currencyCode!}
-            currencySymbol={order.currencySymbol!}
-            center={false}
-          />
+          <div className="text-xl">{t("orderDetail.billingInfo")}</div>
+          <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.name")}
+            </div>
+            <div className="text-right">
+              {order.billingAddress?.firstName}{" "}
+              {order.billingAddress?.lastName}
+            </div>
+            <div className="col-span-2 text-[color:var(--gray-three)]">
+              {order.billingAddress?.addressText}
+            </div>
+          </div>
         </div>
-        <div className="flex justify-between">
+
+        {/* Özet */}
+        <div className="text-xl">{t("orderDetail.orderSummary")}</div>
+        <div className="grid mt-2 mb-8 grid-cols-[1fr_auto] gap-y-2 gap-x-4 items-baseline">
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.shipping")}
           </div>
-          <Pricedisplay
-            amount={order.shippingTotal}
-            currencyCode={order.currencyCode!}
-            currencySymbol={order.currencySymbol!}
-            center={false}
-          />
-        </div>
-        {order.couponAdjustment?.amount != null && (
-          <div className="flex justify-between">
-            <div className="text-[color:var(--gray-three)]">
-              {t("orderDetail.discountTotal")}
-            </div>
+          <div className="text-right min-w-[120px]">
             <Pricedisplay
-              amount={-order.couponAdjustment.amount}
-              currencyCode={order.currencyCode!}
-              currencySymbol={order.currencySymbol!}
+              amount={order.shippingTotal}
               center={false}
+              left
+              currencyCode={order.currencyCode || "USD"}
+              currencySymbol={order.currencySymbol || "$"}
             />
           </div>
-        )}
-        <div className="flex justify-between">
+          {order?.couponAdjustment?.amount && (
+            <>
+              {" "}
+              <div className="text-[color:var(--gray-three)]">
+                {t("orderDetail.discountTotal")}
+              </div>
+              <div className="text-right min-w-[120px]">
+                <Pricedisplay
+                  amount={order.couponAdjustment.amount || 0}
+                  center={false}
+                  left
+                  currencyCode={order.currencyCode || "USD"}
+                  currencySymbol={order.currencySymbol || "$"}
+                />
+              </div>
+            </>
+          )}
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.tax")}
           </div>
-          <Pricedisplay
-            amount={order.totalTax}
-            currencyCode={order.currencyCode!}
-            currencySymbol={order.currencySymbol!}
-            center={false}
-          />
-        </div>
-        <div className="flex justify-between font-semibold">
+          <div className="text-right min-w-[120px]">
+            <Pricedisplay
+              amount={order.totalTax}
+              center={false}
+              left
+              currencyCode={order.currencyCode || "USD"}
+              currencySymbol={order.currencySymbol || "$"}
+            />
+          </div>
+          <div className="text-[color:var(--gray-three)]">
+            {t("orderDetail.subtotal")}
+          </div>
+          <div className="text-right min-w-[120px]">
+            <Pricedisplay
+              amount={order.totalPrice}
+              left
+              center={false}
+              currencyCode={order.currencyCode || "USD"}
+              currencySymbol={order.currencySymbol || "$"}
+            />
+          </div>
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.total")}
           </div>
-          <Pricedisplay
-            amount={order.totalFinalPrice}
-            center={false}
-            currencyCode={order.currencyCode || "USD"}
-            currencySymbol={order.currencySymbol || "$"}
-          />
+          <div className="text-right min-w-[120px]">
+            <Pricedisplay
+              left
+              amount={order.totalFinalPrice}
+              center={false}
+              currencyCode={order.currencyCode || "USD"}
+              currencySymbol={order.currencySymbol || "$"}
+            />
+          </div>
         </div>
       </div>
     </div>
