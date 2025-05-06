@@ -8,8 +8,7 @@ import SimpleSlider from "../composites/simpleslider";
 import { HomeproductsProps } from "../__generated__/types";
 import { sliderBreakpoints } from "src/styles/breakpoints";
 
-const HomeProducts = (props: HomeproductsProps) => {
-  const { products, categories } = props;
+const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
   const [selectedProducts, setSelectedProducts] = useState(
     products![0].image.id
   );
@@ -75,6 +74,18 @@ const HomeProducts = (props: HomeproductsProps) => {
 
   return (
     <div dir="ltr" className="TEST-PARENT my-10 layout relative" ref={ref} >
+
+      {banner && (
+        <div className="w-full relative h-28 mb-10">
+          <Image
+            image={banner}
+            alt={banner.altText || "Banner"}
+            layout="fill"
+            objectFit="cover"
+            className="rounded"
+          />
+        </div>
+      )}
 
       {categories && (
         <div ref={sliderRef} className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-6">

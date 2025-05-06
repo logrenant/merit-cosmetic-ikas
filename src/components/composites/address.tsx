@@ -54,6 +54,7 @@ const Address = () => {
                         onClick={() => {
                           onAddresEdit(address, index);
                         }}
+                        className="cursor-pointer"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +77,7 @@ const Address = () => {
                             onClick={() => {
                               e();
                             }}
+                            className="cursor-pointer"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +107,7 @@ const Address = () => {
 
             <button
               onClick={onAddNewAddressClick}
-              className="mt-4 flex items-center justify-center w-min whitespace-nowrap lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm"
+              className="mt-4 flex items-center justify-center w-min whitespace-nowrap lg:ml-auto px-4 py-2 bg-[color:var(--color-one)] text-white rounded-sm cursor-pointer"
             >
               {t("createNewAddress")}
             </button>
@@ -300,17 +302,17 @@ const Address = () => {
                   </label>
                   {(addressForm.isFreeTextDistrict ||
                     addressForm.isFreeTextCity) && (
-                    <input
-                      type="text"
-                      required={!!addressForm.fieldSettings?.district.required}
-                      value={addressForm.address.district?.name as string}
-                      onChange={(e) => {
-                        addressForm.onDistrictInputChange(e.target.value);
-                      }}
-                      placeholder={t("district")}
-                      className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
-                    />
-                  )}{" "}
+                      <input
+                        type="text"
+                        required={!!addressForm.fieldSettings?.district.required}
+                        value={addressForm.address.district?.name as string}
+                        onChange={(e) => {
+                          addressForm.onDistrictInputChange(e.target.value);
+                        }}
+                        placeholder={t("district")}
+                        className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
+                      />
+                    )}{" "}
                   {!addressForm.isFreeTextDistrict &&
                     !addressForm.isFreeTextCity && (
                       <select
@@ -427,7 +429,7 @@ const Address = () => {
                   {hasAddress && (
                     <button
                       disabled={pending}
-                      className="disabled:opacity-60 tracking-wide w-full border border-[color:var(--color-three)] text-[color:var(--color-three)] text-sm font-medium rounded-sm py-2.5 px-5"
+                      className="disabled:opacity-60 tracking-wide w-full border border-[color:var(--color-three)] text-[color:var(--color-three)] text-sm font-medium rounded-sm py-2.5 px-5 cursor-pointer"
                       type="button"
                       onClick={() => {
                         onAddressFormClose();
@@ -438,7 +440,7 @@ const Address = () => {
                   )}
                   <button
                     disabled={pending}
-                    className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
+                    className="disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
                     type="submit"
                   >
                     {pending ? t("loading") : t("Submit")}

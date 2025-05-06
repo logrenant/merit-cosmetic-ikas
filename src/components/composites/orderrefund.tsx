@@ -76,8 +76,8 @@ const OrderRefund = ({ order }: { order: IkasOrder }) => {
       >
         {selectedRefundItemQuantity
           ? t("orderDetail.refund.refundButton", {
-              quantity: "" + selectedRefundItemQuantity,
-            })
+            quantity: "" + selectedRefundItemQuantity,
+          })
           : t("orderDetail.refund.refundButtonNoItem")}
       </button>
     );

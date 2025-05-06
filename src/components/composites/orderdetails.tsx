@@ -256,26 +256,26 @@ const OrderDetail = () => {
               {order.displayedPackages.filter(
                 (e) => !!e.trackingInfo?.cargoCompany
               ).length > 0 && (
-                <>
-                  <div className="text-xl">{t("trackingInfo")}</div>
-                  {order.displayedPackages?.map((orderPackage) => (
-                    <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-                      <div className="text-[color:var(--gray-three)]">
-                        {orderPackage.trackingInfo?.cargoCompany}
+                  <>
+                    <div className="text-xl">{t("trackingInfo")}</div>
+                    {order.displayedPackages?.map((orderPackage) => (
+                      <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+                        <div className="text-[color:var(--gray-three)]">
+                          {orderPackage.trackingInfo?.cargoCompany}
+                        </div>
+                        <div className="text-right">
+                          <a
+                            href={orderPackage.trackingInfo?.trackingLink || ""}
+                            target="_blank"
+                            className="text-[color:var(--color-three)] underline"
+                          >
+                            {orderPackage.trackingInfo?.trackingNumber}
+                          </a>
+                        </div>
                       </div>
-                      <div className="text-right">
-                        <a
-                          href={orderPackage.trackingInfo?.trackingLink || ""}
-                          target="_blank"
-                          className="text-[color:var(--color-three)] underline"
-                        >
-                          {orderPackage.trackingInfo?.trackingNumber}
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </>
-              )}
+                    ))}
+                  </>
+                )}
               <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
               <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
                 <div className="text-[color:var(--gray-three)]">
@@ -329,11 +329,11 @@ const OrderDetail = () => {
 
                           {oT.paymentMethod ===
                             IkasPaymentMethodType.CREDIT_CARD && (
-                            <div>
-                              **** **** ****{" "}
-                              {oT.paymentMethodDetail?.lastFourDigits}
-                            </div>
-                          )}
+                              <div>
+                                **** **** ****{" "}
+                                {oT.paymentMethodDetail?.lastFourDigits}
+                              </div>
+                            )}
                         </div>
                       );
                     })}

@@ -132,6 +132,7 @@ export type BannerProps = {
 export type HomeproductsProps = {
 	products?: AnasayfaKategori[];
 	categories: boolean;
+	banner?: IkasImage;
 };
 
 export type StorylinksProps = {
@@ -205,6 +206,7 @@ export type PageBlogProps = {
 
 export type PageBlogsProps = {
 	title?: string;
+	banner?: IkasImage;
 	blogList: IkasBlogList;
 	showAuthor?: boolean;
 	showDescription?: boolean;

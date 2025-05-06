@@ -38,7 +38,7 @@ const Account = () => {
         {isOrders && <Orders />}
         <div className="lg:hidden flex w-full justify-end mt-6">
           <button
-            className="text-[color:var(--gray-five)] hover:text-[color:var(--black-two)] leading-none flex items-center justify-start gap-1.5"
+            className="text-[color:var(--gray-five)] hover:text-[color:var(--black-two)] leading-none flex items-center justify-start gap-1.5 cursor-pointer"
             onClick={() => {
               store.customerStore.logout();
             }}
