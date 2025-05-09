@@ -16,8 +16,8 @@ const ContactPage = (props: ContactpageProps) => {
   const { mail, phone, address } = props.contactProps;
 
   return (
-    <div className="layout grid grid-cols-4 gap-8 my-10" dir={direction}>
-      <div className="col-span-1 flex flex-col gap-4">
+    <div className="layout flex flex-col xl:flex-row gap-8 my-10" dir={direction}>
+      <div className="flex flex-col gap-4">
         <h1 className="leading-none text-[color:var(--color-two)] text-xl lg:text-2xl">
           {t("contactUs")}
         </h1>
@@ -49,7 +49,7 @@ const ContactPage = (props: ContactpageProps) => {
         </div>
       </div>
 
-      <div className="col-span-3">
+      <div className="w-full">
         <Form
           contactProps={props.contactProps}
           formMessages={props.formMessages}

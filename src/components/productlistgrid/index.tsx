@@ -152,7 +152,7 @@ const ProductListGrid: React.FC<
                   IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
                     <NumberList
                       filter={filter}
-                      items={filter.numberRangeListOptions}
+                      items={filter.numberRangeListOptions || []}
                     />
                   )}
               </div>
