@@ -251,3 +251,7 @@ export type ShippingPolicyProps = {
 	pageContent: string;
 };
 
+export type QuickImageLinksProps = {
+	links?: ImageLinkList;
+};
+

@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite";
 import Router from "next/router";
 
 import {
+  IkasBrand,
   IkasBrandList,
   IkasCategoryList,
   IkasProduct,
@@ -31,7 +32,9 @@ const SearchBar = ({
   popularCategories: IkasCategoryList;
 
 }) => {
+
   const store = useStore();
+  const { t } = useTranslation();
   const uiStore = UIStore.getInstance();
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -44,14 +47,85 @@ const SearchBar = ({
   const [hoveredBrand, setHoveredBrand] = useState<string>();
   const [pageIsSearch, setPageIsSearch] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log("placeholderOpen", placeholderOpen);
+  const slugify = (str: string) => {
+    return str
+      .toLowerCase()
+      .replace(/&/g, '-')
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
 
-  }, [placeholderOpen]);
-  useEffect(() => {
-    console.log("searchedProducts", searchedProducts?.length);
+  const handleClearFilter = () => {
+    setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
+    setSearchedProducts(products.data);
+    setSearchedProductsNotFiltered(products.data);
+  };
 
-  }, [searchedProducts]);
+  const [linkToCategory, setLinkToCategory] = useState('/');
+
+  useEffect(() => {
+    if (hoveredCategory) {
+      const hoveredLink = hoveredCategory.toLowerCase().replaceAll(" ", "-");
+      setLinkToCategory(hoveredLink)
+    }
+  }, [hoveredCategory]);
+
+  const onHoverBrand = (br: string) => {
+    const hoveredLink = br.toLowerCase().replaceAll(" ", "-");
+    setLinkToCategory(hoveredLink)
+    setHoveredCategory(hoveredLink);
+
+    products.searchKeyword = br;
+    setPlaceholderOpen(false);
+
+  };
+
+  const findBrandForCategory = (categoryName: string): IkasBrand | null => {
+    const categoryProducts = products.data.filter(product =>
+      product.categories?.some(c => c.name === categoryName)
+    );
+
+    const brands = categoryProducts
+      .map(p => p.brand)
+      .filter((b): b is IkasBrand => !!b)
+      .filter((v, i, a) => a.findIndex(b => b.id === v.id) === i);
+
+    return brands.length === 1 ? brands[0] : null;
+  };
+
+  const getSearchResultsLink = () => {
+    if (hoveredCategory) {
+      const category = popularCategories.data.find(
+        c => c.name === hoveredCategory
+      );
+      if (category) return category.href;
+
+      const brandFromCategory = findBrandForCategory(hoveredCategory);
+      if (brandFromCategory) return brandFromCategory.href;
+
+      return `/${slugify(hoveredCategory)}`;
+    }
+
+    if (hoveredBrand) {
+      const brand = popularBrands.data.find(
+        b => b.name === hoveredBrand
+      );
+      return brand ? brand.href : `/${slugify(hoveredBrand)}`;
+    }
+
+    const directBrandMatch = popularBrands.data.find(
+      b => b.name.toLowerCase() === uiStore.searchKeyword.trim().toLowerCase()
+    );
+    if (directBrandMatch) return directBrandMatch.href;
+
+    if (searchedProducts?.[0]?.brand) {
+      return searchedProducts[0].brand.href;
+    }
+
+    return `/${slugify(uiStore.searchKeyword)}`;
+  };
 
   useEffect(() => {
     Router.events.on("routeChangeStart", () => {
@@ -102,77 +176,19 @@ const SearchBar = ({
     setSearchedProductsNotFiltered(undefined);
   };
 
-  const onChangeHover = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setHoveredCategory(undefined);
-    uiStore.searchKeyword = event.target.value;
-    products.searchKeyword = uiStore.searchKeyword;
-    setSearchedProducts(undefined);
-    setSearchedProductsNotFiltered(undefined);
-  };
   const onClickEnterOrSearch = () => {
     store?.router?.push(`/search?s=${uiStore.searchKeyword}`);
   };
-  const [linkToCategory, setLinkToCategory] = useState('/');
 
-  useEffect(() => {
-    if (hoveredCategory) {
-      const hoveredLink = hoveredCategory.toLowerCase().replaceAll(" ", "-");
-      setLinkToCategory(hoveredLink)
-    }
-  }, [hoveredCategory]);
-
-  const { t } = useTranslation();
   const productCategories: {
     name: string;
     href: string;
   }[] = [];
-  const { direction } = useDirection();
   searchedProductsNotFiltered?.map((e) =>
     e.categories.map((k) => {
       productCategories.push({ name: k.name, href: k.href });
     })
   );
-
-  const onHoverChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setHoveredCategory(undefined);
-    uiStore.searchKeyword = event.target.value;
-    products.searchKeyword = uiStore.searchKeyword;
-    setSearchedProducts(undefined);
-    setSearchedProductsNotFiltered(undefined);
-  };
-
-  const handleClearFilter = () => {
-    setHoveredCategory(undefined);
-    setHoveredBrand(undefined);
-    setSearchedProducts(products.data);
-    setSearchedProductsNotFiltered(products.data);
-  };
-
-  // console.log(!!onHoverChange, !!onChangeHover);
-
-  const onHoverBrand = (br: string) => {
-    const hoveredLink = br.toLowerCase().replaceAll(" ", "-");
-    setLinkToCategory(hoveredLink)
-    // setHoveredCategory(undefined);
-    setHoveredCategory(hoveredLink);
-
-    // uiStore.searchKeyword = br;
-    products.searchKeyword = br;
-    // setSearchedProducts(undefined);
-    // setSearchedProductsNotFiltered(undefined);
-    setPlaceholderOpen(false);
-
-  };
-
-  const slugify = (str: string) => {
-    return str
-      .toLowerCase()
-      .replace(/&/g, '-')
-      .replace(/[^\w\s-]/g, '')
-      .replace(/[\s_-]+/g, '-')
-      .replace(/^-+|-+$/g, '');
-  };
-
 
   return (
     <div className="block lg:order-none order-last lg:col-span-1 col-span-2">
@@ -319,12 +335,38 @@ const SearchBar = ({
 
                       {searchedProducts.length > 0 && (
                         <div className="flex col-span-2">
-                          <button
-                            className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
-                            onClick={handleClearFilter}
-                          >
-                            {t("Clear Filter")}
-                          </button>
+                          {hoveredCategory && (
+                            <button
+                              className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
+                              onClick={handleClearFilter}
+                            >
+                              {t("Clear Filter")}
+                            </button>
+                          )}
+                          <Link href={getSearchResultsLink()}>
+                            <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)] cursor-pointer">
+                              <span>
+                                <span className="font-bold">
+                                  {hoveredBrand || hoveredCategory || uiStore.searchKeyword}
+                                </span>
+                                &nbsp;{t("seeAllResults")}
+                              </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2}
+                                stroke="currentColor"
+                                className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                />
+                              </svg>
+                            </a>
+                          </Link>
                         </div>
                       )}
                       <div className="col-span-2 rounded-sm overflow-hidden">
@@ -593,6 +635,7 @@ const SearchBar = ({
                             >
                               {t("noProductClearFilter")}
                             </button>
+
                           </div>
                         )}
                         {products.data.length > 8 && (

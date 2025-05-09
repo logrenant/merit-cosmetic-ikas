@@ -16,31 +16,31 @@ import { CategoryWithChildrenType } from "./mobilemenu";
 
 export const NumberList = observer(
   ({
-    items,
     filter,
+    items,   // now always IkasProductFilterNumberRangeListOption[]
   }: {
     filter: IkasProductFilter;
-    items: IkasProductFilter["numberRangeListOptions"];
+    items: NonNullable<IkasProductFilter["numberRangeListOptions"]>;
   }) => {
     const [open, setOpen] = useState(true);
-    return items && items.length > 0 ? (
+
+    return (
       <div className="mb-3">
         <div className="flex w-full flex-col items-center">
           <div
-            onClick={() => {
-              setOpen(!open);
-            }}
-            className="w-full cursor-pointer bg-[color:var(--color-two)] py-1.5 px-2 justify-between flex items-center gap-2"
+            onClick={() => setOpen(!open)}
+            className="w-full cursor-pointer bg-[color:var(--color-two)] py-1.5 px-2 flex justify-between items-center gap-2"
           >
-            <div className="text-base font-light text-white">{filter.name}</div>
-
+            <div className="text-base font-light text-white">
+              {filter.name}
+            </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={`w-[18px] transition-transform h-[18px] text-white ${open ? "transform rotate-90" : "transform -rotate-90"
+              className={`w-[18px] h-[18px] text-white transition-transform ${open ? "rotate-90" : "-rotate-90"
                 }`}
             >
               <path
@@ -50,35 +50,36 @@ export const NumberList = observer(
               />
             </svg>
           </div>
+
           {open && (
-            <div className="flex items-start text-left w-full flex-col">
-              {items?.map((item) => (
+            <div className="flex w-full flex-col items-start text-left">
+              {items.map((item) => (
                 <button
+                  key={item.key}
                   onClick={() => {
                     filter.onNumberRangeClick(item);
-                    const element = document.getElementById("listgrid");
+                    const el = document.getElementById("listgrid");
                     window.scrollTo({
-                      top: (element?.offsetTop || 100) - 100,
+                      top: (el?.offsetTop ?? 100) - 100,
                       behavior: "smooth",
                     });
                   }}
-                  key={item.key}
-                  className="text-base gap-2 border border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer"
+                  className="flex w-full items-center gap-2 px-2 py-1 border border-t-0 border-[color:var(--gray-two)] text-[color:var(--gray-five)] cursor-pointer"
                 >
                   <input
-                    className="hidden peer"
                     type="checkbox"
                     readOnly
                     checked={item.isSelected}
+                    className="hidden peer"
                   />
-                  <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded-sm peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-xs after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
+                  <div className="relative w-[17px] h-[17px] border rounded-sm border-[color:var(--gray-two)] peer-checked:after:block after:absolute after:top-[3.5px] after:left-[3.5px] after:w-2 after:h-2 after:rounded-xs after:bg-[color:var(--color-three)] after:hidden" />
                   <span
                     className={`text-base ${item.isSelected
                       ? "text-[color:var(--gray-three)] font-normal"
                       : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
                       }`}
                   >
-                    {item.from} - {item.to}
+                    {item.from} – {item.to}
                   </span>
                 </button>
               ))}
@@ -86,7 +87,7 @@ export const NumberList = observer(
           )}
         </div>
       </div>
-    ) : null;
+    );
   }
 );
 
@@ -99,16 +100,16 @@ export const StockList = observer(
     items: IkasProductFilter["displayedValues"];
   }) => {
     const { t } = useTranslation();
+    const [open, setOpen] = useState<boolean>(true);
 
     const stockItems = items.filter(
       (item) =>
         item.name === IkasProductStockFilterValue.IN_STOCK ||
         item.name === IkasProductStockFilterValue.OUT_OF_STOCK
     );
-
     if (stockItems.length === 0) return null;
 
-    const [open, setOpen] = useState<boolean>(true);
+
     return (
       <div className="mb-3">
         <div className="flex w-full flex-col items-center">
@@ -537,7 +538,7 @@ export const FilterMobileBrands: React.FC<{
                 if (filter.displayType === IkasProductFilterDisplayType.NUMBER_RANGE_LIST) {
                   return (
                     <div key={filter.id}>
-                      <NumberList filter={filter} items={filter.numberRangeListOptions} />
+                      <NumberList filter={filter} items={filter.numberRangeListOptions || []} />
                     </div>
                   );
                 }
@@ -669,7 +670,7 @@ const FilterMobile: React.FC<{
                     IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
                       <NumberList
                         filter={filter}
-                        items={filter.numberRangeListOptions}
+                        items={filter.numberRangeListOptions || []}
                       />
                     )}
                 </div>

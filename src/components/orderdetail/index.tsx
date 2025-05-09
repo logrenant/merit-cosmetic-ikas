@@ -96,7 +96,7 @@ export default observer(function Orderdetail({
   }
 
   return (
-    <div className="max-w-4xl mx-auto flex flex-row gap-24" dir={direction}>
+    <div className="max-w-4xl mx-auto flex xl:flex-row flex-col gap-24" dir={direction}>
       <div className="flex flex-col min-w-[60%] ">
         {/* Başlık */}
         <div className="flex mb-4 items-start flex-col">
