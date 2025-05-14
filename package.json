@@ -11,6 +11,7 @@
     "prettier:all": "npx prettier@^2.1 './**/src/**/*.(ts|tsx|css|scss)' --write"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^1.7.7",
     "@ikas/storefront": "^4.0.0",
     "@ikas/storefront-peer-deps": "^4.0.0",

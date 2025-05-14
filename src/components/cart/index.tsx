@@ -8,7 +8,6 @@ import {
 } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
 import { useState, useEffect } from "react";
-import { maxQuantityPerCartHandler } from "../../utils/useAddToCart";
 import { useDirection } from "../../utils/useDirection";
 import { CartProps } from "../__generated__/types";
 import Simpleslider from "../composites/simpleslider";
@@ -16,165 +15,28 @@ import Productcard from "../composites/productcard";
 import { toast } from "react-hot-toast";
 import { listCountry, listShippingSettings } from "../../utils/shippingDatas";
 import Pricedisplay from "../composites/pricedisplay";
+import Item from "./item";
 
-const BagItem: React.FC<{
-  product: IkasOrderLineItem;
-  pending: boolean;
-  store: IkasBaseStore;
-  handleQuantityChange: (
-    value: number,
-    item: IkasOrderLineItem
-  ) => Promise<boolean>;
-}> = ({ product, store, pending, handleQuantityChange }) => {
-  const [quantity, setQuantity] = useState(product.quantity);
-  useEffect(() => {
-    setQuantity(product.quantity);
-  }, [product.quantity]);
+const Items = observer(() => {
+  const store = useStore();
   return (
-    <div className="grid relative group gap-3 py-5 grid-cols-[20px_100px_1fr] md:grid-cols-[20px_100px_1fr_304px] w-full">
-      <button
-        onClick={() => {
-          store.cartStore.removeItem(product);
-        }}
-        className="items-center flex justify-center cursor-pointer"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-      <Link href={product.variant.href || ""}>
-        <a className="p-2 rounded-sm overflow-hidden aspect-293/372 max-w-[100px] w-full border border-[color:var(--gray-one)]">
-          <div className="relative h-full w-full">
-            <Image
-              alt={product.variant.mainImage?.altText || ""}
-              useBlur
-              image={product.variant.mainImage!}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </a>
-      </Link>
-      <div>
-        <Link href={product.variant.href || ""}>
-          <a className="flex flex-col lg:text-xl text-[color:var(--black-two)]">
-            {product.variant.name}
-          </a>
-        </Link>
-        <span className="text-sm text-[color:var(--color-three)]">
-          {product.variant.variantValues
-            ?.map((e) => e.variantValueName)
-            .join(", ")}
-        </span>
-      </div>
-      <div className="grid-cols-2 md:grid-cols-[82px_210px] md:col-span-1 col-span-3 md:items-start items-center grid gap-3">
-        <div className="flex md:justify-end items-start">
-          <div className="flex items-center">
-            <button
-              onClick={async () => {
-                if (quantity - 1 > 0) {
-                  const canSet = await handleQuantityChange(
-                    quantity - 1,
-                    product
-                  );
-                  if (canSet) {
-                    setQuantity(quantity - 1);
-                  }
-                }
-              }}
-              disabled={quantity - 1 === 0 || pending}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)] cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M20 12H4"
-                />
-              </svg>
-            </button>
-            <div className="flex items-center justify-center w-6 h-6">
-              <span>{quantity}</span>
-            </div>
-            <button
-              disabled={pending}
-              onClick={async () => {
-                const canSet = await handleQuantityChange(
-                  quantity + 1,
-                  product
-                );
-                if (canSet) {
-                  setQuantity(quantity + 1);
-                }
-              }}
-              className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)] cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div className="flex items-end flex-col text-[color:var(--black-two)]">
-          {!!product.discountPrice && (
-            <span className="text-lg w-min whitespace-nowrap leading-none opacity-80 relative">
-              <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
-              <Pricedisplay
-                amount={product.overridenPriceWithQuantity}
-                currencyCode={product.currencyCode || "USD"}
-                currencySymbol={product.currencySymbol || "$"}
-                center={false}
-                left={false}
-              />
-            </span>
-          )}
-          <span className="text-xl leading-none text-[color:var(--color-four)] font-medium">
-            <Pricedisplay
-              amount={product.finalPriceWithQuantity}
-              currencyCode={product.currencyCode || "USD"}
-              currencySymbol={product.currencySymbol || "$"}
-              center={false}
-              left={false}
-            />
-          </span>
-        </div>
-      </div>
+    <div className="grid h-min divide-y divide-[color:var(--gray-one)] grid-cols-1">
+      {store.cartStore.cart?.items.map((item) => (
+        <Item key={item.id} item={item} />
+      ))}
     </div>
   );
-};
+});
 
 
 const Cart = observer(({ relatedProducts }: CartProps) => {
   const store = useStore();
+  const { t } = useTranslation();
+  const { direction } = useDirection();
+
+  const [code, setCode] = useState<string>(
+    store.cartStore.cart?.couponCode || ""
+  );
   const shippingRulesCountryIds: string[] = [];
   listShippingSettings.map((e) =>
     e.shippingZones.map((e) => shippingRulesCountryIds.push(e.countryId))
@@ -190,6 +52,9 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
     useState<typeof listShippingSettings[0]["zoneRate"]>();
   const [currentShippingCost, setCurrentShippingCost] = useState<number>(0);
   const [openSelectCountry, setOpenSelectCountry] = useState(false);
+  const [codePending, setCodePending] = useState<boolean>(false);
+  const [pending, setPending] = useState(false);
+
   useEffect(() => {
     if (!currentCountry && !localStorage.getItem("iso2")) {
       setCurrentCountry(filteredlistCountry[0].iso2);
@@ -229,37 +94,12 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
     }
   }, [freeShippingRule, store.cartStore.cart]);
 
-  const { t } = useTranslation();
-
-  const [code, setCode] = useState<string>(
-    store.cartStore.cart?.couponCode || ""
-  );
   useEffect(() => {
     if (store.cartStore.cart?.couponCode) {
       setCode(store.cartStore.cart?.couponCode);
     }
   }, [store.cartStore.cart]);
-  const [codePending, setCodePending] = useState<boolean>(false);
-  const [pending, setPending] = useState(false);
-  const handleQuantityChange = async (
-    value: number,
-    item: IkasOrderLineItem
-  ) => {
-    setPending(true);
-    const result = await store.cartStore.changeItemQuantity(item, value);
-    setPending(false);
-    if (result.response?.graphQLErrors) {
-      maxQuantityPerCartHandler({
-        productName: item.variant.name,
-        //@ts-ignore
-        errors: result.response?.graphQLErrors,
-        message: t("maxQuantityPerCartError"),
-      });
-      return false;
-    }
-    return true;
-  };
-  const { direction } = useDirection();
+
   return (
     <>
       <div dir={direction} className="w-full my-10 layout flex flex-col h-full">
@@ -272,20 +112,10 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
               </span>
             </h1>
           )}
-        <div className="grid lg:grid-cols-[calc(100%-432px)_400px] gap-8">
+        <div className="grid xl:grid-cols-[calc(100%-432px)_400px] gap-8">
           {store?.cartStore?.cart?.itemCount &&
             store?.cartStore?.cart?.itemCount > 0 ? (
-            <div className="grid h-min divide-y divide-[color:var(--gray-one)] grid-cols-1">
-              {store.cartStore.cart?.items.map((product) => (
-                <BagItem
-                  store={store}
-                  product={product}
-                  key={product.id}
-                  pending={pending}
-                  handleQuantityChange={handleQuantityChange}
-                />
-              ))}
-            </div>
+            <Items />
           ) : (
             <div className="text-center lg:col-span-2 px-5 flex flex-col justify-center h-full items-center py-20">
               <svg

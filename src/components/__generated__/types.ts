@@ -192,6 +192,7 @@ export type ContactpageProps = {
 	contactProps: ContactProps;
 	formMessages: FormMessages;
 	formRule: ContactFormRule;
+	orderNumberInput?: string;
 };
 
 export type OrderTrackingProps = {
@@ -253,5 +254,13 @@ export type ShippingPolicyProps = {
 
 export type QuickImageLinksProps = {
 	links?: ImageLinkList;
+};
+
+export type OrderContactProps = {
+	orderNumberInput?: string;
+	contactProps: ContactProps;
+	formMessages: FormMessages;
+	formRule: ContactFormRule;
+	submitError?: string;
 };
 

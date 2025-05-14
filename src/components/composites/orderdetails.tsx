@@ -12,6 +12,8 @@ import {
 } from "@ikas/storefront";
 import Orderrefund from "./orderrefund";
 import Pricedisplay from "./pricedisplay";
+import { useRouter } from "next/router";
+import { orderStore } from "src/utils/orderStore";
 
 const OrderLineItemRefundStatusComponent = observer(
   ({
@@ -39,7 +41,7 @@ function orderRefundLineItemStatus(
   const text = (key: string) => t(`orderPackageStatus.${key}`);
   switch (orderLineItemStatus) {
     case IkasOrderLineItemStatus.REFUND_REQUEST_ACCEPTED:
-      return { text: text("refundApproved"), color: "green" };
+      return { text: text("refundRequestAccepted"), color: "green" };
     case IkasOrderLineItemStatus.REFUNDED:
       return { text: text("refunded"), color: "green" };
     case IkasOrderLineItemStatus.REFUND_REJECTED:
@@ -204,6 +206,15 @@ const OrderDetail = () => {
     toggleRefundProcess,
   } = useOrderDetail();
   const { t } = useTranslation();
+  const router = useRouter();
+
+
+  const handleGoToContact = () => {
+    if (order?.orderNumber) {
+      orderStore.setOrderNumber(order.orderNumber);
+      router.push("/pages/order-contact");
+    }
+  };
 
   const onRefundProcessButtonClick = () => {
     toggleRefundProcess(!isRefundProcess);
@@ -409,6 +420,15 @@ const OrderDetail = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
+            <button
+              type="button"
+              onClick={handleGoToContact}
+              className="w-full bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-white font-medium py-2.5 px-6 rounded-sm transition-colors duration-200"
+            >
+              {t("contactUs")}
+            </button>
           </div>
           <div className="flex justify-end">
             {!!order.refundableItems.length && (

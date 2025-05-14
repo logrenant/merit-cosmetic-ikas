@@ -96,7 +96,7 @@ const ProductDetail = ({
   const [tab, setTab] = useState<"D" | "R" | "P">("D");
   const [show, setShow] = useState(false);
   const [reviews, setReviews] = useState<IkasCustomerReviewList>();
-  const [combineProducts, setCombineProducts] = useState<IkasProduct[]>();
+  const [combineProducts, setCombineProducts] = useState<IkasProduct[]>([]);
   const { addToCart, loading } = useAddToCart();
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -104,6 +104,13 @@ const ProductDetail = ({
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [canScrollUp, setCanScrollUp] = useState(false);
   const [canScrollDown, setCanScrollDown] = useState(false);
+
+  useEffect(() => {
+    const kombinUrun = product?.attributes?.find(
+      (e) => e.productAttribute?.name === "Kombin Ürünler"
+    );
+    setCombineProducts(kombinUrun?.products || []);
+  }, [product]);
 
   const checkScroll = useCallback(() => {
     const element = scrollContainerRef.current;
@@ -115,7 +122,6 @@ const ProductDetail = ({
       element.scrollLeft + element.clientWidth < element.scrollWidth
     );
 
-    // Vertical scroll kontrolü
     setCanScrollUp(element.scrollTop > 0);
     setCanScrollDown(
       element.scrollTop + element.clientHeight < element.scrollHeight
@@ -140,7 +146,7 @@ const ProductDetail = ({
     const element = scrollContainerRef.current;
     if (!element) return;
 
-    const scrollAmount = element.clientWidth * 0.8; // Görünür alanın %80'i kadar kaydır
+    const scrollAmount = element.clientWidth * 0.8;
     element.scrollBy({
       left: direction === 'right' ? scrollAmount : -scrollAmount,
       behavior: 'smooth'
@@ -158,7 +164,6 @@ const ProductDetail = ({
     });
   };
 
-  // Handler'lar
   const scrollLeft = () => scrollHorizontal('left');
   const scrollRight = () => scrollHorizontal('right');
   const scrollUp = () => scrollVertical('up');
@@ -651,7 +656,7 @@ const ProductDetail = ({
       <div className="lg:col-span-2">
 
         {/* Combine Products */}
-        {combineProducts && (
+        {combineProducts?.length > 0 && (
           <div>
             <h3 className="text-xl text-[color:var(--color-one)] font-medium">
               {t("productDetail.package")}
