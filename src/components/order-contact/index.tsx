@@ -1,15 +1,15 @@
 import { observer } from "mobx-react-lite";
 import { useTranslation } from "@ikas/storefront";
 
-import Form from "./Form";
+import OrderForm from "./Form";
 import Phone from "../svg/Phone";
 import Envelope from "../svg/Envelope";
 import Location from "../svg/Location";
 
 import { useDirection } from "../../utils/useDirection";
-import { ContactpageProps } from "../__generated__/types";
+import { OrderContactProps } from "../__generated__/types";
 
-const ContactPage = (props: ContactpageProps) => {
+const ContactPage = (props: OrderContactProps) => {
   const { direction } = useDirection();
   const { t } = useTranslation();
 
@@ -50,7 +50,7 @@ const ContactPage = (props: ContactpageProps) => {
       </div>
 
       <div className="w-full">
-        <Form
+        <OrderForm
           contactProps={props.contactProps}
           formMessages={props.formMessages}
           formRule={props.formRule}

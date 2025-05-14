@@ -1,9 +1,5 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { observer } from "mobx-react-lite";
-import Router from "next/router";
 
 import {
-  IkasBrand,
   IkasBrandList,
   IkasCategoryList,
   IkasProduct,
@@ -13,10 +9,14 @@ import {
   useStore,
   useTranslation,
 } from "@ikas/storefront";
+import Router from "next/router";
+import { observer } from "mobx-react-lite";
+import { useState, useRef, useEffect, useMemo } from "react";
+
+import UIStore from "../../store/ui-store";
 import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
-import UIStore from "../../store/ui-store";
-import { useDirection } from "../../utils/useDirection";
+
 const SearchBar = ({
   products,
   slogans,
@@ -46,6 +46,8 @@ const SearchBar = ({
   const [hoveredCategory, setHoveredCategory] = useState<string>();
   const [hoveredBrand, setHoveredBrand] = useState<string>();
   const [pageIsSearch, setPageIsSearch] = useState<boolean>(false);
+  const [productCategories, setProductCategories] = useState<{ name: string; href: string }[]>([]);
+  const [linkToCategory, setLinkToCategory] = useState('/');
 
   const slugify = (str: string) => {
     return str
@@ -63,7 +65,43 @@ const SearchBar = ({
     setSearchedProductsNotFiltered(products.data);
   };
 
-  const [linkToCategory, setLinkToCategory] = useState('/');
+
+  const onClickEnterOrSearch = () => {
+    store?.router?.push(`/search?s=${uiStore.searchKeyword}`);
+  };
+
+  useEffect(() => {
+    const allCats: { name: string; href: string }[] = [];
+    products.data.forEach(p => {
+      p.categories?.forEach(c => {
+        if (!allCats.find(x => x.name === c.name)) {
+          allCats.push({ name: c.name, href: c.href });
+        }
+      });
+    });
+    setProductCategories(allCats);
+
+    setSearchedProductsNotFiltered(products.data);
+    setSearchedProducts(products.data.slice(0, 8));
+  }, [products.data]);
+
+
+  const reset = () => {
+    uiStore.searchKeyword = "";
+    products.searchKeyword = "";
+    setPlaceholderOpen(true);
+    setSearchedProductsNotFiltered(products.data);
+    setSearchedProducts(products.data.slice(0, 8));
+    setHoveredCategory(undefined);
+  };
+
+  useEffect(() => {
+    Router.events.on("routeChangeStart", reset);
+    return () => Router.events.off("routeChangeStart", reset);
+  }, []);
+
+  useOnClickOutside(searchRef, reset);
+
 
   useEffect(() => {
     if (hoveredCategory) {
@@ -82,37 +120,28 @@ const SearchBar = ({
 
   };
 
-  const findBrandForCategory = (categoryName: string): IkasBrand | null => {
-    const categoryProducts = products.data.filter(product =>
-      product.categories?.some(c => c.name === categoryName)
-    );
-
-    const brands = categoryProducts
-      .map(p => p.brand)
-      .filter((b): b is IkasBrand => !!b)
-      .filter((v, i, a) => a.findIndex(b => b.id === v.id) === i);
-
-    return brands.length === 1 ? brands[0] : null;
-  };
-
   const getSearchResultsLink = () => {
+    if (hoveredBrand && hoveredCategory) {
+      const brand = popularBrands.data.find(b => b.name === hoveredBrand);
+      const brandHref = brand ? brand.href : `/${slugify(hoveredBrand)}`;
+
+      const categorySlug = slugify(hoveredCategory);
+
+      return `${brandHref}?Type=${encodeURIComponent(categorySlug)}`;
+    }
+
     if (hoveredCategory) {
-      const category = popularCategories.data.find(
-        c => c.name === hoveredCategory
-      );
-      if (category) return category.href;
-
-      const brandFromCategory = findBrandForCategory(hoveredCategory);
-      if (brandFromCategory) return brandFromCategory.href;
-
-      return `/${slugify(hoveredCategory)}`;
+      const category = popularCategories.data.find(c => c.name === hoveredCategory);
+      return category
+        ? category.href
+        : `/${slugify(hoveredCategory)}`;
     }
 
     if (hoveredBrand) {
-      const brand = popularBrands.data.find(
-        b => b.name === hoveredBrand
-      );
-      return brand ? brand.href : `/${slugify(hoveredBrand)}`;
+      const brand = popularBrands.data.find(b => b.name === hoveredBrand);
+      return brand
+        ? brand.href
+        : `/${slugify(hoveredBrand)}`;
     }
 
     const directBrandMatch = popularBrands.data.find(
@@ -176,19 +205,7 @@ const SearchBar = ({
     setSearchedProductsNotFiltered(undefined);
   };
 
-  const onClickEnterOrSearch = () => {
-    store?.router?.push(`/search?s=${uiStore.searchKeyword}`);
-  };
 
-  const productCategories: {
-    name: string;
-    href: string;
-  }[] = [];
-  searchedProductsNotFiltered?.map((e) =>
-    e.categories.map((k) => {
-      productCategories.push({ name: k.name, href: k.href });
-    })
-  );
 
   return (
     <div className="block lg:order-none order-last lg:col-span-1 col-span-2">
@@ -261,37 +278,38 @@ const SearchBar = ({
               searchedProducts &&
               searchedProducts.length > 0 && (
                 <div className="grid grid-cols-1 lg:grid-cols-[180px_auto]">
-                  <div className="hidden lg:flex flex-col">
+                  <div className="hidden lg:flex flex-col bg-[color:var(--gray-bg)]">
                     <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                       {t("relatedCategories")}
                     </h3>
-                    <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] p-4 grid-cols-1 gap-1.5">
-                      {productCategories
-                        .filter(
-                          (v, i, a) =>
-                            a.findIndex((v2) =>
-                              ["name"].every(
-                                (k) => (v2 as any)[k] === (v as any)[k]
-                              )
-                            ) === i
-                        )
-                        .map((el) => (
-                          <Link key={el.name} href={el.href}>
-                            <a
-                              onMouseEnter={() => {
-                                setHoveredCategory(el.name);
-                                setSearchedProducts(() =>
-                                  searchedProductsNotFiltered?.filter((p) =>
-                                    p.categories.find((c) => c.name === el.name)
-                                  )
-                                );
-                              }}
-                              className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal"
-                            >
-                              {el.name}
-                            </a>
-                          </Link>
-                        ))}
+                    <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] py-4 grid-cols-1 gap-1.5">
+                      {productCategories.map(el => (
+                        <Link key={el.name} href={el.href}>
+                          <a
+                            onMouseEnter={() => {
+                              setHoveredCategory(el.name);
+
+                              const filtered = products.data.filter(p =>
+                                p.categories?.some(c =>
+                                  c.name.toLowerCase() === el.name.toLowerCase()
+                                )
+                              );
+
+                              setSearchedProductsNotFiltered(filtered);
+                              setSearchedProducts(filtered.slice(0, 8));
+                            }}
+                            className={`
+                            text-[13px] flex items-center justify-center
+                            rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                            font-normal hover:bg-[color:var(--color-one)]
+                            hover:text-white w-full xl:justify-start px-4 transition duration-150
+                            ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}
+                          `}
+                          >
+                            {el.name}
+                          </a>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                   <div>
@@ -299,14 +317,15 @@ const SearchBar = ({
                       {t("searchResults")}
                     </h3>
                     <div className="grid p-4 grid-cols-2 gap-2">
-                      {searchedProducts.slice(0, 8).map((product) => {
-                        const mainImages = product?.attributes?.find(
-                          (e) => e.productAttribute?.name === "Ana Resim"
+                      {searchedProducts.slice(0, 8).map(product => {
+                        // ürün kartı render’ı
+                        const mainImages = product.attributes?.find(
+                          e => e.productAttribute?.name === "Ana Resim"
                         )?.images;
                         const showImage =
                           mainImages && mainImages.length > 0
                             ? mainImages[0]
-                            : product?.selectedVariant?.mainImage?.image!;
+                            : product.selectedVariant.mainImage?.image!;
                         return (
                           <Link key={product.id} href={product.href}>
                             <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
@@ -383,23 +402,28 @@ const SearchBar = ({
             {(searchedProducts?.length === 0 || !searchedProducts) &&
               !uiStore.searchKeyword && (
                 <div className="grid grid-cols-1 lg:grid-cols-[180px_auto]">
-                  <div className="hidden lg:flex flex-col">
+                  <div className="hidden lg:flex flex-col bg-[color:var(--gray-bg)]">
                     <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                       {t("popularCategories")}
                     </h3>
-                    <div className="flex flex-col self-stretch w-full xgrow border-r border-white bg-[color:var(--gray-bg)] p-4 grid-cols-1 gap-1.5">
+                    <div className="flex flex-col self-stretch w-full xgrow border-r border-white bg-[color:var(--gray-bg)] py-4 grid-cols-1 gap-1.5">
                       {popularCategories.data.map((el) => (
                         <Link key={el.name} href={el.href}>
                           <a
                             onMouseEnter={() => {
-                              console.log("--> HoverCategory.value", el.name);
                               setHoveredBrand(el.name);
 
                               setHoveredCategory(el.name);
                               onHoverBrand(el.name);
 
                             }}
-                            className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal"
+                            className={`
+                            text-[13px] flex items-center justify-center
+                            rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                            font-normal hover:bg-[color:var(--color-one)]
+                            hover:text-white w-full xl:justify-start px-4 transition duration-150
+                            ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}
+                          `}
                           >
                             {el.name}
                           </a>
@@ -410,17 +434,22 @@ const SearchBar = ({
                       {t("popularBrands")}
                     </h3>
                     <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] p-4 grid-cols-1 gap-1.5">
-                      {popularBrands.data.map((el) => (
-                        <Link key={el.name} href={el.href}>
+                      {popularBrands.data.map(brand => (
+                        <Link key={brand.id} href={brand.href}>
                           <a
                             onMouseEnter={() => {
-                              console.log("--> HoverBrand.value", el.name);
+                              setHoveredBrand(brand.name);
 
-                              setHoveredBrand(el.name);
-                              onHoverBrand(el.name);
+                              const brandProducts = products.data.filter(p =>
+                                p.brand?.name.toLowerCase() === brand.name.toLowerCase()
+                              );
+
+                              setSearchedProductsNotFiltered(brandProducts);
+                              setSearchedProducts(brandProducts.slice(0, 8));
                             }}
-                            className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal">
-                            {el.name}
+                            className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal "
+                          >
+                            {brand.name}
                           </a>
                         </Link>
                       ))}

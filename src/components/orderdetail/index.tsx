@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { observer } from "mobx-react-lite";
 import {
   IkasOrder,
@@ -7,12 +7,16 @@ import {
   IkasOrderPackageFullfillStatus,
   useTranslation,
   IkasOrderLineItem,
-  IkasOrderLineItemStatus
+  IkasOrderLineItemStatus,
 } from "@ikas/storefront";
 import Pricedisplay from "../composites/pricedisplay";
 
 import { OrderPackageStatus } from "../composites/orders";
 import { useDirection } from "src/utils/useDirection";
+import { useRouter } from "next/router";
+import { orderStore } from "src/utils/orderStore";
+
+
 
 const OrderLineItemRefundStatusComponent = observer(
   ({
@@ -40,7 +44,7 @@ function orderRefundLineItemStatus(
   const text = (key: string) => t(`orderPackageStatus.${key}`);
   switch (orderLineItemStatus) {
     case IkasOrderLineItemStatus.REFUND_REQUEST_ACCEPTED:
-      return { text: text("refundApproved"), color: "green" };
+      return { text: text("refundRequestAccepted"), color: "green" };
     case IkasOrderLineItemStatus.REFUNDED:
       return { text: text("refunded"), color: "green" };
     case IkasOrderLineItemStatus.REFUND_REJECTED:
@@ -70,6 +74,14 @@ export default observer(function Orderdetail({
 }) {
   const { t } = useTranslation();
   const { direction } = useDirection();
+  const router = useRouter();
+
+  const handleGoToContact = () => {
+    if (order.orderNumber) {
+      orderStore.setOrderNumber(order.orderNumber);
+      router.push("/pages/order-contact");
+    }
+  };
 
   function getPackageTitle(status: IkasOrderPackageFullfillStatus): string {
     const text = (key: string) => t(`orderPackageStatus.${key}`);
@@ -310,6 +322,16 @@ export default observer(function Orderdetail({
             />
           </div>
         </div>
+        <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
+          <button
+            type="button"
+            onClick={handleGoToContact}
+            className="w-full bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-white font-medium py-2.5 px-6 rounded-sm transition-colors duration-200"
+          >
+            {t("contactUs")}
+          </button>
+        </div>
+
       </div>
     </div>
   );
