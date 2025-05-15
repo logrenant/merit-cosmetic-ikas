@@ -201,18 +201,19 @@ export type OrderTrackingProps = {
 
 export type PageBlogProps = {
 	blog: IkasBlog;
-	showImage?: boolean;
-	blogList: IkasBlogList;
+	showAuthor?: boolean;
+	showPublishedDate?: boolean;
+	buttonText?: string;
 };
 
 export type PageBlogsProps = {
 	title?: string;
-	banner?: IkasImage;
 	blogList: IkasBlogList;
 	showAuthor?: boolean;
 	showDescription?: boolean;
 	showCategory?: boolean;
 	showPublishedDate?: boolean;
+	showFilter?: boolean;
 };
 
 export type FaqProps = {
@@ -262,5 +263,13 @@ export type OrderContactProps = {
 	formMessages: FormMessages;
 	formRule: ContactFormRule;
 	submitError?: string;
+};
+
+export type HomepageBlogsProps = {
+	blogList: IkasBlogList;
+	showAuthor?: boolean;
+	showDescription?: boolean;
+	showCategory?: boolean;
+	showPublishedDate?: boolean;
 };
 
