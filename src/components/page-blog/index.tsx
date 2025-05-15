@@ -1,29 +1,40 @@
-import React from "react";
-import { observer } from "mobx-react-lite";
+import React, { useMemo } from "react";
 import { Image, Link } from "@ikas/storefront";
+import { observer } from "mobx-react-lite";
 
+import getMonthName from "src/utils/getMonthName";
 import { useDirection } from "src/utils/useDirection";
 import { PageBlogProps } from "../__generated__/types";
+import CategorySvg from "../svg/Category";
+import DateSvg from "../svg/DateSvg";
+import WriterSvg from "../svg/WriterSvg";
 
 const Blog = (props: PageBlogProps) => {
     const { direction } = useDirection();
-    const { blog, blogList } = props;
+    const {
+        blog,
+        showAuthor: propShowAuthor,
+        showPublishedDate: propShowPublishedDate,
+        buttonText
+    } = props;
 
-    const categories = Array.from(
-        new Map(
-            (blogList.data ?? [])
-                .map((item) => {
-                    const cat = item.category;
-                    if (!cat?.name || !cat.metadata?.slug) return null;
-                    return [cat.metadata.slug, cat.name] as [string, string];
-                })
-                .filter((x): x is [string, string] => x !== null)
-        )
-    ).map(([slug, name]) => ({ slug, name }));
+    const showDate = !!(propShowPublishedDate && blog.createdAt);
+    const showAuth = !!(propShowAuthor && blog.writer);
 
-    if (categories.length === 0) {
-        return null;
-    }
+    const publishedDate = useMemo(() => {
+        const ts = blog.createdAt;
+        if (!ts) return "";
+        const d = new Date(ts);
+        return `${d.getDate()} ${getMonthName(d)}, ${d.getFullYear()}`;
+    }, [blog.createdAt]);
+
+    if (!blog) return null;
+
+
+    const currentCategory = blog.category?.metadata?.slug && blog.category.name
+        ? { slug: blog.category.metadata.slug, name: blog.category.name }
+        : null;
+
 
 
     return (
@@ -33,18 +44,32 @@ const Blog = (props: PageBlogProps) => {
                 <h1 className="font-medium text-3xl xl:text-4xl text-[color:var(--color-one)]">
                     {blog.title}
                 </h1>
-                <div className="w-full flex flex-row gap-4">
-                    <div className="flex-wrap w-1/5">
-                        {categories.map(({ slug, name }) => (
-                            <Link key={slug} href={`/blog/${slug}`}>
-                                <a className="bg-[color:var(--color-three)] mr-2 text-white px-3 py-1 text-sm rounded-full hover:opacity-80">
-                                    {name}
-                                </a>
-                            </Link>
-                        ))}
+                <div className="w-full flex flex-col xl:flex-row gap-12">
+                    <div className="flex flex-col gap-6 xl:w-1/5 lg:text-lg">
+                        {currentCategory && (
+                            <div className="flex flex-row items-end gap-2">
+                                <CategorySvg /> {currentCategory.name}
+                            </div>
+                        )}
+                        {showAuth && (
+                            <div className="flex flex-row items-end gap-2">
+                                <WriterSvg /> <span>{blog.writer.firstName} {blog.writer.lastName}</span>
+                            </div>
+                        )}
+                        {showDate && (
+                            <div className="flex flex-row items-end gap-2">
+                                <DateSvg /> {publishedDate}
+                            </div>
+                        )}
+
+                        <Link href="/blog">
+                            <a className="bg-[color:var(--color-one)] text-white rounded py-1 text-center">
+                                {buttonText}
+                            </a>
+                        </Link>
                     </div>
                     <div
-                        className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm w-4/5"
+                        className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm xl:w-4/5"
                         dangerouslySetInnerHTML={{ __html: blog.blogContent.content }}
                     />
                 </div>
@@ -54,8 +79,8 @@ const Blog = (props: PageBlogProps) => {
 };
 
 const BlogImage = observer(
-    ({ showImage, blog }: PageBlogProps) => {
-        if (!blog?.image?.id || !showImage) return null;
+    ({ blog }: PageBlogProps) => {
+        if (!blog?.image?.id) return null;
 
         return (
             <div className="relative block min-w-full mb-20">

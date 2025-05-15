@@ -11,7 +11,7 @@ import {
 } from "@ikas/storefront";
 import Router from "next/router";
 import { observer } from "mobx-react-lite";
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import UIStore from "../../store/ui-store";
 import Typewriter from "typewriter-effect";
@@ -32,7 +32,6 @@ const SearchBar = ({
   popularCategories: IkasCategoryList;
 
 }) => {
-
   const store = useStore();
   const { t } = useTranslation();
   const uiStore = UIStore.getInstance();
@@ -58,33 +57,18 @@ const SearchBar = ({
       .replace(/^-+|-+$/g, '');
   };
 
-  const handleClearFilter = () => {
-    setHoveredCategory(undefined);
-    setHoveredBrand(undefined);
-    setSearchedProducts(products.data);
-    setSearchedProductsNotFiltered(products.data);
-  };
-
-
-  const onClickEnterOrSearch = () => {
-    store?.router?.push(`/search?s=${uiStore.searchKeyword}`);
-  };
-
   useEffect(() => {
-    const allCats: { name: string; href: string }[] = [];
-    products.data.forEach(p => {
-      p.categories?.forEach(c => {
-        if (!allCats.find(x => x.name === c.name)) {
-          allCats.push({ name: c.name, href: c.href });
-        }
-      });
-    });
-    setProductCategories(allCats);
+    const flatCats = products.data.flatMap(p => p.categories || []);
+    const uniqueCatsMap = new Map(
+      flatCats
+        .filter(c => c)
+        .map(c => [c.name, { name: c.name, href: c.href }] as [string, { name: string; href: string }])
+    );
+    setProductCategories(Array.from(uniqueCatsMap.values()));
 
     setSearchedProductsNotFiltered(products.data);
     setSearchedProducts(products.data.slice(0, 8));
   }, [products.data]);
-
 
   const reset = () => {
     uiStore.searchKeyword = "";
@@ -93,6 +77,7 @@ const SearchBar = ({
     setSearchedProductsNotFiltered(products.data);
     setSearchedProducts(products.data.slice(0, 8));
     setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
   };
 
   useEffect(() => {
@@ -102,6 +87,21 @@ const SearchBar = ({
 
   useOnClickOutside(searchRef, reset);
 
+  useEffect(() => {
+    if (hoveredCategory) {
+      setLinkToCategory(slugify(hoveredCategory));
+    }
+  }, [hoveredCategory]);
+
+
+  const handleClearFilter = () => {
+    setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
+    setSearchedProducts(products.data);
+    setSearchedProductsNotFiltered(products.data);
+  };
+
+
 
   useEffect(() => {
     if (hoveredCategory) {
@@ -110,101 +110,53 @@ const SearchBar = ({
     }
   }, [hoveredCategory]);
 
-  const onHoverBrand = (br: string) => {
-    const hoveredLink = br.toLowerCase().replaceAll(" ", "-");
-    setLinkToCategory(hoveredLink)
-    setHoveredCategory(hoveredLink);
 
+  const onHoverBrand = (br: string) => {
+    setHoveredBrand(br);
+    setHoveredCategory(br);
     products.searchKeyword = br;
     setPlaceholderOpen(false);
 
+    const brandProducts = products.data.filter(p => p.brand?.name.toLowerCase() === br.toLowerCase());
+    setSearchedProductsNotFiltered(brandProducts);
+    setSearchedProducts(brandProducts.slice(0, 8));
+  };
+
+  const onClickSearch = () => {
+    store?.router?.push(`/search?s=${encodeURIComponent(uiStore.searchKeyword)}`);
   };
 
   const getSearchResultsLink = () => {
     if (hoveredBrand && hoveredCategory) {
       const brand = popularBrands.data.find(b => b.name === hoveredBrand);
-      const brandHref = brand ? brand.href : `/${slugify(hoveredBrand)}`;
-
       const categorySlug = slugify(hoveredCategory);
-
-      return `${brandHref}?Type=${encodeURIComponent(categorySlug)}`;
+      return `${brand?.href || `/${slugify(hoveredBrand)}`}?Type=${encodeURIComponent(categorySlug)}`;
     }
-
     if (hoveredCategory) {
       const category = popularCategories.data.find(c => c.name === hoveredCategory);
-      return category
-        ? category.href
-        : `/${slugify(hoveredCategory)}`;
+      return category?.href || `/${slugify(hoveredCategory)}`;
     }
-
     if (hoveredBrand) {
       const brand = popularBrands.data.find(b => b.name === hoveredBrand);
-      return brand
-        ? brand.href
-        : `/${slugify(hoveredBrand)}`;
+      return brand?.href || `/${slugify(hoveredBrand)}`;
     }
-
-    const directBrandMatch = popularBrands.data.find(
-      b => b.name.toLowerCase() === uiStore.searchKeyword.trim().toLowerCase()
-    );
-    if (directBrandMatch) return directBrandMatch.href;
-
-    if (searchedProducts?.[0]?.brand) {
-      return searchedProducts[0].brand.href;
-    }
-
     return `/${slugify(uiStore.searchKeyword)}`;
   };
 
   useEffect(() => {
-    Router.events.on("routeChangeStart", () => {
-      uiStore.searchKeyword = "";
-      products.searchKeyword = "";
-      setPlaceholderOpen(true);
-      setSearchedProducts(undefined);
-      setSearchedProductsNotFiltered(undefined);
-      setHoveredCategory(undefined);
-    });
-    return () => {
-      Router.events.off("routeChangeStart", () => {
-        uiStore.searchKeyword = "";
-        products.searchKeyword = "";
-        setPlaceholderOpen(true);
-        setSearchedProducts(undefined);
-        setSearchedProductsNotFiltered(undefined);
-        setHoveredCategory(undefined);
-      });
-    };
-  }, []);
-  useOnClickOutside(searchRef, () => {
-    uiStore.searchKeyword = "";
-    products.searchKeyword = "";
-    setPlaceholderOpen(true);
-    setSearchedProducts(undefined);
-    setSearchedProductsNotFiltered(undefined);
-    setHoveredCategory(undefined);
-  });
-
-  useEffect(() => {
-    if (store?.router) {
-      setPageIsSearch(store?.router?.pathname.includes("search"));
-    }
+    setPageIsSearch(store?.router?.pathname.includes("search") || false);
   }, [store?.router]);
 
-  useEffect(() => {
-    setSearchedProducts(products.data);
-    setSearchedProductsNotFiltered(products.data);
-    setHoveredCategory(undefined);
-  }, [products.data]);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHoveredCategory(undefined);
-    uiStore.searchKeyword = event.target.value;
-    products.searchKeyword = uiStore.searchKeyword;
-    setSearchedProducts(undefined);
-    setSearchedProductsNotFiltered(undefined);
+    setHoveredBrand(undefined);
+    uiStore.searchKeyword = e.target.value;
+    products.searchKeyword = e.target.value;
+    setPlaceholderOpen(false);
+    setSearchedProductsNotFiltered(undefined!);
+    setSearchedProducts(undefined!);
   };
-
 
 
   return (
@@ -214,7 +166,7 @@ const SearchBar = ({
         className="flex relative lg:max-w-[700px] mx-auto items-center justify-center"
       >
         <button
-          onClick={() => onClickEnterOrSearch()}
+          onClick={onClickSearch}
           className="absolute z-2 flex items-center justify-center h-full pl-2 pr-3 right-0 top-1/2 transform -translate-y-1/2"
         >
           <svg
@@ -235,19 +187,11 @@ const SearchBar = ({
 
         <input
           onChange={onChange}
-          onKeyPress={(e) => {
-            setPlaceholderOpen(false);
-            if (e.key === "Enter") {
-              onClickEnterOrSearch();
-            }
-          }}
+          onKeyPress={e => e.key === "Enter" && onClickSearch()}
           onFocus={() => setPlaceholderOpen(false)}
           value={uiStore.searchKeyword}
           type="text"
-          className={`w-full ${searchedProducts && searchedProducts?.length > 0
-            ? "border-[color:var(--color-six)]"
-            : "border-[color:var(--input-color)]"
-            } focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative z-1 pr-9 text-sm font-light h-[38px] border-[1px] rounded px-2.5`}
+          className={`w-full ${searchedProducts?.length ? "border-[color:var(--color-six)]" : "border-[color:var(--input-color)]"} focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative z-1 pr-9 text-sm font-light h-[38px] border-[1px] rounded px-2.5`}
         />
 
         {placeholderOpen && !pageIsSearch && (
@@ -282,29 +226,19 @@ const SearchBar = ({
                     <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                       {t("relatedCategories")}
                     </h3>
-                    <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] py-4 grid-cols-1 gap-1.5">
+                    <div className="flex flex-col self-start w-full border-r border-white bg-[color:var(--gray-bg)] py-4 gap-1.5">
                       {productCategories.map(el => (
                         <Link key={el.name} href={el.href}>
                           <a
                             onMouseEnter={() => {
                               setHoveredCategory(el.name);
-
                               const filtered = products.data.filter(p =>
-                                p.categories?.some(c =>
-                                  c.name.toLowerCase() === el.name.toLowerCase()
-                                )
+                                p.categories?.some(c => c.name.toLowerCase() === el.name.toLowerCase())
                               );
-
                               setSearchedProductsNotFiltered(filtered);
                               setSearchedProducts(filtered.slice(0, 8));
                             }}
-                            className={`
-                            text-[13px] flex items-center justify-center
-                            rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
-                            font-normal hover:bg-[color:var(--color-one)]
-                            hover:text-white w-full xl:justify-start px-4 transition duration-150
-                            ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}
-                          `}
+                            className={`text-[13px] flex items-center text-[color:var(--black-two)] font-normal hover:bg-[color:var(--color-one)] hover:text-white px-4 transition duration-150 ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}`}
                           >
                             {el.name}
                           </a>
@@ -312,36 +246,25 @@ const SearchBar = ({
                       ))}
                     </div>
                   </div>
+
                   <div>
                     <h3 className="text-sm  bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                       {t("searchResults")}
                     </h3>
                     <div className="grid p-4 grid-cols-2 gap-2">
-                      {searchedProducts.slice(0, 8).map(product => {
-                        // ürün kartı render’ı
-                        const mainImages = product.attributes?.find(
-                          e => e.productAttribute?.name === "Ana Resim"
-                        )?.images;
-                        const showImage =
-                          mainImages && mainImages.length > 0
-                            ? mainImages[0]
-                            : product.selectedVariant.mainImage?.image!;
+                      {(searchedProductsNotFiltered || searchedProducts).slice(0, 8).map(product => {
+                        const mainImages = product.attributes?.find(a => a.productAttribute?.name === "Ana Resim")?.images;
+                        const showImage = mainImages && mainImages.length > 0
+                          ? mainImages[0]
+                          : product.selectedVariant.mainImage?.image!;
                         return (
                           <Link key={product.id} href={product.href}>
                             <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
                               <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
-                                <Image
-                                  image={showImage}
-                                  alt={product.name}
-                                  useBlur
-                                  layout="fill"
-                                  objectFit="cover"
-                                />
+                                <Image image={showImage} alt={product.name} useBlur layout="fill" objectFit="cover" />
                               </div>
                               <div className="p-1 flex flex-col text-[color:var(--black-two)]">
-                                <h3 className="text-xs line-clamp-2">
-                                  {product.name}
-                                </h3>
+                                <h3 className="text-xs line-clamp-2">{product.name}</h3>
                                 <span className="text-sm font-medium">
                                   {product.selectedVariant.price.sellPrice}{" "}
                                   {product.selectedVariant.price.currencySymbol}

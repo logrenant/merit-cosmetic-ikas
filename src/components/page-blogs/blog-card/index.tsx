@@ -3,7 +3,6 @@ import {
   Image,
   IkasBlog,
   IkasImage,
-  useTranslation,
   Link,
 } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
@@ -22,7 +21,6 @@ type Props = {
 >;
 
 const BlogCard = (props: Props) => {
-  const { t } = useTranslation();
   const { direction } = useDirection();
   const publishedDate = useMemo(() => {
     const ts = props.data.createdAt;
@@ -41,77 +39,72 @@ const BlogCard = (props: Props) => {
   const showCategory = !!props.showCategory && !!props.data.category;
 
   return (
-    <div className="relative flex flex-col h-full rounded bg-[color:var(--bg-color)] shadow-lg" dir={direction}>
-      {/* Image */}
-      {props.data.image?.id && (
-        <Link href={props.data.href}>
-          <a className="relative block w-full overflow-hidden rounded">
-            <Image
-              useBlur
-              image={props.data.image as IkasImage}
-              alt={props.data.title || ""}
-              layout="responsive"
-              objectFit="cover"
-              width={3}
-              height={1}
-              className="w-full h-auto"
-            />
-          </a>
-        </Link>
-      )}
-
-      {/* Content */}
-      <div className="flex-1 flex flex-col gap-2 p-4 sm:p-2.5">
-        {/* Meta */}
-        <div className="flex justify-between items-center text-[color:var(--black-one)] text-[10px] lg:text-xs">
-          {showPublishedDate && (
-            <div className="inline-block">{publishedDate}</div>
-          )}
-          {showAuthor && (
-            <div className="inline-block text-right">
-              {props.data.writer.firstName} {props.data.writer.lastName}
+    <div className="relative flex flex-col rounded bg-[color:var(--color-one)] border-4 border-[color:var(--color-one)] text-white" dir={direction}>
+      <Link href={props.data.href}>
+        <a>
+          {/* Image */}
+          {props.data.image?.id && (
+            <div className="relative block w-full overflow-hidden rounded">
+              <Image
+                useBlur
+                image={props.data.image as IkasImage}
+                alt={props.data.title || ""}
+                layout="responsive"
+                objectFit="cover"
+                width={4}
+                height={2}
+                className="w-full h-auto"
+              />
             </div>
           )}
-        </div>
 
-        {/* Title */}
-        {showTitle && (
-          <Link href={props.data.href}>
-            <div className="block">
-              <div className="text-[color:var(--black-two)] font-bold text-base lg:text-lg">
-                {props.data.title}
-              </div>
+          {/* Content */}
+          <div className="flex-1 flex flex-col gap-2 p-4 sm:p-2.5">
+            {/* Meta */}
+            <div className="flex justify-between items-center text-[10px] lg:text-xs">
+              {showPublishedDate && (
+                <div className="inline-block">{publishedDate}</div>
+              )}
+              {showAuthor && (
+                <div className="inline-block text-right">
+                  {props.data.writer.firstName} {props.data.writer.lastName}
+                </div>
+              )}
             </div>
-          </Link>
-        )}
 
-        {/* Description */}
-        {showDescription && (
-          <p className="text-[color:var(--black-two)]">
-            {props.data.shortDescription.length > 260
-              ? `${props.data.shortDescription.slice(0, 260)}...`
-              : props.data.shortDescription}
-          </p>
-        )}
+            {/* Title */}
+            {showTitle && (
+              <Link href={props.data.href}>
+                <div className="block">
+                  <div className="font-bold text-base lg:text-lg">
+                    {props.data.title}
+                  </div>
+                </div>
+              </Link>
+            )}
 
-        {/* Category Badge */}
-        {showCategory && (
-          <div className="absolute top-0 left-0 text-center cursor-pointer">
-            <Link href={`/blog/${props.data.category.metadata?.slug}`}>
-              <div className="block px-3 py-1 text-[color:var(--bg-color)] bg-[color:var(--input-color)] text-xs">
-                {props.data.category.name}
+            {/* Description */}
+            {showDescription && (
+              <p className="">
+                {props.data.shortDescription.length > 260
+                  ? `${props.data.shortDescription.slice(0, 260)}...`
+                  : props.data.shortDescription}
+              </p>
+            )}
+
+            {/* Category Badge */}
+            {showCategory && (
+              <div className="absolute top-0 left-0 text-center cursor-pointer">
+                <Link href={`/blog/${props.data.category.metadata?.slug}`}>
+                  <div className="block px-3 py-1 text-[color:var(--bg-color)] bg-[color:var(--color-one)] text-xs">
+                    {props.data.category.name}
+                  </div>
+                </Link>
               </div>
-            </Link>
+            )}
           </div>
-        )}
-
-        {/* Detail Link */}
-        <Link href={props.data.href}>
-          <a className="text-[color:var(--color-one)] cursor-pointer">
-            {t("Go to Blog")}
-          </a>
-        </Link>
-      </div>
+        </a>
+      </Link>
     </div>
   );
 };
