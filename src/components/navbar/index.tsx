@@ -23,6 +23,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   bannerSlogan,
   slogans,
   popularProducts,
+  filter
 }) => {
   const [open, setOpen] = useState(false);
   const categoriesWithChildrens: CategoryWithChildrenType[] = [];

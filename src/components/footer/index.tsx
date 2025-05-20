@@ -87,7 +87,7 @@ const Footer = ({ linkdata, footerResponse, newsletterTitle, newsletterDesc, hel
   return (
     <footer
       dir={direction}
-      className="bg-[color:var(--color-one)] flex flex-col items-center text-center lg:text-left mt-6"
+      className="bg-[color:var(--color-one)] flex flex-col items-center text-center lg:text-left"
     >
       <div className="py-6 layout">
         <section className="text-white flex flex-col gap-4 lg:flex-row justify-between lg:items-start w-full">

@@ -5,6 +5,7 @@ import {
   IkasOrderTransaction,
   IkasTransactionStatus,
   IkasTransactionType,
+  IkasOrderLineItemStatus,
   useStore,
 } from "@ikas/storefront";
 import getMonthName from "src/utils/getMonthName";
@@ -48,6 +49,16 @@ function useOrderDetail() {
     setPending(false);
   }, []);
 
+  const refundableItems = useMemo(() => {
+    if (!order?.orderLineItems) return [];
+    return order.orderLineItems.filter((item) => {
+      return [
+        IkasOrderLineItemStatus.DELIVERED,
+        IkasOrderLineItemStatus.FULFILLED,
+      ].includes(item.status);
+    });
+  }, [order?.orderLineItems]);
+
   const orderedAt = useMemo(() => {
     if (!order) return "";
     const orderDate = new Date(order.orderedAt || "");
@@ -57,6 +68,8 @@ function useOrderDetail() {
 
     return `${date} ${month} ${year}`;
   }, [order]);
+
+  
 
   useEffect(() => {
     const id: any = router.query.id;
@@ -73,6 +86,7 @@ function useOrderDetail() {
     orderedAt,
     order,
     orderTransactions,
+    refundableItems,
     getOrder,
     toggleRefundProcess,
   };

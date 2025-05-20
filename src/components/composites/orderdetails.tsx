@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
-import useOrderDetail from "../../utils/useOrderDetail";
 import { OrderPackageStatus } from "./orders";
+import useOrderDetail from "../../utils/useOrderDetail";
 import {
   Image,
   useTranslation,
@@ -9,6 +9,9 @@ import {
   IkasPaymentMethodType,
   IkasOrderPackageFullfillStatus,
   IkasTrackingInfo,
+  IkasCustomer,
+  IkasOrderCustomer,
+  IkasOrder,
 } from "@ikas/storefront";
 import Orderrefund from "./orderrefund";
 import Pricedisplay from "./pricedisplay";
@@ -72,7 +75,7 @@ const RefundProcessButton = ({
   const { t } = useTranslation();
   return (
     <button
-      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5"
+      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-sm font-medium text-white rounded-sm py-2.5 px-5 transition-colors duration-200"
       disabled={disabled}
       onClick={onClick}
     >
@@ -203,15 +206,36 @@ const OrderDetail = () => {
     order,
     orderedAt,
     orderTransactions,
+    refundableItems,
     toggleRefundProcess,
   } = useOrderDetail();
   const { t } = useTranslation();
   const router = useRouter();
 
-
   const handleGoToContact = () => {
     if (order?.orderNumber) {
+      console.log('Order Number:', order.orderNumber);
       orderStore.setOrderNumber(order.orderNumber);
+
+      const fn = order?.customer?.firstName || "";
+      const ln = order?.customer?.lastName || "";
+      const em = order?.customer?.email || "";
+      let phoneNumber = order?.billingAddress?.phone ||
+        order?.shippingAddress?.phone ||
+        "";
+
+      console.log('Contact Details:', {
+        firstName: fn,
+        lastName: ln,
+        email: em,
+        phoneNumber: phoneNumber
+      });
+
+      orderStore.setFirstName(fn);
+      orderStore.setLastName(ln);
+      orderStore.setEmail(em);
+      orderStore.setPhoneNumber(phoneNumber);
+
       router.push("/pages/order-contact");
     }
   };
@@ -230,16 +254,26 @@ const OrderDetail = () => {
 
   return (
     <div>
-      <div className="flex mb-4 items-start flex-col">
-        <div className="text-2xl">
-          {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
-        </div>
-        <div className="flex items-center gap-3 mt-1">
-          <OrderPackageStatus status={order.orderPackageStatus!} />
-          <div className="text-sm text-[color:var(--gray-three)]">
-            {orderedAt}
+      <div className="flex flex-row justify-between items-start">
+        <div className="flex mb-4 items-start flex-col">
+          <div className="text-2xl">
+            {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
+          </div>
+          <div className="flex items-center gap-3 mt-1">
+            <OrderPackageStatus status={order.orderPackageStatus!} />
+            <div className="text-sm text-[color:var(--gray-three)]">
+              {orderedAt}
+            </div>
           </div>
         </div>
+
+        <button
+          type="button"
+          onClick={handleGoToContact}
+          className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer"
+        >
+          {t("contactUs")}
+        </button>
       </div>
 
       {/* products */}
@@ -421,19 +455,10 @@ const OrderDetail = () => {
               </div>
             </div>
           </div>
-          <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
-            <button
-              type="button"
-              onClick={handleGoToContact}
-              className="w-full bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-white font-medium py-2.5 px-6 rounded-sm transition-colors duration-200"
-            >
-              {t("contactUs")}
-            </button>
-          </div>
           <div className="flex justify-end">
-            {!!order.refundableItems.length && (
+            {!!refundableItems.length && (
               <RefundProcessButton
-                disabled={!order.refundableItems.length}
+                disabled={!refundableItems.length}
                 onClick={onRefundProcessButtonClick}
               />
             )}

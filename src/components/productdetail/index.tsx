@@ -23,6 +23,8 @@ import { useDirection } from "../../utils/useDirection";
 import { useAddToCart } from "../../utils/useAddToCart";
 import { ProductdetailProps } from "../__generated__/types";
 import ContentProtector from "../composites/ContentProtector";
+import useProductReviews from "src/utils/useProductReviews";
+import Reviews from "./reviews";
 
 const Accordion = observer(
   ({ title, children }: { title: string; children: React.ReactNode }) => {
@@ -77,6 +79,10 @@ const ProductDetail = ({
   paymentText,
   returnText,
   boxdata,
+  requiredInput,
+  loginRequired,
+  successMessage,
+  errorMessage,
 }: ProductdetailProps) => {
   const [quantity, setQuantity] = useState(1);
   const mainImages =
@@ -104,6 +110,12 @@ const ProductDetail = ({
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [canScrollUp, setCanScrollUp] = useState(false);
   const [canScrollDown, setCanScrollDown] = useState(false);
+
+  const {
+    customerReviewList,
+    reviewsElementRef,
+  } = useProductReviews({ product });
+
 
   useEffect(() => {
     const kombinUrun = product?.attributes?.find(
@@ -185,6 +197,7 @@ const ProductDetail = ({
       });
     }
   }, [product, product.selectedVariant]);
+
   useEffect(() => {
     const mainImagesUef =
       product?.attributes?.find((e) => e.productAttribute?.name === "Ana Resim")
@@ -1016,51 +1029,16 @@ const ProductDetail = ({
                       </span>
                     </div>
                     <div className="flex flex-col gap-2">
-                      {product.isCustomerReviewEnabled &&
-                        product.isCustomerReviewLoginRequired && (
-                          <CommentModal
-                            trigger={(e) => (
-                              <button
-                                onClick={() => {
-                                  e();
-                                }}
-                                className="text-base underline text-left max-w-sm"
-                              >
-                                {t("productDetail.beFirstComment")}
-                              </button>
-                            )}
-                            productId={product.id}
-                            onSuccess={() => {
-                              product.getCustomerReviews().then((res) => {
-                                setReviews(res);
-                              });
-                            }}
-                            store={store}
-                          />
-                        )}
-
-                      <span className="text-base max-w-sm">
-                        {t("productDetail.commentRule")}
-                      </span>
-                      <a className="text-sm underline">
-                        {t("productDetail.commentRuleTitle")}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {product.isCustomerReviewEnabled &&
-                  product.isCustomerReviewLoginRequired && (
-                    <div className="flex justify-end items-start">
+                      {/* {product.isCustomerReviewLoginRequired && ( */}
                       <CommentModal
                         trigger={(e) => (
                           <button
                             onClick={() => {
                               e();
                             }}
-                            className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5"
-                            type="button"
+                            className="text-base underline text-left max-w-sm"
                           >
-                            {t("productDetail.writeComment")}
+                            {t("productDetail.beFirstComment")}
                           </button>
                         )}
                         productId={product.id}
@@ -1070,37 +1048,53 @@ const ProductDetail = ({
                           });
                         }}
                         store={store}
+                        requiredInput={requiredInput || ""}
+                        loginRequired={loginRequired || ""}
+                        successMessage={successMessage || ""}
+                        errorMessage={errorMessage || ""}
                       />
-                    </div>
-                  )}
-              </div>
+                      {/* )} */}
 
-              <div className="w-full my-8 pt-6 border-t border-[color:var(--gray-one)]">
-                {reviews.data.map((comment) => (
-                  <div
-                    key={comment.id + "comment"}
-                    className="w-full border-b border-[color:var(--gray-one)] pb-6 mb-6 grid md:grid-cols-[115px_1fr_130px] gap-2 md:gap-8"
-                  >
-                    <div className="flex flex-col items-start md:items-center text-center text-base">
-                      <Rating
-                        readonly
-                        size={23}
-                        SVGstyle={{ display: "inline-block" }}
-                        initialValue={comment.star || 0}
-                      />
-                    </div>
-                    <div className="flex pt-1 flex-col">
-                      <span className="text-base mb-3">{comment.title}</span>
-
-                      <p className="text-sm tracking-wide font-light">
-                        {comment.comment}
-                      </p>
-                    </div>
-                    <div className="text-xs pt-1 flex justify-end">
-                      {formatDate(new Date(comment.createdAt))}
+                      {/* <span className="text-base max-w-sm">
+                        {t("productDetail.commentRule")}
+                      </span> */}
+                      <a className="text-sm underline">
+                        {t("productDetail.commentRuleTitle")}
+                      </a>
                     </div>
                   </div>
-                ))}
+                </div>
+
+                <div className="flex justify-end items-start">
+                  <CommentModal
+                    trigger={(e) => (
+                      <button
+                        onClick={() => {
+                          e();
+                        }}
+                        className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5"
+                        type="button"
+                      >
+                        {t("productDetail.writeComment")}
+                      </button>
+                    )}
+                    productId={product.id}
+                    onSuccess={() => {
+                      product.getCustomerReviews().then((res) => {
+                        setReviews(res);
+                      });
+                    }}
+                    store={store}
+                    requiredInput={requiredInput || ""}
+                    loginRequired={loginRequired || ""}
+                    successMessage={successMessage || ""}
+                    errorMessage={errorMessage || ""}
+                  />
+                </div>
+              </div>
+
+              <div ref={reviewsElementRef}>
+                <Reviews customerReviewList={customerReviewList} />
               </div>
 
               {reviews.hasNext && (

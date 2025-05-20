@@ -162,6 +162,10 @@ export type ProductdetailProps = {
 	boxdata: KutuListesiListe;
 	paymentText: string;
 	returnText: string;
+	requiredInput?: string;
+	loginRequired?: string;
+	successMessage?: string;
+	errorMessage?: string;
 };
 
 export type SearchlistgridProps = {

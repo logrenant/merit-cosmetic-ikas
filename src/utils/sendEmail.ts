@@ -7,9 +7,9 @@ export const useSendEmail = () => {
   ): Promise<void> => {
     if (!formRef.current) throw new Error('Form not found.');
 
-    const serviceId  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const serviceId  = 'service_w2ciycp';
+    const templateId = 'template_hbvrjya';
+    const publicKey  = 'ju1cmU1CbUIvSFz3S';
 
     if (!serviceId || !templateId || !publicKey) {
       throw new Error('EmailJS configuration is missing.');

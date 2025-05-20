@@ -73,10 +73,10 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
   }, []);
 
   return (
-    <div dir="ltr" className="TEST-PARENT my-10 layout relative" ref={ref} >
+    <div dir="ltr" className="TEST-PARENT my-6 layout relative" ref={ref} >
 
       {banner && (
-        <div className="w-full relative h-28 mb-10">
+        <div className="w-full relative h-28 mb-6">
           <Image
             image={banner}
             alt={banner.altText || "Banner"}
