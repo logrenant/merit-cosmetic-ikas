@@ -9,11 +9,19 @@ function CommentModal({
   onSuccess,
   store,
   productId,
+  requiredInput,
+  loginRequired,
+  successMessage,
+  errorMessage,
 }: {
   trigger: (event: () => void) => React.ReactNode;
   store: IkasBaseStore;
   productId: string;
   onSuccess: () => void;
+  requiredInput: string;
+  loginRequired: string;
+  successMessage: string;
+  errorMessage: string;
 }) {
   const [showModal, setShowModal] = useState(false);
   const [commentLoadind, setCommentLoadind] = useState(false);
@@ -38,7 +46,7 @@ function CommentModal({
   const createComment = async () => {
     const isLogged = !!store.customerStore.customer?.id;
     if (!isLogged) {
-      toast.error("Yorum yapabilmek için giriş yapmalısınız");
+      toast.error(loginRequired);
       return;
     }
     try {
@@ -49,7 +57,7 @@ function CommentModal({
         star: commentForm.rating,
         comment: commentForm.comment,
       });
-      toast.success("Yorumunuz başarıyla gönderildi");
+      toast.success(successMessage);
       setCommentForm({
         title: "",
         comment: "",
@@ -58,7 +66,7 @@ function CommentModal({
       onSuccess();
       setShowModal(false);
     } catch (error) {
-      toast.error("Bir hata oluştu");
+      toast.error(errorMessage);
     } finally {
       setCommentLoadind(false);
     }
@@ -163,9 +171,9 @@ function CommentModal({
                       createComment();
                     } else {
                       setCommentFormErrors({
-                        title: !commentForm.title ? t("requireError") : "",
-                        comment: !commentForm.comment ? t("requireError") : "",
-                        rating: !commentForm.rating ? t("requireError") : "",
+                        title: !commentForm.title ? requiredInput : "",
+                        comment: !commentForm.comment ? requiredInput : "",
+                        rating: !commentForm.rating ? requiredInput : "",
                       });
                     }
                   }}

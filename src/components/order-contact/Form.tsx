@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from '@ikas/storefront';
-import { useDirection } from 'src/utils/useDirection';
-import type { OrderContactProps } from '../__generated__/types';
-import { useSendEmail } from 'src/utils/sendEmail';
 import { orderStore } from 'src/utils/orderStore';
+import { useSendEmail } from 'src/utils/sendEmail';
+import { useDirection } from 'src/utils/useDirection';
+import React, { useEffect, useRef, useState } from 'react';
+import type { OrderContactProps } from '../__generated__/types';
 
 const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submitError, orderNumberInput }) => {
     const { t } = useTranslation();
@@ -22,13 +22,21 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
     });
 
     useEffect(() => {
-        if (orderStore.orderNumber) {
-            setFormState(prev => ({
-                ...prev,
-                orderNumber: orderStore.orderNumber ?? '',
-            }));
-        }
-    }, []);
+        setFormState((fs) => ({
+            ...fs,
+            orderNumber: orderStore.orderNumber || "",
+            firstName: orderStore.firstName,
+            lastName: orderStore.lastName,
+            email: orderStore.email,
+            phoneNumber: orderStore.phoneNumber,
+        }));
+    }, [
+        orderStore.orderNumber,
+        orderStore.firstName,
+        orderStore.lastName,
+        orderStore.email,
+        orderStore.phoneNumber,
+    ]);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);

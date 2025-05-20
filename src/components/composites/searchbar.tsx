@@ -1,8 +1,10 @@
 
 import {
+  IkasBrand,
   IkasBrandList,
   IkasCategoryList,
   IkasProduct,
+  IkasProductFilter,
   IkasProductList,
   Image,
   Link,
@@ -16,6 +18,7 @@ import { useState, useRef, useEffect } from "react";
 import UIStore from "../../store/ui-store";
 import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
+import React from "react";
 
 const SearchBar = ({
   products,
@@ -23,31 +26,37 @@ const SearchBar = ({
   popularBrands,
   popularProducts,
   popularCategories,
-
 }: {
   products: IkasProductList;
   slogans: string[];
   popularBrands: IkasBrandList;
   popularProducts: IkasProductList;
   popularCategories: IkasCategoryList;
-
 }) => {
   const store = useStore();
   const { t } = useTranslation();
   const uiStore = UIStore.getInstance();
   const searchRef = useRef<HTMLDivElement>(null);
 
-
-  const [searchedProducts, setSearchedProducts] = useState<IkasProduct[]>();
-  const [searchedProductsNotFiltered, setSearchedProductsNotFiltered] =
-    useState<IkasProduct[]>();
+  // UI state
   const [placeholderOpen, setPlaceholderOpen] = useState(true);
+  const [pageIsSearch, setPageIsSearch] = useState<boolean>(false);
+
+  // Hover state
   const [hoveredCategory, setHoveredCategory] = useState<string>();
   const [hoveredBrand, setHoveredBrand] = useState<string>();
-  const [pageIsSearch, setPageIsSearch] = useState<boolean>(false);
+  const [hoveredBrandId, setHoveredBrandId] = useState<string>();
+
+  // Derived state
   const [productCategories, setProductCategories] = useState<{ name: string; href: string }[]>([]);
   const [linkToCategory, setLinkToCategory] = useState('/');
 
+  // Search state
+  const [searchedProducts, setSearchedProducts] = useState<IkasProduct[]>();
+  const [searchedProductsNotFiltered, setSearchedProductsNotFiltered] =
+    useState<IkasProduct[]>();
+
+  // Helper functions
   const slugify = (str: string) => {
     return str
       .toLowerCase()
@@ -56,19 +65,6 @@ const SearchBar = ({
       .replace(/[\s_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
   };
-
-  useEffect(() => {
-    const flatCats = products.data.flatMap(p => p.categories || []);
-    const uniqueCatsMap = new Map(
-      flatCats
-        .filter(c => c)
-        .map(c => [c.name, { name: c.name, href: c.href }] as [string, { name: string; href: string }])
-    );
-    setProductCategories(Array.from(uniqueCatsMap.values()));
-
-    setSearchedProductsNotFiltered(products.data);
-    setSearchedProducts(products.data.slice(0, 8));
-  }, [products.data]);
 
   const reset = () => {
     uiStore.searchKeyword = "";
@@ -79,6 +75,135 @@ const SearchBar = ({
     setHoveredCategory(undefined);
     setHoveredBrand(undefined);
   };
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
+    uiStore.searchKeyword = e.target.value;
+    products.searchKeyword = e.target.value;
+    setPlaceholderOpen(false);
+    setSearchedProductsNotFiltered(undefined!);
+    setSearchedProducts(undefined!);
+  };
+
+  const onClickSearch = () => {
+    store?.router?.push(`/search?s=${encodeURIComponent(uiStore.searchKeyword)}`);
+  };
+
+  const handleClearFilter = () => {
+    setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
+    setSearchedProducts(products.data);
+    setSearchedProductsNotFiltered(products.data);
+  };
+
+  const onHoverCategory = (cat: { name: string; href: string }) => {
+    setHoveredCategory(cat.name);
+    setHoveredBrand(undefined);
+    setHoveredBrandId(undefined);
+
+    const categoryFilter = products.filters?.find((f) => f.id === "category");
+    if (categoryFilter) {
+      const v = categoryFilter.displayedValues.find(
+        (x) => x.name.toLowerCase() === cat.name.toLowerCase()
+      );
+      if (v) categoryFilter.onFilterValueClick(v);
+    }
+  };
+
+  const onHoverBrand = (br: string) => {
+    setHoveredBrand(br);
+    setHoveredCategory(br);
+    products.searchKeyword = br;
+    setPlaceholderOpen(false);
+
+    const brandProducts = products.data.filter(
+      p => p.brand?.name.toLowerCase() === br.toLowerCase()
+    );
+    setSearchedProductsNotFiltered(brandProducts);
+    setSearchedProducts(brandProducts.slice(0, 8));
+  };
+
+  const findBrandForCategory = (categoryName: string): IkasBrand | null => {
+    const categoryProducts = products.data.filter(product =>
+      product.categories?.some(c => c.name === categoryName)
+    );
+    const brands = categoryProducts
+      .map(p => p.brand)
+      .filter((b): b is IkasBrand => !!b)
+      .filter((v, i, a) => a.findIndex(b => b.id === v.id) === i);
+
+    return brands.length === 1 ? brands[0] : null;
+  };
+
+  const getSearchResultsLink = () => {
+    if (hoveredCategory) {
+      const category = popularCategories.data.find(
+        c => c.name === hoveredCategory
+      );
+      if (category) return category.href;
+
+      const brandFromCategory = findBrandForCategory(hoveredCategory);
+      if (brandFromCategory) return brandFromCategory.href;
+
+      return `/${slugify(hoveredCategory)}`;
+    }
+
+    if (hoveredBrand) {
+      const brand = popularBrands.data.find(
+        b => b.name === hoveredBrand
+      );
+      return brand ? brand.href : `/${slugify(hoveredBrand)}`;
+    }
+
+    const directBrandMatch = popularBrands.data.find(
+      b => b.name.toLowerCase() === uiStore.searchKeyword.trim().toLowerCase()
+    );
+    if (directBrandMatch) return directBrandMatch.href;
+
+    if (searchedProducts?.[0]?.brand) {
+      return searchedProducts[0].brand.href;
+    }
+
+    return `/${slugify(uiStore.searchKeyword)}`;
+  };
+
+  // Derived data
+  const displayResults = React.useMemo(() => {
+    if (hoveredCategory) {
+      return products.data.filter(p =>
+        p.categories?.some(c => c.name.toLowerCase() === hoveredCategory.toLowerCase())
+      );
+    }
+    return products.data;
+  }, [products.data, hoveredCategory]);
+
+  // Effects
+  useEffect(() => {
+    const allCats = products.data.flatMap(p => p.categories ?? []);
+    const uniqueCats = Array.from(
+      new Map(allCats.map(c => [c.name.toLowerCase(), c])).values()
+    );
+
+    const productCategories = uniqueCats.map(c => ({
+      name: c.name,
+      href: c.href
+    }));
+
+
+    console.log("allCats", products.data);
+    console.log("allCats", allCats);
+    console.log("uniqueCats", uniqueCats);
+    console.log("productCategories", uniqueCats);
+
+    // console.log("[SearchBar] Tüm Ürünler:", products.data);
+    // console.log("[SearchBar] Tüm Kategoriler:", productCategories);
+
+    setProductCategories(productCategories);
+    setSearchedProductsNotFiltered(products.data);
+    setSearchedProducts(products.data.slice(0, 8));
+  }, [products.data]);
+
 
   useEffect(() => {
     Router.events.on("routeChangeStart", reset);
@@ -93,70 +218,10 @@ const SearchBar = ({
     }
   }, [hoveredCategory]);
 
-
-  const handleClearFilter = () => {
-    setHoveredCategory(undefined);
-    setHoveredBrand(undefined);
-    setSearchedProducts(products.data);
-    setSearchedProductsNotFiltered(products.data);
-  };
-
-
-
-  useEffect(() => {
-    if (hoveredCategory) {
-      const hoveredLink = hoveredCategory.toLowerCase().replaceAll(" ", "-");
-      setLinkToCategory(hoveredLink)
-    }
-  }, [hoveredCategory]);
-
-
-  const onHoverBrand = (br: string) => {
-    setHoveredBrand(br);
-    setHoveredCategory(br);
-    products.searchKeyword = br;
-    setPlaceholderOpen(false);
-
-    const brandProducts = products.data.filter(p => p.brand?.name.toLowerCase() === br.toLowerCase());
-    setSearchedProductsNotFiltered(brandProducts);
-    setSearchedProducts(brandProducts.slice(0, 8));
-  };
-
-  const onClickSearch = () => {
-    store?.router?.push(`/search?s=${encodeURIComponent(uiStore.searchKeyword)}`);
-  };
-
-  const getSearchResultsLink = () => {
-    if (hoveredBrand && hoveredCategory) {
-      const brand = popularBrands.data.find(b => b.name === hoveredBrand);
-      const categorySlug = slugify(hoveredCategory);
-      return `${brand?.href || `/${slugify(hoveredBrand)}`}?Type=${encodeURIComponent(categorySlug)}`;
-    }
-    if (hoveredCategory) {
-      const category = popularCategories.data.find(c => c.name === hoveredCategory);
-      return category?.href || `/${slugify(hoveredCategory)}`;
-    }
-    if (hoveredBrand) {
-      const brand = popularBrands.data.find(b => b.name === hoveredBrand);
-      return brand?.href || `/${slugify(hoveredBrand)}`;
-    }
-    return `/${slugify(uiStore.searchKeyword)}`;
-  };
-
-  useEffect(() => {
-    setPageIsSearch(store?.router?.pathname.includes("search") || false);
-  }, [store?.router]);
-
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHoveredCategory(undefined);
-    setHoveredBrand(undefined);
-    uiStore.searchKeyword = e.target.value;
-    products.searchKeyword = e.target.value;
-    setPlaceholderOpen(false);
-    setSearchedProductsNotFiltered(undefined!);
-    setSearchedProducts(undefined!);
-  };
+  // useEffect(() => {
+  //   console.log("[SearchBar] Hovered Category:", hoveredCategory);
+  //   console.log("[SearchBar] Filtrelenmiş Sonuçlar:", displayResults);
+  // }, [hoveredCategory, displayResults]);
 
 
   return (
@@ -227,20 +292,13 @@ const SearchBar = ({
                       {t("relatedCategories")}
                     </h3>
                     <div className="flex flex-col self-start w-full border-r border-white bg-[color:var(--gray-bg)] py-4 gap-1.5">
-                      {productCategories.map(el => (
-                        <Link key={el.name} href={el.href}>
+                      {productCategories.map(cat => (
+                        <Link key={cat.name} href={cat.href}>
                           <a
-                            onMouseEnter={() => {
-                              setHoveredCategory(el.name);
-                              const filtered = products.data.filter(p =>
-                                p.categories?.some(c => c.name.toLowerCase() === el.name.toLowerCase())
-                              );
-                              setSearchedProductsNotFiltered(filtered);
-                              setSearchedProducts(filtered.slice(0, 8));
-                            }}
-                            className={`text-[13px] flex items-center text-[color:var(--black-two)] font-normal hover:bg-[color:var(--color-one)] hover:text-white px-4 transition duration-150 ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}`}
+                            onMouseEnter={() => onHoverCategory(cat)}
+                            className={`text-[13px] flex items-center text-[color:var(--black-two)] font-normal hover:bg-[color:var(--color-one)] hover:text-white px-4 transition duration-150 ${hoveredCategory === cat.name ? 'bg-[color:var(--color-one)] text-white' : ''}`}
                           >
-                            {el.name}
+                            {cat.name}
                           </a>
                         </Link>
                       ))}
@@ -252,11 +310,14 @@ const SearchBar = ({
                       {t("searchResults")}
                     </h3>
                     <div className="grid p-4 grid-cols-2 gap-2">
-                      {(searchedProductsNotFiltered || searchedProducts).slice(0, 8).map(product => {
-                        const mainImages = product.attributes?.find(a => a.productAttribute?.name === "Ana Resim")?.images;
-                        const showImage = mainImages && mainImages.length > 0
+                      {displayResults.slice(0, 8).map(product => {
+                        const mainImages = product.attributes
+                          ?.find(a => a.productAttribute?.name === "Ana Resim")
+                          ?.images;
+                        const showImage = mainImages?.length
                           ? mainImages[0]
                           : product.selectedVariant.mainImage?.image!;
+
                         return (
                           <Link key={product.id} href={product.href}>
                             <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">

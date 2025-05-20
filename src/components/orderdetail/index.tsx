@@ -77,8 +77,27 @@ export default observer(function Orderdetail({
   const router = useRouter();
 
   const handleGoToContact = () => {
-    if (order.orderNumber) {
+    if (order?.orderNumber) {
       orderStore.setOrderNumber(order.orderNumber);
+      const fn =
+        order?.customer?.firstName ||
+        "";
+      const ln =
+        order?.customer?.lastName ||
+        "";
+      const em =
+        order?.customer?.email ||
+        "";
+      let ph =
+        order?.billingAddress?.phone ||
+        order?.shippingAddress?.phone ||
+        "";
+
+      orderStore.setFirstName(fn);
+      orderStore.setLastName(ln);
+      orderStore.setEmail(em);
+      orderStore.setPhoneNumber(ph);
+
       router.push("/pages/order-contact");
     }
   };
