@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  safelist: [
-    "w-1/2",
-    {
-      pattern: /./,
-    },
-  ],
   theme: {
     extend: {
       boxShadow: {
