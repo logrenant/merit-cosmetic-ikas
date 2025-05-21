@@ -5,6 +5,7 @@ import {
   IkasOrderTransaction,
   IkasTransactionStatus,
   IkasTransactionType,
+  IkasOrderLineItem,
   IkasOrderLineItemStatus,
   useStore,
 } from "@ikas/storefront";
@@ -16,8 +17,8 @@ function useOrderDetail() {
   const [isPending, setPending] = useState(true);
   const [isRefundProcess, toggleRefundProcess] = useState(false);
   const [order, setOrder] = useState<IkasOrder>();
-  const [orderTransactions, setOrderTransactions] =
-    useState<IkasOrderTransaction[]>();
+  const [orderLineItems, setOrderLineItems] = useState<IkasOrderLineItem[]>([]);
+  const [orderTransactions, setOrderTransactions] = useState<IkasOrderTransaction[]>();
 
   const getOrderTransactions = useCallback(async (orderId: string) => {
     const responseOrderTransactions =
@@ -42,22 +43,30 @@ function useOrderDetail() {
     if (!id) return;
 
     setPending(true);
-    const order = await store.customerStore.getOrder(id);
-    if (!order) return router.replace("/account/orders");
-    setOrder(order);
-    await getOrderTransactions(order.id);
-    setPending(false);
-  }, []);
+    try {
+      const orderData = await store.customerStore.getOrder(id);
+      if (!orderData) return router.replace("/account/orders");
+      
+      setOrder(orderData);
+      if (Array.isArray(orderData.orderLineItems)) {
+        setOrderLineItems(orderData.orderLineItems);
+      }
+      await getOrderTransactions(orderData.id);
+    } catch (error) {
+      console.error('Error fetching order:', error);
+    } finally {
+      setPending(false);
+    }
+  }, [router.query.id]);
 
   const refundableItems = useMemo(() => {
-    if (!order?.orderLineItems) return [];
-    return order.orderLineItems.filter((item) => {
+    return orderLineItems.filter((item) => {
       return [
         IkasOrderLineItemStatus.DELIVERED,
         IkasOrderLineItemStatus.FULFILLED,
       ].includes(item.status);
     });
-  }, [order?.orderLineItems]);
+  }, [orderLineItems]);
 
   const orderedAt = useMemo(() => {
     if (!order) return "";
@@ -68,8 +77,6 @@ function useOrderDetail() {
 
     return `${date} ${month} ${year}`;
   }, [order]);
-
-  
 
   useEffect(() => {
     const id: any = router.query.id;
@@ -85,6 +92,7 @@ function useOrderDetail() {
     isRefundProcess,
     orderedAt,
     order,
+    orderLineItems,
     orderTransactions,
     refundableItems,
     getOrder,

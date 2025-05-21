@@ -83,7 +83,6 @@ const OrderTracking = (props: OrderTrackingProps) => {
                 {t("common:tracking.orderTrackingError")}
               </div>
             )}
-
             <div>
               <label className="text-base text-[color:var(--black-one)] mb-0.5">
                 *{t("email")}

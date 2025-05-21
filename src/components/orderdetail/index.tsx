@@ -166,7 +166,6 @@ export default observer(function Orderdetail({
                     <div className="flex text-[color:var(--black-two)] flex-col ml-4">
                       <div className="text-base md:text-lg flex gap-1.5">
                         <span className="line-clamp-3">{item.variant.name} </span>
-
                         <span className="text-sm">(x{item.quantity})</span>
                       </div>
                       {item.variant.variantValues &&
@@ -274,15 +273,15 @@ export default observer(function Orderdetail({
 
         {/* Özet */}
         <div className="text-xl">{t("orderDetail.orderSummary")}</div>
-        <div className="grid mt-2 mb-8 grid-cols-[1fr_auto] gap-y-2 gap-x-4 items-baseline">
+        <div className="grid mt-2 mb-8 grid-cols-2 gap-1">
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.shipping")}
           </div>
-          <div className="text-right min-w-[120px]">
+          <div className="text-right">
             <Pricedisplay
               amount={order.shippingTotal}
               center={false}
-              left
+              isTable={true}
               currencyCode={order.currencyCode || "USD"}
               currencySymbol={order.currencySymbol || "$"}
             />
@@ -293,11 +292,11 @@ export default observer(function Orderdetail({
               <div className="text-[color:var(--gray-three)]">
                 {t("orderDetail.discountTotal")}
               </div>
-              <div className="text-right min-w-[120px]">
+              <div className="text-right">
                 <Pricedisplay
                   amount={order.couponAdjustment.amount || 0}
                   center={false}
-                  left
+                  isTable={true}
                   currencyCode={order.currencyCode || "USD"}
                   currencySymbol={order.currencySymbol || "$"}
                 />
@@ -307,11 +306,11 @@ export default observer(function Orderdetail({
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.tax")}
           </div>
-          <div className="text-right min-w-[120px]">
+          <div className="text-right">
             <Pricedisplay
               amount={order.totalTax}
               center={false}
-              left
+              isTable={true}
               currencyCode={order.currencyCode || "USD"}
               currencySymbol={order.currencySymbol || "$"}
             />
@@ -319,11 +318,11 @@ export default observer(function Orderdetail({
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.subtotal")}
           </div>
-          <div className="text-right min-w-[120px]">
+          <div className="text-right">
             <Pricedisplay
               amount={order.totalPrice}
-              left
               center={false}
+              isTable={true}
               currencyCode={order.currencyCode || "USD"}
               currencySymbol={order.currencySymbol || "$"}
             />
@@ -331,11 +330,11 @@ export default observer(function Orderdetail({
           <div className="text-[color:var(--gray-three)]">
             {t("orderDetail.total")}
           </div>
-          <div className="text-right min-w-[120px]">
+          <div className="text-right">
             <Pricedisplay
-              left
               amount={order.totalFinalPrice}
               center={false}
+              isTable={true}
               currencyCode={order.currencyCode || "USD"}
               currencySymbol={order.currencySymbol || "$"}
             />

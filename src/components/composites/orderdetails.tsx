@@ -9,14 +9,12 @@ import {
   IkasPaymentMethodType,
   IkasOrderPackageFullfillStatus,
   IkasTrackingInfo,
-  IkasCustomer,
-  IkasOrderCustomer,
-  IkasOrder,
 } from "@ikas/storefront";
 import Orderrefund from "./orderrefund";
 import Pricedisplay from "./pricedisplay";
 import { useRouter } from "next/router";
 import { orderStore } from "src/utils/orderStore";
+import Envelope from "../svg/Envelope";
 
 const OrderLineItemRefundStatusComponent = observer(
   ({
@@ -75,7 +73,7 @@ const RefundProcessButton = ({
   const { t } = useTranslation();
   return (
     <button
-      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-sm font-medium text-white rounded-sm py-2.5 px-5 transition-colors duration-200"
+      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
       disabled={disabled}
       onClick={onClick}
     >
@@ -83,6 +81,7 @@ const RefundProcessButton = ({
     </button>
   );
 };
+
 
 function getOrderPackageTitle(status: IkasOrderPackageFullfillStatus) {
   const { t } = useTranslation();
@@ -206,6 +205,7 @@ const OrderDetail = () => {
     order,
     orderedAt,
     orderTransactions,
+    orderLineItems,
     refundableItems,
     toggleRefundProcess,
   } = useOrderDetail();
@@ -214,7 +214,6 @@ const OrderDetail = () => {
 
   const handleGoToContact = () => {
     if (order?.orderNumber) {
-      console.log('Order Number:', order.orderNumber);
       orderStore.setOrderNumber(order.orderNumber);
 
       const fn = order?.customer?.firstName || "";
@@ -223,13 +222,6 @@ const OrderDetail = () => {
       let phoneNumber = order?.billingAddress?.phone ||
         order?.shippingAddress?.phone ||
         "";
-
-      console.log('Contact Details:', {
-        firstName: fn,
-        lastName: ln,
-        email: em,
-        phoneNumber: phoneNumber
-      });
 
       orderStore.setFirstName(fn);
       orderStore.setLastName(ln);
@@ -244,6 +236,7 @@ const OrderDetail = () => {
     toggleRefundProcess(!isRefundProcess);
     window.scroll(0, 0);
   };
+
   if (isPending)
     return (
       <div className="flex items-center justify-center h-[411px]">
@@ -270,9 +263,10 @@ const OrderDetail = () => {
         <button
           type="button"
           onClick={handleGoToContact}
-          className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer"
+          className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer flex flex-row items-center gap-2"
         >
-          {t("contactUs")}
+          <Envelope />
+          <span>{t("contactUs")}</span>
         </button>
       </div>
 
@@ -283,7 +277,9 @@ const OrderDetail = () => {
           <div className="grid gap-8 lg:grid-cols-[calc(100%-342px)_310px]">
             <div className="flex flex-col gap-4">
               {order.displayedPackages?.map((orderPackage) => {
-                const orderLineItems = orderPackage.getOrderLineItems(order);
+                const packageLineItems = orderLineItems.filter(item =>
+                  orderPackage.orderLineItemIds.includes(item.id)
+                );
                 const title = getOrderPackageTitle(
                   orderPackage.orderPackageFulfillStatus
                 );
@@ -292,7 +288,7 @@ const OrderDetail = () => {
                     key={orderPackage.id}
                     title={title}
                     trackingInfo={orderPackage.trackingInfo}
-                    orderLineItems={orderLineItems}
+                    orderLineItems={packageLineItems}
                   />
                 );
               })}
@@ -303,22 +299,28 @@ const OrderDetail = () => {
               ).length > 0 && (
                   <>
                     <div className="text-xl">{t("trackingInfo")}</div>
-                    {order.displayedPackages?.map((orderPackage) => (
-                      <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-                        <div className="text-[color:var(--gray-three)]">
-                          {orderPackage.trackingInfo?.cargoCompany}
+                    {order.displayedPackages?.map((orderPackage) =>
+                      orderPackage.trackingInfo?.cargoCompany ? (
+                        <div
+                          key={orderPackage.id}
+                          className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1"
+                        >
+                          <div className="text-[color:var(--gray-three)]">
+                            {orderPackage.trackingInfo.cargoCompany}
+                          </div>
+                          <div className="text-right">
+                            <a
+                              href={orderPackage.trackingInfo.trackingLink || ""}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[color:var(--color-three)] underline"
+                            >
+                              {orderPackage.trackingInfo.trackingNumber}
+                            </a>
+                          </div>
                         </div>
-                        <div className="text-right">
-                          <a
-                            href={orderPackage.trackingInfo?.trackingLink || ""}
-                            target="_blank"
-                            className="text-[color:var(--color-three)] underline"
-                          >
-                            {orderPackage.trackingInfo?.trackingNumber}
-                          </a>
-                        </div>
-                      </div>
-                    ))}
+                      ) : null
+                    )}
                   </>
                 )}
               <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
@@ -366,6 +368,7 @@ const OrderDetail = () => {
                               <Pricedisplay
                                 amount={oT.amount || 0}
                                 center={false}
+                                isTable={true}
                                 currencyCode={oT.currencyCode || "USD"}
                                 currencySymbol={oT.currencySymbol || "$"}
                               />
@@ -394,7 +397,7 @@ const OrderDetail = () => {
                   <Pricedisplay
                     amount={order.shippingTotal}
                     center={false}
-                    left
+                    isTable={true}
                     currencyCode={order.currencyCode || "USD"}
                     currencySymbol={order.currencySymbol || "$"}
                   />
@@ -409,7 +412,7 @@ const OrderDetail = () => {
                       <Pricedisplay
                         amount={order.couponAdjustment.amount || 0}
                         center={false}
-                        left
+                        isTable={true}
                         currencyCode={order.currencyCode || "USD"}
                         currencySymbol={order.currencySymbol || "$"}
                       />
@@ -423,7 +426,7 @@ const OrderDetail = () => {
                   <Pricedisplay
                     amount={order.totalTax}
                     center={false}
-                    left
+                    isTable={true}
                     currencyCode={order.currencyCode || "USD"}
                     currencySymbol={order.currencySymbol || "$"}
                   />
@@ -434,8 +437,8 @@ const OrderDetail = () => {
                 <div className="text-right">
                   <Pricedisplay
                     amount={order.totalPrice}
-                    left
                     center={false}
+                    isTable={true}
                     currencyCode={order.currencyCode || "USD"}
                     currencySymbol={order.currencySymbol || "$"}
                   />
@@ -445,9 +448,9 @@ const OrderDetail = () => {
                 </div>
                 <div className="text-right">
                   <Pricedisplay
-                    left
                     amount={order.totalFinalPrice}
                     center={false}
+                    isTable={true}
                     currencyCode={order.currencyCode || "USD"}
                     currencySymbol={order.currencySymbol || "$"}
                   />
