@@ -2,6 +2,13 @@
 
 @config '../../tailwind.config.js';
 
+/* @source inline("flex-{nowrap,none}") */
+/* @source inline("flex-{1,auto,initial,wrap,wrap-reverse}"); */
+/* @source inline("gap-{1..12}"); */
+@source inline("w-{{2..6}}/{{1..6}}");
+@source inline("w-{1}/{{3..6}}");
+/* @source inline("h-{{1..6}}/{{1..6}}"); */
+/* @source inline("grid-cols-{1..12}"); */
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -10,7 +17,7 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-@layer base {
+@utility base {
   *,
   ::after,
   ::before,
@@ -45,9 +52,9 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-background-color: var(--color-two);
-border: 3px solid var(--color-two);
-border-radius: 14px;
+  background-color: var(--color-two);
+  border: 3px solid var(--color-two);
+  border-radius: 14px;
 }
 
 .customloader {
@@ -163,5 +170,21 @@ input[type="number"] {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.custom-responsive-width {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .custom-responsive-width {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-responsive-width {
+    width: 33.333333%;
   }
 }
