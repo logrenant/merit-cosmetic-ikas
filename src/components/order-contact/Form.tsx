@@ -57,14 +57,12 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
 
     const validate = () => {
         const e: Partial<Record<keyof typeof formState, string>> = {};
-
         // required checks
         (Object.keys(formState) as Array<keyof typeof formState>).forEach((field) => {
             if (!formState[field]) {
                 e[field] = formRule.requiredRule;
             }
         });
-
         // email format
         if (formState.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
             e.email = formRule.emailRule;
@@ -72,7 +70,6 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         // phone numeric
         if (formState.phoneNumber) {
             const phonePattern = /^\+?\d{0,13}$/;
-
             const isValidPhone = phonePattern.test(
                 formState.phoneNumber.replace(/\s+/g, '')
             );
@@ -101,6 +98,7 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         try {
             await sendEmail(formRef);
             setIsSubmitted(true);
+            setGeneralError(null);
             // reset form
             setFormState({
                 orderNumber: '',
@@ -113,138 +111,76 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         } catch (err) {
             console.error('Mail gönderim hatası:', err);
             setGeneralError(submitError || t('submitError') || 'Gönderim sırasında bir hata oluştu.');
+            setIsSubmitted(false);
         } finally {
             setIsSubmitting(false);
         }
     };
 
+    const renderField = (
+        label: string,
+        name: keyof typeof formState,
+        type: 'text' | 'email' | 'tel' | 'textarea' = 'text',
+    ) => (
+        <div className="flex flex-col">
+            <span className="text-base text-[color:var(--black-one)] mb-0.5">
+                {t(label)}
+            </span>
+            {type === 'textarea' ? (
+                <textarea
+                    name={name}
+                    placeholder={t(label)}
+                    value={formState[name]}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
+                />
+            ) : (
+                <input
+                    type={type}
+                    name={name}
+                    placeholder={t(label)}
+                    value={formState[name]}
+                    onChange={handleChange}
+                    dir={direction}
+                    className={`w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2`}
+                />
+            )}
+            {errors[name] && (
+                <span className="text-red-500 text-xs mt-0.5">{errors[name]}</span>
+            )}
+        </div>
+    );
+
     return (
         <section id="contact" dir={direction}>
             <div className="w-full">
-                {/* Başarı mesajı */}
+                {/* Form Responses */}
                 {isSubmitted && (
                     <div className="mb-6 p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm">
                         <h2 className="font-normal text-lg">{formMessages.title}</h2>
                         <p className="mt-1 text-base">{formMessages.text}</p>
                     </div>
                 )}
+                {generalError && (
+                    <div className="mb-6 p-4 bg-[color:var(--color-one)] text-white rounded-sm">
+                        <h2 className="font-normal text-lg">{submitError}</h2>
+                    </div>
+                )}
 
                 <form ref={formRef} className="flex flex-col gap-4" onSubmit={handleSubmit}>
-                    {/* Order Number */}
-                    <label className="flex flex-col">
-                        <span className="text-base text-[color:var(--black-one)] mb-0.5">
-                            {orderNumberInput}
-                        </span>
-                        <input
-                            name="orderNumber"
-                            placeholder={orderNumberInput}
-                            value={formState.orderNumber}
-                            onChange={handleChange}
-                            readOnly
-                            className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2 opacity-70 cursor-not-allowed focus:ring-0"
-                        />
-                        {errors.orderNumber && (
-                            <span className="text-red-500 text-xs mt-0.5">{errors.orderNumber}</span>
-                        )}
-                    </label>
-
-                    {/* First Name */}
-                    <label className="flex flex-col">
-                        <span className="text-base text-[color:var(--black-one)] mb-0.5">
-                            {t('firstName')}
-                        </span>
-                        <input
-                            name="firstName"
-                            placeholder={t('firstName')}
-                            value={formState.firstName}
-                            onChange={handleChange}
-                            className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
-                        />
-                        {errors.firstName && (
-                            <span className="text-red-500 text-xs mt-0.5">{errors.firstName}</span>
-                        )}
-                    </label>
-
-                    {/* Last Name */}
-                    <label className="flex flex-col">
-                        <span className="text-base text-[color:var(--black-one)] mb-0.5">
-                            {t('lastName')}
-                        </span>
-                        <input
-                            name="lastName"
-                            placeholder={t('lastName')}
-                            value={formState.lastName}
-                            onChange={handleChange}
-                            className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
-                        />
-                        {errors.lastName && (
-                            <span className="text-red-500 text-xs mt-0.5">{errors.lastName}</span>
-                        )}
-                    </label>
-
-                    {/* Phone Number */}
-                    <label className="flex flex-col">
-                        <span className="text-base text-[color:var(--black-one)] mb-0.5">
-                            {t('phoneNumber')}
-                        </span>
-                        <input
-                            type="tel"
-                            name="phoneNumber"
-                            placeholder={t('phoneNumber')}
-                            value={formState.phoneNumber}
-                            onChange={handleChange}
-                            className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
-                        />
-                        {errors.phoneNumber && (
-                            <span className="text-red-500 text-xs mt-0.5">{errors.phoneNumber}</span>
-                        )}
-                    </label>
-
-                    {/* Email */}
-                    <label className="flex flex-col">
-                        <span className="text-base text-[color:var(--black-one)] mb-0.5">
-                            {t('email')}
-                        </span>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder={t('email')}
-                            value={formState.email}
-                            onChange={handleChange}
-                            className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
-                        />
-                        {errors.email && (
-                            <span className="text-red-500 text-xs mt-0.5">{errors.email}</span>
-                        )}
-                    </label>
-
-                    {/* Message */}
-                    <label className="flex flex-col">
-                        <span className="text-base text-[color:var(--black-one)] mb-0.5">
-                            {t('message')}
-                        </span>
-                        <textarea
-                            name="message"
-                            placeholder={t('message')}
-                            value={formState.message}
-                            onChange={handleChange}
-                            rows={5}
-                            className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
-                        />
-                        {errors.message && (
-                            <span className="text-red-500 text-xs mt-0.5">{errors.message}</span>
-                        )}
-                    </label>
-
-                    {/* General error */}
-                    {generalError && (
-                        <div className="text-red-500 text-sm mb-2">{generalError}</div>
-                    )}
+                    {/* Form fields */}
+                    {renderField(orderNumberInput || t('orderNumber'), 'orderNumber', 'text')}
+                    {renderField(t('firstName'), 'firstName')}
+                    {renderField(t('lastName'), 'lastName')}
+                    {renderField(t('phoneNumber'), 'phoneNumber', 'tel')}
+                    {renderField(t('email'), 'email', 'email')}
+                    {renderField(t('message'), 'message', 'textarea')}
 
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-[color:var(--color-three)] text-white rounded-sm py-2.5 px-5 disabled:opacity-60"
+                        className="w-full bg-[color:var(--color-three)] text-white rounded-sm py-2.5 px-5 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
                     >
                         {isSubmitting ? t('loading') : t('submit')}
                     </button>

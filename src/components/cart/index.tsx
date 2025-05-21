@@ -151,12 +151,12 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                 </h2>
                 <div className="flex gap-y-2 flex-col items-center justify-center">
                   <div className="flex flex-col w-full">
-                    <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center w-full text-lg">
                       <button
                         onClick={() => {
                           setOpenSelectCountry(!openSelectCountry);
                         }}
-                        className="text-[color:var(--black-two)] gap-1 flex text-lg items-center font-light cursor-pointer"
+                        className="text-[color:var(--black-two)] gap-1 flex text-lg items-center font-light cursor-pointer min-w-[60%] max-w-[60%]"
                       >
                         {t("orderDetail.shipping")}
                         <svg
@@ -177,21 +177,20 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                           ({currentCountry})
                         </span>
                       </button>
-                      <span className="text-[color:var(--black-two)] text-lg font-light">
 
-                        {/* Shipping Cost */}
-                        {currentShippingCost === 0 ? (
-                          t("freeShipping")
-                        ) : (
-                          <Pricedisplay
-                            amount={currentShippingCost}
-                            currencyCode={store.cartStore.cart.currencyCode || "USD"}
-                            currencySymbol={store.cartStore.cart.currencySymbol || "$"}
-                            center={false}
-                            left
-                          />
-                        )}
-                      </span>
+                      {/* Shipping Cost */}
+                      {currentShippingCost === 0 ? (
+                        t("freeShipping")
+                      ) : (
+                        <Pricedisplay
+                          amount={currentShippingCost}
+                          currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                          currencySymbol={store.cartStore.cart.currencySymbol || "$"}
+                          center={false}
+                          isTable={true}
+                          containerClassName="text-[color:var(--black-two)] font-light"
+                        />
+                      )}
                     </div>
                     {openSelectCountry && (
                       <div className="mt-1 mb-2">
@@ -216,81 +215,83 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between w-full">
-                    <span className="text-[color:var(--black-two)] text-lg font-light">
+                  <div className="flex items-center w-full text-lg">
+                    <span className="text-[color:var(--black-two)] font-light min-w-[60%] max-w-[60%]">
                       {t("orderDetail.tax")}
                     </span>
-                    <span className="text-[color:var(--black-two)] text-lg font-light">
-                      {/* Tax */}
-                      <Pricedisplay
-                        amount={store.cartStore.cart.totalTax}
-                        currencyCode={store.cartStore.cart.currencyCode || "USD"}
-                        currencySymbol={store.cartStore.cart.currencySymbol || "$"}
-                        center={false}
-                        left
-                      />
-                    </span>
+                    {/* Tax */}
+                    <Pricedisplay
+                      amount={store.cartStore.cart.totalTax}
+                      currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                      currencySymbol={store.cartStore.cart.currencySymbol || "$"}
+                      center={false}
+                      isTable={true}
+                      containerClassName="text-[color:var(--black-two)] font-light"
+                    />
                   </div>
-                  <div className="flex items-center justify-between w-full">
-                    <span className="text-[color:var(--black-two)] text-lg font-light">
+                  <div className="flex items-center w-full text-lg">
+                    <div className="text-[color:var(--black-two)] font-light min-w-[60%] max-w-[60%]">
                       {t("orderDetail.subtotal")}
-                    </span>
-                    <span className="text-[color:var(--black-two)] text-lg font-light">
-                      {/* Subtotal */}
-                      <Pricedisplay
-                        amount={store.cartStore.cart.totalPrice}
-                        currencyCode={store.cartStore.cart.currencyCode || "USD"}
-                        currencySymbol={store.cartStore.cart.currencySymbol || "$"}
-                        center={false}
-                        left
-                      />
-                    </span>
+                    </div>
+                    {/* Subtotal */}
+                    <Pricedisplay
+                      center={false}
+                      isTable={true}
+                      containerClassName="text-[color:var(--black-two)] font-light"
+                      amount={store.cartStore.cart.totalPrice}
+                      currencyCode={
+                        store.cartStore.cart.currencyCode || "USD"
+                      }
+                      currencySymbol={
+                        store.cartStore.cart.currencySymbol || "$"
+                      }
+                    />
                   </div>
 
                   {/* Discount */}
                   {!!store.cartStore.cart?.couponCode && (
-                    <div className="flex items-center justify-between w-full">
-                      <span className="text-[color:var(--black-two)] text-lg font-light">
+                    <div className="flex items-center w-full text-lg">
+                      <span className="text-[color:var(--black-two)] font-light min-w-[60%] max-w-[60%]">
                         {t("discountTotal")}
                       </span>
-                      <span className="text-[color:var(--black-two)] text-lg font-light">
-                        <Pricedisplay
-                          amount={store.cartStore.cart.totalPrice - store.cartStore.cart.totalFinalPrice}
-                          currencyCode={store.cartStore.cart.currencyCode || "USD"}
-                          currencySymbol={store.cartStore.cart.currencySymbol || "$"}
-                          center={false}
-                          left
-                        />
-                      </span>
+                      <Pricedisplay
+                        amount={store.cartStore.cart.totalPrice - store.cartStore.cart.totalFinalPrice}
+                        currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                        currencySymbol={store.cartStore.cart.currencySymbol || "$"}
+                        center={false}
+                        isTable={true}
+                        containerClassName="text-[color:var(--black-two)] font-light"
+                      />
+
                     </div>
                   )}
-                  <div className="flex items-center justify-between w-full">
-                    <span className="text-[color:var(--black-two)] text-lg font-normal">
+                  <div className="flex items-center w-full text-lg">
+                    <div className="text-[color:var(--black-two)] font-light min-w-[60%] max-w-[60%]">
                       {t("total")}
-                    </span>
-                    <span className="text-[color:var(--black-two)] text-lg font-normal">
+                    </div>
 
-                      {/* Total Cost */}
-                      {currentShippingCost ? (
-                        <>
-                          <Pricedisplay
-                            amount={store.cartStore.cart.totalFinalPrice + currentShippingCost}
-                            currencyCode={store.cartStore.cart.currencyCode || "USD"}
-                            currencySymbol={store.cartStore.cart.currencySymbol || "$"}
-                            center={false}
-                            left
-                          />
-                        </>
-                      ) : (
+                    {/* Total Cost */}
+                    {currentShippingCost ? (
+                      <>
                         <Pricedisplay
-                          amount={store.cartStore.cart.totalFinalPrice}
+                          amount={store.cartStore.cart.totalFinalPrice + currentShippingCost}
                           currencyCode={store.cartStore.cart.currencyCode || "USD"}
                           currencySymbol={store.cartStore.cart.currencySymbol || "$"}
                           center={false}
-                          left
+                          isTable={true}
+                          containerClassName="text-[color:var(--black-two)] font-light"
                         />
-                      )}
-                    </span>
+                      </>
+                    ) : (
+                      <Pricedisplay
+                        amount={store.cartStore.cart.totalFinalPrice}
+                        currencyCode={store.cartStore.cart.currencyCode || "USD"}
+                        currencySymbol={store.cartStore.cart.currencySymbol || "$"}
+                        center={false}
+                        isTable={true}
+                        containerClassName="text-[color:var(--black-two)] font-light"
+                      />
+                    )}
                   </div>
                   <div className="flex mt-2 gap-1.5 items-center w-full">
                     <input
