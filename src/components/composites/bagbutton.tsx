@@ -424,7 +424,7 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                         onClick={() => {
                           setOpenSelectCountry(!openSelectCountry);
                         }}
-                        className="text-[color:var(--black-two)] gap-1 flex items-center font-light cursor-pointer"
+                        className="text-[color:var(--black-two)] gap-1 flex items-center font-light cursor-pointer min-w-[65%] max-w-[65%]"
                       >
                         {t("orderDetail.shipping")}
                         <svg
@@ -445,23 +445,22 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           ({currentCountry})
                         </span>
                       </button>
-                      <span className="text-[color:var(--black-two)] font-light">
-                        {currentShippingCost === 0 ? (
-                          t("freeShipping")
-                        ) : (
-                          <Pricedisplay
-                            amount={currentShippingCost}
-                            center={false}
-                            left
-                            currencyCode={
-                              store.cartStore.cart.currencyCode || "USD"
-                            }
-                            currencySymbol={
-                              store.cartStore.cart.currencySymbol || "$"
-                            }
-                          />
-                        )}
-                      </span>
+                      {currentShippingCost === 0 ? (
+                        t("freeShipping")
+                      ) : (
+                        <Pricedisplay
+                          amount={currentShippingCost}
+                          center={false}
+                          isTable={true}
+                          containerClassName="text-[color:var(--black-two)] font-light"
+                          currencyCode={
+                            store.cartStore.cart.currencyCode || "USD"
+                          }
+                          currencySymbol={
+                            store.cartStore.cart.currencySymbol || "$"
+                          }
+                        />
+                      )}
                     </div>
                     {openSelectCountry && (
                       <div className="mt-1 mb-2">
@@ -485,15 +484,36 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                       </div>
                     )}
                   </div>
-                  <div className="flex items-center justify-between w-full">
-                    <span className="text-[color:var(--black-two)] font-light">
+                  <div className="flex items-center w-full">
+                    <div className="text-[color:var(--black-two)] font-light min-w-[65%] max-w-[65%]">
                       {t("orderDetail.subtotal")}
+                    </div>
+                    <Pricedisplay
+                      center={false}
+                      isTable={true}
+                      containerClassName="text-[color:var(--black-two)] font-light"
+                      amount={store.cartStore.cart.totalPrice}
+                      currencyCode={
+                        store.cartStore.cart.currencyCode || "USD"
+                      }
+                      currencySymbol={
+                        store.cartStore.cart.currencySymbol || "$"
+                      }
+                    />
+                  </div>
+                  <div className="flex font-normal items-center justify-between w-full">
+                    <span className="text-[color:var(--black-two)] min-w-[65%] max-w-[65%]">
+                      {t("total")}
                     </span>
-                    <span className="text-[color:var(--black-two)] font-light">
+                    {currentShippingCost ? (
                       <Pricedisplay
+                        isTable={true}
                         center={false}
-                        left
-                        amount={store.cartStore.cart.totalPrice}
+                        containerClassName="text-[color:var(--black-two)]"
+                        amount={
+                          store.cartStore.cart.totalFinalPrice +
+                          currentShippingCost
+                        }
                         currencyCode={
                           store.cartStore.cart.currencyCode || "USD"
                         }
@@ -501,42 +521,20 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                           store.cartStore.cart.currencySymbol || "$"
                         }
                       />
-                    </span>
-                  </div>
-                  <div className="flex font-normal items-center justify-between w-full">
-                    <span className="text-[color:var(--black-two)]">
-                      {t("total")}
-                    </span>
-                    <span className="text-[color:var(--black-two)]">
-                      {currentShippingCost ? (
-                        <Pricedisplay
-                          left
-                          center={false}
-                          amount={
-                            store.cartStore.cart.totalFinalPrice +
-                            currentShippingCost
-                          }
-                          currencyCode={
-                            store.cartStore.cart.currencyCode || "USD"
-                          }
-                          currencySymbol={
-                            store.cartStore.cart.currencySymbol || "$"
-                          }
-                        />
-                      ) : (
-                        <Pricedisplay
-                          left
-                          center={false}
-                          amount={store.cartStore.cart.totalFinalPrice}
-                          currencyCode={
-                            store.cartStore.cart.currencyCode || "USD"
-                          }
-                          currencySymbol={
-                            store.cartStore.cart.currencySymbol || "$"
-                          }
-                        />
-                      )}
-                    </span>
+                    ) : (
+                      <Pricedisplay
+                        isTable={true}
+                        center={false}
+                        containerClassName="text-[color:var(--black-two)]"
+                        amount={store.cartStore.cart.totalFinalPrice}
+                        currencyCode={
+                          store.cartStore.cart.currencyCode || "USD"
+                        }
+                        currencySymbol={
+                          store.cartStore.cart.currencySymbol || "$"
+                        }
+                      />
+                    )}
                   </div>
 
                   <button

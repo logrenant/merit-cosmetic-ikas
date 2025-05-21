@@ -9,24 +9,37 @@ const Pricedisplay = ({
   currencyCode,
   currencySymbol,
   center,
-  left
+  left,
+  isTable = false,
+  containerClassName = "",
+  priceClassName = "",
+  convertedPriceClassName = ""
 }: {
   amount: number;
   currencyCode: string;
   currencySymbol: string;
   center: boolean;
   left?: boolean;
+  isTable?: boolean;
+  containerClassName?: string;
+  priceClassName?: string;
+  convertedPriceClassName?: string;
 }) => {
   const { formatPrice } = useConvertedPrice();
   const uiStore = UIStore.getInstance();
   return (
     <span
-      className={`flex items-center gap-x-1.5 whitespace-nowrap flex-wrap ${center ? "justify-center" : ""
-        } ${left ? "flex-row-reverse justify-end" : ""}`}
+      className={`flex items-center gap-x-1.5 whitespace-nowrap 
+        ${isTable ? "flex-row w-full" : "flex-wrap"}
+        ${!isTable && center ? "justify-center" : ""}
+        ${!isTable && left ? "flex-row-reverse justify-end" : ""}
+        ${containerClassName}`}
     >
-      {formatCurrency(amount, currencyCode, currencySymbol)}
+      <span className={`${isTable ? "w-[50%] text-end" : ""} ${priceClassName}`}>
+        {formatCurrency(amount, currencyCode, currencySymbol)}
+      </span>
       {uiStore.currency !== "USD" && (
-        <span className="text-xs mt-0.5 md:text-sm text-[color:var(--color-four)]">
+        <span className={`text-xs ${isTable ? "w-[50%] text-end" : ""} md:text-sm text-[color:var(--color-four)] ${convertedPriceClassName}`}>
           ({formatPrice(amount)})
         </span>
       )}

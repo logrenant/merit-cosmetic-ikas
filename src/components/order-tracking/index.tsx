@@ -60,7 +60,7 @@ const OrderTracking = (props: OrderTrackingProps) => {
 
     return (
         <div dir={direction}>
-            <div className="flex flex-col gap-12 mt-10">
+            <div className="flex flex-col gap-12 my-10">
                 <div className="flex items-center gap-4 border-b-[4px] border-[color:var(--color-five)] pb-6 justify-center">
                     <h1 className="text-lg px-4 relative font-medium text-[color:var(--color-one)] ">
                         {props?.pageTitle}
