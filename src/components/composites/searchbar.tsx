@@ -1,4 +1,3 @@
-
 import {
   IkasBrand,
   IkasBrandList,
@@ -178,28 +177,21 @@ const SearchBar = ({
     return products.data;
   }, [products.data, hoveredCategory]);
 
-  // Effects
   useEffect(() => {
-    const allCats = products.data.flatMap(p => p.categories ?? []);
-    const uniqueCats = Array.from(
-      new Map(allCats.map(c => [c.name.toLowerCase(), c])).values()
-    );
+    // Get unique categories from products directly
+    const uniqueCategories = products.data.reduce((acc: { name: string; href: string }[], product) => {
+      product.categories?.forEach(category => {
+        if (!acc.some(c => c.name === category.name)) {
+          acc.push({
+            name: category.name,
+            href: `/${slugify(category.name)}`
+          });
+        }
+      });
+      return acc;
+    }, []);
 
-    const productCategories = uniqueCats.map(c => ({
-      name: c.name,
-      href: c.href
-    }));
-
-
-    console.log("allCats", products.data);
-    console.log("allCats", allCats);
-    console.log("uniqueCats", uniqueCats);
-    console.log("productCategories", uniqueCats);
-
-    // console.log("[SearchBar] Tüm Ürünler:", products.data);
-    // console.log("[SearchBar] Tüm Kategoriler:", productCategories);
-
-    setProductCategories(productCategories);
+    setProductCategories(uniqueCategories);
     setSearchedProductsNotFiltered(products.data);
     setSearchedProducts(products.data.slice(0, 8));
   }, [products.data]);
@@ -654,7 +646,7 @@ const SearchBar = ({
                         {products.data.length > 8 && (
                           <div className="col-span-2 flex">
                             <Link href={`/${slugify(linkToCategory)}`}>
-                              <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)]">
+                              <a className="text-xs flex items-center ml-auto text-[color:var(--black-one]">
                                 <span>
                                   <span className="font-bold text-slate-900">
                                     &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}

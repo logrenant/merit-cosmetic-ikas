@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import { observer } from "mobx-react-lite";
+import { Image } from "@ikas/storefront";
 
 import { useDirection } from "src/utils/useDirection";
 import { HomepageBlogsProps } from "../__generated__/types";
-import BlogCard from "../page-blogs/blog-card";
+import BlogCard from "./blog-card";
 
 
 const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
@@ -11,9 +12,20 @@ const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
     const blogsRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="layout" ref={blogsRef} dir={direction}>
-            {/* Grid List */}
-            <ul className="grid grid-cols-12 gap-x-5 gap-y-10 mt-4 mb-8">
+        <div className="layout my-6" ref={blogsRef} dir={direction}>
+            {/* Banner */}
+            {props.banner && (
+                <div className="w-full rounded relative h-14 md:h-16 lg:h-28 xl:h-30 mb-6">
+                    <Image
+                        image={props.banner}
+                        alt={props.banner.altText || "Banner"}
+                        layout="fill"
+                        className="rounded object-contain"
+                    />
+                </div>
+            )}
+
+            <ul className="grid grid-cols-12 gap-x-5 gap-y-10 mt-4">
                 {blogList.data.map((blog) => (
                     <li
                         key={blog.id}

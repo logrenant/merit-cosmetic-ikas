@@ -13,7 +13,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
     const blogsRef = useRef<HTMLDivElement>(null);
 
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
+    const [open, setOpen] = useState<boolean>(true);
 
     const categories = useMemo(() => (
         Array.from(
@@ -31,37 +31,81 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
         , [blogList]);
 
     return (
-        <div className="layout" ref={blogsRef} dir={direction}>
+        <div className="layout my-10" ref={blogsRef} dir={direction}>
             {/* Title */}
-            <h1 className="text-3xl font-bold my-12">{props.title}</h1>
+            <div className="flex flex-row justify-between my-12 text-[color:var(--gray-five)]">
+                <h1 className="text-3xl font-bold">{props.title}</h1>
+                <h1 className="text-3xl font-bold">
+                    {selectedCategory || (direction === 'rtl' ? "جميع المدونات" : "All Blogs")}
+                </h1>
+                <div />
+            </div>
             <div className="flex flex-row gap-12">
                 {showFilter && (
                     <div className="w-1/5 flex flex-col gap-4">
-                        <div className="flex-wrap">
-                            {categories.map(({ slug, name }) => (
-                                <button
-                                    key={slug}
-                                    onClick={() => setSelectedCategory(slug)}
-                                    className={`
-                                    bg-[color:var(--color-three)] mr-2 text-white px-3 py-1 text-sm rounded-sm hover:opacity-80
-                                    ${selectedCategory === slug ? "ring-2 ring-[color:var(--color-one)]" : ""}
-                                `}
+                        <div className="mb-3">
+                            <div className="flex w-full flex-col items-center">
+                                <div
+                                    onClick={() => setOpen(!open)}
+                                    className="w-full cursor-pointer bg-[color:var(--color-two)] py-1.5 px-2 justify-between flex items-center gap-2"
                                 >
-                                    {name}
-                                </button>
-                            ))}
+                                    <div className="text-base text-white font-light">{props.filterTitle}</div>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className={`w-[18px] transition-transform h-[18px] text-white ${open ? "transform rotate-90" : "transform -rotate-90"}`}
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                        />
+                                    </svg>
+                                </div>
+                                {open && (
+                                    <div className="flex overflow-y-auto max-h-[165px] border-b border-[color:var(--gray-two)] items-start text-left w-full flex-col">
+                                        {categories.map(({ slug, name }) => (
+                                            <button
+                                                key={slug}
+                                                onClick={() => setSelectedCategory(slug)}
+                                                className="text-base gap-2 border last:border-b-0 border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer hover:bg-gray-50"
+                                            >
+                                                <input
+                                                    className="hidden peer"
+                                                    type="checkbox"
+                                                    readOnly
+                                                    checked={selectedCategory === slug}
+                                                />
+                                                <div className="w-[17px] h-[17px] border relative border-[color:var(--gray-two)] rounded-sm peer-checked:after:block after:hidden after:absolute after:left-[3.5px] after:top-[3.5px] after:rounded-xs after:bg-[color:var(--color-three)] after:w-2 after:h-2" />
+                                                <span
+                                                    className={`text-base ${selectedCategory === slug
+                                                        ? "text-[color:var(--gray-three)] font-normal"
+                                                        : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
+                                                        }`}
+                                                >
+                                                    {name}
+                                                </span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                        {/* Clear Filter */}
-                        <button
-                            onClick={() => setSelectedCategory(null)}
-                            className="disabled:opacity-60 whitespace-nowrap tracking-wide bg-[color:var(--color-three)] text-sm w-full rounded-sm py-1.5 text-white"
-                        >
-                            {t("categoryPage.clearFilters")}
-                        </button>
+                        {selectedCategory && (
+                            <button
+                                onClick={() => setSelectedCategory(null)}
+                                className="disabled:opacity-60 whitespace-nowrap tracking-wide bg-[color:var(--color-three)] text-sm w-full rounded-sm py-1.5 text-white hover:opacity-90"
+                            >
+                                {t("categoryPage.clearFilters")}
+                            </button>
+                        )}
                     </div>
                 )}
                 {/* Grid List */}
-                <ul className="w-4/5 grid grid-cols-12 gap-x-5 gap-y-10 mt-4 mb-8">
+                <ul className="w-4/5 flex flex-col gap-12">
                     {(blogList.data
                         // Seçili kategori varsa, sadece o slug ile eşleşenleri göster
                         .filter(blog =>
@@ -71,7 +115,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
                     ).map(blog => (
                         <li
                             key={blog.id}
-                            className="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4"
+                            className=""
                         >
                             <BlogCard
                                 data={blog}
@@ -89,3 +133,5 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
 };
 
 export default observer(BlogList);
+
+

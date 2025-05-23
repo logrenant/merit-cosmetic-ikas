@@ -4,6 +4,7 @@ import {
   IkasBlog,
   IkasImage,
   Link,
+  useTranslation,
 } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
 import getMonthName from "src/utils/getMonthName";
@@ -21,6 +22,7 @@ type Props = {
 >;
 
 const BlogCard = (props: Props) => {
+  const { t } = useTranslation();
   const { direction } = useDirection();
   const publishedDate = useMemo(() => {
     const ts = props.data.createdAt;
@@ -36,72 +38,72 @@ const BlogCard = (props: Props) => {
   const showTitle = !!props.data.title;
   const showDescription =
     !!props.showDescription && !!props.data.shortDescription;
-  const showCategory = !!props.showCategory && !!props.data.category;
 
   return (
-    <div className="relative flex flex-col rounded bg-[color:var(--color-one)] border-4 border-[color:var(--color-one)] text-white" dir={direction}>
+    <div className="flex flex-row" dir={direction}>
       <Link href={props.data.href}>
-        <a>
-          {/* Image */}
-          {props.data.image?.id && (
-            <div className="relative block w-full overflow-hidden rounded">
-              <Image
-                useBlur
-                image={props.data.image as IkasImage}
-                alt={props.data.title || ""}
-                layout="responsive"
-                objectFit="cover"
-                width={4}
-                height={2}
-                className="w-full h-auto"
-              />
-            </div>
-          )}
+        <a className="flex flex-col gap-4 w-full border-b-1 pb-12 border-[color:var(--color-one)]">
 
-          {/* Content */}
-          <div className="flex-1 flex flex-col gap-2 p-4 sm:p-2.5">
-            {/* Meta */}
-            <div className="flex justify-between items-center text-[10px] lg:text-xs">
+          {/* Meta */}
+          <div className="flex flex-row-reverse justify-between w-full">
+            <div className="flex justify-between items-center text-[12px] lg:text-base">
               {showPublishedDate && (
                 <div className="inline-block">{publishedDate}</div>
               )}
-              {showAuthor && (
-                <div className="inline-block text-right">
-                  {props.data.writer.firstName} {props.data.writer.lastName}
-                </div>
-              )}
-            </div>
 
+            </div>
             {/* Title */}
             {showTitle && (
               <Link href={props.data.href}>
                 <div className="block">
-                  <div className="font-bold text-base lg:text-lg">
+                  <div className="font-bold text-base lg:text-xl">
                     {props.data.title}
                   </div>
                 </div>
               </Link>
             )}
+          </div>
 
-            {/* Description */}
-            {showDescription && (
-              <p className="">
-                {props.data.shortDescription.length > 260
-                  ? `${props.data.shortDescription.slice(0, 260)}...`
-                  : props.data.shortDescription}
-              </p>
+          <div className="flex flex-row">
+            {/* Image */}
+            {props.data.image?.id && (
+              <div className="flex flex-col bg-[color:var(--color-one)]  w-[280px] h-[200px] border-4 border-[color:var(--color-one)] rounded">
+                <Image
+                  useBlur
+                  image={props.data.image as IkasImage}
+                  alt={props.data.title || ""}
+                  layout="responsive"
+                  objectFit="cover"
+                  width={1}
+                  height={1}
+                />
+                {showAuthor && (
+                  <div className="text-center px-2 py-4 text-white">
+                    {props.data.writer.firstName} {props.data.writer.lastName}
+                  </div>
+                )}
+              </div>
             )}
 
-            {/* Category Badge */}
-            {showCategory && (
-              <div className="absolute top-0 left-0 text-center cursor-pointer">
-                <Link href={`/blog/${props.data.category.metadata?.slug}`}>
-                  <div className="block px-3 py-1 text-[color:var(--bg-color)] bg-[color:var(--color-one)] text-xs">
-                    {props.data.category.name}
+            {/* Content */}
+            <div className="flex flex-col p-4 sm:p-2.5 w-full justify-between">
+              {/* Description */}
+              {showDescription && (
+                <p className="text-lg">
+                  {props.data.shortDescription.length > 400
+                    ? `${props.data.shortDescription.slice(0, 400)}...`
+                    : props.data.shortDescription}
+                </p>
+              )}
+
+              <div className="w-full text-end">
+                <Link href={props.data.href}>
+                  <div className="text-sm underline text-[color:var(--color-one)]">
+                    {`${t("categoryPage.more")} >>`}
                   </div>
                 </Link>
               </div>
-            )}
+            </div>
           </div>
         </a>
       </Link>
