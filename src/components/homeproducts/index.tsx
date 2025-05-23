@@ -76,13 +76,12 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
     <div dir="ltr" className="TEST-PARENT my-6 layout relative" ref={ref} >
 
       {banner && (
-        <div className="w-full relative h-28 mb-6">
+        <div className="w-full rounded relative h-14 md:h-16 lg:h-28 xl:h-30 mb-6">
           <Image
             image={banner}
             alt={banner.altText || "Banner"}
             layout="fill"
-            objectFit="cover"
-            className="rounded"
+            className="rounded object-contain"
           />
         </div>
       )}

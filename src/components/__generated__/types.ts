@@ -201,6 +201,11 @@ export type ContactpageProps = {
 
 export type OrderTrackingProps = {
 	pageTitle?: string;
+	pageDescription?: string;
+	orderNumberInput?: string;
+	orderCannotFound?: string;
+	emailRule?: string;
+	orderNumberRule?: string;
 };
 
 export type PageBlogProps = {
@@ -212,6 +217,7 @@ export type PageBlogProps = {
 
 export type PageBlogsProps = {
 	title?: string;
+	filterTitle?: string;
 	blogList: IkasBlogList;
 	showAuthor?: boolean;
 	showDescription?: boolean;
@@ -271,6 +277,7 @@ export type OrderContactProps = {
 
 export type HomepageBlogsProps = {
 	blogList: IkasBlogList;
+	banner?: IkasImage;
 	showAuthor?: boolean;
 	showDescription?: boolean;
 	showCategory?: boolean;
