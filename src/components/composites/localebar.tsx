@@ -107,11 +107,21 @@ const LocalBar = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const [currency, setCurrency] = useState({
-    currencySymbol: "$",
-    name: "USD",
-  });
   const uiStore = UIStore.getInstance();
+  const [currency, setCurrency] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedCurrency = localStorage.getItem("selectedcurrency");
+      if (savedCurrency) {
+        const parsed = JSON.parse(savedCurrency);
+        uiStore.setCurrency(parsed.name);
+        return parsed;
+      }
+    }
+    return {
+      currencySymbol: "$",
+      name: "USD",
+    };
+  });
   useOnClickOutside(languageRef, () => {
     setLanguageOpen(false);
   });

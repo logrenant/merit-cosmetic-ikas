@@ -76,12 +76,12 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
     <div dir="ltr" className="TEST-PARENT my-6 layout relative" ref={ref} >
 
       {banner && (
-        <div className="w-full rounded relative h-14 md:h-16 lg:h-28 xl:h-30 mb-6">
+        <div className="full rounded relative h-[120px] xl:h-[120px] mb-6">
           <Image
             image={banner}
             alt={banner.altText || "Banner"}
             layout="fill"
-            className="rounded object-contain"
+            className="rounded object-cover "
           />
         </div>
       )}
@@ -121,7 +121,7 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
                     console.log("e.image.id", e.image.id);
                     setSelectedProducts(e.image.id);
                   }}
-                  className={`aspect-216/91 cursor-pointer w-full relative ${selectedProducts === e.image.id
+                  className={`aspect-216/90 cursor-pointer w-full relative ${selectedProducts === e.image.id
                     ? "EQUAL-TEST-HERE border-4 border-[color:var(--quick-color)] rounded-sm"
                     : "NOT-EQUAL-TEST-HERE hover:border-4 border-[color:var(--quick-color)] hover:rounded-sm"
                     }`}
