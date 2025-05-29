@@ -117,6 +117,7 @@ export type NavbarProps = {
 	bannerSlogan: string;
 	sortItems: string;
 	logo: IkasImage;
+	productList?: IkasProductList;
 };
 
 export type QuicklinksProps = {

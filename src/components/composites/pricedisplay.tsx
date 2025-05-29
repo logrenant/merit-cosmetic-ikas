@@ -40,7 +40,7 @@ const Pricedisplay = ({
       </span>
       {uiStore.currency !== "USD" && (
         <span className={`text-xs ${isTable ? "w-[50%] text-end" : ""} md:text-sm text-[color:var(--color-four)] ${convertedPriceClassName}`}>
-          ({formatPrice(amount)})
+          ({formatPrice(amount)} )
         </span>
       )}
     </span>

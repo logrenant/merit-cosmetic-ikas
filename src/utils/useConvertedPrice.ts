@@ -43,14 +43,22 @@ export default function useConvertedPrice() {
         currencySymbol: "$"
       };
 
-      return formatCurrency(
-        convertPrice(price),
-        targetCurrency.name,
-        targetCurrency.currencySymbol
-      );
+      const convertedPrice = convertPrice(price);
+      // Binlik ayırıcı ve ondalık formatı için
+      const formattedPrice = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(convertedPrice);
+
+      return `${formattedPrice} ${targetCurrency.currencySymbol}`;
     } catch (error) {
       console.error("Price formatting error:", error);
-      return formatCurrency(price, "USD", "$");
+      // Hata durumunda da aynı formatı koruyoruz
+      const targetCurrency = currencyData.find(c => c.name === uiStore.currency) || {
+        name: "USD",
+        currencySymbol: "$"
+      };
+      return `${price.toFixed(2)} ${targetCurrency.currencySymbol}`;
     }
   };
 

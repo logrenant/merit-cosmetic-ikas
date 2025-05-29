@@ -15,12 +15,12 @@ const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
         <div className="layout my-6" ref={blogsRef} dir={direction}>
             {/* Banner */}
             {props.banner && (
-                <div className="w-full rounded relative h-14 md:h-16 lg:h-28 xl:h-30 mb-6">
+                <div className="w-full rounded relative h-[64px] xl:h-[120px] mb-6">
                     <Image
                         image={props.banner}
                         alt={props.banner.altText || "Banner"}
                         layout="fill"
-                        className="rounded object-contain"
+                        className="rounded object-cover "
                     />
                 </div>
             )}
