@@ -22,7 +22,7 @@ export function useScreen() {
     return {
         width,
         isSmall: width < point.sm,
-        isMobile: width < point.lg,
-        isDesktop: width >= point.lg,
+        isMobile: width < point.xl,
+        isDesktop: width >= point.xl,
     };
 }

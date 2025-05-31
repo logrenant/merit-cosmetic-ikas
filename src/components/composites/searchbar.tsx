@@ -101,6 +101,13 @@ const SearchBar = ({
     setHoveredBrand(undefined);
     setHoveredBrandId(undefined);
 
+    // Filter products without resetting search results
+    const filteredProducts = products.data.filter(p =>
+      p.categories?.some(c => c.name.toLowerCase() === cat.name.toLowerCase())
+    );
+    setSearchedProductsNotFiltered(filteredProducts);
+    setSearchedProducts(filteredProducts.slice(0, 8));
+
     const categoryFilter = products.filters?.find((f) => f.id === "category");
     if (categoryFilter) {
       const v = categoryFilter.displayedValues.find(
@@ -136,6 +143,11 @@ const SearchBar = ({
   };
 
   const getSearchResultsLink = () => {
+    // If there's a search query and no category is hovered, route to search page
+    if (uiStore.searchKeyword && !hoveredCategory && !hoveredBrand) {
+      return `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`;
+    }
+
     if (hoveredCategory) {
       const category = popularCategories.data.find(
         c => c.name === hoveredCategory
@@ -164,10 +176,9 @@ const SearchBar = ({
       return searchedProducts[0].brand.href;
     }
 
-    return `/${slugify(uiStore.searchKeyword)}`;
+    return `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`;
   };
 
-  // Derived data
   const displayResults = React.useMemo(() => {
     if (hoveredCategory) {
       return products.data.filter(p =>
@@ -288,7 +299,12 @@ const SearchBar = ({
                         <Link key={cat.name} href={cat.href}>
                           <a
                             onMouseEnter={() => onHoverCategory(cat)}
-                            className={`text-[13px] flex items-center text-[color:var(--black-two)] font-normal hover:bg-[color:var(--color-one)] hover:text-white px-4 transition duration-150 ${hoveredCategory === cat.name ? 'bg-[color:var(--color-one)] text-white' : ''}`}
+                            className={`
+                              text-[13px] flex items-center justify-center
+                              rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                              font-normal hover:bg-[color:var(--color-one)]
+                              hover:text-white w-full xl:justify-start px-4 transition duration-150
+                            `}
                           >
                             {cat.name}
                           </a>
@@ -342,7 +358,7 @@ const SearchBar = ({
                             <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)] cursor-pointer">
                               <span>
                                 <span className="font-bold">
-                                  {hoveredBrand || hoveredCategory || uiStore.searchKeyword}
+                                  {hoveredCategory || uiStore.searchKeyword}
                                 </span>
                                 &nbsp;{t("seeAllResults")}
                               </span>
@@ -388,7 +404,6 @@ const SearchBar = ({
                           <a
                             onMouseEnter={() => {
                               setHoveredBrand(el.name);
-
                               setHoveredCategory(el.name);
                               onHoverBrand(el.name);
 
@@ -409,7 +424,7 @@ const SearchBar = ({
                     <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white ">
                       {t("popularBrands")}
                     </h3>
-                    <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] p-4 grid-cols-1 gap-1.5">
+                    <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] py-4 grid-cols-1 gap-1.5 ">
                       {popularBrands.data.map(brand => (
                         <Link key={brand.id} href={brand.href}>
                           <a
@@ -423,7 +438,11 @@ const SearchBar = ({
                               setSearchedProductsNotFiltered(brandProducts);
                               setSearchedProducts(brandProducts.slice(0, 8));
                             }}
-                            className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal "
+                            className={`
+                            text-[13px] flex items-center justify-center
+                            rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                            font-normal bg-[color:var(--gray-bg)] hover:bg-[color:var(--color-one)] hover:text-white  w-full xl:justify-start transition duration-150 px-4
+                          `}
                           >
                             {brand.name}
                           </a>
@@ -539,7 +558,7 @@ const SearchBar = ({
                       <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                         {t("popularCategories")}
                       </h3>
-                      <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] p-4 grid-cols-1 gap-1.5 xpb-[9rem]">
+                      <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] py-4 grid-cols-1 gap-1.5 xpb-[9rem]">
                         {popularCategories.data.map((el) => (
                           <Link key={el.name} href={el.href}>
                             <a
@@ -553,7 +572,7 @@ const SearchBar = ({
                                 onHoverBrand(el.name);
 
                               }}
-                              className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal"
+                              className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal hover:bg-[color:var(--color-one)] hover:text-white w-full xl:justify-start px-4 "
                             >
                               {el.name}
                             </a>
@@ -563,7 +582,7 @@ const SearchBar = ({
                       <h3 className="text-sm border-r border-white bg-[color:var(--color-one)] px-4 py-1.5 text-white">
                         {t("popularBrands")}
                       </h3>
-                      <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] p-4 grid-cols-1 gap-1.5">
+                      <div className="flex flex-col self-start w-full xgrow border-r border-white bg-[color:var(--gray-bg)] py-4 grid-cols-1 gap-1.5">
                         {popularBrands.data.map((el) => (
                           <Link key={el.name} href={el.href}>
                             <a
@@ -573,7 +592,7 @@ const SearchBar = ({
                                 setHoveredBrand(el.name);
                                 onHoverBrand(el.name);
                               }}
-                              className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal">
+                              className="text-[13px] flex items-center justify-center rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)] font-normal hover:bg-[color:var(--color-one)] hover:text-white w-full xl:justify-start px-4 ">
                               {el.name}
                             </a>
                           </Link>

@@ -36,11 +36,11 @@ const Pricedisplay = ({
         ${containerClassName}`}
     >
       <span className={`${isTable ? "w-[50%] text-end" : ""} ${priceClassName}`}>
-        {formatCurrency(amount, currencyCode, currencySymbol)}
+        {`${formatCurrency(amount, currencyCode, currencySymbol).replace(currencySymbol, '')} ${currencySymbol}`}
       </span>
       {uiStore.currency !== "USD" && (
         <span className={`text-xs ${isTable ? "w-[50%] text-end" : ""} md:text-sm text-[color:var(--color-four)] ${convertedPriceClassName}`}>
-          ({formatPrice(amount)} )
+          ({formatPrice(amount)})
         </span>
       )}
     </span>
