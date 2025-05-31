@@ -55,12 +55,12 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
                     <div className="keen-slider__slide" key={i}>
                         <Link href={e.link.href}>
                             <a>
-                                <div className="w-full h-[72px] relative rounded">
+                                <div className="aspect-648/270 relative rounded">
                                     <Image
                                         alt={e.icon?.altText || ""}
                                         useBlur
                                         layout="fill"
-                                        objectFit="contain"
+                                        objectFit="cover"
                                         image={e.icon}
                                         className="rounded"
                                     />

@@ -7,8 +7,9 @@ import ProductCard from "../composites/productcard";
 import SimpleSlider from "../composites/simpleslider";
 import { HomeproductsProps } from "../__generated__/types";
 import { sliderBreakpoints } from "src/styles/breakpoints";
+import { useScreen } from "src/utils/hooks/useScreen";
 
-const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
+const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: HomeproductsProps) => {
   const [selectedProducts, setSelectedProducts] = useState(
     products![0].image.id
   );
@@ -39,6 +40,7 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
   const [pxValue, setPxValue] = useState('150px');
 
   const ref = useRef<HTMLDivElement>(null);
+  const { isSmall, isMobile, isDesktop } = useScreen();
 
   useEffect(() => {
     console.log("categories", categories);
@@ -75,13 +77,33 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
   return (
     <div dir="ltr" className="TEST-PARENT my-6 layout relative" ref={ref} >
 
-      {banner && (
-        <div className="full rounded relative h-[120px] xl:h-[120px] mb-6">
+      {isDesktop && xlBanner && (
+        <div className="aspect-1400/120 relative mb-6">
           <Image
-            image={banner}
-            alt={banner.altText || "Banner"}
+            image={xlBanner}
+            alt={xlBanner.altText || "Banner"}
             layout="fill"
-            className="rounded object-cover "
+            className="object-contain"
+          />
+        </div>
+      )}
+      {!isDesktop && isMobile && !isSmall && lgBanner && (
+        <div className="aspect-704/64 relative mb-6">
+          <Image
+            image={lgBanner}
+            alt={lgBanner.altText || "Banner"}
+            layout="fill"
+            className="object-contain"
+          />
+        </div>
+      )}
+      {isSmall && smBanner && (
+        <div className="aspect-316/64 relative mb-6">
+          <Image
+            image={smBanner}
+            alt={smBanner.altText || "Banner"}
+            layout="fill"
+            className="object-contain"
           />
         </div>
       )}
@@ -121,7 +143,7 @@ const HomeProducts = ({ products, categories, banner }: HomeproductsProps) => {
                     console.log("e.image.id", e.image.id);
                     setSelectedProducts(e.image.id);
                   }}
-                  className={`aspect-216/90 cursor-pointer w-full relative ${selectedProducts === e.image.id
+                  className={`aspect-648/270 cursor-pointer w-full relative ${selectedProducts === e.image.id
                     ? "EQUAL-TEST-HERE border-4 border-[color:var(--quick-color)] rounded-sm"
                     : "NOT-EQUAL-TEST-HERE hover:border-4 border-[color:var(--quick-color)] hover:rounded-sm"
                     }`}

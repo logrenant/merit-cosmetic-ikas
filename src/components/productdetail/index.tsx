@@ -1058,9 +1058,9 @@ const ProductDetail = ({
                       {/* <span className="text-base max-w-sm">
                         {t("productDetail.commentRule")}
                       </span> */}
-                      <a className="text-sm underline">
+                      {/* <a className="text-sm underline">
                         {t("productDetail.commentRuleTitle")}
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>
