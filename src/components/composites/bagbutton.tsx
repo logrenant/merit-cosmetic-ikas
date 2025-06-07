@@ -475,11 +475,13 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                             setCurrentCountry(e.target.value);
                           }}
                         >
-                          {filteredlistCountry.map((country) => (
-                            <option value={country.iso2} key={country.iso2}>
-                              {country.name}
-                            </option>
-                          ))}
+                          {[...filteredlistCountry]
+                            .sort((a, b) => a.name.localeCompare(b.name))
+                            .map((country) => (
+                              <option value={country.iso2} key={country.iso2}>
+                                {country.name}
+                              </option>
+                            ))}
                         </select>
                       </div>
                     )}

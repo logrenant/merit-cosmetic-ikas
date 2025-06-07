@@ -15,6 +15,7 @@ import { OrderPackageStatus } from "../composites/orders";
 import { useDirection } from "src/utils/useDirection";
 import { useRouter } from "next/router";
 import { orderStore } from "src/utils/orderStore";
+import Envelope from "../svg/Envelope";
 
 
 
@@ -127,10 +128,11 @@ export default observer(function Orderdetail({
   }
 
   return (
-    <div className="layout mx-auto flex xl:flex-row flex-col gap-24" dir={direction}>
-      <div className="flex flex-col min-w-[60%] ">
-        {/* Başlık */}
-        <div className="flex mb-4 items-start flex-col">
+    <div className="flex flex-col gap-12" dir={direction}>
+
+      {/* Başlık */}
+      <div className="flex flex-col mb-4 items-start xl:flex-row xl:justify-between ">
+        <div className="flex flex-col items-start ">
           <div className="text-2xl">
             {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
           </div>
@@ -143,213 +145,226 @@ export default observer(function Orderdetail({
             </div>
           </div>
         </div>
+        <div className="flex flex-row justify-between items-start">
+          <button
+            type="button"
+            onClick={handleGoToContact}
+            className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer flex flex-row items-center gap-2"
+          >
+            <Envelope />
+            <span>{t("contactUs")}</span>
+          </button>
+        </div>
+      </div>
 
+      <div className="flex xl:flex-row xl:gap-24 flex-col w-full">
         {/* Paketler & Ürünler */}
-        {order.displayedPackages?.map((pkg) => {
-          const items = pkg.getOrderLineItems(order);
-          return (
-            <div key={pkg.id} className="space-y-4">
-              <h3 className="text-xl">
-                {getPackageTitle(pkg.orderPackageFulfillStatus)}
-              </h3>
-              <div className="divide-y">
-                {items.map((item) => (
-                  <div key={item.id} className="flex py-4">
-                    <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden min-w-[130px] max-w-[130px]">
-                      <Image
-                        image={item.variant.mainImage!}
-                        alt={item.variant.mainImage?.altText || ""}
-                        useBlur
-                        layout="fill"
-                      />
-                    </div>
-                    <div className="flex text-[color:var(--black-two)] flex-col ml-4">
-                      <div className="text-base md:text-lg flex gap-1.5">
-                        <span className="line-clamp-3">{item.variant.name} </span>
-                        <span className="text-sm">(x{item.quantity})</span>
+        <div>
+          {order.displayedPackages?.map((pkg) => {
+            const items = pkg.getOrderLineItems(order);
+            return (
+              <div key={pkg.id} className="space-y-4">
+                <h3 className="text-xl">
+                  {getPackageTitle(pkg.orderPackageFulfillStatus)}
+                </h3>
+                <div className="divide-y">
+                  {items.map((item) => (
+                    <div key={item.id} className="flex py-4">
+                      <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden min-w-[130px] max-w-[130px]">
+                        <Image
+                          image={item.variant.mainImage!}
+                          alt={item.variant.mainImage?.altText || ""}
+                          useBlur
+                          layout="fill"
+                        />
                       </div>
-                      {item.variant.variantValues &&
-                        item.variant.variantValues?.length > 0 && (
-                          <span className="text-sm text-[color:var(--color-three)]">
-                            {item.variant.variantValues
-                              ?.map((e) => e.variantValueName)
-                              .join(", ")}
-                          </span>
-                        )}
-                      {item.variant.sku &&
-                        item.variant.barcodeList &&
-                        item.variant.barcodeList?.length > 0 && (
-                          <div className="text-sm text-[color:var(--gray-three)]">
-                            {item.variant.sku} |{" "}
-                            {item.variant.barcodeList?.map((e) => e).join(", ")}
-                          </div>
-                        )}
-                      <div className="flex mt-2 flex-col">
-                        {!!item.discountPrice && (
-                          <span className="text-lg flex items-center justify-center mr-auto mb-1 whitespace-nowrap leading-none opacity-80 relative">
-                            <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
+                      <div className="flex text-[color:var(--black-two)] flex-col ml-4">
+                        <div className="text-base md:text-lg flex gap-1.5">
+                          <span className="line-clamp-3">{item.variant.name} </span>
+                          <span className="text-sm">(x{item.quantity})</span>
+                        </div>
+                        {item.variant.variantValues &&
+                          item.variant.variantValues?.length > 0 && (
+                            <span className="text-sm text-[color:var(--color-three)]">
+                              {item.variant.variantValues
+                                ?.map((e) => e.variantValueName)
+                                .join(", ")}
+                            </span>
+                          )}
+                        {item.variant.sku &&
+                          item.variant.barcodeList &&
+                          item.variant.barcodeList?.length > 0 && (
+                            <div className="text-sm text-[color:var(--gray-three)]">
+                              {item.variant.sku} |{" "}
+                              {item.variant.barcodeList?.map((e) => e).join(", ")}
+                            </div>
+                          )}
+                        <div className="flex mt-2 flex-col">
+                          {!!item.discountPrice && (
+                            <span className="text-lg flex items-center justify-center mr-auto mb-1 whitespace-nowrap leading-none opacity-80 relative">
+                              <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
+                              <Pricedisplay
+                                center={false}
+                                amount={item.overridenPriceWithQuantity}
+                                currencyCode={item.currencyCode || "USD"}
+                                currencySymbol={item.currencySymbol || "$"}
+                              />
+                            </span>
+                          )}
+                          <span className="text-xl leading-none">
                             <Pricedisplay
                               center={false}
-                              amount={item.overridenPriceWithQuantity}
+                              amount={item.finalPriceWithQuantity}
                               currencyCode={item.currencyCode || "USD"}
                               currencySymbol={item.currencySymbol || "$"}
                             />
                           </span>
-                        )}
-                        <span className="text-xl leading-none">
-                          <Pricedisplay
-                            center={false}
-                            amount={item.finalPriceWithQuantity}
-                            currencyCode={item.currencyCode || "USD"}
-                            currencySymbol={item.currencySymbol || "$"}
-                          />
-                        </span>
+                        </div>
+                        <OrderLineItemRefundStatusComponent
+                          orderLineItemStatus={item.status}
+                        />
                       </div>
-                      <OrderLineItemRefundStatusComponent
-                        orderLineItemStatus={item.status}
-                      />
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="flex flex-col w-full">
-        {/* Adresler */}
-        <div className="flex flex-col">
-          {order.displayedPackages.filter(
-            (e) => !!e.trackingInfo?.cargoCompany
-          ).length > 0 && (
-              <>
-                <div className="text-xl">{t("trackingInfo")}</div>
-                {order.displayedPackages?.map((orderPackage) => (
-                  <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-                    <div className="text-[color:var(--gray-three)]">
-                      {orderPackage.trackingInfo?.cargoCompany}
-                    </div>
-                    <div className="text-right">
-                      <a
-                        href={orderPackage.trackingInfo?.trackingLink || ""}
-                        target="_blank"
-                        className="text-[color:var(--color-three)] underline"
-                      >
-                        {orderPackage.trackingInfo?.trackingNumber}
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </>
-            )}
-          <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
-          <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-            <div className="text-[color:var(--gray-three)]">
-              {t("orderDetail.name")}
-            </div>
-            <div className="text-right">
-              {order.shippingAddress?.firstName}{" "}
-              {order.shippingAddress?.lastName}
-            </div>
-            <div className="col-span-2 text-[color:var(--gray-three)]">
-              {order.shippingAddress?.addressText}
-            </div>
-          </div>
-          <div className="text-xl">{t("orderDetail.billingInfo")}</div>
-          <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-            <div className="text-[color:var(--gray-three)]">
-              {t("orderDetail.name")}
-            </div>
-            <div className="text-right">
-              {order.billingAddress?.firstName}{" "}
-              {order.billingAddress?.lastName}
-            </div>
-            <div className="col-span-2 text-[color:var(--gray-three)]">
-              {order.billingAddress?.addressText}
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Özet */}
-        <div className="text-xl">{t("orderDetail.orderSummary")}</div>
-        <div className="grid mt-2 mb-8 grid-cols-2 gap-1">
-          <div className="text-[color:var(--gray-three)]">
-            {t("orderDetail.shipping")}
-          </div>
-          <div className="text-right">
-            <Pricedisplay
-              amount={order.shippingTotal}
-              center={false}
-              isTable={true}
-              currencyCode={order.currencyCode || "USD"}
-              currencySymbol={order.currencySymbol || "$"}
-            />
-          </div>
-          {order?.couponAdjustment?.amount && (
-            <>
-              {" "}
+        <div className="flex flex-col w-full">
+          {/* Adresler */}
+          <div className="flex flex-col">
+            {order.displayedPackages.filter(
+              (e) => !!e.trackingInfo?.cargoCompany
+            ).length > 0 && (
+                <>
+                  <div className="text-xl">{t("trackingInfo")}</div>
+                  {order.displayedPackages?.map((orderPackage) => (
+                    <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+                      <div className="text-[color:var(--gray-three)]">
+                        {orderPackage.trackingInfo?.cargoCompany}
+                      </div>
+                      <div className="text-right">
+                        <a
+                          href={orderPackage.trackingInfo?.trackingLink || ""}
+                          target="_blank"
+                          className="text-[color:var(--color-three)] underline"
+                        >
+                          {orderPackage.trackingInfo?.trackingNumber}
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+            <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
+            <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
               <div className="text-[color:var(--gray-three)]">
-                {t("orderDetail.discountTotal")}
+                {t("orderDetail.name")}
               </div>
               <div className="text-right">
-                <Pricedisplay
-                  amount={order.couponAdjustment.amount || 0}
-                  center={false}
-                  isTable={true}
-                  currencyCode={order.currencyCode || "USD"}
-                  currencySymbol={order.currencySymbol || "$"}
-                />
+                {order.shippingAddress?.firstName}{" "}
+                {order.shippingAddress?.lastName}
               </div>
-            </>
-          )}
-          <div className="text-[color:var(--gray-three)]">
-            {t("orderDetail.tax")}
+              <div className="col-span-2 text-[color:var(--gray-three)]">
+                {order.shippingAddress?.addressText}
+              </div>
+            </div>
+            <div className="text-xl">{t("orderDetail.billingInfo")}</div>
+            <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+              <div className="text-[color:var(--gray-three)]">
+                {t("orderDetail.name")}
+              </div>
+              <div className="text-right">
+                {order.billingAddress?.firstName}{" "}
+                {order.billingAddress?.lastName}
+              </div>
+              <div className="col-span-2 text-[color:var(--gray-three)]">
+                {order.billingAddress?.addressText}
+              </div>
+            </div>
           </div>
-          <div className="text-right">
-            <Pricedisplay
-              amount={order.totalTax}
-              center={false}
-              isTable={true}
-              currencyCode={order.currencyCode || "USD"}
-              currencySymbol={order.currencySymbol || "$"}
-            />
-          </div>
-          <div className="text-[color:var(--gray-three)]">
-            {t("orderDetail.subtotal")}
-          </div>
-          <div className="text-right">
-            <Pricedisplay
-              amount={order.totalPrice}
-              center={false}
-              isTable={true}
-              currencyCode={order.currencyCode || "USD"}
-              currencySymbol={order.currencySymbol || "$"}
-            />
-          </div>
-          <div className="text-[color:var(--gray-three)]">
-            {t("orderDetail.total")}
-          </div>
-          <div className="text-right">
-            <Pricedisplay
-              amount={order.totalFinalPrice}
-              center={false}
-              isTable={true}
-              currencyCode={order.currencyCode || "USD"}
-              currencySymbol={order.currencySymbol || "$"}
-            />
-          </div>
-        </div>
-        <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
-          <button
-            type="button"
-            onClick={handleGoToContact}
-            className="w-full bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-white font-medium py-2.5 px-6 rounded-sm transition-colors duration-200"
-          >
-            {t("contactUs")}
-          </button>
-        </div>
 
+          {/* Özet */}
+          <div className="text-xl">{t("orderDetail.orderSummary")}</div>
+          <div className="grid mt-2 mb-8 grid-cols-2 gap-1">
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.shipping")}
+            </div>
+            <div className="text-right">
+              <Pricedisplay
+                amount={order.shippingTotal}
+                center={false}
+                isTable={true}
+                currencyCode={order.currencyCode || "USD"}
+                currencySymbol={order.currencySymbol || "$"}
+              />
+            </div>
+            {order?.couponAdjustment?.amount && (
+              <>
+                {" "}
+                <div className="text-[color:var(--gray-three)]">
+                  {t("orderDetail.discountTotal")}
+                </div>
+                <div className="text-right">
+                  <Pricedisplay
+                    amount={order.couponAdjustment.amount || 0}
+                    center={false}
+                    isTable={true}
+                    currencyCode={order.currencyCode || "USD"}
+                    currencySymbol={order.currencySymbol || "$"}
+                  />
+                </div>
+              </>
+            )}
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.tax")}
+            </div>
+            <div className="text-right">
+              <Pricedisplay
+                amount={order.totalTax}
+                center={false}
+                isTable={true}
+                currencyCode={order.currencyCode || "USD"}
+                currencySymbol={order.currencySymbol || "$"}
+              />
+            </div>
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.subtotal")}
+            </div>
+            <div className="text-right">
+              <Pricedisplay
+                amount={order.totalPrice}
+                center={false}
+                isTable={true}
+                currencyCode={order.currencyCode || "USD"}
+                currencySymbol={order.currencySymbol || "$"}
+              />
+            </div>
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.total")}
+            </div>
+            <div className="text-right">
+              <Pricedisplay
+                amount={order.totalFinalPrice}
+                center={false}
+                isTable={true}
+                currencyCode={order.currencyCode || "USD"}
+                currencySymbol={order.currencySymbol || "$"}
+              />
+            </div>
+          </div>
+          <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
+            <button
+              type="button"
+              onClick={handleGoToContact}
+              className="w-full bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-white font-medium py-2.5 px-6 rounded-sm transition-colors duration-200"
+            >
+              {t("contactUs")}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

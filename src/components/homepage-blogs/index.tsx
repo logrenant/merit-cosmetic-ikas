@@ -14,10 +14,10 @@ const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
     const { isSmall, isMobile, isDesktop } = useScreen();
 
     return (
-        <div className="layout my-6" ref={blogsRef} dir={direction}>
+        <div className="layout my-4" ref={blogsRef} dir={direction}>
             {/* Banner */}
             {isDesktop && props.xlBanner && (
-                <div className="aspect-1400/120 relative mb-6">
+                <div className="aspect-1400/120 relative">
                     <Image
                         image={props.xlBanner}
                         alt={props.xlBanner.altText || "Banner"}
@@ -27,7 +27,7 @@ const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
                 </div>
             )}
             {!isDesktop && isMobile && !isSmall && props.mdBanner && (
-                <div className="aspect-704/64 relative mb-6">
+                <div className="aspect-704/64 relative">
                     <Image
                         image={props.mdBanner}
                         alt={props.mdBanner.altText || "Banner"}
@@ -37,7 +37,7 @@ const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
                 </div>
             )}
             {isSmall && props.smBanner && (
-                <div className="aspect-316/64 relative mb-6">
+                <div className="aspect-316/64 relative">
                     <Image
                         image={props.smBanner}
                         alt={props.smBanner.altText || "Banner"}
@@ -47,7 +47,7 @@ const BlogList = ({ blogList, ...props }: HomepageBlogsProps) => {
                 </div>
             )}
 
-            <ul className="grid grid-cols-12 gap-x-5 gap-y-10 mt-4">
+            <ul className="grid grid-cols-12 gap-x-5 gap-y-4 mt-4">
                 {blogList.data.map((blog) => (
                     <li
                         key={blog.id}

@@ -55,14 +55,14 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
                     <div className="keen-slider__slide" key={i}>
                         <Link href={e.link.href}>
                             <a>
-                                <div className="aspect-648/270 relative rounded">
+                                <div className="aspect-648/270 relative hover:border-4 hover:border-[color:var(--color-one)] transition-all duration-300">
                                     <Image
                                         alt={e.icon?.altText || ""}
                                         useBlur
                                         layout="fill"
                                         objectFit="cover"
                                         image={e.icon}
-                                        className="rounded"
+                                        className="hover:scale-110 duration-300"
                                     />
                                 </div>
                             </a>

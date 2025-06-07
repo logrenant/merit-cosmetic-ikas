@@ -105,7 +105,7 @@ const Blog = (props: PageBlogProps) => {
                     )}
                     {showAuth && (
                         <div className="flex flex-row items-center gap-2">
-                            <WriterSvg /> "<span className="italic">{blog.writer.firstName} {blog.writer.lastName}</span>""
+                            <WriterSvg /><span className="italic">"{blog.writer.firstName} {blog.writer.lastName}"</span>
                         </div>
                     )}
 
