@@ -11,6 +11,9 @@ import { Toaster } from "react-hot-toast";
 import UIStore from "../store/ui-store";
 import { useStore } from "@ikas/storefront";
 
+import TawkProvider from "../components/TawkProvider";
+import ChatButton from "../components/ChatButton";
+
 IkasStorefrontConfig.init({
   ...Config,
   apiUrl: process.env.NEXT_PUBLIC_GQL_URL,
@@ -49,6 +52,7 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
   }, []);
   return (
     <>
+      <TawkProvider />
       <Toaster
         position="top-center"
         toastOptions={{
@@ -59,6 +63,7 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
         }}
       />
       <Component {...pageProps} />
+      <ChatButton />
     </>
   );
 };
