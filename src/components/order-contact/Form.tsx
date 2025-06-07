@@ -156,35 +156,37 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         <section id="contact" dir={direction}>
             <div className="w-full">
                 {/* Form Responses */}
-                {isSubmitted && (
+                {isSubmitted ? (
                     <div className="mb-6 p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm">
                         <h2 className="font-normal text-lg">{formMessages.title}</h2>
                         <p className="mt-1 text-base">{formMessages.text}</p>
                     </div>
-                )}
-                {generalError && (
-                    <div className="mb-6 p-4 bg-[color:var(--color-one)] text-white rounded-sm">
-                        <h2 className="font-normal text-lg">{submitError}</h2>
-                    </div>
-                )}
+                ) : (
+                    <>
+                        {generalError && (
+                            <div className="mb-6 p-4 bg-[color:var(--color-one)] text-white rounded-sm">
+                                <h2 className="font-normal text-lg">{submitError}</h2>
+                            </div>
+                        )}
+                        <form ref={formRef} className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                            {/* Form fields */}
+                            {renderField(orderNumberInput || t('orderNumber'), 'orderNumber', 'text')}
+                            {renderField(t('firstName'), 'firstName')}
+                            {renderField(t('lastName'), 'lastName')}
+                            {renderField(t('phoneNumber'), 'phoneNumber', 'tel')}
+                            {renderField(t('email'), 'email', 'email')}
+                            {renderField(t('message'), 'message', 'textarea')}
 
-                <form ref={formRef} className="flex flex-col gap-4" onSubmit={handleSubmit}>
-                    {/* Form fields */}
-                    {renderField(orderNumberInput || t('orderNumber'), 'orderNumber', 'text')}
-                    {renderField(t('firstName'), 'firstName')}
-                    {renderField(t('lastName'), 'lastName')}
-                    {renderField(t('phoneNumber'), 'phoneNumber', 'tel')}
-                    {renderField(t('email'), 'email', 'email')}
-                    {renderField(t('message'), 'message', 'textarea')}
-
-                    <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full bg-[color:var(--color-three)] text-white rounded-sm py-2.5 px-5 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
-                    >
-                        {isSubmitting ? t('loading') : t('submit')}
-                    </button>
-                </form>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full bg-[color:var(--color-three)] text-white rounded-sm py-2.5 px-5 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
+                            >
+                                {isSubmitting ? t('loading') : t('submit')}
+                            </button>
+                        </form>
+                    </>
+                )}
             </div>
         </section>
     );

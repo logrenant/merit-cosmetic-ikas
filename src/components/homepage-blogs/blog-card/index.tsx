@@ -39,12 +39,12 @@ const BlogCard = (props: Props) => {
   const showCategory = !!props.showCategory && !!props.data.category;
 
   return (
-    <div className="relative flex flex-col rounded bg-[color:var(--color-one)] border-4 border-[color:var(--color-one)] text-white" dir={direction}>
+    <div className="relative flex flex-col rounded bg-[color:var(--color-one)] text-white" dir={direction}>
       <Link href={props.data.href}>
         <a>
           {/* Image */}
           {props.data.image?.id && (
-            <div className="relative block w-full overflow-hidden rounded">
+            <div className="relative block w-full overflow-hidden rounded border-4 border-[color:var(--color-one)]">
               <Image
                 useBlur
                 image={props.data.image as IkasImage}
@@ -94,7 +94,7 @@ const BlogCard = (props: Props) => {
 
             {/* Category Badge */}
             {showCategory && (
-              <div className="absolute top-0 left-0 text-center cursor-pointer">
+              <div className="absolute top-1 left-1 text-center cursor-pointer">
                 <Link href={`/blog/${props.data.category.metadata?.slug}`}>
                   <div className="block px-3 py-1 text-[color:var(--bg-color)] bg-[color:var(--color-four)] text-xs">
                     {props.data.category.name}

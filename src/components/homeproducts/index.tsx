@@ -75,10 +75,10 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
   }, []);
 
   return (
-    <div dir="ltr" className="TEST-PARENT my-6 layout relative" ref={ref} >
+    <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
 
       {isDesktop && xlBanner && (
-        <div className="aspect-1400/120 relative mb-6">
+        <div className="aspect-1400/120 relative mb-4">
           <Image
             image={xlBanner}
             alt={xlBanner.altText || "Banner"}
@@ -88,7 +88,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
         </div>
       )}
       {!isDesktop && isMobile && !isSmall && lgBanner && (
-        <div className="aspect-704/64 relative mb-6">
+        <div className="aspect-704/64 relative mb-4">
           <Image
             image={lgBanner}
             alt={lgBanner.altText || "Banner"}
@@ -98,7 +98,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
         </div>
       )}
       {isSmall && smBanner && (
-        <div className="aspect-316/64 relative mb-6">
+        <div className="aspect-316/64 relative mb-4">
           <Image
             image={smBanner}
             alt={smBanner.altText || "Banner"}
@@ -109,7 +109,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
       )}
 
       {categories && (
-        <div ref={sliderRef} className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-6">
+        <div ref={sliderRef} className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-4">
           <SimpleSlider
             showPagination={false}
             showNavigation={true}
@@ -143,9 +143,9 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
                     console.log("e.image.id", e.image.id);
                     setSelectedProducts(e.image.id);
                   }}
-                  className={`aspect-648/270 cursor-pointer w-full relative ${selectedProducts === e.image.id
-                    ? "EQUAL-TEST-HERE border-4 border-[color:var(--quick-color)] rounded-sm"
-                    : "NOT-EQUAL-TEST-HERE hover:border-4 border-[color:var(--quick-color)] hover:rounded-sm"
+                  className={`aspect-648/270 cursor-pointer w-full relative overflow-hidden ${selectedProducts === e.image.id
+                    ? "opacity-90 border-4 border-[color:var(--color-one)]"
+                    : "hover:border-4 hover:border-[color:var(--color-one)] transition-all duration-300"
                     }`}
                 >
                   <Image
@@ -155,6 +155,10 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
                     image={e.image}
                     layout="fill"
                     objectFit="cover"
+                    className={`duration-300 ${selectedProducts === e.image.id
+                      ? "scale-110"
+                      : "hover:scale-110"
+                      }`}
                   />
                 </div>
               </div>

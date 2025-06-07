@@ -209,6 +209,7 @@ export type OrderTrackingProps = {
 	orderCannotFound?: string;
 	emailRule?: string;
 	orderNumberRule?: string;
+	loginRule?: string;
 };
 
 export type PageBlogProps = {

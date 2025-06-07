@@ -73,7 +73,7 @@ const RefundProcessButton = ({
   const { t } = useTranslation();
   return (
     <button
-      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+      className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5 cursor-pointer"
       disabled={disabled}
       onClick={onClick}
     >

@@ -33,16 +33,16 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
     return (
         <div className="layout my-10" ref={blogsRef} dir={direction}>
             {/* Title */}
-            <div className="flex flex-row justify-between my-12 text-[color:var(--gray-five)]">
-                <h1 className="text-3xl font-bold">{props.title}</h1>
-                <h1 className="text-3xl font-bold">
+            <div className="flex flex-col gap-4 xl:flex-row justify-between xl:my-12 text-[color:var(--gray-five)]">
+                <h1 className="text-3xl font-bold pb-4">{props.title}</h1>
+                <h1 className="xl:text-3xl xl:font-bold text-2xl font-semibold">
                     {selectedCategory || (direction === 'rtl' ? "جميع المدونات" : "All Blogs")}
                 </h1>
                 <div />
             </div>
-            <div className="flex flex-row gap-12">
+            <div className="flex xl:flex-row flex-col w-full gap-12">
                 {showFilter && (
-                    <div className="w-1/5 flex flex-col gap-4">
+                    <div className="xl:w-1/5 flex flex-col gap-4">
                         <div className="mb-3">
                             <div className="flex w-full flex-col items-center">
                                 <div
@@ -105,7 +105,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
                     </div>
                 )}
                 {/* Grid List */}
-                <ul className="w-4/5 flex flex-col gap-12">
+                <ul className="xl:w-4/5 flex flex-col gap-12">
                     {(blogList.data
                         // Seçili kategori varsa, sadece o slug ile eşleşenleri göster
                         .filter(blog =>

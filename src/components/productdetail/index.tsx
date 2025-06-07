@@ -1036,7 +1036,7 @@ const ProductDetail = ({
                             onClick={() => {
                               e();
                             }}
-                            className="text-base underline text-left max-w-sm"
+                            className="text-base underline text-left max-w-sm cursor-pointer"
                           >
                             {t("productDetail.beFirstComment")}
                           </button>
@@ -1072,7 +1072,7 @@ const ProductDetail = ({
                         onClick={() => {
                           e();
                         }}
-                        className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5"
+                        className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5 cursor-pointer"
                         type="button"
                       >
                         {t("productDetail.writeComment")}

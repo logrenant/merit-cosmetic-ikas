@@ -82,7 +82,7 @@ const OrderRefund = ({ order }: { order: IkasOrder }) => {
 
     return (
       <button
-        className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5"
+        className="mt-2.5 disabled:opacity-60 tracking-wide w-min whitespace-nowrap bg-[color:var(--color-three)] text-sm font-medium text-white rounded py-2.5 px-5 cursor-pointer"
         disabled={disabled}
         onClick={onClick}
       >
@@ -104,7 +104,7 @@ const OrderRefund = ({ order }: { order: IkasOrder }) => {
           onClick={() => {
             window.location.reload();
           }}
-          className="flex text-sm whitespace-nowrap mt-2 items-center justify-center w-min px-4 py-2 bg-[color:var(--color-one)] text-white rounded"
+          className="flex text-sm whitespace-nowrap mt-2 items-center justify-center w-min px-4 py-2 bg-[color:var(--color-one)] text-white rounded cursor-pointer"
         >
           {t("back")}
         </button>
