@@ -2,6 +2,7 @@ import React, { useMemo, useRef, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 import BlogCard from "./blog-card";
+import BlogFilterMobile from "./blog-filter-mobile";
 import { useDirection } from "src/utils/useDirection";
 import { PageBlogsProps } from "../__generated__/types";
 import { useTranslation } from "@ikas/storefront";
@@ -30,19 +31,38 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
     ).map(([slug, name]) => ({ slug, name }))
         , [blogList]);
 
+    const getSelectedCategoryName = () => {
+        if (!selectedCategory) return null;
+        const category = categories.find(cat => cat.slug === selectedCategory);
+        return category ? category.name : null;
+    };
+
     return (
         <div className="layout my-10" ref={blogsRef} dir={direction}>
             {/* Title */}
-            <div className="flex flex-col gap-4 xl:flex-row justify-between xl:my-12 text-[color:var(--gray-five)]">
-                <h1 className="text-3xl font-bold pb-4">{props.title}</h1>
-                <h1 className="xl:text-3xl xl:font-bold text-2xl font-semibold">
-                    {selectedCategory || (direction === 'rtl' ? "جميع المدونات" : "All Blogs")}
-                </h1>
+            <div className="flex flex-col gap-4 xl:flex-row xl:justify-between xl:mb-10 text-[color:var(--gray-five)]">
+                <h1 className="text-3xl font-bold hidden xl:inline">{props.title}</h1>
+                <div className="flex flex-row justify-between">
+                    <h1 className="xl:text-3xl w-full xl:font-bold text-2xl font-semibold">
+                        {getSelectedCategoryName() || (direction === 'rtl' ? "جميع المدونات" : "All Blogs")}
+                    </h1>
+                    <div className="flex w-full justify-end xl:w-[unset] items-center gap-2">
+                        {showFilter && (
+                            <BlogFilterMobile
+                                categories={categories}
+                                selectedCategory={selectedCategory}
+                                onCategorySelect={setSelectedCategory}
+                                filterTitle={props.filterTitle || "Categories"}
+                                pageTitle={props.title || "Blogs"}
+                            />
+                        )}
+                    </div>
+                </div>
                 <div />
             </div>
             <div className="flex xl:flex-row flex-col w-full gap-12">
                 {showFilter && (
-                    <div className="xl:w-1/5 flex flex-col gap-4">
+                    <div className="xl:w-1/5 xl:flex hidden flex-col gap-4">
                         <div className="mb-3">
                             <div className="flex w-full flex-col items-center">
                                 <div
@@ -104,29 +124,40 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
                         )}
                     </div>
                 )}
-                {/* Grid List */}
-                <ul className="xl:w-4/5 flex flex-col gap-12">
-                    {(blogList.data
-                        // Seçili kategori varsa, sadece o slug ile eşleşenleri göster
-                        .filter(blog =>
-                            !selectedCategory ||
-                            blog.category?.metadata?.slug === selectedCategory
-                        )
-                    ).map(blog => (
-                        <li
-                            key={blog.id}
-                            className=""
-                        >
-                            <BlogCard
-                                data={blog}
-                                showAuthor={!!props.showAuthor}
-                                showDescription={!!props.showDescription}
-                                showPublishedDate={!!props.showPublishedDate}
-                                showCategory={props.showCategory}
-                            />
-                        </li>
-                    ))}
-                </ul>
+                {/* Blog List */}
+                <div className="xl:w-4/5 w-full">
+                    {/* Mobile Filter and Title */}
+                    <div className="mb-8 flex items-center justify-between">
+                        <div className="text-[14px] lg:block hidden">
+                            {blogList.data.filter(blog =>
+                                !selectedCategory ||
+                                blog.category?.metadata?.slug === selectedCategory
+                            ).length} {direction === 'rtl' ? "مدونة" : "blogs"}
+                        </div>
+                    </div>
+
+                    <ul className="flex flex-col gap-8">
+                        {(blogList.data
+                            .filter(blog =>
+                                !selectedCategory ||
+                                blog.category?.metadata?.slug === selectedCategory
+                            )
+                        ).map((blog, index, arr) => (
+                            <li
+                                key={blog.id}
+                                className={`${index !== arr.length - 1 ? 'border-b border-[color:var(--color-one)] xl:pb-6' : ''}`}
+                            >
+                                <BlogCard
+                                    data={blog}
+                                    showAuthor={!!props.showAuthor}
+                                    showDescription={!!props.showDescription}
+                                    showPublishedDate={!!props.showPublishedDate}
+                                    showCategory={props.showCategory}
+                                />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );

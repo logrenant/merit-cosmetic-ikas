@@ -39,7 +39,7 @@ const BlogCard = (props: Props) => {
   const showCategory = !!props.showCategory && !!props.data.category;
 
   return (
-    <div className="relative flex flex-col rounded bg-[color:var(--color-one)] text-white" dir={direction}>
+    <div className="relative flex flex-col rounded bg-[color:var(--color-one)] h-full text-white" dir={direction}>
       <Link href={props.data.href}>
         <a>
           {/* Image */}
@@ -86,8 +86,8 @@ const BlogCard = (props: Props) => {
             {/* Description */}
             {showDescription && (
               <p className="p-4 sm:p-2.5">
-                {props.data.shortDescription.length > 260
-                  ? `${props.data.shortDescription.slice(0, 260)}...`
+                {props.data.shortDescription.length > 110
+                  ? `${props.data.shortDescription.slice(0, 110)}...`
                   : props.data.shortDescription}
               </p>
             )}
