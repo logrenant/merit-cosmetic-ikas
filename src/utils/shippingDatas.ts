@@ -27,7 +27,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746111773979,
+                "updatedAt": 1748938453499,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -36,7 +36,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111773979,
+                        "createdAt": 1748938453499,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -45,15 +45,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746111773979
+                        "updatedAt": 1748938453499
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111773979,
+                        "createdAt": 1748938453499,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -62,7 +62,7 @@ export const listShippingSettings = [
                         "price": 18,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746111773979
+                        "updatedAt": 1748938453499
                     },
                     {
                         "condition": {
@@ -70,7 +70,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111773979,
+                        "createdAt": 1748938453499,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -79,7 +79,7 @@ export const listShippingSettings = [
                         "price": 15,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746111773979
+                        "updatedAt": 1748938453499
                     }
                 ]
             },
@@ -126,7 +126,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746107018037,
+                "updatedAt": 1748938467148,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -135,7 +135,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107127021,
+                        "createdAt": 1748938467148,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -144,15 +144,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746107127021
+                        "updatedAt": 1748938467148
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107155674,
+                        "createdAt": 1748938467148,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -161,7 +161,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746107155674
+                        "updatedAt": 1748938467148
                     },
                     {
                         "condition": {
@@ -169,7 +169,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107204629,
+                        "createdAt": 1748938467148,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -178,7 +178,7 @@ export const listShippingSettings = [
                         "price": 16,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746107204629
+                        "updatedAt": 1748938467148
                     }
                 ]
             },
@@ -220,7 +220,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746107283815,
+                "updatedAt": 1748938477313,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -229,7 +229,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107405734,
+                        "createdAt": 1748938477313,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -238,15 +238,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746107405734
+                        "updatedAt": 1748938477313
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107422750,
+                        "createdAt": 1748938477313,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -255,7 +255,7 @@ export const listShippingSettings = [
                         "price": 22,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746107422750
+                        "updatedAt": 1748938477313
                     },
                     {
                         "condition": {
@@ -263,7 +263,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107449598,
+                        "createdAt": 1748938477313,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -272,7 +272,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746107449598
+                        "updatedAt": 1748938477313
                     }
                 ]
             },
@@ -304,7 +304,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746107512896,
+                "updatedAt": 1748938489531,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -313,7 +313,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107620065,
+                        "createdAt": 1748938489531,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -322,15 +322,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746107620065
+                        "updatedAt": 1748938489531
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107670433,
+                        "createdAt": 1748938489531,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -339,7 +339,7 @@ export const listShippingSettings = [
                         "price": 22,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746107670433
+                        "updatedAt": 1748938489531
                     },
                     {
                         "condition": {
@@ -347,7 +347,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107697005,
+                        "createdAt": 1748938489531,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -356,7 +356,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746107697005
+                        "updatedAt": 1748938489531
                     }
                 ]
             },
@@ -403,7 +403,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746107730690,
+                "updatedAt": 1748938506813,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -412,7 +412,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107780366,
+                        "createdAt": 1748938506813,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -421,15 +421,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746107780366
+                        "updatedAt": 1748938506813
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107793182,
+                        "createdAt": 1748938506813,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -438,7 +438,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746107793182
+                        "updatedAt": 1748938506813
                     },
                     {
                         "condition": {
@@ -446,7 +446,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746107824869,
+                        "createdAt": 1748938506813,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -455,7 +455,7 @@ export const listShippingSettings = [
                         "price": 16,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746107824869
+                        "updatedAt": 1748938506813
                     }
                 ]
             },
@@ -517,7 +517,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746108188320,
+                "updatedAt": 1748938523207,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -526,7 +526,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108245898,
+                        "createdAt": 1748938523207,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -535,15 +535,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746108245898
+                        "updatedAt": 1748938523207
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108263618,
+                        "createdAt": 1748938523207,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -552,7 +552,7 @@ export const listShippingSettings = [
                         "price": 20,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746108263618
+                        "updatedAt": 1748938523207
                     },
                     {
                         "condition": {
@@ -560,7 +560,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108301793,
+                        "createdAt": 1748938523207,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -569,7 +569,7 @@ export const listShippingSettings = [
                         "price": 17,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746108301793
+                        "updatedAt": 1748938523207
                     }
                 ]
             },
@@ -696,7 +696,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746108334601,
+                "updatedAt": 1748938539846,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -705,7 +705,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108479808,
+                        "createdAt": 1748938539846,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -714,15 +714,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746108479808
+                        "updatedAt": 1748938539846
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108504860,
+                        "createdAt": 1748938539846,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -731,7 +731,7 @@ export const listShippingSettings = [
                         "price": 22,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746108504860
+                        "updatedAt": 1748938539846
                     },
                     {
                         "condition": {
@@ -739,7 +739,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108532223,
+                        "createdAt": 1748938539846,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -748,7 +748,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746108532223
+                        "updatedAt": 1748938539846
                     }
                 ]
             },
@@ -775,7 +775,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746108615124,
+                "updatedAt": 1748938562502,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -784,7 +784,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108634379,
+                        "createdAt": 1748938562502,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -793,15 +793,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746108634379
+                        "updatedAt": 1748938562502
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108651839,
+                        "createdAt": 1748938562502,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -810,7 +810,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746108651839
+                        "updatedAt": 1748938562502
                     },
                     {
                         "condition": {
@@ -818,7 +818,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108676648,
+                        "createdAt": 1748938562502,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -827,7 +827,7 @@ export const listShippingSettings = [
                         "price": 16,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746108676648
+                        "updatedAt": 1748938562502
                     }
                 ]
             },
@@ -854,7 +854,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746108706558,
+                "updatedAt": 1748938572905,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -863,7 +863,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108723442,
+                        "createdAt": 1748938572905,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -872,15 +872,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746108723442
+                        "updatedAt": 1748938572905
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108737033,
+                        "createdAt": 1748938572905,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -889,7 +889,7 @@ export const listShippingSettings = [
                         "price": 19,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746108737033
+                        "updatedAt": 1748938572905
                     },
                     {
                         "condition": {
@@ -897,7 +897,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108776937,
+                        "createdAt": 1748938572905,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -906,7 +906,7 @@ export const listShippingSettings = [
                         "price": 16,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746108776937
+                        "updatedAt": 1748938572905
                     }
                 ]
             },
@@ -938,7 +938,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746108876924,
+                "updatedAt": 1748938585467,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -947,7 +947,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746108995124,
+                        "createdAt": 1748938585467,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -956,15 +956,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746108995124
+                        "updatedAt": 1748938585467
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109010677,
+                        "createdAt": 1748938585467,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -973,7 +973,7 @@ export const listShippingSettings = [
                         "price": 26,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109010677
+                        "updatedAt": 1748938585467
                     },
                     {
                         "condition": {
@@ -981,7 +981,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109048920,
+                        "createdAt": 1748938585467,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -990,7 +990,7 @@ export const listShippingSettings = [
                         "price": 21,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746109048920
+                        "updatedAt": 1748938585467
                     }
                 ]
             },
@@ -1017,7 +1017,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746109071385,
+                "updatedAt": 1748938599048,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1026,7 +1026,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109088610,
+                        "createdAt": 1748938599048,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1035,15 +1035,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746109088610
+                        "updatedAt": 1748938599048
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109102115,
+                        "createdAt": 1748938599048,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1052,7 +1052,7 @@ export const listShippingSettings = [
                         "price": 50,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109102115
+                        "updatedAt": 1748938599048
                     },
                     {
                         "condition": {
@@ -1060,7 +1060,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109131232,
+                        "createdAt": 1748938599048,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1069,7 +1069,7 @@ export const listShippingSettings = [
                         "price": 40,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746109131232
+                        "updatedAt": 1748938599048
                     }
                 ]
             },
@@ -1096,7 +1096,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746109163313,
+                "updatedAt": 1748938609886,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1105,7 +1105,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109177267,
+                        "createdAt": 1748938609886,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1114,15 +1114,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746109177267
+                        "updatedAt": 1748938609886
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109188751,
+                        "createdAt": 1748938609886,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1131,7 +1131,7 @@ export const listShippingSettings = [
                         "price": 60,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109188751
+                        "updatedAt": 1748938609886
                     },
                     {
                         "condition": {
@@ -1139,7 +1139,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109208829,
+                        "createdAt": 1748938609886,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1148,7 +1148,7 @@ export const listShippingSettings = [
                         "price": 45,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746109208829
+                        "updatedAt": 1748938609886
                     }
                 ]
             },
@@ -1175,7 +1175,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746109251446,
+                "updatedAt": 1748938650303,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1184,7 +1184,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109266474,
+                        "createdAt": 1748938650303,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1193,15 +1193,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746109266474
+                        "updatedAt": 1748938650303
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109279605,
+                        "createdAt": 1748938650303,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1210,7 +1210,7 @@ export const listShippingSettings = [
                         "price": 29,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109279605
+                        "updatedAt": 1748938650303
                     },
                     {
                         "condition": {
@@ -1218,7 +1218,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109302245,
+                        "createdAt": 1748938650303,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1227,7 +1227,7 @@ export const listShippingSettings = [
                         "price": 27,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746109302245
+                        "updatedAt": 1748938650303
                     }
                 ]
             },
@@ -1304,7 +1304,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746111830256,
+                "updatedAt": 1748938660583,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1313,7 +1313,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111830256,
+                        "createdAt": 1748938660583,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1322,15 +1322,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746111830256
+                        "updatedAt": 1748938660583
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111830256,
+                        "createdAt": 1748938660583,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1339,7 +1339,7 @@ export const listShippingSettings = [
                         "price": 36,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746111830256
+                        "updatedAt": 1748938660583
                     },
                     {
                         "condition": {
@@ -1347,7 +1347,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111830256,
+                        "createdAt": 1748938660583,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1356,7 +1356,7 @@ export const listShippingSettings = [
                         "price": 33,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746111830256
+                        "updatedAt": 1748938660583
                     }
                 ]
             },
@@ -1398,7 +1398,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746109644605,
+                "updatedAt": 1748938674902,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1407,7 +1407,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109705406,
+                        "createdAt": 1748938674902,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1416,15 +1416,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746109705406
+                        "updatedAt": 1748938674902
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109726386,
+                        "createdAt": 1748938674902,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1433,7 +1433,7 @@ export const listShippingSettings = [
                         "price": 33,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109726386
+                        "updatedAt": 1748938674902
                     },
                     {
                         "condition": {
@@ -1441,7 +1441,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109774219,
+                        "createdAt": 1748938674902,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1450,7 +1450,7 @@ export const listShippingSettings = [
                         "price": 30,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746109774219
+                        "updatedAt": 1748938674902
                     }
                 ]
             },
@@ -1477,7 +1477,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746109798476,
+                "updatedAt": 1748938690691,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1486,7 +1486,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109811473,
+                        "createdAt": 1748938690691,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1495,15 +1495,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746109811473
+                        "updatedAt": 1748938690691
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109827343,
+                        "createdAt": 1748938690691,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1512,7 +1512,7 @@ export const listShippingSettings = [
                         "price": 36,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109827343
+                        "updatedAt": 1748938690691
                     },
                     {
                         "condition": {
@@ -1520,7 +1520,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109855122,
+                        "createdAt": 1748938690691,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1529,7 +1529,7 @@ export const listShippingSettings = [
                         "price": 33,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746109855122
+                        "updatedAt": 1748938690691
                     }
                 ]
             },
@@ -1581,7 +1581,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746109906425,
+                "updatedAt": 1748938703358,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1590,7 +1590,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109965292,
+                        "createdAt": 1748938703358,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1599,15 +1599,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746109965292
+                        "updatedAt": 1748938703358
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746109980282,
+                        "createdAt": 1748938703358,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1616,7 +1616,7 @@ export const listShippingSettings = [
                         "price": 36,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746109980282
+                        "updatedAt": 1748938703358
                     },
                     {
                         "condition": {
@@ -1624,7 +1624,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110009146,
+                        "createdAt": 1748938703358,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1633,7 +1633,7 @@ export const listShippingSettings = [
                         "price": 33,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746110009146
+                        "updatedAt": 1748938703358
                     }
                 ]
             },
@@ -1710,7 +1710,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746110032577,
+                "updatedAt": 1748938717982,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1719,7 +1719,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110109166,
+                        "createdAt": 1748938717982,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1728,15 +1728,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746110109166
+                        "updatedAt": 1748938717982
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110123105,
+                        "createdAt": 1748938717982,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1745,7 +1745,7 @@ export const listShippingSettings = [
                         "price": 59,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746110123105
+                        "updatedAt": 1748938717982
                     },
                     {
                         "condition": {
@@ -1753,7 +1753,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110174661,
+                        "createdAt": 1748938717982,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1762,7 +1762,7 @@ export const listShippingSettings = [
                         "price": 47,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746110174661
+                        "updatedAt": 1748938717982
                     }
                 ]
             },
@@ -1809,7 +1809,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746110207743,
+                "updatedAt": 1748938731149,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -1818,7 +1818,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110354705,
+                        "createdAt": 1748938731149,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1827,15 +1827,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746110354705
+                        "updatedAt": 1748938731149
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110368722,
+                        "createdAt": 1748938731149,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1844,7 +1844,7 @@ export const listShippingSettings = [
                         "price": 59,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746110368722
+                        "updatedAt": 1748938731149
                     },
                     {
                         "condition": {
@@ -1852,7 +1852,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746110399211,
+                        "createdAt": 1748938731149,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -1861,7 +1861,7 @@ export const listShippingSettings = [
                         "price": 47,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746110399211
+                        "updatedAt": 1748938731149
                     }
                 ]
             },
@@ -2468,7 +2468,7 @@ export const listShippingSettings = [
                 ],
                 "translations": null,
                 "type": "SHIPMENT",
-                "updatedAt": 1746110417955,
+                "updatedAt": 1748938746470,
                 "zoneName": "-",
                 "zoneRate": [
                     {
@@ -2477,7 +2477,7 @@ export const listShippingSettings = [
                             "minAmount": 199,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111566294,
+                        "createdAt": 1748938746470,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -2486,15 +2486,15 @@ export const listShippingSettings = [
                         "price": 0,
                         "priceListId": null,
                         "rateName": "FREE SHIPPING",
-                        "updatedAt": 1746111566294
+                        "updatedAt": 1748938746470
                     },
                     {
                         "condition": {
-                            "maxAmount": 99,
+                            "maxAmount": 100,
                             "minAmount": 0,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111576092,
+                        "createdAt": 1748938746470,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -2503,7 +2503,7 @@ export const listShippingSettings = [
                         "price": 59,
                         "priceListId": null,
                         "rateName": "0-99",
-                        "updatedAt": 1746111576092
+                        "updatedAt": 1748938746470
                     },
                     {
                         "condition": {
@@ -2511,7 +2511,7 @@ export const listShippingSettings = [
                             "minAmount": 100,
                             "type": "BASED_ON_ORDER_PRICE"
                         },
-                        "createdAt": 1746111595933,
+                        "createdAt": 1748938746470,
                         "currency": null,
                         "currencyCode": null,
                         "currencySymbol": null,
@@ -2520,7 +2520,7 @@ export const listShippingSettings = [
                         "price": 47,
                         "priceListId": null,
                         "rateName": "100-199",
-                        "updatedAt": 1746111595933
+                        "updatedAt": 1748938746470
                     }
                 ]
             }

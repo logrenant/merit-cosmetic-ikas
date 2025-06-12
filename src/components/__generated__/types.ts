@@ -290,3 +290,7 @@ export type HomepageBlogsProps = {
 	showPublishedDate?: boolean;
 };
 
+export type WholesaleProps = {
+	pageContent: string;
+};
+

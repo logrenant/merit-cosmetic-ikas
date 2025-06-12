@@ -42,11 +42,10 @@ const BlogCard = (props: Props) => {
   return (
     <div className="flex flex-row" dir={direction}>
       <Link href={props.data.href}>
-        <a className="flex flex-col gap-4 w-full border-b-1 xl:pb-12 border-[color:var(--color-one)]">
-
+        <a className="flex flex-col gap-4 w-full">
           {/* Meta */}
           <div className="flex flex-col-reverse xl:flex-row-reverse justify-between w-full">
-            <div className="flex justify-between items-center text-[12px] lg:text-base">
+            <div className="flex justify-between items-center text-[12px] ">
               {showPublishedDate && (
                 <div className="inline-block">{publishedDate}</div>
               )}
@@ -56,7 +55,7 @@ const BlogCard = (props: Props) => {
             {showTitle && (
               <Link href={props.data.href}>
                 <div className="block">
-                  <div className="font-bold text-base lg:text-xl">
+                  <div className="font-bold text-base lg:text-xl text-[color:var(--color-one)]">
                     {props.data.title}
                   </div>
                 </div>
@@ -67,18 +66,18 @@ const BlogCard = (props: Props) => {
           <div className="flex flex-col xl:flex-row">
             {/* Image */}
             {props.data.image?.id && (
-              <div className="flex flex-col bg-[color:var(--color-one)] xl:w-[280px] xl:h-[200px] border-4 border-[color:var(--color-one)] rounded">
+              <div className="flex flex-col bg-[color:var(--color-one)] xl:w-[280px] border-4 border-[color:var(--color-one)] rounded">
                 <Image
                   useBlur
                   image={props.data.image as IkasImage}
                   alt={props.data.title || ""}
                   layout="responsive"
                   objectFit="cover"
-                  width={1}
-                  height={1}
+                  width={3}
+                  height={2}
                 />
                 {showAuthor && (
-                  <div className="text-center px-2 py-4 text-white">
+                  <div className="text-center py-2 text-white">
                     {props.data.writer.firstName} {props.data.writer.lastName}
                   </div>
                 )}
@@ -86,10 +85,10 @@ const BlogCard = (props: Props) => {
             )}
 
             {/* Content */}
-            <div className="flex flex-col py-4 xl:p-4 sm:p-2.5 w-full justify-between">
+            <div className="flex flex-col py-4 w-full justify-between">
               {/* Description */}
               {showDescription && (
-                <p className="text-lg">
+                <p className="text-sm xl:p-4 ">
                   {props.data.shortDescription.length > 400
                     ? `${props.data.shortDescription.slice(0, 400)}...`
                     : props.data.shortDescription}

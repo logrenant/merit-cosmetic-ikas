@@ -29,7 +29,6 @@ const OrderTracking = (props: OrderTrackingProps) => {
     orderNumber: '',
   });
 
-  // Sync state values with formState
   useEffect(() => {
     setFormState({
       email,
