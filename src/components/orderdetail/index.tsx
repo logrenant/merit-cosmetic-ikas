@@ -131,7 +131,7 @@ export default observer(function Orderdetail({
     <div className="flex flex-col gap-12" dir={direction}>
 
       {/* Başlık */}
-      <div className="flex flex-col mb-4 items-start xl:flex-row xl:justify-between ">
+      <div className="flex flex-col mb-4 items-start md:flex-row md:justify-between ">
         <div className="flex flex-col items-start ">
           <div className="text-2xl">
             {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
@@ -157,7 +157,7 @@ export default observer(function Orderdetail({
         </div>
       </div>
 
-      <div className="flex xl:flex-row xl:gap-24 flex-col w-full">
+      <div className="flex md:flex-row md:gap-24 flex-col w-full">
         {/* Paketler & Ürünler */}
         <div>
           {order.displayedPackages?.map((pkg) => {
