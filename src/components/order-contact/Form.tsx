@@ -22,6 +22,27 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
     });
 
     useEffect(() => {
+        if (typeof window !== "undefined") {
+            const savedData = localStorage.getItem("orderContactData");
+            if (savedData) {
+                try {
+                    const parsed = JSON.parse(savedData);
+                    setFormState({
+                        orderNumber: parsed.orderNumber || "",
+                        firstName: parsed.firstName || "",
+                        lastName: parsed.lastName || "",
+                        email: parsed.email || "",
+                        phoneNumber: parsed.phoneNumber || "",
+                        message: parsed.message || "",
+                    });
+                } catch (error) {
+                    console.error("Form localStorage yükleme hatası:", error);
+                }
+            }
+        }
+    }, []);
+
+    useEffect(() => {
         setFormState((fs) => ({
             ...fs,
             orderNumber: orderStore.orderNumber || "",
@@ -29,6 +50,7 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
             lastName: orderStore.lastName,
             email: orderStore.email,
             phoneNumber: orderStore.phoneNumber,
+            message: orderStore.message,
         }));
     }, [
         orderStore.orderNumber,
@@ -36,6 +58,7 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         orderStore.lastName,
         orderStore.email,
         orderStore.phoneNumber,
+        orderStore.message,
     ]);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,6 +74,28 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormState(prev => ({ ...prev, [name]: value }));
+
+        switch (name) {
+            case 'orderNumber':
+                orderStore.setOrderNumber(value);
+                break;
+            case 'firstName':
+                orderStore.setFirstName(value);
+                break;
+            case 'lastName':
+                orderStore.setLastName(value);
+                break;
+            case 'email':
+                orderStore.setEmail(value);
+                break;
+            case 'phoneNumber':
+                orderStore.setPhoneNumber(value);
+                break;
+            case 'message':
+                orderStore.setMessage(value);
+                break;
+        }
+
         resetFieldError(name as keyof typeof formState);
         setGeneralError(null);
     };
@@ -108,6 +153,7 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
                 email: '',
                 message: '',
             });
+            orderStore.clearAll();
         } catch (err) {
             console.error('Mail gönderim hatası:', err);
             setGeneralError(submitError || t('submitError') || 'Gönderim sırasında bir hata oluştu.');
@@ -133,19 +179,21 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
                     value={formState[name]}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2"
+                    className="w-full disabled:opacity-50 border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
                 />
-            ) : (
-                <input
-                    type={type}
-                    name={name}
-                    placeholder={t(label)}
-                    value={formState[name]}
-                    onChange={handleChange}
-                    dir={direction}
-                    className={`w-full border-[color:var(--input-color)] bg-[color:var(--tx-bg)] rounded-sm px-2.5 py-2`}
-                />
-            )}
+            ) :
+                (
+                    <input
+                        type={type}
+                        name={name}
+                        placeholder={t(label)}
+                        value={formState[name]}
+                        onChange={handleChange}
+                        dir={direction}
+                        disabled={name === 'orderNumber'}
+                        className={`w-full disabled:opacity-50 border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5`}
+                    />
+                )}
             {errors[name] && (
                 <span className="text-red-500 text-xs mt-0.5">{errors[name]}</span>
             )}

@@ -626,6 +626,31 @@ const ProductDetail = ({
                   {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
                 </button>
               </div>
+              {/* Box Data */}
+              <div className="flex flex-col border gap-3 mt-6 border-[color:var(--gray-two)] rounded-sm px-5 py-6">
+                {boxdata.items.map((e) => (
+                  <div key={e.header + "head"} className="flex flex-row gap-3 flex-wrap">
+                    <h2 className="font-medium w-full">{e.header}</h2>
+                    {e.items.map((l) => (
+                      <div
+                        key={l.itemsdata.title + "title"}
+                        className="flex flex-row items-center gap-1"
+                      >
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            image={l.itemsdata.icon}
+                            alt={l.itemsdata.icon.altText || ""}
+                            layout="fill"
+                            objectFit="contain"
+                          />
+                        </div>
+
+                        <span className="text-sm">{l.itemsdata.title}</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -641,30 +666,8 @@ const ProductDetail = ({
             </a>
           </Link>
         </div>
-        <div className="flex border gap-3 mt-6 border-[color:var(--gray-two)] rounded-sm px-5 py-6 flex-col">
-          {boxdata.items.map((e) => (
-            <div key={e.header + "head"}>
-              <h2 className="font-medium">{e.header}</h2>
-              {e.items.map((l) => (
-                <div
-                  key={l.itemsdata.title + "title"}
-                  className="flex mt-3.5 items-center gap-2"
-                >
-                  <div className="w-10 h-10 relative">
-                    <Image
-                      image={l.itemsdata.icon}
-                      alt={l.itemsdata.icon.altText || ""}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
 
-                  <span className="text-sm">{l.itemsdata.title}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+
       </div>
       <div className="lg:col-span-2">
 

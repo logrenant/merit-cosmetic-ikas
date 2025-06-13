@@ -84,14 +84,14 @@ const OrderTracking = (props: OrderTrackingProps) => {
       return;
     }
 
-    const emailExists = await store.customerStore.checkEmail(email.trim().toLowerCase());
+    // const emailExists = await store.customerStore.checkEmail(email.trim().toLowerCase());
 
-    if (emailExists && store.customerStore.customer) {
-      setHasError(true);
-      setGeneralError(props.orderCannotFound ?? "");
-      setIsSubmitting(false);
-      return;
-    }
+    // if (emailExists && store.customerStore.customer) {
+    //   setHasError(true);
+    //   setGeneralError(props.orderCannotFound ?? "");
+    //   setIsSubmitting(false);
+    //   return;
+    // }
 
     try {
       const response = await store.customerStore.getOrderByEmail(
@@ -161,7 +161,6 @@ const OrderTracking = (props: OrderTrackingProps) => {
                   onChange={(e) => {
                     setEmail(e.target.value);
                     setFormState({ ...formState, email: e.target.value });
-                    // Clear error when user starts typing
                     if (emailError) setEmailError("");
                   }}
                   className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
@@ -204,7 +203,7 @@ const OrderTracking = (props: OrderTrackingProps) => {
         )}
 
         {order && (
-          <div className="xl:layout flex flex-col xl:flex-row xl:justify-center gap-12 items-start w-full">
+          <div className="md:layout flex flex-col md:flex-row md:justify-center gap-12 items-start w-full">
             <div className="flex group cursor-pointer" onClick={() => setOrder(undefined)}>
               <button
                 className="text-[color:var(--gray-five)] group-hover:text-[color:var(--black-two)] leading-none flex items-center justify-start gap-1.5"
