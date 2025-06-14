@@ -1,19 +1,23 @@
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from '@ikas/storefront';
-import { orderStore } from 'src/utils/orderStore';
+import { backInStockStore } from 'src/utils/backInStockStore';
 import { useSendEmail } from 'src/utils/sendEmail';
 import { useDirection } from 'src/utils/useDirection';
 import React, { useEffect, useRef, useState } from 'react';
-import type { OrderContactProps } from '../__generated__/types';
+import { useRouter } from 'next/router';
+import type { BackInStockRequestProps } from '../__generated__/types';
 
-const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submitError, orderNumberInput }) => {
+const BackInStockRequestForm: React.FC<BackInStockRequestProps> = ({ formMessages, formRule, submitError, productName }) => {
     const { t } = useTranslation();
     const { direction } = useDirection();
     const { sendEmail } = useSendEmail();
     const formRef = useRef<HTMLFormElement>(null);
+    const router = useRouter();
+
+    const urlProductName = router.query.productName as string | undefined;
 
     const [formState, setFormState] = useState({
-        orderNumber: '',
+        productName: '',
         firstName: '',
         lastName: '',
         phoneNumber: '',
@@ -23,12 +27,12 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            const savedData = localStorage.getItem("orderContactData");
+            const savedData = localStorage.getItem("backInStockData");
             if (savedData) {
                 try {
                     const parsed = JSON.parse(savedData);
                     setFormState({
-                        orderNumber: parsed.orderNumber || "",
+                        productName: parsed.productName || "",
                         firstName: parsed.firstName || "",
                         lastName: parsed.lastName || "",
                         email: parsed.email || "",
@@ -42,23 +46,45 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         }
     }, []);
 
+    // URL'den gelen ürün adını işle ve store'a kaydet
+    useEffect(() => {
+        if (urlProductName) {
+            // URL'den gelen ürün adını formda göster
+            setFormState(prev => ({
+                ...prev,
+                productName: urlProductName
+            }));
+
+            // Store'a kaydet
+            backInStockStore.setProductName(urlProductName);
+        }
+    }, [urlProductName]);
+
+    // Component yüklendiğinde prop'tan gelen productName'i store'a kaydet
+    useEffect(() => {
+        if (productName && !urlProductName) {
+            backInStockStore.setProductName(productName);
+        }
+    }, [productName, urlProductName]);
+
     useEffect(() => {
         setFormState((fs) => ({
             ...fs,
-            orderNumber: orderStore.orderNumber || "",
-            firstName: orderStore.firstName,
-            lastName: orderStore.lastName,
-            email: orderStore.email,
-            phoneNumber: orderStore.phoneNumber,
-            message: orderStore.message,
+            productName: backInStockStore.productName || productName || "",
+            firstName: backInStockStore.firstName,
+            lastName: backInStockStore.lastName,
+            email: backInStockStore.email,
+            phoneNumber: backInStockStore.phoneNumber,
+            message: backInStockStore.message,
         }));
     }, [
-        orderStore.orderNumber,
-        orderStore.firstName,
-        orderStore.lastName,
-        orderStore.email,
-        orderStore.phoneNumber,
-        orderStore.message,
+        productName,
+        backInStockStore.productName,
+        backInStockStore.firstName,
+        backInStockStore.lastName,
+        backInStockStore.email,
+        backInStockStore.phoneNumber,
+        backInStockStore.message,
     ]);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,23 +102,23 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
         setFormState(prev => ({ ...prev, [name]: value }));
 
         switch (name) {
-            case 'orderNumber':
-                orderStore.setOrderNumber(value);
+            case 'productName':
+                backInStockStore.setProductName(value);
                 break;
             case 'firstName':
-                orderStore.setFirstName(value);
+                backInStockStore.setFirstName(value);
                 break;
             case 'lastName':
-                orderStore.setLastName(value);
+                backInStockStore.setLastName(value);
                 break;
             case 'email':
-                orderStore.setEmail(value);
+                backInStockStore.setEmail(value);
                 break;
             case 'phoneNumber':
-                orderStore.setPhoneNumber(value);
+                backInStockStore.setPhoneNumber(value);
                 break;
             case 'message':
-                orderStore.setMessage(value);
+                backInStockStore.setMessage(value);
                 break;
         }
 
@@ -139,21 +165,41 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
 
         if (!validate()) return;
 
+        // Form verilerini konsola yazdır
+        console.log('Form verileri gönderiliyor:', {
+            productName: formState.productName,
+            firstName: formState.firstName,
+            lastName: formState.lastName,
+            phoneNumber: formState.phoneNumber,
+            email: formState.email,
+            message: formState.message
+        });
+
+        // Form elemanlarını kontrol et
+        if (formRef.current) {
+            const formData = new FormData(formRef.current);
+            console.log('FormData içeriği:');
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+        }
+
         setIsSubmitting(true);
         try {
-            await sendEmail(formRef, 'order');
+            await sendEmail(formRef, 'request');
             setIsSubmitted(true);
             setGeneralError(null);
             // reset form
             setFormState({
-                orderNumber: '',
+                productName: '',
                 firstName: '',
                 lastName: '',
                 phoneNumber: '',
                 email: '',
                 message: '',
             });
-            orderStore.clearAll();
+            // Store'u da temizle
+            backInStockStore.clearAll();
         } catch (err) {
             console.error('Mail gönderim hatası:', err);
             setGeneralError(submitError || t('submitError') || 'Gönderim sırasında bir hata oluştu.');
@@ -185,13 +231,14 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
                 (
                     <input
                         type={type}
-                        name={name}
+                        name={name === 'productName' ? 'productName' : name}
                         placeholder={t(label)}
                         value={formState[name]}
                         onChange={handleChange}
                         dir={direction}
-                        disabled={name === 'orderNumber'}
+                        disabled={name === 'productName'}
                         className={`w-full disabled:opacity-50 border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5`}
+                        data-emailjs-field={name === 'productName' ? 'product_name' : name}
                     />
                 )}
             {errors[name] && (
@@ -219,11 +266,11 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
                         <form ref={formRef} className="flex flex-col gap-4" onSubmit={handleSubmit}>
                             <input
                                 type="hidden"
-                                name="orderNumber"
-                                value={formState.orderNumber}
+                                name="productName"
+                                value={formState.productName}
                             />
                             {/* Form fields */}
-                            {renderField(orderNumberInput || t('orderNumber'), 'orderNumber', 'text')}
+                            {renderField(productName || t('productName'), 'productName', 'text')}
                             {renderField(t('firstName'), 'firstName')}
                             {renderField(t('lastName'), 'lastName')}
                             {renderField(t('phoneNumber'), 'phoneNumber', 'tel')}
@@ -245,4 +292,4 @@ const OrderForm: React.FC<OrderContactProps> = ({ formMessages, formRule, submit
     );
 };
 
-export default observer(OrderForm);
+export default observer(BackInStockRequestForm);

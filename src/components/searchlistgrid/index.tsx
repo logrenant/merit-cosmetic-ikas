@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { observer } from "mobx-react-lite";
 import ProductCard from "../composites/productcard";
 import { SearchlistgridProps } from "../__generated__/types";
 import { useDirection } from "../../utils/useDirection";
+import { useUserLocation } from "../../utils/useUserLocation";
 import { Link, useStore, useTranslation } from "@ikas/storefront";
 const Searchlistgrid: React.FC<SearchlistgridProps> = ({ products }) => {
   const { direction } = useDirection();
   const { t } = useTranslation();
   const store = useStore();
+  const { filterProductsByLocation, adjustProductCount } = useUserLocation();
+
+  // Filter products for Turkish IPs - only show products that can be purchased
+  const filteredProducts = useMemo(() => {
+    return filterProductsByLocation(products.data);
+  }, [products.data, filterProductsByLocation]);
+
+  // Adjust the product count for display
+  const adjustedProductCount = useMemo(() => {
+    return adjustProductCount(products.data, products.count);
+  }, [products.data, products.count, adjustProductCount]);
   return (
     <div dir={direction} className="my-10 layout">
       <div className="w-full mb-4">
@@ -41,12 +53,12 @@ const Searchlistgrid: React.FC<SearchlistgridProps> = ({ products }) => {
       <div className="text-2xl text-center text-[color:var(--color-two)] font-medium mb-8">
         {t("searchTitle", {
           query: store?.router?.query.s,
-          count: products.count ? products.count : "0",
+          count: adjustedProductCount ? adjustedProductCount : "0",
         })}
       </div>
-      {products.data.length > 0 ? (
+      {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 gap-y-6">
-          {products.data.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

@@ -9,6 +9,7 @@ import { observer } from "mobx-react-lite";
 import { useAddToCart } from "../../utils/useAddToCart";
 import useFavorite from "../../utils/useFavorite";
 import { useDirection } from "../../utils/useDirection";
+import { useUserLocation } from "../../utils/useUserLocation";
 import Pricedisplay from "./pricedisplay";
 
 const ProductCard: React.FC<{
@@ -29,6 +30,12 @@ const ProductCard: React.FC<{
   });
   const { direction } = useDirection();
   const { t } = useTranslation();
+  const { shouldShowProduct } = useUserLocation();
+
+  // Don't render this product for Turkish IPs if it requires inquiry
+  if (!shouldShowProduct(product)) {
+    return null;
+  }
   return (
     <div
       dir={direction}
