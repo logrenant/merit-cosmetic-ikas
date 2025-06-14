@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { observer } from "mobx-react-lite";
 import ProductCard from "../composites/productcard";
 import { ProductlistgridProps } from "../__generated__/types";
 import {
   IkasCategory,
   IkasProductFilterDisplayType,
+  IkasProductFilterType,
   IkasProductListSortType,
   useTranslation,
 } from "@ikas/storefront";
@@ -16,6 +17,7 @@ import FilterMobile, {
 } from "../composites/filtermobile";
 import { CategoryWithChildrenType } from "../composites/mobilemenu";
 import { useDirection } from "../../utils/useDirection";
+import { useUserLocation } from "../../utils/useUserLocation";
 
 type Option = {
   value: string;
@@ -115,7 +117,24 @@ const ProductListGrid: React.FC<
     )!;
   const { direction } = useDirection();
   const { t } = useTranslation();
+  const { filterProductsByLocation, adjustProductCount, isTurkishIP } = useUserLocation();
   const [show, setShow] = useState(false);
+
+  // Filter products for Turkish IPs - only show products that can be purchased
+  const filteredProducts = useMemo(() => {
+    return filterProductsByLocation(products.data);
+  }, [products.data, filterProductsByLocation]);
+
+  // Adjust the product count for display
+  const adjustedProductCount = useMemo(() => {
+    return adjustProductCount(products.data, products.count);
+  }, [products.data, products.count, adjustProductCount]);
+
+  // Filter popular products for Turkish IPs
+  const filteredPopularProducts = useMemo(() => {
+    return popular.data ? filterProductsByLocation(popular.data) : [];
+  }, [popular.data, filterProductsByLocation]);
+
   useEffect(() => {
     setShow(false);
     setTimeout(() => {
@@ -143,20 +162,27 @@ const ProductListGrid: React.FC<
             </div>
           )}
           {products.count > 0 &&
-            products?.filters?.map((filter) => (
-              <div key={filter.id}>
-                {filter.displayType === IkasProductFilterDisplayType.LIST && (
-                  <List filter={filter} items={filter.displayedValues} />
-                )}
-                {filter.displayType ===
-                  IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
-                    <NumberList
-                      filter={filter}
-                      items={filter.numberRangeListOptions || []}
-                    />
+            products?.filters?.map((filter) => {
+              // Skip stock filter for Turkish IPs
+              if (isTurkishIP && filter.type === IkasProductFilterType.STOCK_STATUS) {
+                return null;
+              }
+
+              return (
+                <div key={filter.id}>
+                  {filter.displayType === IkasProductFilterDisplayType.LIST && (
+                    <List filter={filter} items={filter.displayedValues} />
                   )}
-              </div>
-            ))}
+                  {filter.displayType ===
+                    IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
+                      <NumberList
+                        filter={filter}
+                        items={filter.numberRangeListOptions || []}
+                      />
+                    )}
+                </div>
+              );
+            })}
 
           {products.isFiltered && (
             <button
@@ -174,7 +200,7 @@ const ProductListGrid: React.FC<
           )}
         </div>
         <div>
-          {show && popular.data.length > 0 && (
+          {show && filteredPopularProducts.length > 0 && (
             <>
               <div className="text-2xl text-[color:var(--color-two)] font-medium mb-10 text-center tracking-widest">
                 {t("categoryPage.mostPopular")}
@@ -210,7 +236,7 @@ const ProductListGrid: React.FC<
           )}
           <div className="mb-8 flex items-center justify-between">
             <div className="text-[14px] lg:block hidden">
-              {products.count} {t("categoryPage.product")}
+              {adjustedProductCount} {t("categoryPage.product")}
             </div>
 
             <div className="flex w-full justify-end lg:w-[unset] items-center gap-2">
@@ -237,12 +263,12 @@ const ProductListGrid: React.FC<
               </select>
             </div>
           </div>
-          {products.data.length > 0 ? (
+          {filteredProducts.length > 0 ? (
             <div
               id="listgrid"
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
             >
-              {products.data.map((product) => (
+              {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>

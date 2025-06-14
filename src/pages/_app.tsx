@@ -13,6 +13,7 @@ import { useStore } from "@ikas/storefront";
 
 import TawkProvider from "../components/TawkProvider";
 import ChatButton from "../components/ChatButton";
+import { FilterProvider } from "../components/composites/FilterContext";
 
 IkasStorefrontConfig.init({
   ...Config,
@@ -51,7 +52,7 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
     };
   }, []);
   return (
-    <>
+    <FilterProvider>
       <TawkProvider />
       <Toaster
         position="top-center"
@@ -64,7 +65,7 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
       />
       <Component {...pageProps} />
       <ChatButton />
-    </>
+    </FilterProvider>
   );
 };
 

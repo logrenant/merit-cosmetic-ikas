@@ -8,6 +8,7 @@ import {
   useStore,
   useTranslation,
 } from "@ikas/storefront";
+import { useUserLocation } from 'src/utils/useUserLocation';
 import { observer } from "mobx-react-lite";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Rating } from "react-simple-star-rating";
@@ -83,6 +84,7 @@ const ProductDetail = ({
   loginRequired,
   successMessage,
   errorMessage,
+  soldOutButton
 }: ProductdetailProps) => {
   const [quantity, setQuantity] = useState(1);
   const mainImages =
@@ -216,12 +218,23 @@ const ProductDetail = ({
     setTimeout(() => {
       setShow(true);
     }, 200);
-  }, [product]);
-  const { direction } = useDirection();
+  }, [product]); const { direction } = useDirection();
   const { t } = useTranslation();
   const { isProductFavorite, pending, toggleFavorite } = useFavorite({
     productId: product.id,
   });
+  const { isTurkishIP, shouldShowProduct } = useUserLocation();
+
+  // If user has Turkish IP and product requires inquiry (not available for purchase),
+  // redirect to homepage or show a message
+  useEffect(() => {
+    if (!shouldShowProduct(product)) {
+      // Option 1: Redirect to homepage
+      // window.location.href = '/';
+
+      // Option 2: Hide this in the render logic below
+    }
+  }, [shouldShowProduct, product]);
 
   return (
     <div
@@ -619,11 +632,29 @@ const ProductDetail = ({
                 </div>
 
                 <button
-                  disabled={loading || !product.isAddToCartEnabled}
-                  onClick={() => addToCart(product, quantity)}
+                  disabled={loading || (isTurkishIP && !product.isAddToCartEnabled)}
+                  onClick={() => {
+                    if (product.isAddToCartEnabled) {
+                      addToCart(product, quantity);
+                    } else if (!isTurkishIP) {
+                      // Only non-Turkish IPs can request an inquiry
+                      const url = window.location.pathname;
+                      const segments = url.split('/');
+                      const lastSegment = segments[segments.length - 1];
+                      const productSlug = lastSegment || '';
+
+                      const productNameFromUrl = productSlug
+                        .replace(/-/g, ' ')
+                        .replace(/\b\w/g, char => char.toUpperCase());
+
+                      const productNameToUse = product.name || productNameFromUrl;
+
+                      window.location.href = `/pages/back-in-stock-request?productName=${encodeURIComponent(productNameToUse)}`;
+                    }
+                  }}
                   className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
                 >
-                  {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
+                  {product.isAddToCartEnabled ? t("addToBasket") : soldOutButton}
                 </button>
               </div>
               {/* Box Data */}

@@ -13,6 +13,8 @@ import { observer } from "mobx-react-lite";
 import { Transition } from "@headlessui/react";
 import { useOnClickOutside } from "usehooks-ts";
 import { CategoryWithChildrenType } from "./mobilemenu";
+import { useUserLocation } from "../../utils/useUserLocation";
+import { useFilterContext } from "./FilterContext";
 
 export const NumberList = observer(
   ({
@@ -101,14 +103,29 @@ export const StockList = observer(
   }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState<boolean>(true);
+    const { isTurkishIP } = useUserLocation();
+    const { setIsOutOfStockSelected } = useFilterContext();
+
+    // Set isOutOfStockSelected to false for Turkish IPs on initial render
+    // Using useLayoutEffect for synchronous execution before browser paint
+    React.useLayoutEffect(() => {
+      if (isTurkishIP) {
+        setIsOutOfStockSelected(false);
+      }
+    }, [isTurkishIP, setIsOutOfStockSelected]);
+
+    // If the user has a Turkish IP, hide the entire StockList filter
+    if (isTurkishIP) {
+      return null;
+    }
 
     const stockItems = items.filter(
-      (item) =>
-        item.name === IkasProductStockFilterValue.IN_STOCK ||
-        item.name === IkasProductStockFilterValue.OUT_OF_STOCK
+      (item) => {
+        return item.name === IkasProductStockFilterValue.IN_STOCK ||
+          item.name === IkasProductStockFilterValue.OUT_OF_STOCK;
+      }
     );
     if (stockItems.length === 0) return null;
-
 
     return (
       <div className="mb-3">
@@ -189,9 +206,17 @@ export const TypeList = observer(
   }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState<boolean>(true);
+    const { isTurkishIP } = useUserLocation();
+    const { isOutOfStockSelected } = useFilterContext();
 
     if (filter.type !== IkasProductFilterType.TAG) return null;
     if (!items || items.length === 0) return null;
+
+    // Hide brand filter for Turkish IPs when OUT_OF_STOCK is selected
+    // Assuming filter name "Marka" is the brand filter in Turkish
+    if (isTurkishIP && isOutOfStockSelected && filter.name.toLowerCase() === "marka") {
+      return null;
+    }
 
     return (
       <div className="mb-3">
@@ -241,7 +266,7 @@ export const TypeList = observer(
                       : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
                       }`}
                   >
-                    {t(item.name)} ({item.resultCount})
+                    {item.name} ({item.resultCount})
                   </span>
                 </button>
               ))}
@@ -263,6 +288,15 @@ export const List = observer(
   }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState<boolean>(true);
+    const { isTurkishIP } = useUserLocation();
+    const { isOutOfStockSelected } = useFilterContext();
+
+    // Hide brand filter for Turkish IPs when OUT_OF_STOCK is selected
+    // Assuming filter name "Marka" is the brand filter in Turkish
+    if (isTurkishIP && isOutOfStockSelected && filter.name.toLowerCase() === "marka") {
+      return null;
+    }
+
     return items.length > 0 ? (
       <div className="mb-3">
         <div className="flex w-full flex-col items-center">
@@ -321,7 +355,7 @@ export const List = observer(
                     {item.name === "in-stock" || item.name === "out-of-stock"
                       ? t(item.name)
                       : item.name}{" "}
-                    ({item.resultCount})
+                    {!(isTurkishIP && item.name === "out-of-stock") && `(${item.resultCount})`}
                   </span>
                 </button>
               ))}
@@ -444,6 +478,7 @@ export const FilterMobileBrands: React.FC<{
   const { t } = useTranslation();
   const childRef = React.useRef<HTMLDivElement>(null);
   useOnClickOutside(childRef, () => setOpenFilter(false));
+  const { adjustProductCount, isTurkishIP } = useUserLocation();
 
   return (
     <>
@@ -510,9 +545,17 @@ export const FilterMobileBrands: React.FC<{
           </div>
 
           <div className="p-5">
-            {products.count > 0 &&
+            {adjustProductCount(products.data, products.count) > 0 &&
               products?.filters?.map((filter) => {
-                // Sadece belirli filtre tiplerini render et
+                // Skip stock filter for Turkish IPs
+                if (
+                  isTurkishIP &&
+                  filter.type === IkasProductFilterType.STOCK_STATUS
+                ) {
+                  return null;
+                }
+
+                // Render specific filter types
                 if (
                   filter.type === IkasProductFilterType.STOCK_STATUS &&
                   filter.displayType === IkasProductFilterDisplayType.LIST
@@ -577,6 +620,8 @@ const FilterMobile: React.FC<{
   const { t } = useTranslation();
   const childRef = React.useRef<HTMLDivElement>(null);
   useOnClickOutside(childRef, () => setOpenFilter(false));
+  const { adjustProductCount, isTurkishIP } = useUserLocation();
+
   return (
     <>
       <button
@@ -625,7 +670,7 @@ const FilterMobile: React.FC<{
                 </a>
               </Link>
               <button
-                onClick={(e) => setOpenFilter(false)}
+                onClick={() => setOpenFilter(false)}
                 className="flex items-center justify-center -mr-[3px] w-6 h-6"
               >
                 <svg
@@ -660,7 +705,7 @@ const FilterMobile: React.FC<{
                 ))}
               </div>
             )}
-            {products.count > 0 &&
+            {adjustProductCount(products.data, products.count) > 0 &&
               products?.filters?.map((filter) => (
                 <div key={filter.id}>
                   {filter.displayType === IkasProductFilterDisplayType.LIST && (

@@ -169,6 +169,7 @@ export type ProductdetailProps = {
 	loginRequired?: string;
 	successMessage?: string;
 	errorMessage?: string;
+	soldOutButton?: string;
 };
 
 export type SearchlistgridProps = {
@@ -292,5 +293,13 @@ export type HomepageBlogsProps = {
 
 export type WholesaleProps = {
 	pageContent: string;
+};
+
+export type BackInStockRequestProps = {
+	productName?: string;
+	contactProps: ContactProps;
+	formMessages: FormMessages;
+	formRule: ContactFormRule;
+	submitError?: string;
 };
 

@@ -18,6 +18,7 @@ import UIStore from "../../store/ui-store";
 import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
 import React from "react";
+import { useUserLocation } from "../../utils/useUserLocation";
 
 const SearchBar = ({
   products,
@@ -36,6 +37,7 @@ const SearchBar = ({
   const { t } = useTranslation();
   const uiStore = UIStore.getInstance();
   const searchRef = useRef<HTMLDivElement>(null);
+  const { isTurkishIP, filterProductsByLocation } = useUserLocation();
 
   // UI state
   const [placeholderOpen, setPlaceholderOpen] = useState(true);
@@ -70,8 +72,12 @@ const SearchBar = ({
     uiStore.searchKeyword = "";
     products.searchKeyword = "";
     setPlaceholderOpen(true);
-    setSearchedProductsNotFiltered(products.data);
-    setSearchedProducts(products.data.slice(0, 8));
+    
+    // Filter products for Turkish IPs to hide out-of-stock products
+    const filteredProducts = filterProductsByLocation(products.data);
+    setSearchedProductsNotFiltered(filteredProducts);
+    setSearchedProducts(filteredProducts.slice(0, 8));
+    
     setHoveredCategory(undefined);
     setHoveredBrand(undefined);
     setSelectedRelatedCategory(undefined);
@@ -107,9 +113,13 @@ const SearchBar = ({
     setSelectedRelatedCategory(cat.name);
 
     // Filter products without resetting search results
-    const filteredProducts = products.data.filter(p =>
+    const allProductsForCategory = products.data.filter(p =>
       p.categories?.some(c => c.name.toLowerCase() === cat.name.toLowerCase())
     );
+    
+    // Apply Turkish IP filtering to hide out-of-stock products
+    const filteredProducts = filterProductsByLocation(allProductsForCategory);
+    
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
 
@@ -128,11 +138,16 @@ const SearchBar = ({
     products.searchKeyword = br;
     setPlaceholderOpen(false);
 
-    const brandProducts = products.data.filter(
+    // Get all products for this brand
+    const allBrandProducts = products.data.filter(
       p => p.brand?.name.toLowerCase() === br.toLowerCase()
     );
-    setSearchedProductsNotFiltered(brandProducts);
-    setSearchedProducts(brandProducts.slice(0, 8));
+    
+    // Apply Turkish IP filtering to hide out-of-stock products
+    const filteredBrandProducts = filterProductsByLocation(allBrandProducts);
+    
+    setSearchedProductsNotFiltered(filteredBrandProducts);
+    setSearchedProducts(filteredBrandProducts.slice(0, 8));
   };
 
   const findBrandForCategory = (categoryName: string): IkasBrand | null => {
@@ -185,13 +200,17 @@ const SearchBar = ({
   };
 
   const displayResults = React.useMemo(() => {
+    let results = products.data;
+    
     if (hoveredCategory) {
-      return products.data.filter(p =>
+      results = products.data.filter(p =>
         p.categories?.some(c => c.name.toLowerCase() === hoveredCategory.toLowerCase())
       );
     }
-    return products.data;
-  }, [products.data, hoveredCategory]);
+    
+    // Apply Turkish IP filtering to hide out-of-stock products
+    return filterProductsByLocation(results);
+  }, [products.data, hoveredCategory, filterProductsByLocation]);
 
   useEffect(() => {
     // Get unique categories from products directly
@@ -208,9 +227,12 @@ const SearchBar = ({
     }, []);
 
     setProductCategories(uniqueCategories);
-    setSearchedProductsNotFiltered(products.data);
-    setSearchedProducts(products.data.slice(0, 8));
-  }, [products.data]);
+    
+    // Filter products for Turkish IPs to hide out-of-stock products
+    const filteredProducts = filterProductsByLocation(products.data);
+    setSearchedProductsNotFiltered(filteredProducts);
+    setSearchedProducts(filteredProducts.slice(0, 8));
+  }, [products.data, filterProductsByLocation]);
 
 
   useEffect(() => {
@@ -495,7 +517,7 @@ const SearchBar = ({
 
                     <div className="grid p-4 grid-cols-2 gap-2">
 
-                      {popularProducts.data.filter((p) => {
+                      {filterProductsByLocation(popularProducts.data).filter((p) => {
                         // console.log('p.categories-0', p.categories[0].name, { hoveredCategory });
 
                         // p.categories.map((c) => console.log('popularProducts.category.name', c.name));
@@ -507,7 +529,7 @@ const SearchBar = ({
                           : true
                       }
                       ).length > 0 ? (
-                        popularProducts.data
+                        filterProductsByLocation(popularProducts.data)
                           .filter((p) => {
                             // console.log('p.categories-1', p.categories[0].name, { hoveredCategory });
 

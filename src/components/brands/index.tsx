@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { observer } from "mobx-react-lite";
 import ProductCard from "../composites/productcard";
 import { BrandsProps } from "../__generated__/types";
 import { useDirection } from "../../utils/useDirection";
+import { useUserLocation } from "../../utils/useUserLocation";
 import {
   IkasBrand,
   IkasProductFilterDisplayType,
@@ -52,6 +53,19 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
   pageSpecificData,
 }) => {
   const { direction } = useDirection();
+  const { t } = useTranslation();
+  const { filterProductsByLocation, adjustProductCount } = useUserLocation();
+
+  // Filter products for Turkish IPs - only show products that can be purchased
+  const filteredProducts = useMemo(() => {
+    return filterProductsByLocation(products.data);
+  }, [products.data, filterProductsByLocation]);
+
+  // Adjust the product count for display
+  const adjustedProductCount = useMemo(() => {
+    return adjustProductCount(products.data, products.count);
+  }, [products.data, products.count, adjustProductCount]);
+
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (products.isLoading) return;
     products.setSortType(e.target.value as IkasProductListSortType);
@@ -63,7 +77,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
 
     return isFeaturedSort ? isFeaturedSortEnabled : true;
   });
-  const { t } = useTranslation();
+
   return (
     <div dir={direction} className="my-10 layout">
       <div className="grid grid-cols-[100%] lg:grid-cols-[260px_calc(100%-284px)] gap-6">
@@ -106,7 +120,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
         <div>
           <div className="mb-8 flex items-center justify-between">
             <div className="text-[14px] lg:block hidden">
-              {products.count} {t("categoryPage.product")}
+              {adjustedProductCount} {t("categoryPage.product")}
             </div>
 
             <div className="flex w-full justify-end lg:w-[unset] items-center gap-2">
@@ -131,12 +145,12 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
               </select>
             </div>
           </div>
-          {products.data.length > 0 ? (
+          {filteredProducts.length > 0 ? (
             <div
               id="listgrid"
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
             >
-              {products.data.map((product) => (
+              {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
