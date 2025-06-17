@@ -8,6 +8,7 @@ import SimpleSlider from "../composites/simpleslider";
 import { HomeproductsProps } from "../__generated__/types";
 import { sliderBreakpoints } from "src/styles/breakpoints";
 import { useScreen } from "src/utils/hooks/useScreen";
+import { useUserLocation } from "src/utils/useUserLocation";
 
 const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: HomeproductsProps) => {
   const [selectedProducts, setSelectedProducts] = useState(
@@ -17,6 +18,8 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
   const [currentSlide, setCurrentSlide] = useState(0);
   const [maxSlide, setMaxSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+
+  const { isTurkishIP, filterProductsByLocation } = useUserLocation();
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -181,11 +184,15 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
             }}
             items={products
               ?.find((e) => e.image.id === selectedProducts)
-              ?.products.data?.map((product) => (
-                <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
-                  <ProductCard product={product} />
-                </div>
-              )) ?? []}
+              ?.products.data
+              ? filterProductsByLocation(
+                  products.find((e) => e.image.id === selectedProducts)?.products.data || []
+                )?.map((product) => (
+                  <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
+                    <ProductCard product={product} />
+                  </div>
+                )) 
+              : []}
           />
         </div>
       </div>

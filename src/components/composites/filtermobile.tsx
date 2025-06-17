@@ -106,15 +106,12 @@ export const StockList = observer(
     const { isTurkishIP } = useUserLocation();
     const { setIsOutOfStockSelected } = useFilterContext();
 
-    // Set isOutOfStockSelected to false for Turkish IPs on initial render
-    // Using useLayoutEffect for synchronous execution before browser paint
     React.useLayoutEffect(() => {
       if (isTurkishIP) {
         setIsOutOfStockSelected(false);
       }
     }, [isTurkishIP, setIsOutOfStockSelected]);
 
-    // If the user has a Turkish IP, hide the entire StockList filter
     if (isTurkishIP) {
       return null;
     }
@@ -212,8 +209,6 @@ export const TypeList = observer(
     if (filter.type !== IkasProductFilterType.TAG) return null;
     if (!items || items.length === 0) return null;
 
-    // Hide brand filter for Turkish IPs when OUT_OF_STOCK is selected
-    // Assuming filter name "Marka" is the brand filter in Turkish
     if (isTurkishIP && isOutOfStockSelected && filter.name.toLowerCase() === "marka") {
       return null;
     }
@@ -291,9 +286,12 @@ export const List = observer(
     const { isTurkishIP } = useUserLocation();
     const { isOutOfStockSelected } = useFilterContext();
 
-    // Hide brand filter for Turkish IPs when OUT_OF_STOCK is selected
-    // Assuming filter name "Marka" is the brand filter in Turkish
     if (isTurkishIP && isOutOfStockSelected && filter.name.toLowerCase() === "marka") {
+      return null;
+    }
+
+    const hasStockItems = items?.some(item => item.name === "in-stock" || item.name === "out-of-stock");
+    if (isTurkishIP && hasStockItems) {
       return null;
     }
 
@@ -547,7 +545,6 @@ export const FilterMobileBrands: React.FC<{
           <div className="p-5">
             {adjustProductCount(products.data, products.count) > 0 &&
               products?.filters?.map((filter) => {
-                // Skip stock filter for Turkish IPs
                 if (
                   isTurkishIP &&
                   filter.type === IkasProductFilterType.STOCK_STATUS
@@ -555,7 +552,6 @@ export const FilterMobileBrands: React.FC<{
                   return null;
                 }
 
-                // Render specific filter types
                 if (
                   filter.type === IkasProductFilterType.STOCK_STATUS &&
                   filter.displayType === IkasProductFilterDisplayType.LIST
