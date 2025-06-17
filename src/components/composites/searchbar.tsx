@@ -3,7 +3,6 @@ import {
   IkasBrandList,
   IkasCategoryList,
   IkasProduct,
-  IkasProductFilter,
   IkasProductList,
   Image,
   Link,
@@ -72,12 +71,12 @@ const SearchBar = ({
     uiStore.searchKeyword = "";
     products.searchKeyword = "";
     setPlaceholderOpen(true);
-    
+
     // Filter products for Turkish IPs to hide out-of-stock products
     const filteredProducts = filterProductsByLocation(products.data);
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
-    
+
     setHoveredCategory(undefined);
     setHoveredBrand(undefined);
     setSelectedRelatedCategory(undefined);
@@ -102,8 +101,10 @@ const SearchBar = ({
     setHoveredCategory(undefined);
     setHoveredBrand(undefined);
     setSelectedRelatedCategory(undefined);
-    setSearchedProducts(products.data);
-    setSearchedProductsNotFiltered(products.data);
+
+    const filteredProducts = filterProductsByLocation(products.data);
+    setSearchedProducts(filteredProducts);
+    setSearchedProductsNotFiltered(filteredProducts);
   };
 
   const onHoverCategory = (cat: { name: string; href: string }) => {
@@ -112,14 +113,12 @@ const SearchBar = ({
     setHoveredBrandId(undefined);
     setSelectedRelatedCategory(cat.name);
 
-    // Filter products without resetting search results
     const allProductsForCategory = products.data.filter(p =>
       p.categories?.some(c => c.name.toLowerCase() === cat.name.toLowerCase())
     );
-    
-    // Apply Turkish IP filtering to hide out-of-stock products
+
     const filteredProducts = filterProductsByLocation(allProductsForCategory);
-    
+
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
 
@@ -142,16 +141,19 @@ const SearchBar = ({
     const allBrandProducts = products.data.filter(
       p => p.brand?.name.toLowerCase() === br.toLowerCase()
     );
-    
+
     // Apply Turkish IP filtering to hide out-of-stock products
     const filteredBrandProducts = filterProductsByLocation(allBrandProducts);
-    
+
     setSearchedProductsNotFiltered(filteredBrandProducts);
     setSearchedProducts(filteredBrandProducts.slice(0, 8));
   };
 
   const findBrandForCategory = (categoryName: string): IkasBrand | null => {
-    const categoryProducts = products.data.filter(product =>
+    // First filter products for Turkish IPs
+    const filteredProducts = filterProductsByLocation(products.data);
+
+    const categoryProducts = filteredProducts.filter(product =>
       product.categories?.some(c => c.name === categoryName)
     );
     const brands = categoryProducts
@@ -201,20 +203,23 @@ const SearchBar = ({
 
   const displayResults = React.useMemo(() => {
     let results = products.data;
-    
+
     if (hoveredCategory) {
       results = products.data.filter(p =>
         p.categories?.some(c => c.name.toLowerCase() === hoveredCategory.toLowerCase())
       );
     }
-    
+
     // Apply Turkish IP filtering to hide out-of-stock products
     return filterProductsByLocation(results);
   }, [products.data, hoveredCategory, filterProductsByLocation]);
 
   useEffect(() => {
-    // Get unique categories from products directly
-    const uniqueCategories = products.data.reduce((acc: { name: string; href: string }[], product) => {
+    // First filter products for Turkish IPs to hide out-of-stock products
+    const filteredProducts = filterProductsByLocation(products.data);
+
+    // Get unique categories from filtered products only
+    const uniqueCategories = filteredProducts.reduce((acc: { name: string; href: string }[], product) => {
       product.categories?.forEach(category => {
         if (!acc.some(c => c.name === category.name)) {
           acc.push({
@@ -227,9 +232,6 @@ const SearchBar = ({
     }, []);
 
     setProductCategories(uniqueCategories);
-    
-    // Filter products for Turkish IPs to hide out-of-stock products
-    const filteredProducts = filterProductsByLocation(products.data);
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
   }, [products.data, filterProductsByLocation]);
@@ -255,9 +257,12 @@ const SearchBar = ({
         p.brand?.name.toLowerCase() === hoveredBrand.toLowerCase()
       );
 
-      if (brandProducts.length > 0) {
-        setSearchedProductsNotFiltered(brandProducts);
-        setSearchedProducts(brandProducts.slice(0, 8));
+      // Apply Turkish IP filtering to hide out-of-stock products
+      const filteredBrandProducts = filterProductsByLocation(brandProducts);
+
+      if (filteredBrandProducts.length > 0) {
+        setSearchedProductsNotFiltered(filteredBrandProducts);
+        setSearchedProducts(filteredBrandProducts.slice(0, 8));
         setPlaceholderOpen(false);
 
         if (!searchedProducts || searchedProducts.length === 0) {
@@ -265,7 +270,7 @@ const SearchBar = ({
         }
       }
     }
-  }, [hoveredBrand, products.data, uiStore.searchKeyword]);
+  }, [hoveredBrand, products.data, uiStore.searchKeyword, filterProductsByLocation]);
 
   // useEffect(() => {
   //   console.log("[SearchBar] Hovered Category:", hoveredCategory);
@@ -487,9 +492,12 @@ const SearchBar = ({
                                 p.brand?.name.toLowerCase() === brand.name.toLowerCase()
                               );
 
+                              // Apply Turkish IP filtering to hide out-of-stock products
+                              const filteredBrandProducts = filterProductsByLocation(brandProducts);
+
                               // Update both filtered and unfiltered products
-                              setSearchedProductsNotFiltered(brandProducts);
-                              setSearchedProducts(brandProducts.slice(0, 8));
+                              setSearchedProductsNotFiltered(filteredBrandProducts);
+                              setSearchedProducts(filteredBrandProducts.slice(0, 8));
 
                               // Set keyword to match brand for consistency
                               products.searchKeyword = brand.name;

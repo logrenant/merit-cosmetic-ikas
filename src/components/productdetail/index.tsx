@@ -223,16 +223,10 @@ const ProductDetail = ({
   const { isProductFavorite, pending, toggleFavorite } = useFavorite({
     productId: product.id,
   });
-  const { isTurkishIP, shouldShowProduct } = useUserLocation();
+  const { isTurkishIP, shouldShowProduct, filterProductsByLocation } = useUserLocation();
 
-  // If user has Turkish IP and product requires inquiry (not available for purchase),
-  // redirect to homepage or show a message
   useEffect(() => {
     if (!shouldShowProduct(product)) {
-      // Option 1: Redirect to homepage
-      // window.location.href = '/';
-
-      // Option 2: Hide this in the render logic below
     }
   }, [shouldShowProduct, product]);
 
@@ -637,7 +631,6 @@ const ProductDetail = ({
                     if (product.isAddToCartEnabled) {
                       addToCart(product, quantity);
                     } else if (!isTurkishIP) {
-                      // Only non-Turkish IPs can request an inquiry
                       const url = window.location.pathname;
                       const segments = url.split('/');
                       const lastSegment = segments[segments.length - 1];
@@ -703,13 +696,13 @@ const ProductDetail = ({
       <div className="lg:col-span-2">
 
         {/* Combine Products */}
-        {combineProducts?.length > 0 && (
+        {filterProductsByLocation(combineProducts || []).length > 0 && (
           <div>
             <h3 className="text-xl text-[color:var(--color-one)] font-medium">
               {t("productDetail.package")}
             </h3>
             <div className="gap-4 flex flex-col mt-4">
-              {combineProducts
+              {filterProductsByLocation(combineProducts || [])
                 .filter((e) => !e.hasVariant)
                 .filter((e) => e.hasStock)
                 .map((e) => (
@@ -957,7 +950,7 @@ const ProductDetail = ({
             />
           </Accordion>
         </div>
-        {show && similar.count > 0 && (
+        {show && filterProductsByLocation(similar.data || []).length > 0 && (
           <>
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.relatedProducts")}
@@ -982,7 +975,7 @@ const ProductDetail = ({
                     },
                   },
                 }}
-                items={similar.data?.map((product) => (
+                items={filterProductsByLocation(similar.data || [])?.map((product) => (
                   <div
                     key={product.id + "product"}
                     className="keen-slider__slide"
@@ -994,7 +987,7 @@ const ProductDetail = ({
             </div>
           </>
         )}
-        {show && lastvisited.count > 0 && (
+        {show && filterProductsByLocation(lastvisited.data || []).length > 0 && (
           <>
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.insterestedProducts")}
@@ -1019,7 +1012,7 @@ const ProductDetail = ({
                     },
                   },
                 }}
-                items={lastvisited.data?.map((product) => (
+                items={filterProductsByLocation(lastvisited.data || [])?.map((product) => (
                   <div
                     key={product.id + "product2"}
                     className="keen-slider__slide"
