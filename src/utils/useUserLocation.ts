@@ -8,7 +8,7 @@ interface LocationInfo {
 }
 
 // Cache key for sessionStorage
-const LOCATION_CACHE_KEY = 'user_location_country';
+const LOCATION_CACHE_KEY = '307c9b90-40e0-11f0-b52a-77b24fe75cdd';
 
 export const useUserLocation = () => {
   const [locationInfo, setLocationInfo] = useState<LocationInfo>(() => {
@@ -95,11 +95,44 @@ export const useUserLocation = () => {
     return product.isAddToCartEnabled;
   }, [isTurkishIP]);
   
+  // Function to automatically fetch next batch if filtered products are insufficient
+  const getNextBatchIfNeeded = useCallback(async (
+    currentProducts: IkasProduct[], 
+    productsManager: any, // The products store/manager
+    minDesiredCount: number = 20
+  ): Promise<IkasProduct[]> => {
+    if (!isTurkishIP || !productsManager || !currentProducts) {
+      return currentProducts;
+    }
+
+    const availableProducts = currentProducts.filter(product => product.isAddToCartEnabled);
+    
+    // If we have enough available products or no more pages, return current products
+    if (availableProducts.length >= minDesiredCount || !productsManager.hasNext) {
+      return currentProducts;
+    }
+
+    // Calculate how many more products we need
+    const neededCount = minDesiredCount - availableProducts.length;
+    
+    try {
+      // Fetch next batch
+      await productsManager.getNext();
+      
+      // Recursively check if we need more products
+      return getNextBatchIfNeeded(productsManager.data, productsManager, minDesiredCount);
+    } catch (error) {
+      console.error('Error fetching next batch of products:', error);
+      return currentProducts;
+    }
+  }, [isTurkishIP]);
+
   return { 
     ...locationInfo, 
     isTurkishIP,
     filterProductsByLocation,
     adjustProductCount,
-    shouldShowProduct
+    shouldShowProduct,
+    getNextBatchIfNeeded
   };
 };
