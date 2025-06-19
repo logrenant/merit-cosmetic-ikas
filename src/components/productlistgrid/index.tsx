@@ -117,8 +117,9 @@ const ProductListGrid: React.FC<
     )!;
   const { direction } = useDirection();
   const { t } = useTranslation();
-  const { filterProductsByLocation, adjustProductCount, isTurkishIP } = useUserLocation();
+  const { filterProductsByLocation, adjustProductCount, isTurkishIP, getNextBatchIfNeeded } = useUserLocation();
   const [show, setShow] = useState(false);
+  const [isAutoLoading, setIsAutoLoading] = useState(false);
 
   // Filter products for Turkish IPs - only show products that can be purchased
   const filteredProducts = useMemo(() => {
@@ -141,6 +142,30 @@ const ProductListGrid: React.FC<
       setShow(true);
     }, 200);
   }, [pageSpecificData?.name]);
+
+  // Auto-fetch more products if needed for Turkish IPs
+  useEffect(() => {
+    const autoFetchIfNeeded = async () => {
+      if (isTurkishIP && products.data && !isAutoLoading && !products.isLoading) {
+        const availableProducts = filterProductsByLocation(products.data);
+
+        // If we have less than 20 available products and there are more pages
+        if (availableProducts.length < 20 && products.hasNext) {
+          setIsAutoLoading(true);
+          try {
+            await getNextBatchIfNeeded(products.data, products, 20);
+          } catch (error) {
+            console.error('Auto-fetch failed:', error);
+          } finally {
+            setIsAutoLoading(false);
+          }
+        }
+      }
+    };
+
+    autoFetchIfNeeded();
+  }, [products.data, isTurkishIP, isAutoLoading, products.isLoading, products.hasNext, filterProductsByLocation, getNextBatchIfNeeded]);
+
   return (
     <div dir={direction} className="my-10 layout">
       <div className="grid grid-cols-[100%] lg:grid-cols-[260px_calc(100%-284px)] gap-6">
@@ -236,7 +261,15 @@ const ProductListGrid: React.FC<
           )}
           <div className="mb-8 flex items-center justify-between">
             <div className="text-[14px] lg:block hidden">
-              {adjustedProductCount} {t("categoryPage.product")}
+              {isTurkishIP ? (
+                <>
+                  {adjustedProductCount} {t("categoryPage.product")}
+                </>
+              ) : (
+                <>
+                  {products.count} {t("categoryPage.product")}
+                </>
+              )}
             </div>
 
             <div className="flex w-full justify-end lg:w-[unset] items-center gap-2">
@@ -275,6 +308,7 @@ const ProductListGrid: React.FC<
           ) : (
             <div className="text-center text-lg">{t("categoryPage.empty")}</div>
           )}
+          {/* Load more button - show if there are more products from API */}
           {products.hasNext && (
             <div className="flex mt-8">
               <button
@@ -307,8 +341,7 @@ const ProductListGrid: React.FC<
                     d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
                   />
                 </svg>
-
-                <span> {t("categoryPage.more")}</span>
+                <span>{t("categoryPage.more")}</span>
               </button>
             </div>
           )}

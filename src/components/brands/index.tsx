@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import ProductCard from "../composites/productcard";
 import { BrandsProps } from "../__generated__/types";
@@ -54,7 +54,8 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
 }) => {
   const { direction } = useDirection();
   const { t } = useTranslation();
-  const { filterProductsByLocation, adjustProductCount } = useUserLocation();
+  const { filterProductsByLocation, adjustProductCount, isTurkishIP, getNextBatchIfNeeded } = useUserLocation();
+  const [isAutoLoading, setIsAutoLoading] = useState(false);
 
   // Filter products for Turkish IPs - only show products that can be purchased
   const filteredProducts = useMemo(() => {
@@ -77,6 +78,29 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
 
     return isFeaturedSort ? isFeaturedSortEnabled : true;
   });
+
+  // Auto-fetch more products if needed for Turkish IPs
+  useEffect(() => {
+    const autoFetchIfNeeded = async () => {
+      if (isTurkishIP && products.data && !isAutoLoading && !products.isLoading) {
+        const availableProducts = filterProductsByLocation(products.data);
+
+        // If we have less than 20 available products and there are more pages
+        if (availableProducts.length < 20 && products.hasNext) {
+          setIsAutoLoading(true);
+          try {
+            await getNextBatchIfNeeded(products.data, products, 20);
+          } catch (error) {
+            console.error('Auto-fetch failed:', error);
+          } finally {
+            setIsAutoLoading(false);
+          }
+        }
+      }
+    };
+
+    autoFetchIfNeeded();
+  }, [products.data, isTurkishIP, isAutoLoading, products.isLoading, products.hasNext, filterProductsByLocation, getNextBatchIfNeeded]);
 
   return (
     <div dir={direction} className="my-10 layout">
