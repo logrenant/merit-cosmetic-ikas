@@ -18,6 +18,7 @@ import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
 import React from "react";
 import { useUserLocation } from "../../utils/useUserLocation";
+import { set } from "nprogress";
 
 const SearchBar = ({
   products,
@@ -88,9 +89,6 @@ const SearchBar = ({
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
 
-    setHoveredCategory(undefined);
-    setHoveredBrand(undefined);
-    setSelectedRelatedCategory(undefined);
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -168,6 +166,31 @@ const SearchBar = ({
 
     setSearchedProductsNotFiltered(filteredBrandProducts);
     setSearchedProducts(filteredBrandProducts.slice(0, 8));
+  };
+
+  // Specific handler for popular categories hover
+  const onHoverPopularCategory = (categoryName: string) => {
+    // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+    if (hoveredCategory === categoryName) {
+      return;
+    }
+
+    setHoveredCategory(categoryName);
+    setHoveredBrand(undefined); // Clear brand selection when category is selected
+
+    // Get all products for this category
+    const categoryProducts = products.data.filter(
+      p => p.categories?.some(c => c.name.toLowerCase() === categoryName.toLowerCase())
+    );
+
+    // Apply both location and stock filtering to hide out-of-stock products
+    const filteredCategoryProducts = filterProducts(categoryProducts);
+
+    setSearchedProductsNotFiltered(filteredCategoryProducts);
+    setSearchedProducts(filteredCategoryProducts.slice(0, 8));
+
+    products.searchKeyword = categoryName;
+    setPlaceholderOpen(false);
   };
 
   const findBrandForCategory = (categoryName: string): IkasBrand | null => {
@@ -480,12 +503,12 @@ const SearchBar = ({
                           <a
                             onMouseEnter={() => {
                               // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
-                              if (hoveredCategory === el.name && hoveredBrand === el.name) {
+                              if (hoveredCategory === el.name) {
                                 return;
                               }
-                              setHoveredBrand(el.name);
+                              onHoverPopularCategory(el.name);
                               setHoveredCategory(el.name);
-                              onHoverBrand(el.name);
+                              setHoveredBrand(el.name);
                             }}
                             className={`
                             text-[13px] flex items-center justify-center
@@ -554,11 +577,8 @@ const SearchBar = ({
 
                     <div className="grid p-4 grid-cols-2 gap-2">
 
-                      {filterProductsByLocation(popularProducts.data).filter((p) => {
-                        // console.log('p.categories-0', p.categories[0].name, { hoveredCategory });
-
-                        // p.categories.map((c) => console.log('popularProducts.category.name', c.name));
-
+                      {filterProducts(popularProducts.data).filter((p) => {
+                        // Filter products by category if a category is hovered
                         return hoveredCategory
                           ? p.categories.find(
                             (c) => c.name.toLowerCase() === hoveredCategory.toLowerCase()
@@ -566,10 +586,9 @@ const SearchBar = ({
                           : true
                       }
                       ).length > 0 ? (
-                        filterProductsByLocation(popularProducts.data)
+                        filterProducts(popularProducts.data)
                           .filter((p) => {
-                            // console.log('p.categories-1', p.categories[0].name, { hoveredCategory });
-
+                            // Filter products by category if a category is hovered
                             return hoveredCategory
                               ? p.categories.find(
                                 (c) => c.name.toLowerCase() === hoveredCategory.toLowerCase()
@@ -717,89 +736,100 @@ const SearchBar = ({
                       {/* SEARCH RESULTS */}
 
                       <div className="grid p-4 grid-cols-2 gap-2">
-                        {products.data.length > 0 ? (
-                          products.data.slice(0, 8)
-                            .map((product) => {
-                              // console.log('product.name', product.name);
-                              const mainImages = product?.attributes?.find(
-                                (e) => e.productAttribute?.name === "Ana Resim"
-                              )?.images;
+                        {(() => {
+                          // Filter products based on Turkish IP status
+                          const displayProducts = isTurkishIP
+                            ? products.data.filter(product => product.isAddToCartEnabled)
+                            : products.data;
 
-                              const showImage =
-                                mainImages && mainImages.length > 0
-                                  ? mainImages[0]
-                                  : product?.selectedVariant?.mainImage?.image!;
-                              return (
-                                <Link key={product.id} href={product.href}>
-                                  <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
-                                    <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
-                                      <Image
-                                        image={showImage}
-                                        useBlur
-                                        alt={product.name}
-                                        sizes="(max-width: 1280px) 180px, 180px"
+                          return displayProducts.length > 0 ? (
+                            displayProducts.slice(0, 8)
+                              .map((product) => {
+                                // console.log('product.name', product.name);
+                                const mainImages = product?.attributes?.find(
+                                  (e) => e.productAttribute?.name === "Ana Resim"
+                                )?.images;
 
-                                        layout="fill"
-                                        objectFit="cover"
-                                      />
-                                    </div>
-                                    <div className="p-1 flex flex-col text-[color:var(--black-two)]">
-                                      <h3 className="text-xs line-clamp-2">
-                                        {product.name}
-                                      </h3>
-                                      <span className="text-sm font-medium">
-                                        {product.selectedVariant.price.sellPrice}{" "}
-                                        {
-                                          product.selectedVariant.price
-                                            .currencySymbol
-                                        }
-                                      </span>
-                                    </div>
-                                  </a>
-                                </Link>
-                              );
-                            })
-                        ) : (
-                          <div className="col-span-2 text-sm pb-2">
-                            <button
-                              className="underline text-[color:var(--color-one)]"
-                              onClick={() => {
-                                setHoveredCategory(undefined);
-                              }}
-                            >
-                              {t("noProductClearFilter")}
-                            </button>
+                                const showImage =
+                                  mainImages && mainImages.length > 0
+                                    ? mainImages[0]
+                                    : product?.selectedVariant?.mainImage?.image!;
+                                return (
+                                  <Link key={product.id} href={product.href}>
+                                    <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
+                                      <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
+                                        <Image
+                                          image={showImage}
+                                          useBlur
+                                          alt={product.name}
+                                          sizes="(max-width: 1280px) 180px, 180px"
 
-                          </div>
-                        )}
-                        {products.data.length > 8 && (
-                          <div className="col-span-2 flex">
-                            <Link href={`/${slugify(linkToCategory)}`}>
-                              <a className="text-xs flex items-center ml-auto text-[color:var(--black-one]">
-                                <span>
-                                  <span className="font-bold text-slate-900">
-                                    &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                          layout="fill"
+                                          objectFit="cover"
+                                        />
+                                      </div>
+                                      <div className="p-1 flex flex-col text-[color:var(--black-two)]">
+                                        <h3 className="text-xs line-clamp-2">
+                                          {product.name}
+                                        </h3>
+                                        <span className="text-sm font-medium">
+                                          {product.selectedVariant.price.sellPrice}{" "}
+                                          {
+                                            product.selectedVariant.price
+                                              .currencySymbol
+                                          }
+                                        </span>
+                                      </div>
+                                    </a>
+                                  </Link>
+                                );
+                              })
+                          ) : (
+                            <div className="col-span-2 text-sm pb-2">
+                              <button
+                                className="underline text-[color:var(--color-one)]"
+                                onClick={() => {
+                                  setHoveredCategory(undefined);
+                                }}
+                              >
+                                {t("noProductClearFilter")}
+                              </button>
+                            </div>
+                          );
+                        })()}
+                        {(() => {
+                          const displayProducts = isTurkishIP
+                            ? products.data.filter(product => product.isAddToCartEnabled)
+                            : products.data;
+                          return displayProducts.length > 8;
+                        })() && (
+                            <div className="col-span-2 flex">
+                              <Link href={`/${slugify(linkToCategory)}`}>
+                                <a className="text-xs flex items-center ml-auto text-[color:var(--black-one]">
+                                  <span>
+                                    <span className="font-bold text-slate-900">
+                                      &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                    </span>
+                                    &nbsp;{t("seeAllResults")}
                                   </span>
-                                  &nbsp;{t("seeAllResults")}
-                                </span>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth={2}
-                                  stroke="currentColor"
-                                  className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                  />
-                                </svg>
-                              </a>
-                            </Link>
-                          </div>
-                        )}
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={2}
+                                    stroke="currentColor"
+                                    className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                    />
+                                  </svg>
+                                </a>
+                              </Link>
+                            </div>
+                          )}
                         <div className="col-span-2 rounded-sm overflow-hidden aspect-16/4">
                           <img
                             src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
