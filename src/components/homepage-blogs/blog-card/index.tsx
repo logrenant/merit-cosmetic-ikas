@@ -50,10 +50,8 @@ const BlogCard = (props: Props) => {
                 image={props.data.image as IkasImage}
                 alt={props.data.title || ""}
                 layout="responsive"
-                objectFit="cover"
-                width={4}
+                width={3}
                 height={2}
-                className="w-full h-auto"
               />
             </div>
           )}

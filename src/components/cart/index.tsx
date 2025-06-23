@@ -375,7 +375,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
         </div>
 
 
-        <div className="text-xl font-medium my-14 text-center tracking-widest">
+        <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
           {t("productDetail.relatedProducts")}
         </div>
         <div dir="ltr" className="w-full">

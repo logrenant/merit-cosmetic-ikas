@@ -67,13 +67,24 @@ const SearchBar = ({
       .replace(/^-+|-+$/g, '');
   };
 
+  // Filter out of stock products for all users
+  const filterOutOfStockProducts = (products: IkasProduct[]) => {
+    return products.filter(product => product.isAddToCartEnabled);
+  };
+
+  // Combined filter function that applies both location and stock filters
+  const filterProducts = (products: IkasProduct[]) => {
+    const locationFiltered = filterProductsByLocation(products);
+    return filterOutOfStockProducts(locationFiltered);
+  };
+
   const reset = () => {
     uiStore.searchKeyword = "";
     products.searchKeyword = "";
     setPlaceholderOpen(true);
 
-    // Filter products for Turkish IPs to hide out-of-stock products
-    const filteredProducts = filterProductsByLocation(products.data);
+    // Filter products to hide out-of-stock products for all users
+    const filteredProducts = filterProducts(products.data);
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
 
@@ -102,12 +113,17 @@ const SearchBar = ({
     setHoveredBrand(undefined);
     setSelectedRelatedCategory(undefined);
 
-    const filteredProducts = filterProductsByLocation(products.data);
+    const filteredProducts = filterProducts(products.data);
     setSearchedProducts(filteredProducts);
     setSearchedProductsNotFiltered(filteredProducts);
   };
 
   const onHoverCategory = (cat: { name: string; href: string }) => {
+    // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+    if (hoveredCategory === cat.name) {
+      return;
+    }
+
     setHoveredCategory(cat.name);
     setHoveredBrand(undefined);
     setHoveredBrandId(undefined);
@@ -117,7 +133,7 @@ const SearchBar = ({
       p.categories?.some(c => c.name.toLowerCase() === cat.name.toLowerCase())
     );
 
-    const filteredProducts = filterProductsByLocation(allProductsForCategory);
+    const filteredProducts = filterProducts(allProductsForCategory);
 
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
@@ -132,6 +148,11 @@ const SearchBar = ({
   };
 
   const onHoverBrand = (br: string) => {
+    // Eğer aynı brand zaten seçili ise, tekrar işlem yapma
+    if (hoveredBrand === br) {
+      return;
+    }
+
     setHoveredBrand(br);
     setHoveredCategory(br);
     products.searchKeyword = br;
@@ -142,16 +163,16 @@ const SearchBar = ({
       p => p.brand?.name.toLowerCase() === br.toLowerCase()
     );
 
-    // Apply Turkish IP filtering to hide out-of-stock products
-    const filteredBrandProducts = filterProductsByLocation(allBrandProducts);
+    // Apply both location and stock filtering to hide out-of-stock products
+    const filteredBrandProducts = filterProducts(allBrandProducts);
 
     setSearchedProductsNotFiltered(filteredBrandProducts);
     setSearchedProducts(filteredBrandProducts.slice(0, 8));
   };
 
   const findBrandForCategory = (categoryName: string): IkasBrand | null => {
-    // First filter products for Turkish IPs
-    const filteredProducts = filterProductsByLocation(products.data);
+    // Apply both location and stock filtering
+    const filteredProducts = filterProducts(products.data);
 
     const categoryProducts = filteredProducts.filter(product =>
       product.categories?.some(c => c.name === categoryName)
@@ -210,13 +231,13 @@ const SearchBar = ({
       );
     }
 
-    // Apply Turkish IP filtering to hide out-of-stock products
-    return filterProductsByLocation(results);
+    // Apply both location and stock filtering to hide out-of-stock products
+    return filterProducts(results);
   }, [products.data, hoveredCategory, filterProductsByLocation]);
 
   useEffect(() => {
-    // First filter products for Turkish IPs to hide out-of-stock products
-    const filteredProducts = filterProductsByLocation(products.data);
+    // Filter products to hide out-of-stock products for all users
+    const filteredProducts = filterProducts(products.data);
 
     // Get unique categories from filtered products only
     const uniqueCategories = filteredProducts.reduce((acc: { name: string; href: string }[], product) => {
@@ -403,7 +424,7 @@ const SearchBar = ({
                               className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
                               onClick={handleClearFilter}
                             >
-                              {t("Clear Filter")}
+                              {t("categoryPage.clearFilters")}
                             </button>
                           )}
                           <Link href={hoveredCategory
@@ -458,10 +479,13 @@ const SearchBar = ({
                         <Link key={el.name} href={el.href}>
                           <a
                             onMouseEnter={() => {
+                              // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+                              if (hoveredCategory === el.name && hoveredBrand === el.name) {
+                                return;
+                              }
                               setHoveredBrand(el.name);
                               setHoveredCategory(el.name);
                               onHoverBrand(el.name);
-
                             }}
                             className={`
                             text-[13px] flex items-center justify-center
@@ -484,6 +508,11 @@ const SearchBar = ({
                         <Link key={brand.id} href={brand.href}>
                           <a
                             onMouseEnter={() => {
+                              // Eğer aynı brand zaten seçili ise, tekrar işlem yapma
+                              if (hoveredBrand === brand.name) {
+                                return;
+                              }
+
                               setHoveredBrand(brand.name);
                               setHoveredCategory(undefined);
 
@@ -629,6 +658,10 @@ const SearchBar = ({
                           <Link key={el.name} href={el.href}>
                             <a
                               onMouseEnter={() => {
+                                // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+                                if (hoveredCategory === el.name && hoveredBrand === el.name) {
+                                  return;
+                                }
                                 setHoveredBrand(el.name);
                                 setHoveredCategory(el.name);
                                 onHoverBrand(el.name);
@@ -654,6 +687,10 @@ const SearchBar = ({
                           <Link key={brand.id} href={brand.href}>
                             <a
                               onMouseEnter={() => {
+                                // Eğer aynı brand zaten seçili ise, tekrar işlem yapma
+                                if (hoveredBrand === brand.name) {
+                                  return;
+                                }
                                 setHoveredBrand(brand.name);
                                 setHoveredCategory(undefined);
                                 onHoverBrand(brand.name);

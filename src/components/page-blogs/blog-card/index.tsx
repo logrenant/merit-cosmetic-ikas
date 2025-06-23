@@ -72,7 +72,6 @@ const BlogCard = (props: Props) => {
                   image={props.data.image as IkasImage}
                   alt={props.data.title || ""}
                   layout="responsive"
-                  objectFit="cover"
                   width={3}
                   height={2}
                 />
