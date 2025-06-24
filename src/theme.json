@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "c2356a97-a189-4a73-8c7f-39de87e1fe3d",
+          "id": "0743b786-219d-4b96-844f-82fd91fcde77",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "70e1d4b1-d6cc-4255-a473-e72d8745b7b4",
+          "id": "10fc1929-43cb-43b7-9427-41b01570180a",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "13f45886-4ecf-462f-b10f-3e2756ad5a6d",
+          "id": "e528016b-41de-42f8-a2d9-e7fc25273c78",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1ec437cf-17ee-44a2-9ad3-eba3b11b9af6",
+          "id": "d0c0440a-52df-4cd8-b328-afbe40033f3b",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ad94c85b-e748-403c-b98c-599af3d60b1f",
+          "id": "cec76066-b455-4432-ab5c-b9a87fe11390",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "65038354-aba3-4fd6-b785-cc6d9263d257",
+          "id": "2a2c749d-57cb-4a4c-880b-651b881675ee",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cf1a1e9f-14fc-40b2-81fd-07064caef44b",
+          "id": "75c4ef73-9e8e-40aa-acd5-169cee015961",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2d03bd88-46de-4f4f-8d76-ff2eb023a05a",
+          "id": "a8700313-9511-4295-8683-59ff448a2b7d",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "51419d5d-c6fd-4e5c-8dc8-6ee93ca0eeb4",
+          "id": "7dbd0ed4-8721-411a-bb1a-faf36b6e4799",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b4f5eab3-d05e-40e4-a7ea-7185e4b0597c",
+          "id": "609dc058-adf3-4738-b9d4-3df19c74a96e",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6ac5d686-4ee8-4256-9b57-e6c6bf0d4341",
+          "id": "39878e77-5399-4c52-9ac2-f6f9e408cdc0",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1ef109ad-44b7-4321-bd71-181b05c65a49",
+          "id": "67f175af-9d21-41c4-824b-d6eeb448354f",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "15491244-4055-44e7-a51b-137e49d0b566",
+          "id": "596363b5-cf07-494f-aeb1-2c106e30965f",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3e2a7609-06d0-48fc-881a-af34a29be3a8",
+          "id": "989b8e26-5e86-4a3b-be40-a26e46cd896c",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3a47371f-bcc7-4d4b-b61e-a5f6d4c94468",
+          "id": "61e0fe3c-5d49-42dc-8841-923d8ac3b9b5",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ab0ce259-3eb4-40e9-9298-5a6f77371d48",
+          "id": "3f424fd7-a16a-49f2-89fb-b370dcf3f27b",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "71cd563d-430d-4243-ab51-aa2b11d07295",
+          "id": "753f169e-1faf-48dd-94ba-08fdd4f671d1",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5cd30589-de33-40cd-915f-f9213508e067",
+          "id": "b2f1c8e9-9023-44c0-9371-e15f7f8cf0e4",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a8e76529-1691-45db-ab25-1444b7cbca49",
+          "id": "0022f328-ca4f-443c-9c2e-8f6a2ed9ad89",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "890070ee-9971-4ec6-abc8-0af04d6af435",
+          "id": "4bda8fb9-3bf9-4ad3-af93-5fa0cb7da0c7",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f1f12a40-1bdb-4252-b4a7-4d2b80f7c681",
+          "id": "3443d4a2-851e-4930-b802-b5800d1398e4",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3cbf79b3-4ddf-42ac-9b0b-ec50db10a636",
+          "id": "1b7dea15-d96c-42ff-9073-e4d3fbd9a340",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "68d276f2-3e90-45d8-a31c-0ff180b5b389",
+          "id": "2ce6c742-34c0-4845-9fd1-651cd48a0325",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fff7bf86-c176-4daf-a1fe-de3a9e228749",
+          "id": "7ebab914-088b-423b-af31-a7eff6fdedfe",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8cd6bbc8-8a20-4ca5-91c9-1cb9c03353cb",
+          "id": "ed966dc1-97b6-4089-8b7e-1d9e17897251",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f9ac3b00-95a2-4b11-837b-a1e1ba5263a4",
+          "id": "2ca65bb1-9dbb-4fe8-a3e1-4fcf5bb43029",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "565fcc9c-3dbc-46a6-9af9-75ca797bc627",
+          "id": "81d66123-af43-4d99-8237-cafbe136d09f",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e9fa5c0e-773f-40c1-8417-394a545c9de7",
+          "id": "c941388d-0460-4ac8-8f24-360d9ff602cf",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0eb55121-6ac3-4eca-89f7-66c062cbc42e",
+          "id": "c88bb725-d8d7-4045-80b4-4cb40c946307",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "af2b90a3-452f-47dc-aa12-d183a6449e60",
+          "id": "12309518-8b6d-4cd4-be7e-5038df373380",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6b8066db-b3ae-4232-81e6-1a2b5aceb463",
+          "id": "739704a9-1ae9-4480-a1fb-0488ee13c8a0",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "038d0579-ad47-41b6-b014-3a3d4382499a",
+          "id": "ca9c9156-c280-475e-a1e8-b3e2cd5a87a6",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9c08dd80-e2a5-44ea-8d58-aca7d9131120",
+          "id": "a4324698-1101-4595-b9e1-f34a62464228",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a6d967d3-4945-474c-9eeb-084cc9376e2f",
+          "id": "cd914ca4-976e-4c1c-a1eb-cc5efabc6198",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "83511dc4-8aa9-48b7-bc47-88678d6862fe",
+          "id": "887cd9b0-dfba-4053-b9b8-96785c92e71d",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "58d29c5b-3122-414d-a1c8-1c84cd630bd8",
+          "id": "8b9bf852-28bc-47b9-860c-75d6dda2cce2",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "62469ece-bc65-4935-b737-f381f104051b",
+          "id": "45e25c1a-e660-4c80-bd12-7a059b7a5e04",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ecab24dd-b710-431e-82af-51a97da1a4f3",
+          "id": "12ce88ae-7b79-49a2-945f-bd3599efb4fe",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c3e61c89-f6b5-4b80-8db9-eebb0bdf66b2",
+          "id": "251d17d1-7541-4894-82aa-dba36e08d313",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -3669,8 +3669,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -4654,7 +4654,8 @@
                 "5245114b-1049-49cf-8e8d-f4841adf6a1c",
                 "98794e9d-60f8-425a-a396-cf2d78ad606f",
                 "d5226c33-62b2-419f-9ad6-af6797ea06a4",
-                "f23b21a7-999c-4e66-aebe-da759e244060"
+                "f23b21a7-999c-4e66-aebe-da759e244060",
+                "038290cb-94b6-4816-8ff3-3611a92a1d0c"
               ],
               "categoryId": null,
               "usePageFilter": null
@@ -4711,8 +4712,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -5069,8 +5070,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -5280,8 +5281,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -5463,8 +5464,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -5648,8 +5649,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -5818,8 +5819,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -5993,8 +5994,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -6187,8 +6188,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -6348,8 +6349,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -6523,8 +6524,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -6684,8 +6685,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -6859,8 +6860,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -7020,8 +7021,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -7195,8 +7196,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -7356,8 +7357,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -7522,8 +7523,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -7692,8 +7693,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -7867,8 +7868,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -8033,8 +8034,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -8203,8 +8204,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -8378,8 +8379,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -8539,8 +8540,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -8721,8 +8722,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -8882,8 +8883,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -9065,8 +9066,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -9244,8 +9245,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -9437,8 +9438,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -9582,8 +9583,8 @@
           "id": "6800b594-8470-42fa-b929-25336d2024bc",
           "componentId": "5fa44498-bb55-4496-abd7-a537be4da4bf",
           "propValues": {
-            "pageTitle": "Page Title",
-            "pageDescription": "<ul><li>Üyeliksiz siparişlerin iade talebi oluşturabilmesi için bizimle iletişim’e geçin gibi bir yazı ve contact formuna bir link.</li><li>Üyelikle oluşturduğunuz siparişleri takip edebilmek için lütfen üye girişi yapınız gibi bir bilgi mesajı.</li></ul>",
+            "pageTitle": "Order Status",
+            "pageDescription": "<ul><li style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); color: rgb(0, 0, 0)\">In order to track the orders that you have placed using your registered account, please&nbsp;<a href=\"https://meletiorient.myikas.com/account/login\" style=\" color: oklch(0.21 0.034 264.665); font-weight: 500; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">log-in</a>&nbsp;and go to your&nbsp;<span style=\" font-weight: bolder; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">Orders&nbsp;</span>tab in your&nbsp;<span style=\" font-weight: bolder; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">Account&nbsp;</span>page.<br style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\"><br style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\"></li><li style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); color: rgb(0, 0, 0)\">In order to create refund request for the orders that you have placed using fast checkout feature with no account requirement, please&nbsp;<a href=\"https://meletiorient.myikas.com/pages/contact\" style=\" color: oklch(0.21 0.034 264.665); font-weight: 500; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">contact us</a>.</li></ul>",
             "orderNumberInput": "Order Number",
             "orderCannotFound": "No order could be found in the system that matches the query criteria.",
             "emailRule": "emailRule",
@@ -9621,8 +9622,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -9814,8 +9815,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -9997,8 +9998,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -10176,8 +10177,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -10354,8 +10355,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -10532,8 +10533,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -10710,8 +10711,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -10888,8 +10889,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -11066,8 +11067,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -11260,8 +11261,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,
@@ -11438,8 +11439,8 @@
             "products": {
               "id": "2b15cea8-cdb5-41e2-8e1a-dac2bfb75804",
               "productListType": "SEARCH",
-              "initialSort": "DEFAULT",
-              "initialLimit": 50,
+              "initialSort": "LAST_ADDED",
+              "initialLimit": 60,
               "productCount": null,
               "productIds": null,
               "category": null,

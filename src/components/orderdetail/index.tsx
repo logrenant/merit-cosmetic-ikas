@@ -128,7 +128,7 @@ export default observer(function Orderdetail({
   }
 
   return (
-    <div className="flex flex-col gap-12" dir={direction}>
+    <div className="flex flex-col gap-12 w-full " dir={direction}>
 
       {/* Başlık */}
       <div className="flex flex-col mb-4 items-start md:flex-row md:justify-between ">
@@ -157,7 +157,7 @@ export default observer(function Orderdetail({
         </div>
       </div>
 
-      <div className="flex md:flex-row md:gap-24 flex-col w-full">
+      <div className="flex md:flex-row md:justify-between flex-col w-full">
         {/* Paketler & Ürünler */}
         <div>
           {order.displayedPackages?.map((pkg) => {
@@ -232,7 +232,7 @@ export default observer(function Orderdetail({
           })}
         </div>
 
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col">
           {/* Adresler */}
           <div className="flex flex-col">
             {order.displayedPackages.filter(
@@ -355,7 +355,7 @@ export default observer(function Orderdetail({
               />
             </div>
           </div>
-          <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
+          {/* <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
             <button
               type="button"
               onClick={handleGoToContact}
@@ -363,7 +363,7 @@ export default observer(function Orderdetail({
             >
               {t("contactUs")}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

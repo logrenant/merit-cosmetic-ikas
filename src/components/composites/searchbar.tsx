@@ -18,6 +18,7 @@ import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
 import React from "react";
 import { useUserLocation } from "../../utils/useUserLocation";
+import { set } from "nprogress";
 
 const SearchBar = ({
   products,
@@ -67,19 +68,27 @@ const SearchBar = ({
       .replace(/^-+|-+$/g, '');
   };
 
+  // Filter out of stock products for all users
+  const filterOutOfStockProducts = (products: IkasProduct[]) => {
+    return products.filter(product => product.isAddToCartEnabled);
+  };
+
+  // Combined filter function that applies both location and stock filters
+  const filterProducts = (products: IkasProduct[]) => {
+    const locationFiltered = filterProductsByLocation(products);
+    return filterOutOfStockProducts(locationFiltered);
+  };
+
   const reset = () => {
     uiStore.searchKeyword = "";
     products.searchKeyword = "";
     setPlaceholderOpen(true);
 
-    // Filter products for Turkish IPs to hide out-of-stock products
-    const filteredProducts = filterProductsByLocation(products.data);
+    // Filter products to hide out-of-stock products for all users
+    const filteredProducts = filterProducts(products.data);
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
 
-    setHoveredCategory(undefined);
-    setHoveredBrand(undefined);
-    setSelectedRelatedCategory(undefined);
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,12 +111,17 @@ const SearchBar = ({
     setHoveredBrand(undefined);
     setSelectedRelatedCategory(undefined);
 
-    const filteredProducts = filterProductsByLocation(products.data);
+    const filteredProducts = filterProducts(products.data);
     setSearchedProducts(filteredProducts);
     setSearchedProductsNotFiltered(filteredProducts);
   };
 
   const onHoverCategory = (cat: { name: string; href: string }) => {
+    // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+    if (hoveredCategory === cat.name) {
+      return;
+    }
+
     setHoveredCategory(cat.name);
     setHoveredBrand(undefined);
     setHoveredBrandId(undefined);
@@ -117,7 +131,7 @@ const SearchBar = ({
       p.categories?.some(c => c.name.toLowerCase() === cat.name.toLowerCase())
     );
 
-    const filteredProducts = filterProductsByLocation(allProductsForCategory);
+    const filteredProducts = filterProducts(allProductsForCategory);
 
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
@@ -132,6 +146,11 @@ const SearchBar = ({
   };
 
   const onHoverBrand = (br: string) => {
+    // Eğer aynı brand zaten seçili ise, tekrar işlem yapma
+    if (hoveredBrand === br) {
+      return;
+    }
+
     setHoveredBrand(br);
     setHoveredCategory(br);
     products.searchKeyword = br;
@@ -142,16 +161,36 @@ const SearchBar = ({
       p => p.brand?.name.toLowerCase() === br.toLowerCase()
     );
 
-    // Apply Turkish IP filtering to hide out-of-stock products
-    const filteredBrandProducts = filterProductsByLocation(allBrandProducts);
+    // Apply both location and stock filtering to hide out-of-stock products
+    const filteredBrandProducts = filterProducts(allBrandProducts);
 
     setSearchedProductsNotFiltered(filteredBrandProducts);
     setSearchedProducts(filteredBrandProducts.slice(0, 8));
   };
 
+  const onHoverPopularCategory = (categoryName: string) => {
+    if (hoveredCategory === categoryName) {
+      return;
+    }
+
+    setHoveredCategory(categoryName);
+    setHoveredBrand(undefined);
+
+    const categoryProducts = products.data.filter(
+      p => p.categories?.some(c => c.name.toLowerCase() === categoryName.toLowerCase())
+    );
+
+    const filteredCategoryProducts = filterProducts(categoryProducts);
+
+    setSearchedProductsNotFiltered(filteredCategoryProducts);
+    setSearchedProducts(filteredCategoryProducts.slice(0, 8));
+
+    products.searchKeyword = categoryName;
+    setPlaceholderOpen(false);
+  };
+
   const findBrandForCategory = (categoryName: string): IkasBrand | null => {
-    // First filter products for Turkish IPs
-    const filteredProducts = filterProductsByLocation(products.data);
+    const filteredProducts = filterProducts(products.data);
 
     const categoryProducts = filteredProducts.filter(product =>
       product.categories?.some(c => c.name === categoryName)
@@ -165,7 +204,6 @@ const SearchBar = ({
   };
 
   const getSearchResultsLink = () => {
-    // If there's a search query and no category is hovered, route to search page
     if (uiStore.searchKeyword && !hoveredCategory && !hoveredBrand) {
       return `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`;
     }
@@ -210,13 +248,13 @@ const SearchBar = ({
       );
     }
 
-    // Apply Turkish IP filtering to hide out-of-stock products
-    return filterProductsByLocation(results);
+    // Apply both location and stock filtering to hide out-of-stock products
+    return filterProducts(results);
   }, [products.data, hoveredCategory, filterProductsByLocation]);
 
   useEffect(() => {
-    // First filter products for Turkish IPs to hide out-of-stock products
-    const filteredProducts = filterProductsByLocation(products.data);
+    // Filter products to hide out-of-stock products for all users
+    const filteredProducts = filterProducts(products.data);
 
     // Get unique categories from filtered products only
     const uniqueCategories = filteredProducts.reduce((acc: { name: string; href: string }[], product) => {
@@ -403,7 +441,7 @@ const SearchBar = ({
                               className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
                               onClick={handleClearFilter}
                             >
-                              {t("Clear Filter")}
+                              {t("categoryPage.clearFilters")}
                             </button>
                           )}
                           <Link href={hoveredCategory
@@ -458,10 +496,13 @@ const SearchBar = ({
                         <Link key={el.name} href={el.href}>
                           <a
                             onMouseEnter={() => {
-                              setHoveredBrand(el.name);
+                              // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+                              if (hoveredCategory === el.name) {
+                                return;
+                              }
+                              onHoverPopularCategory(el.name);
                               setHoveredCategory(el.name);
-                              onHoverBrand(el.name);
-
+                              setHoveredBrand(el.name);
                             }}
                             className={`
                             text-[13px] flex items-center justify-center
@@ -484,6 +525,11 @@ const SearchBar = ({
                         <Link key={brand.id} href={brand.href}>
                           <a
                             onMouseEnter={() => {
+                              // Eğer aynı brand zaten seçili ise, tekrar işlem yapma
+                              if (hoveredBrand === brand.name) {
+                                return;
+                              }
+
                               setHoveredBrand(brand.name);
                               setHoveredCategory(undefined);
 
@@ -525,11 +571,8 @@ const SearchBar = ({
 
                     <div className="grid p-4 grid-cols-2 gap-2">
 
-                      {filterProductsByLocation(popularProducts.data).filter((p) => {
-                        // console.log('p.categories-0', p.categories[0].name, { hoveredCategory });
-
-                        // p.categories.map((c) => console.log('popularProducts.category.name', c.name));
-
+                      {filterProducts(popularProducts.data).filter((p) => {
+                        // Filter products by category if a category is hovered
                         return hoveredCategory
                           ? p.categories.find(
                             (c) => c.name.toLowerCase() === hoveredCategory.toLowerCase()
@@ -537,10 +580,9 @@ const SearchBar = ({
                           : true
                       }
                       ).length > 0 ? (
-                        filterProductsByLocation(popularProducts.data)
+                        filterProducts(popularProducts.data)
                           .filter((p) => {
-                            // console.log('p.categories-1', p.categories[0].name, { hoveredCategory });
-
+                            // Filter products by category if a category is hovered
                             return hoveredCategory
                               ? p.categories.find(
                                 (c) => c.name.toLowerCase() === hoveredCategory.toLowerCase()
@@ -629,6 +671,10 @@ const SearchBar = ({
                           <Link key={el.name} href={el.href}>
                             <a
                               onMouseEnter={() => {
+                                // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
+                                if (hoveredCategory === el.name && hoveredBrand === el.name) {
+                                  return;
+                                }
                                 setHoveredBrand(el.name);
                                 setHoveredCategory(el.name);
                                 onHoverBrand(el.name);
@@ -654,6 +700,10 @@ const SearchBar = ({
                           <Link key={brand.id} href={brand.href}>
                             <a
                               onMouseEnter={() => {
+                                // Eğer aynı brand zaten seçili ise, tekrar işlem yapma
+                                if (hoveredBrand === brand.name) {
+                                  return;
+                                }
                                 setHoveredBrand(brand.name);
                                 setHoveredCategory(undefined);
                                 onHoverBrand(brand.name);
@@ -680,89 +730,100 @@ const SearchBar = ({
                       {/* SEARCH RESULTS */}
 
                       <div className="grid p-4 grid-cols-2 gap-2">
-                        {products.data.length > 0 ? (
-                          products.data.slice(0, 8)
-                            .map((product) => {
-                              // console.log('product.name', product.name);
-                              const mainImages = product?.attributes?.find(
-                                (e) => e.productAttribute?.name === "Ana Resim"
-                              )?.images;
+                        {(() => {
+                          // Filter products based on Turkish IP status
+                          const displayProducts = isTurkishIP
+                            ? products.data.filter(product => product.isAddToCartEnabled)
+                            : products.data;
 
-                              const showImage =
-                                mainImages && mainImages.length > 0
-                                  ? mainImages[0]
-                                  : product?.selectedVariant?.mainImage?.image!;
-                              return (
-                                <Link key={product.id} href={product.href}>
-                                  <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
-                                    <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
-                                      <Image
-                                        image={showImage}
-                                        useBlur
-                                        alt={product.name}
-                                        sizes="(max-width: 1280px) 180px, 180px"
+                          return displayProducts.length > 0 ? (
+                            displayProducts.slice(0, 8)
+                              .map((product) => {
+                                // console.log('product.name', product.name);
+                                const mainImages = product?.attributes?.find(
+                                  (e) => e.productAttribute?.name === "Ana Resim"
+                                )?.images;
 
-                                        layout="fill"
-                                        objectFit="cover"
-                                      />
-                                    </div>
-                                    <div className="p-1 flex flex-col text-[color:var(--black-two)]">
-                                      <h3 className="text-xs line-clamp-2">
-                                        {product.name}
-                                      </h3>
-                                      <span className="text-sm font-medium">
-                                        {product.selectedVariant.price.sellPrice}{" "}
-                                        {
-                                          product.selectedVariant.price
-                                            .currencySymbol
-                                        }
-                                      </span>
-                                    </div>
-                                  </a>
-                                </Link>
-                              );
-                            })
-                        ) : (
-                          <div className="col-span-2 text-sm pb-2">
-                            <button
-                              className="underline text-[color:var(--color-one)]"
-                              onClick={() => {
-                                setHoveredCategory(undefined);
-                              }}
-                            >
-                              {t("noProductClearFilter")}
-                            </button>
+                                const showImage =
+                                  mainImages && mainImages.length > 0
+                                    ? mainImages[0]
+                                    : product?.selectedVariant?.mainImage?.image!;
+                                return (
+                                  <Link key={product.id} href={product.href}>
+                                    <a className="grid border hover:bg-[color:var(--gray-four)] border-[color:var(--gray-one)] rounded-sm gap-1 p-1 grid-cols-[70px_1fr] w-full">
+                                      <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden">
+                                        <Image
+                                          image={showImage}
+                                          useBlur
+                                          alt={product.name}
+                                          sizes="(max-width: 1280px) 180px, 180px"
 
-                          </div>
-                        )}
-                        {products.data.length > 8 && (
-                          <div className="col-span-2 flex">
-                            <Link href={`/${slugify(linkToCategory)}`}>
-                              <a className="text-xs flex items-center ml-auto text-[color:var(--black-one]">
-                                <span>
-                                  <span className="font-bold text-slate-900">
-                                    &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                          layout="fill"
+                                          objectFit="cover"
+                                        />
+                                      </div>
+                                      <div className="p-1 flex flex-col text-[color:var(--black-two)]">
+                                        <h3 className="text-xs line-clamp-2">
+                                          {product.name}
+                                        </h3>
+                                        <span className="text-sm font-medium">
+                                          {product.selectedVariant.price.sellPrice}{" "}
+                                          {
+                                            product.selectedVariant.price
+                                              .currencySymbol
+                                          }
+                                        </span>
+                                      </div>
+                                    </a>
+                                  </Link>
+                                );
+                              })
+                          ) : (
+                            <div className="col-span-2 text-sm pb-2">
+                              <button
+                                className="underline text-[color:var(--color-one)]"
+                                onClick={() => {
+                                  setHoveredCategory(undefined);
+                                }}
+                              >
+                                {t("noProductClearFilter")}
+                              </button>
+                            </div>
+                          );
+                        })()}
+                        {(() => {
+                          const displayProducts = isTurkishIP
+                            ? products.data.filter(product => product.isAddToCartEnabled)
+                            : products.data;
+                          return displayProducts.length > 8;
+                        })() && (
+                            <div className="col-span-2 flex">
+                              <Link href={`/${slugify(linkToCategory)}`}>
+                                <a className="text-xs flex items-center ml-auto text-[color:var(--black-one]">
+                                  <span>
+                                    <span className="font-bold text-slate-900">
+                                      &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                    </span>
+                                    &nbsp;{t("seeAllResults")}
                                   </span>
-                                  &nbsp;{t("seeAllResults")}
-                                </span>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth={2}
-                                  stroke="currentColor"
-                                  className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                  />
-                                </svg>
-                              </a>
-                            </Link>
-                          </div>
-                        )}
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={2}
+                                    stroke="currentColor"
+                                    className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                    />
+                                  </svg>
+                                </a>
+                              </Link>
+                            </div>
+                          )}
                         <div className="col-span-2 rounded-sm overflow-hidden aspect-16/4">
                           <img
                             src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"

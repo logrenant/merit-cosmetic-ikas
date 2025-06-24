@@ -197,9 +197,11 @@ export const TypeList = observer(
   ({
     filter,
     items,
+    products,
   }: {
     filter: IkasProductFilter;
     items: IkasProductFilter["displayedValues"];
+    products?: IkasProductList;
   }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState<boolean>(true);
@@ -210,6 +212,40 @@ export const TypeList = observer(
     if (!items || items.length === 0) return null;
 
     if (isTurkishIP && isOutOfStockSelected && filter.name.toLowerCase() === "marka") {
+      return null;
+    }
+
+    const getAdjustedResultCount = (item: any) => {
+      if (!isTurkishIP) {
+        return item.resultCount;
+      }
+
+      if (!products?.data) {
+        return item.resultCount;
+      }
+
+      // Count callback (out-of-stock) products that match this filter item
+      let callbackCount = 0;
+
+      products.data.forEach(product => {
+        if (!product.isAddToCartEnabled) {
+          // Check if this product matches the current filter item
+          const matchesFilter = checkProductMatchesFilterItem(product, filter, item);
+          if (matchesFilter) {
+            callbackCount++;
+          }
+        }
+      });
+
+      // Subtract callback count from result count
+      return Math.max(0, item.resultCount - callbackCount);
+    };
+
+    // Filter out items with 0 count
+    const filteredItems = items.filter((item) => getAdjustedResultCount(item) > 0);
+
+    // Don't render if no items remain after filtering
+    if (filteredItems.length === 0) {
       return null;
     }
 
@@ -235,7 +271,7 @@ export const TypeList = observer(
           </div>
           {open && (
             <div className="flex flex-col items-start text-left w-full border-b border-[color:var(--gray-two)] overflow-y-auto max-h-[165px]">
-              {items.map((item) => (
+              {filteredItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => {
@@ -261,7 +297,7 @@ export const TypeList = observer(
                       : "text-[color:var(--gray-five)] hover:font-normal hover:text-[color:var(--gray-three)] font-light"
                       }`}
                   >
-                    {item.name} ({item.resultCount})
+                    {item.name} ({getAdjustedResultCount(item)})
                   </span>
                 </button>
               ))}
@@ -277,9 +313,11 @@ export const List = observer(
   ({
     items,
     filter,
+    products,
   }: {
     filter: IkasProductFilter;
     items: IkasProductFilter["displayedValues"];
+    products?: IkasProductList;
   }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState<boolean>(true);
@@ -295,7 +333,40 @@ export const List = observer(
       return null;
     }
 
-    return items.length > 0 ? (
+    const getAdjustedResultCount = (item: any) => {
+      if (!isTurkishIP) {
+        return item.resultCount;
+      }
+
+      if (!products?.data) {
+        return item.resultCount;
+      }
+
+      let callbackCount = 0;
+
+      products.data.forEach(product => {
+        if (!product.isAddToCartEnabled) {
+          // Check if this product matches the current filter item
+          const matchesFilter = checkProductMatchesFilterItem(product, filter, item);
+          if (matchesFilter) {
+            callbackCount++;
+          }
+        }
+      });
+
+      // Subtract callback count from result count
+      return Math.max(0, item.resultCount - callbackCount);
+    };
+
+    // Filter out items with 0 count
+    const filteredItems = items?.filter((item) => getAdjustedResultCount(item) > 0) || [];
+
+    // Don't render if no items remain after filtering
+    if (filteredItems.length === 0) {
+      return null;
+    }
+
+    return filteredItems.length > 0 ? (
       <div className="mb-3">
         <div className="flex w-full flex-col items-center">
           <div
@@ -324,7 +395,7 @@ export const List = observer(
           </div>
           {open && (
             <div className="flex overflow-y-auto max-h-[165px] border-b border-[color:var(--gray-two)]  items-start text-left w-full flex-col">
-              {items?.map((item) => (
+              {filteredItems.map((item) => (
                 <button
                   onClick={() => {
                     filter.onFilterValueClick(item);
@@ -353,7 +424,7 @@ export const List = observer(
                     {item.name === "in-stock" || item.name === "out-of-stock"
                       ? t(item.name)
                       : item.name}{" "}
-                    {!(isTurkishIP && item.name === "out-of-stock") && `(${item.resultCount})`}
+                    {!(isTurkishIP && item.name === "out-of-stock") && `(${getAdjustedResultCount(item)})`}
                   </span>
                 </button>
               ))}
@@ -569,7 +640,7 @@ export const FilterMobileBrands: React.FC<{
                 ) {
                   return (
                     <div key={filter.id}>
-                      <TypeList filter={filter} items={filter.displayedValues} />
+                      <TypeList filter={filter} items={filter.displayedValues} products={products} />
                     </div>
                   );
                 }
@@ -705,7 +776,7 @@ const FilterMobile: React.FC<{
               products?.filters?.map((filter) => (
                 <div key={filter.id}>
                   {filter.displayType === IkasProductFilterDisplayType.LIST && (
-                    <List filter={filter} items={filter.displayedValues} />
+                    <List filter={filter} items={filter.displayedValues} products={products} />
                   )}
                   {filter.displayType ===
                     IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
@@ -735,6 +806,40 @@ const FilterMobile: React.FC<{
       </Transition>
     </>
   );
+};
+
+// Helper function to check if a product matches a specific filter item
+const checkProductMatchesFilterItem = (product: any, filter: IkasProductFilter, item: any): boolean => {
+  if (!product || !filter || !item) return false;
+
+  switch (filter.type) {
+    case IkasProductFilterType.TAG:
+      // For TAG filters, check if the product has matching tags/brands/categories
+      // The item.name could be a brand name, category name, or tag
+      if (product.brand?.name === item.name) return true;
+      if (product.categories?.some((category: any) => category.name === item.name)) return true;
+      if (product.tags?.some((tag: any) => tag.name === item.name)) return true;
+      return false;
+
+    case IkasProductFilterType.STOCK_STATUS:
+      // For stock status, check against the product's stock status
+      if (item.name === IkasProductStockFilterValue.IN_STOCK) {
+        return product.isAddToCartEnabled;
+      }
+      if (item.name === IkasProductStockFilterValue.OUT_OF_STOCK) {
+        return !product.isAddToCartEnabled;
+      }
+      return false;
+
+    default:
+      // For other filter types, use a more generic approach
+      // Check if the filter item value matches any product property
+      return (
+        product.brand?.name === item.name ||
+        product.categories?.some((category: any) => category.name === item.name) ||
+        product.tags?.some((tag: any) => tag.name === item.name)
+      );
+  }
 };
 
 export default observer(FilterMobile);

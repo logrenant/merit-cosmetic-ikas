@@ -116,7 +116,7 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
                   <StockList filter={filter} items={filter.displayedValues} />
                 )}
                 {filter.displayType === IkasProductFilterDisplayType.LIST && (
-                  <TypeList filter={filter} items={filter.displayedValues} />
+                  <TypeList filter={filter} items={filter.displayedValues} products={products} />
                 )}
                 {filter.displayType === IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (
                   <NumberList
