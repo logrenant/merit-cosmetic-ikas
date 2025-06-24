@@ -54,15 +54,26 @@ const OrderTracking = (props: OrderTrackingProps) => {
     setHasError(false);
     setIsSubmitting(true);
 
-    // Form validation for email format
-    if (formState.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+    let hasValidationErrors = false;
+
+    // Check if email is empty
+    if (email.length === 0) {
       setEmailError(props.emailRule ?? "");
-      setIsSubmitting(false);
-      return;
+      hasValidationErrors = true;
+    }
+    // Form validation for email format
+    else if (formState.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+      setEmailError(props.emailRule ?? "");
+      hasValidationErrors = true;
     }
 
+    // Check if order number is empty
+    if (orderNumber.length === 0) {
+      setOrderNumberError(props.orderNumberRule ?? "");
+      hasValidationErrors = true;
+    }
     // Form validation for order number format
-    if (formState.orderNumber) {
+    else if (formState.orderNumber) {
       const orderPattern = /^\+?\d{2,8}$/;
       const isValidOrder = orderPattern.test(
         formState.orderNumber.replace(/\s+/g, '')
@@ -70,21 +81,12 @@ const OrderTracking = (props: OrderTrackingProps) => {
 
       if (!isValidOrder) {
         setOrderNumberError(props.orderNumberRule ?? "");
-        setIsSubmitting(false);
-        return;
+        hasValidationErrors = true;
       }
     }
 
-    // Check if email is empty
-    if (email.length === 0) {
-      setEmailError(props.emailRule ?? "");
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Check if order number is empty
-    if (orderNumber.length === 0) {
-      setOrderNumberError(props.orderNumberRule ?? "");
+    // If there are validation errors, stop here
+    if (hasValidationErrors) {
       setIsSubmitting(false);
       return;
     }
@@ -130,10 +132,10 @@ const OrderTracking = (props: OrderTrackingProps) => {
 
       <div className="layout flex flex-col xl:flex-row justify-center gap-12 my-10">
         {!order && (
-          <div className="flex flex-col xl:flex-row gap-12 w-full">
+          <div className="grid lg:grid-cols-2 my-10 px-5 max-w-4xl gap-5 mx-auto">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-3 w-full xl:w-[60%]"
+              className="flex flex-col gap-3 w-full"
             >
               <div>
                 <label className="text-base text-[color:var(--black-one)] mb-0.5">
@@ -188,7 +190,7 @@ const OrderTracking = (props: OrderTrackingProps) => {
               )}
             </form>
 
-            <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm xl:w-[40%] h-fit">
+            <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit">
               <div
                 className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] prose-sm w-full"
                 dangerouslySetInnerHTML={{ __html: props.pageDescription || "" }}
