@@ -196,7 +196,7 @@ const ProductListGrid: React.FC<
               return (
                 <div key={filter.id}>
                   {filter.displayType === IkasProductFilterDisplayType.LIST && (
-                    <List filter={filter} items={filter.displayedValues} />
+                    <List filter={filter} items={filter.displayedValues} products={products} />
                   )}
                   {filter.displayType ===
                     IkasProductFilterDisplayType.NUMBER_RANGE_LIST && (

@@ -168,22 +168,18 @@ const SearchBar = ({
     setSearchedProducts(filteredBrandProducts.slice(0, 8));
   };
 
-  // Specific handler for popular categories hover
   const onHoverPopularCategory = (categoryName: string) => {
-    // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
     if (hoveredCategory === categoryName) {
       return;
     }
 
     setHoveredCategory(categoryName);
-    setHoveredBrand(undefined); // Clear brand selection when category is selected
+    setHoveredBrand(undefined);
 
-    // Get all products for this category
     const categoryProducts = products.data.filter(
       p => p.categories?.some(c => c.name.toLowerCase() === categoryName.toLowerCase())
     );
 
-    // Apply both location and stock filtering to hide out-of-stock products
     const filteredCategoryProducts = filterProducts(categoryProducts);
 
     setSearchedProductsNotFiltered(filteredCategoryProducts);
@@ -194,7 +190,6 @@ const SearchBar = ({
   };
 
   const findBrandForCategory = (categoryName: string): IkasBrand | null => {
-    // Apply both location and stock filtering
     const filteredProducts = filterProducts(products.data);
 
     const categoryProducts = filteredProducts.filter(product =>
@@ -209,7 +204,6 @@ const SearchBar = ({
   };
 
   const getSearchResultsLink = () => {
-    // If there's a search query and no category is hovered, route to search page
     if (uiStore.searchKeyword && !hoveredCategory && !hoveredBrand) {
       return `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`;
     }
