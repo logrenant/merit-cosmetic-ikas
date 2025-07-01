@@ -18,6 +18,7 @@ import Typewriter from "typewriter-effect";
 import { useOnClickOutside } from "usehooks-ts";
 import React from "react";
 import { useUserLocation } from "../../utils/useUserLocation";
+import { useDirection } from "../../utils/useDirection";
 import { set } from "nprogress";
 
 const SearchBar = ({
@@ -38,6 +39,7 @@ const SearchBar = ({
   const uiStore = UIStore.getInstance();
   const searchRef = useRef<HTMLDivElement>(null);
   const { isTurkishIP, filterProductsByLocation } = useUserLocation();
+  const { direction } = useDirection();
 
   // UI state
   const [placeholderOpen, setPlaceholderOpen] = useState(true);
@@ -435,42 +437,86 @@ const SearchBar = ({
                       })}
 
                       {searchedProducts.length > 0 && (
-                        <div className="flex col-span-2">
-                          {hoveredCategory && (
-                            <button
-                              className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
-                              onClick={handleClearFilter}
-                            >
-                              {t("categoryPage.clearFilters")}
-                            </button>
+                        <div className="flex col-span-2 justify-between">
+                          {direction === "rtl" ? (
+                            // RTL layout: kategori linki solda, clear filter sağda
+                            <>
+                              <Link href={hoveredCategory
+                                ? `/${slugify(hoveredCategory)}`
+                                : `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`
+                              }>
+                                <a className="text-xs flex items-center text-[color:var(--black-one)] cursor-pointer">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={2}
+                                    stroke="currentColor"
+                                    className="w-4 stroke-[color:var(--color-one)] h-4 mr-0.5"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                                    />
+                                  </svg>
+                                  <span>
+                                    <span className="font-bold">
+                                      {hoveredCategory || uiStore.searchKeyword}
+                                    </span>
+                                    &nbsp;{t("seeAllResults")}
+                                  </span>
+                                </a>
+                              </Link>
+                              {hoveredCategory && (
+                                <button
+                                  className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
+                                  onClick={handleClearFilter}
+                                >
+                                  {t("categoryPage.clearFilters")}
+                                </button>
+                              )}
+                            </>
+                          ) : (
+                            // LTR layout: clear filter solda, kategori linki sağda
+                            <>
+                              {hoveredCategory && (
+                                <button
+                                  className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
+                                  onClick={handleClearFilter}
+                                >
+                                  {t("categoryPage.clearFilters")}
+                                </button>
+                              )}
+                              <Link href={hoveredCategory
+                                ? `/${slugify(hoveredCategory)}`
+                                : `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`
+                              }>
+                                <a className="text-xs flex items-center text-[color:var(--black-one)] cursor-pointer">
+                                  <span>
+                                    <span className="font-bold">
+                                      {hoveredCategory || uiStore.searchKeyword}
+                                    </span>
+                                    &nbsp;{t("seeAllResults")}
+                                  </span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={2}
+                                    stroke="currentColor"
+                                    className="w-4 stroke-[color:var(--color-one)] h-4 ml-0.5"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                    />
+                                  </svg>
+                                </a>
+                              </Link>
+                            </>
                           )}
-                          <Link href={hoveredCategory
-                            ? `/${slugify(hoveredCategory)}`
-                            : `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`
-                          }>
-                            <a className="text-xs flex items-center ml-auto text-[color:var(--black-one)] cursor-pointer">
-                              <span>
-                                <span className="font-bold">
-                                  {hoveredCategory || uiStore.searchKeyword}
-                                </span>
-                                &nbsp;{t("seeAllResults")}
-                              </span>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={2}
-                                stroke="currentColor"
-                                className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                />
-                              </svg>
-                            </a>
-                          </Link>
                         </div>
                       )}
                       <div className="col-span-2 rounded-sm overflow-hidden">
@@ -799,27 +845,54 @@ const SearchBar = ({
                         })() && (
                             <div className="col-span-2 flex">
                               <Link href={`/${slugify(linkToCategory)}`}>
-                                <a className="text-xs flex items-center ml-auto text-[color:var(--black-one]">
-                                  <span>
-                                    <span className="font-bold text-slate-900">
-                                      &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
-                                    </span>
-                                    &nbsp;{t("seeAllResults")}
-                                  </span>
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                    className="w-4 stroke-[color:var(--color-one)]  h-4 ml-0.5"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                    />
-                                  </svg>
+                                <a className={`text-xs flex items-center text-[color:var(--black-one)] ${direction === "rtl" ? "mr-auto" : "ml-auto"}`}>
+                                  {direction === "rtl" ? (
+                                    <>
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={2}
+                                        stroke="currentColor"
+                                        className="w-4 stroke-[color:var(--color-one)] h-4 mr-0.5"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          d="M15.75 19.5L8.25 12l7.5-7.5"
+                                        />
+                                      </svg>
+                                      <span>
+                                        <span className="font-bold text-slate-900">
+                                          &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                        </span>
+                                        &nbsp;{t("seeAllResults")}
+                                      </span>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <span>
+                                        <span className="font-bold text-slate-900">
+                                          &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                        </span>
+                                        &nbsp;{t("seeAllResults")}
+                                      </span>
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={2}
+                                        stroke="currentColor"
+                                        className="w-4 stroke-[color:var(--color-one)] h-4 ml-0.5"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                        />
+                                      </svg>
+                                    </>
+                                  )}
                                 </a>
                               </Link>
                             </div>

@@ -68,11 +68,16 @@ export const useUserLocation = () => {
   
   // Optimized helper function to filter products based on user's location
   const filterProductsByLocation = useCallback((products: IkasProduct[]) => {
-    if (!products) return [];
+    if (!products || !Array.isArray(products)) return [];
     if (!isTurkishIP) return products;
     
     // Filter out products that are not available for purchase for Turkish IPs
-    return products.filter(product => product.isAddToCartEnabled);
+    // Add additional safety checks to ensure product state is valid
+    return products.filter(product => {
+      if (!product) return false;
+      // Check if the product has proper state and is available for purchase
+      return product.isAddToCartEnabled === true && product.hasStock !== false;
+    });
   }, [isTurkishIP]);
   
   const adjustProductCount = useCallback((products: IkasProduct[], totalCount: number) => {

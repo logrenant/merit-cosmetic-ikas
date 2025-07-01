@@ -26,6 +26,7 @@ import { ProductdetailProps } from "../__generated__/types";
 import ContentProtector from "../composites/ContentProtector";
 import useProductReviews from "src/utils/useProductReviews";
 import Reviews from "./reviews";
+import Envelope from "../svg/Envelope";
 
 const Accordion = observer(
   ({ title, children }: { title: string; children: React.ReactNode }) => {
@@ -647,7 +648,14 @@ const ProductDetail = ({
                   }}
                   className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
                 >
-                  {product.isAddToCartEnabled ? t("addToBasket") : soldOutButton}
+                  {product.isAddToCartEnabled ? (
+                    t("addToBasket")
+                  ) : (
+                    <div className="flex items-center justify-center gap-2">
+                      <Envelope />
+                      {soldOutButton}
+                    </div>
+                  )}
                 </button>
               </div>
               {/* Box Data */}
@@ -914,7 +922,7 @@ const ProductDetail = ({
             />
           )}
         </div>
-        <div className="mt-8 border-t border-[color:var(--gray-six)] md:hidden block">
+        <div className="border-t border-[color:var(--gray-six)] md:hidden block">
           <Accordion title={t("productDetail.description")}>
             <div
               className="prose prose-table:overflow-hidden prose-ul:rtl:pr-3 prose-table:max-w-full overflow-x-auto marker:text-[color:var(--rich-color)] prose-table:border-(color:--rich-color)! prose-tr:border-(color:--rich-color)! prose-th:border-(color:--rich-color)! prose-thead:border-(color:--rich-color)! prose-td:border-(color:--rich-color)! prose-p:[color:var(--black-two)] prose-headings:text-(color:--rich-color)! max-w-none prose-sm "
@@ -950,7 +958,7 @@ const ProductDetail = ({
             />
           </Accordion>
         </div>
-        {show && filterProductsByLocation(similar.data || []).length > 0 && (
+        {show && (similar.data || []).length > 0 && (
           <>
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.relatedProducts")}
@@ -975,19 +983,20 @@ const ProductDetail = ({
                     },
                   },
                 }}
-                items={filterProductsByLocation(similar.data || [])?.map((product) => (
+                items={(similar.data || [])?.map((product) => (
                   <div
                     key={product.id + "product"}
                     className="keen-slider__slide"
                   >
-                    <ProductCard product={product} />
+                    <ProductCard product={product} soldOutButtonText={soldOutButton} />
                   </div>
                 ))}
               />
             </div>
           </>
         )}
-        {show && filterProductsByLocation(lastvisited.data || []).length > 0 && (
+        {show && (lastvisited.data || []).length > 0 && (
+          console.log(lastvisited.data),
           <>
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.insterestedProducts")}
@@ -1012,12 +1021,13 @@ const ProductDetail = ({
                     },
                   },
                 }}
-                items={filterProductsByLocation(lastvisited.data || [])?.map((product) => (
+                items={(lastvisited.data || [])?.map((product) => (
+                  console.log(lastvisited.data),
                   <div
                     key={product.id + "product2"}
                     className="keen-slider__slide"
                   >
-                    <ProductCard product={product} />
+                    <ProductCard product={product} soldOutButtonText={soldOutButton} />
                   </div>
                 ))}
               />
