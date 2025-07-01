@@ -57,7 +57,7 @@ const options: Option[] = [
 
 const ProductListGrid: React.FC<
   ProductlistgridProps & { pageSpecificData: IkasCategory }
-> = ({ products, popular, categories, pageSpecificData }) => {
+> = ({ products, popular, categories, pageSpecificData, soldOut }) => {
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (products.isLoading) return;
     products.setSortType(e.target.value as IkasProductListSortType);
@@ -123,8 +123,20 @@ const ProductListGrid: React.FC<
 
   // Filter products for Turkish IPs - only show products that can be purchased
   const filteredProducts = useMemo(() => {
-    return filterProductsByLocation(products.data);
-  }, [products.data, filterProductsByLocation]);
+    if (!products.data) return [];
+    const filtered = filterProductsByLocation(products.data);
+
+    // Debug: Log filtering results
+    if (isTurkishIP && products.data.length !== filtered.length) {
+      console.log('Filtering products:', {
+        original: products.data.length,
+        filtered: filtered.length,
+        removed: products.data.length - filtered.length
+      });
+    }
+
+    return filtered;
+  }, [products.data, filterProductsByLocation, isTurkishIP]);
 
   // Adjust the product count for display
   const adjustedProductCount = useMemo(() => {
@@ -250,9 +262,9 @@ const ProductListGrid: React.FC<
                       },
                     },
                   }}
-                  items={popular.data?.map((product) => (
-                    <div key={product.id} className="keen-slider__slide">
-                      <ProductCard product={product} />
+                  items={popular.data?.map((product, index) => (
+                    <div key={`popular-${product.id}-${index}`} className="keen-slider__slide">
+                      <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
                     </div>
                   ))}
                 />
@@ -301,8 +313,12 @@ const ProductListGrid: React.FC<
               id="listgrid"
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
             >
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filteredProducts.map((product, index) => (
+                <ProductCard
+                  key={`${product.id}-${index}-${product.isAddToCartEnabled}`}
+                  product={product}
+                  soldOutButtonText={soldOut?.soldOutButton}
+                />
               ))}
             </div>
           ) : (

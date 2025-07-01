@@ -10,7 +10,7 @@ import { sliderBreakpoints } from "src/styles/breakpoints";
 import { useScreen } from "src/utils/hooks/useScreen";
 import { useUserLocation } from "src/utils/useUserLocation";
 
-const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: HomeproductsProps) => {
+const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut }: HomeproductsProps) => {
   const [selectedProducts, setSelectedProducts] = useState(
     products![0].image.id
   );
@@ -186,12 +186,12 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner }: Ho
               ?.find((e) => e.image.id === selectedProducts)
               ?.products.data
               ? filterProductsByLocation(
-                  products.find((e) => e.image.id === selectedProducts)?.products.data || []
-                )?.map((product) => (
-                  <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
-                    <ProductCard product={product} />
-                  </div>
-                )) 
+                products.find((e) => e.image.id === selectedProducts)?.products.data || []
+              )?.map((product) => (
+                <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
+                  <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
+                </div>
+              ))
               : []}
           />
         </div>

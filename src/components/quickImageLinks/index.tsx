@@ -47,7 +47,7 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
     }, [MutationPlugin]);
 
     return (
-        <div dir="ltr" className="pt-6 pb-2 layout relative items-center">
+        <div dir="ltr" className="pt-6 xl:pb-2 layout relative items-center">
 
             {/* Slider Container */}
             <div ref={sliderRef} className="keen-slider flex flex-row">

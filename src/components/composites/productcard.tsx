@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import {
   IkasProduct,
   Image,
@@ -9,14 +10,22 @@ import { observer } from "mobx-react-lite";
 import { useAddToCart } from "../../utils/useAddToCart";
 import useFavorite from "../../utils/useFavorite";
 import { useDirection } from "../../utils/useDirection";
-import { useUserLocation } from "../../utils/useUserLocation";
 import Pricedisplay from "./pricedisplay";
+import Envelope from "../svg/Envelope";
 
 const ProductCard: React.FC<{
   product: IkasProduct;
   onToggle?: (isProductFavorite: boolean) => void;
-}> = ({ product, onToggle }) => {
+  soldOutButtonText?: string;
+}> = ({ product, onToggle, soldOutButtonText }) => {
   const store = useStore();
+
+  // Safety check for product availability
+  const isProductAvailable = useMemo(() => {
+    if (!product) return false;
+    return product.isAddToCartEnabled === true;
+  }, [product?.isAddToCartEnabled]);
+
   const mainImages = product?.attributes?.find(
     (e) => e.productAttribute?.name === "Ana Resim"
   )?.images;
@@ -30,12 +39,7 @@ const ProductCard: React.FC<{
   });
   const { direction } = useDirection();
   const { t } = useTranslation();
-  const { shouldShowProduct } = useUserLocation();
 
-  // Don't render this product for Turkish IPs if it requires inquiry
-  if (!shouldShowProduct(product)) {
-    return null;
-  }
   return (
     <div
       dir={direction}
@@ -136,10 +140,13 @@ const ProductCard: React.FC<{
               addToCart(product, 1);
             }
           }}
-          disabled={loading || !product.isAddToCartEnabled}
+          disabled={loading || !isProductAvailable}
           className="mt-2.5 hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
         >
-          {product.isAddToCartEnabled ? t("addToBasket") : t("soldOut")}
+          <div className="flex items-center justify-center gap-2">
+            {!isProductAvailable && <Envelope />}
+            <span>{isProductAvailable ? t("addToBasket") : (soldOutButtonText)}</span>
+          </div>
         </button>
       </div>
     </div>

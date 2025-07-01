@@ -107,6 +107,10 @@ export type ContactFormRule = {
 	phoneRule: string;
 };
 
+export type SoldOutButton = { 
+	soldOutButton: string;
+};
+
 export type NavbarProps = {
 	categories: IkasCategoryList;
 	products: IkasProductList;
@@ -136,6 +140,8 @@ export type HomeproductsProps = {
 	xlBanner?: IkasImage;
 	lgBanner?: IkasImage;
 	smBanner?: IkasImage;
+	soldOut?: SoldOutButton;
+	soldOutButton?: string;
 };
 
 export type StorylinksProps = {
@@ -156,6 +162,7 @@ export type ProductlistgridProps = {
 	products: IkasProductList;
 	popular: IkasProductList;
 	categories: IkasCategoryList;
+	soldOut?: SoldOutButton;
 };
 
 export type ProductdetailProps = {
@@ -194,6 +201,7 @@ export type SpecialpagesProps = {
 
 export type BrandsProps = {
 	products: IkasProductList;
+	soldOut?: SoldOutButton;
 };
 
 export type ContactpageProps = {
