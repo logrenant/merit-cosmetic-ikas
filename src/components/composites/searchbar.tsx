@@ -19,7 +19,6 @@ import { useOnClickOutside } from "usehooks-ts";
 import React from "react";
 import { useUserLocation } from "../../utils/useUserLocation";
 import { useDirection } from "../../utils/useDirection";
-import { set } from "nprogress";
 
 const SearchBar = ({
   products,
@@ -51,8 +50,17 @@ const SearchBar = ({
   const [hoveredBrandId, setHoveredBrandId] = useState<string>();
   const [selectedRelatedCategory, setSelectedRelatedCategory] = useState<string>();
 
-  // Derived state
-  const [productCategories, setProductCategories] = useState<{ name: string; href: string }[]>([]);
+  // See All Results link için state
+  const [seeAllResultsHref, setSeeAllResultsHref] = useState<string>('/');
+
+  // Derived state - expanded to store original category data and localized info
+  const [productCategories, setProductCategories] = useState<{
+    originalCategory: any;
+    displayName: string;
+    originalSlug: string;
+    href: string;
+    name: string
+  }[]>([]);
   const [linkToCategory, setLinkToCategory] = useState('/');
 
   // Search state
@@ -68,6 +76,43 @@ const SearchBar = ({
       .replace(/[^\w\s-]/g, '')
       .replace(/[\s_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
+  };
+
+  // Clean text by removing special characters like ®, ™, ©
+  const cleanSearchText = (text: string) => {
+    if (!text) return '';
+    return text.replace(/[®™©]/g, '').trim();
+  };
+
+  // Clean brand name by removing special characters (alias for cleanSearchText for backward compatibility)
+  const cleanBrandName = (brandName: string) => {
+    return cleanSearchText(brandName);
+  };
+
+  // Check if text matches when special characters are removed
+  const isTextMatch = (text1: string, text2: string) => {
+    if (!text1 || !text2) return false;
+
+    const clean1 = cleanSearchText(text1).toLowerCase();
+    const clean2 = cleanSearchText(text2).toLowerCase();
+
+    return clean1.includes(clean2) || clean2.includes(clean1);
+  };
+
+  // Check if two brands match, considering Arabic-English mapping and bidirectional checks
+  const isBrandMatch = (brand1: string, brand2: string) => {
+    if (!brand1 || !brand2) return false;
+
+    const cleanBrand1 = cleanBrandName(brand1).toLowerCase();
+    const cleanBrand2 = cleanBrandName(brand2).toLowerCase();
+
+    // Direct match
+    if (cleanBrand1 === cleanBrand2) return true;
+
+    // Check if either brand contains the other (for partial matches)
+    if (cleanBrand1.includes(cleanBrand2) || cleanBrand2.includes(cleanBrand1)) return true;
+
+    return false;
   };
 
   // Filter out of stock products for all users
@@ -86,43 +131,67 @@ const SearchBar = ({
     products.searchKeyword = "";
     setPlaceholderOpen(true);
 
+    // Reset all filter states
+    setHoveredCategory(undefined);
+    setHoveredBrand(undefined);
+    setHoveredBrandId(undefined);
+    setSelectedRelatedCategory(undefined);
+    setSeeAllResultsHref('/'); // See All Results linkini de resetle
+
     // Filter products to hide out-of-stock products for all users
     const filteredProducts = filterProducts(products.data);
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
-
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHoveredCategory(undefined);
     setHoveredBrand(undefined);
     setSelectedRelatedCategory(undefined);
+
+    // Store original input value in uiStore
     uiStore.searchKeyword = e.target.value;
-    products.searchKeyword = e.target.value;
+
+    // Clean search text for product search
+    const cleanedSearchText = cleanSearchText(e.target.value);
+    products.searchKeyword = cleanedSearchText;
+
     setPlaceholderOpen(false);
     setSearchedProductsNotFiltered(undefined!);
     setSearchedProducts(undefined!);
   };
 
   const onClickSearch = () => {
-    store?.router?.push(`/search?s=${encodeURIComponent(uiStore.searchKeyword)}`);
+    // Use the cleaned version of the search keyword
+    const cleanedKeyword = cleanSearchText(uiStore.searchKeyword);
+    store?.router?.push(`/search?s=${encodeURIComponent(cleanedKeyword || uiStore.searchKeyword)}`);
   };
 
   const handleClearFilter = () => {
     setHoveredCategory(undefined);
     setHoveredBrand(undefined);
+    setHoveredBrandId(undefined);
     setSelectedRelatedCategory(undefined);
+    setSeeAllResultsHref('/'); // See All Results linkini de resetle
 
     const filteredProducts = filterProducts(products.data);
     setSearchedProducts(filteredProducts);
     setSearchedProductsNotFiltered(filteredProducts);
   };
 
-  const onHoverCategory = (cat: { name: string; href: string }) => {
+  const onHoverCategory = (cat: {
+    originalCategory: any;
+    displayName: string;
+    originalSlug: string;
+    href: string;
+    name: string
+  }) => {
     // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
     if (hoveredCategory === cat.name) {
       return;
     }
+
+    console.log("Hovering category:", cat);
 
     setHoveredCategory(cat.name);
     setHoveredBrand(undefined);
@@ -154,13 +223,14 @@ const SearchBar = ({
     }
 
     setHoveredBrand(br);
-    setHoveredCategory(br);
-    products.searchKeyword = br;
+    setHoveredCategory(undefined); // Brand hover edildiğinde category'i temizle
+    // Clean the brand name before setting it as search keyword
+    products.searchKeyword = cleanBrandName(br);
     setPlaceholderOpen(false);
 
-    // Get all products for this brand
+    // Get all products for this brand using exact matching
     const allBrandProducts = products.data.filter(
-      p => p.brand?.name.toLowerCase() === br.toLowerCase()
+      p => p.brand?.name && isBrandMatch(p.brand.name, br)
     );
 
     // Apply both location and stock filtering to hide out-of-stock products
@@ -207,7 +277,9 @@ const SearchBar = ({
 
   const getSearchResultsLink = () => {
     if (uiStore.searchKeyword && !hoveredCategory && !hoveredBrand) {
-      return `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`;
+      // Use cleaned search keyword for the URL
+      const cleanedKeyword = cleanSearchText(uiStore.searchKeyword);
+      return `/search?s=${encodeURIComponent(cleanedKeyword || uiStore.searchKeyword)}`;
     }
 
     if (hoveredCategory) {
@@ -244,6 +316,23 @@ const SearchBar = ({
   const displayResults = React.useMemo(() => {
     let results = products.data;
 
+    // Filter by search keyword if present
+    if (uiStore.searchKeyword) {
+      results = products.data.filter(p => {
+        // Check product name
+        if (isTextMatch(p.name, uiStore.searchKeyword)) return true;
+
+        // Check brand name
+        if (p.brand?.name && isTextMatch(p.brand.name, uiStore.searchKeyword)) return true;
+
+        // Check categories
+        if (p.categories?.some(c => isTextMatch(c.name, uiStore.searchKeyword))) return true;
+
+        return false;
+      });
+    }
+
+    // Filter by category if one is hovered
     if (hoveredCategory) {
       results = products.data.filter(p =>
         p.categories?.some(c => c.name.toLowerCase() === hoveredCategory.toLowerCase())
@@ -252,29 +341,78 @@ const SearchBar = ({
 
     // Apply both location and stock filtering to hide out-of-stock products
     return filterProducts(results);
-  }, [products.data, hoveredCategory, filterProductsByLocation]);
+  }, [products.data, hoveredCategory, uiStore.searchKeyword, filterProductsByLocation]);
 
   useEffect(() => {
     // Filter products to hide out-of-stock products for all users
     const filteredProducts = filterProducts(products.data);
 
     // Get unique categories from filtered products only
-    const uniqueCategories = filteredProducts.reduce((acc: { name: string; href: string }[], product) => {
+    const uniqueCategories = filteredProducts.reduce((acc: {
+      originalCategory: any;
+      displayName: string;
+      originalSlug: string;
+      href: string;
+      name: string
+    }[], product) => {
       product.categories?.forEach(category => {
         if (!acc.some(c => c.name === category.name)) {
-          acc.push({
+          // Console log the original category data
+          console.log("Original Category Data:", category);
+          console.log("Category properties:", {
             name: category.name,
-            href: `/${slugify(category.name)}`
+            href: category.href,
+            translations: category.translations
+          });
+
+          // Create display name based on direction
+          let displayName = category.name; // Default to original name
+          if (direction === "rtl" && category.translations) {
+            const arabicTranslation = category.translations.find((t: any) => t.locale === "ar");
+            if (arabicTranslation && arabicTranslation.name) {
+              displayName = arabicTranslation.name;
+              console.log("Found Arabic translation:", arabicTranslation.name);
+            }
+          }
+
+          // Always use original slug for href, add /ar prefix only for RTL
+          // Extract slug from href if it exists, otherwise use slugified name
+          let originalSlug = "";
+          if (category.href && category.href.startsWith('/')) {
+            // Extract slug from href (remove leading /)
+            originalSlug = category.href.substring(1);
+            // Remove /ar/ prefix if exists to get original slug
+            if (originalSlug.startsWith('ar/')) {
+              originalSlug = originalSlug.substring(3);
+            }
+          } else {
+            originalSlug = slugify(category.name);
+          }
+
+          let href = `/${originalSlug}`;
+          if (direction === "rtl") {
+            href = `/ar/${originalSlug}`;
+          }
+
+          console.log("Generated href:", href, "for category:", category.name);
+
+          acc.push({
+            originalCategory: category,
+            displayName: displayName,
+            originalSlug: originalSlug,
+            href: href,
+            name: category.name // Keep original name for filtering/logic
           });
         }
       });
       return acc;
     }, []);
 
+    console.log("Final productCategories:", uniqueCategories);
     setProductCategories(uniqueCategories);
     setSearchedProductsNotFiltered(filteredProducts);
     setSearchedProducts(filteredProducts.slice(0, 8));
-  }, [products.data, filterProductsByLocation]);
+  }, [products.data, filterProductsByLocation, direction]);
 
 
   useEffect(() => {
@@ -290,15 +428,39 @@ const SearchBar = ({
     }
   }, [hoveredCategory]);
 
+  // Her hover değişiminde See All Results linkini güncelle
+  useEffect(() => {
+    let newHref = '/';
+
+    if (hoveredCategory) {
+      newHref = popularCategories.data.find(c => c.name === hoveredCategory)?.href || `/${slugify(hoveredCategory)}`;
+    } else if (hoveredBrand) {
+      newHref = popularBrands.data.find(b => b.name === hoveredBrand)?.href || `/${slugify(hoveredBrand)}`;
+    } else {
+      newHref = `/${slugify(linkToCategory)}`;
+    }
+
+    // RTL (Arapça) için /ar prefixi ekle
+    if (direction === "rtl" && !newHref.startsWith('/ar')) {
+      if (newHref.startsWith('/')) {
+        newHref = `/ar${newHref}`;
+      } else {
+        newHref = `/ar/${newHref}`;
+      }
+    }
+
+    setSeeAllResultsHref(newHref);
+  }, [hoveredCategory, hoveredBrand, linkToCategory, popularCategories.data, popularBrands.data, direction]);
+
   // Update search results when brand is hovered
   useEffect(() => {
     if (hoveredBrand && !uiStore.searchKeyword) {
       const brandProducts = products.data.filter(p =>
-        p.brand?.name.toLowerCase() === hoveredBrand.toLowerCase()
+        p.brand?.name && isBrandMatch(p.brand.name, hoveredBrand)
       );
 
-      // Apply Turkish IP filtering to hide out-of-stock products
-      const filteredBrandProducts = filterProductsByLocation(brandProducts);
+      // Apply both location and stock filtering to hide out-of-stock products
+      const filteredBrandProducts = filterProducts(brandProducts);
 
       if (filteredBrandProducts.length > 0) {
         setSearchedProductsNotFiltered(filteredBrandProducts);
@@ -306,11 +468,24 @@ const SearchBar = ({
         setPlaceholderOpen(false);
 
         if (!searchedProducts || searchedProducts.length === 0) {
-          products.searchKeyword = hoveredBrand;
+          products.searchKeyword = cleanBrandName(hoveredBrand);
         }
       }
     }
-  }, [hoveredBrand, products.data, uiStore.searchKeyword, filterProductsByLocation]);
+  }, [hoveredBrand, products.data, uiStore.searchKeyword, filterProducts]);
+
+  // Update search results when uiStore.searchKeyword changes
+  useEffect(() => {
+    if (uiStore.searchKeyword) {
+      // If search keyword contains special characters, we need to filter products here
+      const filteredResults = displayResults;
+
+      if (filteredResults && filteredResults.length > 0) {
+        setSearchedProductsNotFiltered(filteredResults);
+        setSearchedProducts(filteredResults.slice(0, 8));
+      }
+    }
+  }, [uiStore.searchKeyword, displayResults]);
 
   // useEffect(() => {
   //   console.log("[SearchBar] Hovered Category:", hoveredCategory);
@@ -398,7 +573,7 @@ const SearchBar = ({
                               ${selectedRelatedCategory === cat.name ? 'bg-[color:var(--color-one)] text-white' : ''}
                             `}
                           >
-                            {cat.name}
+                            {cat.displayName}
                           </a>
                         </Link>
                       ))}
@@ -437,15 +612,24 @@ const SearchBar = ({
                       })}
 
                       {searchedProducts.length > 0 && (
-                        <div className="flex col-span-2 justify-between">
-                          {direction === "rtl" ? (
-                            // RTL layout: kategori linki solda, clear filter sağda
-                            <>
-                              <Link href={hoveredCategory
-                                ? `/${slugify(hoveredCategory)}`
-                                : `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`
-                              }>
-                                <a className="text-xs flex items-center text-[color:var(--black-one)] cursor-pointer">
+                        <div className="col-span-2 flex">
+                          {hoveredCategory && (
+                            <button
+                              className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
+                              onClick={handleClearFilter}
+                            >
+                              {t("categoryPage.clearFilters")}
+                            </button>
+                          )}
+                          <Link href={hoveredCategory
+                            ? (productCategories.find(c => c.name === hoveredCategory)?.href ||
+                              popularCategories.data.find(c => c.name === hoveredCategory)?.href ||
+                              `/${slugify(hoveredCategory)}`)
+                            : `/search?s=${encodeURIComponent(cleanSearchText(uiStore.searchKeyword) || uiStore.searchKeyword)}`
+                          }>
+                            <a className={`text-xs flex items-center text-[color:var(--black-one)] ${direction === "rtl" ? "mr-auto" : "ml-auto"}`}>
+                              {direction === "rtl" ? (
+                                <>
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -462,40 +646,20 @@ const SearchBar = ({
                                   </svg>
                                   <span>
                                     <span className="font-bold">
-                                      {hoveredCategory || uiStore.searchKeyword}
+                                      {hoveredCategory
+                                        ? (productCategories.find(c => c.name === hoveredCategory)?.displayName || hoveredCategory)
+                                        : uiStore.searchKeyword}
                                     </span>
                                     &nbsp;{t("seeAllResults")}
                                   </span>
-                                </a>
-                              </Link>
-                              {hoveredCategory && (
-                                <button
-                                  className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
-                                  onClick={handleClearFilter}
-                                >
-                                  {t("categoryPage.clearFilters")}
-                                </button>
-                              )}
-                            </>
-                          ) : (
-                            // LTR layout: clear filter solda, kategori linki sağda
-                            <>
-                              {hoveredCategory && (
-                                <button
-                                  className="text-xs underline text-[color:var(--color-one)] cursor-pointer"
-                                  onClick={handleClearFilter}
-                                >
-                                  {t("categoryPage.clearFilters")}
-                                </button>
-                              )}
-                              <Link href={hoveredCategory
-                                ? `/${slugify(hoveredCategory)}`
-                                : `/search?s=${encodeURIComponent(uiStore.searchKeyword)}`
-                              }>
-                                <a className="text-xs flex items-center text-[color:var(--black-one)] cursor-pointer">
+                                </>
+                              ) : (
+                                <>
                                   <span>
                                     <span className="font-bold">
-                                      {hoveredCategory || uiStore.searchKeyword}
+                                      {hoveredCategory
+                                        ? (productCategories.find(c => c.name === hoveredCategory)?.displayName || hoveredCategory)
+                                        : uiStore.searchKeyword}
                                     </span>
                                     &nbsp;{t("seeAllResults")}
                                   </span>
@@ -513,10 +677,10 @@ const SearchBar = ({
                                       d="M8.25 4.5l7.5 7.5-7.5 7.5"
                                     />
                                   </svg>
-                                </a>
-                              </Link>
-                            </>
-                          )}
+                                </>
+                              )}
+                            </a>
+                          </Link>
                         </div>
                       )}
                       <div className="col-span-2 rounded-sm overflow-hidden">
@@ -579,20 +743,20 @@ const SearchBar = ({
                               setHoveredBrand(brand.name);
                               setHoveredCategory(undefined);
 
-                              // Filter products by brand
+                              // Filter products by brand using exact matching
                               const brandProducts = products.data.filter(p =>
-                                p.brand?.name.toLowerCase() === brand.name.toLowerCase()
+                                p.brand?.name && isBrandMatch(p.brand.name, brand.name)
                               );
 
-                              // Apply Turkish IP filtering to hide out-of-stock products
-                              const filteredBrandProducts = filterProductsByLocation(brandProducts);
+                              // Apply both location and stock filtering to hide out-of-stock products
+                              const filteredBrandProducts = filterProducts(brandProducts);
 
                               // Update both filtered and unfiltered products
                               setSearchedProductsNotFiltered(filteredBrandProducts);
                               setSearchedProducts(filteredBrandProducts.slice(0, 8));
 
-                              // Set keyword to match brand for consistency
-                              products.searchKeyword = brand.name;
+                              // Set keyword to match brand for consistency (clean version)
+                              products.searchKeyword = cleanBrandName(brand.name);
                               setPlaceholderOpen(false);
                             }}
                             className={`
@@ -693,6 +857,68 @@ const SearchBar = ({
                           </button>
                         </div>
                       )}
+                      {/* {hoveredCategory && filterProducts(popularProducts.data).filter((p) => {
+                        return p.categories.find((c) => c.name.toLowerCase() === hoveredCategory.toLowerCase())
+                      }).length > 8 && (
+                          <div className="col-span-2 flex">
+                            <Link
+                              href={popularCategories.data.find(c => c.name === hoveredCategory)?.href || `/${slugify(hoveredCategory)}`}
+                            >
+                              <div
+                                className={`text-xs flex items-center text-[color:var(--black-one)] cursor-pointer ${direction === "rtl" ? "mr-auto" : "ml-auto"}`}
+                              >
+                                {direction === "rtl" ? (
+                                  <>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      strokeWidth={2}
+                                      stroke="currentColor"
+                                      className="w-4 stroke-[color:var(--color-one)] h-4 mr-0.5"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M15.75 19.5L8.25 12l7.5-7.5"
+                                      />
+                                    </svg>
+                                    <span>
+                                      <span className="font-bold text-slate-900">
+                                        &quot;{hoveredCategory}&quot; {" "}
+                                      </span>
+                                      &nbsp;{t("seeAllResults")}
+                                    </span>
+                                  </>
+                                ) : (
+                                  <>
+                                    <span>
+                                      <span className="font-bold text-slate-900">
+                                        &quot;{hoveredCategory}&quot; {" "}
+                                      </span>
+                                      &nbsp;{t("seeAllResults")}
+                                    </span>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      strokeWidth={2}
+                                      stroke="currentColor"
+                                      className="w-4 stroke-[color:var(--color-one)] h-4 ml-0.5"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                      />
+                                    </svg>
+                                  </>
+                                )}
+                              </div>
+                            </Link>
+                          </div>
+                        )} */}
+
                       <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
@@ -844,7 +1070,10 @@ const SearchBar = ({
                           return displayProducts.length > 8;
                         })() && (
                             <div className="col-span-2 flex">
-                              <Link href={`/${slugify(linkToCategory)}`}>
+                              <Link
+                                key={`see-all-brand-${hoveredBrand || hoveredCategory || 'default'}`}
+                                href={seeAllResultsHref}
+                              >
                                 <a className={`text-xs flex items-center text-[color:var(--black-one)] ${direction === "rtl" ? "mr-auto" : "ml-auto"}`}>
                                   {direction === "rtl" ? (
                                     <>
@@ -864,7 +1093,7 @@ const SearchBar = ({
                                       </svg>
                                       <span>
                                         <span className="font-bold text-slate-900">
-                                          &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                          &quot;{hoveredCategory || hoveredBrand || uiStore.searchKeyword}&quot; {" "}
                                         </span>
                                         &nbsp;{t("seeAllResults")}
                                       </span>
@@ -873,7 +1102,7 @@ const SearchBar = ({
                                     <>
                                       <span>
                                         <span className="font-bold text-slate-900">
-                                          &quot;{hoveredBrand || uiStore.searchKeyword}&quot; {" "}
+                                          {hoveredCategory || hoveredBrand || uiStore.searchKeyword}
                                         </span>
                                         &nbsp;{t("seeAllResults")}
                                       </span>
@@ -911,9 +1140,10 @@ const SearchBar = ({
             </article>
 
           </div>
-        )}
-      </div>
-    </div>
+        )
+        }
+      </div >
+    </div >
   );
 };
 

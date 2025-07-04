@@ -3,7 +3,7 @@ import { makeAutoObservable, action } from "mobx";
 export default class UIStore {
   private static _instance: UIStore;
   searchKeyword = "";
-  direction = "ltr";
+  direction: "ltr" | "rtl" = "ltr";
   currency = "USD";
   rates: Record<string, number> = {};
   maxQuantityPerCartProductErrorModal = {

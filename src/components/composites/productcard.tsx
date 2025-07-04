@@ -140,8 +140,7 @@ const ProductCard: React.FC<{
               addToCart(product, 1);
             }
           }}
-          disabled={loading || !isProductAvailable}
-          className="mt-2.5 hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
+          className="mt-2.5 hover:opacity-80 transition duration-300 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
         >
           <div className="flex items-center justify-center gap-2">
             {!isProductAvailable && <Envelope />}
