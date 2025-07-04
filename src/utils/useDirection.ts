@@ -6,7 +6,7 @@ export function useDirection() {
 	const uiStore = UIStore.getInstance();
 
 	useEffect(() => {
-		setDirection(uiStore.direction as "rtl" | "ltr");
+		setDirection(uiStore.direction);
 	}, [uiStore.direction]);
 
 	return {

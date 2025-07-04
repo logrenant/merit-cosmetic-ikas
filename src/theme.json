@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "fb238161-fd7c-430f-991f-9706be3d330c",
+          "id": "417f90c1-fdab-4325-b284-882016a2ca94",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "75a75336-897c-4c95-9a5d-0a206529da14",
+          "id": "35c0c8ae-c6be-4e2d-83b8-d7e7af7e483b",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "53b028e5-08e3-44a1-8c8b-db79da3545a6",
+          "id": "3854d71b-aa93-4a7c-8465-0202d8a52a43",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8892d106-947d-417e-857d-f72883e1e2a2",
+          "id": "1cd5bade-a5ec-48e0-8a8f-a6125c116310",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "611abe7a-645e-45f5-94d9-02b35c126b30",
+          "id": "e8868769-a667-4de8-b57c-bfca45981bea",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4c4a9142-7bfb-486f-ad36-28ae548fa62f",
+          "id": "f8ac8e66-eb8f-45e3-bd1f-b192ffbb9b22",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ed482670-1dfc-4f74-b09e-39edde67485f",
+          "id": "68bfef8f-c2ea-413c-9832-ab873181edd2",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6d4fa060-f1d0-4475-bf90-0ed6ce982bb8",
+          "id": "619bd5d5-ef28-4d61-8764-53c4425271d1",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8b0689e2-3f5b-494c-918f-da20bcaf1186",
+          "id": "72733334-cfd4-4be4-a5f8-20be86c4a7fb",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "42aba7b5-3321-4554-86c5-89e1f49d6386",
+          "id": "4cb0412f-fe67-4a45-b1ab-a882b292e3cf",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e5107156-d643-408f-aef5-330881c57f7d",
+          "id": "8a6cc3a6-d2be-4659-b3da-c7b3b90cf968",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d8aa6c20-866f-40c8-8434-a9582a11cb83",
+          "id": "924b470b-3af3-4f0c-bccb-6f663c3bec2a",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bd76cefd-1eb8-4170-8323-07ad0b31b595",
+          "id": "88d303e7-ebd7-4938-8fcc-7f4de7527449",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a97bfdb5-0517-48b3-b8c5-66dc335968e3",
+          "id": "cbad3610-6544-4bd2-aa74-ce4e8e56ccdf",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "6172f1a0-9aaa-4a34-9b6c-bb5b6624e07d",
+          "id": "5a34697d-d35b-4380-8135-228c5f4c997e",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "edbf11aa-5df4-42f1-ad63-3c273c9551e4",
+          "id": "46b6e050-3496-450b-9c18-d885b28abdf4",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "785ae50d-fe99-4214-a029-4e76bb7a3554",
+          "id": "425c9330-3554-4ba2-8505-1786e19d5d53",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "9f20c944-588b-4e94-b02e-f51a7b65c0f2",
+          "id": "0c3e674c-28a8-453a-8126-f5e4b4a721e3",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "029644e3-d5f3-4152-bd14-a2a19ee919fe",
+          "id": "af82fd10-4f61-43e9-99d7-2f23c830afae",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "47820abd-5efe-4775-badb-0faf776046bb",
+          "id": "6420dcb8-f2dc-4374-bff9-b0845fe96f6f",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d148ad16-0ac7-42e4-9ef3-28a51db02396",
+          "id": "b4c3623c-4a1c-4738-9fdf-b42b6eaaefe0",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7b68a3c9-3285-47b0-9b81-2bb3f7dc535a",
+          "id": "50993266-491d-4eec-ad16-70bed2b65cfd",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8fb95e41-7d78-40a3-8b92-893d368fcdba",
+          "id": "9e84b25d-bf4d-439a-8007-5b3745155a2b",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c6f1edaf-e05e-45c8-b50d-26f4ee6064a8",
+          "id": "67e54fac-7fad-452c-b711-36cbbb8b8611",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e7076900-355e-48df-814c-dce899f91a25",
+          "id": "fa163ba3-893b-45d2-b6d6-53d381e53203",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7ef3869f-1ba2-4812-8138-d872e0cc9aab",
+          "id": "b6607d67-7732-4a42-aefa-5c6c334b5fb1",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "31711a7d-4a56-4de4-8df9-59f65e7a3ca4",
+          "id": "0e9c8ae2-3532-4ba4-8f62-4ea7cfa2181b",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0f57ea46-827c-44d0-8f9c-5d779deb96ff",
+          "id": "2043c0b3-d8f7-4d44-bac0-e3dfbe0d701e",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "de85674c-aa77-43ca-8957-a433ff1bb74e",
+          "id": "91bf286d-64b2-47fa-bbff-723679f6abab",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "221a22ad-5fbf-4286-8cfc-b8de045b4342",
+          "id": "f0866bc1-9f44-462b-8e1b-50460bf640ad",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a2860894-8138-4ef9-8254-550ca69ab760",
+          "id": "912c83f9-d12c-41a5-9113-bfaf765d3a75",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "905bd70c-32be-48e1-bacd-c10819eb77b1",
+          "id": "11edf1dc-0f95-4a35-81e5-7883e681f8dd",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d83b773a-be7a-406e-b8c9-aec0aa44860b",
+          "id": "e6962f01-780c-40cf-b70c-6051e556ff12",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b017f00d-6514-42d8-8d0e-0d1ed64efa05",
+          "id": "e15b3039-4f17-4419-80c2-1b4863751732",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "57e2792b-27aa-4e82-be4c-4915b932e48a",
+          "id": "e6e641ea-b660-40ac-9c3a-704653f7d866",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bb068e19-2e2c-421c-96e6-7743fc0edcff",
+          "id": "07c01c11-1bd5-4abb-89d6-49cb412cecb4",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cdc3e487-4362-486d-89ba-f86389279406",
+          "id": "b80c0e05-aed7-401f-8095-93d0c50b6a90",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "71ac6f12-e355-40d6-9ab6-7e0f6dc0d95f",
+          "id": "f1fbfc68-9127-4a7d-83cb-e7dfe247a9c6",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "637edeed-9d83-4c30-9b86-7fdb28050182",
+          "id": "25214acf-24b7-41f6-8a6b-a51303277ea4",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -3773,11 +3773,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -4812,11 +4818,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -5170,11 +5182,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -5384,11 +5402,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -5567,11 +5591,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -5752,11 +5782,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -5922,11 +5958,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -6097,11 +6139,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -6291,11 +6339,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -6452,11 +6506,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -6627,11 +6687,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -6788,11 +6854,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -6963,11 +7035,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -7124,11 +7202,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -7299,11 +7383,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -7460,11 +7550,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -7626,11 +7722,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -7796,11 +7898,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -7971,11 +8079,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -8137,11 +8251,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -8307,11 +8427,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -8482,11 +8608,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -8643,11 +8775,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -8825,11 +8963,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -8986,11 +9130,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -9172,11 +9322,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -9351,11 +9507,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -9544,11 +9706,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -9728,11 +9896,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -9921,11 +10095,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -10104,11 +10284,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -10283,11 +10469,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -10461,11 +10653,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -10639,11 +10837,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -10817,11 +11021,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -10995,11 +11205,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -11173,11 +11389,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -11367,11 +11589,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",
@@ -11545,11 +11773,17 @@
               }
             },
             "popularBrands": {
-              "brandListType": "ALL",
+              "brandListType": "STATIC",
               "initialSort": "A_Z",
               "initialLimit": 8,
               "brandCount": null,
-              "brandIds": null
+              "brandIds": [
+                "db0933b3-f6be-4973-9f49-69971122d800",
+                "5b72f87e-34e8-4917-8b7d-59e73291bf3b",
+                "cc4eb4a1-d4f7-481d-8e52-8f0f2408b560",
+                "be52b2e5-3344-4813-b4df-ea883a4c34a0",
+                "806b24c7-f04f-41c3-b749-31d0172f9367"
+              ]
             },
             "slogans": [
               "Ürün Arayınız",

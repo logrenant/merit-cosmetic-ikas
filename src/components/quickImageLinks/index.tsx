@@ -6,12 +6,14 @@ import { KeenSliderInstance, KeenSliderPlugin, useKeenSlider } from "keen-slider
 import "keen-slider/keen-slider.min.css";
 import { QuickImageLinksProps } from "../__generated__/types";
 import { sliderBreakpoints } from "src/styles/breakpoints";
+import { useDirection } from "../../utils/useDirection";
 
 
 const QuickLinks = ({ links }: QuickImageLinksProps) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [maxSlide, setMaxSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
+    const { direction } = useDirection(); // Get current site direction
 
 
     const MutationPlugin = (slider: KeenSliderInstance) => {
@@ -30,6 +32,7 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
 
     const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
         initial: 0,
+        rtl: false, // Always use LTR for slider navigation regardless of site direction
         slideChanged(s) {
             setCurrentSlide(s.track.details.rel);
             setMaxSlide(s.track.details.maxIdx);
@@ -47,10 +50,10 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
     }, [MutationPlugin]);
 
     return (
-        <div dir="ltr" className="pt-6 xl:pb-2 layout relative items-center">
+        <div dir="ltr" className="pt-6 xl:pb-2 layout relative items-center" style={{ direction: 'ltr' }}>
 
             {/* Slider Container */}
-            <div ref={sliderRef} className="keen-slider flex flex-row">
+            <div ref={sliderRef} className="keen-slider flex flex-row" style={{ direction: 'ltr' }}>
                 {links?.items.map((e, i) => (
                     <div className="keen-slider__slide" key={i}>
                         <Link href={e.link.href}>
