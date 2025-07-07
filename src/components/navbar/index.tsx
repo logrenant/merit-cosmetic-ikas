@@ -15,11 +15,11 @@ import MobileMenu, { CategoryWithChildrenType } from "../composites/mobilemenu";
 
 const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[], filter: CategoryWithChildrenType }> = ({
   categories,
+  categorySort,
   products,
   popularBrands,
   popularCategories,
   logo,
-  sortItems,
   bannerSlogan,
   slogans,
   popularProducts,
@@ -28,49 +28,56 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   const [open, setOpen] = useState(false);
   const categoriesWithChildrens: CategoryWithChildrenType[] = [];
 
-  categories.data.map((cat) => {
-    if (cat.parentId === null) {
-      const baseCat: CategoryWithChildrenType = {
-        id: cat.id,
-        name: cat.name,
-        href: cat.href,
-        parentId: cat.parentId,
-        childrens: [],
-      };
-      console.log("parent", cat.name);
+  // Sadece categorySort içinde tanımlanan kategorileri kullan
+  if (categorySort?.data?.length) {
+    categorySort.data.forEach((sortCat) => {
+      // categories.data içinde eşleşen kategoriyi bul
+      const matchingCat = categories.data.find(cat =>
+        cat.name.trim().toLowerCase() === sortCat.name.trim().toLowerCase() &&
+        cat.parentId === null
+      );
 
-      const children: CategoryWithChildrenType[] = [];
-      categories.data.map((child) => {
-        console.log('child.name', child.name);
-        if (child.parentId === cat.id) {
-          children.push({
-            id: child.id,
-            name: child.name,
-            href: child.href,
-            parentId: child.parentId,
-            childrens: categories.data
-              .filter((c) => c.parentId === child.id)
-              .map((el) => {
-                return {
-                  id: el.id,
-                  name: el.name,
-                  href: el.href,
-                  parentId: el.parentId,
-                  childrens: [],
-                };
-              }),
-          });
-        }
-      });
-      baseCat.childrens = children;
-      categoriesWithChildrens.push(baseCat);
-    }
-  });
-  categoriesWithChildrens.sort(
-    (a, b) =>
-      sortItems.split(",").indexOf(a.name) -
-      sortItems.split(",").indexOf(b.name)
-  );
+      if (matchingCat) {
+        const baseCat: CategoryWithChildrenType = {
+          id: matchingCat.id,
+          name: matchingCat.name,
+          href: matchingCat.href,
+          parentId: matchingCat.parentId,
+          childrens: [],
+        };
+        console.log("parent", matchingCat.name);
+
+        const children: CategoryWithChildrenType[] = [];
+        categories.data.map((child) => {
+          console.log('child.name', child.name);
+          if (child.parentId === matchingCat.id) {
+            children.push({
+              id: child.id,
+              name: child.name,
+              href: child.href,
+              parentId: child.parentId,
+              childrens: categories.data
+                .filter((c) => c.parentId === child.id)
+                .map((el) => {
+                  return {
+                    id: el.id,
+                    name: el.name,
+                    href: el.href,
+                    parentId: el.parentId,
+                    childrens: [],
+                  };
+                }),
+            });
+          }
+        });
+        baseCat.childrens = children;
+        categoriesWithChildrens.push(baseCat);
+      }
+    });
+  }
+
+  // categorySort sıralaması zaten forEach ile sağlandı, ekstra sıralama gerekmiyor
+
   const { direction } = useDirection();
   return (
     <header

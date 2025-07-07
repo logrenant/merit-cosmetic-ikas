@@ -11,6 +11,7 @@ const NavbarCategories = ({
   const [hoveredCategory, setHoveredCategory] =
     useState<CategoryWithChildrenType["id"]>();
   const [bagTimeOutId, setBagTimeOutId] = useState<NodeJS.Timeout>();
+
   useEffect(() => {
     Router.events.on("routeChangeStart", () => {
       setHoveredCategory(undefined);
@@ -27,8 +28,8 @@ const NavbarCategories = ({
       <nav
         className="layout overflow-x-auto overflow-y-visible"
         style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
       >
         <style>{`
@@ -91,13 +92,13 @@ const NavbarCategories = ({
                           </div>
                         ))}
                       </div>
-                      <div className="rounded-sm col-span-2 overflow-hidden">
+                      {/* <div className="rounded-sm col-span-2 overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                           alt=""
                           className="aspect-16/6 w-full object-cover"
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 )}

@@ -31,7 +31,7 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
     };
 
     const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-        initial: 0,
+        initial: direction === "rtl" ? Math.max(0, (links?.items.length || 0) - 2) : 0,
         rtl: false, // Always use LTR for slider navigation regardless of site direction
         slideChanged(s) {
             setCurrentSlide(s.track.details.rel);
@@ -48,6 +48,14 @@ const QuickLinks = ({ links }: QuickImageLinksProps) => {
             [sliderBreakpoints.xl]: { slides: { perView: 6, spacing: 24 } },
         },
     }, [MutationPlugin]);
+
+    // Update slider when direction changes
+    useEffect(() => {
+        if (slider.current && direction === "rtl") {
+            const targetSlide = Math.max(0, (links?.items.length || 0) - 2);
+            slider.current.moveToIdx(targetSlide);
+        }
+    }, [direction, links?.items.length, slider]);
 
     return (
         <div dir="ltr" className="pt-6 xl:pb-2 layout relative items-center" style={{ direction: 'ltr' }}>

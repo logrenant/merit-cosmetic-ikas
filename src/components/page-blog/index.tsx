@@ -87,12 +87,12 @@ const Blog = (props: PageBlogProps) => {
 
             {/* <BlogImage {...props} /> */}
             <div className="flex flex-col gap-4">
-                <div className="flex flex-row justify-between border-b-1 pb-6 border-[color:var(--color-one)]">
+                <div className="flex flex-col xl:flex-row justify-between border-b-1 pb-6 border-[color:var(--color-one)] gap-4 xl:gap-0 xl:items-center">
                     <h1 className="font-medium text-3xl xl:text-4xl text-[color:var(--color-one)]">
                         {blog.title}
                     </h1>
                     {showDate && (
-                        <div className="flex flex-row items-center gap-2 text-sm">
+                        <div className="flex flex-row items-center gap-2 text-sm text-nowrap">
                             <DateSvg /> {publishedDate}
                         </div>
                     )}

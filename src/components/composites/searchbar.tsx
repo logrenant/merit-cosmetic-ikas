@@ -683,12 +683,12 @@ const SearchBar = ({
                           </Link>
                         </div>
                       )}
-                      <div className="col-span-2 rounded-sm overflow-hidden">
+                      {/* <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                           alt=""
                         />
-                      </div>
+                      </div> */}
 
                     </div>
                   </div>
@@ -919,12 +919,12 @@ const SearchBar = ({
                           </div>
                         )} */}
 
-                      <div className="col-span-2 rounded-sm overflow-hidden">
+                      {/* <div className="col-span-2 rounded-sm overflow-hidden">
                         <img
                           src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                           alt=""
                         />
-                      </div>
+                      </div> */}
 
                     </div>
                   </div>
@@ -1126,12 +1126,12 @@ const SearchBar = ({
                               </Link>
                             </div>
                           )}
-                        <div className="col-span-2 rounded-sm overflow-hidden aspect-16/4">
+                        {/* <div className="col-span-2 rounded-sm overflow-hidden aspect-16/4">
                           <img
                             src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
                             alt=""
                           />
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
