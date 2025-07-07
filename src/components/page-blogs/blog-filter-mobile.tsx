@@ -125,7 +125,7 @@ const BlogFilterMobile: React.FC<BlogFilterMobileProps> = observer(({
                                                     onCategorySelect(slug);
                                                     setOpenFilter(false);
                                                 }}
-                                                className="text-base gap-2 border last:border-b-0 border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer hover:bg-gray-50"
+                                                className="text-base gap-2 border last:border-b-0 border-t-0 border-[color:var(--gray-two)] px-2 py-1 w-full flex items-center justify-start text-[color:var(--gray-five)] cursor-pointer"
                                             >
                                                 <input
                                                     className="hidden peer"

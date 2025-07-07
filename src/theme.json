@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "b2479407-24fc-43be-8548-477e2f17dd20",
+          "id": "1d4d42de-4a28-4f74-85ea-aa3c6ffababd",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7d9029b8-2efa-4f52-9c41-9a9e6d1abefa",
+          "id": "eb6a8ec2-c1bd-4a14-8dd2-9c11c7ac0ba5",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ff55e048-cc1e-40a3-be68-181168b7890a",
+          "id": "c6a2a9ec-b191-4115-b3ec-ba3cd5ef678b",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5579f6ef-b7e4-437a-86f7-02f5d1a38f96",
+          "id": "bc6cfe13-32e4-49d4-9b29-28741077ea2c",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "36e298db-ec5a-4592-8e9f-59ef037872e2",
+          "id": "0a1b6855-7ec0-4f64-97c7-b893d8e28023",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "52a36fb0-e309-4ee7-ba38-c8d32d7fce7c",
+          "id": "d1112a4b-2852-492a-b15d-aee41125dba6",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a8786021-7788-4b43-b216-0e7eb6a8a539",
+          "id": "b5597a90-34dd-4ebc-a2ac-2a0182c597d4",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e260ab99-046c-4da9-935a-60802e7b06e8",
+          "id": "a0e9ed8e-3ae8-4876-a52d-963f06142856",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "bc03990d-778e-4359-b92d-9309344c3253",
+          "id": "657d517c-4587-40ca-8213-f09976f817ee",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7f5ef567-ae54-4ff5-8de0-1166a4ce547e",
+          "id": "6b35273f-83ce-4c1b-ad58-efa6d608e609",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "37fac1ea-6bb8-4880-b0d4-c96e840de529",
+          "id": "758550a2-ee80-4aab-9031-6eed6eaaa73f",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "176348a8-c98b-45d9-ba71-a66ec9a24198",
+          "id": "7cadd0b5-ca46-45c2-8d36-7cd25fc4484d",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f28581d6-1e2b-45a3-8ea9-976eea9d7db4",
+          "id": "f3231ffa-4b4c-4453-8a87-ba18ba8d1f7e",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "19896b1b-f104-41ca-96ea-7e000cef335e",
+          "id": "252d4d89-06bd-4bdb-b612-c10040416bb1",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f28eb33f-164e-42f2-bba6-1206d0b16306",
+          "id": "682c98ec-f521-443a-a9de-77e075e8ba2f",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "2037e123-a124-4c24-a9a4-8432b817df20",
+          "id": "948e9949-0fa6-4dc7-8177-84b6caecbed5",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d2b67b65-2c65-4d55-b0c8-b9f3835f81d2",
+          "id": "74b8c6d8-5bb7-4813-a8b0-1691cb7e91cc",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "67e82aea-fde8-4870-a38f-eeea6b753990",
+          "id": "7a15c302-4cff-4ade-adb8-60eb0a7c6f0d",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "31865b11-f6b1-40d0-8bf0-fa635bfad2b0",
+          "id": "2de82eb6-3c9f-4554-a4e4-c19960368680",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8c4a7212-127f-49f1-b167-b256c060edaf",
+          "id": "93e8da58-e6c3-4ec9-83b1-2735f17bc6d2",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "00f8c936-632c-4c1e-9bfb-ccc3281e166a",
+          "id": "f049d225-1119-4fa9-98cf-e8bcd5904cf2",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8f3ba1cd-c85a-4a00-a469-e895e5437033",
+          "id": "eb58ec37-5a96-4daa-b82e-e4b47b79560e",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "497c6aa1-26af-4032-bd69-851cdba743db",
+          "id": "08a8bd87-930b-4e1e-9160-23259741691a",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0a7b4b30-26f0-405a-85d5-534dc374fc7d",
+          "id": "cb7c3b2a-bb6d-48c5-830f-7a6c99f68ba4",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f31d76fa-afe2-433d-a2c2-e5f5061358d7",
+          "id": "6deb2faa-1e13-43e3-bf90-0ceafc479088",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4b4d975f-4fde-4887-82fc-3005f0808b55",
+          "id": "7ab8aaa3-3eac-4622-8bf5-422e6363891c",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "a3883df6-0e18-43a5-ba60-d500a87ec079",
+          "id": "c3122095-628a-4824-8154-94eb70cda4cb",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1593dbe2-1e94-4678-967d-3bc3ff1fd882",
+          "id": "2cbee86f-b688-45c1-a6bf-f17155ae1b4d",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3779b019-2220-445e-b73b-5b5487a3c86e",
+          "id": "f106c901-691f-436c-bf2c-29b09a5c03fb",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "cb89736c-8edf-43e9-a09e-f82143c5f0d5",
+          "id": "29fd123a-d2ee-4821-871e-ae4a8a189b81",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "fb181b09-3178-444a-ad78-26521472f182",
+          "id": "2f1a5732-5c0f-4177-8e61-d390f0c55f93",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e465daf9-c69d-4210-87e3-531aa7dfacbf",
+          "id": "c52391af-ae1f-4e5f-af95-8447fdbe526f",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "085b4553-bb3d-4e98-b09f-d255812ad61f",
+          "id": "68f88a0d-0e36-49e5-b961-8b393fe2b968",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "217e99d3-0408-45b9-ac4d-003dc1e3584f",
+          "id": "46ea132c-9167-4fa6-bf39-d7725b998e8c",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5cc77996-c978-4e32-a5b7-37ab18fde5db",
+          "id": "8ca7ff92-d7e8-4053-8600-da52204463da",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d12629a2-4137-46fe-94d4-9b68699c9b87",
+          "id": "d9113abe-2f09-43aa-990f-9de65b341d83",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "94dc659c-5c83-408e-ba44-5815ed64d222",
+          "id": "4c3001f1-39b4-41a8-a0f5-a81e74fdaa34",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "8d37042a-819e-49d4-8b41-6ab63beb13fa",
+          "id": "4af9c211-eaf8-4ad0-8711-4c6504242f96",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "482e4cad-0738-49c9-98eb-88985bafe29a",
+          "id": "be8efdb7-da70-4f56-b019-4a96729e868d",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -619,6 +619,20 @@
           "id": "a831de05-944f-4fd5-959e-553cb83bcf70",
           "name": "categories",
           "displayName": "Kategoriler",
+          "description": "",
+          "type": "CATEGORY_LIST",
+          "isRequired": true,
+          "sliderData": {},
+          "translations": {},
+          "groupId": "",
+          "excludedFields": [],
+          "excludedFieldsCategory": [],
+          "isFacetListNotSent": false
+        },
+        {
+          "id": "9ce9e6e6-500a-47fb-8cf7-49c1fa5b2455",
+          "name": "categorySort",
+          "displayName": "categorySort",
           "description": "",
           "type": "CATEGORY_LIST",
           "isRequired": true,
@@ -715,20 +729,6 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "546e3fbd-f996-4f09-b1ca-6c73e24fca01",
-          "name": "sortItems",
-          "displayName": "Kategori Sırası",
-          "description": "",
-          "type": "TEXT",
-          "isRequired": true,
-          "sliderData": {},
-          "translations": {},
-          "groupId": "",
-          "excludedFields": [],
-          "excludedFieldsCategory": [],
-          "isFacetListNotSent": false
-        },
-        {
           "id": "f366719d-ca57-4654-b725-a6c52705a126",
           "name": "logo",
           "displayName": "logo",
@@ -802,7 +802,6 @@
             "Maskara"
           ],
           "bannerSlogan": "WORLDWIDE FREE SHIPPING OVER 100$",
-          "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
           "logo": {
             "id": "theme-images/4d7d5725-1ff3-40fa-9f5a-94a783830b94",
             "altText": null
@@ -891,7 +890,6 @@
             "Maskara"
           ],
           "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-          "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
           "logo": {
             "id": "theme-images/9ab2e2f8-f82b-44f9-a653-1019bb4c33af",
             "altText": null
@@ -903,6 +901,20 @@
           "categoryListType": "ALL",
           "initialSort": "A_Z",
           "initialLimit": 50
+        },
+        "categorySort": {
+          "categoryListType": "STATIC",
+          "initialSort": "A_Z",
+          "initialLimit": 20,
+          "categoryCount": null,
+          "categoryIds": [
+            "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+            "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+            "91ee2172-008c-4866-9241-88e919877f9c",
+            "e135ac18-467a-4e30-b220-6f94c14d327b",
+            "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+            "06938850-4efd-40cf-9f04-578784402754"
+          ]
         },
         "products": {
           "id": "a946d743-a6e8-4a39-9dfd-162d264d53c5",
@@ -939,7 +951,6 @@
           "Maskara"
         ],
         "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-        "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
         "logo": {
           "id": "theme-images/889962e7-714b-49fd-9f6d-720a91350def",
           "altText": null
@@ -3716,7 +3727,7 @@
       "isFooter": false,
       "translations": {},
       "defaultPropValuesTranslations": {},
-      "defaultPropValues": null,
+      "defaultPropValues": {},
       "commonPropValues": null
     }
   ],
@@ -3806,7 +3817,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -3824,6 +3834,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -4851,7 +4878,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -4869,6 +4895,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -5215,7 +5258,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -5233,6 +5275,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -5435,7 +5494,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -5453,6 +5511,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -5624,7 +5699,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -5642,6 +5716,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -5815,7 +5906,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -5833,6 +5923,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -5991,7 +6098,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -6009,6 +6115,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -6172,7 +6295,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -6190,6 +6312,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -6372,7 +6511,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -6390,6 +6528,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -6539,7 +6694,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -6557,6 +6711,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -6720,7 +6891,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -6738,6 +6908,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -6887,7 +7074,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -6905,6 +7091,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -7068,7 +7271,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -7086,6 +7288,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -7235,7 +7454,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -7253,6 +7471,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -7416,7 +7651,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -7434,6 +7668,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -7583,7 +7834,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -7601,6 +7851,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -7755,7 +8022,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -7773,6 +8039,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -7931,7 +8214,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -7949,6 +8231,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -8112,7 +8411,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -8130,6 +8428,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -8284,7 +8599,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -8302,6 +8616,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -8460,7 +8791,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -8478,6 +8808,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -8641,7 +8988,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -8659,6 +9005,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -8808,7 +9171,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -8826,6 +9188,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -8996,7 +9375,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -9014,6 +9392,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -9163,7 +9558,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -9181,6 +9575,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -9355,7 +9766,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -9373,6 +9783,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -9540,7 +9967,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -9558,6 +9984,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -9739,7 +10182,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -9757,6 +10199,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -9929,7 +10388,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -9947,6 +10405,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -10128,7 +10603,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -10146,6 +10620,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -10317,7 +10808,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -10335,6 +10825,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -10502,7 +11009,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -10520,6 +11026,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -10686,7 +11209,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -10704,6 +11226,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -10870,7 +11409,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -10888,6 +11426,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -11054,7 +11609,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -11072,6 +11626,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -11238,7 +11809,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -11256,6 +11826,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -11422,7 +12009,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -11440,6 +12026,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -11622,7 +12225,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -11640,6 +12242,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -11806,7 +12425,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -11824,6 +12442,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },
@@ -12006,7 +12641,6 @@
               "Maskara"
             ],
             "bannerSlogan": "Dünya Çapında 1000TL üstü bedava kargo",
-            "sortItems": "Hair Care,Health Care,Makeup,Men Care,Personal & Body Care,Sexual Wellness,Skin Care,OTC,Others",
             "logo": {
               "id": "theme-images/6ddb5ca3-7a80-4cba-95f0-c41018df0633",
               "altText": null
@@ -12024,6 +12658,23 @@
               "recommendedProductsType": {
                 "recommendedProductType": "CATEGORY"
               }
+            },
+            "categorySort": {
+              "categoryListType": "STATIC",
+              "initialSort": "A_Z",
+              "initialLimit": 20,
+              "categoryCount": null,
+              "categoryIds": [
+                "d88bd3c4-11d0-4814-aad1-2da844813fa4",
+                "fe700250-f670-43d6-aa82-e2a6a6874bb3",
+                "91ee2172-008c-4866-9241-88e919877f9c",
+                "e135ac18-467a-4e30-b220-6f94c14d327b",
+                "2f911f9c-c23e-4e37-ae04-f5a5d0305ef4",
+                "06938850-4efd-40cf-9f04-578784402754",
+                "ebf4264e-c30d-47af-b254-0ef57e94cd90",
+                "a2b1a4c9-3d5b-41ad-9277-a76216911ebe",
+                "259c8332-4009-4bdf-a162-c2fe0ff53ae3"
+              ]
             }
           }
         },

@@ -113,13 +113,13 @@ export type SoldOutButton = {
 
 export type NavbarProps = {
 	categories: IkasCategoryList;
+	categorySort: IkasCategoryList;
 	products: IkasProductList;
 	popularCategories: IkasCategoryList;
 	popularProducts: IkasProductList;
 	popularBrands: IkasBrandList;
 	slogans: string[];
 	bannerSlogan: string;
-	sortItems: string;
 	logo: IkasImage;
 	productList?: IkasProductList;
 };

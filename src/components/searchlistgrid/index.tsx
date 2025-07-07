@@ -83,7 +83,7 @@ const Searchlistgrid: React.FC<SearchlistgridProps> = ({ products }) => {
               });
             }}
             disabled={products.isLoading}
-            className="flex items-center justify-center gap-2 disabled:opacity-60 px-20 text-lg py-10 bg-[color:var(--color-two)] rounded-sm text-white"
+            className="flex items-center justify-center gap-2 disabled:opacity-60 px-20 text-lg py-10 bg-[color:var(--color-two)] rounded-sm text-white cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

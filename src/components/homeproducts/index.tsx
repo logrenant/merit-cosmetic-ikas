@@ -1,14 +1,16 @@
-import { Image } from "@ikas/storefront";
+import { useEffect, useState, useRef } from "react";
 import { observer } from "mobx-react-lite";
-import { useKeenSlider } from "keen-slider/react";
-import React, { useState, useRef, useEffect } from "react";
+import { Image } from "@ikas/storefront";
+import { KeenSliderInstance, KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
 
+import "keen-slider/keen-slider.min.css";
 import ProductCard from "../composites/productcard";
 import SimpleSlider from "../composites/simpleslider";
 import { HomeproductsProps } from "../__generated__/types";
 import { sliderBreakpoints } from "src/styles/breakpoints";
 import { useScreen } from "src/utils/hooks/useScreen";
 import { useUserLocation } from "src/utils/useUserLocation";
+import { useDirection } from "src/utils/useDirection";
 
 const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut }: HomeproductsProps) => {
   const [selectedProducts, setSelectedProducts] = useState(
@@ -19,7 +21,27 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
   const [maxSlide, setMaxSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
+  // Categories slider states
+  const [categoriesCurrentSlide, setCategoriesCurrentSlide] = useState(0);
+  const [categoriesMaxSlide, setCategoriesMaxSlide] = useState(0);
+  const [categoriesLoaded, setCategoriesLoaded] = useState(false);
+
   const { isTurkishIP, filterProductsByLocation } = useUserLocation();
+  const { direction } = useDirection();
+
+  const MutationPlugin = (slider: KeenSliderInstance) => {
+    const observer = new MutationObserver(() => {
+      window.requestAnimationFrame(() => slider.update());
+    });
+
+    slider.on("created", () => {
+      observer.observe(slider.container, { childList: true });
+    });
+
+    slider.on("destroyed", () => {
+      observer.disconnect();
+    });
+  };
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -39,8 +61,28 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
     },
   });
 
+  // Categories slider with RTL support
+  const [categoriesSliderRef, categoriesSlider] = useKeenSlider<HTMLDivElement>({
+    initial: direction === "rtl" ? Math.max(0, (products?.length || 0) - 2) : 0,
+    rtl: false, // Always use LTR for slider navigation regardless of site direction
+    slideChanged(s) {
+      setCategoriesCurrentSlide(s.track.details.rel);
+      setCategoriesMaxSlide(s.track.details.maxIdx);
+    },
+    created(s) {
+      setCategoriesLoaded(true);
+      setCategoriesMaxSlide(s.track.details.maxIdx);
+    },
+    slides: { perView: 2, spacing: 10 },
+    breakpoints: {
+      [sliderBreakpoints.md]: { slides: { perView: 4, spacing: 16 } },
+      [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
+    },
+  }, [MutationPlugin]);
+
   const [isVisible, setIsVisible] = useState(true);
   const [pxValue, setPxValue] = useState('150px');
+  const [sliderKey, setSliderKey] = useState(0);
 
   const ref = useRef<HTMLDivElement>(null);
   const { isSmall, isMobile, isDesktop } = useScreen();
@@ -77,6 +119,19 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
     };
   }, []);
 
+  // Force slider recreation when direction changes
+  useEffect(() => {
+    setSliderKey(prev => prev + 1);
+  }, [direction]);
+
+  // Update categories slider when direction changes
+  useEffect(() => {
+    if (categoriesSlider.current && direction === "rtl") {
+      const targetSlide = Math.max(0, (products?.length || 0) - 2);
+      categoriesSlider.current.moveToIdx(targetSlide);
+    }
+  }, [direction, products?.length, categoriesSlider]);
+
   return (
     <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
 
@@ -112,35 +167,11 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
       )}
 
       {categories && (
-        <div ref={sliderRef} className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-4">
-          <SimpleSlider
-            showPagination={false}
-            showNavigation={true}
-            keenOptions={{
-              initial: 0,
-              loop: false,
-              slides: {
-                perView: 2,
-                spacing: 10,
-              }, renderMode: "precision",
-              breakpoints: {
-                "(min-width: 568px)": {
-                  slides: { perView: 2, spacing: 16 },
-                },
-                "(min-width: 768px)": {
-                  slides: { perView: 4, spacing: 16 },
-                },
-                "(min-width: 1024px)": {
-                  slides: {
-                    perView: 5,
-                    spacing: 16,
-                  },
-                },
-              },
-            }}
-
-            items={products!.map((e) => (
-              <div key={e.image.id} className="TEST-ITEMS-MAPPING-1 keen-slider__slide">
+        <div className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-4 relative">
+          {/* Categories Slider Container */}
+          <div ref={categoriesSliderRef} className="keen-slider flex flex-row">
+            {products!.map((e) => (
+              <div key={e.image.id} className="keen-slider__slide">
                 <div
                   onClick={() => {
                     console.log("e.image.id", e.image.id);
@@ -166,7 +197,49 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
                 </div>
               </div>
             ))}
-          />
+          </div>
+
+          {/* Navigation Arrows */}
+          {categoriesLoaded && categoriesSlider.current && (
+            <>
+              <button
+                onClick={() => categoriesSlider.current?.prev()}
+                className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => categoriesSlider.current?.next()}
+                className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
       )}
 
