@@ -17,6 +17,7 @@ import OmrFlag from "../svg/OmrFlag";
 import QarFlag from "../svg/QarFlag";
 import CadFlag from "../svg/CadFlag";
 import UIStore from "../../store/ui-store";
+import LanguageStore from "../../store/language-store";
 
 const datas = [
   {
@@ -97,7 +98,7 @@ const datas = [
     ),
   },
 ];
-const LocalBar = () => {
+const LocalBar = observer(() => {
   const store = useStore();
   const languageRef = useRef<HTMLDivElement>(null);
   const currencyRef = useRef<HTMLDivElement>(null);
@@ -108,6 +109,7 @@ const LocalBar = () => {
   const [error, setError] = useState(false);
 
   const uiStore = UIStore.getInstance();
+  const languageStore = LanguageStore.getInstance();
   const [currency, setCurrency] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedCurrency = localStorage.getItem("selectedcurrency");
@@ -193,6 +195,7 @@ const LocalBar = () => {
                   <button
                     key={id}
                     onClick={() => {
+                      languageStore.setLang(locale === "ar" ? "ar" : "en");
                       const prefix = locale === "ar" ? "/ar" : "";
                       const path = store.router?.asPath ?? "/";
                       window.location.replace(window.location.origin + prefix + path);
@@ -269,6 +272,6 @@ const LocalBar = () => {
       </div>
     </div>
   );
-};
+});
 
-export default observer(LocalBar);
+export default LocalBar;
