@@ -40,6 +40,43 @@ class MyDocument extends Document {
           />
 
           <AnalyticsHead />
+
+          {/* Early Arabic redirect script - runs before React */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function() {
+                try {
+                  var arabicCountries = ['AE','BH','DZ','DJ','EG','ER','IQ','JO','KW','LB','LY','MR','MA','OM','PS','QA','SA','SO','SD','SY','SS','TN','YE','EH','TD','KM','NL','US'];
+                  var cached = sessionStorage.getItem('user-location-country-code');
+                  var isFirstLoad = !cached;
+                  
+                  if (isFirstLoad && window.location.pathname === '/' && window.location.href.indexOf('/ar') === -1) {
+                    console.log('[EARLY REDIRECT] Checking IP for Arabic redirect...');
+                    
+                    fetch('https://ipapi.co/json/')
+                      .then(function(res) { return res.json(); })
+                      .then(function(data) {
+                        if (data.country_code && arabicCountries.indexOf(data.country_code) !== -1) {
+                          console.log('[EARLY REDIRECT] Redirecting to /ar for country:', data.country_code);
+                          sessionStorage.setItem('user-location-country-code', data.country_code);
+                          window.location.href = '/ar';
+                        } else {
+                          sessionStorage.setItem('user-location-country-code', data.country_code || 'unknown');
+                        }
+                      })
+                      .catch(function(err) {
+                        console.log('[EARLY REDIRECT] Geolocation failed:', err);
+                      });
+                  }
+                } catch(e) {
+                  console.log('[EARLY REDIRECT] Error:', e);
+                }
+              })();
+              `,
+            }}
+          />
+
           <link rel="preconnect" href={process.env.NEXT_PUBLIC_CDN_URL}></link>
           <link
             rel="dns-prefetch"
