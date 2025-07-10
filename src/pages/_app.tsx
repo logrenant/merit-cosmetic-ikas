@@ -8,7 +8,6 @@ import Config from "config.json";
 import "src/styles/global.css";
 import { Toaster } from "react-hot-toast";
 import UIStore from "../store/ui-store";
-import LanguageStore from "../store/language-store";
 import { useStore } from "@ikas/storefront";
 
 import TawkProvider from "../components/TawkProvider";
@@ -25,16 +24,13 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
   const { Component, pageProps } = props;
   const store = useStore();
   const uiStore = UIStore.getInstance();
-  const languageStore = LanguageStore.getInstance();
 
   React.useEffect(() => {
     if (store.router) {
       if (store.router.locale === "ar") {
         uiStore.direction = "rtl";
-        languageStore.setLang("ar");
       } else {
         uiStore.direction = "ltr";
-        languageStore.setLang("en");
       }
     } else {
       uiStore.direction = "ltr";

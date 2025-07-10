@@ -13,7 +13,7 @@ import { CartProps } from "../__generated__/types";
 import Simpleslider from "../composites/simpleslider";
 import Productcard from "../composites/productcard";
 import { toast } from "react-hot-toast";
-import { listCountry, listShippingSettings } from "../../utils/shippingDatas";
+import { listCountry, listShippingSettings, arabicListCountry } from "../../utils/shippingDatas";
 import Pricedisplay from "../composites/pricedisplay";
 import Item from "./item";
 
@@ -44,7 +44,11 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
   const removeDuplicates = (arr: string[]) => {
     return arr.filter((e, i) => arr.indexOf(e) === i);
   };
-  const filteredlistCountry = listCountry.filter((e) =>
+
+  // Use Arabic country list if locale is Arabic, otherwise use default list
+  const currentCountryList = store.router?.locale === "ar" ? arabicListCountry : listCountry;
+
+  const filteredlistCountry = currentCountryList.filter((e) =>
     removeDuplicates(shippingRulesCountryIds).includes(e.id)
   );
   const [currentCountry, setCurrentCountry] = useState<string>();
@@ -193,10 +197,14 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                       )}
                     </div>
                     {openSelectCountry && (
-                      <div className="mt-1 mb-2">
+                      <div className="mt-1 mb-2 relative bg-[color:var(--tx-bg)] rounded-sm">
                         <select
                           value={currentCountry}
-                          className="w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5 cursor-pointer"
+                          dir={store.router?.locale === "ar" ? "rtl" : "ltr"}
+                          className={`w-full text-sm border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative font-light border rounded-sm px-2.5 cursor-pointer appearance-none ${store.router?.locale === "ar" ? "text-right pr-2.5 pl-8" : "text-left pl-2.5 pr-8"}`}
+                          style={{
+                            background: 'none',
+                          }}
                           onChange={(e) => {
                             localStorage.setItem(
                               "iso2",
@@ -213,6 +221,14 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                               </option>
                             ))}
                         </select>
+                        {/* Custom arrow SVG */}
+                        <span
+                          className={`pointer-events-none absolute top-1/2 transform -translate-y-1/2 ${store.router?.locale === "ar" ? "left-2" : "right-2"}`}
+                        >
+                          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 8L10 12L14 8" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
                       </div>
                     )}
                   </div>

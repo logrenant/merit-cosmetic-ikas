@@ -17,7 +17,6 @@ import OmrFlag from "../svg/OmrFlag";
 import QarFlag from "../svg/QarFlag";
 import CadFlag from "../svg/CadFlag";
 import UIStore from "../../store/ui-store";
-import LanguageStore from "../../store/language-store";
 
 const datas = [
   {
@@ -98,7 +97,7 @@ const datas = [
     ),
   },
 ];
-const LocalBar = observer(() => {
+const LocalBar = () => {
   const store = useStore();
   const languageRef = useRef<HTMLDivElement>(null);
   const currencyRef = useRef<HTMLDivElement>(null);
@@ -109,7 +108,6 @@ const LocalBar = observer(() => {
   const [error, setError] = useState(false);
 
   const uiStore = UIStore.getInstance();
-  const languageStore = LanguageStore.getInstance();
   const [currency, setCurrency] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedCurrency = localStorage.getItem("selectedcurrency");
@@ -191,22 +189,29 @@ const LocalBar = observer(() => {
           {languageOpen && (
             <div className="absolute z-50 right-0 top-[22px] rounded-sm overflow-hidden bg-[color:var(--bg-color)] shadow-navbar">
               <div className="flex flex-col divide-y divide-[color:var(--gray-one)]">
-                {langOptions.map(({ id, locale }) => (
-                  <button
-                    key={id}
-                    onClick={() => {
-                      languageStore.setLang(locale === "ar" ? "ar" : "en");
-                      const prefix = locale === "ar" ? "/ar" : "";
-                      const path = store.router?.asPath ?? "/";
-                      window.location.replace(window.location.origin + prefix + path);
-                      setLanguageOpen(false);
-                    }}
-                    className="text-left gap-1.5 flex items-center px-3 whitespace-nowrap py-1.5 w-full cursor-pointer"
-                  >
-                    {locale === "ar" ? <SarFlag /> : <UkFlag />}
-                    {locale === "ar" ? "العربية" : "English"}
-                  </button>
-                ))}
+                {/* Always show both language options */}
+                <button
+                  onClick={() => {
+                    const path = store.router?.asPath ?? "/";
+                    window.location.replace(window.location.origin + path);
+                    setLanguageOpen(false);
+                  }}
+                  className={`text-left gap-1.5 flex items-center px-3 whitespace-nowrap py-1.5 w-full cursor-pointer`}
+                >
+                  <UkFlag />
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    const path = store.router?.asPath ?? "/";
+                    window.location.replace(window.location.origin + "/ar" + path);
+                    setLanguageOpen(false);
+                  }}
+                  className={`text-left gap-1.5 flex items-center px-3 whitespace-nowrap py-1.5 w-full cursor-pointer`}
+                >
+                  <SarFlag />
+                  العربية
+                </button>
               </div>
             </div>
           )}
@@ -272,6 +277,6 @@ const LocalBar = observer(() => {
       </div>
     </div>
   );
-});
+};
 
-export default LocalBar;
+export default observer(LocalBar);
