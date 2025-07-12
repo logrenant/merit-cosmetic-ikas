@@ -9,6 +9,7 @@ import "src/styles/global.css";
 import { Toaster } from "react-hot-toast";
 import UIStore from "../store/ui-store";
 import { useStore } from "@ikas/storefront";
+import usePurchasedProductsLoader from "../utils/usePurchasedProductsLoader";
 
 import TawkProvider from "../components/TawkProvider";
 import ChatButton from "../components/ChatButton";
@@ -24,6 +25,9 @@ const IkasThemeApp: React.FC<AppProps> = (props) => {
   const { Component, pageProps } = props;
   const store = useStore();
   const uiStore = UIStore.getInstance();
+
+  // Login durumunu izle ve satın alınan ürünleri yükle
+  usePurchasedProductsLoader();
 
   React.useEffect(() => {
     if (store.router) {
