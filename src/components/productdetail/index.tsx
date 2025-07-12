@@ -8,6 +8,7 @@ import {
   useStore,
   useTranslation,
 } from "@ikas/storefront";
+import React from "react";
 import { useUserLocation } from 'src/utils/useUserLocation';
 import { observer } from "mobx-react-lite";
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -27,6 +28,8 @@ import ContentProtector from "../composites/ContentProtector";
 import useProductReviews from "src/utils/useProductReviews";
 import Reviews from "./reviews";
 import Envelope from "../svg/Envelope";
+import { purchasedProductsStore } from "../../store/purchased-products-store";
+import orders from "../composites/orders";
 
 const Accordion = observer(
   ({ title, children }: { title: string; children: React.ReactNode }) => {
@@ -85,7 +88,8 @@ const ProductDetail = ({
   loginRequired,
   successMessage,
   errorMessage,
-  soldOutButton
+  soldOutButton,
+  commentRules
 }: ProductdetailProps) => {
   const [quantity, setQuantity] = useState(1);
   const mainImages =
@@ -101,6 +105,27 @@ const ProductDetail = ({
   ]);
   const [selectedImage, setSelectedImage] = useState<IkasImage>(allImages[0]);
   const store = useStore();
+  const isUserLoggedIn = !!store?.customerStore?.customer;
+
+  // Debug: Ürün kontrolü için console log
+  React.useEffect(() => {
+    console.log('🆔 Mevcut Ürün ID:', product.id);
+    console.log('📝 Mevcut Ürün Adı:', product.name);
+    console.log('� Customer Debug:', {
+      customer: store?.customerStore?.customer,
+      hasCustomer: !!store?.customerStore?.customer,
+      customerFirstName: store?.customerStore?.customer?.firstName || 'N/A'
+    });
+    console.log('�🔍 Ürün Detay Kontrol:', {
+      productId: product.id,
+      productName: product.name,
+      isUserLoggedIn,
+      hasPurchased: purchasedProductsStore.purchasedProductIds.has(product.id),
+      totalPurchasedProducts: purchasedProductsStore.purchasedCount,
+      storeLoaded: purchasedProductsStore.isLoaded,
+      allPurchasedIds: Array.from(purchasedProductsStore.purchasedProductIds)
+    });
+  }, [product.id, isUserLoggedIn, purchasedProductsStore.isLoaded, purchasedProductsStore.purchasedCount]);
   const [modalImage, setModalImage] = useState<boolean>(false);
   const [tab, setTab] = useState<"D" | "R" | "P">("D");
   const [show, setShow] = useState(false);
@@ -996,7 +1021,6 @@ const ProductDetail = ({
           </>
         )}
         {show && (lastvisited.data || []).length > 0 && (
-          console.log(lastvisited.data),
           <>
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.insterestedProducts")}
@@ -1022,7 +1046,6 @@ const ProductDetail = ({
                   },
                 }}
                 items={(lastvisited.data || [])?.map((product) => (
-                  console.log(lastvisited.data),
                   <div
                     key={product.id + "product2"}
                     className="keen-slider__slide"
@@ -1066,35 +1089,47 @@ const ProductDetail = ({
                       </span>
                     </div>
                     <div className="flex flex-col gap-2">
-                      {/* {product.isCustomerReviewLoginRequired && ( */}
-                      <CommentModal
-                        trigger={(e) => (
-                          <button
-                            onClick={() => {
-                              e();
-                            }}
-                            className="text-base underline text-left max-w-sm cursor-pointer"
-                          >
-                            {t("productDetail.beFirstComment")}
-                          </button>
-                        )}
-                        productId={product.id}
-                        onSuccess={() => {
-                          product.getCustomerReviews().then((res) => {
-                            setReviews(res);
-                          });
-                        }}
-                        store={store}
-                        requiredInput={requiredInput || ""}
-                        loginRequired={loginRequired || ""}
-                        successMessage={successMessage || ""}
-                        errorMessage={errorMessage || ""}
-                      />
-                      {/* )} */}
+                      {/* Sadece login olmuş ve ürünü satın almış kullanıcılar yorum yapabilir */}
+                      {isUserLoggedIn && purchasedProductsStore.purchasedProductIds.has(product.id) ? (
+                        <CommentModal
+                          trigger={(e) => (
+                            <button
+                              onClick={() => {
+                                e();
+                              }}
+                              className="text-base underline text-left max-w-sm cursor-pointer"
+                            >
+                              {t("productDetail.beFirstComment")}
+                            </button>
+                          )}
+                          productId={product.id}
+                          onSuccess={() => {
+                            product.getCustomerReviews().then((res) => {
+                              setReviews(res);
+                            });
+                          }}
+                          store={store}
+                          requiredInput={requiredInput || ""}
+                          loginRequired={loginRequired || ""}
+                          successMessage={successMessage || ""}
+                          errorMessage={errorMessage || ""}
+                        />
+                      ) : (
+                        <span className="text-base max-w-sm text-[color:var(--gray-three)]">
+                          {/* {!isUserLoggedIn
+                            ? t("productDetail.loginRequiredToComment")
+                            : t("productDetail.purchaseRequiredToComment")
+                          } */}
+                        </span>
+                      )}
 
                       {/* <span className="text-base max-w-sm">
                         {t("productDetail.commentRule")}
                       </span> */}
+                      <div
+                        className='prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm'
+                        dangerouslySetInnerHTML={{ __html: commentRules || "" }}
+                      />
                       {/* <a className="text-sm underline">
                         {t("productDetail.commentRuleTitle")}
                       </a> */}
@@ -1103,30 +1138,45 @@ const ProductDetail = ({
                 </div>
 
                 <div className="flex justify-end items-start">
-                  <CommentModal
-                    trigger={(e) => (
-                      <button
-                        onClick={() => {
-                          e();
-                        }}
-                        className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5 cursor-pointer"
-                        type="button"
-                      >
-                        {t("productDetail.writeComment")}
-                      </button>
-                    )}
-                    productId={product.id}
-                    onSuccess={() => {
-                      product.getCustomerReviews().then((res) => {
-                        setReviews(res);
-                      });
-                    }}
-                    store={store}
-                    requiredInput={requiredInput || ""}
-                    loginRequired={loginRequired || ""}
-                    successMessage={successMessage || ""}
-                    errorMessage={errorMessage || ""}
-                  />
+                  {/* Sadece login olmuş ve ürünü satın almış kullanıcılar yorum yazabilir */}
+                  {isUserLoggedIn && purchasedProductsStore.purchasedProductIds.has(product.id) ? (
+                    <CommentModal
+                      trigger={(e) => (
+                        <button
+                          onClick={() => {
+                            e();
+                          }}
+                          className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5 cursor-pointer"
+                          type="button"
+                        >
+                          {t("productDetail.writeComment")}
+                        </button>
+                      )}
+                      productId={product.id}
+                      onSuccess={() => {
+                        product.getCustomerReviews().then((res) => {
+                          setReviews(res);
+                        });
+                      }}
+                      store={store}
+                      requiredInput={requiredInput || ""}
+                      loginRequired={loginRequired || ""}
+                      successMessage={successMessage || ""}
+                      errorMessage={errorMessage || ""}
+                    />
+                  ) : (
+                    <button
+                      disabled
+                      className="disabled:opacity-60 tracking-wide border-[color:var(--gray-three)] border text-[color:var(--gray-three)] text-sm font-medium rounded-sm py-2 px-5 cursor-not-allowed"
+                      type="button"
+                      title={!isUserLoggedIn
+                        ? t("productDetail.loginRequiredToComment")
+                        : t("productDetail.purchaseRequiredToComment")
+                      }
+                    >
+                      {t("productDetail.writeComment")}
+                    </button>
+                  )}
                 </div>
               </div>
 

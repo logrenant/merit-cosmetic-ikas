@@ -177,6 +177,7 @@ export type ProductdetailProps = {
 	successMessage?: string;
 	errorMessage?: string;
 	soldOutButton?: string;
+	commentRules?: string;
 };
 
 export type SearchlistgridProps = {
