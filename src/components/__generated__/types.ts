@@ -111,6 +111,12 @@ export type SoldOutButton = {
 	soldOutButton: string;
 };
 
+export type CommentRulesModal = { 
+	modalTitle?: string;
+	commentRules?: string;
+	buttonText?: string;
+};
+
 export type NavbarProps = {
 	categories: IkasCategoryList;
 	categorySort: IkasCategoryList;
@@ -177,7 +183,7 @@ export type ProductdetailProps = {
 	successMessage?: string;
 	errorMessage?: string;
 	soldOutButton?: string;
-	commentRules?: string;
+	commentRules?: CommentRulesModal;
 };
 
 export type SearchlistgridProps = {
