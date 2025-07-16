@@ -330,14 +330,32 @@ const ProductListGrid: React.FC<
               <button
                 id="loadmore"
                 onClick={() => {
+                  // Get current product count to calculate where new products will be added
+                  const currentProductCount = filteredProducts.length;
+
                   products.getNext().then(() => {
-                    const element = document.getElementById("loadmore");
-                    if (element?.offsetTop) {
-                      window.scrollTo({
-                        top: element?.offsetTop! - 500 || 0,
-                        behavior: "smooth",
-                      });
-                    }
+                    // Calculate which product index to scroll to (first product of new batch)
+                    const newProductStartIndex = currentProductCount;
+
+                    // Use setTimeout to ensure DOM is updated with new products
+                    setTimeout(() => {
+                      const productGrid = document.getElementById("listgrid");
+                      if (productGrid) {
+                        const productElements = productGrid.children;
+                        const targetProductElement = productElements[newProductStartIndex];
+
+                        if (targetProductElement) {
+                          const targetTop = (targetProductElement as HTMLElement).offsetTop;
+                          // Add some offset for better UX (show a bit of previous content)
+                          const scrollOffset = 300;
+
+                          window.scrollTo({
+                            top: targetTop - scrollOffset,
+                            behavior: "smooth",
+                          });
+                        }
+                      }
+                    }, 100);
                   });
                 }}
                 disabled={products.isLoading}
