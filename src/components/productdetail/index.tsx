@@ -21,6 +21,7 @@ import ProductCard from "../composites/productcard";
 import Simpleslider from "../composites/simpleslider";
 import Pricedisplay from "../composites/pricedisplay";
 import CommentModal from "../composites/commentModal";
+import CommentRulesModal from "../composites/commentRulesModal";
 import { useDirection } from "../../utils/useDirection";
 import { useAddToCart } from "../../utils/useAddToCart";
 import { ProductdetailProps } from "../__generated__/types";
@@ -29,7 +30,6 @@ import useProductReviews from "src/utils/useProductReviews";
 import Reviews from "./reviews";
 import Envelope from "../svg/Envelope";
 import { purchasedProductsStore } from "../../store/purchased-products-store";
-import orders from "../composites/orders";
 
 const Accordion = observer(
   ({ title, children }: { title: string; children: React.ReactNode }) => {
@@ -143,7 +143,6 @@ const ProductDetail = ({
     customerReviewList,
     reviewsElementRef,
   } = useProductReviews({ product });
-
 
   useEffect(() => {
     const kombinUrun = product?.attributes?.find(
@@ -1090,7 +1089,7 @@ const ProductDetail = ({
                     </div>
                     <div className="flex flex-col gap-2">
                       {/* Sadece login olmuş ve ürünü satın almış kullanıcılar yorum yapabilir */}
-                      {isUserLoggedIn && purchasedProductsStore.purchasedProductIds.has(product.id) ? (
+                      {isUserLoggedIn && purchasedProductsStore.purchasedProductIds.has(product.id) && (!reviews?.count || reviews?.count === 0) && (
                         <CommentModal
                           trigger={(e) => (
                             <button
@@ -1114,39 +1113,38 @@ const ProductDetail = ({
                           successMessage={successMessage || ""}
                           errorMessage={errorMessage || ""}
                         />
-                      ) : (
-                        <span className="text-base max-w-sm text-[color:var(--gray-three)]">
-                          {/* {!isUserLoggedIn
-                            ? t("productDetail.loginRequiredToComment")
-                            : t("productDetail.purchaseRequiredToComment")
-                          } */}
-                        </span>
                       )}
-
-                      {/* <span className="text-base max-w-sm">
-                        {t("productDetail.commentRule")}
-                      </span> */}
-                      <div
-                        className='prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] max-w-none prose-sm'
-                        dangerouslySetInnerHTML={{ __html: commentRules || "" }}
+                      {/* Yorum kuralları modalı */}
+                      {/* commentRules string olarak destructure edildi */}
+                      <CommentRulesModal
+                        trigger={(open) => (
+                          <button
+                            type="button"
+                            onClick={open}
+                            className="text-sm underline text-[color:var(--color-three)] text-left max-w-sm cursor-pointer"
+                          >
+                            {commentRules?.modalTitle || t("productDetail.commentRules")}
+                          </button>
+                        )}
+                        rulesHtml={commentRules?.commentRules || ""}
+                        modalTitle={commentRules?.modalTitle || ""}
+                        commentRules={commentRules?.commentRules || ""}
+                        buttonText={commentRules?.buttonText || ""}
                       />
-                      {/* <a className="text-sm underline">
-                        {t("productDetail.commentRuleTitle")}
-                      </a> */}
                     </div>
                   </div>
                 </div>
 
                 <div className="flex justify-end items-start">
                   {/* Sadece login olmuş ve ürünü satın almış kullanıcılar yorum yazabilir */}
-                  {isUserLoggedIn && purchasedProductsStore.purchasedProductIds.has(product.id) ? (
+                  {isUserLoggedIn && purchasedProductsStore.purchasedProductIds.has(product.id) && (
                     <CommentModal
                       trigger={(e) => (
                         <button
                           onClick={() => {
                             e();
                           }}
-                          className="disabled:opacity-60 tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5 cursor-pointer"
+                          className="tracking-wide border-[color:var(--color-one)] border text-[color:var(--color-one)] text-sm font-medium rounded-sm py-2 px-5 cursor-pointer"
                           type="button"
                         >
                           {t("productDetail.writeComment")}
@@ -1164,18 +1162,6 @@ const ProductDetail = ({
                       successMessage={successMessage || ""}
                       errorMessage={errorMessage || ""}
                     />
-                  ) : (
-                    <button
-                      disabled
-                      className="disabled:opacity-60 tracking-wide border-[color:var(--gray-three)] border text-[color:var(--gray-three)] text-sm font-medium rounded-sm py-2 px-5 cursor-not-allowed"
-                      type="button"
-                      title={!isUserLoggedIn
-                        ? t("productDetail.loginRequiredToComment")
-                        : t("productDetail.purchaseRequiredToComment")
-                      }
-                    >
-                      {t("productDetail.writeComment")}
-                    </button>
                   )}
                 </div>
               </div>
