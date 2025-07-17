@@ -176,25 +176,53 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
     return arr.filter((e, i) => arr.indexOf(e) === i);
   };
 
-  // Use Arabic country list if locale is Arabic, otherwise use default list
-  const currentCountryList = store.router?.locale === "ar" ? arabicListCountry : listCountry;
-
-  const filteredlistCountry = currentCountryList.filter((e) =>
-    removeDuplicates(shippingRulesCountryIds).includes(e.id)
-  );
+  // Shipping select açıkken tüm ülkeler, kapalıyken sadece shipping tanımı olanlar
+  const isArabicRoute = store.router?.locale === "ar";
+  const allCountryList = isArabicRoute ? arabicListCountry : listCountry;
   const [currentCountry, setCurrentCountry] = useState<string>();
   const [freeShippingRule, setFreeShippingRule] =
     useState<typeof listShippingSettings[0]["zoneRate"]>();
   const [remaining, setRemaining] = useState<number>();
   const [currentShippingCost, setCurrentShippingCost] = useState<number>(0);
   const [openSelectCountry, setOpenSelectCountry] = useState(false);
+  const filteredlistCountry = openSelectCountry
+    ? allCountryList
+    : allCountryList.filter((e) => removeDuplicates(shippingRulesCountryIds).includes(e.id));
   useEffect(() => {
-    if (!currentCountry && !localStorage.getItem("iso2")) {
-      setCurrentCountry(filteredlistCountry[0].iso2);
-    } else if (!currentCountry && localStorage.getItem("iso2")) {
-      setCurrentCountry(JSON.parse(localStorage.getItem("iso2") as string));
+    if (!currentCountry) {
+      // Debug için sessionStorage değerlerini kontrol et
+      const userSelected = sessionStorage.getItem('user-selected-country-code');
+      const ipCountry = sessionStorage.getItem('user-location-country-code');
+      console.log('[BagButton] userSelected:', userSelected);
+      console.log('[BagButton] ipCountry:', ipCountry);
+      console.log('[BagButton] allCountryList length:', allCountryList.length);
+
+      // Önce kullanıcının seçtiği ülkeyi kontrol et
+      if (userSelected && allCountryList.some((c) => c.iso2 === userSelected)) {
+        console.log('[BagButton] Using userSelected:', userSelected);
+        setCurrentCountry(userSelected);
+      } else {
+        // Kullanıcı seçmemişse IP'den alınan ülkeyi kullan
+        if (ipCountry && ipCountry !== 'unknown' && allCountryList.some((c) => c.iso2 === ipCountry)) {
+          console.log('[BagButton] Using ipCountry:', ipCountry);
+          setCurrentCountry(ipCountry);
+        } else if (localStorage.getItem("iso2")) {
+          const localStorageCountry = JSON.parse(localStorage.getItem("iso2") as string);
+          if (allCountryList.some((c) => c.iso2 === localStorageCountry)) {
+            console.log('[BagButton] Using localStorage:', localStorageCountry);
+            setCurrentCountry(localStorageCountry);
+          } else {
+            console.log('[BagButton] Using fallback (first country):', allCountryList[0].iso2);
+            setCurrentCountry(allCountryList[0].iso2);
+          }
+        } else {
+          console.log('[BagButton] Using fallback (first country):', allCountryList[0].iso2);
+          setCurrentCountry(allCountryList[0].iso2);
+        }
+      }
     }
-  }, [filteredlistCountry]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     setFreeShippingRule(
       listShippingSettings.find((e) =>
@@ -477,6 +505,11 @@ const BagButton: React.FC<{ className?: string }> = ({ className }) => {
                             background: 'none',
                           }}
                           onChange={(e) => {
+                            // Kullanıcının seçimini sessionStorage'a kaydet
+                            sessionStorage.setItem(
+                              "user-selected-country-code",
+                              e.target.value
+                            );
                             localStorage.setItem(
                               "iso2",
                               JSON.stringify(e.target.value)

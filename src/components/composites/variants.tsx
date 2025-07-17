@@ -9,6 +9,7 @@ import {
 } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
 import { ProductdetailProps } from "../__generated__/types";
+import { useDirection } from "src/utils/useDirection";
 export const Variants = observer(
   ({
     product,
@@ -110,9 +111,12 @@ type SelectVariantValueProps = {
   onVariantValueChange: (dVV: IkasDisplayedVariantValue) => void;
 };
 
+
+
 const SelectVariantValue = observer(
   ({ dVT, product, onVariantValueChange }: SelectVariantValueProps) => {
     const { t } = useTranslation();
+    const { direction } = useDirection();
 
     const selectOptions = dVT.displayedVariantValues.map((dVV) => ({
       value: dVV.variantValue.id,
@@ -130,19 +134,34 @@ const SelectVariantValue = observer(
       dVV && onVariantValueChange(dVV);
     };
 
+    // RTL/LTR padding and arrow positioning
+    const isRTL = direction === 'rtl';
+
     return (
-      <select
-        value={selectValue}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={t("country")}
-        className="w-full border-[color:var(--black-two)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-transparent relative text-base font-light border rounded-sm px-2.5"
-      >
-        {selectOptions.map((e) => (
-          <option key={e.value + "value"} value={e.value}>
-            {e.label}
-          </option>
-        ))}
-      </select>
+      <div className="mt-1 mb-2 relative bg-transparent rounded-sm">
+        <select
+          value={selectValue}
+          dir={direction}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder={t("country")}
+          className={`w-full border-[color:var(--black-two)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-transparent relative text-base font-light border rounded-sm px-2.5 appearance-none ${isRTL ? 'text-right pr-2.5 pl-8' : 'text-left pl-2.5 pr-8'}`}
+          style={{ background: 'none' }}
+        >
+          {selectOptions.map((e) => (
+            <option key={e.value + "value"} value={e.value}>
+              {e.label}
+            </option>
+          ))}
+        </select>
+        {/* Custom arrow SVG */}
+        <span
+          className={`pointer-events-none absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-2' : 'right-2'}`}
+        >
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 8L10 12L14 8" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      </div>
     );
   }
 );
@@ -190,11 +209,10 @@ export const Swatch = ({
     return (
       <div
         onClick={onClick}
-        className={`rounded relative w-20 aspect-293/372 border flex items-center justify-center ${
-          selected
-            ? "border-[color:var(--color-one)]"
-            : "border-transparent hover:border-[color:var(--color-one)] cursor-pointer"
-        }`}
+        className={`rounded relative w-20 aspect-293/372 border flex items-center justify-center ${selected
+          ? "border-[color:var(--color-one)]"
+          : "border-transparent hover:border-[color:var(--color-one)] cursor-pointer"
+          }`}
       >
         <div className="relative max-w-[72px] aspect-293/372 w-full rounded-sm overflow-hidden">
           <Image image={image!} layout="fill" className="object-contain" />
@@ -205,11 +223,10 @@ export const Swatch = ({
   return (
     <div
       onClick={onClick}
-      className={`rounded-full w-[38px] border flex items-center justify-center h-[38px] ${
-        selected
-          ? "border-[color:var(--color-one)]"
-          : "border-transparent hover:border-[color:var(--color-one)]"
-      }`}
+      className={`rounded-full w-[38px] border flex items-center justify-center h-[38px] ${selected
+        ? "border-[color:var(--color-one)]"
+        : "border-transparent hover:border-[color:var(--color-one)]"
+        }`}
     >
       <button
         title={title}
@@ -258,11 +275,10 @@ export const SwatchSimple = ({
   return (
     <div
       onClick={onClick}
-      className={`rounded px-3 py-2 border flex items-center text-sm justify-center ${
-        selected
-          ? "border-[color:var(--color-one)] text-white bg-[color:var(--color-two)]"
-          : "border-transparent hover:border-[color:var(--color-one)] cursor-pointer"
-      }`}
+      className={`rounded px-3 py-2 border flex items-center text-sm justify-center ${selected
+        ? "border-[color:var(--color-one)] text-white bg-[color:var(--color-two)]"
+        : "border-transparent hover:border-[color:var(--color-one)] cursor-pointer"
+        }`}
     >
       {title}
     </div>
