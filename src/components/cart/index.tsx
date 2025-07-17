@@ -46,25 +46,43 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
   };
 
   // Use Arabic country list if locale is Arabic, otherwise use default list
-  const currentCountryList = store.router?.locale === "ar" ? arabicListCountry : listCountry;
-
-  const filteredlistCountry = currentCountryList.filter((e) =>
-    removeDuplicates(shippingRulesCountryIds).includes(e.id)
-  );
+  const isArabicRoute = store.router?.locale === "ar";
+  const allCountryList = isArabicRoute ? arabicListCountry : listCountry;
   const [currentCountry, setCurrentCountry] = useState<string>();
-  const [freeShippingRule, setFreeShippingRule] =
-    useState<typeof listShippingSettings[0]["zoneRate"]>();
+  const [freeShippingRule, setFreeShippingRule] = useState<typeof listShippingSettings[0]["zoneRate"]>();
   const [currentShippingCost, setCurrentShippingCost] = useState<number>(0);
   const [openSelectCountry, setOpenSelectCountry] = useState(false);
   const [codePending, setCodePending] = useState<boolean>(false);
   const [pending, setPending] = useState(false);
+  // Shipping select açıkken tüm ülkeler, kapalıyken sadece shipping tanımı olanlar
+  const filteredlistCountry = openSelectCountry
+    ? allCountryList
+    : allCountryList.filter((e) => removeDuplicates(shippingRulesCountryIds).includes(e.id));
 
   useEffect(() => {
-    if (!currentCountry && !localStorage.getItem("iso2")) {
-      setCurrentCountry(filteredlistCountry[0].iso2);
-    } else if (!currentCountry && localStorage.getItem("iso2")) {
-      setCurrentCountry(JSON.parse(localStorage.getItem("iso2") as string));
+    if (!currentCountry) {
+      // Önce kullanıcının seçtiği ülkeyi kontrol et
+      const userSelected = sessionStorage.getItem('user-selected-country-code');
+      if (userSelected && allCountryList.some((c) => c.iso2 === userSelected)) {
+        setCurrentCountry(userSelected);
+      } else {
+        // Kullanıcı seçmemişse IP'den alınan ülkeyi kullan
+        const ipCountry = sessionStorage.getItem('user-location-country-code');
+        if (ipCountry && ipCountry !== 'unknown' && allCountryList.some((c) => c.iso2 === ipCountry)) {
+          setCurrentCountry(ipCountry);
+        } else if (localStorage.getItem("iso2")) {
+          const localStorageCountry = JSON.parse(localStorage.getItem("iso2") as string);
+          if (allCountryList.some((c) => c.iso2 === localStorageCountry)) {
+            setCurrentCountry(localStorageCountry);
+          } else {
+            setCurrentCountry(allCountryList[0].iso2);
+          }
+        } else {
+          setCurrentCountry(allCountryList[0].iso2);
+        }
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     setFreeShippingRule(
@@ -206,6 +224,11 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                             background: 'none',
                           }}
                           onChange={(e) => {
+                            // Kullanıcının seçimini sessionStorage'a kaydet
+                            sessionStorage.setItem(
+                              "user-selected-country-code",
+                              e.target.value
+                            );
                             localStorage.setItem(
                               "iso2",
                               JSON.stringify(e.target.value)
