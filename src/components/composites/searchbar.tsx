@@ -715,12 +715,25 @@ const SearchBar = ({
                               setHoveredBrand(el.name);
                             }}
                             className={`
-                            text-[13px] flex items-center justify-center
-                            rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
-                            font-normal hover:bg-[color:var(--color-one)]
-                            hover:text-white w-full xl:justify-start px-4 transition duration-150
-                            ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}
-                          `}
+                              text-[13px] flex items-center justify-center
+                              rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                              font-normal hover:bg-[color:var(--color-one)]
+                              hover:text-white w-full xl:justify-start px-4 transition duration-150
+                              ${
+                              // Selected if hoveredCategory matches OR if a search result's category matches
+                              hoveredCategory === el.name ||
+                                (
+                                  !hoveredCategory &&
+                                  searchedProducts &&
+                                  searchedProducts.length > 0 &&
+                                  searchedProducts.some(p =>
+                                    p.categories?.some(c => c.name === el.name)
+                                  )
+                                )
+                                ? 'bg-[color:var(--color-one)] text-white'
+                                : ''
+                              }
+                            `}
                           >
                             {el.name}
                           </a>
@@ -944,20 +957,33 @@ const SearchBar = ({
                             <a
                               onMouseEnter={() => {
                                 // Eğer aynı kategori zaten seçili ise, tekrar işlem yapma
-                                if (hoveredCategory === el.name && hoveredBrand === el.name) {
+                                if (hoveredCategory === el.name) {
                                   return;
                                 }
-                                setHoveredBrand(el.name);
+                                onHoverPopularCategory(el.name);
                                 setHoveredCategory(el.name);
-                                onHoverBrand(el.name);
+                                setHoveredBrand(el.name);
                               }}
                               className={`
-                          text-[13px] flex items-center justify-center
-                          rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
-                          font-normal hover:bg-[color:var(--color-one)]
-                          hover:text-white w-full xl:justify-start px-4 transition duration-150
-                          ${hoveredCategory === el.name ? 'bg-[color:var(--color-one)] text-white' : ''}
-                          `}
+                              text-[13px] flex items-center justify-center
+                              rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                              font-normal hover:bg-[color:var(--color-one)]
+                              hover:text-white w-full xl:justify-start px-4 transition duration-150
+                              ${
+                                // Selected if hoveredCategory matches OR if a search result's category matches
+                                hoveredCategory === el.name ||
+                                  (
+                                    !hoveredCategory &&
+                                    searchedProducts &&
+                                    searchedProducts.length > 0 &&
+                                    searchedProducts.some(p =>
+                                      p.categories?.some(c => c.name === el.name)
+                                    )
+                                  )
+                                  ? 'bg-[color:var(--color-one)] text-white'
+                                  : ''
+                                }
+                            `}
                             >
                               {el.name}
                             </a>
