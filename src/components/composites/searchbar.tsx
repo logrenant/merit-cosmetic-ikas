@@ -715,15 +715,16 @@ const SearchBar = ({
                               setHoveredBrand(el.name);
                             }}
                             className={`
-                              text-[13px] flex items-center justify-center
-                              rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
-                              font-normal hover:bg-[color:var(--color-one)]
-                              hover:text-white w-full xl:justify-start px-4 transition duration-150
-                              ${
-                              // Selected if hoveredCategory matches OR if a search result's category matches
+                                text-[13px] flex items-center justify-center
+                                rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                                font-normal hover:bg-[color:var(--color-one)]
+                                hover:text-white w-full xl:justify-start px-4 transition duration-150
+                                ${
+                              // Selected only if hoveredCategory matches, or if no hoveredBrand and no hoveredCategory and search results match
                               hoveredCategory === el.name ||
                                 (
                                   !hoveredCategory &&
+                                  !hoveredBrand &&
                                   searchedProducts &&
                                   searchedProducts.length > 0 &&
                                   searchedProducts.some(p =>
@@ -733,7 +734,7 @@ const SearchBar = ({
                                 ? 'bg-[color:var(--color-one)] text-white'
                                 : ''
                               }
-                            `}
+                              `}
                           >
                             {el.name}
                           </a>
@@ -965,15 +966,16 @@ const SearchBar = ({
                                 setHoveredBrand(el.name);
                               }}
                               className={`
-                              text-[13px] flex items-center justify-center
-                              rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
-                              font-normal hover:bg-[color:var(--color-one)]
-                              hover:text-white w-full xl:justify-start px-4 transition duration-150
-                              ${
-                                // Selected if hoveredCategory matches OR if a search result's category matches
+                                text-[13px] flex items-center justify-center
+                                rtl:ml-auto ltr:mr-auto text-[color:var(--black-two)]
+                                font-normal hover:bg-[color:var(--color-one)]
+                                hover:text-white w-full xl:justify-start px-4 transition duration-150
+                                ${
+                                // Selected only if hoveredCategory matches, or if no hoveredBrand and no hoveredCategory and search results match
                                 hoveredCategory === el.name ||
                                   (
                                     !hoveredCategory &&
+                                    !hoveredBrand &&
                                     searchedProducts &&
                                     searchedProducts.length > 0 &&
                                     searchedProducts.some(p =>
@@ -983,7 +985,7 @@ const SearchBar = ({
                                   ? 'bg-[color:var(--color-one)] text-white'
                                   : ''
                                 }
-                            `}
+                              `}
                             >
                               {el.name}
                             </a>

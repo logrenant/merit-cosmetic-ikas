@@ -4,6 +4,7 @@ import { IkasBaseStore, useTranslation } from "@ikas/storefront";
 import { Rating } from "react-simple-star-rating";
 import { toast } from "react-hot-toast";
 import { useOnClickOutside } from "usehooks-ts";
+import { useDirection } from "../../utils/useDirection";
 function CommentModal({
   trigger,
   onSuccess,
@@ -34,6 +35,7 @@ function CommentModal({
     comment: "",
     rating: 0,
   });
+  const [hoverRating, setHoverRating] = useState(0);
   const [commentFormErrors, setCommentFormErrors] = useState<{
     title: string | null;
     comment: string | null;
@@ -76,6 +78,7 @@ function CommentModal({
     setShowModal(false);
   });
   const { t } = useTranslation();
+  const { direction } = useDirection();
   return (
     <>
       {trigger(() => setShowModal(true))}
@@ -115,17 +118,49 @@ function CommentModal({
                     {t("rating")}
                   </label>
                   <div className="flex items-center">
-                    <Rating
-                      size={23}
-                      SVGstyle={{ display: "inline-block" }}
-                      onClick={(e) => {
-                        setCommentForm({
-                          ...commentForm,
-                          rating: e,
-                        });
-                      }}
-                      initialValue={commentForm.rating}
-                    />
+                    {direction === 'rtl' ? (
+                      // RTL için özel rating sistemi: 5-4-3-2-1 sırası
+                      <div className="flex">
+                        {[1, 2, 3, 4, 5].map((starValue) => {
+                          const isActive = (hoverRating || commentForm.rating) >= starValue;
+                          return (
+                            <svg
+                              key={starValue}
+                              onMouseEnter={() => setHoverRating(starValue)}
+                              onMouseLeave={() => setHoverRating(0)}
+                              onClick={() => {
+                                setCommentForm({
+                                  ...commentForm,
+                                  rating: starValue,
+                                });
+                              }}
+                              width="23"
+                              height="23"
+                              viewBox="0 0 24 24"
+                              style={{ cursor: 'pointer', marginLeft: '2px' }}
+                              className="inline-block transition-colors duration-200"
+                            >
+                              <polygon
+                                fill={isActive ? "#FFD700" : "#E5E5E5"}
+                                points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                              />
+                            </svg>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <Rating
+                        size={23}
+                        SVGstyle={{ display: "inline-block" }}
+                        onClick={(e) => {
+                          setCommentForm({
+                            ...commentForm,
+                            rating: e,
+                          });
+                        }}
+                        initialValue={commentForm.rating}
+                      />
+                    )}
                   </div>
                   {commentFormErrors.rating && (
                     <span className="text-red-500 mt-0.5 text-xs">

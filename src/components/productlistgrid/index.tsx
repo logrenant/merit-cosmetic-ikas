@@ -425,7 +425,7 @@ const ProductListGrid: React.FC<
 
                         if (targetProductElement) {
                           const targetTop = (targetProductElement as HTMLElement).offsetTop;
-                          const scrollOffset = 300;
+                          const scrollOffset = 0;
 
                           window.scrollTo({
                             top: targetTop - scrollOffset,
@@ -452,7 +452,7 @@ const ProductListGrid: React.FC<
                           if (targetProductElement) {
                             const targetTop = (targetProductElement as HTMLElement).offsetTop;
                             // Add some offset for better UX (show a bit of previous content)
-                            const scrollOffset = 300;
+                            const scrollOffset = 0;
 
                             window.scrollTo({
                               top: targetTop - scrollOffset,

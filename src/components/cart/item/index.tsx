@@ -4,7 +4,6 @@ import { IkasBaseStore, IkasOrderLineItem, Link, useStore, Image } from "@ikas/s
 import Cross from "src/components/svg/Cross";
 import Pricedisplay from "src/components/composites/pricedisplay";
 import { maxQuantityPerCartHandler } from "src/utils/useAddToCart";
-import ProductImagePlaceholder from "src/components/svg/product-image-placeholder";
 
 const Item = ({ item }: { item: IkasOrderLineItem }) => {
     const store = useStore();
@@ -28,11 +27,15 @@ export default observer(Item);
 const ItemImage = observer(({ item }: { item: IkasOrderLineItem }) => {
 
     return (
-        <div className="p-2 rounded-sm overflow-hidden aspect-293/372 max-w-[100px] w-full border border-[color:var(--gray-one)]">
-            <Link passHref href={item.variant.href || ""}>
+        <div className="rounded-sm overflow-hidden aspect-293/372 max-w-[100px] w-full border border-[color:var(--gray-one)]">
+            <Link href={item.variant.href || ""}>
                 <a>
                     {!item.variant.mainImage?.id ? (
-                        <ProductImagePlaceholder />
+                        <img
+                            src="/noPhoto.svg"
+                            alt="No image available"
+                            className="h-full w-full object-cover"
+                        />
                     ) : (
                         <div className="relative h-full w-full">
                             <Image
