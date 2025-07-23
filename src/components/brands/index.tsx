@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import { observer } from "mobx-react-lite";
 import ProductCard from "../composites/productcard";
 import { BrandsProps } from "../__generated__/types";
@@ -62,6 +62,13 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
   const filteredProducts = useMemo(() => {
     return filterProductsByLocation(products.data);
   }, [products.data, filterProductsByLocation]);
+
+  // Ref for the product grid
+  const productGridRef = useRef<HTMLDivElement>(null);
+  // Ref for the first product of the newly loaded batch
+  const firstNewProductRef = useRef<HTMLDivElement>(null);
+  // Track current product count before loading more
+  const currentProductCountRef = useRef(0);
 
   // Adjust the product count for display
   const adjustedProductCount = useMemo(() => {
@@ -172,12 +179,22 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
           </div>
           {filteredProducts.length > 0 ? (
             <div
+              ref={productGridRef}
               id="listgrid"
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
             >
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} soldOutButtonText={soldOut?.soldOutButton} />
-              ))}
+              {filteredProducts.map((product, index) => {
+                // Assign ref to the first product of the newly loaded batch
+                const shouldAssignRef = index === currentProductCountRef.current && currentProductCountRef.current > 0;
+                return (
+                  <div
+                    key={product.id}
+                    ref={shouldAssignRef ? firstNewProductRef : undefined}
+                  >
+                    <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <div className="text-center text-lg">{t("categoryPage.empty")}</div>
@@ -187,14 +204,19 @@ const Brands: React.FC<BrandsProps & { pageSpecificData: IkasBrand }> = ({
               <button
                 id="loadmore"
                 onClick={() => {
+                  // Store current product count before loading more
+                  currentProductCountRef.current = filteredProducts.length;
+
                   products.getNext().then(() => {
-                    const element = document.getElementById("loadmore");
-                    if (element?.offsetTop) {
-                      window.scrollTo({
-                        top: element?.offsetTop! - 500 || 0,
-                        behavior: "smooth",
-                      });
-                    }
+                    setTimeout(() => {
+                      if (firstNewProductRef.current) {
+                        const targetTop = firstNewProductRef.current.offsetTop;
+                        window.scrollTo({
+                          top: targetTop,
+                          behavior: "smooth",
+                        });
+                      }
+                    }, 100);
                   });
                 }}
                 disabled={products.isLoading}

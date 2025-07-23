@@ -1058,8 +1058,8 @@ const ProductDetail = ({
         )}
         {reviews && (
           <div id="reviewsection">
-            <div className="text-xl text-[color:var(--color-two)] font-medium mt-7 mb-6 text-left tracking-widest">
-              {t("productDetail.comments")}
+            <div className={`text-xl text-[color:var(--color-two)] font-medium mt-7 mb-6 tracking-widest ${direction === 'rtl' ? 'text-right' : 'text-left'}`}>
+              {reviews?.count === 1 ? t("productDetail.comment") : t("productDetail.comments")}
             </div>
             <div className="flex flex-col w-full">
               <div className="grid md:grid-cols-[calc(100%-224px)_200px] gap-6">
@@ -1071,7 +1071,7 @@ const ProductDetail = ({
                         : 0}
                     </div>
                     <div className="flex px-4 pb-2 pt-3 items-center text-sm leading-none font-light justify-center">
-                      {product.reviewCount} {t("productDetail.comment")}
+                      {product.reviewCount} {reviews?.count === 1 ? t("productDetail.comment") : t("productDetail.comments")}
                     </div>
                   </div>
 
@@ -1115,7 +1115,6 @@ const ProductDetail = ({
                         />
                       )}
                       {/* Yorum kuralları modalı */}
-                      {/* commentRules string olarak destructure edildi */}
                       <CommentRulesModal
                         trigger={(open) => (
                           <button

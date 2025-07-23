@@ -145,8 +145,14 @@ const OrderPackage = observer(
               </div>
               <div className="flex text-[color:var(--black-two)] flex-col ml-4">
                 <div className="text-base md:text-lg flex gap-1.5">
-                  <span className="line-clamp-3">{item.variant.name} </span>
-
+                  <a
+                    href={`/${item.variant.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="line-clamp-3 text-[color:var(--color-three)] hover:underline"
+                  >
+                    {item.variant.name}
+                  </a>
                   <span className="text-sm">(x{item.quantity})</span>
                 </div>
                 {item.variant.variantValues &&

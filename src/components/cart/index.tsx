@@ -178,7 +178,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                         onClick={() => {
                           setOpenSelectCountry(!openSelectCountry);
                         }}
-                        className="text-[color:var(--black-two)] gap-1 flex text-lg items-center font-light cursor-pointer min-w-[60%] max-w-[60%]"
+                        className="text-[color:var(--black-two)] gap-1 w-full flex text-lg items-center font-light cursor-pointer "
                       >
                         {t("orderDetail.shipping")}
                         <svg
@@ -202,7 +202,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
 
                       {/* Shipping Cost */}
                       {currentShippingCost === 0 ? (
-                        t("freeShipping")
+                        <div className="text-nowrap">{t("freeShipping")}</div>
                       ) : (
                         <Pricedisplay
                           amount={currentShippingCost}

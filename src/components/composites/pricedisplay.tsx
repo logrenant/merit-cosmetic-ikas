@@ -38,14 +38,23 @@ const Pricedisplay = ({
         ${!isTable && left ? "flex-row-reverse justify-end" : ""}
         ${containerClassName}`}
     >
-      <span className={`${isTable ? `w-[50%] ${isRTL ? 'text-left' : 'text-end'}` : ""} ${priceClassName}`}>
+      <span
+        className={`
+          ${isTable
+            ? uiStore.currency === "USD"
+              ? "w-full text-end"
+              : `w-[50%] ${isRTL ? 'text-left' : 'text-end'}`
+            : ""}
+          ${priceClassName}
+        `}
+      >
         {`${formatCurrency(amount, currencyCode, currencySymbol).replace(currencySymbol, '')} ${currencySymbol}`}
       </span>
-      {uiStore.currency !== "USD" && (
+      {uiStore.currency !== "USD" ? (
         <span className={`text-xs ${isTable ? `w-[50%] ${isRTL ? 'text-left' : 'text-end'}` : ""} md:text-sm text-[color:var(--color-four)] ${convertedPriceClassName}`}>
           ({formatPrice(amount)})
         </span>
-      )}
+      ) : null}
     </span>
   );
 };
