@@ -30,7 +30,7 @@ const BagItem: React.FC<{
   return (
     <div className="grid relative group gap-3 py-5 grid-cols-[90px_1fr] w-full">
       <Link href={product.variant.href || ""}>
-        <a className="rounded-sm overflow-hidden aspect-293/372 max-w-[90px] w-full border border-[color:var(--gray-two)]">
+        <a className={`rounded-sm overflow-hidden aspect-4/5 max-w-[90px] w-full ${product.variant.mainImage?.id ? 'border border-[color:var(--gray-two)]' : ''}`}>
           <div className="relative h-full w-full">
             <Link href={product.variant.href || ""}>
               <a>
@@ -38,7 +38,7 @@ const BagItem: React.FC<{
                   <img
                     src="/noPhoto.svg"
                     alt="No image available"
-                    className="h-full w-full object-cover"
+                    className="h-auto w-full object-cover"
                   />
                 ) : (
                   <div className="relative h-full w-full">

@@ -42,7 +42,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
             <div className="flex xl:flex-row flex-col w-full gap-12">
                 {/* Filter Title */}
                 <div className="xl:w-1/5 w-full">
-                    <div className="flex flex-col gap-4 xl:flex-row xl:justify-between xl:mb-10 text-[color:var(--gray-five)]">
+                    <div className="flex flex-col gap-4 xl:flex-row xl:justify-between xl:mb-4 text-[color:var(--gray-five)]">
                         <h1 className="text-2xl text-[color:var(--color-two)] font-medium hidden xl:inline">{props.title}</h1>
                         <div className="flex flex-row justify-between">
                             <div className="flex w-full justify-end xl:w-[unset] items-center gap-2">
@@ -61,7 +61,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
                     </div>
                     {showFilter && (
                         <div className=" xl:flex hidden flex-col gap-4">
-                            <div className="mb-3">
+                            <div>
                                 <div className="flex w-full flex-col items-center">
                                     <div
                                         onClick={() => setOpen(!open)}
