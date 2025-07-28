@@ -686,8 +686,16 @@ const SearchBar = ({
                           </Link>
                         </div>
                       )}
-                      <div className="rounded-sm col-span-2 overflow-hidden">
-                        <div className="aspect-16/6 w-full relative">
+                      <div className="col-span-2 overflow-hidden">
+                        <div
+                          className="aspect-16/4 w-full relative cursor-pointer"
+                          onClick={() => {
+                            window.scrollTo({
+                              top: document.body.scrollHeight,
+                              behavior: 'smooth'
+                            });
+                          }}
+                        >
                           {seachbarImage && (
                             <Image
                               image={seachbarImage}
@@ -942,8 +950,16 @@ const SearchBar = ({
                           </div>
                         )} */}
 
-                      <div className="rounded-sm col-span-2 overflow-hidden">
-                        <div className="aspect-16/6 w-full relative">
+                      <div className="col-span-2 overflow-hidden">
+                        <div
+                          className="aspect-16/4 w-full relative cursor-pointer"
+                          onClick={() => {
+                            window.scrollTo({
+                              top: document.body.scrollHeight,
+                              behavior: 'smooth'
+                            });
+                          }}
+                        >
                           {seachbarImage && (
                             <Image
                               image={seachbarImage}
@@ -1169,8 +1185,16 @@ const SearchBar = ({
                               </Link>
                             </div>
                           )}
-                        <div className="rounded-sm col-span-2 overflow-hidden">
-                          <div className="aspect-16/6 w-full relative">
+                        <div className="col-span-2 overflow-hidden">
+                          <div
+                            className="aspect-16/4 w-full relative cursor-pointer"
+                            onClick={() => {
+                              window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: 'smooth'
+                              });
+                            }}
+                          >
                             {seachbarImage && (
                               <Image
                                 image={seachbarImage}

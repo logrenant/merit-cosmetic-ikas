@@ -132,26 +132,34 @@ const ProductListGrid: React.FC<
       return filterProductsByLocation(products.data);
     }
 
-    // For Turkish IPs, use all loaded products if available, otherwise fallback to current products.data
-    const sourceProducts = allProductsForTurkishIP.length > 0 ? allProductsForTurkishIP : (products.data || []);
-    const allFiltered = filterProductsByLocation(sourceProducts);
+    // For Turkish IPs, prioritize current products.data over cached allProductsForTurkishIP
+    // This ensures immediate display of new category products
+    const sourceProducts = products.data || [];
+
+    // If we have cached products for the same category and current products are loading, use cache
+    const shouldUseCachedProducts = allProductsForTurkishIP.length > 0 &&
+      products.isLoading &&
+      sourceProducts.length === 0;
+
+    const productsToFilter = shouldUseCachedProducts ? allProductsForTurkishIP : sourceProducts;
+    const allFiltered = filterProductsByLocation(productsToFilter);
 
     // Limit displayed products for pagination
     const displayedFiltered = allFiltered.slice(0, displayedProductsCount);
 
     // Debug: Log filtering results
-    if (sourceProducts.length !== allFiltered.length) {
+    if (productsToFilter.length !== allFiltered.length) {
       console.log('Filtering products for Turkish IP:', {
-        source: allProductsForTurkishIP.length > 0 ? 'allProducts' : 'currentProducts',
-        original: sourceProducts.length,
+        source: shouldUseCachedProducts ? 'cachedProducts' : 'currentProducts',
+        original: productsToFilter.length,
         allFiltered: allFiltered.length,
         displayed: displayedFiltered.length,
-        removed: sourceProducts.length - allFiltered.length
+        removed: productsToFilter.length - allFiltered.length
       });
     }
 
     return displayedFiltered;
-  }, [products.data, allProductsForTurkishIP, filterProductsByLocation, isTurkishIP, displayedProductsCount]);
+  }, [products.data, products.isLoading, allProductsForTurkishIP, filterProductsByLocation, isTurkishIP, displayedProductsCount]);
 
   // Adjust the product count for display
   const adjustedProductCount = useMemo(() => {
@@ -177,15 +185,26 @@ const ProductListGrid: React.FC<
   useEffect(() => {
     setShow(false);
     setDisplayedProductsCount(20); // Reset displayed count when category changes
+
+    // Reset all Turkish IP specific states when category changes
+    if (isTurkishIP) {
+      setAllProductsForTurkishIP([]); // Clear previous category's products
+      setIsLoadingAllProducts(false); // Reset loading state
+      setIsAutoLoading(false); // Reset auto loading state
+    }
+
     setTimeout(() => {
       setShow(true);
     }, 200);
-  }, [pageSpecificData?.name]);
+  }, [pageSpecificData?.name, isTurkishIP]);
 
   // Load all products for Turkish IPs to get accurate count
   useEffect(() => {
     const loadAllProductsForTurkish = async () => {
       if (!isTurkishIP || isLoadingAllProducts) return;
+
+      // Don't start loading if there's no initial data yet
+      if (!products.data || products.data.length === 0) return;
 
       setIsLoadingAllProducts(true);
       const allProducts: any[] = [...(products.data || [])];
@@ -210,10 +229,16 @@ const ProductListGrid: React.FC<
       }
     };
 
-    if (isTurkishIP && products.data && products.data.length > 0) {
-      loadAllProductsForTurkish();
+    // Only start loading after initial products are loaded and when category changes
+    if (isTurkishIP && products.data && products.data.length > 0 && !isLoadingAllProducts) {
+      // Add a small delay to ensure the new category's initial products are displayed first
+      const timeoutId = setTimeout(() => {
+        loadAllProductsForTurkish();
+      }, 500);
+
+      return () => clearTimeout(timeoutId);
     }
-  }, [isTurkishIP, pageSpecificData?.id]); // Only run when category changes
+  }, [isTurkishIP, pageSpecificData?.id, products.data?.length]); // Added products.data?.length to dependency
 
   // Check if we should show load more button
   const shouldShowLoadMore = useMemo(() => {
