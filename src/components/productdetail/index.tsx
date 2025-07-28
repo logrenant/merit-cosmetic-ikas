@@ -667,7 +667,11 @@ const ProductDetail = ({
 
                       const productNameToUse = product.name || productNameFromUrl;
 
-                      window.location.href = `/pages/back-in-stock-request?productName=${encodeURIComponent(productNameToUse)}`;
+                      // Check if current locale is Arabic
+                      const isArabic = store.router?.locale === 'ar';
+                      const routePrefix = isArabic ? '/ar' : '';
+
+                      window.location.href = `${routePrefix}/pages/back-in-stock-request?productName=${encodeURIComponent(productNameToUse)}`;
                     }
                   }}
                   className="tracking-wide hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-60 w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"

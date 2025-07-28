@@ -134,7 +134,16 @@ const ProductCard: React.FC<{
         </Link>
         <button
           onClick={() => {
-            if (product.hasVariant) {
+            if (!isProductAvailable) {
+              // Sold out product - redirect to back in stock request form with product name
+              const productNameToUse = product.name || '';
+
+              // Check if current locale is Arabic
+              const isArabic = store.router?.locale === 'ar';
+              const routePrefix = isArabic ? '/ar' : '';
+
+              window.location.href = `${routePrefix}/pages/back-in-stock-request?productName=${encodeURIComponent(productNameToUse)}`;
+            } else if (product.hasVariant) {
               store.router?.push(product.href);
             } else {
               addToCart(product, 1);
@@ -142,7 +151,7 @@ const ProductCard: React.FC<{
           }}
           className="mt-2.5 hover:opacity-80 transition duration-300 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
         >
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center text-nowrap">
             {!isProductAvailable && <Envelope />}
             <span>{isProductAvailable ? t("addToBasket") : (soldOutButtonText)}</span>
           </div>

@@ -72,7 +72,7 @@ const NavbarCategories = ({
                     className="absolute left-0 w-full bg-[color:var(--bg-color)] shadow-sm top-[60px] z-50"
                   >
                     <div className="layout grid grid-cols-5 p-6!">
-                      <div className="flex col-span-2 gap-20 flex-wrap">
+                      <div className="flex col-span-3 gap-20 flex-wrap">
                         {e.childrens.map((k) => (
                           <div key={k.id} className="flex gap-1.5 flex-col">
                             <Link href={k.href}>
@@ -94,8 +94,13 @@ const NavbarCategories = ({
                           </div>
                         ))}
                       </div>
-                      <div className="rounded-sm col-span-3 overflow-hidden">
-                        <div className="aspect-16/4 w-full relative">
+                      <div className="col-span-2 overflow-hidden">
+                        <a
+                          href="https://g.page/r/CdWWty9h4667EBM/review"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block aspect-16/6 w-full relative"
+                        >
                           {categoriesImage && (
                             <Image
                               image={categoriesImage}
@@ -104,7 +109,7 @@ const NavbarCategories = ({
                               objectFit="cover"
                             />
                           )}
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
