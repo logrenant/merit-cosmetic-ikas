@@ -45,7 +45,7 @@ const BlogCard = (props: Props) => {
         <a className="flex flex-col gap-4 w-full">
           {/* Meta */}
           <div className="flex flex-col-reverse xl:flex-row-reverse justify-between w-full">
-            <div className="flex justify-between items-center text-lg text-[color:var(--black-two)] ">
+            <div className="flex justify-between items-center text-[14px] text-[color:var(--black-two)] ">
               {showPublishedDate && (
                 <div className="inline-block">{publishedDate}</div>
               )}
@@ -87,7 +87,7 @@ const BlogCard = (props: Props) => {
             <div className="flex flex-col py-4 w-full justify-between">
               {/* Description */}
               {showDescription && (
-                <p className="text-lg text-[color:var(--black-two)] xl:p-4 ">
+                <p className="text-[16px] text-[color:var(--black-two)] xl:p-4 ">
                   {props.data.shortDescription.length > 400
                     ? `${props.data.shortDescription.slice(0, 400)}...`
                     : props.data.shortDescription}

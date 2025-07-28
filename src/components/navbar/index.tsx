@@ -23,7 +23,8 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   bannerSlogan,
   slogans,
   popularProducts,
-  filter
+  searchbarImage,
+  categoriesImage,
 }) => {
   const [open, setOpen] = useState(false);
   const categoriesWithChildrens: CategoryWithChildrenType[] = [];
@@ -105,6 +106,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
             popularCategories={popularCategories}
             slogans={slogans}
             popularProducts={popularProducts}
+            seachbarImage={searchbarImage}
           />
           <div className="flex gap-1 items-center justify-end text-[color:var(--black-two)]">
             <AccountButton />
@@ -132,7 +134,10 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
           </div>
         </div>
       </div>
-      <NavbarCategories categoriesWithChildrens={categoriesWithChildrens} />
+      <NavbarCategories
+        categoriesWithChildrens={categoriesWithChildrens}
+        categoriesImage={categoriesImage}
+      />
       <MobileMenu
         open={open}
         setOpen={setOpen}

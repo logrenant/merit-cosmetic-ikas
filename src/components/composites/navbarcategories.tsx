@@ -1,12 +1,14 @@
-import { Link } from "@ikas/storefront";
+import { Link, IkasImage, Image } from "@ikas/storefront";
 import { observer } from "mobx-react-lite";
 import { CategoryWithChildrenType } from "./mobilemenu";
 import { useState, useEffect } from "react";
 import Router from "next/router";
 const NavbarCategories = ({
   categoriesWithChildrens,
+  categoriesImage,
 }: {
   categoriesWithChildrens: CategoryWithChildrenType[];
+  categoriesImage?: IkasImage;
 }) => {
   const [hoveredCategory, setHoveredCategory] =
     useState<CategoryWithChildrenType["id"]>();
@@ -70,7 +72,7 @@ const NavbarCategories = ({
                     className="absolute left-0 w-full bg-[color:var(--bg-color)] shadow-sm top-[60px] z-50"
                   >
                     <div className="layout grid grid-cols-5 p-6!">
-                      <div className="flex col-span-3 gap-20 flex-wrap">
+                      <div className="flex col-span-2 gap-20 flex-wrap">
                         {e.childrens.map((k) => (
                           <div key={k.id} className="flex gap-1.5 flex-col">
                             <Link href={k.href}>
@@ -92,13 +94,18 @@ const NavbarCategories = ({
                           </div>
                         ))}
                       </div>
-                      {/* <div className="rounded-sm col-span-2 overflow-hidden">
-                        <img
-                          src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
-                          alt=""
-                          className="aspect-16/6 w-full object-cover"
-                        />
-                      </div> */}
+                      <div className="rounded-sm col-span-3 overflow-hidden">
+                        <div className="aspect-16/4 w-full relative">
+                          {categoriesImage && (
+                            <Image
+                              image={categoriesImage}
+                              alt=""
+                              layout="fill"
+                              objectFit="cover"
+                            />
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}

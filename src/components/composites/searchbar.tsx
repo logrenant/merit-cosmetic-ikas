@@ -2,6 +2,7 @@ import {
   IkasBrand,
   IkasBrandList,
   IkasCategoryList,
+  IkasImage,
   IkasProduct,
   IkasProductList,
   Image,
@@ -26,12 +27,14 @@ const SearchBar = ({
   popularBrands,
   popularProducts,
   popularCategories,
+  seachbarImage,
 }: {
   products: IkasProductList;
   slogans: string[];
   popularBrands: IkasBrandList;
   popularProducts: IkasProductList;
   popularCategories: IkasCategoryList;
+  seachbarImage?: IkasImage;
 }) => {
   const store = useStore();
   const { t } = useTranslation();
@@ -683,12 +686,18 @@ const SearchBar = ({
                           </Link>
                         </div>
                       )}
-                      {/* <div className="col-span-2 rounded-sm overflow-hidden">
-                        <img
-                          src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
-                          alt=""
-                        />
-                      </div> */}
+                      <div className="rounded-sm col-span-2 overflow-hidden">
+                        <div className="aspect-16/6 w-full relative">
+                          {seachbarImage && (
+                            <Image
+                              image={seachbarImage}
+                              alt=""
+                              layout="fill"
+                              objectFit="cover"
+                            />
+                          )}
+                        </div>
+                      </div>
 
                     </div>
                   </div>
@@ -933,12 +942,18 @@ const SearchBar = ({
                           </div>
                         )} */}
 
-                      {/* <div className="col-span-2 rounded-sm overflow-hidden">
-                        <img
-                          src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
-                          alt=""
-                        />
-                      </div> */}
+                      <div className="rounded-sm col-span-2 overflow-hidden">
+                        <div className="aspect-16/6 w-full relative">
+                          {seachbarImage && (
+                            <Image
+                              image={seachbarImage}
+                              alt=""
+                              layout="fill"
+                              objectFit="cover"
+                            />
+                          )}
+                        </div>
+                      </div>
 
                     </div>
                   </div>
@@ -1154,12 +1169,18 @@ const SearchBar = ({
                               </Link>
                             </div>
                           )}
-                        {/* <div className="col-span-2 rounded-sm overflow-hidden aspect-16/4">
-                          <img
-                            src="https://cdn.myikas.com/images/theme-images/a0536cbf-b107-4cb9-a931-82e158c5f009/image_2560.webp"
-                            alt=""
-                          />
-                        </div> */}
+                        <div className="rounded-sm col-span-2 overflow-hidden">
+                          <div className="aspect-16/6 w-full relative">
+                            {seachbarImage && (
+                              <Image
+                                image={seachbarImage}
+                                alt=""
+                                layout="fill"
+                                objectFit="cover"
+                              />
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
