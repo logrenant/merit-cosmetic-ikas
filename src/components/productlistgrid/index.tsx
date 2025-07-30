@@ -122,106 +122,76 @@ const ProductListGrid: React.FC<
   const [isAutoLoading, setIsAutoLoading] = useState(false);
   const [allProductsForTurkishIP, setAllProductsForTurkishIP] = useState<any[]>([]);
   const [isLoadingAllProducts, setIsLoadingAllProducts] = useState(false);
-  const [displayedProductsCount, setDisplayedProductsCount] = useState(20); // Show 20 products initially
+  const [displayedProductsCount, setDisplayedProductsCount] = useState(20);
+  const [currentCategoryId, setCurrentCategoryId] = useState<string | null>(null);
 
-  // Filter products for Turkish IPs - only show products that can be purchased
   const filteredProducts = useMemo(() => {
-    if (!isTurkishIP) {
-      // For non-Turkish IPs, use normal product data
-      if (!products.data) return [];
-      return filterProductsByLocation(products.data);
+    if (pageSpecificData?.href !== "/otc") {
+      return products.data ? products.data.slice(0, displayedProductsCount) : [];
     }
 
-    // For Turkish IPs, prioritize current products.data over cached allProductsForTurkishIP
-    // This ensures immediate display of new category products
-    const sourceProducts = products.data || [];
+    if (!products.data) return [];
+    return filterProductsByLocation(products.data).slice(0, displayedProductsCount);
+  }, [products.data, filterProductsByLocation, displayedProductsCount, pageSpecificData?.href]);
 
-    // If we have cached products for the same category and current products are loading, use cache
-    const shouldUseCachedProducts = allProductsForTurkishIP.length > 0 &&
-      products.isLoading &&
-      sourceProducts.length === 0;
-
-    const productsToFilter = shouldUseCachedProducts ? allProductsForTurkishIP : sourceProducts;
-    const allFiltered = filterProductsByLocation(productsToFilter);
-
-    // Limit displayed products for pagination
-    const displayedFiltered = allFiltered.slice(0, displayedProductsCount);
-
-    // Debug: Log filtering results
-    if (productsToFilter.length !== allFiltered.length) {
-      console.log('Filtering products for Turkish IP:', {
-        source: shouldUseCachedProducts ? 'cachedProducts' : 'currentProducts',
-        original: productsToFilter.length,
-        allFiltered: allFiltered.length,
-        displayed: displayedFiltered.length,
-        removed: productsToFilter.length - allFiltered.length
-      });
-    }
-
-    return displayedFiltered;
-  }, [products.data, products.isLoading, allProductsForTurkishIP, filterProductsByLocation, isTurkishIP, displayedProductsCount]);
-
-  // Adjust the product count for display
   const adjustedProductCount = useMemo(() => {
-    if (!isTurkishIP) {
+    if (pageSpecificData?.href !== "/otc") {
       return products.count;
     }
+    if (!products.data) return 0;
+    return filterProductsByLocation(products.data).length;
+  }, [products.data, filterProductsByLocation, pageSpecificData?.href, products.count]);
 
-    // For Turkish IPs, count only in-stock products from all loaded products
-    if (allProductsForTurkishIP.length > 0) {
-      const inStockProducts = allProductsForTurkishIP.filter(product => product.isAddToCartEnabled);
-      return inStockProducts.length;
-    }
-
-    // Fallback to filtered products count if all products not loaded yet
-    return filteredProducts.length;
-  }, [isTurkishIP, allProductsForTurkishIP, filteredProducts.length, products.count]);
-
-  // Filter popular products for Turkish IPs
   const filteredPopularProducts = useMemo(() => {
     return popular.data ? filterProductsByLocation(popular.data) : [];
   }, [popular.data, filterProductsByLocation]);
 
   useEffect(() => {
     setShow(false);
-    setDisplayedProductsCount(20); // Reset displayed count when category changes
+    setDisplayedProductsCount(20);
 
-    // Reset all Turkish IP specific states when category changes
-    if (isTurkishIP) {
-      setAllProductsForTurkishIP([]); // Clear previous category's products
-      setIsLoadingAllProducts(false); // Reset loading state
-      setIsAutoLoading(false); // Reset auto loading state
+    const categoryChanged = currentCategoryId !== pageSpecificData?.id;
+
+    if (categoryChanged) {
+      setCurrentCategoryId(pageSpecificData?.id || null);
+
+      if (isTurkishIP) {
+        setAllProductsForTurkishIP([]);
+        setIsLoadingAllProducts(false);
+        setIsAutoLoading(false);
+      }
     }
 
     setTimeout(() => {
       setShow(true);
     }, 200);
-  }, [pageSpecificData?.name, isTurkishIP]);
+  }, [pageSpecificData?.id, isTurkishIP, currentCategoryId]);
 
-  // Load all products for Turkish IPs to get accurate count
   useEffect(() => {
     const loadAllProductsForTurkish = async () => {
       if (!isTurkishIP || isLoadingAllProducts) return;
 
-      // Don't start loading if there's no initial data yet
+      const isSameCategory = currentCategoryId === pageSpecificData?.id;
+      if (!isSameCategory) return;
+
       if (!products.data || products.data.length === 0) return;
 
       setIsLoadingAllProducts(true);
       const allProducts: any[] = [...(products.data || [])];
 
       try {
-        // Keep fetching until we have all products
         while (products.hasNext) {
           await products.getNext();
           if (products.data) {
-            // Add only new products that aren't already in our collection
             const currentIds = new Set(allProducts.map(p => p.id));
             const newProducts = products.data.filter(p => !currentIds.has(p.id));
             allProducts.push(...newProducts);
           }
         }
 
-        setAllProductsForTurkishIP(allProducts);
+        if (currentCategoryId === pageSpecificData?.id) {
+          setAllProductsForTurkishIP(allProducts);
+        }
       } catch (error) {
         console.error('Error loading all products for Turkish IP:', error);
       } finally {
@@ -229,33 +199,36 @@ const ProductListGrid: React.FC<
       }
     };
 
-    // Only start loading after initial products are loaded and when category changes
-    if (isTurkishIP && products.data && products.data.length > 0 && !isLoadingAllProducts) {
-      // Add a small delay to ensure the new category's initial products are displayed first
+    if (isTurkishIP &&
+      products.data &&
+      products.data.length > 0 &&
+      !isLoadingAllProducts &&
+      currentCategoryId === pageSpecificData?.id) {
       const timeoutId = setTimeout(() => {
         loadAllProductsForTurkish();
       }, 500);
 
       return () => clearTimeout(timeoutId);
     }
-  }, [isTurkishIP, pageSpecificData?.id, products.data?.length]); // Added products.data?.length to dependency
+  }, [isTurkishIP, pageSpecificData?.id, products.data?.length, currentCategoryId, isLoadingAllProducts, products.hasNext]);
 
-  // Check if we should show load more button
   const shouldShowLoadMore = useMemo(() => {
     if (isTurkishIP) {
-      // For Turkish IPs, check if we're still loading all products in background
-      if (isLoadingAllProducts) {
-        return false; // Hide button while loading all products
+      const isSameCategory = currentCategoryId === pageSpecificData?.id;
+      if (!isSameCategory) {
+        return products.hasNext;
       }
 
-      // If all products are loaded, check if there are more purchasable products to show
+      if (isLoadingAllProducts) {
+        return false;
+      }
+
       if (allProductsForTurkishIP.length > 0) {
         const allInStockProducts = allProductsForTurkishIP.filter(product => product.isAddToCartEnabled);
         const currentlyDisplayed = filteredProducts.length;
         return currentlyDisplayed < allInStockProducts.length;
       }
 
-      // Fallback to original logic if all products not loaded yet
       return products.hasNext && filteredProducts.length < (products.data?.length || 0);
     }
 
@@ -266,16 +239,16 @@ const ProductListGrid: React.FC<
     allProductsForTurkishIP,
     filteredProducts.length,
     products.hasNext,
-    products.data
+    products.data,
+    currentCategoryId,
+    pageSpecificData?.id
   ]);
 
-  // Auto-fetch more products if needed for Turkish IPs
   useEffect(() => {
     const autoFetchIfNeeded = async () => {
       if (isTurkishIP && products.data && !isAutoLoading && !products.isLoading) {
         const availableProducts = filterProductsByLocation(products.data);
 
-        // If we have less than 20 available products and there are more pages
         if (availableProducts.length < 20 && products.hasNext) {
           setIsAutoLoading(true);
           try {
@@ -314,7 +287,6 @@ const ProductListGrid: React.FC<
           )}
           {products.count > 0 &&
             products?.filters?.map((filter) => {
-              // Skip stock filter for Turkish IPs
               if (isTurkishIP && filter.type === IkasProductFilterType.STOCK_STATUS) {
                 return null;
               }
@@ -430,18 +402,15 @@ const ProductListGrid: React.FC<
           ) : (
             <div className="text-center text-lg">{t("categoryPage.empty")}</div>
           )}
-          {/* Load more button - show if there are more products from API */}
           {shouldShowLoadMore && (
             <div className="flex mt-8">
               <button
                 id="loadmore"
                 onClick={() => {
                   if (isTurkishIP && allProductsForTurkishIP.length > 0) {
-                    // For Turkish IPs, just increase displayed count (no API call needed)
                     const currentProductCount = filteredProducts.length;
                     setDisplayedProductsCount(prev => prev + 20);
 
-                    // Scroll to new products after state update
                     setTimeout(() => {
                       const productGrid = document.getElementById("listgrid");
                       if (productGrid) {
@@ -460,14 +429,11 @@ const ProductListGrid: React.FC<
                       }
                     }, 100);
                   } else {
-                    // For non-Turkish IPs or when all products not loaded yet, use normal API call
                     const currentProductCount = filteredProducts.length;
 
                     products.getNext().then(() => {
-                      // Calculate which product index to scroll to (first product of new batch)
                       const newProductStartIndex = currentProductCount;
 
-                      // Use setTimeout to ensure DOM is updated with new products
                       setTimeout(() => {
                         const productGrid = document.getElementById("listgrid");
                         if (productGrid) {
@@ -476,7 +442,6 @@ const ProductListGrid: React.FC<
 
                           if (targetProductElement) {
                             const targetTop = (targetProductElement as HTMLElement).offsetTop;
-                            // Add some offset for better UX (show a bit of previous content)
                             const scrollOffset = 0;
 
                             window.scrollTo({
