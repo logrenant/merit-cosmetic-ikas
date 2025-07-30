@@ -151,9 +151,13 @@ const ProductCard: React.FC<{
           }}
           className="mt-2.5 hover:opacity-80 transition duration-300 tracking-wide w-full bg-[color:var(--color-three)] text-sm md:text-base font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
         >
-          <div className="flex items-center justify-center text-nowrap">
-            {!isProductAvailable && <Envelope />}
-            <span>{isProductAvailable ? t("addToBasket") : (soldOutButtonText)}</span>
+          <div className="flex items-center justify-center gap-2">
+            {!isProductAvailable && (
+              <div className="flex-shrink-0">
+                <Envelope />
+              </div>
+            )}
+            <span className="whitespace-nowrap">{isProductAvailable ? t("addToBasket") : (soldOutButtonText)}</span>
           </div>
         </button>
       </div>
