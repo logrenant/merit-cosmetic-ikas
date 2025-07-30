@@ -36,9 +36,9 @@ const BagItem: React.FC<{
               <a>
                 {!product.variant.mainImage?.id ? (
                   <img
-                    src="/noPhoto.svg"
+                    src={"/noPhoto.png"}
                     alt="No image available"
-                    className="h-auto w-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 ) : (
                   <div className="relative h-full w-full">
