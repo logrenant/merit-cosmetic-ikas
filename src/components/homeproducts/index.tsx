@@ -203,8 +203,8 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
           {categoriesLoaded && categoriesSlider.current && (
             <>
               <button
-                onClick={() => categoriesSlider.current?.prev()}
-                className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
+                onClick={() => direction === "rtl" ? categoriesSlider.current?.next() : categoriesSlider.current?.prev()}
+                className={`xl:hidden absolute top-[30%] ${direction === "rtl" ? "right-[-32px]" : "left-[-32px]"} text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
               >
                 <svg
                   className="w-8 h-8"
@@ -216,13 +216,13 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
+                    d={direction === "rtl" ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"}
                   />
                 </svg>
               </button>
               <button
-                onClick={() => categoriesSlider.current?.next()}
-                className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
+                onClick={() => direction === "rtl" ? categoriesSlider.current?.prev() : categoriesSlider.current?.next()}
+                className={`xl:hidden absolute top-[30%] ${direction === "rtl" ? "left-[-32px]" : "right-[-32px]"} text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
               >
                 <svg
                   className="w-8 h-8"
@@ -234,7 +234,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M9 5l7 7-7 7"
+                    d={direction === "rtl" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
                   />
                 </svg>
               </button>
