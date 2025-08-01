@@ -182,7 +182,6 @@ export default observer(function Orderdetail({
                         <div className="text-base md:text-lg flex gap-1.5">
                           <a
                             href={`/${item.variant.slug}`}
-                            target="_blank"
                             rel="noopener noreferrer"
                             className="line-clamp-3 text-[color:var(--color-three)] hover:underline"
                           >

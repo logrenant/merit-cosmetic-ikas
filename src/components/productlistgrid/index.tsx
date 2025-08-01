@@ -126,21 +126,21 @@ const ProductListGrid: React.FC<
   const [currentCategoryId, setCurrentCategoryId] = useState<string | null>(null);
 
   const filteredProducts = useMemo(() => {
-    if (pageSpecificData?.href !== "/otc") {
-      return products.data ? products.data.slice(0, displayedProductsCount) : [];
+    if (pageSpecificData?.href === "/otc" && isTurkishIP) {
+      if (!products.data) return [];
+      return filterProductsByLocation(products.data).slice(0, displayedProductsCount);
     }
 
-    if (!products.data) return [];
-    return filterProductsByLocation(products.data).slice(0, displayedProductsCount);
-  }, [products.data, filterProductsByLocation, displayedProductsCount, pageSpecificData?.href]);
+    return products.data || [];
+  }, [products.data, filterProductsByLocation, displayedProductsCount, pageSpecificData?.href, isTurkishIP]);
 
   const adjustedProductCount = useMemo(() => {
-    if (pageSpecificData?.href !== "/otc") {
-      return products.count;
+    if (pageSpecificData?.href === "/otc" && isTurkishIP) {
+      if (!products.data) return 0;
+      return filterProductsByLocation(products.data).length;
     }
-    if (!products.data) return 0;
-    return filterProductsByLocation(products.data).length;
-  }, [products.data, filterProductsByLocation, pageSpecificData?.href, products.count]);
+    return products.count;
+  }, [products.data, filterProductsByLocation, pageSpecificData?.href, products.count, isTurkishIP]);
 
   const filteredPopularProducts = useMemo(() => {
     return popular.data ? filterProductsByLocation(popular.data) : [];
@@ -162,14 +162,13 @@ const ProductListGrid: React.FC<
       }
     }
 
-    setTimeout(() => {
-      setShow(true);
-    }, 200);
+    setShow(true);
   }, [pageSpecificData?.id, isTurkishIP, currentCategoryId]);
 
   useEffect(() => {
     const loadAllProductsForTurkish = async () => {
-      if (!isTurkishIP || isLoadingAllProducts) return;
+      // Only for OTC category and Turkish IP
+      if (pageSpecificData?.href !== "/otc" || !isTurkishIP || isLoadingAllProducts) return;
 
       const isSameCategory = currentCategoryId === pageSpecificData?.id;
       if (!isSameCategory) return;
@@ -199,7 +198,7 @@ const ProductListGrid: React.FC<
       }
     };
 
-    if (isTurkishIP &&
+    if (pageSpecificData?.href === "/otc" && isTurkishIP &&
       products.data &&
       products.data.length > 0 &&
       !isLoadingAllProducts &&
@@ -210,10 +209,11 @@ const ProductListGrid: React.FC<
 
       return () => clearTimeout(timeoutId);
     }
-  }, [isTurkishIP, pageSpecificData?.id, products.data?.length, currentCategoryId, isLoadingAllProducts, products.hasNext]);
+  }, [isTurkishIP, pageSpecificData?.id, pageSpecificData?.href, products.data?.length, currentCategoryId, isLoadingAllProducts, products.hasNext]);
 
   const shouldShowLoadMore = useMemo(() => {
-    if (isTurkishIP) {
+    // Only apply Turkish IP logic for OTC category
+    if (pageSpecificData?.href === "/otc" && isTurkishIP) {
       const isSameCategory = currentCategoryId === pageSpecificData?.id;
       if (!isSameCategory) {
         return products.hasNext;
@@ -232,6 +232,7 @@ const ProductListGrid: React.FC<
       return products.hasNext && filteredProducts.length < (products.data?.length || 0);
     }
 
+    // For all other cases (non-OTC or non-Turkish IP), show normal load more
     return products.hasNext;
   }, [
     isTurkishIP,
@@ -241,12 +242,16 @@ const ProductListGrid: React.FC<
     products.hasNext,
     products.data,
     currentCategoryId,
-    pageSpecificData?.id
+    pageSpecificData?.id,
+    pageSpecificData?.href
   ]);
 
   useEffect(() => {
     const autoFetchIfNeeded = async () => {
-      if (isTurkishIP && products.data && !isAutoLoading && !products.isLoading) {
+      // Only for OTC category and Turkish IP
+      if (pageSpecificData?.href !== "/otc" || !isTurkishIP) return;
+
+      if (products.data && !isAutoLoading && !products.isLoading) {
         const availableProducts = filterProductsByLocation(products.data);
 
         if (availableProducts.length < 20 && products.hasNext) {
@@ -263,7 +268,7 @@ const ProductListGrid: React.FC<
     };
 
     autoFetchIfNeeded();
-  }, [products.data, isTurkishIP, isAutoLoading, products.isLoading, products.hasNext, filterProductsByLocation, getNextBatchIfNeeded]);
+  }, [products.data, isTurkishIP, isAutoLoading, products.isLoading, products.hasNext, filterProductsByLocation, getNextBatchIfNeeded, pageSpecificData?.href]);
 
   return (
     <div dir={direction} className="my-10 layout">
@@ -407,7 +412,8 @@ const ProductListGrid: React.FC<
               <button
                 id="loadmore"
                 onClick={() => {
-                  if (isTurkishIP && allProductsForTurkishIP.length > 0) {
+                  // Only use Turkish IP logic for OTC category
+                  if (pageSpecificData?.href === "/otc" && isTurkishIP && allProductsForTurkishIP.length > 0) {
                     const currentProductCount = filteredProducts.length;
                     setDisplayedProductsCount(prev => prev + 20);
 
@@ -429,6 +435,7 @@ const ProductListGrid: React.FC<
                       }
                     }, 100);
                   } else {
+                    // Normal load more behavior for all other cases
                     const currentProductCount = filteredProducts.length;
 
                     products.getNext().then(() => {
@@ -454,7 +461,14 @@ const ProductListGrid: React.FC<
                     });
                   }
                 }}
-                disabled={products.isLoading || (isTurkishIP && isLoadingAllProducts)}
+                disabled={(() => {
+                  // Only apply special logic for OTC category and Turkish IP
+                  if (pageSpecificData?.href === "/otc" && isTurkishIP) {
+                    return products.isLoading || isLoadingAllProducts;
+                  }
+                  // Normal behavior for all other cases
+                  return products.isLoading;
+                })()}
                 className="flex items-center justify-center gap-2 disabled:opacity-60 px-20 text-lg py-10 bg-[color:var(--color-two)] rounded-sm text-white cursor-pointer"
               >
                 <svg
