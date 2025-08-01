@@ -13,10 +13,15 @@ import { useUserLocation } from "src/utils/useUserLocation";
 import { useDirection } from "src/utils/useDirection";
 
 const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut }: HomeproductsProps) => {
-  const [selectedProducts, setSelectedProducts] = useState(
-    products![0].image.id
-  );
+  const { direction } = useDirection();
+  const [isClient, setIsClient] = useState(false);
 
+  // SSR-safe initialization - use original products on server, reversed on client after hydration
+  const [reversedProducts, setReversedProducts] = useState(products);
+
+  const [selectedProducts, setSelectedProducts] = useState(
+    products?.[0]?.image?.id || ""
+  );
   const [currentSlide, setCurrentSlide] = useState(0);
   const [maxSlide, setMaxSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -27,7 +32,6 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
   const [categoriesLoaded, setCategoriesLoaded] = useState(false);
 
   const { isTurkishIP, filterProductsByLocation } = useUserLocation();
-  const { direction } = useDirection();
 
   const MutationPlugin = (slider: KeenSliderInstance) => {
     const observer = new MutationObserver(() => {
@@ -61,10 +65,10 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
     },
   });
 
-  // Categories slider with RTL support
+  // Categories slider with RTL support - SSR safe
   const [categoriesSliderRef, categoriesSlider] = useKeenSlider<HTMLDivElement>({
-    initial: direction === "rtl" ? Math.max(0, (products?.length || 0) - 2) : 0,
-    rtl: direction === "rtl", // Use RTL when direction is RTL
+    initial: 0, // Always start from 0 during SSR
+    rtl: false, // Always use LTR for slider navigation regardless of site direction
     slideChanged(s) {
       setCategoriesCurrentSlide(s.track.details.rel);
       setCategoriesMaxSlide(s.track.details.maxIdx);
@@ -86,6 +90,40 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
 
   const ref = useRef<HTMLDivElement>(null);
   const { isSmall, isMobile, isDesktop } = useScreen();
+
+  // SSR-safe initialization - only run on client side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Update reversed products and selected product only on client side
+  useEffect(() => {
+    if (isClient && products) {
+      const newReversedProducts = direction === "rtl" ? [...products].reverse() : products;
+      setReversedProducts(newReversedProducts);
+
+      // Update selected product to maintain consistency
+      if (newReversedProducts.length > 0) {
+        setSelectedProducts(newReversedProducts[0].image.id);
+      }
+    }
+  }, [isClient, direction, products]);
+
+  // Move slider to appropriate position after client hydration
+  useEffect(() => {
+    if (isClient && categoriesSlider.current && direction === "rtl" && reversedProducts) {
+      // RTL'de slider'ı sondan 2. pozisyona kaydır (sağdan görünür hale getir)
+      const targetSlide = Math.max(0, reversedProducts.length - 2);
+      setTimeout(() => {
+        categoriesSlider.current?.moveToIdx(targetSlide);
+      }, 100); // Küçük bir delay ekle
+    } else if (isClient && categoriesSlider.current && direction === "ltr") {
+      // LTR'de başa dön
+      setTimeout(() => {
+        categoriesSlider.current?.moveToIdx(0);
+      }, 100);
+    }
+  }, [isClient, direction, reversedProducts?.length, categoriesSlider]);
 
   useEffect(() => {
     console.log("categories", categories);
@@ -121,19 +159,13 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
 
   // Force slider recreation when direction changes
   useEffect(() => {
-    setSliderKey(prev => prev + 1);
-  }, [direction]);
-
-  // Update categories slider when direction changes
-  useEffect(() => {
-    if (categoriesSlider.current && direction === "rtl") {
-      const targetSlide = Math.max(0, (products?.length || 0) - 2);
-      categoriesSlider.current.moveToIdx(targetSlide);
+    if (isClient) {
+      setSliderKey(prev => prev + 1);
     }
-  }, [direction, products?.length, categoriesSlider]);
+  }, [direction, isClient]);
 
   return (
-    <div dir={direction} className="TEST-PARENT my-4 layout relative" ref={ref} >
+    <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
 
       {isDesktop && xlBanner && (
         <div className="aspect-1400/120 relative mb-4">
@@ -170,8 +202,8 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
         <div className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-4 relative">
           {/* Categories Slider Container */}
           <div ref={categoriesSliderRef} className="keen-slider flex flex-row">
-            {products!.map((e) => (
-              <div key={e.image.id} className="keen-slider__slide">
+            {reversedProducts!.map((e, index) => (
+              <div key={e.image.id} className={`keen-slider__slide`}>
                 <div
                   onClick={() => {
                     console.log("e.image.id", e.image.id);
@@ -203,8 +235,8 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
           {categoriesLoaded && categoriesSlider.current && (
             <>
               <button
-                onClick={() => direction === "rtl" ? categoriesSlider.current?.next() : categoriesSlider.current?.prev()}
-                className={`xl:hidden absolute top-[30%] ${direction === "rtl" ? "right-[-32px]" : "left-[-32px]"} text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
+                onClick={() => categoriesSlider.current?.prev()}
+                className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
               >
                 <svg
                   className="w-8 h-8"
@@ -216,13 +248,13 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d={direction === "rtl" ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"}
+                    d="M15 19l-7-7 7-7"
                   />
                 </svg>
               </button>
               <button
-                onClick={() => direction === "rtl" ? categoriesSlider.current?.prev() : categoriesSlider.current?.next()}
-                className={`xl:hidden absolute top-[30%] ${direction === "rtl" ? "left-[-32px]" : "right-[-32px]"} text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
+                onClick={() => categoriesSlider.current?.next()}
+                className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
               >
                 <svg
                   className="w-8 h-8"
@@ -234,7 +266,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d={direction === "rtl" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
+                    d="M9 5l7 7-7 7"
                   />
                 </svg>
               </button>
@@ -246,27 +278,37 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
       <div className="TEST-SECOND-SLIDER w-full">
         <div className="TEST-SECOND-SLIDER w-full">
           <SimpleSlider
-            key={selectedProducts}
+            key={`${selectedProducts}-${direction}-${isClient}`}
             showPagination={true}
             keenOptions={{
-              initial: 0,
-              rtl: direction === "rtl",
+              initial: 0, // Her zaman 0'dan başla, SimpleSlider kendi RTL logic'ini kullansın
               slides: {
-                perView: 5,
-                spacing: 8,
+                perView: 2,
+                spacing: 10,
+              },
+              breakpoints: {
+                [sliderBreakpoints.md]: { slides: { perView: 4, spacing: 16 } },
+                [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
               },
             }}
-            items={products
-              ?.find((e) => e.image.id === selectedProducts)
-              ?.products.data
-              ? filterProductsByLocation(
-                products.find((e) => e.image.id === selectedProducts)?.products.data || []
-              )?.map((product) => (
-                <div key={product.id} className="TEST-ITEMS-MAPPING-2 keen-slider__slide">
+            items={(() => {
+              // Only apply RTL logic on client side to avoid SSR mismatch
+              const currentProducts = isClient ? reversedProducts : products;
+              const selectedCategory = currentProducts?.find((e) => e.image.id === selectedProducts);
+              const categoryProducts = selectedCategory?.products.data || [];
+              const filteredProducts = filterProductsByLocation(categoryProducts);
+              // RTL'de ürünlerin sırasını değiştirmeyelim, SimpleSlider'ın kendi RTL logic'i doğru çalışsın
+              const finalProducts = filteredProducts; // Reverse yapmıyoruz
+
+              return finalProducts?.map((product, index) => (
+                <div
+                  key={product.id}
+                  className={`TEST-ITEMS-MAPPING-2 keen-slider__slide`}
+                >
                   <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
                 </div>
-              ))
-              : []}
+              ));
+            })()}
           />
         </div>
       </div>

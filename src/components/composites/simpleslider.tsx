@@ -41,6 +41,8 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
     const updateItemsPerView = () => {
       if (window.innerWidth >= 1024) {
         setItemsPerView(5);
+      } else if (window.innerWidth >= 768) {
+        setItemsPerView(4);
       } else {
         setItemsPerView(2);
       }
@@ -55,17 +57,13 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     ...keenOptions,
-    initial: 0,
+    initial: direction === "rtl" ? Math.max(0, Math.ceil(items.length - itemsPerView)) : (keenOptions?.initial || 0),
     rtl: direction === "rtl",
     slideChanged(s) {
       setCurrentSlide(s.track.details.rel);
     },
     created(s) {
       setLoaded(true);
-    },
-    slides: { perView: 2, spacing: 10 },
-    breakpoints: {
-      "(min-width: 1024px)": { slides: { perView: 5, spacing: 16 } },
     },
   },
     [MutationPlugin]
@@ -128,7 +126,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
       )}
 
       {showPagination && instanceRef && totalDots > 1 && (
-        <div className="dots flex justify-center mt-4">
+        <div className={`dots flex justify-center mt-4 ${direction === "rtl" ? "flex-row-reverse" : ""}`}>
           {Array.from({ length: totalDots }).map((_, idx) => (
             <button
               key={idx}
