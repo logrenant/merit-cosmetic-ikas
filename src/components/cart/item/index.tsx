@@ -27,12 +27,12 @@ export default observer(Item);
 const ItemImage = observer(({ item }: { item: IkasOrderLineItem }) => {
 
     return (
-        <div className="rounded-sm overflow-hidden aspect-293/372 max-w-[100px] w-full border border-[color:var(--gray-one)]">
+        <div className={`aspect-4/5 max-w-[90px] w-full ${item.variant.mainImage?.id ? 'rounded-sm overflow-hidden border border-[color:var(--gray-two)]' : ''}`}>
             <Link href={item.variant.href || ""}>
                 <a>
                     {!item.variant.mainImage?.id ? (
                         <img
-                            src="/noPhoto.svg"
+                            src={"/noPhoto.png"}
                             alt="No image available"
                             className="h-full w-full object-cover"
                         />

@@ -64,7 +64,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
   // Categories slider with RTL support
   const [categoriesSliderRef, categoriesSlider] = useKeenSlider<HTMLDivElement>({
     initial: direction === "rtl" ? Math.max(0, (products?.length || 0) - 2) : 0,
-    rtl: false, // Always use LTR for slider navigation regardless of site direction
+    rtl: direction === "rtl", // Use RTL when direction is RTL
     slideChanged(s) {
       setCategoriesCurrentSlide(s.track.details.rel);
       setCategoriesMaxSlide(s.track.details.maxIdx);
@@ -133,7 +133,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
   }, [direction, products?.length, categoriesSlider]);
 
   return (
-    <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
+    <div dir={direction} className="TEST-PARENT my-4 layout relative" ref={ref} >
 
       {isDesktop && xlBanner && (
         <div className="aspect-1400/120 relative mb-4">
@@ -250,6 +250,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
             showPagination={true}
             keenOptions={{
               initial: 0,
+              rtl: direction === "rtl",
               slides: {
                 perView: 5,
                 spacing: 8,

@@ -991,10 +991,11 @@ const ProductDetail = ({
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.relatedProducts")}
             </div>
-            <div dir="ltr" className="w-full">
+            <div dir={direction} className="w-full">
               <Simpleslider
                 keenOptions={{
                   initial: 0,
+                  rtl: direction === "rtl",
                   slides: {
                     perView: 2,
                     spacing: 4,
@@ -1028,10 +1029,11 @@ const ProductDetail = ({
             <div className="text-xl text-[color:var(--color-two)] font-medium my-7 text-center tracking-widest">
               {t("productDetail.insterestedProducts")}
             </div>
-            <div dir="ltr" className="w-full">
+            <div dir={direction} className="w-full">
               <Simpleslider
                 keenOptions={{
                   initial: 0,
+                  rtl: direction === "rtl",
                   slides: {
                     perView: 2,
                     spacing: 4,
@@ -1050,6 +1052,7 @@ const ProductDetail = ({
                 }}
                 items={(lastvisited.data || [])?.map((product) => (
                   <div
+
                     key={product.id + "product2"}
                     className="keen-slider__slide"
                   >
@@ -1074,7 +1077,7 @@ const ProductDetail = ({
                         ? product.averageRating?.toFixed(1)
                         : 0}
                     </div>
-                    <div className="flex px-4 pb-2 pt-3 items-center text-sm leading-none font-light justify-center">
+                    <div className="flex px-4 pb-2 pt-3 items-center text-sm leading-none font-light justify-center whitespace-nowrap">
                       {product.reviewCount} {reviews?.count === 1 ? t("productDetail.comment") : t("productDetail.comments")}
                     </div>
                   </div>
@@ -1088,7 +1091,7 @@ const ProductDetail = ({
                         initialValue={product.averageRating || 0}
                       />
                       <span className="rtl:mr-2 ltr:ml-2 md:flex hidden mt-auto items-center justify-center text-sm text-[color:var(--gray-three)]">
-                        ( {reviews.count || 0} {t("productDetail.comment")} )
+                        ( {reviews.count || 0} {reviews?.count === 1 ? t("productDetail.comment") : t("productDetail.comments")} )
                       </span>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -1124,7 +1127,7 @@ const ProductDetail = ({
                           <button
                             type="button"
                             onClick={open}
-                            className="text-sm underline text-[color:var(--color-three)] text-left max-w-sm cursor-pointer"
+                            className={`text-sm underline text-[color:var(--color-three)] max-w-sm cursor-pointer ${direction === 'rtl' ? 'text-right' : 'text-left'}`}
                           >
                             {commentRules?.modalTitle || t("productDetail.commentRules")}
                           </button>

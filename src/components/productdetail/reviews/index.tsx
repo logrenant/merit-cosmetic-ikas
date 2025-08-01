@@ -14,12 +14,15 @@ const Reviews = (props: ReviewProps) => {
     const { customerReviewList } = props;
 
     const isVisible = customerReviewList && customerReviewList.data?.length > 0;
-
     if (!isVisible) return null;
+
+    const sortedReviews = [...customerReviewList.data].sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
 
     return (
         <div className="w-full my-6 pt-6 border-t border-[color:var(--gray-one)]">
-            {customerReviewList.data.map((review, index) => (
+            {sortedReviews.map((review, index) => (
                 <Review key={review.id + review.createdAt + index} review={review} />
             ))}
         </div>
