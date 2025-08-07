@@ -57,13 +57,16 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     ...keenOptions,
-    initial: direction === "rtl" ? Math.max(0, Math.ceil(items.length - itemsPerView)) : (keenOptions?.initial || 0),
-    rtl: direction === "rtl",
+    initial: 0,
     slideChanged(s) {
       setCurrentSlide(s.track.details.rel);
     },
     created(s) {
       setLoaded(true);
+    },
+    slides: { perView: 2, spacing: 10 },
+    breakpoints: {
+      "(min-width: 1024px)": { slides: { perView: 5, spacing: 16 } },
     },
   },
     [MutationPlugin]
@@ -74,7 +77,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
       <div
         ref={sliderRef}
         style={{ opacity: loaded ? 1 : 0 }}
-        className={`keen-slider w-full overflow-hidden ${direction === "rtl" ? "rtl" : "ltr"}`}
+        className="keen-slider w-full overflow-hidden"
       >
         {items}
       </div>
@@ -82,9 +85,9 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
       {showNavigation && instanceRef && (
         <>
           <button
-            onClick={() => direction === "rtl" ? instanceRef.current?.next() : instanceRef.current?.prev()}
+            onClick={() => instanceRef.current?.prev()}
             disabled={currentSlide === 0}
-            className={`xl:hidden absolute top-[30%] ${direction === "rtl" ? "right-[-32px]" : "left-[-32px]"} text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer ${currentSlide === 0 ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer ${currentSlide === 0 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -97,15 +100,15 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={direction === "rtl" ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"}
+                d="M15 19l-7-7 7-7"
               />
             </svg>
           </button>
 
           <button
-            onClick={() => direction === "rtl" ? instanceRef.current?.prev() : instanceRef.current?.next()}
+            onClick={() => instanceRef.current?.next()}
             disabled={currentSlide === totalDots - 1}
-            className={`xl:hidden absolute top-[30%] ${direction === "rtl" ? "left-[-32px]" : "right-[-32px]"} text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer  ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""
+            className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer  ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""
               }`}
           >
             <svg
@@ -118,7 +121,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={direction === "rtl" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
+                d="M9 5l7 7-7 7"
               />
             </svg>
           </button>
@@ -126,7 +129,7 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
       )}
 
       {showPagination && instanceRef && totalDots > 1 && (
-        <div className={`dots flex justify-center mt-4 ${direction === "rtl" ? "flex-row-reverse" : ""}`}>
+        <div className="dots flex justify-center mt-4">
           {Array.from({ length: totalDots }).map((_, idx) => (
             <button
               key={idx}
