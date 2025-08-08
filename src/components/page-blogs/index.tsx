@@ -39,7 +39,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
 
     return (
         <div className="layout my-10" ref={blogsRef} dir={direction}>
-            <div className="flex xl:flex-row flex-col w-full gap-12">
+            <div className="flex xl:flex-row flex-col w-full xl:gap-12">
                 {/* Filter Title */}
                 <div className="xl:w-1/5 w-full">
                     <div className="flex flex-col gap-4 xl:flex-row xl:justify-between xl:mb-4 text-[color:var(--gray-five)]">
@@ -125,16 +125,23 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
                 </div>
                 {/* Blog List */}
                 <div className="xl:w-4/5 w-full">
-                    <h1 className="text-2xl text-[color:var(--color-two)] font-medium text-center tracking-widest mb-10">
+                    <h1 className="text-2xl text-[color:var(--color-two)] font-medium text-center tracking-widest mb-3">
                         {getSelectedCategoryName() || (direction === 'rtl' ? "جميع المدونات" : "All Blogs")}
                     </h1>
                     {/* Mobile Filter and Title */}
                     <div className="mb-8 flex items-center justify-between">
                         <div className="text-[14px] lg:block hidden">
-                            {blogList.data.filter(blog =>
-                                !selectedCategory ||
-                                blog.category?.metadata?.slug === selectedCategory
-                            ).length} {direction === 'rtl' ? "مدونة" : "blogs"}
+                            {(() => {
+                                const count = blogList.data.filter(blog =>
+                                    !selectedCategory ||
+                                    blog.category?.metadata?.slug === selectedCategory
+                                ).length;
+                                if (direction === 'rtl') {
+                                    return `${count} ${count === 1 ? "مدونة" : "مدونات"}`;
+                                } else {
+                                    return `${count} ${count === 1 ? "blog" : "blogs"}`;
+                                }
+                            })()}
                         </div>
                     </div>
 

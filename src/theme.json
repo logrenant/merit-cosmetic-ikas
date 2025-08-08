@@ -14,7 +14,7 @@
       "componentJson": null,
       "props": [
         {
-          "id": "dc8520a0-514e-4fc9-bdad-9746e546471e",
+          "id": "e92e33ba-792c-45bd-8ea8-b7868ed9c23d",
           "name": "logo",
           "displayName": "",
           "description": "",
@@ -28,7 +28,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "07ade88a-31e4-4ef2-8dab-d97a74fcc7cb",
+          "id": "aa0b1cda-00f4-4a78-b282-16da8ae97f74",
           "name": "showTax",
           "displayName": "",
           "description": "",
@@ -42,7 +42,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0a4a098c-4ff5-43b9-9e4a-088b1819557a",
+          "id": "85ef29b8-0b2a-4d83-bfb2-37870d720da2",
           "name": "showCampaignOffersDesign",
           "displayName": "",
           "description": "",
@@ -56,7 +56,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0a60fb15-8e56-4bcc-926c-2c1e56dc6364",
+          "id": "9815b8e0-67aa-4571-84d8-2d0728c2dce2",
           "name": "campaignOfferIsSmallDesign",
           "displayName": "",
           "description": "",
@@ -70,7 +70,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "5c22d0ef-a224-4327-b2e8-06876d49ec3a",
+          "id": "802ab1f6-0ef3-49b3-953c-75806d28f344",
           "name": "showCampaignIsBiggerImage",
           "displayName": "",
           "description": "",
@@ -84,7 +84,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d628b924-0383-4481-92f8-2aa35ce3a806",
+          "id": "bb80da87-da0a-4328-81bc-e7562e9d7995",
           "name": "campaignOffersTitleColor",
           "displayName": "",
           "description": "",
@@ -98,7 +98,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "b34c5035-23ad-4cfd-9693-e06046e99cca",
+          "id": "ae3a038e-4183-4f6b-b6b5-0ffc104cb325",
           "name": "campaignOffersDescriptionColor",
           "displayName": "",
           "description": "",
@@ -112,7 +112,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "0adc46fb-f9b4-4e36-b142-3d569be57c0c",
+          "id": "9bbf2141-fe3b-4501-86f1-7e655d128a82",
           "name": "campaignOffersContainerBgColor",
           "displayName": "",
           "description": "",
@@ -126,7 +126,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ab7a1a3f-b3a8-4b65-9e00-4963370bfd2f",
+          "id": "6aab9de8-1100-471d-9768-59b64e9c94e0",
           "name": "showCampaignShowDiscountSettings",
           "displayName": "",
           "description": "",
@@ -140,7 +140,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ea1e53d4-0f07-4d2e-add9-d2609a99b9a5",
+          "id": "44389e4b-5118-4161-bdbf-f39b6a674db3",
           "name": "showCampaignHideDiscountBadge",
           "displayName": "",
           "description": "",
@@ -154,7 +154,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ed1d6534-001d-4485-b4cc-0dd6e7c7265e",
+          "id": "5b5d9d7f-21a5-49ac-b67b-788a4a9ca82d",
           "name": "campaignOffersDiscountPercentageColor",
           "displayName": "",
           "description": "",
@@ -168,7 +168,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "4ff0c326-616f-4334-8722-5a896196d9c8",
+          "id": "541a927d-532b-475f-82bf-fb3cc6425a7f",
           "name": "campaignOffersDiscountPercentageBgColor",
           "displayName": "",
           "description": "",
@@ -182,7 +182,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "33ae0664-dde5-449b-bc77-a3d10c59af01",
+          "id": "b3d43831-3ebe-4b30-be88-a23e033ca712",
           "name": "showCampaignShowCountdownSettings",
           "displayName": "",
           "description": "",
@@ -196,7 +196,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f25ad2ab-48fc-44b8-8c83-03b0b5d087a8",
+          "id": "795ae1ac-1d9f-4bee-b2aa-b3b2fc6b2f16",
           "name": "campaignOfferCountdownStyleIsLine",
           "displayName": "",
           "description": "",
@@ -210,7 +210,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "7cefa0c7-9c6f-4bd8-ba0e-4a160bd39a66",
+          "id": "0ebe9ac4-3092-460a-8741-756d64a5fa5e",
           "name": "campaignOffersCountdownTextColor",
           "displayName": "",
           "description": "",
@@ -224,7 +224,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "f3b6dc61-fc6d-4291-93ed-b7cb5e01093a",
+          "id": "b00688c1-08b4-4619-895f-3a3d55574f3a",
           "name": "campaignOffersCountdownTimeColor",
           "displayName": "",
           "description": "",
@@ -238,7 +238,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "1ac441e2-31f0-4f7b-8927-b68368065f32",
+          "id": "bf566611-ed5d-4481-aa9a-b65d8abe4934",
           "name": "campaignOffersCountdownBgColor",
           "displayName": "",
           "description": "",
@@ -252,7 +252,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "43e543cc-c0b1-41e7-8c07-0cd7626981f1",
+          "id": "5c2d3bf9-086b-4723-9267-50e2ec3447cf",
           "name": "campaignOffersEnableMiddlePhase",
           "displayName": "",
           "description": "",
@@ -266,7 +266,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "dc0a869e-ad33-46d3-8125-3e8a5b65431f",
+          "id": "f46e6e66-447f-4de3-8b76-1489ac8d93c2",
           "name": "campaignOffersMiddlePhaseOverlayColor",
           "displayName": "",
           "description": "",
@@ -280,7 +280,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3f1dac26-ed0e-4640-a0e4-f570d07b748e",
+          "id": "e1161738-816c-4ceb-81f3-0e3b8e0eac5f",
           "name": "campaignOfferCountdownStyleIsLineSuccessPage",
           "displayName": "",
           "description": "",
@@ -294,7 +294,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "879c8694-47b9-4daa-b9c5-4d01735302fd",
+          "id": "a0060d78-f1ed-4463-aaef-ca2952bcfc3c",
           "name": "buttonBgColor",
           "displayName": "",
           "description": "",
@@ -308,7 +308,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d18b1bd9-f579-41ec-8d66-6dfc3b11aa25",
+          "id": "4aa6bc6a-82aa-4d2f-ae86-11e070878e39",
           "name": "buttonTextColor",
           "displayName": "",
           "description": "",
@@ -322,7 +322,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e3b7387c-7b06-4e43-b35a-73f786dfea13",
+          "id": "a277c82a-b5f2-4cfd-a869-cff38616a91f",
           "name": "buttonDisabledBgColor",
           "displayName": "",
           "description": "",
@@ -336,7 +336,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "898926f7-00fa-426f-a152-eac6e5cd058d",
+          "id": "ed656589-43f9-450f-b512-6ea61388b926",
           "name": "buttonDisabledTextColor",
           "displayName": "",
           "description": "",
@@ -350,7 +350,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c1272ef6-0d23-4583-9c7c-b0188b64823e",
+          "id": "f39edf98-65ef-4953-87a4-ab9a6441684a",
           "name": "primaryTextColor",
           "displayName": "",
           "description": "",
@@ -364,7 +364,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "36e47a19-ff74-45f0-854b-d82f11872f82",
+          "id": "851879ab-e677-49b4-8208-87aa3fd37bb1",
           "name": "secondaryTextColor",
           "displayName": "",
           "description": "",
@@ -378,7 +378,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "82ae0971-cf99-4c95-ab43-835e0c3e514f",
+          "id": "53b6dc0a-5476-4dc1-aed4-e98a34f42599",
           "name": "primaryBgColor",
           "displayName": "",
           "description": "",
@@ -392,7 +392,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "e7f9308f-6a0c-4925-b581-60eba7f08298",
+          "id": "44fe14ee-3bb1-4879-a3cf-d452fc503da3",
           "name": "secondaryBgColor",
           "displayName": "",
           "description": "",
@@ -406,7 +406,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "ac94d253-bbaf-4ded-a85a-287abdae8500",
+          "id": "cb0833e2-8696-4583-99f5-34f8f180aefc",
           "name": "borderColor",
           "displayName": "",
           "description": "",
@@ -420,7 +420,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "3193486b-c5d2-4e57-b4cd-76dde44fb8dc",
+          "id": "796c3939-e420-40d7-b7a3-184c781abbf4",
           "name": "cardBgColor",
           "displayName": "",
           "description": "",
@@ -434,7 +434,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "32a65732-e363-4408-936e-7de91678b4ee",
+          "id": "f9197eae-d432-43a8-a3bc-82f9737342c2",
           "name": "errorColor",
           "displayName": "",
           "description": "",
@@ -448,7 +448,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "86acb1c4-80ba-4cf3-81ee-34e83702c7bd",
+          "id": "96e990c7-6f5a-4294-9f44-3af4ec666568",
           "name": "errorLightColor",
           "displayName": "",
           "description": "",
@@ -462,7 +462,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "aed5faf0-657d-4076-8436-2bd3f0964261",
+          "id": "6aed1331-7628-49a3-9ff5-0566878da2e6",
           "name": "warningColor",
           "displayName": "",
           "description": "",
@@ -476,7 +476,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c18b2e6e-783e-441b-9f68-d88f16d956c1",
+          "id": "4d67be8c-75f6-4f6a-8e23-f4586c2165e0",
           "name": "warningLightColor",
           "displayName": "",
           "description": "",
@@ -490,7 +490,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "90b790d1-756a-48a5-847e-026fbc9e7b7a",
+          "id": "d7160f41-ab54-4416-84a5-e2f03cbffccb",
           "name": "successColor",
           "displayName": "",
           "description": "",
@@ -504,7 +504,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "13a34898-2a94-4761-be85-b70c177d3a3a",
+          "id": "e870f2b2-fc19-4b4f-9dcd-076ff36b3f96",
           "name": "successLightColor",
           "displayName": "",
           "description": "",
@@ -518,7 +518,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "d68bd0e7-f256-46b2-af76-b4bae239e8c9",
+          "id": "619134ac-aeff-45de-8669-c1c83fe009e3",
           "name": "secondaryButtonBgColor",
           "displayName": "",
           "description": "",
@@ -532,7 +532,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "c8ebb55d-1a95-4a36-937c-d700d5a097b8",
+          "id": "d922741c-a437-48fd-a6c1-04cc32fb2f3d",
           "name": "secondaryButtonTextColor",
           "displayName": "",
           "description": "",
@@ -546,7 +546,7 @@
           "isFacetListNotSent": false
         },
         {
-          "id": "58374c2f-c7cb-4de5-b1cd-eb66c62270c9",
+          "id": "4f10973b-7150-43d5-a869-862107fc8dd9",
           "name": "secondaryButtonBorderColor",
           "displayName": "",
           "description": "",
@@ -10811,7 +10811,7 @@
           "componentId": "5fa44498-bb55-4496-abd7-a537be4da4bf",
           "propValues": {
             "pageTitle": "Order Status",
-            "pageDescription": "<ul><li style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); color: rgb(0, 0, 0)\">In order to track the orders that you have placed using your registered account, please&nbsp;<a href=\"https://meletiorient.myikas.com/account/login\" style=\" color: oklch(0.21 0.034 264.665); font-weight: 500; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">log-in</a>&nbsp;and go to your&nbsp;<span style=\" font-weight: bolder; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">Orders&nbsp;</span>tab in your&nbsp;<span style=\" font-weight: bolder; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">Account&nbsp;</span>page.<br style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\"><br style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\"></li><li style=\" scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); color: rgb(0, 0, 0)\">In order to create refund request for the orders that you have placed using fast checkout feature with no account requirement, please&nbsp;<a href=\"https://meletiorient.myikas.com/pages/contact\" style=\" color: oklch(0.21 0.034 264.665); font-weight: 500; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246)\">contact us</a>.</li></ul>",
+            "pageDescription": "<ul><li class=\"\" style=\"border-style: solid; margin-top: 0.285714em; margin-bottom: 0.285714em; padding-inline-start: 0.428571em; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0);\">In order to track the orders that you have placed using your registered account, please&nbsp;<a href=\"https://meritcosmetics.com/account/login\" style=\"border-style: solid; color: oklch(0.21 0.034 264.665); font-weight: 500; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">log-in</a>&nbsp;and go to your&nbsp;<span style=\"border-style: solid; font-weight: bolder; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">Orders&nbsp;</span>tab in your&nbsp;<span style=\"border-style: solid; font-weight: bolder; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">Account&nbsp;</span>page.<br style=\"border-style: solid; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"><br style=\"border-style: solid; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\"></li><li class=\"\" style=\"border-style: solid; margin-top: 0.285714em; margin-bottom: 0.285714em; padding-inline-start: 0.428571em; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin; color: rgb(0, 0, 0);\">In order to create refund request for the orders that you have placed using fast checkout feature with no account requirement, please&nbsp;<a href=\"https://meritcosmetics.com/pages/contact\" style=\"border-style: solid; color: oklch(0.21 0.034 264.665); font-weight: 500; scrollbar-color: rgb(172, 8, 33) rgb(254, 250, 246); scrollbar-width: thin;\">contact us</a>.</li></ul>",
             "orderNumberInput": "Order Number",
             "orderCannotFound": "No order could be found in the system that matches the query criteria.",
             "emailRule": "emailRule",
@@ -13551,7 +13551,7 @@
       {
         "id": "1cd0a416-a779-41c1-9d1b-81201371dd8e",
         "displayName": "Üyelik Sayfası Sağ Kolon",
-        "color": "#cc8a64",
+        "color": "#f9e4b7ff",
         "key": "--auth-color",
         "translations": {}
       },

@@ -1,155 +1,68 @@
 import { useEffect, useState, useRef } from "react";
 import { observer } from "mobx-react-lite";
 import { Image } from "@ikas/storefront";
-import { KeenSliderInstance, KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
-
-import "keen-slider/keen-slider.min.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperClass } from "swiper";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import ProductCard from "../composites/productcard";
-import SimpleSlider from "../composites/simpleslider";
+import SwiperSlider from "../composites/swiperslider";
 import { HomeproductsProps } from "../__generated__/types";
-import { sliderBreakpoints } from "src/styles/breakpoints";
 import { useScreen } from "src/utils/hooks/useScreen";
 import { useUserLocation } from "src/utils/useUserLocation";
 import { useDirection } from "src/utils/useDirection";
 
+
+
 const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut }: HomeproductsProps) => {
-  const { direction } = useDirection();
-  const [isClient, setIsClient] = useState(false);
-
-  // SSR-safe initialization - use original products on server, reversed on client after hydration
-  const [reversedProducts, setReversedProducts] = useState(products);
-
-  const [selectedProducts, setSelectedProducts] = useState(
-    products?.[0]?.image?.id || ""
-  );
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [maxSlide, setMaxSlide] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-
-  // Categories slider states
-  const [categoriesCurrentSlide, setCategoriesCurrentSlide] = useState(0);
-  const [categoriesMaxSlide, setCategoriesMaxSlide] = useState(0);
-  const [categoriesLoaded, setCategoriesLoaded] = useState(false);
-
   const { isTurkishIP, filterProductsByLocation } = useUserLocation();
-
-  const MutationPlugin = (slider: KeenSliderInstance) => {
-    const observer = new MutationObserver(() => {
-      window.requestAnimationFrame(() => slider.update());
-    });
-
-    slider.on("created", () => {
-      observer.observe(slider.container, { childList: true });
-    });
-
-    slider.on("destroyed", () => {
-      observer.disconnect();
-    });
-  };
-
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    slideChanged(s) {
-      setCurrentSlide(s.track.details.rel);
-      setMaxSlide(s.track.details.maxIdx);
-    },
-    created(s) {
-      setLoaded(true);
-      setMaxSlide(s.track.details.maxIdx);
-    },
-    slides: { perView: 2, spacing: 10 },
-    breakpoints: {
-      [sliderBreakpoints.xs]: { slides: { perView: 3, spacing: 16 } },
-      [sliderBreakpoints.md]: { slides: { perView: 4, spacing: 16 } },
-      [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
-    },
-  });
-
-  // Categories slider with RTL support - SSR safe
-  const [categoriesSliderRef, categoriesSlider] = useKeenSlider<HTMLDivElement>({
-    initial: 0, // Always start from 0 during SSR
-    rtl: false, // Always use LTR for slider navigation regardless of site direction
-    slideChanged(s) {
-      setCategoriesCurrentSlide(s.track.details.rel);
-      setCategoriesMaxSlide(s.track.details.maxIdx);
-    },
-    created(s) {
-      setCategoriesLoaded(true);
-      setCategoriesMaxSlide(s.track.details.maxIdx);
-    },
-    slides: { perView: 2, spacing: 10 },
-    breakpoints: {
-      [sliderBreakpoints.md]: { slides: { perView: 4, spacing: 16 } },
-      [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
-    },
-  }, [MutationPlugin]);
-
-  const [isVisible, setIsVisible] = useState(true);
-  const [pxValue, setPxValue] = useState('150px');
-  const [sliderKey, setSliderKey] = useState(0);
-
-  const ref = useRef<HTMLDivElement>(null);
+  const { direction } = useDirection();
   const { isSmall, isMobile, isDesktop } = useScreen();
+  const ref = useRef<HTMLDivElement>(null);
 
-  // SSR-safe initialization - only run on client side
+  // SSR-safe: Only reverse on client
+  const [isClient, setIsClient] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState(products?.[0]?.image?.id || "");
+  const [firstFiveCategories, setFirstFiveCategories] = useState(products ? products.slice(0, 5) : []);
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Update reversed products and selected product only on client side
   useEffect(() => {
-    if (isClient && products) {
-      const newReversedProducts = direction === "rtl" ? [...products].reverse() : products;
-      setReversedProducts(newReversedProducts);
-
-      // Update selected product to maintain consistency
-      if (newReversedProducts.length > 0) {
-        setSelectedProducts(newReversedProducts[0].image.id);
+    if (products) {
+      let cats = products;
+      if (isClient && direction === 'rtl') {
+        cats = [...products].reverse();
+      }
+      setFirstFiveCategories(cats.slice(0, 5));
+      // Eğer mevcut selectedProducts ilk 5'te yoksa, ilk 5'in ilki seçili olsun
+      if (!cats.slice(0, 5).some(cat => cat.image.id === selectedProducts)) {
+        setSelectedProducts(cats[0]?.image?.id || "");
       }
     }
-  }, [isClient, direction, products]);
+  }, [products, direction, isClient]);
 
-  // Move slider to appropriate position after client hydration
-  useEffect(() => {
-    if (isClient && categoriesSlider.current && direction === "rtl" && reversedProducts) {
-      // RTL'de slider'ı sondan 2. pozisyona kaydır (sağdan görünür hale getir)
-      const targetSlide = Math.max(0, reversedProducts.length - 2);
-      setTimeout(() => {
-        categoriesSlider.current?.moveToIdx(targetSlide);
-      }, 100); // Küçük bir delay ekle
-    } else if (isClient && categoriesSlider.current && direction === "ltr") {
-      // LTR'de başa dön
-      setTimeout(() => {
-        categoriesSlider.current?.moveToIdx(0);
-      }, 100);
-    }
-  }, [isClient, direction, reversedProducts?.length, categoriesSlider]);
 
-  useEffect(() => {
-    console.log("categories", categories);
-  }, [categories]);
 
+  const [isVisible, setIsVisible] = useState(true);
+  const [pxValue, setPxValue] = useState('150px');
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
       for (let entry of entries) {
         const elementHeight = entry.contentRect.height;
-        console.log("elementHeight", elementHeight);
-
         if (elementHeight < 300) {
           setIsVisible(false);
           setPxValue('75px');
-
         } else {
           setIsVisible(true);
           setPxValue('150px');
         }
       }
     });
-
     if (ref.current) {
       observer.observe(ref.current);
     }
-
     return () => {
       if (ref.current) {
         observer.unobserve(ref.current);
@@ -157,12 +70,6 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
     };
   }, []);
 
-  // Force slider recreation when direction changes
-  useEffect(() => {
-    if (isClient) {
-      setSliderKey(prev => prev + 1);
-    }
-  }, [direction, isClient]);
 
   return (
     <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
@@ -198,123 +105,107 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
         </div>
       )}
 
-      {categories && (
-        <div className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-4 relative">
-          {/* Categories Slider Container */}
-          <div ref={categoriesSliderRef} className="keen-slider flex flex-row">
-            {reversedProducts!.map((e, index) => (
-              <div key={e.image.id} className={`keen-slider__slide`}>
-                <div
-                  onClick={() => {
-                    console.log("e.image.id", e.image.id);
-                    setSelectedProducts(e.image.id);
+      {firstFiveCategories.length > 0 && (
+        <div className="w-full mb-4 relative">
+          {(() => {
+            const swiperRef = useRef<any>(null);
+            const [currentSlide, setCurrentSlide] = useState(0);
+            const totalDots = firstFiveCategories.length;
+            return (
+              <>
+                <Swiper
+                  ref={swiperRef}
+                  modules={[Navigation]}
+                  slidesPerView={2}
+                  spaceBetween={10}
+                  breakpoints={{
+                    768: { slidesPerView: 4, spaceBetween: 16 },
+                    1024: { slidesPerView: 5, spaceBetween: 16 },
                   }}
-                  className={`aspect-648/270 cursor-pointer w-full relative overflow-hidden ${selectedProducts === e.image.id
-                    ? "opacity-90 border-4 border-[color:var(--color-one)]"
-                    : "hover:border-4 hover:border-[color:var(--color-one)] transition-all duration-300"
-                    }`}
+                  navigation={false}
+                  className="w-full"
+                  onSlideChange={(swiper: SwiperClass) => setCurrentSlide(swiper.activeIndex)}
                 >
-                  <Image
-                    id={"test-id---" + e.image.id}
-                    alt={e.image?.altText || ""}
-                    useBlur
-                    image={e.image}
-                    layout="fill"
-                    objectFit="cover"
-                    className={`duration-300 ${selectedProducts === e.image.id
-                      ? "scale-110"
-                      : "hover:scale-110"
-                      }`}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation Arrows */}
-          {categoriesLoaded && categoriesSlider.current && (
-            <>
-              <button
-                onClick={() => categoriesSlider.current?.prev()}
-                className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  {firstFiveCategories.map((e) => (
+                    <SwiperSlide key={e.image.id} className="min-w-0 w-full flex justify-center">
+                      <div
+                        onClick={() => setSelectedProducts(e.image.id)}
+                        className={`aspect-648/270 cursor-pointer w-full relative overflow-hidden ${selectedProducts === e.image.id
+                          ? "opacity-90 border-4 border-[color:var(--color-one)]"
+                          : "hover:border-4 hover:border-[color:var(--color-one)] transition-all duration-300"
+                          }`}
+                      >
+                        <Image
+                          id={"test-id---" + e.image.id}
+                          alt={e.image?.altText || ""}
+                          useBlur
+                          image={e.image}
+                          layout="fill"
+                          objectFit="cover"
+                          className={`duration-300 ${selectedProducts === e.image.id
+                            ? "scale-110"
+                            : "hover:scale-110"
+                            }`}
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                {/* Custom Navigation Arrows */}
+                <button
+                  onClick={() => swiperRef.current?.swiper.slidePrev()}
+                  disabled={currentSlide === 0}
+                  className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer z-10 ${currentSlide === 0 ? "cursor-not-allowed" : ""}`}
+                  aria-label="Previous"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <button
-                onClick={() => categoriesSlider.current?.next()}
-                className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer`}
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiperRef.current?.swiper.slideNext()}
+                  disabled={currentSlide === totalDots - 1}
+                  className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer z-10 ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""}`}
+                  aria-label="Next"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </>
-          )}
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            );
+          })()}
         </div>
       )}
-
-      <div className="TEST-SECOND-SLIDER w-full">
-        <div className="TEST-SECOND-SLIDER w-full">
-          <SimpleSlider
-            key={`${selectedProducts}-${direction}-${isClient}`}
+      {/* Slider ref ve initialSlide ile RTL'de ters başlat */}
+      {(() => {
+        const currentProducts = isClient && direction === 'rtl' ? [...(products || [])].reverse() : (products || []);
+        const selectedCategory = currentProducts.find((e) => e.image.id === selectedProducts);
+        const categoryProducts = selectedCategory?.products.data || [];
+        const filteredProducts = filterProductsByLocation(categoryProducts);
+        const productSlides = filteredProducts.map((product) => (
+          <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOut?.soldOutButton} />
+        ));
+        // SwiperSlider'a ref ve initialSlide props'u ekle
+        const sliderRef = useRef(null);
+        // RTL'de slider'ı sondan başlat
+        const initialSlide = direction === 'rtl' ? Math.max(0, productSlides.length - 1) : 0;
+        return (
+          <SwiperSlider
             showPagination={true}
-            keenOptions={{
-              initial: 0, // Her zaman 0'dan başla, SimpleSlider kendi RTL logic'ini kullansın
-              slides: {
-                perView: 2,
-                spacing: 10,
-              },
-              breakpoints: {
-                [sliderBreakpoints.md]: { slides: { perView: 4, spacing: 16 } },
-                [sliderBreakpoints.lg]: { slides: { perView: 5, spacing: 16 } },
-              },
+            showNavigation={false}
+            perView={2}
+            breakpoints={{
+              768: { slidesPerView: 3, spaceBetween: 8 },
+              1024: { slidesPerView: 5, spaceBetween: 8 },
             }}
-            items={(() => {
-              // Only apply RTL logic on client side to avoid SSR mismatch
-              const currentProducts = isClient ? reversedProducts : products;
-              const selectedCategory = currentProducts?.find((e) => e.image.id === selectedProducts);
-              const categoryProducts = selectedCategory?.products.data || [];
-              const filteredProducts = filterProductsByLocation(categoryProducts);
-              // RTL'de ürünlerin sırasını değiştirmeyelim, SimpleSlider'ın kendi RTL logic'i doğru çalışsın
-              const finalProducts = filteredProducts; // Reverse yapmıyoruz
-
-              return finalProducts?.map((product, index) => (
-                <div
-                  key={product.id}
-                  className={`TEST-ITEMS-MAPPING-2 keen-slider__slide`}
-                >
-                  <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
-                </div>
-              ));
-            })()}
+            items={productSlides}
+            direction={direction}
+            initialSlide={initialSlide}
           />
-        </div>
-      </div>
-
+        );
+      })()}
     </div>
   );
 };
-
 export default observer(HomeProducts);
