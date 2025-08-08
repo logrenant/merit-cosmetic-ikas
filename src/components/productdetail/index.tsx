@@ -1013,12 +1013,7 @@ const ProductDetail = ({
                   },
                 }}
                 items={(similar.data || [])?.map((product) => (
-                  <div
-                    key={product.id + "product"}
-                    className="keen-slider__slide"
-                  >
-                    <ProductCard product={product} soldOutButtonText={soldOutButton} />
-                  </div>
+                  <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOutButton} />
                 ))}
               />
             </div>

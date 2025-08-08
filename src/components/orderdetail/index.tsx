@@ -128,11 +128,9 @@ export default observer(function Orderdetail({
   }
 
   return (
-    <div className="flex flex-col gap-12 w-full " dir={direction}>
-
-      {/* Başlık */}
-      <div className="flex flex-col mb-4 items-start md:flex-row md:justify-between ">
-        <div className="flex flex-col items-start ">
+    <div className="layout" dir={direction}>
+      <div className="flex flex-row justify-between items-start">
+        <div className="flex mb-4 items-start flex-col">
           <div className="text-2xl">
             {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
           </div>
@@ -145,29 +143,33 @@ export default observer(function Orderdetail({
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-between items-start">
-          <button
-            type="button"
-            onClick={handleGoToContact}
-            className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer flex flex-row items-center gap-2"
-          >
-            <Envelope />
-            <span>{t("contactUs")}</span>
-          </button>
-        </div>
+
+        <button
+          type="button"
+          onClick={handleGoToContact}
+          className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer flex flex-row items-center gap-2"
+        >
+          <Envelope />
+          <span>{t("contactUs")}</span>
+        </button>
       </div>
 
-      <div className="flex md:flex-row md:justify-between flex-col w-full">
-        {/* Paketler & Ürünler */}
-        <div>
+      {/* products */}
+      <div className="grid gap-8 lg:grid-cols-[calc(100%-342px)_310px]">
+        <div className="flex flex-col gap-4 w-full">
           {order.displayedPackages?.map((pkg) => {
             const items = pkg.getOrderLineItems(order);
+            const quantity = items.reduce(
+              (quantity: number, oLI) => oLI.quantity + quantity,
+              0
+            );
             return (
-              <div key={pkg.id} className="space-y-4">
-                <h3 className="text-xl">
-                  {getPackageTitle(pkg.orderPackageFulfillStatus)}
-                </h3>
-                <div className="divide-y">
+              <div key={pkg.id}>
+                <div className="text-xl">
+                  {getPackageTitle(pkg.orderPackageFulfillStatus)} ({quantity})
+                </div>
+
+                <div className="grid divide-y divide-[color:var(--gray-six)] grid-cols-1 mt-3">
                   {items.map((item) => (
                     <div key={item.id} className="flex py-4">
                       <div className="relative rounded-sm aspect-293/372 w-full overflow-hidden min-w-[130px] max-w-[130px]">
@@ -237,62 +239,63 @@ export default observer(function Orderdetail({
             );
           })}
         </div>
-
-        <div className="flex flex-col">
-          {/* Adresler */}
-          <div className="flex flex-col">
-            {order.displayedPackages.filter(
-              (e) => !!e.trackingInfo?.cargoCompany
-            ).length > 0 && (
-                <>
-                  <div className="text-xl">{t("trackingInfo")}</div>
-                  {order.displayedPackages?.map((orderPackage) => (
-                    <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+        <div>
+          {order.displayedPackages.filter(
+            (e) => !!e.trackingInfo?.cargoCompany
+          ).length > 0 && (
+              <>
+                <div className="text-xl">{t("trackingInfo")}</div>
+                {order.displayedPackages?.map((orderPackage) =>
+                  orderPackage.trackingInfo?.cargoCompany ? (
+                    <div
+                      key={orderPackage.id}
+                      className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1"
+                    >
                       <div className="text-[color:var(--gray-three)]">
-                        {orderPackage.trackingInfo?.cargoCompany}
+                        {orderPackage.trackingInfo.cargoCompany}
                       </div>
                       <div className="text-right">
                         <a
-                          href={orderPackage.trackingInfo?.trackingLink || ""}
+                          href={orderPackage.trackingInfo.trackingLink || ""}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="text-[color:var(--color-three)] underline"
                         >
-                          {orderPackage.trackingInfo?.trackingNumber}
+                          {orderPackage.trackingInfo.trackingNumber}
                         </a>
                       </div>
                     </div>
-                  ))}
-                </>
-              )}
-            <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
-            <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-              <div className="text-[color:var(--gray-three)]">
-                {t("orderDetail.name")}
-              </div>
-              <div className="text-right">
-                {order.shippingAddress?.firstName}{" "}
-                {order.shippingAddress?.lastName}
-              </div>
-              <div className="col-span-2 text-[color:var(--gray-three)]">
-                {order.shippingAddress?.addressText}
-              </div>
+                  ) : null
+                )}
+              </>
+            )}
+          <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
+          <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.name")}
             </div>
-            <div className="text-xl">{t("orderDetail.billingInfo")}</div>
-            <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-              <div className="text-[color:var(--gray-three)]">
-                {t("orderDetail.name")}
-              </div>
-              <div className="text-right">
-                {order.billingAddress?.firstName}{" "}
-                {order.billingAddress?.lastName}
-              </div>
-              <div className="col-span-2 text-[color:var(--gray-three)]">
-                {order.billingAddress?.addressText}
-              </div>
+            <div className="text-right">
+              {order.shippingAddress?.firstName}{" "}
+              {order.shippingAddress?.lastName}
+            </div>
+            <div className="col-span-2 text-[color:var(--gray-three)]">
+              {order.shippingAddress?.addressText}
+            </div>
+          </div>
+          <div className="text-xl">{t("orderDetail.billingInfo")}</div>
+          <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+            <div className="text-[color:var(--gray-three)]">
+              {t("orderDetail.name")}
+            </div>
+            <div className="text-right">
+              {order.billingAddress?.firstName}{" "}
+              {order.billingAddress?.lastName}
+            </div>
+            <div className="col-span-2 text-[color:var(--gray-three)]">
+              {order.billingAddress?.addressText}
             </div>
           </div>
 
-          {/* Özet */}
           <div className="text-xl">{t("orderDetail.orderSummary")}</div>
           <div className="grid mt-2 mb-8 grid-cols-2 gap-1">
             <div className="text-[color:var(--gray-three)]">
@@ -361,15 +364,6 @@ export default observer(function Orderdetail({
               />
             </div>
           </div>
-          {/* <div className="mt-8 border-t border-[color:var(--gray-six)] pt-6">
-            <button
-              type="button"
-              onClick={handleGoToContact}
-              className="w-full bg-[color:var(--color-three)] hover:bg-[color:var(--color-four)] text-white font-medium py-2.5 px-6 rounded-sm transition-colors duration-200"
-            >
-              {t("contactUs")}
-            </button>
-          </div> */}
         </div>
       </div>
     </div>

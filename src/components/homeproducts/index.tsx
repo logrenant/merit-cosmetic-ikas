@@ -46,44 +46,28 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
 
   const [isVisible, setIsVisible] = useState(true);
   const [pxValue, setPxValue] = useState('150px');
-  const [sliderKey, setSliderKey] = useState(0);
-
-  useEffect(() => {
-    console.log("categories", categories);
-  }, [categories]);
-
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
       for (let entry of entries) {
         const elementHeight = entry.contentRect.height;
-        console.log("elementHeight", elementHeight);
-
         if (elementHeight < 300) {
           setIsVisible(false);
           setPxValue('75px');
-
         } else {
           setIsVisible(true);
           setPxValue('150px');
         }
       }
     });
-
     if (ref.current) {
       observer.observe(ref.current);
     }
-
     return () => {
       if (ref.current) {
         observer.unobserve(ref.current);
       }
     };
   }, []);
-
-  // Force slider recreation when direction changes
-  useEffect(() => {
-    setSliderKey(prev => prev + 1);
-  }, [direction]);
 
 
   return (
@@ -121,9 +105,8 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
       )}
 
       {firstFiveCategories.length > 0 && (
-        <div className="CATEGORRIES-SLIDER-TEST-HERE w-full mb-4 relative">
+        <div className="w-full mb-4">
           <Swiper
-            key={sliderKey}
             modules={[Navigation]}
             slidesPerView={2}
             spaceBetween={10}
@@ -161,26 +144,34 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
           </Swiper>
         </div>
       )}
-      <div dir={direction} className="w-full">
-        <SwiperSlider
-          showPagination={true}
-          showNavigation={true}
-          perView={2}
-          breakpoints={{
-            768: { slidesPerView: 3, spaceBetween: 8 },
-            1024: { slidesPerView: 5, spaceBetween: 8 },
-          }}
-          items={(() => {
-            const currentProducts = isClient && direction === 'rtl' ? [...(products || [])].reverse() : (products || []);
-            const selectedCategory = currentProducts.find((e) => e.image.id === selectedProducts);
-            const categoryProducts = selectedCategory?.products.data || [];
-            const filteredProducts = filterProductsByLocation(categoryProducts);
-            return filteredProducts.map((product) => (
-              <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOut?.soldOutButton} />
-            ));
-          })()}
-        />
-      </div>
+      {/* Slider ref ve initialSlide ile RTL'de ters başlat */}
+      {(() => {
+        const currentProducts = isClient && direction === 'rtl' ? [...(products || [])].reverse() : (products || []);
+        const selectedCategory = currentProducts.find((e) => e.image.id === selectedProducts);
+        const categoryProducts = selectedCategory?.products.data || [];
+        const filteredProducts = filterProductsByLocation(categoryProducts);
+        const productSlides = filteredProducts.map((product) => (
+          <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOut?.soldOutButton} />
+        ));
+        // SwiperSlider'a ref ve initialSlide props'u ekle
+        const sliderRef = useRef(null);
+        // RTL'de slider'ı sondan başlat
+        const initialSlide = direction === 'rtl' ? Math.max(0, productSlides.length - 1) : 0;
+        return (
+          <SwiperSlider
+            showPagination={true}
+            showNavigation={true}
+            perView={2}
+            breakpoints={{
+              768: { slidesPerView: 3, spaceBetween: 8 },
+              1024: { slidesPerView: 5, spaceBetween: 8 },
+            }}
+            items={productSlides}
+            direction={direction}
+            initialSlide={initialSlide}
+          />
+        );
+      })()}
     </div>
   );
 };

@@ -137,9 +137,14 @@ const OrderTracking = (props: OrderTrackingProps) => {
               onSubmit={handleSubmit}
               className="flex flex-col gap-3 w-full"
             >
+              {generalError && (
+                <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit mt-2">
+                  <p className="text-red-600 text-[12px]">{generalError}</p>
+                </div>
+              )}
               <div>
                 <label className="text-base text-[color:var(--black-one)] mb-0.5">
-                  *{t("email")}
+                  {t("email")}
                 </label>
                 <input
                   type="email"
@@ -153,13 +158,13 @@ const OrderTracking = (props: OrderTrackingProps) => {
                   className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
                 />
                 {emailError && (
-                  <p className="text-red-600 text-sm mt-1">{emailError}</p>
+                  <p className="text-red-600 text-[12px] mt-1">{emailError}</p>
                 )}
               </div>
 
               <div>
                 <label className="text-base text-[color:var(--black-one)] mb-0.5">
-                  *{props.orderNumberInput}
+                  {props.orderNumberInput}
                 </label>
                 <input
                   type="text"
@@ -173,7 +178,7 @@ const OrderTracking = (props: OrderTrackingProps) => {
                   className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
                 />
                 {orderNumberError && (
-                  <p className="text-red-600 text-sm mt-1">{orderNumberError}</p>
+                  <p className="text-red-600 text-[12px] mt-1">{orderNumberError}</p>
                 )}
               </div>
 
@@ -184,10 +189,6 @@ const OrderTracking = (props: OrderTrackingProps) => {
               >
                 {isSubmitting ? t("loading") : t("submit")}
               </button>
-
-              {generalError && (
-                <p className="text-red-600 text-sm mt-2">{generalError}</p>
-              )}
             </form>
 
             <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit">

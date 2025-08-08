@@ -1,7 +1,6 @@
 import React, { ReactNode, useState, useEffect } from "react";
 import { KeenSliderInstance, KeenSliderOptions, useKeenSlider } from "keen-slider/react";
 import { observer } from "mobx-react-lite";
-import { useDirection } from "../../utils/useDirection";
 
 import "keen-slider/keen-slider.min.css";
 
@@ -35,14 +34,11 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [itemsPerView, setItemsPerView] = useState(2);
-  const { direction } = useDirection();
 
   useEffect(() => {
     const updateItemsPerView = () => {
       if (window.innerWidth >= 1024) {
         setItemsPerView(5);
-      } else if (window.innerWidth >= 768) {
-        setItemsPerView(4);
       } else {
         setItemsPerView(2);
       }
@@ -72,6 +68,15 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
     [MutationPlugin]
   );
 
+  // items değiştiğinde slider'ı başa al ve güncelle
+  useEffect(() => {
+    setCurrentSlide(0);
+    if (instanceRef.current) {
+      instanceRef.current.update();
+      instanceRef.current.moveToIdx(0);
+    }
+  }, [items]);
+
   return (
     <section className="relative">
       <div
@@ -79,7 +84,11 @@ const SimpleSlider: React.FC<SimpleSliderProps> = observer(({
         style={{ opacity: loaded ? 1 : 0 }}
         className="keen-slider w-full overflow-hidden"
       >
-        {items}
+        {items.map((item, idx) => (
+          <div className="keen-slider__slide" key={idx}>
+            {item}
+          </div>
+        ))}
       </div>
 
       {showNavigation && instanceRef && (
