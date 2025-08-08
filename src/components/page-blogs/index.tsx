@@ -39,7 +39,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
 
     return (
         <div className="layout my-10" ref={blogsRef} dir={direction}>
-            <div className="flex xl:flex-row flex-col w-full gap-12">
+            <div className="flex xl:flex-row flex-col w-full xl:gap-12">
                 {/* Filter Title */}
                 <div className="xl:w-1/5 w-full">
                     <div className="flex flex-col gap-4 xl:flex-row xl:justify-between xl:mb-4 text-[color:var(--gray-five)]">

@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { observer } from "mobx-react-lite";
 import { Image } from "@ikas/storefront";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperClass } from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -105,43 +106,75 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
       )}
 
       {firstFiveCategories.length > 0 && (
-        <div className="w-full mb-4">
-          <Swiper
-            modules={[Navigation]}
-            slidesPerView={2}
-            spaceBetween={10}
-            breakpoints={{
-              768: { slidesPerView: 4, spaceBetween: 16 },
-              1024: { slidesPerView: 5, spaceBetween: 16 },
-            }}
-            navigation
-            className="w-full"
-          >
-            {firstFiveCategories.map((e) => (
-              <SwiperSlide key={e.image.id} className="min-w-0 w-full flex justify-center">
-                <div
-                  onClick={() => setSelectedProducts(e.image.id)}
-                  className={`aspect-648/270 cursor-pointer w-full relative overflow-hidden ${selectedProducts === e.image.id
-                    ? "opacity-90 border-4 border-[color:var(--color-one)]"
-                    : "hover:border-4 hover:border-[color:var(--color-one)] transition-all duration-300"
-                    }`}
+        <div className="w-full mb-4 relative">
+          {(() => {
+            const swiperRef = useRef<any>(null);
+            const [currentSlide, setCurrentSlide] = useState(0);
+            const totalDots = firstFiveCategories.length;
+            return (
+              <>
+                <Swiper
+                  ref={swiperRef}
+                  modules={[Navigation]}
+                  slidesPerView={2}
+                  spaceBetween={10}
+                  breakpoints={{
+                    768: { slidesPerView: 4, spaceBetween: 16 },
+                    1024: { slidesPerView: 5, spaceBetween: 16 },
+                  }}
+                  navigation={false}
+                  className="w-full"
+                  onSlideChange={(swiper: SwiperClass) => setCurrentSlide(swiper.activeIndex)}
                 >
-                  <Image
-                    id={"test-id---" + e.image.id}
-                    alt={e.image?.altText || ""}
-                    useBlur
-                    image={e.image}
-                    layout="fill"
-                    objectFit="cover"
-                    className={`duration-300 ${selectedProducts === e.image.id
-                      ? "scale-110"
-                      : "hover:scale-110"
-                      }`}
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  {firstFiveCategories.map((e) => (
+                    <SwiperSlide key={e.image.id} className="min-w-0 w-full flex justify-center">
+                      <div
+                        onClick={() => setSelectedProducts(e.image.id)}
+                        className={`aspect-648/270 cursor-pointer w-full relative overflow-hidden ${selectedProducts === e.image.id
+                          ? "opacity-90 border-4 border-[color:var(--color-one)]"
+                          : "hover:border-4 hover:border-[color:var(--color-one)] transition-all duration-300"
+                          }`}
+                      >
+                        <Image
+                          id={"test-id---" + e.image.id}
+                          alt={e.image?.altText || ""}
+                          useBlur
+                          image={e.image}
+                          layout="fill"
+                          objectFit="cover"
+                          className={`duration-300 ${selectedProducts === e.image.id
+                            ? "scale-110"
+                            : "hover:scale-110"
+                            }`}
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                {/* Custom Navigation Arrows */}
+                <button
+                  onClick={() => swiperRef.current?.swiper.slidePrev()}
+                  disabled={currentSlide === 0}
+                  className={`xl:hidden absolute top-[30%] left-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer z-10 ${currentSlide === 0 ? "cursor-not-allowed" : ""}`}
+                  aria-label="Previous"
+                >
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiperRef.current?.swiper.slideNext()}
+                  disabled={currentSlide === totalDots - 1}
+                  className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer z-10 ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""}`}
+                  aria-label="Next"
+                >
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            );
+          })()}
         </div>
       )}
       {/* Slider ref ve initialSlide ile RTL'de ters başlat */}
@@ -160,7 +193,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
         return (
           <SwiperSlider
             showPagination={true}
-            showNavigation={true}
+            showNavigation={false}
             perView={2}
             breakpoints={{
               768: { slidesPerView: 3, spaceBetween: 8 },

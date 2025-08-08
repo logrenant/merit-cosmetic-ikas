@@ -45,9 +45,9 @@ const BlogCard = (props: Props) => {
         <a className="flex flex-col gap-4 w-full">
           {/* Meta */}
           <div className="flex flex-col-reverse xl:flex-row-reverse justify-between w-full">
-            <div className="flex justify-between items-center text-[14px] text-[color:var(--black-two)] ">
+            <div className="flex justify-between items-start text-[14px] text-[color:var(--black-two)] ">
               {showPublishedDate && (
-                <div className="inline-block">{publishedDate}</div>
+                <div className="inline-block text-nowrap">{publishedDate}</div>
               )}
 
             </div>
