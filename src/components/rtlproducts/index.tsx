@@ -31,7 +31,7 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
   const ref = useRef<HTMLDivElement>(null);
 
   const [isClient, setIsClient] = useState(false);
-  const [selectedProducts, setSelectedProducts] = useState(products?.[0]?.image?.id || "");
+  const [selectedProducts, setSelectedProducts] = useState("");
   const [firstFiveCategories, setFirstFiveCategories] = useState(products ? products.slice(0, 5) : []);
   useEffect(() => {
     setIsClient(true);
@@ -39,12 +39,14 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
 
   useEffect(() => {
     if (products) {
-      setFirstFiveCategories(products.slice(0, 5));
-      if (!products.slice(0, 5).some(cat => cat.image.id === selectedProducts)) {
-        setSelectedProducts(products[0]?.image?.id || "");
+      const cats = products.slice(0, 5);
+      setFirstFiveCategories(cats);
+      // Son category'yi seçili yap (last index)
+      if (cats.length > 0) {
+        setSelectedProducts(cats[cats.length - 1]?.image?.id || "");
       }
     }
-  }, [products, selectedProducts]);
+  }, [products]);
 
 
 
@@ -189,6 +191,9 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
           <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOutButton} />
         ));
 
+        // Her category için son slide'dan başlat
+        const initialSlide = Math.max(0, productSlides.length - 1);
+
         return (
           <SwiperSlider
             showPagination={true}
@@ -199,7 +204,7 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
               1024: { slidesPerView: 5, spaceBetween: 8 },
             }}
             items={productSlides}
-            initialSlide={0}
+            initialSlide={initialSlide}
           />
         );
       })()}
