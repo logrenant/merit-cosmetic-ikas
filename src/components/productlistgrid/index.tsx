@@ -354,7 +354,7 @@ const ProductListGrid: React.FC<
                     },
                   }}
                   items={popular.data?.map((product, index) => (
-                    <div key={`popular-${product.id}-${index}`} className="keen-slider__slide">
+                    <div key={`popular-${product.id}-${index}`}>
                       <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
                     </div>
                   ))}

@@ -1049,7 +1049,6 @@ const ProductDetail = ({
                   <div
 
                     key={product.id + "product2"}
-                    className="keen-slider__slide"
                   >
                     <ProductCard product={product} soldOutButtonText={soldOutButton} />
                   </div>
