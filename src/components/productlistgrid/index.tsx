@@ -9,7 +9,8 @@ import {
   IkasProductListSortType,
   useTranslation,
 } from "@ikas/storefront";
-import Simpleslider from "../composites/simpleslider";
+import { IkasStorefrontConfig } from "@ikas/storefront-config";
+import SwiperSlider from "../composites/swiperslider";
 import FilterMobile, {
   CategoryList,
   List,
@@ -124,6 +125,13 @@ const ProductListGrid: React.FC<
   const [isLoadingAllProducts, setIsLoadingAllProducts] = useState(false);
   const [displayedProductsCount, setDisplayedProductsCount] = useState(20);
   const [currentCategoryId, setCurrentCategoryId] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+  const [currentLocale, setCurrentLocale] = useState<string>('');
+
+  useEffect(() => {
+    setIsClient(true);
+    setCurrentLocale(IkasStorefrontConfig.getCurrentLocale());
+  }, []);
 
   const filteredProducts = useMemo(() => {
     if (pageSpecificData?.href === "/otc" && isTurkishIP) {
@@ -334,30 +342,30 @@ const ProductListGrid: React.FC<
                 {t("categoryPage.mostPopular")}
               </div>
               <div dir="ltr" className="mb-8">
-                <Simpleslider
-                  keenOptions={{
-                    initial: 0,
-                    slides: {
-                      perView: 2,
-                      spacing: 4,
-                    },
-                    breakpoints: {
-                      "(min-width: 768px)": {
-                        slides: { perView: 3, spacing: 8 },
-                      },
-                      "(min-width: 1024px)": {
-                        slides: {
-                          perView: 5,
-                          spacing: 8,
-                        },
-                      },
-                    },
+                <SwiperSlider
+                  showPagination={true}
+                  showNavigation={false}
+                  perView={2}
+                  breakpoints={{
+                    768: { slidesPerView: 3, spaceBetween: 8 },
+                    1024: { slidesPerView: 5, spaceBetween: 8 },
                   }}
-                  items={popular.data?.map((product, index) => (
-                    <div key={`popular-${product.id}-${index}`}>
-                      <ProductCard product={product} soldOutButtonText={soldOut?.soldOutButton} />
-                    </div>
-                  ))}
+                  initialSlide={(() => {
+                    const isArabic = isClient && currentLocale === 'ar';
+                    return isArabic ? Math.max(0, filteredPopularProducts.length - 1) : 0;
+                  })()}
+                  items={(() => {
+                    const isArabic = isClient && currentLocale === 'ar';
+                    const products = isArabic ? [...filteredPopularProducts].reverse() : filteredPopularProducts;
+
+                    return products.map((product, index) => (
+                      <ProductCard
+                        key={`popular-${product.id}-${index}`}
+                        product={product}
+                        soldOutButtonText={soldOut?.soldOutButton}
+                      />
+                    ));
+                  })()}
                 />
               </div>
             </>
