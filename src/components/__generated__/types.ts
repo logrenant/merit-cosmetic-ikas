@@ -320,3 +320,12 @@ export type BackInStockRequestProps = {
 	submitError?: string;
 };
 
+export type RtlproductsProps = {
+	products?: AnasayfaKategori[];
+	showCategories?: boolean;
+	xlBanner?: IkasImage;
+	lgBanner?: IkasImage;
+	smBanner?: IkasImage;
+	soldOutButton?: string;
+};
+

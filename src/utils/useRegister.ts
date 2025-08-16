@@ -45,6 +45,13 @@ export default function useRegister() {
     try {
       setPending(true);
       const store = useStore();
+      
+      // Check if email exists before proceeding
+      if (!form.email) {
+        toast.error(t("emailRequired"));
+        return;
+      }
+      
       const isEmailExist = await store.customerStore.checkEmail(form.email);
       if (isEmailExist) {
         toast.error(t("emailAlreadyExists"));
