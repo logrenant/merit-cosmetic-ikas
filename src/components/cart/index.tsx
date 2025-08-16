@@ -438,7 +438,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
               },
             }}
             items={relatedProducts.data?.map((product) => (
-              <div key={product.id} className="keen-slider__slide">
+              <div key={product.id}>
                 <Productcard product={product} />
               </div>
             ))}

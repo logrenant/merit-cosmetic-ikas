@@ -13,7 +13,7 @@ const Item = ({ item }: { item: IkasOrderLineItem }) => {
             <div className="min-w-[65%] max-w-[65%] xl:min-w-[70%] xl:max-w-[70%]">
                 <ItemProductColumn item={item} store={store} />
             </div>
-            <div className="flex gap-4 xl:flex-row min-w-[35%] max-w-[35%] xl:min-w-[30%] xl:max-w-[30%] justify-between px-4">
+            <div className="flex flex-col-reverse items-end gap-4 xl:flex-row min-w-[35%] max-w-[35%] xl:min-w-[30%] xl:max-w-[30%] justify-between px-4">
                 <ItemQuantityColumn item={item} store={store} />
                 <ItemPriceColumn item={item} />
             </div>
@@ -170,7 +170,7 @@ const ItemQuantityColumn = observer(
 
 const ItemPriceColumn = observer(({ item }: { item: IkasOrderLineItem }) => {
     return (
-        <div className="flex items-end flex-col text-[color:var(--black-two)]">
+        <div className="flex flex-col items-end text-[color:var(--black-two)]">
             {!!item.discountPrice && (
                 <span className="text-lg w-min whitespace-nowrap leading-none opacity-80 relative">
                     <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
@@ -179,19 +179,21 @@ const ItemPriceColumn = observer(({ item }: { item: IkasOrderLineItem }) => {
                         currencyCode={item.currencyCode || "USD"}
                         currencySymbol={item.currencySymbol || "$"}
                         center={false}
-                        left={false}
+                        left={true}
+                        isTable={true}
                     />
                 </span>
             )}
-            <span className="xl:text-xl leading-none text-[color:var(--color-four)] font-medium">
+            <div className="xl:text-xl leading-none text-[color:var(--color-four)] font-medium">
                 <Pricedisplay
                     amount={item.finalPriceWithQuantity}
                     currencyCode={item.currencyCode || "USD"}
                     currencySymbol={item.currencySymbol || "$"}
                     center={false}
-                    left={false}
+                    left={true}
+                    isTable={true}
                 />
-            </span>
+            </div>
         </div>
     )
 });

@@ -15,7 +15,7 @@ import { useDirection } from "src/utils/useDirection";
 
 
 
-const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut }: HomeproductsProps) => {
+const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut, }: HomeproductsProps) => {
   const { isTurkishIP, filterProductsByLocation } = useUserLocation();
   const { direction } = useDirection();
   const { isSmall, isMobile, isDesktop } = useScreen();
@@ -105,7 +105,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
         </div>
       )}
 
-      {firstFiveCategories.length > 0 && (
+      {categories && firstFiveCategories.length > 0 && (
         <div className="w-full mb-4 relative">
           {(() => {
             const swiperRef = useRef<any>(null);

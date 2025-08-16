@@ -33,7 +33,7 @@ const Pricedisplay = ({
   return (
     <span
       className={`flex items-center gap-x-1.5 whitespace-nowrap 
-        ${isTable ? "flex-row w-full" : "flex-wrap"}
+        ${isTable ? "flex-row w-full" : "flex-row w-full"}
         ${!isTable && center ? "justify-center" : ""}
         ${!isTable && left ? "flex-row-reverse justify-end" : ""}
         ${containerClassName}`}
@@ -43,7 +43,7 @@ const Pricedisplay = ({
           ${isTable
             ? uiStore.currency === "USD"
               ? "w-full text-end"
-              : `w-[50%] ${isRTL ? 'text-left' : 'text-end'}`
+              : `w-[50%] ${isRTL ? 'text-left' : 'text-end'} text-end`
             : ""}
           ${priceClassName}
         `}
