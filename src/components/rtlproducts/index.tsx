@@ -9,27 +9,26 @@ import "swiper/css";
 import "swiper/css/navigation";
 import ProductCard from "../composites/productcard";
 import SwiperSlider from "../composites/swiperslider";
-import { HomeproductsProps } from "../__generated__/types";
+import { RtlproductsProps } from "../__generated__/types";
 import { useScreen } from "src/utils/hooks/useScreen";
 import { useUserLocation } from "src/utils/useUserLocation";
 import { useDirection } from "src/utils/useDirection";
 
 
 
-const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, soldOut, }: HomeproductsProps) => {
+const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, soldOutButton, }: RtlproductsProps) => {
   const { isTurkishIP, filterProductsByLocation } = useUserLocation();
   const { direction } = useDirection();
   const { isSmall, isMobile, isDesktop } = useScreen();
 
   const currentLocale = IkasStorefrontConfig.getCurrentLocale();
-  const isArabic = currentLocale === 'ar';
+  const isEnglish = currentLocale === 'en';
 
-  if (isArabic) {
+  if (isEnglish) {
     return null;
   }
 
   const ref = useRef<HTMLDivElement>(null);
-  const isRtl = direction === 'rtl';
 
   const [isClient, setIsClient] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState(products?.[0]?.image?.id || "");
@@ -40,16 +39,12 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
 
   useEffect(() => {
     if (products) {
-      let cats = products;
-      if (isClient && isRtl) {
-        cats = [...products].reverse();
-      }
-      setFirstFiveCategories(cats.slice(0, 5));
-      if (!cats.slice(0, 5).some(cat => cat.image.id === selectedProducts)) {
-        setSelectedProducts(cats[0]?.image?.id || "");
+      setFirstFiveCategories(products.slice(0, 5));
+      if (!products.slice(0, 5).some(cat => cat.image.id === selectedProducts)) {
+        setSelectedProducts(products[0]?.image?.id || "");
       }
     }
-  }, [products, selectedProducts, isClient, isRtl]);
+  }, [products, selectedProducts]);
 
 
 
@@ -80,7 +75,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
 
 
   return (
-    <div dir={isRtl ? "rtl" : "ltr"} className="TEST-PARENT my-4 layout relative" ref={ref} >
+    <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
 
       {isDesktop && xlBanner && (
         <div className="aspect-1400/120 relative mb-4">
@@ -113,7 +108,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
         </div>
       )}
 
-      {categories && firstFiveCategories.length > 0 && (
+      {showCategories && firstFiveCategories.length > 0 && (
         <div className="w-full mb-4 relative">
           {(() => {
             const swiperRef = useRef<any>(null);
@@ -187,17 +182,12 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
       )}
       {/* Product slider */}
       {(() => {
-        // RTL durumunda ürünleri de tersine çevir
-        const currentProducts = isClient && isRtl ? [...(products || [])].reverse() : (products || []);
-        const selectedCategory = currentProducts.find((e) => e.image.id === selectedProducts);
+        const selectedCategory = products?.find((e) => e.image.id === selectedProducts);
         const categoryProducts = selectedCategory?.products.data || [];
         const filteredProducts = filterProductsByLocation(categoryProducts);
         const productSlides = filteredProducts.map((product) => (
-          <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOut?.soldOutButton} />
+          <ProductCard key={product.id + "product"} product={product} soldOutButtonText={soldOutButton} />
         ));
-
-        // RTL'de slider'ı sondan başlat
-        const initialSlide = isRtl ? Math.max(0, productSlides.length - 1) : 0;
 
         return (
           <SwiperSlider
@@ -209,7 +199,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
               1024: { slidesPerView: 5, spaceBetween: 8 },
             }}
             items={productSlides}
-            initialSlide={initialSlide}
+            initialSlide={0}
           />
         );
       })()}
