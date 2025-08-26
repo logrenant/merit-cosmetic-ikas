@@ -64,11 +64,11 @@ const ItemProductColumn = observer(
                 >
                     <Cross />
                 </button>
-                <div className="flex flex-row gap-3">
+                <div className="flex flex-row gap-3 w-full">
                     <ItemImage item={item} />
                     <div>
                         <Link href={item.variant.href || ""}>
-                            <a className="flex flex-col xl:text-xl text-[color:var(--black-two)]">
+                            <a className="flex flex-col xl:text-xl text-[color:var(--black-two)] w-full">
                                 {item.variant.name}
                             </a>
                         </Link>

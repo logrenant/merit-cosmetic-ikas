@@ -1,4 +1,5 @@
 import { observer } from "mobx-react-lite";
+import Head from "next/head";
 import { OrderPackageStatus } from "./orders";
 import useOrderDetail from "../../utils/useOrderDetail";
 import {
@@ -251,229 +252,238 @@ const OrderDetail = () => {
   if (!order) return null;
 
   return (
-    <div>
-      <div className="flex flex-row justify-between items-start">
-        <div className="flex mb-4 items-start flex-col">
-          <div className="text-2xl">
-            {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
-          </div>
-          <div className="flex items-center gap-3 mt-1">
-            <OrderPackageStatus status={order.orderPackageStatus!} />
-            <div className="text-sm text-[color:var(--gray-three)]">
-              {orderedAt}
+    <>
+      <Head>
+        <title>
+          {router.locale === "ar"
+            ? "مستحضرات ميريت - تفاصيل الطلب"
+            : "Merit Cosmetics - Order Details"}
+        </title>
+      </Head>
+      <div>
+        <div className="flex flex-row justify-between items-start">
+          <div className="flex mb-4 items-start flex-col">
+            <div className="text-2xl">
+              {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
+            </div>
+            <div className="flex items-center gap-3 mt-1">
+              <OrderPackageStatus status={order.orderPackageStatus!} />
+              <div className="text-sm text-[color:var(--gray-three)]">
+                {orderedAt}
+              </div>
             </div>
           </div>
+
+          <button
+            type="button"
+            onClick={handleGoToContact}
+            className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer flex flex-row items-center gap-2"
+          >
+            <Envelope />
+            <span>{t("contactUs")}</span>
+          </button>
         </div>
 
-        <button
-          type="button"
-          onClick={handleGoToContact}
-          className="text-[color:var(--color-three)] hover:text-[color:var(--color-four)] transition-colors duration-200 cursor-pointer flex flex-row items-center gap-2"
-        >
-          <Envelope />
-          <span>{t("contactUs")}</span>
-        </button>
-      </div>
-
-      {/* products */}
-      {isRefundProcess && <Orderrefund order={order} />}
-      {!isRefundProcess && (
-        <>
-          <div className="grid gap-8 lg:grid-cols-[calc(100%-342px)_310px]">
-            <div className="flex flex-col gap-4">
-              {order.displayedPackages?.map((orderPackage) => {
-                const packageLineItems = orderLineItems.filter(item =>
-                  orderPackage.orderLineItemIds.includes(item.id)
-                );
-                const title = getOrderPackageTitle(
-                  orderPackage.orderPackageFulfillStatus
-                );
-                return (
-                  <OrderPackage
-                    key={orderPackage.id}
-                    title={title}
-                    trackingInfo={orderPackage.trackingInfo}
-                    orderLineItems={packageLineItems}
-                  />
-                );
-              })}
-            </div>
-            <div>
-              {order.displayedPackages.filter(
-                (e) => !!e.trackingInfo?.cargoCompany
-              ).length > 0 && (
-                  <>
-                    <div className="text-xl">{t("trackingInfo")}</div>
-                    {order.displayedPackages?.map((orderPackage) =>
-                      orderPackage.trackingInfo?.cargoCompany ? (
-                        <div
-                          key={orderPackage.id}
-                          className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1"
-                        >
-                          <div className="text-[color:var(--gray-three)]">
-                            {orderPackage.trackingInfo.cargoCompany}
-                          </div>
-                          <div className="text-right">
-                            <a
-                              href={orderPackage.trackingInfo.trackingLink || ""}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[color:var(--color-three)] underline"
-                            >
-                              {orderPackage.trackingInfo.trackingNumber}
-                            </a>
-                          </div>
-                        </div>
-                      ) : null
-                    )}
-                  </>
-                )}
-              <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
-              <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-                <div className="text-[color:var(--gray-three)]">
-                  {t("orderDetail.name")}
-                </div>
-                <div className="text-right">
-                  {order.shippingAddress?.firstName}{" "}
-                  {order.shippingAddress?.lastName}
-                </div>
-                <div className="col-span-2 text-[color:var(--gray-three)]">
-                  {order.shippingAddress?.addressText}
-                </div>
+        {/* products */}
+        {isRefundProcess && <Orderrefund order={order} />}
+        {!isRefundProcess && (
+          <>
+            <div className="grid gap-8 lg:grid-cols-[calc(100%-342px)_310px]">
+              <div className="flex flex-col gap-4">
+                {order.displayedPackages?.map((orderPackage) => {
+                  const packageLineItems = orderLineItems.filter(item =>
+                    orderPackage.orderLineItemIds.includes(item.id)
+                  );
+                  const title = getOrderPackageTitle(
+                    orderPackage.orderPackageFulfillStatus
+                  );
+                  return (
+                    <OrderPackage
+                      key={orderPackage.id}
+                      title={title}
+                      trackingInfo={orderPackage.trackingInfo}
+                      orderLineItems={packageLineItems}
+                    />
+                  );
+                })}
               </div>
-              <div className="text-xl">{t("orderDetail.billingInfo")}</div>
-              <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
-                <div className="text-[color:var(--gray-three)]">
-                  {t("orderDetail.name")}
-                </div>
-                <div className="text-right">
-                  {order.billingAddress?.firstName}{" "}
-                  {order.billingAddress?.lastName}
-                </div>
-                <div className="col-span-2 text-[color:var(--gray-three)]">
-                  {order.billingAddress?.addressText}
-                </div>
-              </div>
-
-              {orderTransactions && orderTransactions.length > 0 && (
-                <>
-                  <div className="text-xl">{t("orderDetail.payment")}</div>
-                  <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 gap-1">
-                    {orderTransactions?.map((oT) => {
-                      const paymentMethodText = t(
-                        `orderTransactions.paymentMethod.${oT.paymentMethod}`
-                      );
-                      return (
-                        <div key={oT.id}>
-                          <div className="flex gap-2 justify-between w-full">
-                            <span className="text-[color:var(--gray-three)]">
-                              {paymentMethodText}
-                            </span>
-                            <div>
-                              <Pricedisplay
-                                amount={oT.amount || 0}
-                                center={false}
-                                isTable={true}
-                                currencyCode={oT.currencyCode || "USD"}
-                                currencySymbol={oT.currencySymbol || "$"}
-                              />
+              <div>
+                {order.displayedPackages.filter(
+                  (e) => !!e.trackingInfo?.cargoCompany
+                ).length > 0 && (
+                    <>
+                      <div className="text-xl">{t("trackingInfo")}</div>
+                      {order.displayedPackages?.map((orderPackage) =>
+                        orderPackage.trackingInfo?.cargoCompany ? (
+                          <div
+                            key={orderPackage.id}
+                            className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1"
+                          >
+                            <div className="text-[color:var(--gray-three)]">
+                              {orderPackage.trackingInfo.cargoCompany}
+                            </div>
+                            <div className="text-right">
+                              <a
+                                href={orderPackage.trackingInfo.trackingLink || ""}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[color:var(--color-three)] underline"
+                              >
+                                {orderPackage.trackingInfo.trackingNumber}
+                              </a>
                             </div>
                           </div>
-
-                          {oT.paymentMethod ===
-                            IkasPaymentMethodType.CREDIT_CARD && (
-                              <div>
-                                **** **** ****{" "}
-                                {oT.paymentMethodDetail?.lastFourDigits}
-                              </div>
-                            )}
-                        </div>
-                      );
-                    })}
+                        ) : null
+                      )}
+                    </>
+                  )}
+                <div className="text-xl">{t("orderDetail.deliveryAddress")}</div>
+                <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+                  <div className="text-[color:var(--gray-three)]">
+                    {t("orderDetail.name")}
                   </div>
-                </>
-              )}
-              <div className="text-xl">{t("orderDetail.orderSummary")}</div>
-              <div className="grid mt-2 mb-8 grid-cols-2 gap-1">
-                <div className="text-[color:var(--gray-three)]">
-                  {t("orderDetail.shipping")}
+                  <div className="text-right">
+                    {order.shippingAddress?.firstName}{" "}
+                    {order.shippingAddress?.lastName}
+                  </div>
+                  <div className="col-span-2 text-[color:var(--gray-three)]">
+                    {order.shippingAddress?.addressText}
+                  </div>
                 </div>
-                <div className="text-right">
-                  <Pricedisplay
-                    amount={order.shippingTotal}
-                    center={false}
-                    isTable={true}
-                    currencyCode={order.currencyCode || "USD"}
-                    currencySymbol={order.currencySymbol || "$"}
-                  />
+                <div className="text-xl">{t("orderDetail.billingInfo")}</div>
+                <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 grid-cols-2 gap-1">
+                  <div className="text-[color:var(--gray-three)]">
+                    {t("orderDetail.name")}
+                  </div>
+                  <div className="text-right">
+                    {order.billingAddress?.firstName}{" "}
+                    {order.billingAddress?.lastName}
+                  </div>
+                  <div className="col-span-2 text-[color:var(--gray-three)]">
+                    {order.billingAddress?.addressText}
+                  </div>
                 </div>
-                {order?.couponAdjustment?.amount && (
+
+                {orderTransactions && orderTransactions.length > 0 && (
                   <>
-                    {" "}
-                    <div className="text-[color:var(--gray-three)]">
-                      {t("orderDetail.discountTotal")}
-                    </div>
-                    <div className="text-right">
-                      <Pricedisplay
-                        amount={order.couponAdjustment.amount || 0}
-                        center={false}
-                        isTable={true}
-                        currencyCode={order.currencyCode || "USD"}
-                        currencySymbol={order.currencySymbol || "$"}
-                      />
+                    <div className="text-xl">{t("orderDetail.payment")}</div>
+                    <div className="grid border-b border-b-[color:var(--gray-six)] pb-4 mt-2 mb-4 gap-1">
+                      {orderTransactions?.map((oT) => {
+                        const paymentMethodText = t(
+                          `orderTransactions.paymentMethod.${oT.paymentMethod}`
+                        );
+                        return (
+                          <div key={oT.id}>
+                            <div className="flex gap-2 justify-between w-full">
+                              <span className="text-[color:var(--gray-three)]">
+                                {paymentMethodText}
+                              </span>
+                              <div>
+                                <Pricedisplay
+                                  amount={oT.amount || 0}
+                                  center={false}
+                                  isTable={true}
+                                  currencyCode={oT.currencyCode || "USD"}
+                                  currencySymbol={oT.currencySymbol || "$"}
+                                />
+                              </div>
+                            </div>
+
+                            {oT.paymentMethod ===
+                              IkasPaymentMethodType.CREDIT_CARD && (
+                                <div>
+                                  **** **** ****{" "}
+                                  {oT.paymentMethodDetail?.lastFourDigits}
+                                </div>
+                              )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </>
                 )}
-                <div className="text-[color:var(--gray-three)]">
-                  {t("orderDetail.tax")}
-                </div>
-                <div className="text-right">
-                  <Pricedisplay
-                    amount={order.totalTax}
-                    center={false}
-                    isTable={true}
-                    currencyCode={order.currencyCode || "USD"}
-                    currencySymbol={order.currencySymbol || "$"}
-                  />
-                </div>
-                <div className="text-[color:var(--gray-three)]">
-                  {t("orderDetail.subtotal")}
-                </div>
-                <div className="text-right">
-                  <Pricedisplay
-                    amount={order.totalPrice}
-                    center={false}
-                    isTable={true}
-                    currencyCode={order.currencyCode || "USD"}
-                    currencySymbol={order.currencySymbol || "$"}
-                  />
-                </div>
-                <div className="text-[color:var(--gray-three)]">
-                  {t("orderDetail.total")}
-                </div>
-                <div className="text-right">
-                  <Pricedisplay
-                    amount={order.totalFinalPrice}
-                    center={false}
-                    isTable={true}
-                    currencyCode={order.currencyCode || "USD"}
-                    currencySymbol={order.currencySymbol || "$"}
-                  />
+                <div className="text-xl">{t("orderDetail.orderSummary")}</div>
+                <div className="grid mt-2 mb-8 grid-cols-2 gap-1">
+                  <div className="text-[color:var(--gray-three)]">
+                    {t("orderDetail.shipping")}
+                  </div>
+                  <div className="text-right">
+                    <Pricedisplay
+                      amount={order.shippingTotal}
+                      center={false}
+                      isTable={true}
+                      currencyCode={order.currencyCode || "USD"}
+                      currencySymbol={order.currencySymbol || "$"}
+                    />
+                  </div>
+                  {order?.couponAdjustment?.amount && (
+                    <>
+                      {" "}
+                      <div className="text-[color:var(--gray-three)]">
+                        {t("orderDetail.discountTotal")}
+                      </div>
+                      <div className="text-right">
+                        <Pricedisplay
+                          amount={order.couponAdjustment.amount || 0}
+                          center={false}
+                          isTable={true}
+                          currencyCode={order.currencyCode || "USD"}
+                          currencySymbol={order.currencySymbol || "$"}
+                        />
+                      </div>
+                    </>
+                  )}
+                  <div className="text-[color:var(--gray-three)]">
+                    {t("orderDetail.tax")}
+                  </div>
+                  <div className="text-right">
+                    <Pricedisplay
+                      amount={order.totalTax}
+                      center={false}
+                      isTable={true}
+                      currencyCode={order.currencyCode || "USD"}
+                      currencySymbol={order.currencySymbol || "$"}
+                    />
+                  </div>
+                  <div className="text-[color:var(--gray-three)]">
+                    {t("orderDetail.subtotal")}
+                  </div>
+                  <div className="text-right">
+                    <Pricedisplay
+                      amount={order.totalPrice}
+                      center={false}
+                      isTable={true}
+                      currencyCode={order.currencyCode || "USD"}
+                      currencySymbol={order.currencySymbol || "$"}
+                    />
+                  </div>
+                  <div className="text-[color:var(--gray-three)]">
+                    {t("orderDetail.total")}
+                  </div>
+                  <div className="text-right">
+                    <Pricedisplay
+                      amount={order.totalFinalPrice}
+                      center={false}
+                      isTable={true}
+                      currencyCode={order.currencyCode || "USD"}
+                      currencySymbol={order.currencySymbol || "$"}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex justify-end">
-            {!!refundableItems.length && (
-              <RefundProcessButton
-                disabled={!refundableItems.length}
-                onClick={onRefundProcessButtonClick}
-              />
-            )}
-          </div>
-        </>
-      )}
-    </div>
+            <div className="flex justify-end">
+              {!!refundableItems.length && (
+                <RefundProcessButton
+                  disabled={!refundableItems.length}
+                  onClick={onRefundProcessButtonClick}
+                />
+              )}
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

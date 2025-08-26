@@ -62,28 +62,25 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
         return () => window.removeEventListener('resize', checkDesktop);
     }, [perView, breakpoints]);
 
-    // Calculate total pages based on items length and slides per view
-    const totalDots = Math.max(1, Math.ceil(items.length / currentSlidesPerView));
+    // Calculate total dots based on items length and slides per view
+    const totalDots = Math.max(1, items.length - currentSlidesPerView + 1);
 
     useEffect(() => {
         setSliderKey(prev => prev + 1);
-    }, [items.length, computedInitialSlide, currentSlidesPerView]); // currentSlidesPerView dependency eklendi
+    }, [items.length, computedInitialSlide, currentSlidesPerView]); // currentSlidesPerView dependency tekrar eklendi
 
     useEffect(() => {
         if (swiperRef.current && swiperRef.current.swiper) {
             swiperRef.current.swiper.slideTo(computedInitialSlide, 0);
-            // Calculate initial page based on initial slide
-            const initialPage = Math.floor(computedInitialSlide / currentSlidesPerView);
-            setCurrentSlide(initialPage);
+            setCurrentSlide(computedInitialSlide);
         }
     }, [sliderKey, computedInitialSlide, currentSlidesPerView]);
 
-    // Breakpoint değişikliklerinde pagination'ı güncelle
+    // Breakpoint değişikliklerinde slide pozisyonunu koru
     useEffect(() => {
         if (swiperRef.current && swiperRef.current.swiper) {
             const currentActiveIndex = swiperRef.current.swiper.activeIndex;
-            const newPage = Math.floor(currentActiveIndex / currentSlidesPerView);
-            setCurrentSlide(newPage);
+            setCurrentSlide(currentActiveIndex);
         }
     }, [currentSlidesPerView]);
 
@@ -98,14 +95,12 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
         className: "w-full overflow-hidden keen-swiper",
         initialSlide: computedInitialSlide,
         onSlideChange: (swiper: any) => {
-            // Calculate current page based on active index and slides per view
-            const currentPage = Math.floor(swiper.activeIndex / currentSlidesPerView);
-            setCurrentSlide(currentPage);
+            // Her slide değişikliğinde currentSlide'ı güncelle
+            setCurrentSlide(swiper.activeIndex);
         },
         onSwiper: (swiper: any) => {
             // Initial slide ayarlaması
-            const initialPage = Math.floor(swiper.activeIndex / currentSlidesPerView);
-            setCurrentSlide(initialPage);
+            setCurrentSlide(swiper.activeIndex);
         },
     };
 
@@ -143,8 +138,8 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
 
                     <button
                         onClick={() => swiperRef.current?.swiper.slideNext()}
-                        disabled={currentSlide === totalDots - 1}
-                        className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer  ${currentSlide === totalDots - 1 ? "cursor-not-allowed" : ""}`}
+                        disabled={currentSlide >= items.length - currentSlidesPerView}
+                        className={`xl:hidden absolute top-[30%] right-[-32px] text-[color:var(--color-two)] hover:text-[color:var(--color-four)] duration-150 cursor-pointer  ${currentSlide >= items.length - currentSlidesPerView ? "cursor-not-allowed" : ""}`}
                         aria-label="Next"
                     >
                         <svg
@@ -169,9 +164,8 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
                         <button
                             key={idx}
                             onClick={() => {
-                                const targetSlide = Math.min(idx * currentSlidesPerView, items.length - 1);
-                                swiperRef.current?.swiper.slideTo(targetSlide);
-                                setCurrentSlide(idx); // Dot'u hemen güncelle
+                                swiperRef.current?.swiper.slideTo(idx);
+                                setCurrentSlide(idx);
                             }}
                             className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none cursor-pointer ${currentSlide === idx ? "bg-[color:var(--color-four)]" : "bg-[color:var(--color-one)]"}`}
                         />

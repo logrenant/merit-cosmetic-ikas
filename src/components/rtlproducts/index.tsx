@@ -114,8 +114,18 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
         <div className="w-full mb-4 relative">
           {(() => {
             const swiperRef = useRef<any>(null);
-            const [currentSlide, setCurrentSlide] = useState(0);
+            // Başlangıçta son kategori slide'ı seçili olsun
+            const initialSlideIndex = firstFiveCategories.length > 0 ? firstFiveCategories.length - 1 : 0;
+            const [currentSlide, setCurrentSlide] = useState(initialSlideIndex);
             const totalDots = firstFiveCategories.length;
+
+            // Swiper ilk renderda son slide'a gitsin
+            useEffect(() => {
+              if (swiperRef.current && swiperRef.current.swiper) {
+                swiperRef.current.swiper.slideTo(initialSlideIndex, 0);
+              }
+            }, [initialSlideIndex]);
+
             return (
               <>
                 <Swiper
@@ -129,6 +139,7 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
                   }}
                   navigation={false}
                   className="w-full"
+                  initialSlide={initialSlideIndex}
                   onSlideChange={(swiper: SwiperClass) => setCurrentSlide(swiper.activeIndex)}
                 >
                   {firstFiveCategories.map((e) => (
