@@ -123,79 +123,82 @@ const OrderTracking = (props: OrderTrackingProps) => {
 
   return (
     <div dir={direction}>
-      <div className="flex items-center gap-4 border-b-[4px] border-[color:var(--color-five)] py-6 justify-center">
+      <div className="flex items-center mt-10 gap-4 border-b-[4px] border-[color:var(--color-five)] pb-6 justify-center">
         <h1 className="text-lg px-4 relative font-medium text-[color:var(--color-one)]">
           {props.pageTitle}
           <span className="absolute left-0 bottom-[-28px] h-[4px] w-full bg-[color:var(--color-one)]"></span>
         </h1>
       </div>
-
       <div className="layout flex flex-col xl:flex-row justify-center gap-12 my-10">
         {!order && (
-          <div className="grid lg:grid-cols-2 my-10 px-5 max-w-4xl gap-5 mx-auto">
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-3 w-full"
-            >
-              {generalError && (
-                <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit mt-2">
-                  <p className="text-red-600 text-[12px]">{generalError}</p>
-                </div>
-              )}
-              <div>
-                <label className="text-base text-[color:var(--black-one)] mb-0.5">
-                  {t("email")}
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  placeholder={t("email")}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    setFormState({ ...formState, email: e.target.value });
-                    if (emailError) setEmailError("");
-                  }}
-                  className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
-                />
-                {emailError && (
-                  <p className="text-red-600 text-[12px] mt-1">{emailError}</p>
-                )}
-              </div>
+          <div >
 
-              <div>
-                <label className="text-base text-[color:var(--black-one)] mb-0.5">
-                  {props.orderNumberInput}
-                </label>
-                <input
-                  type="text"
-                  value={orderNumber}
-                  placeholder={props.orderNumberInput}
-                  onChange={(e) => {
-                    setOrderNumber(e.target.value);
-                    setFormState({ ...formState, orderNumber: e.target.value });
-                    if (orderNumberError) setOrderNumberError("");
-                  }}
-                  className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
-                />
-                {orderNumberError && (
-                  <p className="text-red-600 text-[12px] mt-1">{orderNumberError}</p>
-                )}
+            {generalError && (
+              <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit mt-2">
+                <p className="text-black text-[14px]">{generalError}</p>
               </div>
+            )}
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
+            <div className="grid lg:grid-cols-2 my-10 max-w-4xl gap-5 mx-auto">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-3 w-full"
               >
-                {isSubmitting ? t("loading") : t("submit")}
-              </button>
-            </form>
+                <div>
+                  <label className="text-base text-[color:var(--black-one)] mb-0.5">
+                    {t("email")}
+                  </label>
+                  <input
+                    type="email"
+                    value={email}
+                    placeholder={t("email")}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setFormState({ ...formState, email: e.target.value });
+                      if (emailError) setEmailError("");
+                    }}
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
+                  />
+                  {emailError && (
+                    <p className="text-red-600 text-[12px] mt-1">{emailError}</p>
+                  )}
+                </div>
 
-            <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit">
-              <div
-                className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] prose-sm w-full"
-                dangerouslySetInnerHTML={{ __html: props.pageDescription || "" }}
-              />
+                <div>
+                  <label className="text-base text-[color:var(--black-one)] mb-0.5">
+                    {props.orderNumberInput}
+                  </label>
+                  <input
+                    type="text"
+                    value={orderNumber}
+                    placeholder={props.orderNumberInput}
+                    onChange={(e) => {
+                      setOrderNumber(e.target.value);
+                      setFormState({ ...formState, orderNumber: e.target.value });
+                      if (orderNumberError) setOrderNumberError("");
+                    }}
+                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
+                  />
+                  {orderNumberError && (
+                    <p className="text-red-600 text-[12px] mt-1">{orderNumberError}</p>
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
+                >
+                  {isSubmitting ? t("loading") : t("submit")}
+                </button>
+              </form>
+
+              <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit">
+                <div
+                  className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] prose-sm w-full"
+                  dangerouslySetInnerHTML={{ __html: props.pageDescription || "" }}
+                />
+              </div>
             </div>
           </div>
         )}
@@ -204,7 +207,7 @@ const OrderTracking = (props: OrderTrackingProps) => {
           <div className="md:layout flex flex-col md:flex-row md:justify-center gap-12 items-start w-full">
             <div className="flex group cursor-pointer" onClick={() => { setOrder(undefined); setOrderTransactions(undefined); }}>
               <button
-                className="text-[color:var(--gray-five)] group-hover:text-[color:var(--black-two)] leading-none flex items-center justify-start gap-1.5"
+                className="text-[color:var(--gray-five)] group-hover:text-[color:var(--black-two)] leading-none flex items-center justify-start gap-1.5 cursor-pointer"
               >
                 <span className="text-[color:var(--gray-five)] group-hover:text-[color:var(--black-two)] transition-all duration-200">
                   <BackSvg />

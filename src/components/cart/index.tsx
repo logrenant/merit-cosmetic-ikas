@@ -127,7 +127,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
       <div dir={direction} className="w-full my-10 layout flex flex-col h-full">
         {store?.cartStore?.cart?.itemCount &&
           store?.cartStore?.cart?.itemCount > 0 && (
-            <h1 className="mb-8 leading-none font-light text-[color:var(--black-two)] text-xl lg:text-2xl">
+            <h1 className="mb-8 leading-none font-light text-[color:var(--color-two)] text-xl lg:text-2xl">
               <span>{t("bag")}</span>
               <span className="ml-1.5">
                 ({store?.cartStore?.cart?.itemCount || 0} {t("product")})
@@ -178,7 +178,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
                         onClick={() => {
                           setOpenSelectCountry(!openSelectCountry);
                         }}
-                        className="text-[color:var(--black-two)] gap-1 w-full flex text-lg items-center font-light cursor-pointer "
+                        className="text-[color:var(--black-two)] gap-1 w-full flex text-lg items-center font-light cursor-pointer min-w-[60%] max-w-[60%]"
                       >
                         {t("orderDetail.shipping")}
                         <svg
@@ -202,7 +202,7 @@ const Cart = observer(({ relatedProducts }: CartProps) => {
 
                       {/* Shipping Cost */}
                       {currentShippingCost === 0 ? (
-                        <div className="text-nowrap">{t("freeShipping")}</div>
+                        <div className="text-nowrap w-full text-end">{t("freeShipping")}</div>
                       ) : (
                         <Pricedisplay
                           amount={currentShippingCost}
