@@ -1,11 +1,9 @@
-
 import React, { ReactNode, useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 
 interface SwiperSliderProps {
     items: ReactNode[];
@@ -27,19 +25,17 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
     },
     initialSlide,
 }) => {
-    // initialSlide prop'u gelmezse, her zaman ilk üründen başla (index 0)
     let computedInitialSlide = 0;
     if (typeof initialSlide === 'number') {
         computedInitialSlide = initialSlide;
     } else {
-        // Her iki yönde de ilk gerçek ürünün index'i (0)
         computedInitialSlide = items.findIndex(item => !!item);
         if (computedInitialSlide === -1) computedInitialSlide = 0;
     }
 
     const [sliderKey, setSliderKey] = useState(0);
     const swiperRef = useRef<any>(null);
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(computedInitialSlide);
     const [isDesktop, setIsDesktop] = useState(false);
     const [currentSlidesPerView, setCurrentSlidesPerView] = useState(perView);
 
@@ -48,7 +44,6 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
             const width = window.innerWidth;
             setIsDesktop(width >= 1024);
 
-            // Calculate current slides per view based on breakpoints
             if (width >= 1024 && breakpoints[1024]) {
                 setCurrentSlidesPerView(breakpoints[1024].slidesPerView);
             } else if (width >= 768 && breakpoints[768]) {
@@ -62,12 +57,14 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
         return () => window.removeEventListener('resize', checkDesktop);
     }, [perView, breakpoints]);
 
-    // Calculate total dots based on items length and slides per view
     const totalDots = Math.max(1, items.length - currentSlidesPerView + 1);
+
+    const activeDotIndex = Math.min(currentSlide, totalDots - 1);
 
     useEffect(() => {
         setSliderKey(prev => prev + 1);
-    }, [items.length, computedInitialSlide, currentSlidesPerView]); // currentSlidesPerView dependency tekrar eklendi
+        setCurrentSlide(computedInitialSlide);
+    }, [items.length, computedInitialSlide, currentSlidesPerView]);
 
     useEffect(() => {
         if (swiperRef.current && swiperRef.current.swiper) {
@@ -76,7 +73,6 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
         }
     }, [sliderKey, computedInitialSlide, currentSlidesPerView]);
 
-    // Breakpoint değişikliklerinde slide pozisyonunu koru
     useEffect(() => {
         if (swiperRef.current && swiperRef.current.swiper) {
             const currentActiveIndex = swiperRef.current.swiper.activeIndex;
@@ -87,7 +83,7 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
     const swiperOptions = {
         modules: [Navigation, Pagination],
         slidesPerView: perView,
-        slidesPerGroup: 1, // Her seferinde 1 slide kaydır, grup değil
+        slidesPerGroup: 1,
         spaceBetween: 4,
         breakpoints,
         navigation: false,
@@ -95,11 +91,9 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
         className: "w-full overflow-hidden keen-swiper",
         initialSlide: computedInitialSlide,
         onSlideChange: (swiper: any) => {
-            // Her slide değişikliğinde currentSlide'ı güncelle
             setCurrentSlide(swiper.activeIndex);
         },
         onSwiper: (swiper: any) => {
-            // Initial slide ayarlaması
             setCurrentSlide(swiper.activeIndex);
         },
     };
@@ -167,7 +161,7 @@ const SwiperSlider: React.FC<SwiperSliderProps> = ({
                                 swiperRef.current?.swiper.slideTo(idx);
                                 setCurrentSlide(idx);
                             }}
-                            className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none cursor-pointer ${currentSlide === idx ? "bg-[color:var(--color-four)]" : "bg-[color:var(--color-one)]"}`}
+                            className={`dot w-3 h-3 rounded-full mx-1 focus:outline-none cursor-pointer ${activeDotIndex === idx ? "bg-[color:var(--color-four)]" : "bg-[color:var(--color-one)]"}`}
                         />
                     ))}
                 </div>

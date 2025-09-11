@@ -27,7 +27,7 @@ export default observer(Item);
 const ItemImage = observer(({ item }: { item: IkasOrderLineItem }) => {
 
     return (
-        <div className={`aspect-4/5 max-w-[90px] w-full ${item.variant.mainImage?.id ? 'rounded-sm overflow-hidden border border-[color:var(--gray-two)]' : ''}`}>
+        <div className={`aspect-4/5 min-w-[60px] max-w-[90px] h-fit w-full ${item.variant.mainImage?.id ? 'rounded-sm overflow-hidden border border-[color:var(--gray-two)]' : ''}`}>
             <Link href={item.variant.href || ""}>
                 <a>
                     {!item.variant.mainImage?.id ? (
@@ -172,7 +172,7 @@ const ItemPriceColumn = observer(({ item }: { item: IkasOrderLineItem }) => {
     return (
         <div className="flex flex-col items-end text-[color:var(--black-two)]">
             {!!item.discountPrice && (
-                <span className="text-lg w-min whitespace-nowrap leading-none opacity-80 relative">
+                <span className="text-sm xl:text-lg w-min whitespace-nowrap leading-none opacity-80 relative">
                     <span className="absolute rotate-6 w-full opacity-70 h-[2px] bg-[color:var(--color-three)] left-0 top-1/2 transform -translate-y-1/2" />
                     <Pricedisplay
                         amount={item.overridenPriceWithQuantity}

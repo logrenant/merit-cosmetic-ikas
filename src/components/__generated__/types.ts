@@ -5,6 +5,7 @@ import {
 	IkasBlog,
 	IkasCategoryList,
 	IkasBrandList,
+	IkasVideo,
 	IkasProduct,
 	IkasBlogList,
 } from "@ikas/storefront"
@@ -117,6 +118,15 @@ export type CommentRulesModal = {
 	buttonText?: string;
 };
 
+export type StoryLink = { 
+	circle: IkasImage;
+	table: IkasImage;
+	link: IkasNavigationLink;
+};
+
+export type LinkItem = { 
+};
+
 export type NavbarProps = {
 	categories: IkasCategoryList;
 	categorySort: IkasCategoryList;
@@ -125,11 +135,13 @@ export type NavbarProps = {
 	popularProducts: IkasProductList;
 	popularBrands: IkasBrandList;
 	slogans: string[];
-	bannerSlogan: string;
 	logo: IkasImage;
 	productList?: IkasProductList;
 	searchbarImage?: IkasImage;
 	categoriesImage?: IkasImage;
+	bannerSlogan?: IkasVideo;
+	bannerSloganTablet?: IkasVideo;
+	bannerSloganMobile?: IkasVideo;
 };
 
 export type QuicklinksProps = {
@@ -327,5 +339,9 @@ export type RtlproductsProps = {
 	lgBanner?: IkasImage;
 	smBanner?: IkasImage;
 	soldOutButton?: string;
+};
+
+export type AnimatedStorylinksProps = {
+	items?: StoryLink[];
 };
 

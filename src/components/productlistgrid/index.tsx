@@ -343,7 +343,7 @@ const ProductListGrid: React.FC<
               </div>
               <div dir="ltr" className="mb-8">
                 <SwiperSlider
-                  key={`popular-slider-${pageSpecificData?.id}`} // Kategori değişiminde slider'ı resetle
+                  key={`popular-slider-${pageSpecificData?.id}`}
                   showPagination={true}
                   showNavigation={false}
                   perView={2}

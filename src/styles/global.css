@@ -27,6 +27,10 @@
   }
 }
 
+#nprogress {
+  display: none !important;
+}
+
 body {
   @apply overflow-x-hidden w-full relative;
   -webkit-tap-highlight-color: transparent;

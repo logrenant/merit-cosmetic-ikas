@@ -38,20 +38,85 @@ export const useUserLocation = () => {
           return;
         }
         
-        const response = await fetch('https://geolocation-db.com/json/');
-        const data = await response.json();
+        console.log('🌍 Starting location check...');
         
-        // Cache the result in sessionStorage
-        if (data.country_code) {
-          sessionStorage.setItem(LOCATION_CACHE_KEY, data.country_code);
+        // İlk olarak http://ip-api.com/json deneyelim
+        try {
+          const response = await fetch('http://ip-api.com/json');
+          const data = await response.json();
+
+          console.log('🌍 ip-api.com API Response:', data);
+          
+          if (data.country_code) {
+            sessionStorage.setItem(LOCATION_CACHE_KEY, data.country_code);
+            setLocationInfo({
+              country: data.country_code,
+              isLoading: false,
+            });
+            return;
+          }
+        } catch (error) {
+          console.warn('🌍 geolocation-db.com failed, trying alternative:', error);
+        }
+        
+        // Alternatif API deneyelim
+        try {
+          const response = await fetch('https://ipapi.co/json/');
+          const data = await response.json();
+          
+          console.log('🌍 ipapi.co API Response:', data);
+          
+          if (data.country_code) {
+            sessionStorage.setItem(LOCATION_CACHE_KEY, data.country_code);
+            setLocationInfo({
+              country: data.country_code,
+              isLoading: false,
+            });
+            return;
+          }
+        } catch (error) {
+          console.warn('🌍 ipapi.co failed, trying another alternative:', error);
+        }
+        
+        // Son alternatif
+        try {
+          const response = await fetch('https://api.country.is/');
+          const data = await response.json();
+          
+          console.log('🌍 country.is API Response:', data);
+          
+          if (data.country) {
+            sessionStorage.setItem(LOCATION_CACHE_KEY, data.country);
+            setLocationInfo({
+              country: data.country,
+              isLoading: false,
+            });
+            return;
+          }
+        } catch (error) {
+          console.warn('🌍 country.is failed:', error);
+        }
+        
+        console.warn('🌍 All location APIs failed');
+        
+        // Development ortamında default olarak TR olarak ayarla
+        if (process.env.NODE_ENV === 'development') {
+          console.log('🌍 Development mode: Setting default country to TR');
+          sessionStorage.setItem(LOCATION_CACHE_KEY, 'TR');
+          setLocationInfo({
+            country: 'TR',
+            isLoading: false,
+          });
+          return;
         }
         
         setLocationInfo({
-          country: data.country_code,
           isLoading: false,
+          error: 'Could not detect location - all APIs failed',
         });
+        
       } catch (error) {
-        console.error('Error detecting location:', error);
+        console.error('🌍 Error detecting location:', error);
         setLocationInfo({
           isLoading: false,
           error: 'Could not detect location',

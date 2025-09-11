@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { Image, Link } from "@ikas/storefront";
 
@@ -12,7 +12,6 @@ import { useDirection } from "../../utils/useDirection";
 import NavbarCategories from "../composites/navbarcategories";
 import MobileMenu, { CategoryWithChildrenType } from "../composites/mobilemenu";
 
-
 const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[], filter: CategoryWithChildrenType }> = ({
   categories,
   categorySort,
@@ -20,19 +19,54 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   popularBrands,
   popularCategories,
   logo,
-  bannerSlogan,
   slogans,
   popularProducts,
   searchbarImage,
   categoriesImage,
+  bannerSlogan,
+  bannerSloganMobile,
+  bannerSloganTablet
 }) => {
   const [open, setOpen] = useState(false);
   const categoriesWithChildrens: CategoryWithChildrenType[] = [];
 
-  // Sadece categorySort içinde tanımlanan kategorileri kullan
+  const [deviceType, setDeviceType] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
+
+  useEffect(() => {
+    const updateDeviceType = () => {
+      const width = window.innerWidth;
+      if (width < 620) {
+        setDeviceType('mobile');
+      } else if (width >= 620 && width < 1024) {
+        setDeviceType('tablet');
+      } else {
+        setDeviceType('desktop');
+      }
+    };
+
+    updateDeviceType();
+    window.addEventListener('resize', updateDeviceType);
+    return () => window.removeEventListener('resize', updateDeviceType);
+  }, []);
+
+  // Get appropriate video source based on device type
+  const getVideoSource = () => {
+    switch (deviceType) {
+      case 'mobile':
+        return bannerSloganMobile?.videoSrc;
+      case 'tablet':
+        return bannerSloganTablet?.videoSrc;
+      case 'desktop':
+      default:
+        return bannerSlogan?.videoSrc;
+    }
+  };
+
+  const videoSrc = getVideoSource();
+
+
   if (categorySort?.data?.length) {
     categorySort.data.forEach((sortCat) => {
-      // categories.data içinde eşleşen kategoriyi bul
       const matchingCat = categories.data.find(cat =>
         cat.name.trim().toLowerCase() === sortCat.name.trim().toLowerCase() &&
         cat.parentId === null
@@ -77,16 +111,27 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
     });
   }
 
-  // categorySort sıralaması zaten forEach ile sağlandı, ekstra sıralama gerekmiyor
-
   const { direction } = useDirection();
   return (
     <header
       dir={direction}
       className="bg-[color:var(--bg-color)] lg:shadow-navbar"
     >
-      <div className="w-full h-[44px] px-4 py-1.5 text-center font-medium text-[16px] text-white flex items-center justify-center bg-[color:var(--color-one)]">
-        <span className="line-clamp-1 whis ">{bannerSlogan}</span>
+      <div className="w-full max-h-[28px] md:max-h-[60px] lg:max-h-[75px] text-center font-medium text-[16px] text-white flex items-center justify-center bg-[color:var(--color-one)] overflow-hidden">
+        {videoSrc && (
+          <video
+            key={`banner-video-${deviceType}-${videoSrc}`}
+            autoPlay
+            playsInline
+            controls={false}
+            loop
+            muted
+            className="w-full h-full object-cover"
+          >
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
       </div>
 
       <div className="bg-[color:var(--bg-color)]">
