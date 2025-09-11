@@ -207,6 +207,7 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
 
         return (
           <SwiperSlider
+            key={`rtl-products-${selectedProducts}-${filteredProducts.length}`}
             showPagination={true}
             showNavigation={false}
             perView={2}

@@ -43,11 +43,9 @@ const OrderTracking = (props: OrderTrackingProps) => {
     });
   }, [email, orderNumber]);
 
-  // Fetch order and transactions
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Reset all errors
     setEmailError("");
     setOrderNumberError("");
     setGeneralError("");
@@ -56,23 +54,19 @@ const OrderTracking = (props: OrderTrackingProps) => {
 
     let hasValidationErrors = false;
 
-    // Check if email is empty
     if (email.length === 0) {
       setEmailError(props.emailRule ?? "");
       hasValidationErrors = true;
     }
-    // Form validation for email format
     else if (formState.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
       setEmailError(props.emailRule ?? "");
       hasValidationErrors = true;
     }
 
-    // Check if order number is empty
     if (orderNumber.length === 0) {
       setOrderNumberError(props.orderNumberRule ?? "");
       hasValidationErrors = true;
     }
-    // Form validation for order number format
     else if (formState.orderNumber) {
       const orderPattern = /^\+?\d{2,8}$/;
       const isValidOrder = orderPattern.test(
@@ -85,7 +79,6 @@ const OrderTracking = (props: OrderTrackingProps) => {
       }
     }
 
-    // If there are validation errors, stop here
     if (hasValidationErrors) {
       setIsSubmitting(false);
       return;
@@ -134,12 +127,12 @@ const OrderTracking = (props: OrderTrackingProps) => {
           <div >
 
             {generalError && (
-              <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit mt-2">
+              <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit my-4">
                 <p className="text-black text-[14px]">{generalError}</p>
               </div>
             )}
 
-            <div className="grid lg:grid-cols-2 my-10 max-w-4xl gap-5 mx-auto">
+            <div className="grid lg:grid-cols-2 max-w-4xl gap-5 mx-auto">
               <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-3 w-full"
@@ -207,9 +200,9 @@ const OrderTracking = (props: OrderTrackingProps) => {
           <div className="md:layout flex flex-col md:flex-row md:justify-center gap-12 items-start w-full">
             <div className="flex group cursor-pointer" onClick={() => { setOrder(undefined); setOrderTransactions(undefined); }}>
               <button
-                className="text-[color:var(--gray-five)] group-hover:text-[color:var(--black-two)] leading-none flex items-center justify-start gap-1.5 cursor-pointer"
+                className="text-[color:var(--gray-five)] group-hover:text-[color:var(--color-four)] leading-none flex items-center justify-start gap-1.5 cursor-pointer transition-all duration-200"
               >
-                <span className="text-[color:var(--gray-five)] group-hover:text-[color:var(--black-two)] transition-all duration-200">
+                <span className="text-[color:var(--gray-five)] group-hover:text-[color:var(--color-four)] transition-all duration-200">
                   <BackSvg />
                 </span>
                 {t("back")}
