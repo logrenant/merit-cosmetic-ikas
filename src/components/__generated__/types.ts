@@ -128,6 +128,8 @@ export type LinkItem = {
 };
 
 export type NavbarProps = {
+	logo: IkasImage;
+	mobileLogo?: IkasImage;
 	categories: IkasCategoryList;
 	categorySort: IkasCategoryList;
 	products: IkasProductList;
@@ -135,7 +137,6 @@ export type NavbarProps = {
 	popularProducts: IkasProductList;
 	popularBrands: IkasBrandList;
 	slogans: string[];
-	logo: IkasImage;
 	productList?: IkasProductList;
 	searchbarImage?: IkasImage;
 	categoriesImage?: IkasImage;

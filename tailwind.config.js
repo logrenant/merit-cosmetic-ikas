@@ -2,6 +2,24 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      'xs-start': '390px',
+      'xs-mid': '420px',
+      'xs-end': '470px',
+      'sm-start': '479px',
+      'sm-mid': '520px',
+      'sm-end': '580px',
+      'md-start': '620px',
+      'md-mid': '680px',
+      'md-end': '740px',
+      'lg-start': '870px',
+      'lg-mid': '980px',
+      'lg-end': '1120px',
+      'xl-start': '1200px',
+      'xl-mid': '1279px',
+      'xl-end': '1380px',
+      '2xl': '1536px',
+    },
     extend: {
       boxShadow: {
         navbar: "0px 4px 30px rgba(0, 0, 0, 0.16)",

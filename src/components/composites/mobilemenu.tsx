@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLockBodyScroll } from "../../utils/useLockBodyScroll";
 import { observer } from "mobx-react-lite";
 import { Link, useTranslation } from "@ikas/storefront";
 import { Transition } from "@headlessui/react";
@@ -24,6 +25,7 @@ const MobileMenu = ({
   const [previousStack, setPreviousStack] = useState<
     CategoryWithChildrenType[][]
   >([]);
+  useLockBodyScroll(open);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -120,7 +122,7 @@ const MobileMenu = ({
             </button>
             <Link href="/">
               <a className="flex font-light text-[color:var(--black-two)] text-lg items-center justify-start">
-                <span>Retail Arbitrage</span>
+                <span className="text-nowrap">{t("popularCategories")}</span>
               </a>
             </Link>
           </div>
