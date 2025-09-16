@@ -629,11 +629,10 @@ const ProductDetail = ({
                   </span>
 
                   <button
-                    disabled={quantity === 10}
                     onClick={() => {
-                      setQuantity((prev) => (prev + 1 < 11 ? prev + 1 : 10));
+                      setQuantity((prev) => prev + 1);
                     }}
-                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
+                    className="flex hover:opacity-80 transition duration-300 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

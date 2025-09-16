@@ -13,12 +13,13 @@ import NavbarCategories from "../composites/navbarcategories";
 import MobileMenu, { CategoryWithChildrenType } from "../composites/mobilemenu";
 
 const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[], filter: CategoryWithChildrenType }> = ({
+  logo,
+  mobileLogo,
   categories,
   categorySort,
   products,
   popularBrands,
   popularCategories,
-  logo,
   slogans,
   popularProducts,
   searchbarImage,
@@ -35,9 +36,9 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
   useEffect(() => {
     const updateDeviceType = () => {
       const width = window.innerWidth;
-      if (width < 620) {
+      if (width < 580) {
         setDeviceType('mobile');
-      } else if (width >= 620 && width < 1024) {
+      } else if (width >= 580 && width < 1024) {
         setDeviceType('tablet');
       } else {
         setDeviceType('desktop');
@@ -117,7 +118,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
       dir={direction}
       className="bg-[color:var(--bg-color)] lg:shadow-navbar"
     >
-      <div className="w-full max-h-[28px] md:max-h-[60px] lg:max-h-[75px] text-center font-medium text-[16px] text-white flex items-center justify-center bg-[color:var(--color-one)] overflow-hidden">
+      <div className="w-full max-h-[28px] sm-end:max-h-[50px] md:max-h-[60px] lg:max-h-[75px] text-center font-medium text-[16px] text-white flex items-center justify-center bg-[color:var(--color-one)] overflow-hidden">
         {videoSrc && (
           <video
             key={`banner-video-${deviceType}-${videoSrc}`}
@@ -141,7 +142,15 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
           <div className="flex font-light text-[color:var(--black-two)] text-lg items-center justify-start">
             <Link href="/">
               <a className="relative aspect-square w-[48px] lg:min-w-[90px] max-w-[90px]">
-                <Image image={logo} layout="fill" className="object-contain" />
+                {deviceType === 'mobile' || deviceType === 'tablet' ? (
+                  mobileLogo ? (
+                    <Image image={mobileLogo} layout="fill" className="object-contain" />
+                  ) : (
+                    <Image image={logo} layout="fill" className="object-contain" />
+                  )
+                ) : (
+                  <Image image={logo} layout="fill" className="object-contain" />
+                )}
               </a>
             </Link>
           </div>
