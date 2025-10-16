@@ -47,7 +47,7 @@ class MyDocument extends Document {
               __html: `
               (function() {
                 try {
-                  var arabicCountries = ['AE','BH','DZ','DJ','EG','ER','IQ','JO','KW','LB','LY','MR','MA','OM','PS','QA','SA','SO','SD','SY','SS','TN','YE','EH','TD','KM','NL','US'];
+                  var arabicCountries = ['AE','BH','DZ','DJ','EG','ER','IQ','JO','KW','LB','LY','MR','MA','OM','PS','QA','SA','SO','SD','SY','SS','TN','YE','EH','TD','KM'];
                   var cached = sessionStorage.getItem('user-location-country-code');
                   var userSelected = sessionStorage.getItem('user-selected-country-code');
                   var isFirstLoad = !cached && !userSelected;

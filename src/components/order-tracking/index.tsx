@@ -9,10 +9,10 @@ import {
   useTranslation
 } from "@ikas/storefront";
 
+import BackSvg from "../svg/BackSvg";
 import Orderdetail from "../orderdetail";
 import { useDirection } from "src/utils/useDirection";
 import { OrderTrackingProps } from "../__generated__/types";
-import BackSvg from "../svg/BackSvg";
 
 const OrderTracking = (props: OrderTrackingProps) => {
   const store = useStore();
@@ -122,71 +122,70 @@ const OrderTracking = (props: OrderTrackingProps) => {
           <span className="absolute left-0 bottom-[-28px] h-[4px] w-full bg-[color:var(--color-one)]"></span>
         </h1>
       </div>
-      <div className="layout flex flex-col xl:flex-row justify-center gap-12 my-10">
-        {!order && (
-          <div >
+      {!order && (
+        <div >
+          {generalError && (
+            <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit my-4">
+              <p className="text-black text-[14px]">{generalError}</p>
+            </div>
+          )}
 
-            {generalError && (
-              <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit my-4">
-                <p className="text-black text-[14px]">{generalError}</p>
+          <div className="grid lg:grid-cols-2 my-10 px-5 max-w-4xl gap-5 mx-auto">
+            <form
+              onSubmit={handleSubmit}
+              className="flex w-full gap-3 flex-col"
+            >
+              <div className="flex flex-col w-full">
+                <label className="text-base text-[color:var(--black-one)] mb-0.5">
+                  {t("email")}
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  placeholder={t("email")}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setFormState({ ...formState, email: e.target.value });
+                    if (emailError) setEmailError("");
+                  }}
+                  className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
+                />
+                {emailError && (
+                  <span className="text-red-500 mt-0.5 text-xs">{emailError}</span>
+                )}
               </div>
-            )}
 
-            <div className="grid lg:grid-cols-2 max-w-4xl gap-5 mx-auto">
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-3 w-full"
+              <div className="flex flex-col w-full">
+                <label className="text-base text-[color:var(--black-one)] mb-0.5">
+                  {props.orderNumberInput}
+                </label>
+                <input
+                  type="text"
+                  value={orderNumber}
+                  placeholder={props.orderNumberInput}
+                  onChange={(e) => {
+                    setOrderNumber(e.target.value);
+                    setFormState({ ...formState, orderNumber: e.target.value });
+                    if (orderNumberError) setOrderNumberError("");
+                  }}
+                  className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] relative text-base font-light border rounded-sm px-2.5"
+                />
+                {orderNumberError && (
+                  <span className="text-red-500 mt-0.5 text-xs">{orderNumberError}</span>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
               >
-                <div>
-                  <label className="text-base text-[color:var(--black-one)] mb-0.5">
-                    {t("email")}
-                  </label>
-                  <input
-                    type="email"
-                    value={email}
-                    placeholder={t("email")}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      setFormState({ ...formState, email: e.target.value });
-                      if (emailError) setEmailError("");
-                    }}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
-                  />
-                  {emailError && (
-                    <p className="text-red-600 text-[12px] mt-1">{emailError}</p>
-                  )}
-                </div>
+                {isSubmitting ? t("loading") : t("submit")}
+              </button>
+            </form>
 
-                <div>
-                  <label className="text-base text-[color:var(--black-one)] mb-0.5">
-                    {props.orderNumberInput}
-                  </label>
-                  <input
-                    type="text"
-                    value={orderNumber}
-                    placeholder={props.orderNumberInput}
-                    onChange={(e) => {
-                      setOrderNumber(e.target.value);
-                      setFormState({ ...formState, orderNumber: e.target.value });
-                      if (orderNumberError) setOrderNumberError("");
-                    }}
-                    className="w-full border-[color:var(--input-color)] focus:ring-transparent focus:border-[color:var(--color-six)] bg-[color:var(--tx-bg)] text-base font-light border rounded-sm px-2.5"
-                  />
-                  {orderNumberError && (
-                    <p className="text-red-600 text-[12px] mt-1">{orderNumberError}</p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="mt-2.5 disabled:opacity-60 tracking-wide w-full bg-[color:var(--color-three)] text-sm font-medium text-white rounded-sm py-2.5 px-5 cursor-pointer"
-                >
-                  {isSubmitting ? t("loading") : t("submit")}
-                </button>
-              </form>
-
-              <div className="p-4 bg-[color:var(--auth-color)] text-[color:var(--black-two)] rounded-sm h-fit">
+            <div>
+              <div className="flex bg-[color:var(--auth-color)] text-[color:var(--black-two)] gap-3 mt-[25px] rounded-sm p-4 flex-col">
                 <div
                   className="prose marker:text-[color:var(--rich-color)] rtl:prose-ul:pr-3 prose-table:!border-[color:var(--rich-color)] prose-tr:!border-[color:var(--rich-color)] prose-th:!border-[color:var(--rich-color)] prose-thead:!border-[color:var(--rich-color)] prose-td:!border-[color:var(--rich-color)] prose-p:[color:#374151] prose-headings:!text-[color:var(--rich-color)] prose-sm w-full"
                   dangerouslySetInnerHTML={{ __html: props.pageDescription || "" }}
@@ -194,24 +193,24 @@ const OrderTracking = (props: OrderTrackingProps) => {
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {order && (
-          <div className="md:layout flex flex-col md:flex-row md:justify-center gap-12 items-start w-full">
-            <div className="flex group cursor-pointer" onClick={() => { setOrder(undefined); setOrderTransactions(undefined); }}>
-              <button
-                className="text-[color:var(--gray-five)] group-hover:text-[color:var(--color-four)] leading-none flex items-center justify-start gap-1.5 cursor-pointer transition-all duration-200"
-              >
-                <span className="text-[color:var(--gray-five)] group-hover:text-[color:var(--color-four)] transition-all duration-200">
-                  <BackSvg />
-                </span>
-                {t("back")}
-              </button>
-            </div>
-            <Orderdetail order={order} refundEmailAddress={email} />
+      {order && (
+        <div className="layout flex flex-col md:flex-row md:justify-center gap-12 items-start w-full my-10 mx-5">
+          <div className="flex group cursor-pointer" onClick={() => { setOrder(undefined); setOrderTransactions(undefined); }}>
+            <button
+              className="text-[color:var(--gray-five)] group-hover:text-[color:var(--color-four)] leading-none flex items-center justify-start gap-1.5 cursor-pointer transition-all duration-200"
+            >
+              <span className="text-[color:var(--gray-five)] group-hover:text-[color:var(--color-four)] transition-all duration-200">
+                <BackSvg />
+              </span>
+              {t("back")}
+            </button>
           </div>
-        )}
-      </div>
+          <Orderdetail order={order} refundEmailAddress={email} />
+        </div>
+      )}
     </div>
   );
 };

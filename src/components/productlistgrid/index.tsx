@@ -282,9 +282,9 @@ const ProductListGrid: React.FC<
     <div dir={direction} className="my-10 layout">
       <div className="grid grid-cols-[100%] lg:grid-cols-[260px_calc(100%-284px)] gap-6">
         <div className="lg:block hidden">
-          <div className="text-2xl text-[color:var(--color-two)] font-medium mb-4">
+          <h1 className="text-2xl text-[color:var(--color-two)] font-medium mb-4">
             {pageSpecificData?.name}
-          </div>
+          </h1>
           {currentCategory?.childrens && (
             <div className="mb-3 w-full">
               {currentCategory?.childrens?.map((filter, i) => (

@@ -98,7 +98,7 @@ const QuantityButton = ({ quantity, onChange }: QuantityButtonProps) => {
     };
 
     return (
-        <div className="flex items-center">
+        <div className="flex gap-1 items-center">
             <button
                 className="flex disabled:opacity-40 disabled:animate-pulse items-center justify-center w-6 h-6 rounded-full border border-[color:var(--gray-two)] cursor-pointer"
                 disabled={quantity <= 1}
@@ -119,7 +119,7 @@ const QuantityButton = ({ quantity, onChange }: QuantityButtonProps) => {
                     />
                 </svg>
             </button>
-            <div className="flex items-center justify-center w-6 h-6">
+            <div className="flex items-center text-base justify-center w-6 h-6">
                 {quantity}
             </div>
             <button

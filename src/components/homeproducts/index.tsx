@@ -69,7 +69,7 @@ const HomeProducts = ({ products, categories, xlBanner, lgBanner, smBanner, sold
 
   return (
     <div
-      className={`TEST-PARENT my-4 layout relative${isArabic ? ' hidden' : ''}`}
+      className={` TEST-PARENT mb-4 mt-2 md:mt-4 layout relative ${isArabic ? ' hidden' : ''}`}
       ref={ref}
     >
 

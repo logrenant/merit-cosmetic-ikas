@@ -81,11 +81,9 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
           parentId: matchingCat.parentId,
           childrens: [],
         };
-        console.log("parent", matchingCat.name);
 
         const children: CategoryWithChildrenType[] = [];
-        categories.data.map((child) => {
-          console.log('child.name', child.name);
+        categories.data.forEach((child) => {
           if (child.parentId === matchingCat.id) {
             children.push({
               id: child.id,
@@ -118,7 +116,7 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
       dir={direction}
       className="bg-[color:var(--bg-color)] lg:shadow-navbar"
     >
-      <div className="w-full max-h-[28px] sm-end:max-h-[50px] md:max-h-[60px] lg:max-h-[75px] text-center font-medium text-[16px] text-white flex items-center justify-center bg-[color:var(--color-one)] overflow-hidden">
+      <div className="w-full max-h-[28px] sm-end:max-h-[50px] md-end:max-h-[60px] lg-mid:max-h-[75px] text-center font-medium text-[16px] text-white flex items-center justify-center bg-[color:var(--color-one)] overflow-hidden">
         {videoSrc && (
           <video
             key={`banner-video-${deviceType}-${videoSrc}`}
@@ -138,10 +136,10 @@ const Navbar: React.FC<NavbarProps & { allCategories: CategoryWithChildrenType[]
       <div className="bg-[color:var(--bg-color)]">
 
         <LocaleBar />
-        <div className="grid layout gap-3 items-center lg:gap-8  lg:pb-1 pt-1 grid-cols-[180px_1fr] lg:grid-cols-[1fr_minmax(200px,700px)_1fr]">
+        <div className="grid layout gap-2 items-center lg:gap-8  lg:pb-2 pt-2 grid-cols-[180px_1fr] lg:grid-cols-[1fr_minmax(200px,700px)_1fr]">
           <div className="flex font-light text-[color:var(--black-two)] text-lg items-center justify-start">
             <Link href="/">
-              <a className="relative aspect-square w-[48px] lg:min-w-[90px] max-w-[90px]">
+              <a className="relative w-[120px] h-[33px] xs-mid:w-[130px] xs-mid:h-[36px] sm-start:w-[140px] sm-start:h-[39px] sm-mid:w-[150px] sm-mid:h-[42px] lg-start:aspect-square lg-start:w-[48px] lg-start:min-w-[90px] lg-start:max-w-[90px] lg-start:h-auto">
                 {deviceType === 'mobile' || deviceType === 'tablet' ? (
                   mobileLogo ? (
                     <Image image={mobileLogo} layout="fill" className="object-contain" />

@@ -50,7 +50,7 @@ function orderRefundLineItemStatus(
     case IkasOrderLineItemStatus.REFUNDED:
       return { text: text("refunded"), color: "green" };
     case IkasOrderLineItemStatus.REFUND_REJECTED:
-      return { text: text("cancelRefunded"), color: "red" };
+      return { text: text("refundRejected"), color: "red" };
     case IkasOrderLineItemStatus.REFUND_REQUESTED:
       return { text: text("refundRequested"), color: "orange" };
     case IkasOrderLineItemStatus.DELIVERED:

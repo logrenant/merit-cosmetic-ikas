@@ -504,7 +504,7 @@ const ProductDetail = ({
           </div>
 
           <div>
-            <h1 className="text-2xl">{product.name}</h1>
+            <div className="text-2xl">{product.name}</div>
             <div className="flex flex-col gap-4 mt-4">
               <div className="flex items-center gap-2">
                 {!!product.selectedVariant?.price?.discountPercentage && (
@@ -609,7 +609,7 @@ const ProductDetail = ({
                     onClick={() => {
                       setQuantity((prev) => (prev - 1 > 1 ? prev - 1 : 1));
                     }}
-                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
+                    className="flex hover:opacity-80 transition duration-300 disabled:pointer-events-none disabled:opacity-30 w-10 rounded-sm h-10 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -632,7 +632,7 @@ const ProductDetail = ({
                     onClick={() => {
                       setQuantity((prev) => prev + 1);
                     }}
-                    className="flex hover:opacity-80 transition duration-300 w-11 rounded-sm h-11 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
+                    className="flex hover:opacity-80 transition duration-300 w-10 rounded-sm h-10 bg-[color:var(--color-three)] text-white items-center justify-center cursor-pointer"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -678,7 +678,7 @@ const ProductDetail = ({
                   {product.isAddToCartEnabled ? (
                     t("addToBasket")
                   ) : (
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-2 whitespace-nowrap text-xs md:text-base">
                       <Envelope />
                       {soldOutButton}
                     </div>

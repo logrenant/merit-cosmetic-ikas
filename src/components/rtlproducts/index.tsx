@@ -77,7 +77,7 @@ const HomeProducts = ({ products, showCategories, xlBanner, lgBanner, smBanner, 
 
 
   return (
-    <div dir="ltr" className="TEST-PARENT my-4 layout relative" ref={ref} >
+    <div dir="ltr" className="TEST-PARENT mb-4 mt-2 md:mt-4 layout relative" ref={ref} >
 
       {isDesktop && xlBanner && (
         <div className="aspect-1400/120 relative mb-4">
