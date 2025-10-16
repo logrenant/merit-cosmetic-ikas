@@ -110,7 +110,7 @@ const BagItem: React.FC<{
               />
             </span>
           </div>
-          <div className="flex items-center">
+          <div className="flex gap-1 items-center">
             <button
               onClick={async () => {
                 if (quantity - 1 > 0) {

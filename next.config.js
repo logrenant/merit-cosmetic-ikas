@@ -16,6 +16,7 @@ const config = {
     locales: ["en", "ar"],
     localeDetection: false,
   },
+  generateHreflangs: false,
   basePath: process.env.NEXTJS_BASE_PATH || "",
 
   images: {

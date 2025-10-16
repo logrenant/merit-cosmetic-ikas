@@ -43,7 +43,7 @@ const BlogList = ({ blogList, showFilter, ...props }: PageBlogsProps) => {
                 {/* Filter Title */}
                 <div className="xl:w-1/5 w-full">
                     <div className="flex flex-col gap-4 xl:flex-row xl:justify-between xl:mb-4 text-[color:var(--gray-five)]">
-                        <h1 className="text-2xl text-[color:var(--color-two)] font-medium hidden xl:inline">{props.title}</h1>
+                        <h2 className="text-2xl text-[color:var(--color-two)] font-medium hidden xl:inline">{props.title}</h2>
                         <div className="flex flex-row justify-between">
                             <div className="flex w-full justify-end xl:w-[unset] items-center gap-2">
                                 {showFilter && (

@@ -47,7 +47,7 @@ function orderRefundLineItemStatus(
     case IkasOrderLineItemStatus.REFUNDED:
       return { text: text("refunded"), color: "green" };
     case IkasOrderLineItemStatus.REFUND_REJECTED:
-      return { text: text("cancelRefunded"), color: "red" };
+      return { text: text("refundRejected"), color: "red" };
     case IkasOrderLineItemStatus.REFUND_REQUESTED:
       return { text: text("refundRequested"), color: "orange" };
     case IkasOrderLineItemStatus.DELIVERED:
@@ -263,10 +263,10 @@ const OrderDetail = () => {
       <div>
         <div className="flex flex-row justify-between items-start">
           <div className="flex mb-4 items-start flex-col">
-            <div className="text-2xl">
+            <div className="text-lg lg:text-2xl">
               {`${t("orderDetail.orderDetail")} #${order.orderNumber}`}
             </div>
-            <div className="flex items-center gap-3 mt-1">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-3 mt-1">
               <OrderPackageStatus status={order.orderPackageStatus!} />
               <div className="text-sm text-[color:var(--gray-three)]">
                 {orderedAt}
